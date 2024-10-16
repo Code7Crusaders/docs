@@ -2,7 +2,6 @@
 # Per cancellare file ausiliari
 files=(
     "./Candidatura/DomandeProponenti/Domande_Proponenti.tex"
-    "./templateC7C/template.tex"
 )
 
 

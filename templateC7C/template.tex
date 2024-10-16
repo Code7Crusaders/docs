@@ -3,6 +3,8 @@
 \usepackage{fancyhdr}
 \usepackage{geometry}
 \usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
 
 % Margini della pagina
 \geometry{a4paper, margin=1in}
@@ -21,10 +23,18 @@
 % Sezione del titolo
 \begin{titlepage}
 
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
     \centering
     \vspace*{2cm}
     
-    \includegraphics[width=0.3\textwidth]{../logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \includegraphics[width=0.3\textwidth]{../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
     \vspace{1cm}
     
     {\Huge \textbf{Code7Crusaders}}\\
@@ -33,9 +43,8 @@
     \vspace{2cm}
     
     {\large \textbf{Documentazione Progetto}}\\
-    \vspace{0.5cm}
-    
-    \vfill
+    \vspace{5cm}
+
     \textbf{Membri del Team:}\\
     Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
     Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
@@ -54,19 +63,6 @@
 % Sezione Introduzione
 \section{Introduzione}
 \label{sec:introduzione}
-Benvenuti nella documentazione di \textbf{Code7Crusaders}, un team dedicato alla creazione di soluzioni software innovative. Questo documento descrive i vari aspetti del nostro progetto, inclusi obiettivi, design, implementazione e test. Il nostro obiettivo è fornire soluzioni robuste ed efficienti.
-
-% Sezione Obiettivi
-\section{Obiettivi}
-\label{sec:obiettivi}
-Il nostro obiettivo principale è creare un prodotto software che soddisfi le esigenze del cliente e superi le aspettative. Per raggiungere questo obiettivo, ci impegniamo a:
-\begin{itemize}
-    \item Comprendere appieno i requisiti del cliente.
-    \item Progettare una soluzione software che sia efficiente e scalabile.
-    \item Implementare il software in modo accurato e conforme ai requisiti.
-    \item Testare il software per garantire che funzioni correttamente.
-    \item Fornire una documentazione completa e dettagliata.
-    \item Offrire supporto continuo e aggiornamenti.
-\end{itemize}
+Benvenuti nella documentazione di \textbf{Code7Crusaders}
 
 \end{document}
