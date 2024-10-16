@@ -16,7 +16,7 @@ done
 
 for file in ${files[@]}; do
     if cd $(dirname $file); then
-    rm $(basename $file .tex).log $(basename $file .tex).aux
+    rm $(basename $file .tex).log $(basename $file .tex).aux $(basename $file .tex).out
     fi
 done
 
