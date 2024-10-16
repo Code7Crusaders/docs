@@ -6,7 +6,7 @@
         <em>Ingegneria del Software - 2024/2025</em></p>
     </div>
     <div style="text-align: right;">
-        <img src="./logo/7Crusaders_logo.png" alt="Gruppo 7Last Logo" width="150px" height="150px" />
+        <img src="./img/logo/7Crusaders_logo.png" alt="Gruppo 7Last Logo" width="150px" height="150px" />
     </div>
 </div>
 
