@@ -2,6 +2,7 @@
 
 files=(
     "./Candidatura/DomandeProponenti/Domande_Proponenti.tex"
+    "./templateC7C/template.tex"
 )
 
 for file in ${files[@]}; do
@@ -14,9 +15,4 @@ for file in ${files[@]}; do
   fi
 done
 
-for file in ${files[@]}; do
-    if cd $(dirname $file); then
-    rm $(basename $file .tex).log $(basename $file .tex).aux $(basename $file .tex).out
-    fi
-done
 
