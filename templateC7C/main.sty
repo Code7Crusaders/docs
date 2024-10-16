@@ -1,0 +1,24 @@
+% File: mio_template.sty
+
+\ProvidesPackage{mio_template}
+
+% Pacchetti
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+% Definizione colori
+\definecolor{primary}{RGB}{33, 150, 243}
+
+% Definizione comandi
+\newcommand{\titolo}[1]{\textbf{\Huge #1}}
+\newcommand{\autore}[1]{\textit{\Large #1}}
+
+% Impostazioni intestazioni e margini
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
