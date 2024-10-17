@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Documentazione Progetto}}\\
+    \vspace{5cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    {\large \textbf{Data:}} \today\\
+    
+    \vspace{1cm}
+\end{titlepage}
+
+% Indice
+\newpage
+\tableofcontents
+
+
+%%Ovviamente è da sistemare ma intanto ho impostato il documento
+Il gruppo \textit{Code7Crusaders} desidera comunicare la decisione di candidarsi alla realizzazione del capitolato proposto dall'azienda \textit{Nome Azienda}, avente titolo: \textbf{Nome Progetto}.
+\\
+la relativa documentazione è disponibile ai link
+\begin{itemize}
+    \item inserire link
+\end{itemize}
+In particolare, nella repositori sono presenti i seguenti documenti:
+\begin{itemize}
+    \item \textbf{Verbali interni:}
+    \begin{itemize}
+        \item n1
+        \item n2
+    \end{itemize}
+    \item \textbf{Verbali esterni:}
+    \begin{itemize}
+        \item n1
+        \item n2
+    \end{itemize}
+    \item Analisi e Valutazione dei capitolati
+    \item Preventivo costi e assunzione impegni
+\end{itemize}
+Il team intende e prevede di realizzare il prodotto richiesto entro la data XX/XX/XXXX con un costo preventivato di $\ge 12000$\euro.
+\\
+Si riportano nomi e matricole dei componenti del gruppo Code7Crusaders:
+\\
+\endline
+%\begin{table}
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Nominativo} & \textbf{Matricola} \\
+        \hline
+         Enrico Cotti Cottini & 2077993\\
+         Gabriele Di Pietro & 2010000\\
+         Tommaso Diviesti & 2082858\\
+         Francesco Lapenna & 2072134\\
+         Matthew Pan & 2057869\\
+         Eddy Pinarello & 2075535\\
+         Filippo Rizzolo & 2042377\\
+         \hline
+    \end{tabular}
+    \endcentering
+%\end{table}
+\\
+Cordiani saluti, Code7Crusaders
+\end{document}
+
+

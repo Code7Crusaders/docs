@@ -1,7 +1,8 @@
 #!/bin/bash
 
 files=(
-    "./Candidatura/DomandeProponenti/Domande_Proponenti.tex"
+    "./Candidatura/DomandeProponenti/Domande_Proponenti.tex",
+    "./Candidatura/Lettera_di_Presentazione.tex"
 )
 
 for file in ${files[@]}; do
