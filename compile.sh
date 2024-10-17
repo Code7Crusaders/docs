@@ -3,6 +3,8 @@
 files=(
     "./Candidatura/DomandeProponenti/Domande_Proponenti.tex",
     "./Candidatura/Lettera_di_Presentazione.tex"
+    "./Candidatura/verbali_interni/verbale_171024_azzurrodigitale_v0.1.tex"
+    "./Candidatura/verbali_esterni/verbale_171024_v0.1.tex"
 )
 
 for file in ${files[@]}; do
