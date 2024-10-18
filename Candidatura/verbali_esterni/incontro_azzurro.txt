@@ -1,0 +1,42 @@
+
+Azzurro digitale
+
+1 Quali sono gli elementi di complessità maggiore, quindi le parti più difficili da implementare nel progetto?
+il backend che gestisce l'utilizzo di OpenAI, la ricezione di domanda e risposta da parte dell'llm e la ricezione
+dei dati dalle varie piattaforme, anche la gestione di RAG database vettoriale. 
+
+2 Quale strumento che usa l’azienda per eventuali colloqui e chiarimenti specifici, o se ci si può incontrare dal vivo?
+usiamo Google Meet per incontri in chiamata, per organizzare incontri dal vivo dobbiamo informarci a livello burocratico se sia fattibile.
+
+3 Quali framework possiamo usare per gestire il progetto? Angular, è obligatorio? 
+Se per ottenere il risultato richiesto siamo più comodi ed efficienti con un altro framework potete utilizzarlo.
+
+4 Ci sono linee guida per le applicazioni di API di terze parti, Come possiamo costruire l'interfaccia delle piattaforme?
+Le varie piattaforme hanno api gia costruiti con documentazione, dovete farvi un idea per come interagire con esse,
+se va male identificate quali sono gli api che danno problemi es. conference. Valutate di fare prima una
+ricerca su servizi gia fatti e se hanno gia connettori così da non dovere interagire direttamente con 
+gli strumenti.
+
+4 Possiamo usare modelli llm opensource? 
+sì, potreste usare anche modelli opensource se non riusciate a fare qualcosa con chatgpt.
+Un gruppo dello scorso anno ha utilizzato un modello opensource facendo il training in locale,
+bisogna poi assicurarsi che il modello sia abbastanza performante in termini di tempo e accuratezza 
+della risposta.  
+
+5 Ci sono alternative a LangChain? 
+LangChain è un framework da usare per situazioni come questa è una black box che permette di comunicare
+con il modello senza dovere verificare il funzionamento del codice interno. L'importante è
+il risultato come lo si ottiene è una vostra scelta.
+
+6 Consigli su cosa concentrarsi nel progetto?
+concentratevi sulla parte di studio degli strumenti degli llm perchè è la tecnologia meno solida da 
+uilizzare nel progetto, il resto sono tecnologie gia consolidate con molta documentazione.
+
+7 testing e bug reporting? 
+per il bug reporting potete utilizzare github sezione issues, la parte di unit test è chiesta dal prof,
+il codice che scrivete deve essere coperto, a voi la decisione di utilizzare la TDD oppure no,
+noi vi consigliamo di usare l'approccio TDD.
+
+8 Che datebase dobbiamo usare? 
+utilizzate postgesql come database se vi è più comodo,
+potreste anche decidere di utilizzare un qualsiasi altro database relazionale.
