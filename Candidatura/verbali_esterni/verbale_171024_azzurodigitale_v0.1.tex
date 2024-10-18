@@ -93,67 +93,42 @@
     \hline
 \end{tabular}
 \newpage
+
 \section{Verbale dell'incontro}
-\subsection{Complessità Progetto}
-\textbf{Domanda:}Quali sono gli elementi di complessità maggiore, quindi le parti più difficili da implementare nel progetto?\\
-il backend che gestisce lutilizzo di open ai, la ricezione di domanda e risosta e la ricezione dei dati dalle
-varie piattaforme, anche la gestione di rug database vettoriale, postgesql usare come database
-\subsection{Piattaforma da usare per la comunicazione}
-\textbf{Domanda:}Quale strumento che usa l’azienda per eventuali colloqui e chiarimenti specifici, o se ci si può incontrare dal vivo?\\
-usiamo meet per incontri, si informano a livello burocratico e si capisce, standard meet
-\subsection{Framework utilizzabili}
-\textbf{Domanda:}Quali framework possiamo usare per gestire il progetto?\\
-angular, è obligatorio? per ottenere il risultato se siamo piu comodo con altro allora possiamo fare quello
-\subsection{Linee guida per API}
-\textbf{Domanda:}Ci sono linee guida per le applicazioni di API di terze parti?\\
-api le varie piattaforme hanno api che hanno documentazione e farsi un idea per come interagire con esse?
-se va male identificate quali sono gli api che danno info  get page conference, valutate di fare prima una
-ricerca su se esistono servizi gia fatti e se hanno gia connettori cosi da non dovere interagire direttamente con 
-gli strumenti, con gia lintegrazione.
-\subsection{Modelli LLM utilizzabili}
-\textbf{Domanda:}Possiamo usare modelli llm opensource?\\
-si potrebbero usare ache modelli opensource se non riusciamo a fare qualcosa con chatgpt, 
-trainando in locale ecc.veloce nelle risposte, non puo rispondere dopo dieci minuti, 
-\subsection{alternative a LangChain e OpenAI}
-\textbf{Domanda:}Ci sono alternative tra LangChain e OpenAI?\\
-LangChain framework da usare per situazioni come questa, limportante è
-il risultato come lo si ottiene facciamo noi 6 difficota nelluso delle cose core
-\subsection{Su cosa concentrarsi}
-concentratevi sulla parte di studio sulla roba dei llm perche è la roba meno solida, concetratevi sulla cicca
-il resto si fa easy
-\subsection{Come fare la parte di test e bug reporting}
-\textbf{Domanda:}come fare la parte di testing e bug reporting?\\
-sezione di issues di github, parte di unit test è chiesta dal prof,
-il codice che scriviamo deve essere coperto, possiamo usare o TDD oppure no pero bisogna arrivare al risultato.
+
+\subsection{Complessità Progetto} \textbf{Domanda:} Quali sono gli elementi di complessità maggiore nel progetto, ovvero le parti più difficili da implementare?
+\newline
+\textit{Risposta:} La gestione del backend che integra l'uso di OpenAI, la ricezione e invio di domande e risposte, l'acquisizione di dati da diverse piattaforme, e la gestione di un database vettoriale. Stiamo considerando PostgreSQL come database principale.
+
+\subsection{Piattaforma per la comunicazione} \textbf{Domanda:} Quali strumenti utilizza l'azienda per comunicare e per i colloqui? È prevista la possibilità di incontri di persona?
+\newline
+\textit{Risposta:} Usiamo Google Meet per gli incontri e per la gestione burocratica. Questo è lo standard di comunicazione.
+
+\subsection{Framework utilizzabili} \textbf{Domanda:} Quali framework possiamo utilizzare per lo sviluppo del progetto? Angular è obbligatorio?
+\newline
+\textit{Risposta:} Se Angular non è lo strumento con cui ci sentiamo più a nostro agio, possiamo scegliere un altro framework, purché si raggiunga il risultato.
+
+\subsection{Linee guida per API di terze parti} \textbf{Domanda:} Ci sono linee guida specifiche per l'integrazione di API di terze parti?
+\newline
+\textit{Risposta:} Ogni piattaforma ha la propria documentazione per le API. È utile identificare prima i servizi già esistenti con connettori pronti, per evitare di dover creare integrazioni dirette da zero.
+
+\subsection{Modelli LLM utilizzabili} \textbf{Domanda:} Possiamo utilizzare modelli LLM open-source se necessario?
+\newline
+\textit{Risposta:} Sì, possiamo utilizzare modelli open-source, soprattutto se ChatGPT non soddisfa completamente i requisiti. È essenziale che le risposte siano rapide e non abbiano latenze eccessive.
+
+\subsection{Alternative a LangChain e OpenAI} \textbf{Domanda:} Ci sono alternative a LangChain o OpenAI per la gestione del progetto?
+\newline
+\textit{Risposta:} LangChain è uno dei framework consigliati, ma ciò che conta di più è il risultato. Se ci sono difficoltà con gli strumenti core, si possono considerare altre soluzioni.
+
+\subsection{Aree di maggiore focus} \textbf{Domanda:} Su quali aspetti dovremmo concentrarci maggiormente nel progetto?
+\newline
+\textit{Risposta:} Concentratevi soprattutto sugli aspetti relativi ai modelli LLM, poiché rappresentano la parte meno solida del progetto. Il resto dovrebbe essere più agevole.
+
+\subsection{Test e bug reporting} \textbf{Domanda:} Come gestire il testing e il reporting dei bug nel progetto?
+\newline
+\textit{Risposta:} Per il bug reporting, utilizziamo la sezione \textit{Issues} di GitHub. Il docente richiede anche unit test per coprire il codice. Possiamo seguire una metodologia TDD, ma l'importante è arrivare al risultato con una copertura sufficiente del codice.
 
 \end{document}
 
 
 
-Azzurro digitale
-
-1 Complessita progetto? il backend che gestisce lutilizzo di open ai, la ricezione di domanda e risosta e la ricezione dei dati dalle
-varie piattaforme, anche la gestione di rug database vettoriale, postgesql usare come database
-
-2 Piattaforme per comunicare? usiamo meet per incontri, si informano a livello burocratico e si capisce, standard meet
-
-3 Framework? angular, è obligatorio? per ottenere il risultato se siamo piu comodo con altro allora possiamo fare quello
-
-4 api di terze parti, backend llm con piattaforme loro? 
-api le varie piattaforme hanno api che hanno documentazione e farsi un idea per come interagire con esse?
-se va male identificate quali sono gli api che danno info  get page conference, valutate di fare prima una
-ricerca su se esistono servizi gia fatti e se hanno gia connettori cosi da non dovere interagire direttamente con 
-gli strumenti, con gia lintegrazione.
-
-4 Possiamo usare modelli llm opensource? si potrebbero usare ache modelli opensource se non riusciamo a fare qualcosa con chatgpt, 
-trainando in locale ecc.veloce nelle risposte, non puo rispondere dopo dieci minuti, 
-
-5 Ci sono alternative tra LangChain? LangChain framework da usare per situazioni come questa, limportante è
-il risultato come lo si ottiene facciamo noi 6 difficota nelluso delle cose core
-
-6 Consiglio su cosa concentrarsi nel progetto.
-concentratevi sulla parte di studio sulla roba dei llm perche è la roba meno solida, concetratevi sulla cicca
-il resto si fa easy
-
-7 parte di testing e bug reporting? sezione di issues di github, parte di unit test è chiesta dal prof,
-il codice che scriviamo deve essere coperto, possiamo usare o TDD oppure no pero bisogna arrivare al risultato.
