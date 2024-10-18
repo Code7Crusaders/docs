@@ -67,6 +67,7 @@
     \item Quali sono gli elementi di complessità maggiore, quindi le parti più difficili da implementare nel progetto?
     \item Quale strumento che usa l’azienda per eventuali colloqui e chiarimenti specifici, o se ci si può incontrare dal vivo?
     \item Quali framework possiamo usare per gestire il progetto? 
+    \item Che strumenti o guide sono consigliate per i Testing?
 \end{itemize}
 
 \subsection{Domande per Vimar C2}\label{subsec:domande-vimar}
@@ -76,13 +77,22 @@
     \item Che frame usare per costruire il server?
     \item Che framework usare per il sito web, quello più consigliato o se è possibile cambiarlo.
     \item Se possiamo usare Python per lo sviluppo degli API, altrimenti quali sono le alternative che utilizzabili?
-    \item Che strumenti o guide sono consigliate per i Testing?
     \item Cosa intendono nei requisiti obbligatori per “Infrastrutture as Code”?
 \end{itemize}
 
 \subsection{Domande per Ergon C7}\label{subsec:domande-ergon}
 \begin{itemize}
-    \item È possibile non utilizzare .NET MAUI?
+    \item È possibile \textbf{NON} utilizzare .NET MAUI?
+    \item Quali possono essere le domande più frequenti? Avete qualche esempio o database?
+    \item Come diamo conoscenza all'AI?
+    \item Come misurare l'attendibilità?
+    \item Chiarimenti sulla parte 5. quindi sul vector data storage.
+    \item Embedded model? Cosa sono e come funzionano?
+    \item posgres si può usare come db relazionale?
+    \item che db vettoriale usare?
+    \item che modello llm utilizzare possiamo possiamo usare modelli open source come Bloom ecc consigliato o possiamo usare anche llm propietari tipo openai? In caso ci dicono uno specifico che api usare per l'interrogazione del modello?
+    \item  dati su cui si effettua il training del modello forniti dall'azienda devono essere inseriti in un database relazionale? oppure si potranno raccogliere i dati in formati tipo xml o JSON?
+    \item per la comunicazione tra db e llm possiamo trasformare i dati raccolti in formati tipo JSON per fare interrogazioni a llm?
 \end{itemize}
 
 \subsection{Domande per Azzurro Digitale C9}\label{subsec:domande-azzurro}
@@ -100,33 +110,3 @@
 \end{itemize}
 
 \end{document}
-
-
-
-Azzurro digitale
-
-1 Complessita progetto? il backend che gestisce lutilizzo di open ai, la ricezione di domanda e risosta e la ricezione dei dati dalle
-varie piattaforme, anche la gestione di rug database vettoriale, postgesql usare come database
-
-2 Piattaforme per comunicare? usiamo meet per incontri, si informano a livello burocratico e si capisce, standard meet
-
-3 Framework? angular, è obligatorio? per ottenere il risultato se siamo piu comodo con altro allora possiamo fare quello
-
-4 api di terze parti, backend llm con piattaforme loro? 
-api le varie piattaforme hanno api che hanno documentazione e farsi un idea per come interagire con esse?
-se va male identificate quali sono gli api che danno info  get page conference, valutate di fare prima una
-ricerca su se esistono servizi gia fatti e se hanno gia connettori cosi da non dovere interagire direttamente con 
-gli strumenti, con gia lintegrazione.
-
-4 Possiamo usare modelli llm opensource? si potrebbero usare ache modelli opensource se non riusciamo a fare qualcosa con chatgpt, 
-trainando in locale ecc.veloce nelle risposte, non puo rispondere dopo dieci minuti, 
-
-5 Ci sono alternative tra LangChain? LangChain framework da usare per situazioni come questa, limportante è
-il risultato come lo si ottiene facciamo noi 6 difficota nelluso delle cose core
-
-6 Consiglio su cosa concentrarsi nel progetto.
-concentratevi sulla parte di studio sulla roba dei llm perche è la roba meno solida, concetratevi sulla cicca
-il resto si fa easy
-
-7 parte di testing e bug reporting? sezione di issues di github, parte di unit test è chiesta dal prof,
-il codice che scriviamo deve essere coperto, possiamo usare o TDD oppure no pero bisogna arrivare al risultato.
