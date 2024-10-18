@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Documentazione Progetto}}\\
+    \vspace{5cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    {\large \textbf{Data:}} \today\\
+    
+    \vspace{1cm}
+\end{titlepage}
+
+% Indice
+\newpage
+%Versioni
+\begin{center}
+    \textbf{Versioni}
+    \\
+    \\
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Ver} & \textbf{Data} & \textbf{Autore} & \textbf{descrizione}\\
+        \hline
+        1.0 & 17/10/24 & XXXX & Prima stesura del documento \\
+        \hline
+    \end{tabular}
+\end{center}
+% Sezione Introduzione
+\newpage
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} XXXX \\
+\textbf{Ora di Inizio} 00:00\\
+\textbf{Ora di Fine} 00:00\\
+\\
+\begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    XXXX & Redattore & Presente \\ %%continuare così
+    \hline %linea di fine
+\end{tabular}
+\\
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Nome} & \textbf{Ruolo}\\
+    \hline
+    XXXX & XXXX\\
+    \hline
+\end{tabular}
+\newpage
+
+\section{Verbale dell'incontro}
+
+\subsection{Utilizzo di .NET MAUI}
+\textbf{Domanda:} Dobbiamo per forza utilizzare .NET MAUI? \newline
+\textit{Risposta:} No, è facoltativo. Utilizzate ciò che è più comodo per voi per ottenere il risultato.
+
+\subsection{Fornitura di informazioni all'LLM}
+\textbf{Domanda:} Come possiamo dare le informazioni all'LLM? Ci verrà fornita un'API o della documentazione? \newline
+\textit{Risposta:} Noi vi forniamo un file contenente le informazioni del contesto di lavoro da cui l'AI apprenderà. Possiamo concordare il formato e saremo noi a recuperare le informazioni dai nostri clienti, che potrete utilizzare.
+
+\subsection{Domande frequenti per l'allenamento dell'AI}
+\textbf{Domanda:} Quali sono le domande più frequenti su cui l'AI deve essere allenata? \newline
+\textit{Risposta:} A livello di domande, si può strutturare la chatbot in due modalità: una parte con domande predefinite, in cui l'AI deve comprendere e rispondere, e una seconda parte con l'AI generativa, dove l'LLM elabora la risposta basandosi solo sulla domanda.
+
+\subsection{Chiarimento sull'AI}
+\textbf{Domanda:} L'AI che useremo è già pre-addestrata? \newline
+\textit{Risposta:} Sì, l'AI è già pre-addestrata. I modelli vengono allenati su grandi moli di dati. Nel nostro caso, la conoscenza fornita verrà trasmessa ai modelli, che analizzeranno ed elaboreranno le risposte.
+
+\subsection{Utilizzo di modelli proprietari}
+\textbf{Domanda:} Possiamo utilizzare modelli AI diversi da quelli consigliati, ad esempio modelli proprietari? \newline
+\textit{Risposta:} Sì, potete utilizzare altri modelli. Vi proponiamo quelli perché sono progetti italiani e potrebbe essere interessante approfondirli. Se scegliete modelli proprietari, dovrete usare strumenti black box. Non c'è un vincolo specifico su queste tecnologie, ma noi consigliamo di usarle.
+
+\subsection{Modello embedded a pagina 5}
+\textbf{Domanda:} Come funziona il modello embedded descritto a pagina 5? \newline
+\textit{Risposta:} Gli LLM utilizzano database vettoriali. Il testo fornito per l'apprendimento viene tokenizzato e rappresentato come un vettore, che poi viene salvato nel database vettoriale. Successivamente, l'LLM apprende da dati esterni che vengono forniti, a seconda del modello scelto. Gli API ricevono le domande dagli utenti, le tokenizzano e le passano all'LLM, che estrae le risposte dal database vettoriale. L'LLM utilizza un modello probabilistico per definire il contesto della domanda e fornire una risposta.
+
+\subsection{Utilizzo di RAG come database vettoriale}
+\textbf{Domanda:} Consigliate di usare RAG come database vettoriale? \newline
+\textit{Risposta:} Sì, consigliamo RAG perché è uno dei più diffusi e ha molta documentazione disponibile. Posso eventualmente suggerirvi altri database.
+
+\subsection{Rappresentazione dei dati in formato JSON}
+\textbf{Domanda:} Nell'intermezzo tra database e LLM, è possibile rappresentare i dati sotto forma di JSON? \newline
+\textit{Risposta:} Sì, questa è una possibilità che offre maggiore libertà. Avendo i dati in formato JSON, dovrete costruire l'interfacciamento e far comunicare i sistemi. Tuttavia, i dati forniti dall'azienda potrebbero non essere perfetti, quindi sarà necessaria una fase di pre-processing per eliminare eventuali dati anomali, dopo di che potete salvarli nel formato che preferite.
+
+\subsection{Fasi di testing del prodotto}
+\textbf{Domanda:} Nelle specifiche del progetto sono richieste anche delle fasi di testing del nostro prodotto. Ci sono delle linee guida o degli strumenti che ci consigliate? \newline
+\textit{Risposta:} È preferibile fare i test durante lo sviluppo del progetto. Avrete domande con risposte attese e potrete creare test-set per verificare che il modello non presenti problemi di overfitting.
+
+\subsection{Strumenti per colloqui e chiarimenti}
+\textbf{Domanda:} Quale strumento usa l'azienda per eventuali colloqui e chiarimenti specifici, o ci si può incontrare dal vivo? \newline
+\textit{Risposta:} Possiamo utilizzare Zoom per i colloqui o incontrarci in sede. Negli anni scorsi, i gruppi richiedevano incontri via Zoom e poi sono venuti anche in sede.
+
+\subsection{Esperienza con i gruppi precedenti}
+\textbf{Domanda:} Siccome non è il primo anno che proponete progetti ai nostri ex-colleghi, ci sono state difficoltà particolari per loro? \newline
+\textit{Risposta:} Non hanno avuto grosse difficoltà. Sono sempre stati abbastanza autonomi e ci siamo sentiti settimanalmente via mail. Non ci sono state particolari difficoltà, anzi, siamo stati molto soddisfatti dal lavoro svolto.
+
+\end{document}
+
+
