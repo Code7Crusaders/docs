@@ -1,0 +1,106 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{babel}
+\usepackage[dvipsnames]{xcolor}
+
+% Custom header for all slides
+\setbeamertemplate{headline}{
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{section in head/foot}%
+      \hspace*{2ex}Code7Crusaders - Software Development Team
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}}%
+    \vskip0pt%
+}
+
+% Background image for the title slide
+\setbeamertemplate{background}{
+  \includegraphics[width=\paperwidth,height=\paperheight]{../img/background.png}
+}
+
+% Title customization for contrast
+\setbeamercolor{frametitle}{fg=white} % White text, blue background
+\setbeamerfont{frametitle}{series=\bfseries}   % Bold title
+
+% Custom block colors
+\setbeamercolor{block body}{bg=gray!20}  % Gray background for block content
+\setbeamercolor{block title}{bg=gray,fg=white} % Darker gray for block title
+
+\setbeamercolor{block body alerted}{bg=gray!20} % Gray background for alert block content
+\setbeamercolor{block title alerted}{bg=red, fg=white} % Red title for alert block
+
+\setbeamercolor{block body example}{bg=gray!20} % Gray background for example block content
+\setbeamercolor{block title example}{bg=ForestGreen, fg=white} % Green title for example block
+
+\begin{document}
+
+% Title page slide
+\begin{frame}[plain] % Plain to avoid header on title slide
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../img/logo/7Crusaders_logo.png} % Add your logo here
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Documentazione Progetto}}\\
+    \vspace{3cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{1cm}
+    
+    {\large \textbf{Data:}} \today\\
+    
+    \vspace{1cm}
+\end{frame}
+
+%%% Content slides
+
+% Example of a content slide with custom block colors
+\begin{frame}{Cose Fatte}
+    \begin{block}{Cose completate}
+        \begin{itemize}
+            \item Cosa 1
+            \item Cosa 2
+        \end{itemize}
+    \end{block}
+
+    \begin{alertblock}{Cose sbagliate}
+        Mettere qui criticità o cose non chiare:
+        \begin{itemize}
+            \item Criticità 1
+            \item Criticità 2
+        \end{itemize}
+    \end{alertblock}
+
+    \begin{exampleblock}{Cose giuste}
+        Mettere qui i vantaggi:
+        \begin{itemize}
+            \item Vantaggio 1
+            \item Vantaggio 2
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+% Add more slides as needed
+\begin{frame}{Altra Slide}
+    \begin{block}{Contenuto in evidenza}
+        Aggiungi qui il contenuto importante.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Titolo}
+    Oggi presentiamo l'importanza delle presentazioni
+\end{frame}
+
+\end{document}
