@@ -1,11 +1,16 @@
 #!/bin/bash
 # Per cancellare file ausiliari
 files=(
-    "./Candidatura/Lettera_di_Presentazione.tex"
     "./Candidatura/DomandeProponenti/Domande_Proponenti.tex"
-    "./Candidatura/verbali_interni/verbale_171024_azzurrodigitaleint_v0.1.tex"
-    "./Candidatura/verbali_esterni/verbale_181024_ergon.tex"
-    "./Candidatura/verbali_esterni/verbale_171024_azzurodigitale_v0.1.tex"
+    "./Candidatura/Lettera_di_Presentazione.tex"
+    "./Candidatura/Valutazione_Capitolati.tex"
+    "./Candidatura/verbali_esterni/verbale_181024_ergon_v1.0.tex"
+    "./Candidatura/verbali_esterni/verbale_171024_azzurodigitale_v1.0.tex"
+    "./Candidatura/verbali_esterni/verbale_181024_sanmarco_v1.0.tex"
+    "./Candidatura/verbali_interni/verbale_15182024_v1.0.tex"
+    "./Candidatura/verbali_interni/verbale_18102024_v1.0.tex"
+    "./templateC7C/template.tex"
+    "./templateC7C/slide.tex"
 )
 
 
