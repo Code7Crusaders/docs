@@ -1,4 +1,3 @@
-18-10
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
@@ -22,17 +21,7 @@
 \begin{document}
 
 % Sezione del titolo
-\begin{titlepage}
-
-    \AddToHookNext{shipout/background}{
-    \begin{tikzpicture}[remember picture,overlay]
-    \node at (current page.center) {
-    \includegraphics{../../img/background.png}
-    };
-    \end{tikzpicture}
-    }
-
-    \centering
+\begin{center}
     \vspace*{2cm}
     
     \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
@@ -54,7 +43,7 @@
     {\large \textbf{Data:}} \today\\
     
     \vspace{1cm}
-\end{titlepage}
+\end{center}
 
 \newpage
 \begin{table}[h!]
@@ -64,8 +53,6 @@
 \begin{tabular}{|c|c|c|l|}
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Descrizione} \\
-    % \hline
-    % 1.0 & 20/10/2024 & Enrico Cotti Cottini & Approvazione documento \\ 
     \hline
     1.0 & 19/10/2024 & Filippo Rizzolo & Revisione del documento e controllo ortografia \\ 
     \hline
@@ -73,8 +60,6 @@
     \hline
 \end{tabular}
 \end{table}
-
-
 
 % Indice
 \newpage
@@ -107,8 +92,6 @@
     Filippo Rizzolo & Amministratore & Presente \\ 
     \hline %linea di fine
 \end{tabular}
-
-
 
 \newpage
 \section{Verbale}

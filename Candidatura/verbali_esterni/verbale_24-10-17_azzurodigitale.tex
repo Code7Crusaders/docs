@@ -1,5 +1,3 @@
-Azurrodigitale
-
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
@@ -28,7 +26,6 @@ Azurrodigitale
     \AddToHookNext{shipout/background}{
     \begin{tikzpicture}[remember picture,overlay]
     \node at (current page.center) {
-    %\includegraphics{background.png} %MODIFICA OVERLEAF
     \includegraphics{../../img/background.png}
     };
     \end{tikzpicture}
@@ -37,7 +34,6 @@ Azurrodigitale
     \centering
     \vspace*{2cm}
 
-    %\includegraphics[width=0.3\textwidth]{7Crusaders_logo.png} %MODIFICA OVERWLAEF
     \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
     \vspace{1cm}
     
@@ -62,29 +58,23 @@ Azurrodigitale
 % Indice
 \tableofcontents
 \newpage
-%Versioni
+
+% Versioni
 \begin{center}
-    \textbf{Versioni}
+    \textbf{Versioni} % Title for Versions Table
     \\
     \begin{tabular}{|c|c|c|c|}
         \hline
         \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Descrizione} \\
-        %\hline
-        %1.0 & 20/10/2024 & Enrico Cotti Cottini & Approvazione documento \\ 
         \hline
         0.3 & 22/10/2024 & Filippo Rizzolo & Prima revisione del documento e controllo ortografia \\ 
-	    \hline
-	    0.2 & 21/10/24 & Enrico Cotti Cottini & Aggiunte Presenze \\
+        \hline
+        0.2 & 21/10/2024 & Enrico Cotti Cottini & Aggiunte Presenze \\
         \hline
         0.1 & 17/10/2024 & Eddy Pinarello & Prima stesura del documento  \\ 
         \hline
     \end{tabular}
 \end{center}
-
-% Indice
-\newpage
-\tableofcontents
-\newpage
 
 % Sezione Introduzione
 \newpage
@@ -165,12 +155,12 @@ Azurrodigitale
 \textit{Risposta:} Per il bug reporting, utilizziamo la sezione \textit{Issues} di GitHub. Il docente richiede anche unit test per coprire il codice. Possiamo seguire una metodologia TDD, ma l'importante è arrivare al risultato con una copertura sufficiente del codice.
 
 \begin{table}[b]
-	\begin{tabular}{@{}p{.5in}p{4in}@{}}
-		Data:  & \hrulefill \\
-			   &     		\\
-			   &     		\\
-		Firma: & \hrulefill \\
-	\end{tabular}
-	\end{table}
+    \begin{tabular}{@{}p{.5in}p{4in}@{}}
+    Data:  & \hrulefill \\
+           &     		\\
+           &     		\\
+    Firma: & \hrulefill \\
+    \end{tabular}
+\end{table}
 
 \end{document}

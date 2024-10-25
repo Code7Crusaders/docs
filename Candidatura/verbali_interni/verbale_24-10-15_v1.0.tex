@@ -1,4 +1,3 @@
-15-10
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
@@ -16,15 +15,16 @@
 \fancyhead[L]{Code7Crusaders - Software Development Team}
 \fancyhead[R]{\thepage}
 
+
 % Spaziatura delle righe
 \setstretch{1.2}
 
 \begin{document}
 
 % Sezione del titolo
-\begin{titlepage}
+\begin{center}
 
-    \AddToHookNext{shipout/background   }{
+    \AddToHookNext{shipout/background}{
     \begin{tikzpicture}[remember picture,overlay]
     \node at (current page.center) {
     \includegraphics{../../img/background.png} 
@@ -35,8 +35,8 @@
     \centering
     \vspace*{2cm}
     
-    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % MODIFICATO PER OVERLEAF
-    \vspace{1cm}
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} 
+    \vspace{1cm} 
     
     {\Huge \textbf{Code7Crusaders}}\\
     \vspace{0.5cm}
@@ -53,7 +53,7 @@
     
     {\large \textbf{Data: }15 Ottobre 2024}     
     \vspace{1cm}
-\end{titlepage}
+\end{center}
 
 \newpage
 \begin{table}[h!]
@@ -70,8 +70,6 @@
     \hline
 \end{tabular}
 \end{table}
-
-
 
 % Indice
 \newpage
@@ -104,8 +102,6 @@
     Filippo Rizzolo & Amministratore & Presente \\ 
     \hline %linea di fine
 \end{tabular}
-
-
 
 \newpage
 \section{Verbale}
