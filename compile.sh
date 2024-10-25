@@ -10,6 +10,14 @@ files=(
     "./Candidatura/verbali_esterni/verbale_181024_sanmarco_v1.0.tex"
     "./Candidatura/verbali_interni/verbale_15182024_v1.0.tex"
     "./Candidatura/verbali_interni/verbale_18102024_v1.0.tex"
+
+    "./Candidatura/verbali_esterni/verbale_24-10-18_ergon.tex"
+    "./Candidatura/verbali_esterni/verbale_24-10-17_azzurodigitale_v0.1.tex"
+    "./Candidatura/verbali_esterni/verbale_24-10-18_sanmarco.tex"
+    "./Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex"
+    "./Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex"
+    "./Candidatura/verbali_interni/verbale_24-10-25_v0.1.tex"
+
     "./templateC7C/template.tex"
     "./templateC7C/slide.tex"
 )
