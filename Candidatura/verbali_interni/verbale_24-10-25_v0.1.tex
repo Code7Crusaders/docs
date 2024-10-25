@@ -1,0 +1,172 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage{tabularx}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Riunione Settimanale 25/10/2024}}\\
+    \vspace{5cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    {\large \textbf{Data:}} \today\\
+    
+    \vspace{1cm}
+\end{titlepage}
+
+% Indice
+\newpage
+\tableofcontents
+
+%Versioni
+\newpage
+\begin{center}
+    \textbf{Versioni}
+    \\
+    \\
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Ver} & \textbf{Data} & \textbf{Autore} & \textbf{descrizione}\\
+        \hline
+        0.1 & 25/10/24 & Lapenna Francesco & Prima stesura del documento \\ 
+        \hline
+    \end{tabular}
+\end{center}
+
+% Registro Presenze
+\newpage
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} Discord \\
+\textbf{Ora di Inizio} 10:30\\
+\textbf{Ora di Fine} 12:30\\
+\\
+\begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    Enrico Cotti Cottini & Responsabile& Presente \\ 
+    \hline
+    Gabriele Di Pietro & Redattore & Presente\\ 
+    \hline
+    Tommaso Divesti & Redattore & Presente \\ 
+    \hline 
+    Francesco Lapenna & Redattore& Presente \\ 
+    \hline
+    Matthew Pan & Verificatore & Presente\\ 
+    \hline 
+    Eddy Pinarello & Redattore & Presente \\ 
+    \hline 
+    Filippo Rizzolo & Amministratore& Presente \\ 
+    \hline 
+\end{tabular}
+
+% Sezione Verbale
+\newpage
+% \section{Verbale dell'incontro}
+% \label{sec:introduzione}
+\section*{Ordine del Giorno}
+\begin{enumerate}
+    \item Preventivo del progetto
+    \item Impegni orari previsti a persona
+    \item Impegni orari previsti per ruolo
+    \item Stima dei costi totali relativi agli impegni
+    \item Rischi attesi
+    \item Data indicativa di fine progetto
+\end{enumerate}
+
+\section{Preventivo del Progetto}
+\textbf{Sintesi:} Viene realizzata una prima stesura del preventivo dei costi finali basato sulle specifiche del progetto. Si è considerato anche il carico di lavoro previsto per ogni ruolo e membro del team. \\
+\textbf{Decisioni:} Il team conferma il preventivo come base di partenza. Eventuali variazioni saranno riviste con committente e proponente.
+
+\section{Impegni Orari Previsti a Persona}
+\textbf{Sintesi:} Si è discusso il carico di lavoro individuale per i membri del team, basato sulle ore settimanali disponibili.
+
+\section{Impegni Orari Previsti per Ruolo}
+\textbf{Sintesi:} Viene stabilito il carico orario per ciascun ruolo specifico del progetto, adattato in base alla necessità delle fasi di sviluppo e della tipologia di progetto. \\
+\textbf{Decisioni:} Visto l'orientamento del progetto verso l'integrazione con AI piuttosto che verso lo sviluppo SW, si è deciso di distribuire le ore più verso i ruoli concernenti la progettazione piuttosto che lo sviluppo.\\Per informazioni dettaliate su ruoli e rispettivi costi orari consultare la relativa il documento di analisi dei costi.
+
+\section{Stima dei Costi Totali Relativi agli Impegni}
+\textbf{Sintesi:} Si è effettuata una stima dei costi basata sulle ore previste e sui costi orari. \\
+\textbf{Totale previsto:} €12,575. 
+
+\section{Rischi Attesi}
+\textbf{Sintesi:} Vengono identificati i principali rischi e le misure di mitigazione.
+\begin{itemize}
+    \item Difficoltà nell'uso di nuove tecnologie: Pianificazione di riunioni settimanali per allineamento.
+    \item Turnover del personale: Pianificazione della documentazione dettagliata del progetto.
+    \item Modifiche ai requisiti: Definizione di revisioni formali con il cliente.
+\end{itemize}
+
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{\textwidth}{|X|c|c|X|}
+    \hline
+    \textbf{Rischio} & \textbf{Gravità} & \textbf{Probabilità}& \textbf{Contromisure}\\
+    \hline
+    Difficoltà nell'uso di nuove tecnologie & 3& 3 & Studio approfondito degli LLM \\ 
+    \hline
+    Codice non portato a termine dal delegato & 2 & 2 & Chiedere supporto all'azienda o usare più risorse del team\\ 
+    \hline
+    Dimunuzione carico e ore di lavoro durante le festività & 1 & 2 & Cercare di mantenere i ritmi feriali impostandosi un tempo minimo di lavoro settimanale\\ 
+    \hline 
+    Scarsa collaborazione & 1& 1 & Chiarire ruoli e compiti \\ 
+    \hline
+    Impegni personali & 1 & 2 & Comunicazione anche grazie al calendario per schedulare bene i compiti\\ 
+    \hline 
+\end{tabularx}
+\end{table}
+\textbf{Decisioni:} Monitoraggio costante dei rischi e adattamento in corso d’opera.
+
+\section{Data Indicativa di Fine Progetto}
+\textbf{Data stimata:} 21 Marzo 2025. \\
+\textbf{Decisioni:} Si conferma la data come obiettivo iniziale, con l’impegno a rivederla se i tempi di sviluppo dovessero subire variazioni.
+
+\section*{Conclusioni}
+\begin{itemize}
+    \item Prossima riunione pianificata per il 1° Novembre 2024.
+\end{itemize}
+
+\end{document}
