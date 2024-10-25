@@ -1,3 +1,4 @@
+Ergon
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
@@ -26,6 +27,7 @@
     \AddToHookNext{shipout/background}{
     \begin{tikzpicture}[remember picture,overlay]
     \node at (current page.center) {
+    %\includegraphics{background.png} %MODIFICA OVERLEAF
     \includegraphics{../../img/background.png}
     };
     \end{tikzpicture}
@@ -33,7 +35,8 @@
 
     \centering
     \vspace*{2cm}
-    
+
+    %\includegraphics[width=0.3\textwidth]{7Crusaders_logo.png} % MODIFICA OVERWLOEAF
     \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
     \vspace{1cm}
     
@@ -42,7 +45,7 @@
     {\Large Software Development Team}\\
     \vspace{2cm}
     
-    {\large \textbf{Documentazione Progetto}}\\
+    {\large \textbf{Incontro del 18/10/2024 con Ergon}}\\
     \vspace{5cm}
 
     \textbf{Membri del Team:}\\
@@ -61,35 +64,56 @@
 \begin{center}
     \textbf{Versioni}
     \\
-    \\
     \begin{tabular}{|c|c|c|c|}
         \hline
         \textbf{Ver} & \textbf{Data} & \textbf{Autore} & \textbf{descrizione}\\
+        %\hline
+        %1.0 & 20/10/2024 & Enrico Cotti Cottini & Approvazione documento \\ 
         \hline
-        1.0 & 17/10/24 & XXXX & Prima stesura del documento \\
+        0.3 & 22/10/2024 & Filippo Rizzolo & Prima revisione del documento e controllo ortografia \\ 
+        \hline
+	0.2 & 21/10/24 & Enrico Cotti Cottini & Aggiunte Presenze \\
+	\hline
+        0.1 & 18/10/2024 & Eddy Pinarello & Prima stesura del documento \\ 
         \hline
     \end{tabular}
 \end{center}
 % Sezione Introduzione
 \newpage
 \section{Registro Presenze}
-\textbf{Piattaforma della riunione:} XXXX \\
-\textbf{Ora di Inizio} 00:00\\
-\textbf{Ora di Fine} 00:00\\
+\textbf{Piattaforma della riunione:} Zoom \\
+\textbf{Ora di Inizio} 11:00\\
+\textbf{Ora di Fine} 12:00\\
 \\
 \begin{tabular}{|c|c|c|}
     \hline
     \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
     \hline
-    XXXX & Redattore & Presente \\ %%continuare così
+    Enrico Cotti Cottini & Responsabile & Presente \\ 
+    \hline
+    Gabriele Di Pietro & Redattore & Presente \\ 
+    \hline
+    Tommaso Divesti & Redattore & Presente \\ 
+    \hline %linea di fine
+    Francesco Lapenna & Verificatore & Assente \\ 
+    \hline
+    Matthew Pan & Verificatore & Assente \\ 
+    \hline %linea di fine
+    Eddy Pinarello & Redattore & Presente \\ 
+    \hline %linea di fine
+    Filippo Rizzolo & Amministratore & Presente \\ 
     \hline %linea di fine
 \end{tabular}
 \\
+\newline
+\newline
 \begin{tabular}{|c|c|}
     \hline
     \textbf{Nome} & \textbf{Ruolo}\\
     \hline
-    XXXX & XXXX\\
+    Gianluca Carlesso & Rappresentante Azienda \\
+    \hline
+    Anna Tieppo & Rappresentante Azienda \\
     \hline
 \end{tabular}
 \newpage
@@ -97,7 +121,7 @@
 \section{Verbale dell'incontro}
 
 \subsection{Utilizzo di .NET MAUI}
-\textbf{Domanda:} Dobbiamo per forza utilizzare .NET MAUI? \newline
+\textbf{Domanda:} L'utilizzo di .NET MAUI è un vincolo obbligatorio oppure ci sono altre alternative? \newline
 \textit{Risposta:} No, è facoltativo. Utilizzate ciò che è più comodo per voi per ottenere il risultato.
 
 \subsection{Fornitura di informazioni all'LLM}
@@ -140,6 +164,13 @@
 \textbf{Domanda:} Siccome non è il primo anno che proponete progetti ai nostri ex-colleghi, ci sono state difficoltà particolari per loro? \newline
 \textit{Risposta:} Non hanno avuto grosse difficoltà. Sono sempre stati abbastanza autonomi e ci siamo sentiti settimanalmente via mail. Non ci sono state particolari difficoltà, anzi, siamo stati molto soddisfatti dal lavoro svolto.
 
+\begin{table}[b]
+	\begin{tabular}{@{}p{.5in}p{4in}@{}}
+		Data:  & \hrulefill \\
+			   &     		\\
+			   &     		\\
+		Firma: & \hrulefill \\
+	\end{tabular}
+	\end{table}
+
 \end{document}
-
-
