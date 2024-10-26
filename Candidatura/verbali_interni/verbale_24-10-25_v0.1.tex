@@ -6,6 +6,7 @@
 \usepackage{tikz}
 \usepackage[italian]{babel}
 \usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
 
 % Margini della pagina
 \geometry{a4paper, margin=1in}
@@ -54,12 +55,7 @@
     \vspace{1cm}
 \end{titlepage}
 
-% Indice
-\newpage
-\tableofcontents
-
 %Versioni
-\newpage
 \begin{center}
     \textbf{Versioni}
     \\
@@ -72,6 +68,10 @@
         \hline
     \end{tabular}
 \end{center}
+
+% Indice
+\newpage
+\tableofcontents
 
 % Registro Presenze
 \newpage

@@ -5,6 +5,7 @@
 \usepackage{setspace}
 \usepackage{tikz}
 \usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
 
 % Margini della pagina
 \geometry{a4paper, margin=1in}
@@ -55,9 +56,6 @@
     \vspace{1cm}
 \end{titlepage}
 
-% Indice
-\tableofcontents
-\newpage
 %Versioni
 \begin{center}
     \textbf{Versioni}
@@ -76,8 +74,13 @@
         \hline
     \end{tabular}
 \end{center}
-% Sezione Introduzione
+
+% Indice
 \newpage
+\tableofcontents
+\newpage
+
+% Sezione Introduzione
 \section{Registro Presenze}
 \textbf{Piattaforma della riunione:} Zoom \\
 \textbf{Ora di Inizio} 11:00\\
