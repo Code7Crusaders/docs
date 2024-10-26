@@ -5,6 +5,7 @@
 \usepackage{setspace}
 \usepackage{tikz}
 \usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
 
 % Margini della pagina
 \geometry{a4paper, margin=1in}
@@ -22,7 +23,7 @@
 \begin{document}
 
 % Sezione del titolo
-\begin{center}
+\begin{titlepage}
 
     \AddToHookNext{shipout/background}{
     \begin{tikzpicture}[remember picture,overlay]
@@ -43,17 +44,16 @@
     {\Large Software Development Team}\\
     \vspace{2cm}
     
-    {\large \textbf{Documentazione Progetto}}\\
+    {\large \textbf{Riunione 15/10/2024}}\\
     \vspace{5cm}
 
     \textbf{Membri del Team:}\\
     Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
     Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
     \vspace{0.5cm}
-    
-    {\large \textbf{Data: }15 Ottobre 2024}     
+      
     \vspace{1cm}
-\end{center}
+\end{titlepage}
 
 \newpage
 \begin{table}[h!]
