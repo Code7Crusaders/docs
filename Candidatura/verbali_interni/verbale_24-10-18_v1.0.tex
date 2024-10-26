@@ -21,7 +21,17 @@
 \begin{document}
 
 % Sezione del titolo
-\begin{center}
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
     \vspace*{2cm}
     
     \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
@@ -32,7 +42,7 @@
     {\Large Software Development Team}\\
     \vspace{2cm}
     
-    {\large \textbf{Documentazione Progetto}}\\
+    {\large \textbf{Riunione Settimanale 18/10/2024}}\\
     \vspace{5cm}
 
     \textbf{Membri del Team:}\\
@@ -41,7 +51,7 @@
     \vspace{0.5cm}
     
     \vspace{1cm}
-\end{center}
+\end{titlepage}
 
 \newpage
 \begin{table}[h!]
