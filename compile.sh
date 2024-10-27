@@ -16,6 +16,8 @@ files=(
     "./Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex"
     "./Candidatura/verbali_interni/verbale_24-10-25_v0.1.tex"
 
+    "./DiariDiBordo/Diario_28-10-2024.tex"
+
     "./templateC7C/template.tex"
     "./templateC7C/slide.tex"
 

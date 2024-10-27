@@ -16,6 +16,8 @@ files=(
     "./Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex"
     "./Candidatura/verbali_interni/verbale_24-10-25_v0.1.tex"
 
+    "./DiariDiBordo/Diario_28-10-2024.tex"
+
     "./templateC7C/template.tex"
     "./templateC7C/slide.tex"
 
@@ -27,6 +29,7 @@ initial_path=$(pwd)
 for file in ${files[@]}; do
     if cd $(dirname $file); then
     rm -f $(basename $file .tex).log $(basename $file .tex).aux $(basename $file .tex).out $(basename $file .tex).toc 
+    # Decommenta la linea sotto per eliminare anche i pdf
     # rm -f $(basename $file .tex).pdf
     fi
     cd $initial_path

@@ -1,0 +1,111 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{babel}
+\usepackage[dvipsnames]{xcolor}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Custom header for all slides
+\setbeamertemplate{headline}{
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{section in head/foot}%
+      \hspace*{2ex}Code7Crusaders - Software Development Team
+    \end{beamercolorbox}%
+    }    
+}
+
+% Background image for the title slide
+\setbeamertemplate{background}{
+  \includegraphics[width=\paperwidth,height=\paperheight]{../img/background.png}
+}
+
+% Title customization for contrast
+\setbeamercolor{frametitle}{fg=black} % White text, blue background
+\setbeamerfont{frametitle}{series=\bfseries}   % Bold title
+
+% Custom block colors
+\setbeamercolor{block body}{bg=gray!20}  % Gray background for block content
+\setbeamercolor{block title}{bg=gray,fg=white} % Darker gray for block title
+
+\setbeamercolor{block body alerted}{bg=gray!20} % Gray background for alert block content
+\setbeamercolor{block title alerted}{bg=red, fg=white} % Red title for alert block
+
+\setbeamercolor{block body example}{bg=gray!20} % Gray background for example block content
+\setbeamercolor{block title example}{bg=ForestGreen, fg=white} % Green title for example block
+
+\begin{document}
+
+% Title page slide
+\begin{frame}[plain] % Plain to avoid header on title slide
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../img/logo/7Crusaders_logo.png} % Add your logo here
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Documentazione Progetto}}\\
+    \vspace{3cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{1cm}
+    
+    {\large \textbf{Data:}} \today\\
+    
+    \vspace{1cm}
+\end{frame}
+
+%%% Content slides
+% Slide 1: What the team has done
+\begin{frame}
+    \begin{block}{Attività Completate}
+        \begin{itemize}
+            \item Organizzato mezzi di comunicazione interni (incontri settimanali, email, GitHub).
+            \item Raccolto domande e organizzato incontri con aziende interessate.
+            \item Documentazione redatta per incontri esterni e interni.
+            \item Valutazione dei capitolati e selezione del capitolato scelto.
+            \item Avvio dell'analisi dei rischi e stima dei costi.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+% Slide 2: What the team plans to do
+\begin{frame}
+    \begin{block}{Attività Pianificate}
+        \begin{itemize}
+            \item Completare analisi dei rischi, preventivo e pianificazione delle scadenze.
+            \item Preparare documentazione necessaria per la candidatura.
+            \item Concorrere per l'appalto del progetto.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+% Slide 3: Difficulties encountered
+\begin{frame}
+    \begin{alertblock}{Sfide Recenti}
+        \begin{itemize}
+            \item Problemi di comunicazione con un'azienda.
+            \item Adattamento all'uso di LaTeX.
+            \item Organizzazione dei branch Git, applicazione di Git Flow.
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+% Slide 4: Unresolved questions
+\begin{frame}
+    \begin{exampleblock}{Questioni urgenti, Punti da Approfondire}
+        \begin{itemize}
+            \item Come organizzare la documentazione al meglio?
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\end{document}
