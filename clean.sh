@@ -28,7 +28,7 @@ initial_path=$(pwd)
 
 for file in ${files[@]}; do
     if cd $(dirname $file); then
-    rm -f $(basename $file .tex).log $(basename $file .tex).aux $(basename $file .tex).out $(basename $file .tex).toc 
+    rm -f $(basename $file .tex).log $(basename $file .tex).aux $(basename $file .tex).out $(basename $file .tex).toc  $(basename $file .tex).nav $(basename $file .tex).snm $(basename $file .tex).vrb
     # Decommenta la linea sotto per eliminare anche i pdf
     # rm -f $(basename $file .tex).pdf
     fi
