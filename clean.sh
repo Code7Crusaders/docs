@@ -2,11 +2,11 @@
 # Per cancellare file ausiliari
 files=(
 
-    # "./Candidatura/DomandeProponenti/Domande_Proponenti.tex"
+    "./Candidatura/DomandeProponenti/Domande_Proponenti.tex"
     
-    # "./Candidatura/Lettera_di_Presentazione.tex"
-    # "./Candidatura/Valutazione_Capitolati.tex"
-    # "./Candidatura/analisi_costi_assunzione_impegni.tex"
+    "./Candidatura/Lettera_di_Presentazione.tex"
+    "./Candidatura/Valutazione_Capitolati.tex"
+    "./Candidatura/analisi_costi_assunzione_impegni.tex"
 
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
     # "./Candidatura/verbali_esterni/verbale_24-10-18_ergon.tex"
@@ -14,14 +14,14 @@ files=(
     # "./Candidatura/verbali_esterni/verbale_24-10-18_sanmarco.tex"
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
 
-    # "./Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex"
-    # "./Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex"
-    # "./Candidatura/verbali_interni/verbale_24-10-25_v1.0.tex"
+    "./Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex"
+    "./Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex"
+    "./Candidatura/verbali_interni/verbale_24-10-25_v1.0.tex"
 
-    # "./DiariDiBordo/Diario_28-10-2024.tex"
+    "./DiariDiBordo/Diario_28-10-2024.tex"
 
-    # "./templateC7C/template.tex"
-    # "./templateC7C/slide.tex"
+    "./templateC7C/template.tex"
+    "./templateC7C/slide.tex"
 
 )
 
