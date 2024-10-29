@@ -5,7 +5,7 @@ files=(
     "./Candidatura/DomandeProponenti/Domande_Proponenti.tex"
     
     "./Candidatura/Lettera_di_Presentazione.tex"
-    "./Candidatura/Valutazione_Capitolati.tex"
+    "./Candidatura/Valutazione_Capitolati_v1.0.tex"
     "./Candidatura/analisi_costi_assunzione_impegni.tex"
 
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
