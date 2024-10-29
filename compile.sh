@@ -8,10 +8,6 @@ files=(
     "./Candidatura/Valutazione_Capitolati.tex"
     "./Candidatura/analisi_costi_assunzione_impegni.tex"
 
-    "./Candidatura/verbali_esterni/verbale_24-10-18_ergon.tex"
-    "./Candidatura/verbali_esterni/verbale_24-10-17_azzurodigitale.tex"
-    "./Candidatura/verbali_esterni/verbale_24-10-18_sanmarco.tex"
-
     "./Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex"
     "./Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex"
     "./Candidatura/verbali_interni/verbale_24-10-25_v0.1.tex"
