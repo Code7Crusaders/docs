@@ -1,0 +1,171 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+
+    {\large \textbf{Incontro del 18/10/2024 con Sanmarco Informatica}}\\
+    \vspace{5cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+
+%Versioni
+\begin{center}
+    \textbf{Versioni}
+    \\
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Ver} & \textbf{Data} & \textbf{Autore} & \textbf{Descrizione}\\
+        \hline
+        1.0 & 29/10/2024 & Filippo Rizzolo & Approvazione documento \\ 
+        \hline
+        0.3 & 22/10/2024 & Filippo Rizzolo & Prima revisione del documento e controllo ortografia \\ 
+        \hline
+	    0.2 & 21/10/2024 & Enrico Cotti Cottini & Aggiunte Presenze \\
+	    \hline
+        0.1 & 18/10/2024 & Gabriele Di Pietro & Prima stesura del documento \\
+        \hline
+    \end{tabular}
+\end{center}
+
+% Indice
+\newpage
+\tableofcontents
+\newpage
+
+% Sezione Introduzione
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} Google Meet \\
+\textbf{Ora di Inizio} 09:30\\
+\textbf{Ora di Fine} 09:45\\
+\\
+\begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    Enrico Cotti Cottini & Responsabile & Assente \\ 
+    \hline
+    Gabriele Di Pietro & Redattore & Presente \\ 
+    \hline
+    Tommaso Diviesti & Redattore & Assente \\ 
+    \hline 
+    Francesco Lapenna & Verificatore & Presente \\ 
+    \hline
+    Matthew Pan & Verificatore & Assente \\ 
+    \hline 
+    Eddy Pinarello & Redattore & Presente \\ 
+    \hline 
+    Filippo Rizzolo & Amministratore & Presente \\ 
+    \hline 
+\end{tabular}
+\\
+\newline
+\newline
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Nome} & \textbf{Ruolo}\\
+    \hline
+    Alex Beggiato & Rappresentante Azienda \\
+    \hline
+\end{tabular}
+\newpage
+
+\section{Verbale dell'incontro}
+\subsection{Dataset}
+\textbf{Domanda:} Esiste qualche Dataset da utilizzare nel progetto?
+\newline
+\textit{Risposta:} Nel capitolato è stata inserita una lista di possibili fonti di cui una è stata utilizzata per l’esempio del clima, dove appunto venivano mostrati diversi dati impostando latitudine e longitudine. Questo è utile per il POC dove si lavora con un dataset già fornito. 
+Quindi si ha un dataset grande in un file .csv, ed è possibile selezionare diversi paesi, nell’esempio mostrato in classe sono stati visualizzati i dati di tre città. Quindi abbiamo un dataset popoloso senza fare troppa fatica.
+La sfida del progetto è concentrarsi sulla parte grafica per rendere questi valori/tabelle chiare ed accessibili.
+\subsection{Documentazione Bug e Unit Testing}
+\textbf{Domanda:} Come svolgere la documentazione dei bug e unit testing, come funzionano e cosa si intende?
+\newline
+\textit{Risposta:} La documentazione dei bug e l'unit testing sono due fasi importanti nello sviluppo software, con scopi differenti.
+\newline
+\underline{Unit Testing:}  
+L'unit testing verifica singole unità di codice in isolamento, assicurandosi che ogni componente funzioni correttamente.  
+\begin{itemize}
+    \item \textit{Front-end}: Si testa, ad esempio, che una tabella mostri correttamente determinate colonne usando dati fissi.
+    \item \textit{Back-end}: Si testano API o configurazioni per garantire che rispondano come previsto.
+\end{itemize}
+\underline{Documentazione dei Bug:}  
+La documentazione dei bug raccoglie gli errori trovati durante lo sviluppo e i test, tenendo traccia dei problemi risolti e di quelli ancora presenti. Questa fase, utile soprattutto verso la fine del progetto, aiuta a identificare bug risolti, bug minori ancora presenti, e aree di possibile miglioramento.
+\subsection{Metodologia Test}
+\textbf{Domanda:} Come e quando effettuiamo i test?
+\newline
+\textit{Risposta:} Ci sono diverse scuole di pensiero:
+\begin{itemize}
+    \item La prima garantisce lo sviluppo consapevole, scrivo prima il test pensando a cosa la funzione debba fare e dopodiché scrivo il codice avendo già il test garantendo che la funzione sia coerente con ciò che ho ipotizzato (\textit{test driven development})
+    \item La strada più tradizionale invece è quella di sviluppare e poi fare il test garantendo così che modifiche successive non mi creino disturbi sul metodo scritto
+\end{itemize}
+Sta a noi quindi decidere come strutturare i test, ma è consigliato il test driven development
+\subsection{Bug Report}
+\textbf{Domanda:} Come report di bug, possiamo usare le issue di \textit{GitHub} oppure dobbiamo fare una lista a parte?
+\newline
+\textit{Risposta:} Se usiamo \textit{GitHub} come strumento di tracciatura va molto bene usare \textit{GitHub} ma andrebbe poi fatta una lista più consolidata e leggibile.
+\subsection{Esperienze Passate}
+\textbf{Domanda:} Secondo le Esperienze degli anni passati cosa si consiglia fare?
+\newline
+\textit{Risposta:} Nel progetto viene richiesto il \textbf{POC} quindi solitamente la gente si butta sul codice, ma se il \textbf{POC} viene buttato via non conviene ma invece conviene partire dai test perchè il \textbf{POC} serve per dimostrare la fattibilità.
+Negli scorsi anni non ci sono stati problemi di consegna, forse qualche bug ma non problemi grossi tutti risolvibili
+\subsection{Comunicazione}
+\textbf{Domanda:} Nel caso di eventuali colloqui futuri che piattaforma usiamo per la comunicazione?
+\newline
+\textit{Risposta:} Le riunioni di avanzamento conviene farle via \textit{Google meet}, per le altre si possono fare in presenza a Grisignano oppure online come siamo più comodi, ed eventualmente con lo stage da fare evitando di sovrapporre il lavoro. Per dubbi veloci si può usare la mail tranne il lunedì e il martedì giorni nei quali il responsabile è via fuori città.
+
+\begin{table}[b]
+	\begin{tabular}{@{}p{.5in}p{4in}@{}}
+		Data:  & \hrulefill \\
+			   &     		\\
+			   &     		\\
+		Firma: & \hrulefill \\
+	\end{tabular}
+	\end{table}
+
+\end{document}
