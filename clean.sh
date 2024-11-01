@@ -6,12 +6,12 @@ files=(
     
     "./Candidatura/Lettera_di_Presentazione.tex"
     "./Candidatura/Valutazione_Capitolati_v1.0.tex"
-    "./Candidatura/analisi_costi_assunzione_impegni.tex"
+    "./Candidatura/analisi_costi_assunzione_impegni_v1.0.tex"
 
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
-    # "./Candidatura/verbali_esterni/verbale_24-10-18_ergon.tex"
-    # "./Candidatura/verbali_esterni/verbale_24-10-17_azzurodigitale.tex"
-    # "./Candidatura/verbali_esterni/verbale_24-10-18_sanmarco.tex"
+    # "./Candidatura/verbali_esterni/verbale_24-10-18_ergon_v1.0.tex"
+    # "./Candidatura/verbali_esterni/verbale_24-10-17_azzurodigitale_v1.0.tex"
+    # "./Candidatura/verbali_esterni/verbale_24-10-18_sanmarco_v1.0.tex"
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
 
     "./Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex"
