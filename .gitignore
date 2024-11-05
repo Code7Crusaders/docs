@@ -5,3 +5,7 @@
 **.toc
 **.nav
 **.snm
+.gz
+.fls
+.fdb_latexmk
+.synctex.gz
