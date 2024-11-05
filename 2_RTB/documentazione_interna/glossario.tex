@@ -1,0 +1,113 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+
+\glstoctrue
+
+\makeglossaries
+
+% Definizioni delle voci
+%-----------------------TUTORIAL PER AGGIUNGERE VOCI-----------------------------------%
+%\newglossaryentry{NOME}{
+%    name=NOME, %IMPORTANTE NON MANCARE LA VIRGOLA
+%   description={METTERE QUI UNA DESCRIZIONE}
+%}
+%%-------------Inserire termini da qui
+\newglossaryentry{Glossario}{
+    name=Glossario,
+    description={Elenco strutturato di termini tecnici o specializzati, ognuno corredato dalla propria definizione o spiegazione. Questo strumento aiuta a migliorare la comunicazione tra le varie parti coinvolte in un progetto, riducendo le ambiguità e garantendo una comprensione condivisa dei termini utilizzati in un determinato contesto.}
+}
+
+\newglossaryentry{Norme di Progetto}{
+    name={Norme di Progetto},
+    description={Regole e linee guida stabilite all'interno di un progetto per garantire coerenza e qualità nelle attività svolte. Definiscono standard e procedure, come documentazione, gestione delle versioni e criteri di codifica, per assicurare uniformità nell'approccio e nel risultato finale.}
+}
+
+\newglossaryentry{Piano di Progetto}{
+    name={Piano di Progetto},
+    description={Documento formale che delinea in dettaglio la pianificazione, la esecuzione, il monitoraggio e il controllo di tutte le attività coinvolte nella realizzazione di un progetto. Questo documento fornisce una roadmap chiara e organizzata, comprensiva di obiettivi, risorse, scadenze e strategie di gestione dei rischi.}
+}
+
+\newglossaryentry{Piano di Qualifica}{
+    name={Piano di Qualifica},
+    description={Documento che stabilisce gli standard di qualità, i processi e le attività di testing che saranno implementati durante lo sviluppo di un progetto. Contiene una descrizione dettagliata delle strategie di testing, delle metriche di valutazione e dei criteri di accettazione del prodotto finale.}
+}
+
+% Stile per lettere con sezioni per ogni gruppo
+\newglossarystyle{myaltlistgroup}{%
+    \setglossarystyle{altlistgroup}%
+    \renewcommand*{\glsgroupheading}[1]{%
+        \pagebreak%
+        \par\bigskip\textbf{\Large \glsgetgrouptitle{##1}}\par\medskip % Titolo della lettera in grande
+        \addcontentsline{toc}{section}{\glsgetgrouptitle{##1}} % Aggiunge all'indice
+        \par\noindent\hrule\par\medskip % Linea di separazione
+    }%
+}
+
+\glsaddallunused
+%------------------------Inizio del documento--------------
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    \large \textbf{Glossario}
+    \vspace{3.9cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+
+\newpage
+%------------------------Versioni
+\begin{center}
+    \textbf{Versioni}
+    \\
+    \vspace{0.3cm}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Ver} & \textbf{Data} & \textbf{Redattore} & \textbf{Verificatore} & \textbf{descrizione}\\
+        \hline
+        0.1 & 05/11/2024 & Gabriele Di Pietro & Filippo Rizzolo & Prima stesura del documento \\
+        \hline
+    \end{tabular}
+\end{center}
+%----------------
+\newpage
+
+\tableofcontents
+
+\printglossary[style=myaltlistgroup,title=]
+
+\end{document}
