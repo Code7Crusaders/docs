@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Riunione Settimanale 04/11/2024}}\\
+    \vspace{5cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+
+%Versioni
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    0.1 & 5/11/2025 & Gabriele Di Pietro & Eddy Pinarello & Prima stesura del documento \\ 
+    \hline
+\end{tabular}
+\end{table}
+
+% Indice
+\newpage
+\tableofcontents
+
+% Registro Presenze
+\newpage
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} Piattaforma Discord \\
+\textbf{Ora di Inizio} 21:00\\
+\textbf{Ora di Fine} 22:00\\
+\\
+\begin{tabular}{|c|c|c|} %NON MI RICORDO CHI MANCASSE Mi pare Francesco
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    Enrico Cotti Cottini & Responsabile & Presente \\ 
+    \hline
+    Gabriele Di Pietro & Redattore & Presente\\ 
+    \hline
+    Tommaso Diviesti & Redattore & Presente \\ 
+    \hline 
+    Francesco Lapenna & Redattore& Assente \\ 
+    \hline
+    Matthew Pan & Verificatore & Presente\\ 
+    \hline 
+    Eddy Pinarello & Redattore & Presente \\ 
+    \hline 
+    Filippo Rizzolo & Amministratore& Presente \\ 
+    \hline 
+\end{tabular}
+
+% Sezione Verbale
+\newpage
+\section{Verbale}
+\subsection{Preventivo del Progetto}
+\textbf{Sintesi:} Viene realizzata una prima stesura del preventivo dei costi finali basato sulle specifiche del progetto. Si è considerato anche il carico di lavoro previsto per ogni ruolo e membro del team. \\
+\textbf{Decisioni:} Il team conferma il preventivo come base di partenza. Eventuali variazioni saranno riviste con committente e proponente.
+
+\subsection{Impegni Orari Previsti a Persona}
+\textbf{Sintesi:} Si è discusso il carico di lavoro individuale per i membri del team, basato sulle ore settimanali disponibili. Considerando anche il fatto che settimanalmente dovremmo ruotare con i ruoli
+
+\subsection{Impegni Orari Previsti per Ruolo}
+\textbf{Sintesi:} Viene stabilito il carico orario per ciascun ruolo specifico del progetto, adattato in base alla necessità delle fasi di sviluppo e della tipologia di progetto. \\
+\textbf{Decisioni:} Visto l'orientamento del progetto verso l'integrazione con AI piuttosto che verso lo sviluppo SW, si è deciso di distribuire le ore più verso i ruoli concernenti la progettazione piuttosto che lo sviluppo.
+
+\subsection{Stima dei Costi Totali Relativi agli Impegni}
+\textbf{Sintesi:} Si è effettuata una stima dei costi basata sulle ore previste e sul valore di ogni ruolo prendendo di riferimento il materiale del corso di IS.
+
+\subsection{Rischi Attesi}
+\textbf{Sintesi:} Vengono identificati i principali rischi e le misure di mitigazione. Discutendo e provando ad immaginare i diversi scenari possibili su ciò che può succedere e sulla Difficoltà di lavorare in maniera asincrona.
+Identificando quindi i primi problemi e le possibili soluzioni sul risolverle alla radice o confinarle in modo da poter portare a termine l'impegno da noi preso.
+
+\subsection*{Conclusioni}
+Prossima riunione pianificata per il \textbf{1° Novembre 2024}.
+
+\end{document}
