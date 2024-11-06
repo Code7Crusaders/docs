@@ -26,7 +26,7 @@ jobs:
             ./1_Candidatura/analisi_costi_assunzione_impegni_v1.0.tex
             ./1_Candidatura/DomandeProponenti/Domande_Proponenti.tex
             ./DiariDiBordo/Diario_28-10-2024.tex
-            ./2_RTB/verbali_interni/verbale_24_11_04_v0.1.tex
+            ./2_RTB/verbali_interni/verbale_24-11-04_v0.1.tex
 
 
       - name: Upload PDF file
@@ -47,4 +47,4 @@ jobs:
             ./1_Candidatura/analisi_costi_assunzione_impegni_v1.0.tex
             ./1_Candidatura/DomandeProponenti/Domande_Proponenti.tex
             ./DiariDiBordo/Diario_28-10-2024.tex
-            ./2_RTB/verbali_interni/verbale_24_11_04_v0.1.tex
+            ./2_RTB/verbali_interni/verbale_24-11-04_v0.1.tex
