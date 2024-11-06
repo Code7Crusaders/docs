@@ -1,0 +1,50 @@
+name: Build LaTeX document latexmk
+on:
+  push:
+    branches:
+      - main
+      - develop
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -cd 
+          working_directory: ./
+          root_file: |
+            ./templateC7C/slide.tex
+            ./templateC7C/template.tex
+            ./1_Candidatura/verbali_interni/verbale_24-10-25_v1.0.tex
+            ./1_Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex
+            ./1_Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex
+            ./1_Candidatura/Lettera_di_Presentazione.tex
+            ./1_Candidatura/Valutazione_Capitolati_v1.0.tex
+            ./1_Candidatura/analisi_costi_assunzione_impegni_v1.0.tex
+            ./1_Candidatura/DomandeProponenti/Domande_Proponenti.tex
+            ./DiariDiBordo/Diario_28-10-2024.tex
+            ./2_RTB/verbali_interni/verbale_24_11_04_v0.1.tex
+
+
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: |
+            ./templateC7C/slide.tex
+            ./templateC7C/template.tex
+            ./1_Candidatura/verbali_interni/verbale_24-10-25_v1.0.tex
+            ./1_Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex
+            ./1_Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex
+            ./1_Candidatura/Lettera_di_Presentazione.tex
+            ./1_Candidatura/verbali_esterni/verbale_24-10-18_sanmarco_v1.0.tex
+            ./1_Candidatura/verbali_esterni/verbale_24-10-18_ergon_v1.0.tex
+            ./1_Candidatura/verbali_esterni/verbale_24-10-17_azzurodigitale_v1.0.tex
+            ./1_Candidatura/Valutazione_Capitolati_v1.0.tex
+            ./1_Candidatura/analisi_costi_assunzione_impegni_v1.0.tex
+            ./1_Candidatura/DomandeProponenti/Domande_Proponenti.tex
+            ./DiariDiBordo/Diario_28-10-2024.tex
+            ./2_RTB/verbali_interni/verbale_24_11_04_v0.1.tex

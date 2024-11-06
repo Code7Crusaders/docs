@@ -1,4 +1,5 @@
 **/.DS_Store
+**.pdf
 **.log
 **.aux
 **.out
@@ -7,5 +8,9 @@
 **.snm
 **.gz
 **.fls
+**.glg
+**.glo
+**.gls
+**.ist
 **.fdb_latexmk
 **.synctex.gz
