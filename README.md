@@ -9,6 +9,7 @@
         <img src="./img/logo/7Crusaders_logo.png" alt="Gruppo Code7Crusaders Logo" width="150px" height="150px" />
     </div>
 </div>
+    
 ## Build Status
 
 [![Build LaTeX document latexmk](https://github.com/Code7Crusaders/docs/actions/workflows/latex_pdf.yml/badge.svg)](https://github.com/Code7Crusaders/docs/actions/workflows/latex_pdf.yml)
