@@ -27,6 +27,7 @@ jobs:
             ./1_Candidatura/DomandeProponenti/Domande_Proponenti.tex
             ./DiariDiBordo/Diario_28-10-2024.tex
             ./2_RTB/verbali_interni/verbale_24-11-04_v0.1.tex
+            ./2_RTB/documentazione_interna/glossario.tex
 
 
       - name: Upload PDF file
@@ -48,3 +49,4 @@ jobs:
             ./1_Candidatura/DomandeProponenti/Domande_Proponenti.pdf
             ./DiariDiBordo/Diario_28-10-2024.pdf
             ./2_RTB/verbali_interni/verbale_24-11-04_v0.1.pdf
+            ./2_RTB/documentazione_interna/glossario.pdf
