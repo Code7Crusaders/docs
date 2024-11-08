@@ -1,41 +1,55 @@
 #!/bin/bash
 
+
 files=(
 
-    # "./1_Candidatura/DomandeProponenti/Domande_Proponenti.tex"
+    "./src/1_Candidatura/DomandeProponenti/Domande_Proponenti.tex"
     
-    # "./1_Candidatura/Lettera_di_Presentazione.tex"
-    # "./1_Candidatura/Valutazione_Capitolati_v1.0.tex"
-    # "./1_Candidatura/analisi_costi_assunzione_impegni_v1.0.tex"
+    "./src/1_Candidatura/Lettera_di_Presentazione.tex"
+    "./src/1_Candidatura/Valutazione_Capitolati_v1.0.tex"
+    "./src/1_Candidatura/analisi_costi_assunzione_impegni_v1.0.tex"
 
-    # # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
-    # # "./Candidatura/verbali_esterni/verbale_24-10-18_ergon_v1.0.tex"
-    # # "./Candidatura/verbali_esterni/verbale_24-10-17_azzurodigitale_v1.0.tex"
-    # # "./Candidatura/verbali_esterni/verbale_24-10-18_sanmarco_v1.0.tex"
-    # # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
+    # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
+    # "./Candidatura/verbali_esterni/verbale_24-10-18_ergon_v1.0.tex"
+    # "./Candidatura/verbali_esterni/verbale_24-10-17_azzurodigitale_v1.0.tex"
+    # "./Candidatura/verbali_esterni/verbale_24-10-18_sanmarco_v1.0.tex"
+    # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
 
-    # "./1_Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex"
-    # "./1_Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex"
-    # "./1_Candidatura/verbali_interni/verbale_24-10-25_v1.0.tex"
+    "./src/1_Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex"
+    "./src/1_Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex"
+    "./src/1_Candidatura/verbali_interni/verbale_24-10-25_v1.0.tex"
 
-    # "./DiariDiBordo/Diario_28-10-2024.tex"
+    "./src/DiariDiBordo/Diario_28-10-2024.tex"
 
-    # "./templateC7C/template.tex"
-    # "./templateC7C/slide.tex"
+    "./src/templateC7C/template.tex"
+    "./src/templateC7C/slide.tex"
+    "./src/templateC7C/template-verbali-nuovo/template-verbali.tex"
 
-    # "./2_RTB/documentazione_interna/glossario.tex"
-    "./2_RTB/verbali_interni/verbale_24-11-04_v0.1.tex"
+    "./src/2_RTB/documentazione_interna/glossario.tex"
+    "./src/2_RTB/verbali_interni/verbale_24-11-04_v0.1.tex"
 
 )
 
-for file in ${files[@]}; do
-  if cd $(dirname $file); then
-    pdflatex -interaction=batchmode $(basename $file)
-    echo "File $(basename $file .tex).pdf created"
-    cd -
-  else
-    echo "Failed to change directory to $(dirname $file)"
-  fi
-done
+current_dir=$(pwd)
 
+for i in "${!files[@]}"; do
+  filename=$(basename -- "${files[$i]}")
+  dirname=$(dirname -- "${files[$i]}")
+
+  output_dir="${dirname/src/pdf}"
+
+  dirname="${dirname#./}"
+  output_dir="${output_dir#./}"
+
+  absolute_output_dir="$current_dir/$output_dir"
+  absolute_dirname="$current_dir/$dirname"
+
+  echo "Compiling $filename in $absolute_dirname"
+  echo "Output will be stored in $absolute_output_dir"
+
+  mkdir -p "$output_dir"
+  latexmk -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -cd -outdir="$absolute_output_dir" "$absolute_dirname/$filename"
+  latexmk -c -outdir="$absolute_output_dir" "$absolute_dirname/$filename"
+
+done
 
