@@ -1,21 +1,7 @@
 \documentclass[italian,12pt]{article}
 
-
-%pacchetti extra da scaricare dblfloatfix, fancyhdr
-\usepackage{fancyhdr}%creazione header-footer
-\usepackage{graphicx} %serve per inserire immagini
-%\usepackage{dblfloatfix} %serve per posizionare gli elementi dove si vuole
-\usepackage[hidelinks]{hyperref} %serve per i link
-\usepackage{tikz}
-\usepackage{tgadventor} % font
-\usepackage[useregional=numeric,showseconds=true,showzone=false]{datetime2}
-\usepackage{caption}
-\usepackage[automake,section=section,toc]{glossaries-extra}
-\usepackage{geometry}
-\usepackage{setspace}
-\usepackage{eurosym}
-\usepackage[italian]{babel}
-\usepackage[hidelinks]{hyperref}
+\input{variables}
+\input{packages}
 
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
@@ -55,16 +41,16 @@
     description={Documento che stabilisce gli standard di qualità, i processi e le attività di testing che saranno implementati durante lo sviluppo di un progetto. Contiene una descrizione dettagliata delle strategie di testing, delle metriche di valutazione e dei criteri di accettazione del prodotto finale.}
 }
 
-% Stile per lettere con sezioni per ogni gruppo
 \newglossarystyle{myaltlistgroup}{%
     \setglossarystyle{altlistgroup}%
     \renewcommand*{\glsgroupheading}[1]{%
         \pagebreak%
-        \par\bigskip\textbf{\Large \glsgetgrouptitle{##1}}\par\medskip % Titolo della lettera in grande
+        \item\par\bigskip\textbf{\Large \glsgetgrouptitle{##1}}\par\medskip % Titolo della lettera in grande
         \addcontentsline{toc}{section}{\glsgetgrouptitle{##1}} % Aggiunge all'indice
-        \par\noindent\hrule\par\medskip % Linea di separazione
+        \item\par\noindent\hrule\par\medskip % Linea di separazione
     }%
 }
+
 
 \glsaddallunused
 %------------------------Inizio del documento--------------
@@ -120,7 +106,7 @@
 %----------------
 \newpage
 
-\tableofcontents
+\newpage
 
 \printglossary[style=myaltlistgroup,title=]
 
