@@ -12,7 +12,7 @@
     
 ## Build Status
 
-[![Build LaTeX document latexmk](https://github.com/Code7Crusaders/docs/actions/workflows/latex_pdf.yml/badge.svg)](https://github.com/Code7Crusaders/docs/actions/workflows/latex_pdf.yml)
+[![Build LaTeX document latexmk](https://github.com/CcEnrico/docs_swe/actions/workflows/latex_pdf.yml/badge.svg)](https://github.com/CcEnrico/docs_swe/actions/workflows/latex_pdf.yml)
 
 ## Componenti del gruppo:
 
