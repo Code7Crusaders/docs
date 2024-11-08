@@ -1,55 +1,43 @@
 name: Build LaTeX document latexmk
 on:
   push:
-    branches:
-      - main
-      - develop
+    branches: [ "develop" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
+
+      - name: Install LaTeX and dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y \
+          latexmk \
+          texlive \
+          texlive-latex-extra \
+          texlive-lang-italian
+
+      - name: Pull latest changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin develop
+
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
-        with:
-          args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -cd 
-          working_directory: ./
-          root_file: |
-            ./templateC7C/slide.tex
-            ./templateC7C/template.tex
-            ./templateC7C/template-verbali-nuovo/template-verbali.tex
-            ./1_Candidatura/verbali_interni/verbale_24-10-25_v1.0.tex
-            ./1_Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex
-            ./1_Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex
-            ./1_Candidatura/Lettera_di_Presentazione.tex
-            ./1_Candidatura/Valutazione_Capitolati_v1.0.tex
-            ./1_Candidatura/analisi_costi_assunzione_impegni_v1.0.tex
-            ./1_Candidatura/DomandeProponenti/Domande_Proponenti.tex
-            ./DiariDiBordo/Diario_28-10-2024.tex
-            ./2_RTB/verbali_interni/verbale_24-11-04_v0.1.tex
-            ./2_RTB/documentazione_interna/glossario.tex
-            ./DiariDiBordo/Diario_12-11-2024.tex
-
-
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v4
-        with:
-          name: PDF
-          path: |
-            ./templateC7C/slide.pdf
-            ./templateC7C/template.pdf
-            ./templateC7C/template-verbali-nuovo/template-verbali.pdf
-            ./1_Candidatura/verbali_interni/verbale_24-10-25_v1.0.pdf
-            ./1_Candidatura/verbali_interni/verbale_24-10-18_v1.0.pdf
-            ./1_Candidatura/verbali_interni/verbale_24-10-15_v1.0.pdf
-            ./1_Candidatura/Lettera_di_Presentazione.pdf
-            ./1_Candidatura/verbali_esterni/verbale_24-10-18_sanmarco_v1.0.pdf
-            ./1_Candidatura/verbali_esterni/verbale_24-10-18_ergon_v1.0.pdf
-            ./1_Candidatura/verbali_esterni/verbale_24-10-17_azzurodigitale_v1.0.pdf
-            ./1_Candidatura/Valutazione_Capitolati_v1.0.pdf
-            ./1_Candidatura/analisi_costi_assunzione_impegni_v1.0.pdf
-            ./1_Candidatura/DomandeProponenti/Domande_Proponenti.pdf
-            ./DiariDiBordo/Diario_28-10-2024.pdf
-            ./2_RTB/verbali_interni/verbale_24-11-04_v0.1.pdf
-            ./2_RTB/documentazione_interna/glossario.pdf
+        run: ./compile.sh
+      
+      
+      - name: Add, commit and push changes
+        run: |
+          git add .
+          git commit -m "Compile PDF [bot] "
+          git push 
+        
+      
