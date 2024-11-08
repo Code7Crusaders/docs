@@ -29,6 +29,7 @@ jobs:
             ./DiariDiBordo/Diario_28-10-2024.tex
             ./2_RTB/verbali_interni/verbale_24-11-04_v0.1.tex
             ./2_RTB/documentazione_interna/glossario.tex
+            ./DiariDiBordo/Diario_12-11-2024.tex
 
 
       - name: Upload PDF file
