@@ -49,6 +49,6 @@ jobs:
         run: |
           git add .
           git commit -m "Compile PDF [bot]"
-          git push -f
+          git push
         
       
