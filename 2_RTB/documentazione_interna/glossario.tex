@@ -5,7 +5,7 @@
 
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
-\geometry{headsep=1.5cm}
+\geometry{a4paper, margin=1in}
 
 \renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
 \renewcommand\familydefault{\sfdefault}
@@ -46,7 +46,6 @@
     \renewcommand*{\glsgroupheading}[1]{%
         \pagebreak%
         \item\par\bigskip\textbf{\Large \glsgetgrouptitle{##1}}\par\medskip % Titolo della lettera in grande
-        \addcontentsline{toc}{section}{\glsgetgrouptitle{##1}} % Aggiunge all'indice
         \item\par\noindent\hrule\par\medskip % Linea di separazione
     }%
 }
@@ -89,6 +88,8 @@
     \vspace{1cm}
 \end{titlepage}
 
+
+
 \newpage
 %------------------------Versioni
 \begin{center}
@@ -104,9 +105,6 @@
     \end{tabular}
 \end{center}
 %----------------
-\newpage
-
-\newpage
 
 \printglossary[style=myaltlistgroup,title=]
 
