@@ -34,10 +34,21 @@ jobs:
         run: ./compile.sh
       
       
+      - name: Check if branch is up to date
+        id: check_changes
+        run: |
+          git fetch
+          if [ -z "$(git diff origin/develop)" ]; then
+            echo "::set-output name=up_to_date::true"
+          else
+            echo "::set-output name=up_to_date::false"
+          fi
+
       - name: Add, commit and push changes
+        if: steps.check_changes.outputs.up_to_date == 'false'
         run: |
           git add .
-          git commit -m "Compile PDF [bot] "
+          git commit -m "Compile PDF [bot]"
           git push -f
         
       
