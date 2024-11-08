@@ -18,6 +18,7 @@ jobs:
           root_file: |
             ./templateC7C/slide.tex
             ./templateC7C/template.tex
+            ./templateC7C/template-verbali-nuovo/template-verbali.tex
             ./1_Candidatura/verbali_interni/verbale_24-10-25_v1.0.tex
             ./1_Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex
             ./1_Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex
@@ -37,6 +38,7 @@ jobs:
           path: |
             ./templateC7C/slide.pdf
             ./templateC7C/template.pdf
+            ./templateC7C/template-verbali-nuovo/template-verbali.pdf
             ./1_Candidatura/verbali_interni/verbale_24-10-25_v1.0.pdf
             ./1_Candidatura/verbali_interni/verbale_24-10-18_v1.0.pdf
             ./1_Candidatura/verbali_interni/verbale_24-10-15_v1.0.pdf
