@@ -4,59 +4,17 @@
 \input{packages}
 
 \linespread{1.2}
-\captionsetup[table]{labelformat=empty}
 \geometry{a4paper, margin=1in}
 
-\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand{\contentsname}{Indice}
 \renewcommand\familydefault{\sfdefault}
 
-\glstoctrue
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{}
 
-\makeglossaries
-
-% Definizioni delle voci
-%-----------------------TUTORIAL PER AGGIUNGERE VOCI-----------------------------------%
-%\newglossaryentry{NOME}{
-%    name=NOME, %IMPORTANTE NON MANCARE LA VIRGOLA
-%   description={METTERE QUI UNA DESCRIZIONE}
-%}
-%%-------------Inserire termini da qui
-\newglossaryentry{Glossario}{
-    name=Glossario,
-    description={Elenco strutturato di termini tecnici o specializzati, ognuno corredato dalla propria definizione o spiegazione. Questo strumento aiuta a migliorare la comunicazione tra le varie parti coinvolte in un progetto, riducendo le ambiguità e garantendo una comprensione condivisa dei termini utilizzati in un determinato contesto.}
-}
-
-\newglossaryentry{Norme di Progetto}{
-    name={Norme di Progetto},
-    description={Regole e linee guida stabilite all'interno di un progetto per garantire coerenza e qualità nelle attività svolte. Definiscono standard e procedure, come documentazione, gestione delle versioni e criteri di codifica, per assicurare uniformità nell'approccio e nel risultato finale.}
-}
-
-\newglossaryentry{Piano di Progetto}{
-    name={Piano di Progetto},
-    description={Documento formale che delinea in dettaglio la pianificazione, la esecuzione, il monitoraggio e il controllo di tutte le attività coinvolte nella realizzazione di un progetto. Questo documento fornisce una roadmap chiara e organizzata, comprensiva di obiettivi, risorse, scadenze e strategie di gestione dei rischi.}
-}
-
-\newglossaryentry{Piano di Qualifica}{
-    name={Piano di Qualifica},
-    description={Documento che stabilisce gli standard di qualità, i processi e le attività di testing che saranno implementati durante lo sviluppo di un progetto. Contiene una descrizione dettagliata delle strategie di testing, delle metriche di valutazione e dei criteri di accettazione del prodotto finale.}
-}
-
-\newglossarystyle{myaltlistgroup}{%
-    \setglossarystyle{altlistgroup}%
-    \renewcommand*{\glsgroupheading}[1]{%
-        \pagebreak%
-        \item\par\bigskip\textbf{\Large \glsgetgrouptitle{##1}}\par\medskip % Titolo della lettera in grande
-        \item\par\noindent\hrule\par\medskip % Linea di separazione
-    }%
-}
-
-
-\glsaddallunused
-%------------------------Inizio del documento--------------
 \begin{document}
 
-% Sezione del titolo
-\begin{titlepage}
+\begin{titlepage} 
 
     \AddToHookNext{shipout/background}{
     \begin{tikzpicture}[remember picture,overlay]
@@ -106,6 +64,43 @@
 \end{center}
 %----------------
 
-\printglossary[style=myaltlistgroup,title=]
+\newpage
+\tableofcontents
+\newpage
+
+% per mettere lettere
+% \section{Lettera}
+
+% entry di glossario
+% \subsection{Parola}
+% Entry glossatio
+
+% fine lettera 
+% \newpage
+
+\section{G}
+
+\subsection{Glossario}
+Elenco strutturato di termini tecnici o specializzati, ognuno corredato dalla propria definizione o spiegazione. Questo strumento aiuta a migliorare la comunicazione tra le varie parti coinvolte in un progetto, riducendo le ambiguità e garantendo una comprensione condivisa dei termini utilizzati in un determinato contesto.
+
+\newpage
+
+
+\section{N}
+
+\subsection{Norme di Progetto}
+Regole e linee guida stabilite all'interno di un progetto per garantire coerenza e qualità nelle attività svolte. Definiscono standard e procedure, come documentazione, gestione delle versioni e criteri di codifica, per assicurare uniformità nell'approccio e nel risultato finale.
+
+\newpage
+
+\section{P}
+
+\subsection{Piano di Progetto}
+Documento formale che delinea in dettaglio la pianificazione, la esecuzione, il monitoraggio e il controllo di tutte le attività coinvolte nella realizzazione di un progetto. Questo documento fornisce una roadmap chiara e organizzata, comprensiva di obiettivi, risorse, scadenze e strategie di gestione dei rischi.
+
+\subsection{Piano di Qualifica}
+Documento che stabilisce gli standard di qualità, i processi e le attività di testing che saranno implementati durante lo sviluppo di un progetto. Contiene una descrizione dettagliata delle strategie di testing, delle metriche di valutazione e dei criteri di accettazione del prodotto finale.  
+
+\newpage
 
 \end{document}
