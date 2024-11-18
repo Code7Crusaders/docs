@@ -13,6 +13,8 @@ pdf/**/*.tex
 **.glo
 **.gls
 **.ist
+**.lot
+**.lof
 **.fdb_latexmk
 **.synctex.gz
 **.vscode
