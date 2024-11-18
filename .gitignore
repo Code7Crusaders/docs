@@ -15,3 +15,4 @@ pdf/**/*.tex
 **.ist
 **.fdb_latexmk
 **.synctex.gz
+**.vscode

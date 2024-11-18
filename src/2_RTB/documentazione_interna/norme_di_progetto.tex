@@ -1,0 +1,94 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{a4paper, margin=1in}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+
+
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    \large \textbf{Norme Di Progetto}
+    \vspace{3.9cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+
+
+
+\newpage
+%------------------------Versioni
+\begin{center}
+    \textbf{Versioni}
+    \\
+    \vspace{0.3cm}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Ver} & \textbf{Data} & \textbf{Redattore} & \textbf{Verificatore} & \textbf{descrizione}\\
+        \hline
+        0.1 & 12/11/2024 & Matthew Pan &  & Prima stesura delle sezioni 1 e 2\\
+        \hline
+    \end{tabular}
+\end{center}
+%----------------
+
+
+\newpage
+%------------------------Indice
+\tableofcontents
+\listoftables
+\listoffigures
+
+
+\newpage
+%------------------------Introduzione
+\input{introduzione.tex}
+
+\newpage
+%------------------------Proecssi Primari
+\input{processi_primari.tex}
+
+\newpage
+%------------------------Proecssi di Supporto
+\input{processi_di_supporto.tex}
+
+\newpage
+%------------------------Proecssi organizzativi
+\input{processi_organizzativi.tex}
+
+
+
+\end{document}
