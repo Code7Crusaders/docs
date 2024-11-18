@@ -27,7 +27,10 @@ files=(
     "./src/templateC7C/slide.tex"
     "./src/templateC7C/template-verbali-nuovo/template-verbali.tex"
 
+
     "./src/2_RTB/documentazione_interna/glossario.tex"
+    "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"
+
     "./src/2_RTB/verbali_interni/verbale_24-11-04_v0.1.tex" 
 
 )
