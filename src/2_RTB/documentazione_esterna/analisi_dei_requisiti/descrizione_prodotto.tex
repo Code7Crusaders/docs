@@ -1,3 +1,33 @@
 \section{Descrizione del prodotto}
 
 \subsection{Obiettivi del prodotto}
+Il progetto ha come obiettivo la realizzazione di una piattaforma che consenta di 
+gestire un assistente virtuale per la conoscenza e la descrizione di bevande, 
+sfruttando un’infrastruttura basata su modelli linguistici di grandi dimensioni come BLOOM. 
+La piattaforma dovrà supportare le richieste degli utenti in modo rapido, 
+preciso e sempre disponibile, eliminando la necessità di uno specialista fisico. 
+Essa permetterà la consultazione di informazioni dettagliate su prodotti come caratteristiche, 
+formati disponibili e suggerimenti d’uso, adattandosi alle esigenze specifiche 
+dei clienti e garantendo un’interazione fluida in linguaggio naturale. 
+L’assistente virtuale sarà progettato per integrarsi con database aziendali, 
+sfruttando le informazioni esistenti per rispondere alle domande in modo 
+contestualizzato e accurato.
+
+\subsection{Funzionalità del prodotto}
+Il prodotto avrà il compito di interagire con i propri utenti attraverso una webapp, rispondendo a domande su cataloghi di bevande. Ogni risposta sarà generata in linguaggio naturale, elaborando i dati tramite BLOOM. Le funzionalità principali includono:
+\begin{itemize}
+    \item \textbf{Interfaccia utente interattiva}: consente agli utenti di porre domande sul catalogo (es. descrizione di un prodotto o disponibilità in magazzino) e di ricevere risposte immediate.
+    \item \textbf{Motore di ricerca intelligente}: utilizza un sistema di embedding per trovare corrispondenze semantiche tra le domande degli utenti e i dati aziendali, estrae il contesto dai dati aziendali per fornire all'LLM dati accurati da elaborare.
+    \item \textbf{Gestione dei dati}: accesso ai dettagli dei prodotti memorizzati in database relazionali, garantendo aggiornamenti in tempo reale. Costruzione di un database vettoriale per l'embedding delle parole.
+    \item \textbf{Personalizzazione tramite backend}: gli amministratori possono configurare risposte predefinite, monitorare l’utilizzo e migliorare il sistema tramite feedback utente.
+    \item \textbf{Apprendimento continuo}: il sistema evolve grazie ai feedback raccolti dagli utenti, migliorando la qualità delle risposte.
+    \item \textbf{Compatibilità multi-dispositivo}: la piattaforma è progettata per essere accessibile 24/7 da mobile e desktop.
+\end{itemize}
+
+Il prodotto garantirà inoltre scalabilità e flessibilità, adattandosi a un’ampia gamma di aziende che desiderano offrire ai propri clienti un’esperienza di interazione avanzata e intuitiva.
+
+\subsection{Utenti finali}
+Il prodotto è rivolto a aziende che desiderano offrire un servizio di assistenza 
+clienti automatizzato e personalizzato. Gli utenti finali sono quindi i clienti 
+delle aziende che interagiranno con l’assistente virtuale per ottenere 
+informazioni sui prodotti e ricevere supporto.
