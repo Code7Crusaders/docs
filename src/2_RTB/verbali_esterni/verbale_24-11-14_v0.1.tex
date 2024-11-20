@@ -1,0 +1,217 @@
+%%% INTRO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template sia per verbali interni che esterni
+% Segui i commenti "TODO" per ricordarti cosa modificare
+% In caso di verbali esterni ricordati di settare isEsterno ad 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\usepackage{graphicx}  % serve per inserire immagini
+\usepackage{fancyhdr}  % creazione header-footer
+\usepackage{tabularx}  % serve per creare tabelle con colonne a larghezza variabile
+\usepackage{ifthen}  % serve per mostrare cose diverse in base a condizioni
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+
+% TODO: setta a 1 se il verbale è esterno, 0 se è interno
+\newcommand{\isEsterno}{1}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Sezione del titolo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+        \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.center) {
+            \includegraphics{../../img/background.png}
+        };
+        \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % logo
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Incontro del 14/11/2024 con Ergon}}\\ % TODO: inserire titolo del verbale
+    \vspace{5cm}                           % esempio: Riunione Settimanale 04/11/2024
+    
+    
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Versioni %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    0.1 & 20/11/2024 & Lapenna Francesco & Nome Verificatore & Prima stesura del documento \\ 
+    \hline                                  % TODO: inserire data, nomi e descrizione
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Indice %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Registro Presenze %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} Piattaforma Zoom \\
+\textbf{Ora di Inizio} 15:00\\
+\textbf{Ora di Fine} 16:00\\  % TODO: inserire orari ed eventualmente piattaforma
+\\
+\begin{tabular}{|c|c|c|}  % TODO: inserire ruoli e presenze
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    Enrico Cotti Cottini & Verificatore & Presente \\ 
+    \hline
+    Gabriele Di Pietro & Responsabile & Presente\\ 
+    \hline
+    Tommaso Diviesti & Redattore & Presente \\ 
+    \hline 
+    Francesco Lapenna & Redattore& Presente \\ 
+    \hline
+    Matthew Pan & Verificatore & Presente\\ 
+    \hline 
+    Eddy Pinarello & Redattore & Presente \\ 
+    \hline 
+    Filippo Rizzolo & Amministratore& Presente \\ 
+    \hline 
+\end{tabular}
+% Presenze Rappresentanti Azienda %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \\
+    \newline
+    \newline
+    \begin{tabular}{|c|c|}  % TODO: eventualmente modificare nomi rappresentanti
+        \hline
+        \textbf{Nome} & \textbf{Ruolo}\\
+        \hline
+        Gianluca Carlesso & Rappresentante Azienda \\
+        \hline
+    \end{tabular}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Sezione Verbale %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Verbale}
+    % TODO: per ogni punto discusso / attività svolta
+    % inserire una sottosezione, sintesi ed eventuali decisioni
+
+    \subsection{Preferenza tra App Mobile o Web App}
+    \textbf{Domanda:} Preferite un'app mobile o va bene una web app? \\
+    \textbf{Discussione:} Sono state identificate due opzioni principali: Web app responsive e App mobile (consigliato l'uso di framework cross-platform come .NET MAUI).\\
+    \textbf{Conclusione:} L'azienda ha mostrato preferenza per soluzioni flessibili. È stato suggerito React come tecnologia per lo sviluppo web e, in alternativa, un’app Android se necessario.
+
+    \subsection{Richiesta di un Dataset di Esempio2}
+    \textbf{Domanda:} Potete fornire un dataset di esempio? \\
+    \textbf{Risposta:} Verrà fornito un database di bevande nei prossimi giorni.
+
+    \subsection{Hardware per Modelli LLM}
+    \textbf{Domanda:} Ci fornite una macchina per eseguire i modelli LLM? Quali specifiche hardware? \\
+    \textbf{Risposta:} L'azienda fornirà una macchina e il team di sviluppo potrà definire le specifiche hardware necessarie.
+
+    \subsection{Requisiti Utente e Software}
+    \textbf{Domanda:} Quali sono i requisiti utente e software? \\
+    \textbf{Risposta:} Per i requisiti obbligatori fare riferimento al capitolato. Requisiti opzionali: Inserire funzionalità che permettano all'utente di fornire feedback sulle risposte generate dal sistema.
+
+    \subsection{PoC}
+    \textbf{Domanda:} È sufficiente un'interfaccia da terminale che risponda per il PoC? \\
+    \textbf{Risposta:} Per la PoC è sufficiente una soluzione terminale che risponda alle domande. Una volta completata la logica del modello LLM, si procederà allo sviluppo dell’interfaccia grafica..
+
+    \subsection{Target di Riferimento}
+    \textbf{Domanda:} Chi è il target? \\
+    \textbf{Risposta:} Utenti finali non esperti, come proprietari di pub o ristoranti nel settore alimentare.
+    Attori coinvolti:
+    \begin{itemize}
+        \item L'azienda fornitrice che si interfaccia con la software house.
+        \item La software house che si interfaccia con gli utenti finali..
+    \end{itemize}
+
+    \subsection{Unit Testing per l'LLM}
+    \textbf{Domanda:} È necessario fare unit testing delle risposte dell'LLM? \\
+    \textbf{Risposta:} Non è possibile testare completamente le risposte dell'LLM con un altro modello. Verranno eseguiti test a livello umano per verificare la coerenza e la qualità delle risposte. L'LLM viene considerato un sistema "Black Box" poiché basato su modelli preaddestrati..
+
+    % ...
+
+    \subsection*{Conclusioni}  % TODO: inserire conclusioni della riunione
+    \textbf{Prossimi Passi:} 
+    \begin{enumerate}
+        \item Ricevere il database di esempio dall'azienda
+        \item Definire le specifiche hardware per la macchina dedicata all'LLM
+        \item Lavorare su una PoC con interazione via terminale.
+        \item Identificare un approccio per raccogliere feedback utenti sulle risposte.
+    \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Sezione Firme %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \begin{table}[b]
+        \begin{tabular}{@{}p{.5in}p{4in}@{}}
+            Data:  & \hrulefill \\
+                   &     		\\
+                   &     		\\
+            Firma: & \hrulefill \\
+        \end{tabular}
+        \end{table}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document} 
