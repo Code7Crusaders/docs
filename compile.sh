@@ -3,11 +3,11 @@
 
 files=(
 
-    "./src/1_Candidatura/DomandeProponenti/Domande_Proponenti.tex"
+    # "./src/1_Candidatura/DomandeProponenti/Domande_Proponenti.tex"
     
-    "./src/1_Candidatura/Lettera_di_Presentazione.tex"
-    "./src/1_Candidatura/Valutazione_Capitolati_v1.0.tex"
-    "./src/1_Candidatura/analisi_costi_assunzione_impegni_v1.0.tex"
+    # "./src/1_Candidatura/Lettera_di_Presentazione.tex"
+    # "./src/1_Candidatura/Valutazione_Capitolati_v1.0.tex"
+    # "./src/1_Candidatura/analisi_costi_assunzione_impegni_v1.0.tex"
 
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
     # "./Candidatura/verbali_esterni/verbale_24-10-18_ergon_v1.0.tex"
@@ -15,9 +15,9 @@ files=(
     # "./Candidatura/verbali_esterni/verbale_24-10-18_sanmarco_v1.0.tex"
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
 
-    "./src/1_Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex"
-    "./src/1_Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex"
-    "./src/1_Candidatura/verbali_interni/verbale_24-10-25_v1.0.tex"
+    # "./src/1_Candidatura/verbali_interni/verbale_24-10-18_v1.0.tex"
+    # "./src/1_Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex"
+    # "./src/1_Candidatura/verbali_interni/verbale_24-10-25_v1.0.tex"
 
     "./src/DiariDiBordo/Diario_18-11-2024.tex"
     "./src/DiariDiBordo/Diario_28-10-2024.tex"

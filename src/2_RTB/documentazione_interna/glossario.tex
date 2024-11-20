@@ -1,13 +1,19 @@
-\documentclass[italian,12pt]{article}
+\documentclass{article}
 
 \input{variables}
 \input{packages}
 
-\linespread{1.2}
+% Margini della pagina
 \geometry{a4paper, margin=1in}
 
-\renewcommand{\contentsname}{Indice}
-\renewcommand\familydefault{\sfdefault}
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
 
 \renewcommand{\thesection}{}
 \renewcommand{\thesubsection}{}
