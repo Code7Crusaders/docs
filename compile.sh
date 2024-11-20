@@ -36,7 +36,7 @@ files=(
     # "./src/2_RTB/documentazione_interna/glossario.tex"
     # "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"
 
-    "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti.tex"
+    "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.tex"
     
     # "./src/2_RTB/verbali_esterni/verbale_24-11-14_v0.1.tex"
 
