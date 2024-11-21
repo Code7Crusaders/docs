@@ -13,6 +13,15 @@ L’assistente virtuale sarà progettato per integrarsi con database aziendali,
 sfruttando le informazioni esistenti per rispondere alle domande in modo 
 contestualizzato e accurato.
 
+\subsection{Architettura del prodotto}
+Il prodotto sarà composto da quattro componenti principali:
+\begin{itemize}
+    \item \textbf{Embedding Model}: Che Prenderà in input dei blocchi di testo derivanti dai dati aziendali e li trasformerà in vettori numerici.
+    \item \textbf{Database Vettoriale}: Che conterrà i vettori numerici derivanti dall'Embedding Model, in modo da poterli confrontare con le domande degli utenti e fornire all'LLM il contesto giusto. 
+    \item \textbf{LLM}: Prenderà in input il contesto accurato e le domande alla quale rispondere, e genererà risposte in linguaggio naturale. 
+    \item \textbf{Web App}: Che permetterà agli utenti di interagire con l'assistente virtuale, porre domande e ricevere risposte in tempo reale. 
+\end{itemize}
+
 \subsection{Funzionalità del prodotto}
 Il prodotto avrà il compito di interagire con i propri utenti attraverso una webapp, rispondendo a domande su cataloghi di bevande. Ogni risposta sarà generata in linguaggio naturale, elaborando i dati tramite BLOOM. Le funzionalità principali includono:
 \begin{itemize}
