@@ -1,0 +1,30 @@
+Documento per raccogliere le User Stories ancora in WIP 
+con esempi su cui ragionare per creare diagrammi UML
+
+User Stories
+Utente: Cliente
+
+    - Come cliente, voglio poter chiedere informazioni su un prodotto, in modo da conoscere le sue caratteristiche senza dover consultare un esperto umano.
+    - Come cliente, voglio avere accesso a un assistente virtuale disponibile 24/7, in modo da ottenere risposte rapide e coerenti anche fuori orario lavorativo.
+    - Come cliente, voglio che l'assistente virtuale memorizzi le mie richieste passate, così che possa fornirmi risposte più personalizzate in futuro.
+    - Come cliente, voglio poter chiedere all'assistente se esistono versioni alternative di un prodotto (es. altri formati o gusti), così da valutare meglio la mia scelta.
+
+Utente: Specialist (Esperto del prodotto)
+
+    - Come specialist, voglio poter configurare le risposte dell'assistente virtuale, così che queste siano accurate e complete.
+    - Come specialist, voglio avere un'interfaccia per aggiungere o aggiornare le informazioni sui prodotti, così che l'assistente disponga sempre di dati aggiornati.
+
+Utente: Amministratore aziendale
+
+    - Come amministratore aziendale, voglio poter accedere a statistiche sull'utilizzo dell'assistente virtuale, in modo da analizzare le domande più frequenti e migliorare i prodotti o il servizio.
+    - Come amministratore aziendale, voglio garantire che l'assistente fornisca risposte sempre in linea con le normative legali e aziendali, in modo da evitare problemi di conformità.
+
+Utente: Sviluppatore del sistema
+
+    - Come sviluppatore, voglio utilizzare un database relazionale per memorizzare le informazioni sui prodotti, in modo da garantire l'efficienza e l'integrità dei dati.
+    - Come sviluppatore, voglio integrare un modello LLM come BLOOM, in modo da sfruttare le sue capacità di elaborazione del linguaggio naturale per rispondere alle domande degli utenti.
+    - Come sviluppatore, voglio progettare un'interfaccia mobile user-friendly, in modo che l'interazione tra il cliente e l'assistente sia intuitiva e semplice.
+
+Utente: Utente finale (Generico)
+
+    - Come utente, voglio ricevere feedback in caso di risposte incerte da parte dell'assistente, così da valutare e migliorare la qualità delle risposte future.
