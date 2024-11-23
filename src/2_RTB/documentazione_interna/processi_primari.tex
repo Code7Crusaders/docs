@@ -94,6 +94,129 @@ Di seguito sono elencati gli strumenti software utilizzati nel processo di forni
 
 \subsection{Sviluppo}
 \subsubsection{Introduzione}
-\subsubsection{Analisi dei Requisiti}
+\subsubsubsection{Analisi dei Requisiti}
+
+\subsubsubsubsection{Descrizione}
+Il documento di analisi dei requisiti ha l'obiettivo di identificare,
+descrivere e documentare in modo completo le necessità, 
+le funzionalità e le prestazioni che il sistema software deve garantire. 
+Questo rappresenta il fondamento del processo di sviluppo del software, 
+fornendo un riferimento chiaro e dettagliato per la progettazione.
+
+Attraverso questa attività, si mira a comprendere a fondo le esigenze degli stakeholder, 
+come utenti finali e clienti, assicurandosi che il prodotto software finale risponda 
+pienamente alle loro aspettative e necessità. L’analisi dei requisiti comprende 
+generalmente la raccolta e la documentazione dei requisiti funzionali, 
+qualitativi e vincolanti, la definizione dei casi d’uso, 
+nonché la prioritizzazione e la tracciabilità dei requisiti lungo tutto il ciclo
+di vita del software.
+
+\subsubsubsubsection{Documento}
+Gli analisti hanno il compito di redigere l’Analisi dei Requisiti, comprendendo le seguenti
+sezioni:
+
+\begin{itemize}
+    \item \textbf{Introduzione}:  
+    Presenta lo scopo del documento, fornendo una base per la progettazione, implementazione e verifica del sistema.
+
+    \item \textbf{Descrizione del prodotto}:  
+    \begin{itemize}
+        \item \textbf{Obiettivi del prodotto}: principali scopi operativi del sistema.
+        \item \textbf{Architettura del prodotto}: panoramica dei componenti e delle loro interazioni.
+        \item \textbf{Funzionalità del prodotto}: capacità operative principali.
+        \item \textbf{Caratteristiche degli utenti}: profili degli utenti e relative esigenze.
+    \end{itemize}
+
+    \item \textbf{Casi d’uso}:  
+    \begin{itemize}
+        \item \textbf{Elenco dei casi d’uso}: scenari principali che descrivono le funzionalità.
+    \end{itemize}
+
+    \item \textbf{Requisiti}:  
+    \begin{itemize}
+        \item \textbf{Requisiti funzionali}: operazioni e servizi che il sistema deve offrire.
+        \item \textbf{Requisiti qualitativi}: standard di qualità come prestazioni e usabilità.
+        \item \textbf{Requisiti di vincolo}: limitazioni esterne e tecniche.
+    \end{itemize}
+\end{itemize}
+
+
+\subsubsubsubsection{Codifica dei casi d'uso}
+I casi d'uso sono codificati utilizzando la seguente notazione:
+
+\begin{itemize}
+    \item \textbf{UC[ID-Principale][ID-Sottocaso]}: Identificativo univoco del caso d'uso, composto da un ID principale che identifica il caso principale e, se necessario, da un ID del sottocaso.
+    \item \textbf{Titolo}: Breve descrizione del caso d'uso.
+    \item \textbf{Attori}: Elenco degli attori coinvolti nel caso d'uso.
+    \item \textbf{Precondizioni}: Condizioni che devono essere vere prima che il caso d'uso possa iniziare.
+    \item \textbf{Postcondizioni}: Condizioni che devono essere vere dopo che il caso d'uso è stato completato con successo.
+    \item \textbf{Scenario principale}: Descrizione dettagliata del flusso di eventi principale del caso d'uso.
+    \item \textbf{Generalizzaioni}: Eventuali casi d'uso generalizzati.
+    \item \textbf{Estensioni}: Eventuali casi d'uso estesi.
+\end{itemize}
+
+\subsubsubsubsection{Diagrammi Casi D'uso}
+I diagrammi dei casi d’uso rappresentano visivamente le interazioni tra attori e sistema,
+illustrando i vari scenari di utilizzo. Ogni caso d’uso descrive una sequenza di 
+azioni necessarie per raggiungere un obiettivo specifico, aiutando a identificare i 
+requisiti funzionali e a chiarire le aspettative degli utenti. Questi diagrammi 
+facilitano la comunicazione tra sviluppatori e stakeholder, garantendo che tutte le 
+funzionalità richieste siano considerate e implementate correttamente. 
+Di seguito sono elencati i principali componenti di un diagramma dei casi d’uso.
+
+\begin{itemize}
+    \item \textbf{Attori}: 
+    \item \textbf{Sistema}: 
+    \item \textbf{Casi d’uso}:
+    \item \textbf{Sottocasi d’uso}: 
+    \item \textbf{Relazioni tra Attori e Casi d’Uso}:
+    \item \textbf{Relazioni tra Attori}:
+    \item \textbf{Relazioni tra Casi d’Uso}:
+\end{itemize}
+
+\subsubsubsubsection{Requisiti}
+
+I requisiti sono classificati in tre categorie principali:  
+\begin{itemize}
+    \item \textbf{Funzionali}: riguardano l'usabilità del prodotto finale;  
+    \item \textbf{Di qualità}: includono gli strumenti e la documentazione da fornire;  
+    \item \textbf{Di vincolo}: fanno riferimento alle tecnologie da utilizzare.
+\end{itemize}
+Ciascun requisito è indicato da:
+\begin{itemize}
+    \item \textbf{Codice Identificativo}: codice univoco che identifica il requisito;
+    \item \textbf{Descrizione}: breve spiegazione del requisito;
+    \item \textbf{Fonte}: origine del requisito (es. capitolato, interno, ecc..);
+    \item \textbf{Priorità}: importanza del requisito rispetto agli altri;
+\end{itemize} 
+
+\subsubsubsubsubsection{Fonti dei requisiti}
+I requisiti sono stati identificati a partire dalle seguenti fonti:
+\begin{itemize}
+    \item \textbf{Capitolato}: Requisiti individuati tramite analisi del capitolato;
+    \item \textbf{interno}: requisiti individuati durante riunioni interne al gruppo di lavoro;
+    \item \textbf{Esterno}: requisiti individuati durante incontri con il proponente;
+    \item \textbf{Piano di Qualifica}: Requisiti necessari per rispettare standard di qualità definiti nel documento Piano di Qualifica;
+    \item \textbf{Norme di Progetto}: Requisiti necessari per rispettare le norme di progetto definite nel documento Norme di Progetto;
+\end{itemize}
+
+\subsubsubsubsubsection{Codifica dei requisiti}
+I requisiti sono codificati come segue: \textbf{R[Tipo][Importanza][Numero]}
+\newline
+Dove \textbf{Tipo} può essere:
+\begin{itemize}
+    \item \textbf{F (funzionale)}
+    \item \textbf{Q (di qualità)}
+    \item \textbf{V (di vincolo)}
+\end{itemize}
+\textbf{Importanza} può essere:
+\begin{itemize}
+    \item \textbf{O (obbligatorio)}
+    \item \textbf{D (desiderabile)}
+    \item \textbf{F (facoltativo )}
+\end{itemize}
+\textbf{Numero} è un numero identificativo univoco del requisito.
+
+
 \subsubsection{Progettazione}
 \subsubsection{Codifica}
