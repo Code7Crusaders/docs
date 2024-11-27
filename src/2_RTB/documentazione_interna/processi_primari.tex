@@ -238,13 +238,114 @@ funzionalità richieste siano considerate e implementate correttamente.
 Di seguito sono elencati i principali componenti di un diagramma dei casi d’uso.
 
 \begin{itemize}
-    \item \textbf{Attori}: 
-    \item \textbf{Sistema}: 
-    \item \textbf{Casi d’uso}:
-    \item \textbf{Sottocasi d’uso}: 
-    \item \textbf{Relazioni tra Attori e Casi d’Uso}:
+    \item \textbf{Attori}: I soggetti che interagiscono con il sistema, rappresentati come uomini stilizzati possono essere persone, altri applicativi o dispositivi che utilizzano le funzionalità del sistema. \ref{fig:attore}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../../img/Attore.png}
+    \caption{Esempio di attore}
+    \label{fig:attore}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Sistema}: Indica il contesto del sistema software, indicando funzionalità interne al contesto definito. \ref{fig:sistema} 
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../../img/sistema.png}
+    \caption{Esempio di sistema}
+    \label{fig:sistema}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Casi d’uso}: funzionalità offerte dal sistema che soddisfano le necessità di un Attore. Ogni caso d’uso descrive una sequenza specifica di interazioni tra gli attori e il sistema. \ref{fig:caso_uso}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../../img/CasoUso.png}
+    \caption{Esempio di caso d'uso}
+    \label{fig:caso_uso}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Sottocasi d’uso}: Scenari specifici che si verificano all'interno del caso d’uso principale. \ref{fig:sottocaso_uso}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../../img/Sottocasouso.png}
+    \caption{Esempio di sottocaso d'uso}
+    \label{fig:sottocaso_uso}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Relazioni tra Attori e Casi d’Uso}: 
+    \begin{itemize}
+        \item \textbf{Associazione}: Collegamento tra un attore e un caso d’uso, indicando che l’attore è coinvolto nel caso d’uso. \ref{fig:associazione}
+    \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../../img/associazione.png}
+    \caption{Esempio di associazione}
+    \label{fig:associazione}
+\end{figure}
+
+\begin{itemize}
     \item \textbf{Relazioni tra Attori}:
+    \begin{itemize}
+        \item \textbf{Generalizzazione}: Un attore eredita le funzionalità di un altro attore. Una relazione padre figlio dove il figlio eredita almeno una funzionalità del padre. Utilizzata nel caso in cui due attori condividano funzionalità. \ref{fig:generalizzazione_casiuso}
+    \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../../img/Generalizzazione_casiuso.png}
+    \caption{Esempio di Generalizzaione casi d'uso}
+    \label{fig:generalizzazione_casiuso}
+\end{figure}
+
+\begin{itemize}
     \item \textbf{Relazioni tra Casi d’Uso}:
+    \begin{itemize}
+        \item \textbf{Inclusione}: Indica che un caso d’uso include un altro caso d’uso. Questo significa che durante l'esecuzione di un caso d'uso si eseguono anche i casi d'uso inclusi. Questo per evitare la ripetizione di funzionalità uguali in più casi d'uso. \ref{fig:inclusione}
+    \end{itemize}
+    
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics{../../img/include.png}
+        \caption{Esempio di inclusione}
+        \label{fig:inclusione}
+    \end{figure}
+
+    
+    \begin{itemize}
+        \item \textbf{Estensione}: Un caso d'uso esteso aggiunge funzionalità al caso d'uso principale, ma viene attivato solo in specifiche circostanze. Quando ciò accade, il flusso del caso d'uso principale si interrompe temporaneamente per consentire l'esecuzione del caso d'uso esteso. \ref{fig:estensione}
+    \end{itemize}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics{../../img/estensione.png}
+        \caption{Esempio di estensione}
+        \label{fig:estensione}
+    \end{figure}
+    
+    \begin{itemize}
+        \item \textbf{Generalizzazione}: Un caso d'uso eredita le funzionalità di un altro caso d'uso. Una relazione padre figlio dove il figlio eredita almeno una funzionalità del padre. Utilizzata nel caso in cui due casi d'uso condividano funzionalità. \ref{fig:generalizzazione_attore}
+    \end{itemize}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics{../../img/Generalizzazione_Attori.png}
+        \caption{Esempio di Generalizzaione attore}
+        \label{fig:generalizzazione_attore}
+    \end{figure}
+
 \end{itemize}
 
 \subsubsubsection{Requisiti}
