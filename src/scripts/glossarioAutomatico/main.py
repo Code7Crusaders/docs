@@ -43,9 +43,16 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
         with open(percorso_file, "r", encoding="utf-8") as file:
             contenuto = file.readlines()
 
+        # Pattern per identificare i comandi \subsection{}, \subsubsection{}, ecc.
+        pattern_sezioni = r"\\(subsection|subsubsection|subsubsubsection|subsubsubsubsection|section|chapter|paragraph)\{.*?\}"
+
         for i, riga in enumerate(contenuto):
             nuova_riga = ""
             ultimo_indice = 0
+
+            # Se la riga è una sezione, la saltiamo
+            if re.match(pattern_sezioni, riga):
+                continue
 
             href_matches = list(re.finditer(r"\\href\{[^}]+\}\{[^}]+\}", riga))
 
@@ -55,6 +62,7 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
                 for match in re.finditer(pattern, riga):
                     start, end = match.span()
 
+                    # Verifica che la parola non sia già in un hyperlink
                     if any(href_match.start() <= start < href_match.end() for href_match in href_matches):
                         continue
 
@@ -76,6 +84,7 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
         print(f"Hyperlink aggiunti correttamente nel file {percorso_file}.")
     except FileNotFoundError:
         print(f"Errore: Il file {percorso_file} non esiste.")
+
 
 # MAIN
 
