@@ -43,18 +43,18 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
         with open(percorso_file, "r", encoding="utf-8") as file:
             contenuto = file.readlines()
 
-        # Pattern per identificare i comandi \subsection{}, \subsubsection{}, ecc.
         pattern_sezioni = r"\\(subsection|subsubsection|subsubsubsection|subsubsubsubsection|section|chapter|paragraph)\{.*?\}"
+        pattern_url = r"\\url\{[^}]+\}"  
 
         for i, riga in enumerate(contenuto):
             nuova_riga = ""
             ultimo_indice = 0
 
-            # Se la riga è una sezione, la saltiamo
             if re.match(pattern_sezioni, riga):
                 continue
 
             href_matches = list(re.finditer(r"\\href\{[^}]+\}\{[^}]+\}", riga))
+            url_matches = list(re.finditer(pattern_url, riga))
 
             for parola, link in hashmap.items():
                 pattern = rf"(\\(?:textbf|emph|textit|texttt|textsf|underline){{)?{re.escape(parola)}(\}})?"
@@ -62,8 +62,8 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
                 for match in re.finditer(pattern, riga):
                     start, end = match.span()
 
-                    # Verifica che la parola non sia già in un hyperlink
-                    if any(href_match.start() <= start < href_match.end() for href_match in href_matches):
+                    if any(href_match.start() <= start < href_match.end() for href_match in href_matches) or \
+                       any(url_match.start() <= start < url_match.end() for url_match in url_matches):
                         continue
 
                     nuova_riga += riga[ultimo_indice:start]
@@ -84,8 +84,6 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
         print(f"Hyperlink aggiunti correttamente nel file {percorso_file}.")
     except FileNotFoundError:
         print(f"Errore: Il file {percorso_file} non esiste.")
-
-
 # MAIN
 
 percorso_glossario = "glossario.tex"
@@ -94,3 +92,4 @@ print(hashmap)
 if hashmap:
     percorso_file_modificare = "analisi_costi_assunzione_impegni_v1.0.tex"  
     aggiungi_stile_hyperlink_latex(percorso_file_modificare, hashmap)
+
