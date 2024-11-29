@@ -86,10 +86,10 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
         print(f"Errore: Il file {percorso_file} non esiste.")
 # MAIN
 
-percorso_glossario = "glossario.tex"
+percorso_glossario = "../../2_RTB/documentazione_interna/glossario.tex"
 hashmap = crea_hashmap_glossario(percorso_glossario)
 print(hashmap)
 if hashmap:
-    percorso_file_modificare = "analisi_costi_assunzione_impegni_v1.0.tex"  
+    percorso_file_modificare = ".path_to_file/file_latex.tex" # Inserire il percorso del file da modificare
     aggiungi_stile_hyperlink_latex(percorso_file_modificare, hashmap)
 
