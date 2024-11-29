@@ -20,7 +20,7 @@
 \usepackage[hidelinks]{hyperref}
 
 % TODO: setta a 1 se il verbale è esterno, 0 se è interno
-\newcommand{\isEsterno}{1}
+\newcommand{\isEsterno}{0}
 
 % Margini della pagina
 \geometry{a4paper, margin=1in}
@@ -61,8 +61,8 @@
     {\Large Software Development Team}\\
     \vspace{2cm}
     
-    {\large \textbf{Titolo del Verbale}}\\ % TODO: inserire titolo del verbale
-    \vspace{5cm}                           % esempio: Riunione Settimanale 04/11/2024
+    {\large \textbf{Riunione Settimanale 29/11/2024}}\\ 
+    \vspace{5cm}                           
     
     
     \textbf{Membri del Team:}\\
@@ -82,12 +82,12 @@
 \centering
 \textbf{Versioni} \\ % Titolo sopra la tabella
 \vspace{2mm} % Spazio tra il titolo e la tabella
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|>{\raggedright\arraybackslash}p{0.3\textwidth}|}
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
     \hline
-    0.1 & DD/MM/YYYY & Nome Autore & Nome Verificatore & Prima stesura del documento \\ 
-    \hline                                  % TODO: inserire data, nomi e descrizione
+    1.0 & 29/11/2024 & Enrico Cotti Cottini &  & Stesura verbale Analisi Retrospettiva e Decisione Prese, Pianificazione \\ 
+    \hline                                  
 \end{tabular}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,26 +105,26 @@
 \newpage
 \section{Registro Presenze}
 \textbf{Piattaforma della riunione:} Piattaforma Discord \\
-\textbf{Ora di Inizio} hh:mm\\
-\textbf{Ora di Fine} hh:mm\\  % TODO: inserire orari ed eventualmente piattaforma
+\textbf{14:00} hh:mm\\
+\textbf{15:00} hh:mm\\  % TODO: inserire orari ed eventualmente piattaforma   						
 \\
 \begin{tabular}{|c|c|c|}  % TODO: inserire ruoli e presenze
     \hline
     \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
     \hline
-    Enrico Cotti Cottini & Responsabile & Presente \\ 
+    Enrico Cotti Cottini & Verificatore & Presente \\ 
     \hline
-    Gabriele Di Pietro & Redattore & Presente\\ 
+    Gabriele Di Pietro & Analista & Presente\\ 
     \hline
-    Tommaso Diviesti & Redattore & Presente \\ 
+    Tommaso Diviesti & Amministratore & Presente \\ 
     \hline 
-    Francesco Lapenna & Redattore& Presente \\ 
+    Francesco Lapenna & Programmatore & Presente \\ 
     \hline
     Matthew Pan & Verificatore & Presente\\ 
     \hline 
-    Eddy Pinarello & Redattore & Presente \\ 
+    Eddy Pinarello & Progettista & Presente \\ 
     \hline 
-    Filippo Rizzolo & Amministratore& Presente \\ 
+    Filippo Rizzolo & Responsabile & Assente \\ 
     \hline 
 \end{tabular}
 % Presenze Rappresentanti Azienda %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,24 +147,51 @@
 
 
 
+
 % Sezione Verbale %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Verbale}
+\section{Verbale Retrospettiva}
     % TODO: per ogni punto discusso / attività svolta
     % inserire una sottosezione, sintesi ed eventuali decisioni
 
-    \subsection{Attività 1}
-    \textbf{Sintesi:} Sintesi attività 1. \\
-    \textbf{Decisioni:} Decisioni attività 1.
+    \subsection{Automatizzazione link Glossario pdf}
+    \textbf{Sintesi:} Avevamo la necessità di trovare un modo immediato per fornire le definizioni delle parole del glossario presenti in qualsiasi documento. Abbiamo risolto tramite la creazione di uno script in Python che sostituisce ogni occorrenza di una parola del glossario con un link che punta alla sua definizione presente sul glossario del sito dei Code7Crusaders (\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html}{\textbf{Glossario}}). \\
+    \textbf{Difficoltà:} Abbiamo riscontrato qualche problema nell'utilizzo di questo metodo come ad esempio alcune eccezzioni non gestite. \\
+    \textbf{Decisioni:} Tutto sommato il sistema funziona bene e ci permette di risparmiare tempo e fatica, in futuro pianifichiamo di migliorare la gestione delle eccezzioni, ma per ora possiamo considerare il problema risolto. 
 
-    \subsection{Attività 2}
-    \textbf{Sintesi:} Sintesi attività 2. \\
-    \textbf{Decisioni:} Decisioni attività 2.
+    \subsection{Diagramma dei Casi Uso e user stories}
+    \textbf{Sintesi:} Dopo alcune discussioni con l'azienda e tramite analisi del capitolato, abbiamo individuato i casi d'uso e le user stories principali su cui basarci per costruire il diagramma dei casi d'uso. \\
+    \textbf{Decisioni:} Abbiamo deciso di utilizzare il software \textbf{draw.io} per la creazione del diagramma dei casi d'uso e user stories abbiamo condiviso tutto il materiale sul nostro Google Drive interno.
 
+    \subsection{Norme di Progetto}
+    \textbf{Sintesi:} Abbiamo ampliato le norme di progetto con nuove regole riguardanti la stesura dei documenti, incluse le regole e codifiche per la redazione dei casi d'uso all'interno dell'analisi dei requisiti. \\
+    \textbf{Decisioni:} Ci siamo accordati per decidere alcune norme riguardanti la stesura dei documenti come codifiche analisi e altro.
+    
+    \subsection{Piano di Progetto}
+    \textbf{Sintesi:} Abbiamo iniziato ad analizzare i requisiti necessari per la redazione del piano di progetto che svilupperemo più corposamente nelle prossime settimane. \\
+    \textbf{Decisioni:} Nessuna decisione particolare presa.
+
+    \subsection{Prima Bozza di Architettura del Software e Tecnologie Utilizzate}
+    \textbf{Sintesi:} Durante l'analisi dei requisiti, abbiamo iniziato a delineare una prima bozza dell'architettura del software e delle tecnologie che utilizzeremo. Questo ha reso necessario un approfondimento su alcune tecnologie candidate. \\
+    \textbf{Decisioni:} Vista la necessità di approfondire alcune tecnologie, abbiamo deciso di dedicare del tempo allo studio e alla sperimentazione di queste ultime. In particolare, abbiamo realizzato un prototipo di un sistema di interrogazione basato su BLOOM eseguito in locale. Da questa esperienza, abbiamo concluso che la realizzazione con questo tipo di modello è fattibile, ma richiede ulteriori approfondimenti su modelli accessibili tramite API esterne (ad esempio GPT di OpenAI), a causa degli elevati requisiti hardware richiesti per eseguire BLOOM.
+    
     % ...
 
-    \subsection*{Conclusioni}  % TODO: inserire conclusioni della riunione
-    Prossima riunione pianificata per il \textbf{D° Month YYYY}.
+    \subsection*{Conclusioni e Pianificazione} 
+    \textbf{Conclusioni:} Durante la riunione, abbiamo raggiunto diversi obiettivi, tra cui la creazione di uno script per automatizzare i link del glossario, l'elaborazione di user stories e casi d'uso principali, e la definizione di una prima bozza dell'architettura del software. Inoltre, abbiamo ampliato le norme di progetto e iniziato a strutturare il piano di progetto. Nonostante alcune difficoltà tecniche, come la gestione delle eccezioni nello script Python, il lavoro complessivo è stato positivo e ha posto le basi per sviluppi futuri.
+
+    \textbf{Pianificazione per la prossima settimana:} 
+    \begin{itemize}
+        \item Migliorare la gestione delle eccezioni nello script Python per i link del glossario.
+        \item Contattare l'azienda per verificare se i casi d'uso individuati soddisfano le loro esigenze.
+        \item Contattare il Professor Cardin per analizzare la correttezza dei casi d'uso e.
+        \item Completare (eventualmente correggere) il diagramma dei casi d'uso e consolidare le user stories, una volta approvati, ricavare i requisiti dai casi d'uso.
+        \item Continuare a lavorare sulle norme di progetto e sul piano di progetto, aggiungendo ulteriori dettagli.
+        \item Analizzare il caso OpenAI per valutare se è più adatto rispetto ad altre soluzioni, considerando i requisiti specifici del nostro progetto.
+    \end{itemize}
+
+    La prossima riunione è pianificata per il \textbf{06 12 2024}, con l'obiettivo di analizzare i progressi ottenuti e pianificare i prossimi passi.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
