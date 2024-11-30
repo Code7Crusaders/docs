@@ -1,0 +1,342 @@
+%%% Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\usepackage{graphicx}  % serve per inserire immagini
+\usepackage{fancyhdr}  % creazione header-footer
+\usepackage{tabularx}  % serve per creare tabelle con colonne a larghezza variabile
+\usepackage{ifthen}  % serve per mostrare cose diverse in base a condizioni
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{pgfgantt}  % per i diagrammi di Gantt
+
+% setta a 1 se il verbale è esterno, 0 se è interno
+\newcommand{\isEsterno}{1}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Sezione del titolo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+        \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.center) {
+            \includegraphics{../../img/background.png}
+        };
+        \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % logo
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Piano di Progetto}}\\
+    \vspace{5cm}
+    
+    
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Versioni %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    0.1 & 29/11/2024 & Lapenna Francesco & Nome Verificatore & Prima stesura del documento \\ 
+    \hline
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Indice %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Sezione Introduzione %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Introduzione}
+
+    \subsection{Scopo del documento}
+    Questo documento ha lo scopo di fornire una guida dettagliata e strutturata su come 
+    il progetto verrò eseguito e gestito. In particolare, verrano trattati i seguenti 
+    argomenti:
+    \begin{itemize}
+        \item analisi dei rischi;
+        \item risorse necessarie;
+        \item suddivisione dei ruoli;
+        \item stime dei costi;
+        \item modello di sviluppo adottato;
+    \end{itemize}
+
+    \subsection{Glossario}
+    % TODO
+
+    \subsection{Riferimenti}
+    % TODO
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Analisi del Capitolato %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analisi del Capitolato}
+    \subsection{Obbiettivi del progetto}
+    \begin{itemize}
+        \item Realizzare un Assistente Virtuale che supporti i clienti nella ricerca 
+        di informazioni sui prodotti disponibili in catalogo.
+        \item Automatizzare le risposte alle domande più frequenti, migliorando 
+        l'efficienza del servizio clienti.
+        \item Integrare un modello LLM esistente per garantire risposte accurate e 
+        un'interfaccia user-friendly.
+    \end{itemize}
+
+    \subsection{Ambito del Progetto}
+        \subsubsection{Inclusioni}
+        \begin{itemize}
+            \item Database relazionale per la gestione dei dati sui prodotti.
+            \item Integrazione di un modello LLM tramite API.
+            \item Interfaccia utente mobile per l'interazione con l'IA.
+            \item Funzionalità di configurazione backend per template di domande e risposte.
+        \end{itemize}
+        \subsubsection{Esclusioni}
+        \begin{itemize}
+            \item Creazione di un nuovo modello LLM.
+            \item Supporto a lingue non previste dal modello LLM scelto.
+        \end{itemize}
+
+    \subsection{Tecnologie e Strumenti Consigliati}
+    \begin{itemize}
+        \item \textbf{Database}: MySQL o PostgreSQL.
+        \item \textbf{LLM}: BLOOM o Italia by iGenius, in base alle prestazioni richieste.
+        \item \textbf{Backend}: Node.js con Express.js o .NET.
+        \item \textbf{Frontend}: .NET MAUI per applicazioni mobile multipiattaforma.
+        \item \textbf{API REST}: Per la comunicazione tra LLM e interfaccia utente.
+        \item \textbf{Controllo Versione}: Git (GitHub per repository pubblico).
+    \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Pianificazione %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Pianificazione}
+    \subsection{Struttura del Team}
+        \subsubsection{Ruoli (da sistemare !!!)}
+        \begin{itemize}
+            \item \textbf{Project Manager}: Coordinazione generale.
+            \item \textbf{Data Engineer}: Gestione del database e pre-processing dei dati.
+            \item \textbf{Sviluppatore Backend}: Implementazione delle API REST e configurazione della piattaforma.
+            \item \textbf{Sviluppatore Frontend}: Creazione dell’interfaccia utente.
+            \item \textbf{Esperto LLM}: Selezione e integrazione del modello linguistico.
+            \item \textbf{Tester}: Validazione e verifica delle funzionalità.
+        \end{itemize}
+        \subsubsection{Stakeholder}
+        \begin{itemize}
+            \item \textbf{Cliente}: Ergon Informatica Srl.
+            \item \textbf{Referente interno}: Gianluca Carlesso.
+        \end{itemize}
+
+    \subsection{Budget e Risorse}
+    \begin{itemize}
+        \item Stima delle ore/uomo per ogni fase.
+        \item Allocazione hardware: server per database e API, risorse cloud per il modello LLM.
+        \item Licenze software e costi del modello LLM (se applicabile).
+    \end{itemize}
+
+    \subsection{Rischi e Mitigazioni}
+    \begin{itemize}
+        \item \textbf{Rischio}: Prestazioni del modello LLM inferiori alle aspettative.
+        \begin{itemize}
+            \item \textbf{Mitigazione}: Test preliminari con più modelli per selezionare quello ottimale.
+        \end{itemize}
+        \item \textbf{Rischio}: Complessità nell'integrazione tra LLM e database.
+        \begin{itemize}
+            \item \textbf{Mitigazione}: Utilizzo di middleware standardizzato.
+        \end{itemize}
+        \item \textbf{Rischio}: Problemi di usabilità nell'interfaccia utente.
+        \begin{itemize}
+            \item \textbf{Mitigazione}: Coinvolgimento degli utenti in fase di test.
+        \end{itemize}
+    \end{itemize}
+
+    \subsection{Piano di Comunicazione}
+    \begin{itemize}
+        \item Riunioni settimanali con il team.
+        \item Report di avanzamento per il referente aziendale ogni 2 settimane.
+        \item Feedback continuo attraverso test intermedi.
+    \end{itemize}
+
+    \subsection{Pianificazione delle Attività}
+        Il gruppo Code7Crusaders 
+        si impegna a consegnare il progetto entro il 14/03/2025. La pianificazione prevede 
+        19 settimane di lavoro, suddivise come segue:
+        \begin{itemize}
+            \item \textbf{PoC (\textit{Proof of Concept}): 6 settimane}
+            \item \textbf{MVP (\textit{Minimum Viable Product}): 13 settimane}
+        \end{itemize}
+
+        \subsubsection{Fasi principali}
+        \begin{enumerate}
+            \item \textbf{Analisi dei requisiti} (2 settimane):
+            \begin{itemize}
+                \item Revisione del capitolato.
+                \item Identificazione delle tecnologie e dei modelli LLM adatti.
+            \end{itemize}
+            \item \textbf{Progettazione} (2 settimane):
+            \begin{itemize}
+                \item Progettazione architetturale.
+                \item Definizione dello schema del database.
+            \end{itemize}
+            \item \textbf{Sviluppo Backend} (4 settimane):
+            \begin{itemize}
+                \item Configurazione del database.
+                \item Implementazione delle API REST.
+            \end{itemize}
+            \item \textbf{Integrazione LLM} (3 settimane):
+            \begin{itemize}
+                \item Pre-processing dei dati e integrazione del modello LLM.
+            \end{itemize}
+            \item \textbf{Sviluppo Frontend} (4 settimane):
+            \begin{itemize}
+                \item Creazione dell'interfaccia utente mobile.
+            \end{itemize}
+            \item \textbf{Test e validazione} (2 settimane):
+            \begin{itemize}
+                \item Test funzionali e di usabilità.
+            \end{itemize}
+            \item \textbf{Rilascio e documentazione} (2 settimane).
+        \end{enumerate}
+
+    \subsection{Cronoprogramma}
+    % Diagramma di Gantt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \resizebox{\textwidth}{!}{ % Scales the chart to fit the text width
+        \begin{ganttchart}[
+            hgrid, vgrid, % Adds grid lines
+            x unit=1.1cm, % Adjust the width of each time slot
+            title/.append style={draw=black, thick, fill=red!20, line width=1pt, draw opacity=1},
+            bar/.append style={fill=red!50}, % Custom bar styling
+            milestone/.append style={fill=red!70}, % Milestone style
+            ]{1}{19} % Timeline from week 1 to week 19
+            \gantttitle{Project Plan (Weeks)}{19} \\ % Title spanning 19 weeks
+            \gantttitle{Novembre 2024}{4}
+            \gantttitle{Dicembre 2024}{5}
+            \gantttitle{Gennaio 2025}{4}
+            \gantttitle{Febbraio 2025}{4}
+            \gantttitle{Marzo 2025}{2}
+            \\
+            \gantttitle{4 nov}{1}  % TODO: decidere cosa tenere tra i titoli
+            \gantttitle{11 nov}{1}
+            \gantttitle{18 nov}{1}
+            \gantttitle{25 nov}{1}
+            \gantttitle{2 dic}{1}
+            \gantttitle{9 dic}{1}
+            \gantttitle{16 dic}{1}
+            \gantttitle{23 dic}{1}
+            \gantttitle{30 dic}{1}
+            \gantttitle{6 gen}{1}
+            \gantttitle{13 gen}{1}
+            \gantttitle{20 gen}{1}
+            \gantttitle{27 gen}{1}
+            \gantttitle{3 feb}{1}
+            \gantttitle{10 feb}{1}
+            \gantttitle{17 feb}{1}
+            \gantttitle{24 feb}{1}
+            \gantttitle{3 mar}{1}
+            \gantttitle{10 mar}{1} \\
+            \gantttitlelist{1,...,19}{1} \\ % Weekly columns
+            
+            % Define groups and tasks
+            \ganttgroup{Sviluppo PoC}{1}{6} \\
+            \ganttmilestone{RTB}{6} \\
+            \ganttgroup{Sviluppo MVP}{7}{19} \\
+            \ganttmilestone{MVP}{19} \\
+
+            \ganttbar{Analisi dei requisiti}{1}{2} \\
+            \ganttbar{Progettazione}{3}{4} \\
+            \ganttbar{Sviluppo backend}{5}{8} \\
+            \ganttbar{Integrazione LLM}{9}{11} \\
+            \ganttbar{Sviluppo frontend}{12}{15} \\
+            \ganttbar{Test e validazione}{16}{17} \\
+            \ganttbar{Rilascio e documentazione}{18}{19} \\
+
+            \ganttlink{elem4}{elem5}  % TODO: decidere se tenere o togliere i link
+            \ganttlink{elem5}{elem6}
+            \ganttlink{elem6}{elem7}
+            \ganttlink{elem7}{elem8}
+            \ganttlink{elem8}{elem9}
+            \ganttlink{elem9}{elem10}
+        
+        \end{ganttchart}
+    }
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \subsection{Preventivo}
+    Visti e considerati i precedenti punti, il preventivo del progetto viene calcolato 
+    pari a €12.805,00.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Documentazione}  % TODO: vedere se tenere
+\begin{itemize}
+    \item \textbf{Da consegnare}:
+    \begin{itemize}
+        \item Schema architetturale.  % TODO: riferimenti ad altri documenti?
+        \item Progettazione del database.
+        \item Manuale per l'utilizzo della piattaforma.
+        \item Codice sorgente e repository Git.
+    \end{itemize}
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gestione del modello e sprint}
+    \subsection{Modello adottato e motivazioni}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document} 
