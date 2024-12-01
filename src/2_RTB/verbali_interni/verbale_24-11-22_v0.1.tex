@@ -1,0 +1,229 @@
+ %%% INTRO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template sia per verbali interni che esterni
+% Segui i commenti "TODO" per ricordarti cosa modificare
+% In caso di verbali esterni ricordati di settare isEsterno ad 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\usepackage{graphicx}  % serve per inserire immagini
+\usepackage{fancyhdr}  % creazione header-footer
+\usepackage{tabularx}  % serve per creare tabelle con colonne a larghezza variabile
+\usepackage{ifthen}  % serve per mostrare cose diverse in base a condizioni
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+
+% TODO: setta a 1 se il verbale è esterno, 0 se è interno
+\newcommand{\isEsterno}{0}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Sezione del titolo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+        \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.center) {
+            \includegraphics{../../img/background.png}
+        };
+        \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % logo
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Riunione Settimanale 22/11/2024}}\\ 
+    \vspace{5cm}                           
+    
+    
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Versioni %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|>{\raggedright\arraybackslash}p{0.3\textwidth}|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    0.1 & 22/11/2024 & Filippo Rizzolo &  & Prima stesura del verbale interno \\ 
+    \hline                                  
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Indice %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Registro Presenze %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} Piattaforma Discord \\
+\textbf {Ora di Inizio:} 14:00\\
+\textbf {Ora di Fine:} 15:00\\  % TODO: inserire orari ed eventualmente piattaforma   						
+\\
+\begin{tabular}{|c|c|c|}  % TODO: inserire ruoli e presenze
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    Enrico Cotti Cottini & XXXXX & Assente \\ 
+    \hline
+    Gabriele Di Pietro & XXXXX & Presente\\ 
+    \hline
+    Tommaso Diviesti & XXXXX & Presente \\ 
+    \hline 
+    Francesco Lapenna & XXXXX & Presente \\ 
+    \hline
+    Matthew Pan & XXXXX & Presente\\ 
+    \hline 
+    Eddy Pinarello & XXXXX & Presente \\ 
+    \hline 
+    Filippo Rizzolo & XXXXX & Presente \\ 
+    \hline 
+\end{tabular}
+% Presenze Rappresentanti Azienda %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \\
+    \newline
+    \newline
+    \begin{tabular}{|c|c|}  % TODO: eventualmente modificare nomi rappresentanti
+        \hline
+        \textbf{Nome} & \textbf{Ruolo}\\
+        \hline
+        Gianluca Carlesso & Rappresentante Azienda \\
+        \hline
+        Anna Tieppo & Rappresentante Azienda \\
+        \hline
+    \end{tabular}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+% Sezione Verbale %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Verbale Retrospettiva}
+    % TODO: per ogni punto discusso / attività svolta
+    % inserire una sottosezione, sintesi ed eventuali decisioni
+
+    \subsection{Aggiornamento del sito dei documenti}
+    \textbf{Sintesi:} Il sito per la gestione dei documenti è stato aggiornato con una struttura più organizzata, che facilita la consultazione e la collaborazione tra i membri del team. \\
+    \textbf{Decisioni:} L'aggiornamento sarà monitorato per eventuali miglioramenti, ma il lavoro può considerarsi concluso. 
+
+    \subsection{Norme di progetto e analisi dei requisiti}
+    \textbf{Sintesi:} Sono stati compiuti notevoli progressi nella definizione delle norme di progetto e nell’analisi dei requisiti. Questo ci consente di operare su basi più solide e strutturate. \\
+
+    \subsection{Condivisione delle risorse per l'apprendimento delle tecnologie}
+    \textbf{Sintesi:} Abbiamo distribuito risorse utili per approfondire le tecnologie del progetto, migliorando la conoscenza collettiva del team. \\
+    \textbf{Decisioni:} È stato deciso di pianificare ulteriori momenti di condivisione e formazione per consolidare le competenze.
+
+    \subsection{Capire come segnalare la presenza di una parola nel glossario}
+    \textbf{Sintesi:} Abbiamo discusso la necessità di identificare un sistema per marcare le parole del glossario nei documenti. Le opzioni esplorate includono un'automazione tramite script o una gestione manuale. \\
+    \textbf{Difficoltà:} L'automazione richiede uno sviluppo tecnico ulteriore, mentre il metodo manuale potrebbe risultare poco scalabile. \\
+    \textbf{Decisioni:} Abbiamo deciso di testare entrambe le opzioni per valutare quale sia la più adatta al nostro caso.
+
+    \subsection{Individuazione dei casi d'uso}
+    \textbf{Sintesi:} Definire i casi d’uso principali si è rivelato complesso, data la necessità di coprire scenari specifici e generici. \\
+    \textbf{Difficoltà:} Mancano informazioni dettagliate su alcune funzionalità richieste. \\
+    \textbf{Decisioni:} Si procederà con il contatto diretto con l'azienda per chiarire meglio le aspettative.
+    
+    % ...
+
+
+
+Conclusioni
+
+
+Pianificazione per la prossima settimana
+
+
+
+
+
+
+
+
+
+
+
+    \subsection*{Conclusioni e Pianificazione} 
+    \textbf{Conclusioni:} Abbiamo raggiunto traguardi significativi, come l’aggiornamento del sito dei documenti, il progresso sulle norme di progetto e l’analisi dei requisiti. Sono state condivise risorse utili per l’apprendimento e implementata una turnazione efficace dei ruoli. Tuttavia, alcune sfide come l’automazione del glossario e l’individuazione dei casi d’uso richiedono ulteriori analisi.
+
+    \textbf{Pianificazione per la prossima settimana:} 
+    \begin{itemize}
+        \item Proseguire con la stesura e la validazione dei casi d’uso.
+        \item Contattare l’azienda per discutere hardware e chiarire i requisiti.
+        \item Sviluppare ulteriormente le norme di progetto e l’analisi dei requisiti.
+        \item Esplorare la fattibilità di una bozza/prototipo del prodotto.
+    \end{itemize}
+
+    La prossima riunione è pianificata per il \textbf{29 11 2024}, con l'obiettivo di analizzare i progressi ottenuti e pianificare i prossimi passi.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Sezione Firme %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \begin{table}[b]
+        \begin{tabular}{@{}p{.5in}p{4in}@{}}
+            Data:  & \hrulefill \\
+                   &     		\\
+                   &     		\\
+            Firma: & \hrulefill \\
+        \end{tabular}
+        \end{table}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document} 

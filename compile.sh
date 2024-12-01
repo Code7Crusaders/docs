@@ -28,16 +28,17 @@ files=(
     # "./src/templateC7C/slide.tex"
     # "./src/templateC7C/template-verbali-nuovo/template-verbali.tex"
 
-    "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.1.tex"
+    # "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.1.tex"
     
-    "./src/2_RTB/documentazione_interna/glossario.tex"
-    "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"
+    # "./src/2_RTB/documentazione_interna/glossario.tex"
+    # "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"
     
-    "./src/2_RTB/verbali_esterni/verbale_24-11-14_v0.1.tex"
+    # "./src/2_RTB/verbali_esterni/verbale_24-11-14_v0.1.tex"
 
-    "./src/2_RTB/verbali_interni/verbale_24-11-04_v0.1.tex" 
-    "./src/2_RTB/verbali_interni/verbale_24-11-15_v0.1.tex"
-    "./src/2_RTB/verbali_interni/verbale_24-11-29_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_24-11-04_v0.1.tex" 
+    # "./src/2_RTB/verbali_interni/verbale_24-11-15_v0.1.tex"
+    "./src/2_RTB/verbali_interni/verbale_24-11-22_v0.1.tex"
+    # "./src/2_RTB/verbali_interni/verbale_24-11-29_v1.0.tex"
 
 )
 
