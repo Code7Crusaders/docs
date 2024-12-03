@@ -80,7 +80,8 @@
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
     \hline
-    0.1 & 29/11/2024 & Lapenna Francesco & Nome Verificatore & Prima stesura del documento \\ 
+    0.2 & 3/12/2024 & Diviesti Tommaso & Nome Verificatore & Continuazione e revisione del documento \\
+    0.1 & 29/11/2024 & Lapenna Francesco & Nome Verificatore & Prima stesura del documento \\  
     \hline
 \end{tabular}
 \end{table}
@@ -113,11 +114,33 @@
         \item log degli sprint;
     \end{itemize}
 
+    \subsection{Scopo del prodotto}
+    Il prodotto consiste in una webapp avanzata che integra una chatbot alimentata da intelligenza artificiale, 
+    pensata per fornire informazioni precise e approfondite su una vasta selezione di bevande. L’obiettivo principale è 
+    offrire alle aziende uno strumento semplice ed efficace per accedere a dettagli fondamentali riguardo le bevande che 
+    desiderano acquistare, assicurando maggiore trasparenza e chiarezza in ogni fase del processo di selezione. Grazie alla 
+    nostra soluzione, le aziende possono ottenere risposte immediate su una serie di parametri chiave e informazioni su bibite e relativi produttori/venditori.   
+    Tutto ciò permette di ridurre incertezze e ambiguità, riducendo i rischi delle aziende legati alla scelta di prodotti non adatti alle proprie esigenze.
+    Inoltre, le chat recenti vengono salvate e rese facilmente accessibili agli utenti, permettendo loro di rivedere in qualsiasi 
+    momento le informazioni precedentemente richieste. Questa funzionalità risulta particolarmente utile per consultare rapidamente 
+    risposte a domande frequenti o per confrontare dettagli su diverse bevande, senza dover rifare ogni ricerca, garantendo così 
+    un'esperienza più efficiente e personalizzata.
+
     \subsection{Glossario}
-    % TODO
+    Per avere maggiore chiarezza ed evitare ambiguità per quanto riguarda i termini utilizzati all'interno dei vari documenti,
+    viene adottato un Glossario\textsuperscript{G} che contiene una serie di termini e relativa definizione.
+    Grazie ad esso, sarà possibile cliccare su una determinata porzione di testo, evidenziata grazie ad uno stile specifico, 
+    all'interno di un qualsiasi documento e in questo modo si potrà visualizzare la sua definizione all'interno
+    del Glossario\textsuperscript{G} stesso. Questa soluzione permetterà agli utenti di avere maggiore chiarezza sugli argomenti da noi 
+    trattati nei vari file di documentazione.
 
     \subsection{Riferimenti}
     % TODO
+
+    \subsection{Preventivo iniziale}
+    Il preventivo iniziale è stato presentato durante la fase di Candidatura ed è pari a \textbf{12805}\euro.
+    \\ Per ulteriori informazioni è possibile visualizzare il documento di analisi dei costi e assunzione impegni al seguente link:
+    \\ \url{https://code7crusaders.github.io/docs/Candidatura/Preventivo_costi.html}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -134,9 +157,13 @@
         l'efficienza del servizio clienti.
         \item Integrare un modello LLM esistente per garantire risposte accurate e 
         un'interfaccia user-friendly.
+        \item Memoria a lungo termine/Salvataggio chat recenti (lo Specialist
+        potrebbe non ricordarsi tutti i dettagli)
+        \item Velocità di risposta e disponibilità 24/7
     \end{itemize}
 
     \subsection{Ambito del Progetto}
+
         \subsubsection{Inclusioni}
         \begin{itemize}
             \item Database relazionale per la gestione dei dati sui prodotti.
@@ -150,7 +177,21 @@
             \item Supporto a lingue non previste dal modello LLM scelto.
         \end{itemize}
 
+    \subsection{Funzionamento}
+    \begin{itemize}
+        \item Da un’interfaccia utente, viene catturata una domanda da parte dell’utente
+        \item La domanda viene inoltrata al sistema attraverso delle API REST risiedenti in un Web Server
+        \item La query ricevuta viene gestita dall’Embedding Model che trasforma la domanda in rappresentazione vettoriale
+        \item La rappresentazione vettoriale viene utilizzata per effettuare una ricerca all’interno del database vettoriale da dove vengono reperiti i vettori più simili
+        \item Sia la domanda sia i risultati della ricerca nel database vettoriale, vengono inviati al sistema LLM che costruirà la risposta utilizzando il contesto fornito
+        \item Attraverso API REST, il sistema inoltra la riposta al dispositivo dell’utente
+    \end{itemize}
+
     \subsection{Tecnologie e Strumenti Consigliati}
+    L’azienda proponente è disponibile a fornire i dati di un caso di studio da utilizzare
+    per lo sviluppo del progetto. I dati potranno essere dati in ingresso al sistema così da eseguire la fase di
+    training e poi interagire con il sistema per valutarne le prestazioni sfruttando un caso reale.
+    Di seguito vengono suggerite alcune tecnologie utilizzabili per il sistema esposto:
     \begin{itemize}
         \item \textbf{Database}: MySQL o PostgreSQL.
         \item \textbf{LLM}: BLOOM o Italia by iGenius, in base alle prestazioni richieste.
@@ -159,6 +200,15 @@
         \item \textbf{API REST}: Per la comunicazione tra LLM e interfaccia utente.
         \item \textbf{Controllo Versione}: Git (GitHub per repository pubblico).
     \end{itemize}
+
+    \subsection{Architettura proposta}
+    %immagine architettura
+
+    \subsection{Supporto}
+    Per il progetto, l’azienda proponente fornirà ampio supporto da parte del team interno in varie fasi
+    di sviluppo. L’interazione potrà avvenire sia nei locali aziendali sia da remoto tramite chat e/o chiamate. 
+    Inoltre, mette a disposizione una serie di link e corsi utili che trattano le tecnologie relative ai sistemi
+    LLM e allo sviluppo software.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -249,6 +299,13 @@
     In questa sezione vengono elencati i rischi che potrebbero verificarsi durante lo svolgimento del progetto e le relative contromisure. Ad ogni rischio è associato un \textbf{indice di Gravità e Probabilità},
     in modo da poter valutare la criticità di ciascuno di essi.
         \subsubsection{Definizione degli indici}
+        I fattori chiave per l’identificazione dei rischi sono:
+        \begin{itemize}
+            \item l’\textbf{indice}, un valore numerico incrementale che identifica univocamente il rischio
+            \item il \textbf{tipo}, che rappresenta l’impatto che un rischio può avere sul progetto, il quale puo essere basso, medio o alto
+            \item la \textbf{gravità}, che descrive l'impatto o le conseguenze del rischio che si verificano qualora si presenti
+            \item la \textbf{probabilità}, che rappresenta la possibilità che un rischio si verifichi
+        \end{itemize}
         I valori dell'\textbf{Indice di Gravità} e dell'\textbf{Indice di Probabilità} sono definiti come segue:
         \begin{table}[h!]
             \centering
@@ -418,9 +475,7 @@
         }
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    \subsection{Preventivo}
-    Visti e considerati i precedenti punti, il preventivo del progetto viene calcolato 
-    pari a €12.805,00.
+    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
