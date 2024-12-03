@@ -36,9 +36,9 @@ files=(
     
     # "./src/2_RTB/verbali_esterni/verbale_24-11-14_v0.1.tex"
 
-    # "./src/2_RTB/verbali_interni/verbale_24-11-04_v0.1.tex" 
-    # "./src/2_RTB/verbali_interni/verbale_24-11-15_v0.1.tex"
-    "./src/2_RTB/verbali_interni/verbale_24-11-22_v0.1.tex"
+    "./src/2_RTB/verbali_interni/verbale_24-11-04_v1.0.tex" 
+    "./src/2_RTB/verbali_interni/verbale_24-11-15_v1.0.tex"
+    "./src/2_RTB/verbali_interni/verbale_24-11-22_v1.0.tex"
     "./src/2_RTB/verbali_interni/verbale_24-11-29_v1.0.tex"
 
 )
