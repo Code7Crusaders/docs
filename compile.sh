@@ -29,7 +29,7 @@ files=(
     # "./src/templateC7C/slide.tex"
     # "./src/templateC7C/template-verbali-nuovo/template-verbali.tex"
 
-    # "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.1.tex"
+    # "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.2.tex"
     
     # "./src/2_RTB/documentazione_interna/glossario.tex"
     # "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"
