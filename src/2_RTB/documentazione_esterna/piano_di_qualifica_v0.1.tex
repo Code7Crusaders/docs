@@ -1,0 +1,223 @@
+%%% Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\usepackage{graphicx}  % serve per inserire immagini
+\usepackage{fancyhdr}  % creazione header-footer
+\usepackage{tabularx}  % serve per creare tabelle con colonne a larghezza variabile
+\usepackage{ifthen}  % serve per mostrare cose diverse in base a condizioni
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{pgfgantt}  % per i diagrammi di Gantt
+\usepackage{eurosym}
+
+% setta a 1 se il verbale è esterno, 0 se è interno
+\newcommand{\isEsterno}{1}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+\setcounter{secnumdepth}{5} % Permette la numerazione fino a \subparagraph
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Sezione del titolo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+        \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.center) {
+            \includegraphics{../../img/background.png}
+        };
+        \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % logo
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Piano di Progetto}}\\
+    \vspace{5cm}
+    
+    
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Versioni %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    0.1 & 05/12/2024 & Gabriele Di Pietro & Nome Verificatore & Prima stesura del documento \\  
+    \hline
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Indice %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Sezione Introduzione %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Introduzione}
+\subsection{Obiettivo del Documento}
+Il documento ha lo scopo di definire le strategie di verifica e validazione per assicurare il corretto funzionamento e uno standard di qualità
+dello strumento sviluppato e le attività che lo accompagnano. Sarà sottoposto a revisioni continue, così da poter seguire l'evoluzione del progetto.
+
+\subsection{Glossario}
+Il Glossario è uno strumento utilizzato per risolvere eventuali dubbi su termini specifici utilizzati nella redazione del documento. Esso conterrà la definizione dei 
+termini evidenziati e sarà consultabile al seguente \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html}{link}. I termini presenti in tale documento
+saranno evidenziatida una 'G' al pedice.
+
+\subsection{Riferimenti}
+\subsubsection{Normativi}
+\begin{itemize}
+    \item \textbf{Regolamento del progetto} \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf}}
+    \item \textbf{{Norme del Progetto}} \\ \texttt{\url{inserire norme di progetto}}
+\end{itemize}
+\subsubsection{Informativi}
+\begin{itemize}
+    \item \textbf{Standard ISO/IEC 25010} \\ \texttt{\url{https://iso25000.com/index.php/en/iso-25000-standards/iso-25010}}
+    \item \textbf{Standard ISO/IEC 12207:1995} \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}}
+    \item \textbf{Qualità di prodotto} \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf}}
+    \item \textbf{Qualità di processo} \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf}}
+    \item \textbf{Verifica e validazione}
+    \begin{itemize}
+        \item Introduzione \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T09.pdf}}
+        \item Analisi Statica \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T10.pdf}}
+        \item Analisi Dinamica \\ \texttt{\url{ inserire appena le carica}}
+    \end{itemize}
+    \item \textbf{Capitolato d'appalto C7} \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C7.pdf}}
+    \item \textbf{Verbali esterni} \\ \texttt{\url{inserire link verbali}}
+    \item \textbf{Verbali interni} \\ \texttt{\url{inserire link verbali}}
+    \item \textbf{Analisi dei requisiti} \\ \texttt{\url{inserire link analisi dei req.}}
+    \item \textbf{Glossario} \\ \texttt{\url{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html}}
+\end{itemize}
+
+\section{Metriche di qualità}
+La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto che
+rispecchi lo stato dell’arte. Per raggiungere tale obiettivo è necessario sfruttare delle
+pratiche rigorose che consentano lo svolgimento di ogni attività in maniera ottimale.
+Al fine di valutare nel miglior modo possibile la qualità del prodotto e l’efficacia dei
+processi, sono state definite delle metriche, meglio specificate nel documento Norme
+di ProgettoG e qui di seguito riepilogate. Esse sono state suddivise utilizzando lo \textbf{Standard \texttt{ISO/IEC12207:1995}}, il quale separa i processi di ciclo di vita del software in processi di
+base e/o primari, processi di supporto e processi organizzativi.
+\subsection{Processi di base e/o primari}
+\subsubsection{Fornitura} %Tabella
+\subsubsection{Sviluppo} %Non inserire nulla
+\paragraph{Analisi dei requisiti}%Tabella
+\paragraph{Progettazione}%Tabella
+\paragraph{Codifica} %Tabella
+\subsection{Processi di Supporto}
+\subsubsection{Documentazione}%Tabella
+\subsubsection{Gestione della qualità}%Tabella
+\subsubsection{Verifica}%Tabella
+\subsubsection{Risoluzione dei Problemi}%Tabella
+\subsection{Processi organizzativi}
+\subsubsection{pianificazione} %Tabella
+\newpage
+
+\section{Metodologie e Testing}
+In questa sezione si illustrano le metodologie di \textit{Testing} adottate per garantire il rispetto dei vincoli individuati
+nella sezione \textit{Requisiti} del documento Analisi dei Requisiti. I test sono suddivisi in cinque categorie:
+\begin{enumerate}
+    \item Test di unità
+    \item Test di integrazione
+    \item Test di Sistema
+    \item Test di Regressione
+    \item Test di Accettazione
+\end{enumerate}
+Verranno elencate le varie tipologie di test eseguite, indicando il codice del test, una breve descrizione di ciò che viene verificato e lo stato di avanzamento del test, espresso come segue.
+
+\begin{table}
+    \centering
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{S} & Test Superato \\
+    \hline
+    \textbf{NS} & Test NON Superato \\
+    \hline
+    \textbf{NI} & Test NON Implementato \\
+    \hline
+\end{tabular}
+\caption{Esempio di tabella con legenda.}
+\end{table}
+
+
+\subsection{Test del Sistema} %tabellare
+
+
+\subsection{Test di Accettazione} %tabellare
+
+
+\section{Cruscotto valutazione della qualità}
+
+
+\subsection{Qualità processo di Fornitura}
+
+
+\subsection{Qualità processo di Documentazione}
+
+
+\subsection{Qualità del processo di gestione della qualità}
+
+
+\subsection{Qualità del processo di gestione dei Rischi}
+
+
+\subsection{Qualità del processo di pianificazione}
+
+
+\section{Iniziative di automiglioramento per la qualità}
+
+
+\subsection{Introduzione}
+
+
+\subsection{Problemi Rilevati ed iniziative adottate}
+
+
+\subsection{Considerazioni Finali}
+
+
+
+\end{document} 
