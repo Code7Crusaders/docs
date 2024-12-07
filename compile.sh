@@ -24,6 +24,7 @@ files=(
     # "./src/DiariDiBordo/Diario_24-11-12.tex"
     # "./src/DiariDiBordo/Diario_24-11-25.tex"
     # "./src/DiariDiBordo/Diario_24-12-02.tex"
+    "./src/DiariDiBordo/Diario_24-12-09.tex"
 
     # "./src/templateC7C/template.tex"
     # "./src/templateC7C/slide.tex"
