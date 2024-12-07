@@ -116,6 +116,91 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \end{itemize}
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/UC2-1.png}
-    \caption{U.C.2 Visualizza le conversazioni}
+    \includegraphics[width=0.6\textwidth]{img/UC2-1.png}
+    \caption{U.C.2 Visualizza conversazione singola}
+\end{figure}
+\subsubsection{U.C.3 Login}
+\begin{itemize}
+    \item \textbf{Attori}: Utente
+    \item \textbf{Precondizioni}: Utente già registrato
+    \item \textbf{Postcondizioni}: Utente ha effettuato l'accesso
+    \item \textbf{Scenario principale}: L'utente già registrato vuole accedere al sistema
+    \item \textbf{Generalizzaioni}: -
+    \item \textbf{Estensioni}: -
+    \item \textbf{Inclusione:} -
+\end{itemize}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/UC3.png}
+    \caption{U.C.3 Login}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/UC3p1.png}
+    \caption{Sottocasi di U.C.3}
+\end{figure}
+\subsubsection{U.C.3.1 Inserisci Username}
+\begin{itemize}
+    \item \textbf{Attori}: Utente
+    \item \textbf{Precondizioni}: Utente già registrato
+    \item \textbf{Postcondizioni}: Utente ha inserito un Username
+    \item \textbf{Scenario principale}: L'utente già registrato vuole accedere al sistema
+    \item \textbf{Generalizzaioni}: -
+    \item \textbf{Estensioni}: U.C.3.4, U.C.3.5
+    \item \textbf{Inclusione:} -
+\end{itemize}
+\subsubsection{U.C.3.4 Username errato}
+\begin{itemize}
+    \item \textbf{Attori}: Utente
+    \item \textbf{Precondizioni}: Utente già registrato
+    \item \textbf{Postcondizioni}: Utente ha inserito un username errato e gli viene impedito di accedere al sistema
+    \item \textbf{Scenario principale}: L’utente ha provato ad accedere al sistema utilizzando un username errato e viene visualizzato un messaggio di errore generico
+    \item \textbf{Generalizzaioni}: -
+    \item \textbf{Estensioni}: -
+    \item \textbf{Inclusione:} -
+\end{itemize}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/UC3-4.png}
+    \caption{U.C.3.4 Username errato}
+\end{figure}
+\subsubsection{U.C.3.2 Inserisci Password}
+\begin{itemize}
+    \item \textbf{Attori}: Utente
+    \item \textbf{Precondizioni}: Utente già registrato
+    \item \textbf{Postcondizioni}: Utente ha inserito una Password
+    \item \textbf{Scenario principale}: L'utente già registrato vuole accedere al sistema
+    \item \textbf{Generalizzaioni}: -
+    \item \textbf{Estensioni}: U.C.3.3, U.C.3.5
+    \item \textbf{Inclusione:} -
+\end{itemize}
+\subsubsection{U.C.3.3 Password Errata}
+\begin{itemize}
+    \item \textbf{Attori}: Utente
+    \item \textbf{Precondizioni}: Utente già registrato
+    \item \textbf{Postcondizioni}: Utente ha inserito una Password errata e gli viene impedito di accedere al sistema
+    \item \textbf{Scenario principale}: L'utente ha provato ad accedere al sistema utilizzando una Password errata e viene visualizzato un messaggio di errore generico
+    \item \textbf{Generalizzaioni}: -
+    \item \textbf{Estensioni}: -
+    \item \textbf{Inclusione:} -
+\end{itemize}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/UC3-3.png}
+    \caption{U.C.3.3 Password errato}
+\end{figure}
+\subsubsection{U.C.3.5 Caratteri non validi}
+\begin{itemize}
+    \item \textbf{Attori}: Utente
+    \item \textbf{Precondizioni}: Utente già registrato
+    \item \textbf{Postcondizioni}: Utente ha inserito caratteri particolari e gli viene impedito di accedere al sistema
+    \item \textbf{Scenario principale}: L’utente ha provato ad entrare nel sistema cercando di rompere o rubare informazioni e gli viene impedito di entrare nel sistema
+    \item \textbf{Generalizzaioni}: -
+    \item \textbf{Estensioni}: -
+    \item \textbf{Inclusione:} -
+\end{itemize}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/UC3-5.png}
+    \caption{U.C.3.5 Caratteri non validi}
 \end{figure}
