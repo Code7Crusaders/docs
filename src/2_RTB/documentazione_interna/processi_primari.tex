@@ -164,7 +164,8 @@ Di seguito sono elencati gli strumenti software utilizzati nel processo di forni
     \item \textbf{GitHubProject}: sistema di ticketing e roadmap integrato nella piattaforma di GitHub. 
 \end{itemize}
 
-
+\subsubsection{Metriche}
+FILL ME UP
 
 
 
@@ -175,13 +176,10 @@ Di seguito sono elencati gli strumenti software utilizzati nel processo di forni
 
 \subsection{Sviluppo}
 \subsubsection{Introduzione}
-Il processo di sviluppo ha l’obiettivo di stabilire i compiti e le attività che il team deve eseguire per realizzare il prodotto software richiesto, assegnando ruoli specifici.
+Il processo di sviluppo ha l’obiettivo fondamentale di identificare e pianificare con precisione i compiti e le attività che il team deve eseguire per realizzare il prodotto software richiesto. Questo processo non si limita alla semplice suddivisione delle mansioni, ma prevede anche l’assegnazione di ruoli specifici a ciascun membro del team, in modo da valorizzare al meglio le competenze individuali e garantire un flusso di lavoro armonioso e produttivo.  
+Per assicurare che il software sviluppato soddisfi pienamente le aspettative e le necessità del committente, il gruppo \textbf{Code7Crusaders} definisce in maniera dettagliata gli obiettivi di sviluppo e design. Questo processo prevede la redazione di linee guida chiare e la realizzazione di un piano di lavoro che consenta di monitorare costantemente l’avanzamento delle attività e di apportare eventuali correzioni. In particolare, il prodotto finale deve soddisfare le richieste del committente, come descritto nell’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}. 
+Gli obiettivi di sviluppo definiti dal team devono essere rispettati, e il software deve superare con successo tutte le fasi di verifica e validazione\textsuperscript{G}. Il processo include la pianificazione accurata delle attività, la definizione delle specifiche di design e lo sviluppo delle funzionalità richieste. Una volta implementato il prodotto, viene avviata una fase di test che garantisce la qualità complessiva e l’aderenza ai requisiti stabiliti. Parallelamente, viene prodotta un’adeguata documentazione che facilita la tracciabilità e il mantenimento futuro del software, contribuendo a preservare il valore del progetto nel tempo.  
 
-Per garantire che il software soddisfi le aspettative del committente, il gruppo SWEG definisce gli obiettivi di sviluppo e design necessari, assicurando una corretta implementazione del prodotto finale. Quest’ultimo deve:
-
-rispettare le richieste del committente, come descritto nell’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}} e sviluppato dal designER;
-aderire agli obiettivi di sviluppo e superare con successo i test di verifica e validazione G.
-In particolare, vengono dettagliate le seguenti attività:
 \subsubsection{Analisi dei Requisiti}
 
 \subsubsubsection{Descrizione}
@@ -391,32 +389,25 @@ Dove \textbf{Tipo} può essere:
 
 
 \subsubsection{Progettazione}
-La fase di progettazione riveste un ruolo cruciale nel definire la 
-struttura principale del progetto, basandosi sui requisiti individuati durante 
-l'analisi e descritti nell’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}. Questa attività è affidata ai progettisti, 
-i quali elaborano un piano dettagliato per implementare tutti i requisiti specificati.
-
+La fase di progettazione riveste un ruolo cruciale nel definire la struttura principale del progetto, basandosi sui requisiti individuati durante l'analisi e descritti nell’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}. Questa attività è affidata ai progettisti, i quali elaborano un piano dettagliato per implementare tutti i requisiti specificati.  
 Per questa fase del ciclo di vita del software, il nostro gruppo si pone i seguenti obiettivi:
-Trasformare i requisiti in specifiche tecniche dettagliate che coprano tutti gli aspetti del sistema;
-Garantire una struttura facilmente comprensibile per agevolare la manutenzione futura;
-Ottenere l’approvazione per il passaggio alla fase di sviluppo.
+\begin{itemize}
+    \item Trasformare i requisiti in specifiche tecniche dettagliate che coprano tutti gli aspetti del sistema.
+    \item Garantire una struttura facilmente comprensibile per agevolare la manutenzione futura.
+    \item Ottenere l’approvazione per il passaggio alla fase di sviluppo.
+\end{itemize}
 Il processo di progettazione si articola in tre livelli principali:
-Design dell’interfaccia: questa fase si concentra su un livello di astrazione elevato rispetto 
-al funzionamento interno del sistema. Durante la progettazione dell’interfaccia, l’attenzione 
-è rivolta alle tecnologie da utilizzare nella fase di sviluppo del software, portando alla creazione di un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#poc-proof-of-concept}{Proof of Concept\textsuperscript{G}}.
-Progettazione architettonica: si definisce la struttura generale del sistema a un alto livello, 
-senza entrare nei dettagli interni dei componenti principali. In questa fase vengono anche definiti i test di integrazione.
-Progettazione dettagliata: si specificano gli elementi interni di ciascun componente principale, 
-incluse le specifiche architetturali del prodotto. Si producono inoltre i diagrammi delle classi e si 
-definiscono i test di unità per ogni componente. Questa fase culmina nella creazione della \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#pb-product-baseline}{Product Baseline\textsuperscript{G}}.
-
-
+\begin{itemize}
+    \item \textbf{Design dell’interfaccia}: questa fase si concentra su un livello di astrazione elevato rispetto al funzionamento interno del sistema. Durante la progettazione dell’interfaccia, l’attenzione è rivolta alle tecnologie da utilizzare nella fase di sviluppo del software, portando alla creazione di un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#poc-proof-of-concept}{Proof of Concept\textsuperscript{G}}.
+    \item \textbf{Progettazione architetturale}: si definisce la struttura generale del sistema a un alto livello, senza entrare nei dettagli interni dei componenti principali. In questa fase vengono anche definiti i test di integrazione.
+    \item \textbf{Progettazione dettagliata}: si specificano gli elementi interni di ciascun componente principale, incluse le specifiche architetturali del prodotto. Si producono inoltre i diagrammi delle classi e si definiscono i test di unità per ogni componente. Questa fase culmina nella creazione della \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#pb-product-baseline}{Product Baseline\textsuperscript{G}}.
+\end{itemize}
 
 \subsubsection{Codifica}
 Dopo la fase di progettazione, i membri del gruppo con il ruolo di Programmatori avviano la fase di codifica, 
 implementando le specifiche dei requisiti e seguendo i documenti di progettazione.
 L’obiettivo di questa fase è trasformare le idee in realtà, sviluppando il prodotto software desiderato tramite 
-attività di programmazione.
+attività di programmazione. 
 Le aspettative per la fase di codifica includono:
 \begin{itemize}
     \item Completare lo sviluppo del prodotto finale garantendo la qualità e il rispetto delle richieste del committente;
