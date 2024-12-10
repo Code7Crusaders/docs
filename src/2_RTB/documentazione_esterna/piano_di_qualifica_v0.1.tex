@@ -12,6 +12,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{pgfgantt}  % per i diagrammi di Gantt
 \usepackage{eurosym}
+\usepackage{float}
 
 % setta a 1 se il verbale è esterno, 0 se è interno
 \newcommand{\isEsterno}{1}
@@ -125,7 +126,7 @@ saranno evidenziatida una 'G' al pedice.
     \begin{itemize}
         \item Introduzione \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T09.pdf}}
         \item Analisi Statica \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T10.pdf}}
-        \item Analisi Dinamica \\ \texttt{\url{ inserire appena le carica}}
+        \item Analisi Dinamica \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T11.pdf}}
     \end{itemize}
     \item \textbf{Capitolato d'appalto C7} \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C7.pdf}}
     \item \textbf{Verbali esterni} \\ \texttt{\url{inserire link verbali}}
@@ -133,7 +134,7 @@ saranno evidenziatida una 'G' al pedice.
     \item \textbf{Analisi dei requisiti} \\ \texttt{\url{inserire link analisi dei req.}}
     \item \textbf{Glossario} \\ \texttt{\url{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html}}
 \end{itemize}
-
+\newpage
 \section{Metriche di qualità}
 La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto che
 rispecchi lo stato dell’arte. Per raggiungere tale obiettivo è necessario sfruttare delle
@@ -145,9 +146,8 @@ base e/o primari, processi di supporto e processi organizzativi.
 \subsection{Processi di base e/o primari}
 \subsubsection{Fornitura} %Tabella
 
-\begin{table}[h!]
+\begin{table}[H]
     \centering
-    \vspace{3mm} % Spazio tra il titolo e la tabella
     \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
     \begin{tabular}{|c|l|c|c|}
         \hline
@@ -167,32 +167,141 @@ base e/o primari, processi di supporto e processi organizzativi.
     \end{tabular}
     \caption{Metriche di qualità per il processo di Fornitura}
 \end{table}
+\newpage
 
 \subsubsection{Sviluppo} %Non inserire nulla
 \paragraph{Analisi dei requisiti}%Tabella
-\begin{table}[h!]
+a
+\begin{table}[H]
     \centering
-    \vspace{3mm} % Spazio tra il titolo e la tabella
     \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
     \begin{tabular}{|c|l|c|c|}
         \hline
         \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
         \hline
         11PBM-PRO & Percentuale Requisiti Obbligatori & $PRO = 100\%$ & $PRO = 100\%$ \\
+        12PBM-PRO & Percentuale Requisiti Desiderabili & $PRD \geq 30\%$ & $PRD = 100\%$ \\
+        13PBM-PRF & Percentuale Requisiti Facoltativi & $PRF \geq 0\%$ & $PRF = 100\%$ \\
         \hline
     \end{tabular}
     \caption{Metriche di qualità per il processo di Analisi dei requisiti}
 \end{table}
 
 \paragraph{Progettazione}%Tabella
-\paragraph{Codifica} %Tabella
+a
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+        \hline
+        14PBM-PG & Profondità delle Gerarchie & $PG \leq 7$ & $PG \leq 5$ \\
+        \hline
+    \end{tabular}
+    \caption{Metriche di qualità per il processo di Progettazione}
+\end{table}
+
+\paragraph{Codifica}
+a
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+        \hline
+        15PBM-PPM & Parametri per Metodo & $PPM \leq 7$ & $PPM \leq 5$\\
+        16PBM-CPC & Campi per Classe & $CPC \leq 8$ & $CPC \leq 5$ \\
+        17PBM-LCPM & Linea Di Commento Per Metodo & $LCPM \geq 50$ & $LCPM \geq 20$ \\
+        18PBM-CCM & Complessità Ciclomatica Metrica & $CCM \leq 6$ & $CCM \leq 3$ \\
+        \hline
+    \end{tabular}
+    \caption{Metriche di qualità per il processo di Codifica}
+\end{table}
+%%%%%%%%%%%%%%%%%NON SO PERCHÈ SIA BUGGATO E NON LA POSIZIONA NEL PUNTO GIUSTO MEttendo sotto il titolo
+%% SE METTI DEL TESTO DOPO ANALISI DEI REQUISITI SI SISTEMA :(  per quel paragrafo quindi andrebbe aggiunto del testo per ogni paragrafo%%
+\newpage
+
 \subsection{Processi di Supporto}
 \subsubsection{Documentazione}%Tabella
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+        \hline
+        1PSM-IG & Indice di Gulpease & $IG \geq 50$ & $IG \geq 75$ \\
+        2PSM-CO & Correttezza Ortografica & $CO = 0$ errori & $CO = 0$ errori \\ 
+        \hline
+    \end{tabular}
+    \caption{Metriche di qualità per il processo di Documentazione}
+\end{table}
+
 \subsubsection{Gestione della qualità}%Tabella
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+        \hline
+        3PSM-FU & Facilità di Utilizzo & $FU \geq 3$ errori & $FU \geq 0$ errori \\
+        4PSM-TA & Tempo di Apprendimento & $TA \leq 12$ minuti & $TA \leq 8$ minuti \\
+        5PSM-TR & Tempo di Risposta & $TR \leq 8$ secondi & $TR \leq 4$ secondi \\
+        6PSM-TE & Tempo di Elaborazione & $TE \leq 10$ secondi & $TE \leq 5$ secondi \\
+        7PSM-QMS & Metriche di Qualità Soddisfatte & $QMS \geq 90\%$ & $QMS \geq 90\%$\\
+        \hline
+    \end{tabular}
+    \caption{Metriche di qualità per il processo di Gestione della Qualità}
+\end{table}
 \subsubsection{Verifica}%Tabella
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+        \hline
+        8PSM-CC & Code Coverage & $CC \geq 80\%$ & $CC = 100\%$ \\
+        9PSM-BC & Branch Coverage & $BC \geq 80\%$ & $BC = 100\%$ \\
+        10PSM-SC & Statement Coverage & $SC \geq 80\%$ & $SC = 100\%$ \\
+        11PSM-FD & Failure Density & $FD \leq 15\%$ & $FD = 0\%$ \\
+        12PSM-PTCP & Passed Test Case Percentage & $PTCP \geq 90\%$ & $PTCP \geq 100\%$ \\
+        \hline
+    \end{tabular}
+    \caption{Metriche di qualità per il processo di Verifica}
+\end{table}
 \subsubsection{Risoluzione dei Problemi}%Tabella
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+        \hline
+        13PSM-RMR & Risk Mitigation Rate & $RMR \geq 80\%$ & $RMR = 100\%$ \\
+        14PSM-NCR & Richi non Calcolati & $NCR \leq 3$ & $NCR = 0$ \\
+        \hline
+    \end{tabular}
+    \caption{Metriche di qualità per il processo di Risoluzione dei Problemi}
+\end{table}
+\newpage
 \subsection{Processi organizzativi}
 \subsubsection{pianificazione} %Tabella
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+        \hline
+        1POM-RSI & Requirements Stability Index & $RSI \geq 75\%$ & $RSI = 100\%$ \\
+        \hline
+    \end{tabular}
+    \caption{Metriche di qualità per il processo di Pianificazione}
+\end{table}
 \newpage
 
 \section{Metodologie e Testing}
@@ -209,6 +318,7 @@ Verranno elencate le varie tipologie di test eseguite, indicando il codice del t
 
 \begin{table}
     \centering
+    \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{|c|c|}
     \hline
     \textbf{S} & Test Superato \\
@@ -218,7 +328,7 @@ Verranno elencate le varie tipologie di test eseguite, indicando il codice del t
     \textbf{NI} & Test NON Implementato \\
     \hline
 \end{tabular}
-\caption{Esempio di tabella con legenda.}
+\caption{Legenda per il Test}
 \end{table}
 
 
