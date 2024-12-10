@@ -3,6 +3,18 @@
 
 files=(
 
+    # Diari di bordo
+    # "./src/DiariDiBordo/Diario_18-11-2024.tex"
+    # "./src/DiariDiBordo/Diario_28-10-2024.tex"
+    # "./src/DiariDiBordo/Diario_12-11-2024.tex"
+
+    # Template
+    # "./src/templateC7C/template.tex"
+    # "./src/templateC7C/slide.tex"
+    # "./src/templateC7C/template-verbali-nuovo/template-verbali.tex"
+
+    # Candidatura
+
     # "./src/1_Candidatura/DomandeProponenti/Domande_Proponenti.tex"
     
     # "./src/1_Candidatura/Lettera_di_Presentazione.tex"
@@ -24,7 +36,7 @@ files=(
     # "./src/DiariDiBordo/Diario_24-11-12.tex"
     # "./src/DiariDiBordo/Diario_24-11-25.tex"
     # "./src/DiariDiBordo/Diario_24-12-02.tex"
-    "./src/DiariDiBordo/Diario_24-12-09.tex"
+    # "./src/DiariDiBordo/Diario_24-12-09.tex"
 
     # "./src/templateC7C/template.tex"
     # "./src/templateC7C/slide.tex"
@@ -32,6 +44,7 @@ files=(
 
     "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.2.tex"
     "./src/2_RTB/documentazione_esterna/piano_di_qualifica_v0.1.tex"
+    "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.tex"
     
     "./src/2_RTB/documentazione_interna/glossario.tex"
     "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"
