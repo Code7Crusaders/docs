@@ -81,6 +81,7 @@
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
     \hline
+    0.2 & 10/12/2024 & Gabriele Di Pietro & Nome Verificatore & Aggiunte tabelle \\
     0.1 & 05/12/2024 & Gabriele Di Pietro & Nome Verificatore & Prima stesura del documento \\  
     \hline
 \end{tabular}
@@ -143,8 +144,46 @@ di ProgettoG e qui di seguito riepilogate. Esse sono state suddivise utilizzando
 base e/o primari, processi di supporto e processi organizzativi.
 \subsection{Processi di base e/o primari}
 \subsubsection{Fornitura} %Tabella
+
+\begin{table}[h!]
+    \centering
+    \vspace{3mm} % Spazio tra il titolo e la tabella
+    \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+        \hline
+        1PBM-PVA & Planned Value & $PV \geq 0$ & $PV \leq BAC$ \\
+        2PBM-ETC & Estimated to Complete & $ETC \geq 0$ & $ETC \leq EAC$ \\
+        3PBM-EAC & Estimated at Completition & $EAC \leq BAC + 10\%$ & $EAC \leq BAC$ \\
+        4PBM-EV & Earned Value & $EV \geq 0$ & $EV \leq EAC$ \\
+        5PBM-AC & Actual Cost & $AC \geq 0$ & $AC \leq EAC$ \\
+        6PBM-SV & Scheduled Variance & $SV \geq -10\%$ & $SV \geq 0\%$ \\
+        7PBM-CV & Cost Variance & $CV \geq -10\%$ & $CV \geq 0\%$ \\
+        8PBM-CPI & Cost Performance Index & $CPI \geq 0.8$ & $CPI \geq 1$ \\
+        9PBM-SPI & Scheduled Performance Index & $SPI \geq 0.8$ & $SPI \geq 1$ \\
+        10PBM-OTDR & On-Time Delivery Rate & $OTDR \geq 90\%$ & $OTDR \geq 95\%$ \\
+        \hline
+    \end{tabular}
+    \caption{Metriche di qualità per il processo di Fornitura}
+\end{table}
+
 \subsubsection{Sviluppo} %Non inserire nulla
 \paragraph{Analisi dei requisiti}%Tabella
+\begin{table}[h!]
+    \centering
+    \vspace{3mm} % Spazio tra il titolo e la tabella
+    \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+        \hline
+        11PBM-PRO & Percentuale Requisiti Obbligatori & $PRO = 100\%$ & $PRO = 100\%$ \\
+        \hline
+    \end{tabular}
+    \caption{Metriche di qualità per il processo di Analisi dei requisiti}
+\end{table}
+
 \paragraph{Progettazione}%Tabella
 \paragraph{Codifica} %Tabella
 \subsection{Processi di Supporto}
