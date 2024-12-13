@@ -165,7 +165,37 @@ Di seguito sono elencati gli strumenti software utilizzati nel processo di forni
 \end{itemize}
 
 \subsubsection{Metriche}
-FILL ME UP
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{5cm}|}
+        \hline
+        \textbf{Metrica} & \textbf{Descrizione} \\
+        \hline
+        PV & Planned Value \\
+        \hline
+        ETC & Estimated to Complete \\
+        \hline
+        EAC & Estimate at Completion \\
+        \hline
+        EV  & Earned Value \\
+        \hline
+        AC  & Actual Cost \\
+        \hline
+        SV  & Scheduled Variance \\
+        \hline
+        CV  & Cost Variance \\
+        \hline
+        CPI & Cost Performance Index \\
+        \hline
+        SPI & Scheduled Performance Index \\
+        \hline
+        OTDR & On-Time Delivery Rate \\
+        \hline
+    \end{tabular}
+    \caption{Metriche di fornitura}
+    \label{tab:metriche}
+\end{table}
 
 
 
@@ -186,7 +216,7 @@ Gli obiettivi di sviluppo definiti dal team devono essere rispettati, e il softw
 L'\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{\textbf{Analisi dei Requisiti\textsuperscript{G}} v1.0} è un documento redatto dagli Analisti che comprende i seguenti aspetti:
 \begin{itemize}
     \item \textbf{Introduzione}: descrive l’obiettivo del documento, il fine del prodotto e i riferimenti utilizzati per la sua stesura;
-    \item \textbf{Descrizione}: illustra le funzionalità attese del prodotto e le caratteristiche principali degli utenti;
+    \item \textbf{Descrizione del prodotto}: illustra le funzionalità attese del prodotto e le caratteristiche principali degli utenti;
     \item \textbf{Attori}: definisce i soggetti che utilizzeranno il sistema finale;
     \item \textbf{Casi d’uso}: identifica gli attori e descrive tutte le possibili interazioni con il sistema;
     \item \textbf{Requisiti}: raccoglie le caratteristiche essenziali da soddisfare e le fonti da cui queste sono state derivate.
@@ -386,7 +416,24 @@ Dove \textbf{Tipo} può essere:
     \item \textbf{F (facoltativo )}
 \end{itemize}
 \textbf{Numero} è un numero identificativo univoco del requisito.
-
+\subsubsubsection{Metriche}
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{5cm}|}
+        \hline
+        \textbf{Metrica} & \textbf{Descrizione} \\
+        \hline
+        PRO & Percentuale Requisiti Obbligatori \\
+        \hline
+        PRD & Percentuale Requisiti Desiderabili \\
+        \hline
+        PRF & Percentuale Requisiti Facoltativi \\
+        \hline
+    \end{tabular}
+    \caption{Percentuali requisiti}
+    \label{tab:percentuali}
+\end{table}
 
 \subsubsection{Progettazione}
 La fase di progettazione riveste un ruolo cruciale nel definire la struttura principale del progetto, basandosi sui requisiti individuati durante l'analisi e descritti nell’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}. Questa attività è affidata ai progettisti, i quali elaborano un piano dettagliato per implementare tutti i requisiti specificati.  
