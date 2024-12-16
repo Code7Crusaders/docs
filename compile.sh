@@ -47,7 +47,7 @@ files=(
     # "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.tex"
     
     # "./src/2_RTB/documentazione_interna/glossario.tex"
-    # "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"  
+     "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"  
     
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
     # "./src/2_RTB/verbali_esterni/verbale_24-11-14_v1.0.tex"
