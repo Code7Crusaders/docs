@@ -168,29 +168,29 @@ Di seguito sono elencati gli strumenti software utilizzati nel processo di forni
 \begin{table}[h!]
     \centering
     \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{5cm}|}
+    \begin{tabular}{|>{\centering\arraybackslash}m{5cm}|>{\centering\arraybackslash}m{5cm}|}
         \hline
-        \textbf{Metrica} & \textbf{Descrizione} \\
+        \textbf{Metrica} & \textbf{Nome} \\
         \hline
-        PV & Planned Value \\
+        1PBM-PV & Planned Value \\
         \hline
-        ETC & Estimated to Complete \\
+        2PBM-ETC & Estimated to Complete \\
         \hline
-        EAC & Estimate at Completion \\
+        3PBM-EAC & Estimate at Completion \\
         \hline
-        EV  & Earned Value \\
+        4PBM-EV & Earned Value \\
         \hline
-        AC  & Actual Cost \\
+        5PBM-AC & Actual Cost \\
         \hline
-        SV  & Scheduled Variance \\
+        6PBM-SV & Scheduled Variance \\
         \hline
-        CV  & Cost Variance \\
+        7PBM-CV & Cost Variance \\
         \hline
-        CPI & Cost Performance Index \\
+        8PBM-CPI & Cost Performance Index \\
         \hline
-        SPI & Scheduled Performance Index \\
+        9PBM-SPI & Scheduled Performance Index \\
         \hline
-        OTDR & On-Time Delivery Rate \\
+        10PBM-OTDR & On-Time Delivery Rate \\
         \hline
     \end{tabular}
     \caption{Metriche di fornitura}
@@ -420,19 +420,22 @@ Dove \textbf{Tipo} può essere:
 \begin{table}[h!]
     \centering
     \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{5cm}|}
+    \begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|>{\centering\arraybackslash}m{5cm}|>{\centering\arraybackslash}m{5cm}|}
         \hline
-        \textbf{Metrica} & \textbf{Descrizione} \\
+        \textbf{Metrica} & \textbf{Nome} \\
         \hline
-        PRO & Percentuale Requisiti Obbligatori \\
+        11PBM-PRO & Percentuale Requisiti Obbligatori \\
         \hline
-        PRD & Percentuale Requisiti Desiderabili \\
+        12PBM-PRD & Percentuale Requisiti Desiderabili \\
         \hline
-        PRF & Percentuale Requisiti Facoltativi \\
+        13PBM-PRF & Percentuale Requisiti Facoltativi \\
         \hline
     \end{tabular}
     \caption{Percentuali requisiti}
-    \label{tab:percentuali}
+    \label{tab:percentuali_requisiti}
 \end{table}
 
 \subsubsection{Progettazione}
@@ -451,12 +454,62 @@ Il processo di progettazione si articola in tre livelli principali:
 \end{itemize}
 
 \subsubsection{Codifica}
-Dopo la fase di progettazione, i membri del gruppo con il ruolo di Programmatori avviano la fase di codifica, 
-implementando le specifiche dei requisiti e seguendo i documenti di progettazione.
-L’obiettivo di questa fase è trasformare le idee in realtà, sviluppando il prodotto software desiderato tramite 
-attività di programmazione. 
-Le aspettative per la fase di codifica includono:
-\begin{itemize}
-    \item Completare lo sviluppo del prodotto finale garantendo la qualità e il rispetto delle richieste del committente;
-    \item Assicurare che il codice prodotto sia chiaro e leggibile per facilitare eventuali modifiche future.
+\subsubsubsection{Descrizione e Scopo}
+L'attivit\`a di sviluppo del codice \`e affidata ai Programmatori, responsabili della conversione delle scelte progettuali in codice sorgente funzionante. Gli sviluppatori operano in un contesto organizzato, seguendo scrupolosamente le linee guida e gli standard definiti durante la progettazione dell'architettura software. Tale approccio garantisce uniformit\`a nell'implementazione e l'applicazione delle migliori pratiche, promuovendo la realizzazione di codice efficiente, affidabile e facilmente manutenibile. 
+Per mantenere elevati standard qualitativi, i Programmatori devono attenersi alle metriche specificate nel Piano di Qualifica v1.0.
+
+\subsubsubsection{Aspettative}
+La fase di implementazione \`e finalizzata alla realizzazione di un software che risponda completamente ai requisiti e agli obiettivi stabiliti dalla Committente. Il codice prodotto deve soddisfare le seguenti caratteristiche fondamentali:
+\begin{itemize}[noitemsep, topsep=5pt]
+    \item Rispetto delle specifiche fornite;
+    \item Semplicit\`a e leggibilit\`a;
+    \item Efficienza in termini di prestazioni;
+    \item Copertura di test per assicurare il corretto funzionamento.
 \end{itemize}
+
+\subsubsubsection{Norme di codifica}
+Le seguenti linee guida sono state definite per garantire la qualità e la manutenibilità del codice:
+
+\begin{itemize}
+  \item \textbf{Nomi significativi}: I nomi di variabili, costanti, classi e metodi devono essere chiari e descrittivi, per facilitare la comprensione del codice.
+  
+  \item \textbf{Commenti}: Il codice deve essere scritto in modo chiaro e facilmente comprensibile. I commenti devono essere usati solo quando strettamente necessario, per spiegare logiche complesse o decisioni particolari.
+  
+  \item \textbf{Indentazione e formattazione consistente}: Il codice deve essere correttamente indentato per favorire la leggibilità. È importante utilizzare spazi o tabulazioni in modo uniforme.
+
+  \item \textbf{Gestione delle eccezioni}: Le eccezioni e gli errori devono essere gestiti correttamente, fornendo messaggi utili e trattando adeguatamente le situazioni anomale.
+
+  \item \textbf{Riutilizzo del codice}: Scrivere il codice in modo modulare, per favorire il riuso in altre parti del programma o in progetti futuri.
+
+  \item \textbf{Testabilità}: Le funzioni devono essere piccole e focalizzate, per rendere il codice facilmente testabile e verificabile.
+
+  \item \textbf{Sicurezza}: Il codice deve essere sicuro, prevenendo vulnerabilità e proteggendo da potenziali attacchi.
+
+  \item \textbf{Performance}: Ottimizzare il codice per ottenere buone prestazioni, utilizzando in modo efficiente le risorse disponibili e minimizzando il tempo di esecuzione.
+  
+  \item \textbf{Compatibilità}: Garantire che il codice funzioni correttamente su diverse piattaforme, sistemi operativi e browser, per una fruizione omogenea da parte degli utenti.
+\end{itemize}
+
+\subsubsubsection{Metriche}
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{table}[h!]
+        \hline
+        \textbf{N.} & \textbf{Metrica} & \textbf{Nome} \\
+        \hline
+        15PBM-PPM & Parametri per Metodo \\
+        \hline
+        16PBM-CPC & Campi per Classe \\
+        \hline
+        17PBM-LCPM & Linea Di Commento Per Metodo \\
+        \hline
+        18PBM-CCM & Complessit\`a Ciclomatica Metrica \\
+        \hline
+    \end{tabular}
+    \caption{Metriche di Codifica}
+    \label{tab:metriche_codifica}
+\end{table}
+
+\subsubsubsection{Strumenti}
+Visual Studio Code è un ambiente di sviluppo integrato (IDE) creato da Microsoft, scelto dal team come strumento principale per lo sviluppo software. Questo IDE offre funzionalità avanzate che facilitano la scrittura, la modifica e il debugging del codice, supportando una vasta gamma di linguaggi di programmazione e framework.
