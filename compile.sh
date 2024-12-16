@@ -44,7 +44,7 @@ files=(
 
     # "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.2.tex"
      "./src/2_RTB/documentazione_esterna/piano_di_qualifica_v0.1.tex"
-    # "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.tex"
+     "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.tex"
     
     # "./src/2_RTB/documentazione_interna/glossario.tex"
      "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"  
