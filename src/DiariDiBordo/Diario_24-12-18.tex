@@ -1,0 +1,106 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{babel}
+\usepackage[dvipsnames]{xcolor}
+
+
+\setbeamertemplate{navigation symbols}{}
+
+% Custom header for all slides
+\setbeamertemplate{headline}{
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{section in head/foot}%
+      \hspace*{2ex}Code7Crusaders - Software Development Team
+    \end{beamercolorbox}%
+    }    
+}
+
+% Background image for the title slide
+\setbeamertemplate{background}{
+  \includegraphics[width=\paperwidth,height=\paperheight]{../img/background.png}
+}
+
+\definecolor{ForestGreen}{RGB}{34,139,34}
+
+% Title customization for contrast
+\setbeamercolor{frametitle}{fg=black} % White text, blue background
+\setbeamerfont{frametitle}{series=\bfseries}   % Bold title
+
+% Custom block colors
+\setbeamercolor{block body}{bg=gray!20}  % Gray background for block content
+\setbeamercolor{block title}{bg=gray,fg=white} % Darker gray for block title
+
+\setbeamercolor{block body alerted}{bg=gray!20} % Gray background for alert block content
+\setbeamercolor{block title alerted}{bg=red, fg=white} % Red title for alert block
+
+\setbeamercolor{block body example}{bg=gray!20} % Gray background for example block content
+\setbeamercolor{block title example}{bg=ForestGreen, fg=white} % Green title for example block
+
+\begin{document}
+
+% Title page slide
+\begin{frame}[plain] % Plain to avoid header on title slide
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../img/logo/7Crusaders_logo.png} % Add your logo here
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Documentazione Progetto}}\\
+    \vspace{3cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{1cm}
+    
+    {\large \textbf{Data:}} \today\\
+    
+    \vspace{1cm}
+\end{frame}
+
+%%% Content slides
+% Slide 1: What the team has done
+\begin{frame}
+    \begin{exampleblock}{Attività Completate}
+        \begin{itemize}
+            \item Modifiche nel documento Piano di Progetto
+            \item Sviluppo metriche per monitorare l'andamento del progetto con relativi grafici (Piano di Qualifica)
+            \item Modifica e approvazione dei casi d'uso da parte dell'Azienda
+            \item Test in locale di vari modelli LLM per scegliere quale utilizzare
+            \item Riunione con l'Azienda e scelta definitiva modello (gpt-o4-mini di OpenAI)
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+% Slide 2: What the team plans to do
+\begin{frame}
+    \begin{block}{Attività Pianificate}
+        \begin{itemize}
+            \item Continuare documentazione (Piano di Progetto e Analisi dei Requisiti)
+            \item Aggiornare Glossario e Sito
+            \item Scegliere il framework per la creazione dell'interfaccia grafica e scegliere db
+            \item Contattare prof. Cardin per fissare un colloquio
+            \item Definire primi Test statici e di Unità
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+% Slide 3: Difficulties encountered
+\begin{frame}
+    \begin{alertblock}{Sfide Recenti}
+        \begin{itemize}
+            \item Capire il funzionamento di LangChain
+            \item Studio per scelta del modello LLM migliore per qualità-prezzo 
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+\end{document}
