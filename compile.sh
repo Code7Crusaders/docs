@@ -37,7 +37,7 @@ files=(
     # "./src/DiariDiBordo/Diario_24-11-25.tex"
     # "./src/DiariDiBordo/Diario_24-12-02.tex"
     # "./src/DiariDiBordo/Diario_24-12-09.tex"
-     "./src/DiariDiBordo/Diario_24-12-18.tex"
+    # "./src/DiariDiBordo/Diario_24-12-18.tex"
 
     # "./src/templateC7C/template.tex"
     # "./src/templateC7C/slide.tex"
