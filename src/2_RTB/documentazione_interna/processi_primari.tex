@@ -426,9 +426,14 @@ Dove \textbf{Tipo} può essere:
     \label{tab:percentuali_requisiti}
 \end{table}
 
-
+%--------------------------DA AMPLIARE--------------------------------------------
 \subsubsection{Progettazione}
-La fase di progettazione riveste un ruolo cruciale nel definire la struttura principale del progetto, basandosi sui requisiti individuati durante l'analisi e descritti nell’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}. Questa attività è affidata ai progettisti, i quali elaborano un piano dettagliato per implementare tutti i requisiti specificati.  
+\subsubsubsection{Introduzione}
+La fase di progettazione riveste un ruolo cruciale nel definire la struttura principale del progetto, 
+basandosi sui requisiti individuati durante l'analisi e descritti 
+nell’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}
+{Analisi dei Requisiti\textsuperscript{G}}. 
+Questa attività è affidata ai progettisti, i quali elaborano un piano dettagliato per implementare tutti i requisiti specificati.  
 Per questa fase del ciclo di vita del software, il nostro gruppo si pone i seguenti obiettivi:
 \begin{itemize}
     \item Trasformare i requisiti in specifiche tecniche dettagliate che coprano tutti gli aspetti del sistema.
@@ -437,10 +442,107 @@ Per questa fase del ciclo di vita del software, il nostro gruppo si pone i segue
 \end{itemize}
 Il processo di progettazione si articola in tre livelli principali:
 \begin{itemize}
-    \item \textbf{Design dell’interfaccia}: questa fase si concentra su un livello di astrazione elevato rispetto al funzionamento interno del sistema. Durante la progettazione dell’interfaccia, l’attenzione è rivolta alle tecnologie da utilizzare nella fase di sviluppo del software, portando alla creazione di un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#poc-proof-of-concept}{Proof of Concept\textsuperscript{G}}.
-    \item \textbf{Progettazione architetturale}: si definisce la struttura generale del sistema a un alto livello, senza entrare nei dettagli interni dei componenti principali. In questa fase vengono anche definiti i test di integrazione.
-    \item \textbf{Progettazione dettagliata}: si specificano gli elementi interni di ciascun componente principale, incluse le specifiche architetturali del prodotto. Si producono inoltre i diagrammi delle classi e si definiscono i test di unità per ogni componente. Questa fase culmina nella creazione della \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#pb-product-baseline}{Product Baseline\textsuperscript{G}}.
+    \item \textbf{Design dell’interfaccia}: questa fase si concentra su un livello di astrazione elevato rispetto al 
+    funzionamento interno del sistema. Durante la progettazione dell’interfaccia, l’attenzione è rivolta alle 
+    tecnologie da utilizzare nella fase di sviluppo del software, portando alla creazione di 
+    un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#poc-proof-of-concept}
+    {Proof of Concept\textsuperscript{G}}.
+    \item \textbf{Progettazione architetturale}: si definisce la struttura generale del sistema a un alto livello, senza 
+    entrare nei dettagli interni dei componenti principali. In questa fase vengono anche definiti i test di integrazione.
+    \item \textbf{Progettazione dettagliata}: si specificano gli elementi interni di ciascun componente principale, 
+    incluse le specifiche architetturali del prodotto. Si producono inoltre i diagrammi delle classi e si definiscono 
+    i test di unità per ogni componente. Questa fase culmina nella creazione 
+    della \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#pb-product-baseline}
+    {Product Baseline\textsuperscript{G}}.
 \end{itemize}
+
+
+\subsubsubsection{Specifica Tecnica}
+La specifica tecnica è un documento che funge da fondamento per l'intero processo di sviluppo, 
+guidando il team nelle scelte architetturali e tecnologiche, garantendo un approccio metodico e strutturato.
+
+{Elementi Chiave della Specifica Tecnica}
+\begin{itemize}
+    \item \textbf{Architettura del sistema}: questa sezione definisce la struttura complessiva del sistema software, identificando i componenti principali, i moduli e le relative interfacce. Include inoltre dettagli sull'organizzazione logica e fisica del sistema, come la suddivisione in livelli o strati e le relazioni tra le diverse parti.
+    \item \textbf{Tecnologie adottate}: vengono specificate le tecnologie scelte per lo sviluppo, inclusi linguaggi di programmazione, framework, librerie e tool di supporto. Questa sezione comprende anche l'ambiente di sviluppo e gli strumenti di gestione del progetto.
+    \item \textbf{Struttura dei dati}: si descrive l'organizzazione e la gestione dei dati all'interno del sistema, comprendendo database, file system, protocolli di accesso e tecniche di persistenza adottate.
+    \item \textbf{Interfacce esterne}: vengono identificate e descritte le interfacce con altri sistemi o applicazioni esterne. Questo include i formati dei dati scambiati e i protocolli di comunicazione utilizzati per garantire un'integrazione efficace.
+    \item \textbf{Design pattern}: si presentano i design pattern adottati durante lo sviluppo, fornendo soluzioni consolidate a problematiche comuni e ricorrenti.
+    \item \textbf{Pianificazione e risorse}: questa sezione fornisce una pianificazione dettagliata delle attività necessarie per implementare la specifica tecnica. Vengono inclusi stime di tempi, costi e risorse richieste, sia umane che tecnologiche.
+    \item \textbf{Procedure di testing e validazione}: vengono fornite indicazioni sulle procedure e sugli strumenti necessari per testare e validare il sistema, assicurandosi che soddisfi i requisiti funzionali e le aspettative del cliente.
+    \item \textbf{Requisiti tecnici}: viene riportato un elenco completo e dettagliato dei requisiti tecnici che il sistema deve soddisfare, inclusi parametri relativi a funzionalità, prestazioni e caratteristiche richieste.
+\end{itemize}
+
+
+
+\subsubsubsection{Qaulità dell'architettura}
+La qualità dell'architettura è un aspetto fondamentale per garantire il successo di un sistema software. Essa si misura attraverso una serie di caratteristiche chiave che ne determinano l'efficacia, la robustezza e l'adattabilità. Di seguito vengono elencati i principali attributi:
+\begin{itemize}
+    \item \textbf{Scalabilità}: rappresenta la capacità del sistema di adattarsi a un incremento del carico di lavoro o delle risorse senza compromettere le prestazioni o la qualità del servizio. Un'architettura scalabile è in grado di rispondere dinamicamente alle variazioni delle richieste degli utenti e alle risorse disponibili.
+    \item \textbf{Flessibilità}: indica l'abilità del sistema di adattarsi a modifiche nei requisiti o nell'ambiente operativo senza richiedere interventi significativi. Una buona flessibilità si ottiene tramite componenti ben separati e interfacce standardizzate, che agevolano l'aggiunta di nuove funzionalità o modifiche esistenti.
+    \item \textbf{Manutenibilità}: definisce la facilità con cui il software può essere compreso, modificato e corretto durante il suo ciclo di vita. Un'architettura manutenibile è caratterizzata da un codice modulare, ben documentato e organizzato, facilitando l'identificazione e la risoluzione dei problemi.
+    \item \textbf{Testabilità}: riguarda la facilità di verificare che il sistema soddisfi i requisiti funzionali e non funzionali. Un'architettura testabile prevede componenti isolati e interfacce ben definite, che consentono l'automazione dei test e garantiscono una verifica continua della qualità.
+    \item \textbf{Affidabilità}: assicura il funzionamento corretto del sistema sia in condizioni normali che in situazioni anomale. Un'architettura affidabile integra meccanismi di gestione degli errori, recupero e ripristino, che permettono al sistema di continuare a operare anche in caso di guasti o interruzioni.
+    \item \textbf{Performance}: misura la capacità del sistema di fornire risposte rapide e tempi di elaborazione ottimizzati anche sotto carichi di lavoro elevati. Le architetture performanti includono ottimizzazioni del codice, una gestione efficiente delle risorse e accessi ai dati ottimizzati.
+    \item \textbf{Usabilità}: si riferisce alla facilità di utilizzo e comprensione del sistema da parte dell'utente finale. Un'architettura usabile prevede interfacce intuitive, una navigazione chiara e una presentazione delle informazioni coerente, garantendo così un'esperienza utente positiva.
+    \item \textbf{Compatibilità}: indica la capacità del sistema di interagire senza difficoltà con altre piattaforme, sistemi o tecnologie. Una buona compatibilità si ottiene grazie all'adozione di standard aperti, interfacce ben definite e protocolli di comunicazione standardizzati.
+    \item \textbf{Documentazione}: comprende la fornitura di documenti completi e dettagliati relativi all'architettura del sistema. Tra questi vi sono diagrammi, specifiche tecniche, manuali utente e guide per gli sviluppatori. Una documentazione accurata facilita la comprensione, la manutenzione e l'evoluzione del sistema.
+    \item \textbf{Safety}: rappresenta la capacità del sistema di garantire la sicurezza dei dati e delle informazioni sensibili, proteggendoli anche in caso di malfunzionamenti o situazioni impreviste.
+\end{itemize}
+
+
+\subsubsection{Diagrammi UML}
+L'utilizzo dei diagrammi UML (Unified Modeling Language) nella progettazione del sistema software offre numerosi vantaggi. Di seguito sono elencati i principali aspetti positivi:
+\begin{itemize}
+    \item \textbf{Chiarezza visiva}: i diagrammi UML forniscono una rappresentazione grafica chiara e intuitiva delle relazioni e delle interazioni tra i componenti del sistema software. Questo facilita la comprensione del sistema da parte degli stakeholder, sia tecnici che non tecnici.
+    \item \textbf{Standardizzazione}: UML rappresenta uno standard internazionale ampiamente riconosciuto per la modellazione dei sistemi software. Grazie a questa standardizzazione, i diagrammi UML risultano facilmente comprensibili e interpretabili dai professionisti del settore a livello globale.
+    \item \textbf{Comunicazione efficace}: i diagrammi UML forniscono un linguaggio visivo comune che facilita la comunicazione tra sviluppatori, stakeholder tecnici e non tecnici e altri membri del team di progetto. Questo consente una condivisione chiara delle informazioni e una comunicazione più efficace.
+    \item \textbf{Supporto all'analisi e alla progettazione}: durante le fasi di analisi e progettazione del ciclo di sviluppo del software, i diagrammi UML possono essere utilizzati per visualizzare i requisiti, analizzare le relazioni tra i componenti e descrivere le interazioni all'interno del sistema.
+    \item \textbf{Modellazione dei requisiti}: UML consente di modellare i requisiti funzionali e non funzionali in modo chiaro e strutturato. I diagrammi, come quelli dei casi d'uso e delle sequenze, permettono di identificare scenari, vincoli e comportamenti del sistema che guidano lo sviluppo.
+    \item \textbf{Facilità di manutenzione}: grazie alla loro chiarezza, i diagrammi UML semplificano la comprensione dell'architettura del sistema, rendendo più agevole l'identificazione di problemi o aree di miglioramento. Questo facilita le attività di manutenzione ed evoluzione del software nel tempo.
+    \item \textbf{Supporto ai principi di progettazione}: UML è un valido strumento per applicare e comunicare principi di progettazione consolidati, come l'incapsulamento, l'ereditarietà e il polimorfismo, che contribuiscono alla creazione di un'architettura software robusta e modulare.
+    \item \textbf{Documentazione tecnica}: i diagrammi UML possono essere utilizzati per generare una documentazione tecnica dettagliata del sistema software. Questa documentazione rappresenta una guida completa sia per gli sviluppatori che per gli utenti finali e gli stakeholder coinvolti.
+\end{itemize}
+
+
+\subsubsection{Desing Pattern}
+I \textit{design pattern} rappresentano soluzioni progettuali generiche e riutilizzabili per risolvere problemi comuni che emergono durante lo sviluppo del software. Si tratta di modelli architetturali, paradigmi o concetti consolidati, descritti spesso tramite codice o diagrammi, che forniscono una guida chiara per affrontare specifiche problematiche di progettazione in maniera efficiente ed efficace.
+
+La documentazione relativa ai \textit{design pattern} svolge un ruolo fondamentale come punto di riferimento per l'intero team di sviluppo. Essa permette agli sviluppatori di comprendere rapidamente come ciascun pattern è stato implementato all'interno del codice. Questo è particolarmente utile durante:
+\begin{itemize}
+    \item le \textbf{fasi di progettazione}, per identificare soluzioni standard e ben consolidate;
+    \item lo \textbf{sviluppo}, per garantire coerenza e chiarezza nell'implementazione;
+    \item la \textbf{manutenzione del software}, per ottenere una visione chiara della struttura architetturale e dei pattern adottati.
+\end{itemize}
+L'utilizzo dei \textit{design pattern} migliora la leggibilità del codice, ne facilita la manutenzione e promuove l'adozione di soluzioni standardizzate all'interno del sistema.
+
+\subsubsection{Test}
+L'attività di \textbf{testing} è una fase critica del processo di sviluppo software, finalizzata a garantire che il prodotto finale soddisfi i requisiti funzionali, prestazionali e qualitativi stabiliti. Tale fase include diverse attività fondamentali, tra cui:
+\begin{itemize}
+    \item \textbf{Pianificazione dei test}: definizione degli obiettivi, della strategia e delle risorse necessarie per eseguire i test;
+    \item \textbf{Progettazione dei casi di test}: sviluppo di scenari di test dettagliati basati sui requisiti del sistema;
+    \item \textbf{Esecuzione dei test}: applicazione dei casi di test per verificare il comportamento del software;
+    \item \textbf{Analisi dei risultati}: valutazione degli output dei test per individuare difetti, errori o anomalie.
+\end{itemize}
+
+\subsubsection{Metriche}
+\begin{table}[h!]
+    \centering
+    \caption{Metriche inerenti la Progettazione}
+    \label{tab:metriche_progettazione}
+    \begin{tabular}{|c|l|}
+        \hline
+        \textbf{Codice} & \textbf{Nome Esteso} \\ 
+        \hline
+        14M-PG         & Profondità delle Gerarchie \\ 
+        \hline
+    \end{tabular}
+\end{table}
+
+
+
+
+
 
 \subsubsection{Codifica}
 \subsubsubsection{Descrizione e Scopo}
@@ -461,21 +563,13 @@ Le seguenti linee guida sono state definite per garantire la qualità e la manut
 
 \begin{itemize}
   \item \textbf{Nomi significativi}: I nomi di variabili, costanti, classi e metodi devono essere chiari e descrittivi, per facilitare la comprensione del codice.
-  
   \item \textbf{Commenti}: Il codice deve essere scritto in modo chiaro e facilmente comprensibile. I commenti devono essere usati solo quando strettamente necessario, per spiegare logiche complesse o decisioni particolari.
-  
   \item \textbf{Indentazione e formattazione consistente}: Il codice deve essere correttamente indentato per favorire la leggibilità. È importante utilizzare spazi o tabulazioni in modo uniforme.
-
   \item \textbf{Gestione delle eccezioni}: Le eccezioni e gli errori devono essere gestiti correttamente, fornendo messaggi utili e trattando adeguatamente le situazioni anomale.
-
   \item \textbf{Riutilizzo del codice}: Scrivere il codice in modo modulare, per favorire il riuso in altre parti del programma o in progetti futuri.
-
   \item \textbf{Testabilità}: Le funzioni devono essere piccole e focalizzate, per rendere il codice facilmente testabile e verificabile.
-
   \item \textbf{Sicurezza}: Il codice deve essere sicuro, prevenendo vulnerabilità e proteggendo da potenziali attacchi.
-
   \item \textbf{Performance}: Ottimizzare il codice per ottenere buone prestazioni, utilizzando in modo efficiente le risorse disponibili e minimizzando il tempo di esecuzione.
-  
   \item \textbf{Compatibilità}: Garantire che il codice funzioni correttamente su diverse piattaforme, sistemi operativi e browser, per una fruizione omogenea da parte degli utenti.
 \end{itemize}
 
