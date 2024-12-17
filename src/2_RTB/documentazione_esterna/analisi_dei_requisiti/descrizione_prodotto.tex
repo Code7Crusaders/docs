@@ -32,7 +32,32 @@ I componenti del prodotto sono:
     La Web App è l’interfaccia attraverso la quale gli utenti interagiscono con il sistema. Fornisce un’esperienza semplice e intuitiva per inserire domande e visualizzare risposte. Comunica con il backend tramite API REST per garantire un'interazione rapida e scalabile.
 \end{itemize}
 
-\section*{Flusso di Addestramento del Sistema}
+\subsection{Implementazione scelta: LLM e strumenti}
+\subsubsection{Scelta dell'LLM}
+Dopo un'attenta analisi comparativa tra i modelli di Huggingface (BLOOM e varianti) e OpenAI (GPT-4o e GPT-4omini) nel file di \textbf{analisi modelli.pdf}, si è optato per l'utilizzo di GPT-4omini di OpenAI. La scelta è motivata dai seguenti fattori:
+\begin{itemize}
+    \item \textbf{Prestazioni}: GPT-4omini offre risultati superiori rispetto ai modelli open-source in termini di accuratezza e capacità di generazione del linguaggio, come evidenziato dai benchmark \textbf{analisi modelli}.
+    \item \textbf{Scalabilità}: Le API di OpenAI garantiscono un'infrastruttura cloud scalabile, eliminando i costi e la complessità legati alla gestione locale di modelli di grandi dimensioni.
+    \item \textbf{Costi ottimizzati}: Il costo basato sui token elaborati permette un utilizzo flessibile e sostenibile, adattandosi alle esigenze di carico variabile del sistema.
+\end{itemize}
+
+\subsubsection{Pipeline di Implementazione}
+L'implementazione sfrutta un'architettura RAG (Retrieval-Augmented Generation), integrando i seguenti componenti:
+\begin{enumerate}
+    \item Generazione degli Embedding: Le informazioni aziendali (es. cataloghi di prodotti) vengono preprocessate e trasformate in vettori numerici tramite BERT di Huggingface.
+    \item Archiviazione degli Embedding: I vettori generati vengono memorizzati e indicizzati utilizzando FAISS, che consente un recupero efficiente dei dati rilevanti.
+    \item Integrazione con LLM: Le domande degli utenti, trasformate in embedding, vengono confrontate con il database vettoriale. Il contesto recuperato viene passato a GPT-4omini per generare risposte accurate e personalizzate.
+    \item Web App e API REST: La comunicazione tra frontend (React) e backend avviene tramite API REST, garantendo tempi di risposta rapidi.
+\end{enumerate}
+
+\subsubsection{Motivazione degli Strumenti Scelti}
+\begin{itemize}
+    \item \textbf{BERT + FAISS}: Permette di ottimizzare la fase di retrieval, migliorando l’efficienza della ricerca semantica.
+    \item \textbf{GPT-4omini}: Offre risposte di alta qualità con costi prevedibili, bilanciando prestazioni e budget di progetto.
+    \item \textbf{LangChain}: Facilita l’orchestrazione dell'intera pipeline RAG, riducendo i tempi di sviluppo e semplificando l’integrazione dei componenti.
+\end{itemize}
+
+Questa architettura garantisce un sistema performante, flessibile e scalabile, in grado di soddisfare le esigenze degli utenti finali e delle aziende committenti.
 
 \begin{enumerate}
     \item Il sistema riceve in ingresso i dati aziendali strutturati (es. descrizioni, ingredienti).
@@ -61,7 +86,7 @@ I componenti del prodotto sono:
 \end{figure}
 
 \subsection{Funzionalità del prodotto}
-Il prodotto avrà il compito di interagire con i propri utenti attraverso una webapp, rispondendo a domande su cataloghi di bevande. Ogni risposta sarà generata in linguaggio naturale, elaborando i dati tramite \textbf{BLOOM}. Le funzionalità principali includono:
+Il prodotto avrà il compito di interagire con i propri utenti attraverso una webapp, rispondendo a domande su cataloghi di bevande. Ogni risposta sarà generata in linguaggio naturale, elaborando i dati tramite \textbf{LLM}. Le funzionalità principali includono:
 \begin{itemize}
     \item \textbf{Interfaccia utente interattiva}: consente agli utenti di porre domande sul catalogo (\textit{es. descrizione di un prodotto o disponibilità in magazzino}) e di ricevere risposte immediate.
     \item \textbf{Motore di ricerca intelligente}: utilizza un sistema di embedding per trovare corrispondenze semantiche tra le domande degli utenti e i dati aziendali, estrae il contesto dai dati aziendali per fornire all'LLM dati accurati da elaborare.
@@ -74,15 +99,38 @@ Il prodotto avrà il compito di interagire con i propri utenti attraverso una we
 Il prodotto garantirà inoltre scalabilità e flessibilità, adattandosi a un’ampia gamma di aziende che desiderano offrire ai propri clienti un’esperienza di interazione avanzata e intuitiva.
 
 
-\subsection{Tecnologie utilizzate} %TODO: Definire Tecnologie meglio
-Possibili tecnologie da utilizzare per la realizzazione del prodotto:
+\subsection{Tecnologie utilizzate}
+Le tecnologie selezionate per la realizzazione del prodotto software sono le seguenti:
+
 \begin{itemize}
-    \item \textbf{Embedding Model}: BERT, Sentence Transformers, OpenAI Embeddings.
-    \item \textbf{Database Relazionale}: MySQL, PostgreSQL.
-    \item \textbf{Database Vettoriale}: Pinecone, Weaviate, o FAISS.
-    \item \textbf{LLM}: OpenAI GPT, BLOOM.
-    \item \textbf{Web App}: React.
+
+    \item \textbf{Embedding Model}: BERT (Huggingface) oppure modelli di embedding di Openai(es. Embedding-large) per la trasformazione del testo in vettori semantici. Questo modello viene utilizzato per generare embedding efficaci nella fase RAG (Retrieval-Augmented Generation).
+    \item \textbf{Database Relazionale}: \textit{PostgreSQL} per memorizzare i dati strutturati come cataloghi di prodotti, descrizioni e metadati.
+    \item \textbf{Database Vettoriale}: \textit{FAISS} per l'archiviazione e il recupero veloce degli embedding. FAISS permette un'indicizzazione ottimizzata per la \textit{nearest neighbor search}.
+    \item \textbf{LLM}: OpenAI GPT-4, integrato tramite API OpenAI, per garantire prestazioni elevate e costi scalabili.
+
 \end{itemize}
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[width=0.2\textwidth]{img/openai-lockup.png}
+    \caption{Logo di OpenAI}
+    \label{fig:openai_logo}
+
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Web App}: \textit{React} per lo sviluppo dell’interfaccia utente, combinata con API REST per una comunicazione efficiente con il backend.
+    \item \textbf{LangChain}: Libreria di orchestrazione utilizzata per integrare LLM, database vettoriali e pipeline di retrieval.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{img/lang-chain.png}
+    \caption{Logo di LangChain}
+    \label{fig:langchain_logo}
+\end{figure}
+
 
 \subsection{Utenti finali}
 Il prodotto è rivolto a aziende che desiderano offrire un servizio di assistenza 
