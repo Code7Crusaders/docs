@@ -269,246 +269,35 @@ dove:
     $OTDR \geq 95\%$
 \end{center}
 
+\subsubsection{Sviluppo}
+Nella fase di \emph{sviluppo} si realizza il prodotto software, seguendo le specifiche definite in fase di progettazione.
+\paragraph{Analisi dei Requisiti}
+Questa fase consiste nell'esaminare le richieste del proponente e nel definire i requisiti che il prodotto dovrà soddisfare. Definiamo quindi le seguenti metriche:
 
 
-%-----------------------Processi di Supporto--------------------------------
+\paragraph{Progettazione}
+Questa fase consiste nel definire l'architettura  del prodotto software, in modo da soddisfare i requisiti in fase di analisi. Definiamo quindi le seguenti metriche:
 
+\paragraph{Codifica}
+Queste metriche aiutano a valutare la qualità del codice, la complessità e la manutenibilità
 
-\subsection{Proecssi di Supporto}
-I processi di supporto affiancano i processi primari per garantire il corretto svolgimento delle attività.
-
+\subsection{Processi di Supporto}
+I \emph{processi di supporto} si affiancano ai processi primari per garantire il corretto svolgimento delle attività.
 \subsubsection{Documentazione}
-La documentazione riveste un ruolo essenziale per garantire la comprensione del prodotto e facilitarne la manutenzione.
-In termini pratici, si traduce nella creazione di manuali e documenti tecnici che illustrano il funzionamento del prodotto e le decisioni progettuali prese.
-Per misurare la qualità di questo processo, sono state individuate le seguenti metriche.
+La \emph{Documentazione} è un aspetto fondamentale per la comprensione del prodotto e per la sua manutenibilità. A livello pratico consiste nella redazione di manuali e documenti tecnici
+che descrivano il funzionamento del prodotto e le scelte progettuali adottate. Per valutare la qualità di tale processo, sono state definite le seguenti metriche:
 
-\subsubsubsection{1PSM-IG Indice Gulpease}
-\begin{itemize}
-	\item \textbf{Definizione}: l'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Misura la lunghezza delle parole e delle frasi rispetto al numero di lettere.
-	\item \textbf{Come si calcola}: \begin{equation*}IG = 89 + \frac{300 \times F - 10 \times L}{P}\end{equation*} dove:
-		\begin{itemize}
-			\item $F$: numero totale di frasi nel documento;
-			\item $L$: numero totale di lettere nel documento;
-			\item $P$: numero totale di parole nel documento.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}IG \geq 50\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}IG \geq 75\%\end{equation*}
-\end{itemize}
-
-\paragraph*{2PSM-CO Correttezza Ortografica}
-\begin{itemize}
-	\item \textbf{Definizione}: la correttezza ortografica indica la presenza di errori ortografici nei documenti.
-	\item \textbf{Come si calcola}: si contano gli errori ortografici presenti nei documenti.
-	\item \textbf{Valore ammissibile}: \begin{equation*}0\ errori\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}0\ errori\end{equation*}
-\end{itemize}
-
-
-
-\subsubsection{Gestione della qualità}
-La gestione della qualità è un processo fondamentale che si occupa di stabilire una metodologia strutturata 
-per garantire che il prodotto soddisfi gli standard di qualità richiesti. 
-Questo processo non solo definisce le linee guida per il controllo e l’assicurazione della qualità, 
-ma mira anche a identificare e prevenire potenziali difetti, migliorando continuamente il prodotto e i processi ad esso correlati.
-Un’adeguata gestione della qualità è essenziale per assicurare che il prodotto finale sia conforme 
-alle aspettative del cliente e agli obiettivi del progetto. Per valutarne l’efficacia e individuare 
-eventuali aree di miglioramento, sono state definite le seguenti metriche, che permettono di monitorare 
-e misurare le prestazioni di questo processo in modo oggettivo.
-
-\paragraph*{3PSM-FU Facilità di Utilizzo}
-\begin{itemize}
-	\item \textbf{Definizione}: rappresenta il livello di usabilità del prodotto software mediante il numero di errori riscontrati durante l'utilizzo del prodotto da parte di un utente generico.
-	\item \textbf{Come si calcola}: si contano gli errori riscontrati durante l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
-	\item \textbf{Valore ammissibile}: \begin{equation*}FU \leq 3\ errori\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}FU = 0\ errori\end{equation*}
-\end{itemize}
-
-\paragraph*{4PSM-TA Tempo di Apprendimento}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il tempo massimo richiesto da parte di un utente generico per apprendere l'utilizzo del prodotto.
-	\item \textbf{Come si calcola}: si misura il tempo necessario per apprendere l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
-	\item \textbf{Valore ammissibile}: \begin{equation*}TA \leq 12\ minuti\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}TA \leq 8\ minuti\end{equation*}
-\end{itemize}
-
-\paragraph*{5PSM-TR Tempo di Risposta}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il tempo massimo di risposta del sistema sotto carico rilevato.
-	\item \textbf{Come si calcola}: si misura il tempo massimo necessario per ottenere una risposta dal sistema.
-	\item \textbf{Valore ammissibile}: \begin{equation*}TR \leq 8\ s\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}TR \leq 4\ s\end{equation*}
-\end{itemize}
-
-\paragraph*{6PSM-TE Tempo di Elaborazione}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il tempo massimo di elaborazione di un dato grezzo fino alla sua presentazione rilevato.
-	\item \textbf{Come si calcola}: si misura il tempo massimo di elaborazione di un dato grezzo dal momento della sua comparsa nel sistema fino alla sua presentazione all'utente.
-	\item \textbf{Valore ammissibile}: \begin{equation*}TE \leq 10\ s\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}TE \leq 5\ s\end{equation*}
-\end{itemize}
-
-\paragraph*{7PSM-QMS Metriche di Qualità Soddisfatte}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il numero di metriche implementate e soddisfatte, tra quelle definite.
-	\item \textbf{Come si calcola}: \begin{equation*}QMS = \frac{MS}{MT}\end{equation*} dove:
-		\begin{itemize}
-			\item $MS$: metriche soddisfatte;
-			\item $MT$: metriche totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}QMS \geq 90\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}QMS \geq 90\%\end{equation*}
-\end{itemize}
-
+\subsubsection{Gestione della Qualità}
+La gestione della qualità è un processo che si occupa di definire una metodologia per garantire la qualità del prodotto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
 \subsubsection{Verifica}
-La verifica è un processo cruciale che ha il compito di controllare che il prodotto sia conforme ai 
-requisiti stabiliti e soddisfi tutte le specifiche definite in fase di progettazione. 
-Questo processo assicura che ogni funzionalità sia pienamente operativa e che il prodotto rispetti 
-gli standard previsti, riducendo al minimo i rischi di errori o malfunzionamenti nelle fasi successive.
-La verifica si articola in una serie di attività sistematiche, che includono il controllo accurato di 
-ogni componente del prodotto e la validazione dei risultati ottenuti rispetto agli obiettivi predefiniti. 
-Questo approccio consente di garantire un elevato livello di qualità e affidabilità del prodotto finale.
-Per monitorare e valutare l’efficacia del processo di verifica, sono state definite specifiche metriche, 
-che permettono di analizzare le performance e identificare eventuali punti di miglioramento.
+La verifica è un processo che si occupa di controllare che il prodotto soddisfi i requisiti
+stabiliti e sia pienamente funzionante. Per valutare la qualità di tale processo, sono state
+definite le seguenti metriche.
 
-\paragraph*{8PSM-CC Code Coverage}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Code Coverage} indica quale percentuale del codice sorgente è stata eseguita durante i test. Serve per capire quanto del codice è stato verificato dai test automatizzati.
-	\item \textbf{Come si calcola}: \begin{equation*}CC = \frac{LE}{LT}\end{equation*} dove:
-		\begin{itemize}
-			\item $LE$: linee di codice eseguite;
-			\item $LT$: linee di codice totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}CC \geq 80\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}CC = 100\%\end{equation*}
-\end{itemize}
-
-\paragraph*{9PSM-BC Branch Coverage}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Branch Coverage} indica quale percentuale dei rami decisionali (percorsi derivanti da istruzioni condizionali come \textit{if}, \textit{for}, \textit{while}) del codice è stata eseguita durante i test.
-	\item \textbf{Come si calcola}: \begin{equation*}BC = \frac{BE}{BT}\end{equation*} dove:
-		\begin{itemize}
-			\item $BE$: rami eseguiti;
-			\item $BT$: rami totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}BC \geq 80\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}BC = 100\%\end{equation*}
-\end{itemize}
-
-\paragraph*{10PSM-SC Statement Coverage}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Statement Coverage} indica quale percentuale di istruzioni del codice è stata eseguita durante i test.
-	\item \textbf{Come si calcola}: \begin{equation*}SC = \frac{IE}{IT}\end{equation*} dove:
-		\begin{itemize}
-			\item $IE$: istruzioni eseguite;
-			\item $IT$: istruzioni totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}SC \geq 80\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}SC = 100\%\end{equation*}
-\end{itemize}
-
-\paragraph{11PSM-FD Failure Density}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Failure Density} indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo rispetto alla dimensione del software stesso.
-	\item \textbf{Come si calcola}: \begin{equation*}FD = \frac{DF}{LT}\end{equation*} dove:
-		\begin{itemize}
-			\item $DF$: difetti trovati;
-			\item $LT$: linee di codice totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}FD \leq 15\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}FD = 0\%\end{equation*}
-\end{itemize}
-
-\paragraph{12PSM-PTCP Passed Test Case Percentage}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Passed Test Case Percentage} indica la percentuale di test che sono stati 
-    eseguiti con successo su una base di test.
-	\item \textbf{Come si calcola}: \begin{equation*}PTCP = \frac{TS}{TT}\end{equation*} dove:
-		\begin{itemize}
-			\item $TS$: test superati;
-			\item $TT$: test totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}PTCP \geq 90\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}PTCP = 100\%\end{equation*}
-\end{itemize}
-
-
-
-
-
-\subsubsection{Risoluzone dei problemi}
-La risoluzione dei problemi è un processo che si occupa di identificare, 
-analizzare e risolvere le problematiche che possono sorgere durante lo sviluppo di un progetto, 
-garantendo il regolare avanzamento delle attività.
-Collegata a questo è la gestione dei rischi, che mira a individuare, analizzare e mitigare i 
-potenziali rischi, definendo strategie per minimizzarne l’impatto sul progetto.
-Per valutare l’efficacia di questi processi e garantire un approccio strutturato alla gestione delle 
-problematiche, sono state definite specifiche metriche che consentono di monitorare e migliorare le prestazioni.
-
-
-\subsubsubsection{13PSM-RMR Risk Mitigation Rate}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Risk Mitigation Rate} indica la percentuale di rischi identificati che sono stati mitigati con successo.
-	\item \textbf{Come si calcola}: \begin{equation*}RMR = \frac{RM}{RT}\end{equation*} dove:
-		\begin{itemize}
-			\item $RM$: rischi mitigati;
-			\item $RT$: rischi totali identificati.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}RMR \geq 80\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}RMR = 100\%\end{equation*}
-\end{itemize}
-
-\subsubsubsection{14PSM-NCR Rischi Non Calcolati}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il numero di rischi occorsi che non sono stati preventivati durante l'analisi dei rischi.
-	\item \textbf{Come si calcola}: si contano i rischi occorsi e non preventivati.
-	\item \textbf{Valore ammissibile}: \begin{equation*}NCR \leq 3\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}NCR = 0\end{equation*}
-\end{itemize}
-
-
-
-
-
-
-
-
-
-
-%-----------------------Processi organizzativi--------------------------------
-
-\subsection{Processi organizzativi}
-I processi organizzativi riguardano l'insieme delle attività volte a definire le linee guida e le procedure necessarie 
-per assicurare una gestione e coordinazione efficace del progetto.
-
-\subsubsection{Pianificazione}
-La pianificazione consiste nel definire le attività da svolgere e identificare le risorse, sia temporali che umane, 
-necessarie per la loro realizzazione. Per valutare l'efficacia di questo processo, sono state individuate alcune metriche 
-specifiche.
-
-\paragraph*{1POM-RSI Requirements Stability Index}
-\begin{itemize}
-    \item \textbf{Descrizione}: Il \textit{Requirements Stability Index} (RSI) misura la percentuale di requisiti che 
-    sono rimasti stabili rispetto al totale dei requisiti definiti all’inizio del progetto. Questa metrica è utile per v
-    alutare il grado di stabilità dei requisiti durante l’intero ciclo di vita del progetto e comprendere l’impatto delle
-    modifiche sui risultati.
-    \item \textbf{Formula di calcolo}: 
-    \begin{equation*}
-        RSI = \frac{RI - (RA + RR + RC)}{RI}
-    \end{equation*}
-    dove:
-    \begin{itemize}
-        \item $RI$: requisiti iniziali;
-        \item $RA$: requisiti aggiunti;
-        \item $RR$: requisiti rimossi;
-        \item $RC$: requisiti modificati.
-    \end{itemize}
-    \item \textbf{Valore minimo accettabile}: 
-    \begin{equation*}
-        RSI \geq 75\%
-    \end{equation*}
-    \item \textbf{Valore ideale}: 
-    \begin{equation*}
-        RSI = 100\%
-    \end{equation*}
-\end{itemize}
+\subsubsection{Risoluzione dei problemi}
+La risoluzione dei problemi è un processo che mira a identificare, analizzare e risolvere le
+varie problematiche che possono emergere durante lo sviluppo. La gestione dei rischi,
+in particolare, si occupa di identificare, analizzare e gestire i rischi che possono insorgere
+durante lo svolgimento del progetto. Per valutare la qualità di tale processo, sono state
+definite le seguenti metriche.
