@@ -1,2 +1,43 @@
 \section{Metriche di qualità}
-La qualità di processo è un criterio
+La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto che rispecchi lo stato dell'arte.
+Per raggiungere tale obiettivo è necessario sfruttare delle pratiche rigorose che consentano lo svolgimento di ogni attività in maniera ottimale.
+Valutando nel miglior modo possibile la qualità del prodotto e l'efficacia dei processi, sono state definite delle metriche riportate di seguito.
+Lo scopo di questa sezione è quello di identificarne i parametri che le metriche devono rispettare per essere considerate accettabili o ottime. Esse sono state suddivise utilizzando lo standard \emph{ISO/IEC 12207:1995},
+il quale separa i processi di ciclo di vita del Software in tre categorie:
+\begin{enumerate}
+    \item Processi di base e/o primari;
+    \item Processi di supporto;
+    \item Processi organizzativi;
+\end{enumerate}
+
+\subsection{Processi di base e/o primari}
+\subsubsection{Fornitura}
+Nella fase di \emph{Fornitura} si definiscono le procedure e le risorse necessarie per la consegna del prodotto.
+Definiamo quindi le seguenti metriche:
+
+
+\paragraph*{1PBM-PV Planed Value}
+\begin{itemize}
+    \item \textbf{Definizione:} il Planned Value (Valore Pianificato) rappresenta il valore del lavoro programmato per essere completato fino a un determinato momento. Si tratta del budget preventivato per lo sprint in corso.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $PV = BAC \times LP$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $BAC$: Budget At Completion
+    \item $LP$: Percentuale Lavoro Pianificato
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $PV \geq 0$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $PV \leq BAC$
+\end{center}
