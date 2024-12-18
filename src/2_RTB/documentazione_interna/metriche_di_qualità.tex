@@ -271,20 +271,123 @@ dove:
 
 
 
+%-----------------------Processi di Supporto--------------------------------
 
 
 \subsection{Proecssi di Supporto}
+I processi di supporto affiancano i processi primari per garantire il corretto svolgimento delle attività.
+
 \subsubsection{Documentazione}
+La documentazione riveste un ruolo essenziale per garantire la comprensione del prodotto e facilitarne la manutenzione.
+In termini pratici, si traduce nella creazione di manuali e documenti tecnici che illustrano il funzionamento del prodotto e le decisioni progettuali prese.
+Per misurare la qualità di questo processo, sono state individuate le seguenti metriche.
+
+\subsubsubsection{1PSM-IG Indice Gulpease}
+\begin{itemize}
+	\item \textbf{Definizione}: l'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Misura la lunghezza delle parole e delle frasi rispetto al numero di lettere.
+	\item \textbf{Come si calcola}: \begin{equation*}IG = 89 + \frac{300 \times F - 10 \times L}{P}\end{equation*} dove:
+		\begin{itemize}
+			\item $F$: numero totale di frasi nel documento;
+			\item $L$: numero totale di lettere nel documento;
+			\item $P$: numero totale di parole nel documento.
+		\end{itemize}
+	\item \textbf{Valore ammissibile}: \begin{equation*}IG \geq 50\%\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}IG \geq 75\%\end{equation*}
+\end{itemize}
+
+\paragraph*{2PSM-CO Correttezza Ortografica}
+\begin{itemize}
+	\item \textbf{Definizione}: la correttezza ortografica indica la presenza di errori ortografici nei documenti.
+	\item \textbf{Come si calcola}: si contano gli errori ortografici presenti nei documenti.
+	\item \textbf{Valore ammissibile}: \begin{equation*}0\ errori\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}0\ errori\end{equation*}
+\end{itemize}
+
+
+
 \subsubsection{Gestione della qualità}
+La gestione della qualità è un processo fondamentale che si occupa di stabilire una metodologia strutturata 
+per garantire che il prodotto soddisfi gli standard di qualità richiesti. 
+Questo processo non solo definisce le linee guida per il controllo e l’assicurazione della qualità, 
+ma mira anche a identificare e prevenire potenziali difetti, migliorando continuamente il prodotto e i processi ad esso correlati.
+Un’adeguata gestione della qualità è essenziale per assicurare che il prodotto finale sia conforme 
+alle aspettative del cliente e agli obiettivi del progetto. Per valutarne l’efficacia e individuare 
+eventuali aree di miglioramento, sono state definite le seguenti metriche, che permettono di monitorare 
+e misurare le prestazioni di questo processo in modo oggettivo.
+
+\paragraph*{3PSM-FU Facilità di Utilizzo}
+\begin{itemize}
+	\item \textbf{Definizione}: rappresenta il livello di usabilità del prodotto software mediante il numero di errori riscontrati durante l'utilizzo del prodotto da parte di un utente generico.
+	\item \textbf{Come si calcola}: si contano gli errori riscontrati durante l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
+	\item \textbf{Valore ammissibile}: \begin{equation*}FU \leq 3\ errori\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}FU = 0\ errori\end{equation*}
+\end{itemize}
+
+\paragraph*{4PSM-TA Tempo di Apprendimento}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il tempo massimo richiesto da parte di un utente generico per apprendere l'utilizzo del prodotto.
+	\item \textbf{Come si calcola}: si misura il tempo necessario per apprendere l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
+	\item \textbf{Valore ammissibile}: \begin{equation*}TA \leq 12\ minuti\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}TA \leq 8\ minuti\end{equation*}
+\end{itemize}
+
+\paragraph*{5PSM-TR Tempo di Risposta}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il tempo massimo di risposta del sistema sotto carico rilevato.
+	\item \textbf{Come si calcola}: si misura il tempo massimo necessario per ottenere una risposta dal sistema.
+	\item \textbf{Valore ammissibile}: \begin{equation*}TR \leq 8\ s\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}TR \leq 4\ s\end{equation*}
+\end{itemize}
+
+\paragraph*{6PSM-TE Tempo di Elaborazione}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il tempo massimo di elaborazione di un dato grezzo fino alla sua presentazione rilevato.
+	\item \textbf{Come si calcola}: si misura il tempo massimo di elaborazione di un dato grezzo dal momento della sua comparsa nel sistema fino alla sua presentazione all'utente.
+	\item \textbf{Valore ammissibile}: \begin{equation*}TE \leq 10\ s\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}TE \leq 5\ s\end{equation*}
+\end{itemize}
+
+\paragraph*{7PSM-QMS Metriche di Qualità Soddisfatte}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il numero di metriche implementate e soddisfatte, tra quelle definite.
+	\item \textbf{Come si calcola}: \begin{equation*}QMS = \frac{MS}{MT}\end{equation*} dove:
+		\begin{itemize}
+			\item $MS$: metriche soddisfatte;
+			\item $MT$: metriche totali.
+		\end{itemize}
+	\item \textbf{Valore ammissibile}: \begin{equation*}QMS \geq 90\%\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}QMS \geq 90\%\end{equation*}
+\end{itemize}
+
+
+
+
 \subsubsection{Verifica}
+La verifica è un processo cruciale che ha il compito di controllare che il prodotto sia conforme ai 
+requisiti stabiliti e soddisfi tutte le specifiche definite in fase di progettazione. 
+Questo processo assicura che ogni funzionalità sia pienamente operativa e che il prodotto rispetti 
+gli standard previsti, riducendo al minimo i rischi di errori o malfunzionamenti nelle fasi successive.
+La verifica si articola in una serie di attività sistematiche, che includono il controllo accurato di 
+ogni componente del prodotto e la validazione dei risultati ottenuti rispetto agli obiettivi predefiniti. 
+Questo approccio consente di garantire un elevato livello di qualità e affidabilità del prodotto finale.
+Per monitorare e valutare l’efficacia del processo di verifica, sono state definite specifiche metriche, 
+che permettono di analizzare le performance e identificare eventuali punti di miglioramento.
+
+\paragraph*{26M-CC Code Coverage}
+
+
+
+
+
+
+
+
+
 \subsubsection{Risoluzone dei problemi}
 
 
 
-
-
-
-
+%-----------------------Processi organizzativi--------------------------------
 
 \subsection{Processi organizzativi}
 I processi organizzativi riguardano l'insieme delle attività volte a definire le linee guida e le procedure necessarie per assicurare una gestione e coordinazione efficace del progetto.
@@ -292,7 +395,7 @@ I processi organizzativi riguardano l'insieme delle attività volte a definire l
 \subsubsection{Pianificazione}
 La pianificazione consiste nel definire le attività da svolgere e identificare le risorse, sia temporali che umane, necessarie per la loro realizzazione. Per valutare l'efficacia di questo processo, sono state individuate alcune metriche specifiche.
 
-\hypertarget{33M}{\subsubsubsection*{1POM-RSI Requirements Stability Index}}
+\paragraph*{1POM-RSI Requirements Stability Index}
 \begin{itemize}
     \item \textbf{Descrizione}: Il \textit{Requirements Stability Index} (RSI) misura la percentuale di requisiti che sono rimasti stabili rispetto al totale dei requisiti definiti all’inizio del progetto. Questa metrica è utile per valutare il grado di stabilità dei requisiti durante l’intero ciclo di vita del progetto e comprendere l’impatto delle modifiche sui risultati.
     \item \textbf{Formula di calcolo}: 
