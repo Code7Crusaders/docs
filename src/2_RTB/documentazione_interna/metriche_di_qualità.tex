@@ -271,7 +271,7 @@ dove:
 
 \subsubsection{Sviluppo}
 Nella fase di \emph{sviluppo} si realizza il prodotto software, seguendo le specifiche definite in fase di progettazione.
-\paragraph{Analisi dei Requisiti}
+\paragraph*{6.1.2.1 Analisi dei Requisiti}
 Questa fase consiste nell'esaminare le richieste del proponente e nel definire i requisiti che il prodotto dovrà soddisfare. Definiamo quindi le seguenti metriche:
 
 \paragraph*{11PBM-PRO Percentuale Requisiti Obbligatori}
@@ -352,7 +352,7 @@ dove:
     $PRF = 100\%$
 \end{center}
 
-\paragraph{Progettazione}
+\paragraph*{6.1.2.2 Progettazione}
 Questa fase consiste nel definire l'architettura  del prodotto software, in modo da soddisfare i requisiti in fase di analisi. Definiamo quindi le seguenti metriche:
 
 \paragraph*{14PBM-PG Profondità delle gerarchie}
@@ -373,7 +373,7 @@ Questa fase consiste nel definire l'architettura  del prodotto software, in modo
     $PG \leq 5$
 \end{center}
 
-\paragraph{Codifica}
+\paragraph*{6.1.2.3 Codifica}
 Queste metriche aiutano a valutare la qualità del codice, la complessità e la manutenibilità
 
 \paragraph*{15PBM-PPM Parametri Per Metodo}
@@ -523,7 +523,7 @@ dove:
     \item \textbf{Valore ammissibile:}
 \end{itemize}
 \begin{center}
-    $CO= 0 errori$
+    $CO = 0 errori$
 \end{center}
 \begin{itemize}
     \item \textbf{Valore ottimo:}
@@ -535,10 +535,238 @@ dove:
 \subsubsection{Gestione della Qualità}
 La \emph{gestione della qualità} è un processo che si occupa di definire una metodologia per garantire la qualità del prodotto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
+\paragraph*{3PSM-FU Facilità di Utilizzo}
+\begin{itemize}
+    \item \textbf{Definizione:} rappresenta il livello di usabilità del prodotto software mediante il numero di errori riscontrati durante l’utilizzo del prodotto da parte di un utente generico.
+    \item \textbf{Come si calcola:} si contano gli errori riscontrati durante l’utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $FU \geq 3 errori$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $FU \geq 0 errori$
+\end{center}
+
+\paragraph*{4PSM-TA Tempo di Apprendimento}
+\begin{itemize}
+    \item \textbf{Definizione:} indica il tempo massimo richiesto da parte di un utente generico per apprendere l’utilizzo del prodotto.
+    \item \textbf{Come si calcola:} si misura il tempo necessario per apprendere l’utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $TA \leq 12 minuti$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $TA \leq 8 min$
+\end{center}
+
+\paragraph*{5PSM-TR Tempo di Risposta}
+\begin{itemize}
+    \item \textbf{Definizione:} indica il tempo massimo di risposta del sistema sotto carico rilevato.
+    \item \textbf{Come si calcola:} si misura il tempo massimo necessario per ottenere una risposta dal sistema.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $TR \leq 8 secondi$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $TR \leq 4secondi$
+\end{center}
+
+\paragraph*{6PSM-TE Tempo di Elaborazione}
+\begin{itemize}
+    \item \textbf{Definizione:}indica il tempo massimo di elaborazione di un dato grezzo fino alla sua presentazione rilevato
+    \item \textbf{Come si calcola:}si misura il tempo massimo di elaborazione di un dato grezzo dal momento della sua comparsa nel sistema fino alla sua presentazione all’utente.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $TE \leq 10 secondi$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $TE \leq 5secondi$
+\end{center}
+
+\paragraph*{7PSM-QMS Metriche di Qualità Soddisfatte}
+\begin{itemize}
+    \item \textbf{Definizione:}indica il numero di metriche implementate e soddisfatte, tra quelledefinite.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $QMS = MS/MT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $MS$: Metriche soddisfatte;
+     \item $MT$: Metriche Totali;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $QMS \geq 90\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $QMS \geq 90\%$
+\end{center}
+
 \subsubsection{Verifica}
 La \emph{verifica} è un processo che si occupa di controllare che il prodotto soddisfi i requisiti
 stabiliti e sia pienamente funzionante. Per valutare la qualità di tale processo, sono state
 definite le seguenti metriche.
+
+\paragraph*{8PSM-CC Code Coverage}
+\begin{itemize}
+    \item \textbf{Definizione:} la Code Coverage indica quale percentuale del codice sorgente è stata eseguita durante i test. Serve per capire quanto del codice è stato verificato dai test automatizzati.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $CC = LE/LT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $LE$: Linee di codice eseguite;
+     \item $LT$: Linee di codice totali;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $CC \geq 80\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $CC \geq 100\%$
+\end{center}
+
+\paragraph*{9PSM-BC Branch Coverage}
+\begin{itemize}
+    \item \textbf{Definizione:} la Branch Coverage indica quale percentuale dei rami decisionali (percorsi derivanti da istruzioni condizionali come if, for, while) del codice è stata eseguita durante i test.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $BC = BE/BT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $BE$: Rami eseguiti;
+     \item $BT$: Rami totali;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $BC \geq 80\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $BC \geq 100\%$
+\end{center}
+
+\paragraph*{10PSM-SC Statement Coverage}
+\begin{itemize}
+    \item \textbf{Definizione:} la Statement Coverage indica quale percentuale di istruzioni del codice è stata eseguita durante i test.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $SC = IE/IT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $IE$: istruzioni eseguite;
+     \item $IT$: istruzioni totali;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $SC \geq 80\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $SC \geq 100\%$
+\end{center}
+
+\paragraph*{11PSM-FD Failure Density}
+\begin{itemize}
+    \item \textbf{Definizione:} la Failure Density indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo rispetto alla dimensione del software stesso.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $FD = DF/LT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $DF$: Difetti Trovati;
+     \item $LT$: linee di codice totali;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $FD \leq 15\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $FD = 0\%$
+\end{center}
+
+\paragraph*{12PSM-PTCP Passed Test Case Percentage}
+\begin{itemize}
+    \item \textbf{Definizione:} la Passed Test Case Percentage indica la percentuale di test che sono stati eseguiti con successo su una base di test.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $PTCP = TS/TT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $TS$: Test superati;
+     \item $TT$: Test totali;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $PTCP \geq 90\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $PTCP \geq 100\%$
+\end{center}
 
 \subsubsection{Risoluzione dei problemi}
 La \emph{risoluzione dei problemi} è un processo che mira a identificare, analizzare e risolvere le
@@ -547,8 +775,80 @@ in particolare, si occupa di identificare, analizzare e gestire i rischi che pos
 durante lo svolgimento del progetto. Per valutare la qualità di tale processo, sono state
 definite le seguenti metriche.
 
+\paragraph*{13PSM-RMR Risk Mitigation Rate}
+\begin{itemize}
+    \item \textbf{Definizione:} la Risk Mitigation Rate indica la percentuale di rischi identificati che sono stati mitigati con successo.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $RMR = RM/RT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $RM$: Rischi mitigati;
+     \item $RT$: Rischi totali identificati;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $RMR \geq 80\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $RMR \geq 100\%$
+\end{center}
+
+\paragraph*{14PSM-NCR Rischi Non Calcolati}
+\begin{itemize}
+    \item \textbf{Definizione:} indica il numero di rischi occorsi che non sono stati preventivati durante l’analisi dei rischi.
+    \item \textbf{Come si calcola:}  si contano i rischi occorsi e non preventivati.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $NCR \leq 3$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $NCR = 3$
+\end{center}
+
 \subsection{Processi organizzativi}
 I \emph{Processi organizzativi} sono processi che si occupano di definire le linee guida e le procedure da seguire per garantire un'efficace gestione e coordinazione del progetto.
 
 \subsubsection{Pianificazione}
 La \emph{Pianificazione} è un processo che si occupa di definire le attività da svolgere e le risorse temporali e umane necessarie per il loro svolgimento. Per valutare la qualità di tale processo sono state definite le seguenti metriche:
+
+\paragraph*{1POM-RSI Requirements Stability Index}
+\begin{itemize}
+    \item \textbf{Definizione:} il Requirements Stability Index ($RSI$) indica la percentuale di requisiti che sono rimasti invariati rispetto al totale dei requisiti inizialmente definiti. Si tratta di una metrica utilizzata per misurare quanto i requisiti di un progetto rimangono stabili durante il ciclo di vita del progetto stesso, è particolarmente utile per comprendere l’impatto delle modifiche ai requisiti sul progetto.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $RSI = \frac{(RI-(RA + RR + RC))}{RI}$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $RI$: Requisiti iniziali;
+     \item $RA$: Requisiti aggiunti;
+     \item $RR$: Requisiti rimossi;
+     \item $RC$: Requisiti cambiati;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $RSI \geq 75\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $RSI = 100\%$
+\end{center}
