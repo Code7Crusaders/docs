@@ -41,3 +41,230 @@ dove:
 \begin{center}
     $PV \leq BAC$
 \end{center}
+
+\paragraph*{2PBM-ETC Estimated to complete}
+\begin{itemize}
+    \item \textbf{Definizione:} l’Estimate to Complete (o Stima al Completamento) rappresenta una previsione del costo necessario per completare le attività rimanenti del progetto basata sulle performance attuali.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $ETC = BAC - EV$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $BAC$: Budget At Completion
+    \item $EV$: Earned Value
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $ETC \geq 0$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $ETC \leq EAC$
+\end{center}
+
+\paragraph*{3PBM-EAC Estimate at Completition}
+\begin{itemize}
+    \item \textbf{Definizione:} l’Estimate at Completion (o Stima da Completare) rappresenta una previsione aggiornata del costo totale del progetto basata sulle performance attuali, calcolata in base ai costi effettivamente sostenuti e ai costi stimati per completare il lavoro rimanente.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $EAC = AC + (BAC - EV)$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $BAC$: Budget At Completion
+    \item $EV$: Earned Value
+    \item $AC$: Actual Cost
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $EAC \leq BAC + 10\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $EAC \leq BAC$
+\end{center}
+
+\paragraph*{4PBM-EV Earned Value}
+\begin{itemize}
+    \item \textbf{Definizione:} l’Earned Value (Valore Guadagnato) rappresenta il valore del lavoro effettivamente completato fino al periodo in analisi.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $EV = AC \times LC$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $LC$: Percentuale di lavoro completato
+    \item $AC$: Actual Cost
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $EV \geq 0$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $EV \leq EAC$
+\end{center}
+
+\paragraph*{5PBM-AC}
+\begin{itemize}
+    \item \textbf{Definizione:} l’Actual Cost (Costo Effettivo) rappresenta il costo effettivamente sostenuto per completare il lavoro fino al periodo in analisi.
+    \item \textbf{Come si calcola:} Si ottiene sommando tutti i costi effettivi sostenuti fino a quella data.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $AC \geq 0$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $AC \leq EAC$
+\end{center}
+
+\paragraph*{6PBM-SV Scheduled Variance}
+\begin{itemize}
+    \item \textbf{Definizione:} la Schedule Variance (o Variazione di Programma) rappresenta la differenza tra il valore del lavoro effettivamente completato e il valore del lavoro pianificato, calcolata in percentuale.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $SV = (EV-PV)/EV$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $EV$: Earned Value
+    \item $PV$: Planned Value
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $SV \geq -10\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $SV \geq 0\%$
+\end{center}
+
+\paragraph*{7PBM-CV Cost Variance}
+\begin{itemize}
+    \item \textbf{Definizione:} la Cost Variance (o Variazione dei Costi) rappresenta la differenza tra il valore del lavoro effettivamente completato e il costo effettivamente sostenuto per completarlo, calcolata in percentuale
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $CV = (EV - AC)/EV$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $EV$: Earned Value
+    \item $AC$: Actual Cost
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $CV \geq -10\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $CV \geq 0\%$
+\end{center}
+
+\paragraph*{8PBM-CPI Cost Performance Index}
+\begin{itemize}
+    \item \textbf{Definizione:} il Cost Performance Index rappresenta il rapporto tra il valore del lavoro effettivamente completato e i costi sostenuti per completarlo.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $CPI = EV/AC$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $EV$: Earned Value
+    \item $AC$: Actual Cost
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $CPI \geq 0.8$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $CPI \geq 1$
+\end{center}
+
+\paragraph*{9PBM-SPI Scheduled Performance Index}
+\begin{itemize}
+    \item \textbf{Definizione:} lo Schedule Performance Index rappresenta l’efficienza con cui il progetto sta rispettando il programma.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $SPI = EV/PV$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $EV$: Earned Value
+    \item $PV$: Planned Value
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $SPI \geq 0.8$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $SPI \geq 1$
+\end{center}
+
+\paragraph*{10PBM-OTDR On-Time Delivery Rate}
+\begin{itemize}
+    \item \textbf{Definizione:} l’On-Time Delivery Rate (o Tasso di Consegna nei Tempi) rappresenta la percentuale di attività completate entro la data di scadenza.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $OTDR = AP/AT$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $AP$: Attività completate entro la data di scadenza
+    \item $AT$: Attività Totali
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $OTDR \geq 90\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $OTDR \geq 95\%$
+\end{center}
