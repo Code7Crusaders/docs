@@ -360,8 +360,6 @@ e misurare le prestazioni di questo processo in modo oggettivo.
 \end{itemize}
 
 
-
-
 \subsubsection{Verifica}
 La verifica è un processo cruciale che ha il compito di controllare che il prodotto sia conforme ai 
 requisiti stabiliti e soddisfi tutte le specifiche definite in fase di progettazione. 
@@ -373,31 +371,127 @@ Questo approccio consente di garantire un elevato livello di qualità e affidabi
 Per monitorare e valutare l’efficacia del processo di verifica, sono state definite specifiche metriche, 
 che permettono di analizzare le performance e identificare eventuali punti di miglioramento.
 
-\paragraph*{26M-CC Code Coverage}
+\paragraph*{8PSM-CC Code Coverage}
+\begin{itemize}
+	\item \textbf{Definizione}: la \textit{Code Coverage} indica quale percentuale del codice sorgente è stata eseguita durante i test. Serve per capire quanto del codice è stato verificato dai test automatizzati.
+	\item \textbf{Come si calcola}: \begin{equation*}CC = \frac{LE}{LT}\end{equation*} dove:
+		\begin{itemize}
+			\item $LE$: linee di codice eseguite;
+			\item $LT$: linee di codice totali.
+		\end{itemize}
+	\item \textbf{Valore ammissibile}: \begin{equation*}CC \geq 80\%\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}CC = 100\%\end{equation*}
+\end{itemize}
 
+\paragraph*{9PSM-BC Branch Coverage}
+\begin{itemize}
+	\item \textbf{Definizione}: la \textit{Branch Coverage} indica quale percentuale dei rami decisionali (percorsi derivanti da istruzioni condizionali come \textit{if}, \textit{for}, \textit{while}) del codice è stata eseguita durante i test.
+	\item \textbf{Come si calcola}: \begin{equation*}BC = \frac{BE}{BT}\end{equation*} dove:
+		\begin{itemize}
+			\item $BE$: rami eseguiti;
+			\item $BT$: rami totali.
+		\end{itemize}
+	\item \textbf{Valore ammissibile}: \begin{equation*}BC \geq 80\%\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}BC = 100\%\end{equation*}
+\end{itemize}
 
+\paragraph*{10PSM-SC Statement Coverage}
+\begin{itemize}
+	\item \textbf{Definizione}: la \textit{Statement Coverage} indica quale percentuale di istruzioni del codice è stata eseguita durante i test.
+	\item \textbf{Come si calcola}: \begin{equation*}SC = \frac{IE}{IT}\end{equation*} dove:
+		\begin{itemize}
+			\item $IE$: istruzioni eseguite;
+			\item $IT$: istruzioni totali.
+		\end{itemize}
+	\item \textbf{Valore ammissibile}: \begin{equation*}SC \geq 80\%\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}SC = 100\%\end{equation*}
+\end{itemize}
 
+\paragraph{11PSM-FD Failure Density}
+\begin{itemize}
+	\item \textbf{Definizione}: la \textit{Failure Density} indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo rispetto alla dimensione del software stesso.
+	\item \textbf{Come si calcola}: \begin{equation*}FD = \frac{DF}{LT}\end{equation*} dove:
+		\begin{itemize}
+			\item $DF$: difetti trovati;
+			\item $LT$: linee di codice totali.
+		\end{itemize}
+	\item \textbf{Valore ammissibile}: \begin{equation*}FD \leq 15\%\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}FD = 0\%\end{equation*}
+\end{itemize}
 
+\paragraph{12PSM-PTCP Passed Test Case Percentage}
+\begin{itemize}
+	\item \textbf{Definizione}: la \textit{Passed Test Case Percentage} indica la percentuale di test che sono stati 
+    eseguiti con successo su una base di test.
+	\item \textbf{Come si calcola}: \begin{equation*}PTCP = \frac{TS}{TT}\end{equation*} dove:
+		\begin{itemize}
+			\item $TS$: test superati;
+			\item $TT$: test totali.
+		\end{itemize}
+	\item \textbf{Valore ammissibile}: \begin{equation*}PTCP \geq 90\%\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}PTCP = 100\%\end{equation*}
+\end{itemize}
 
 
 
 
 
 \subsubsection{Risoluzone dei problemi}
+La risoluzione dei problemi è un processo che si occupa di identificare, 
+analizzare e risolvere le problematiche che possono sorgere durante lo sviluppo di un progetto, 
+garantendo il regolare avanzamento delle attività.
+Collegata a questo è la gestione dei rischi, che mira a individuare, analizzare e mitigare i 
+potenziali rischi, definendo strategie per minimizzarne l’impatto sul progetto.
+Per valutare l’efficacia di questi processi e garantire un approccio strutturato alla gestione delle 
+problematiche, sono state definite specifiche metriche che consentono di monitorare e migliorare le prestazioni.
+
+
+\subsubsubsection{13PSM-RMR Risk Mitigation Rate}
+\begin{itemize}
+	\item \textbf{Definizione}: la \textit{Risk Mitigation Rate} indica la percentuale di rischi identificati che sono stati mitigati con successo.
+	\item \textbf{Come si calcola}: \begin{equation*}RMR = \frac{RM}{RT}\end{equation*} dove:
+		\begin{itemize}
+			\item $RM$: rischi mitigati;
+			\item $RT$: rischi totali identificati.
+		\end{itemize}
+	\item \textbf{Valore ammissibile}: \begin{equation*}RMR \geq 80\%\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}RMR = 100\%\end{equation*}
+\end{itemize}
+
+\subsubsubsection{14PSM-NCR Rischi Non Calcolati}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il numero di rischi occorsi che non sono stati preventivati durante l'analisi dei rischi.
+	\item \textbf{Come si calcola}: si contano i rischi occorsi e non preventivati.
+	\item \textbf{Valore ammissibile}: \begin{equation*}NCR \leq 3\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}NCR = 0\end{equation*}
+\end{itemize}
+
+
+
+
+
+
+
 
 
 
 %-----------------------Processi organizzativi--------------------------------
 
 \subsection{Processi organizzativi}
-I processi organizzativi riguardano l'insieme delle attività volte a definire le linee guida e le procedure necessarie per assicurare una gestione e coordinazione efficace del progetto.
+I processi organizzativi riguardano l'insieme delle attività volte a definire le linee guida e le procedure necessarie 
+per assicurare una gestione e coordinazione efficace del progetto.
 
 \subsubsection{Pianificazione}
-La pianificazione consiste nel definire le attività da svolgere e identificare le risorse, sia temporali che umane, necessarie per la loro realizzazione. Per valutare l'efficacia di questo processo, sono state individuate alcune metriche specifiche.
+La pianificazione consiste nel definire le attività da svolgere e identificare le risorse, sia temporali che umane, 
+necessarie per la loro realizzazione. Per valutare l'efficacia di questo processo, sono state individuate alcune metriche 
+specifiche.
 
 \paragraph*{1POM-RSI Requirements Stability Index}
 \begin{itemize}
-    \item \textbf{Descrizione}: Il \textit{Requirements Stability Index} (RSI) misura la percentuale di requisiti che sono rimasti stabili rispetto al totale dei requisiti definiti all’inizio del progetto. Questa metrica è utile per valutare il grado di stabilità dei requisiti durante l’intero ciclo di vita del progetto e comprendere l’impatto delle modifiche sui risultati.
+    \item \textbf{Descrizione}: Il \textit{Requirements Stability Index} (RSI) misura la percentuale di requisiti che 
+    sono rimasti stabili rispetto al totale dei requisiti definiti all’inizio del progetto. Questa metrica è utile per v
+    alutare il grado di stabilità dei requisiti durante l’intero ciclo di vita del progetto e comprendere l’impatto delle
+    modifiche sui risultati.
     \item \textbf{Formula di calcolo}: 
     \begin{equation*}
         RSI = \frac{RI - (RA + RR + RC)}{RI}
