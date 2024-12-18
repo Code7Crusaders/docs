@@ -279,5 +279,39 @@ dove:
 \subsubsection{Verifica}
 \subsubsection{Risoluzone dei problemi}
 
-\subsection{Processi Organizzativi}
+
+
+
+
+
+
+
+\subsection{Processi organizzativi}
+I processi organizzativi riguardano l'insieme delle attività volte a definire le linee guida e le procedure necessarie per assicurare una gestione e coordinazione efficace del progetto.
+
 \subsubsection{Pianificazione}
+La pianificazione consiste nel definire le attività da svolgere e identificare le risorse, sia temporali che umane, necessarie per la loro realizzazione. Per valutare l'efficacia di questo processo, sono state individuate alcune metriche specifiche.
+
+\hypertarget{33M}{\subsubsubsection*{1POM-RSI Requirements Stability Index}}
+\begin{itemize}
+    \item \textbf{Descrizione}: Il \textit{Requirements Stability Index} (RSI) misura la percentuale di requisiti che sono rimasti stabili rispetto al totale dei requisiti definiti all’inizio del progetto. Questa metrica è utile per valutare il grado di stabilità dei requisiti durante l’intero ciclo di vita del progetto e comprendere l’impatto delle modifiche sui risultati.
+    \item \textbf{Formula di calcolo}: 
+    \begin{equation*}
+        RSI = \frac{RI - (RA + RR + RC)}{RI}
+    \end{equation*}
+    dove:
+    \begin{itemize}
+        \item $RI$: requisiti iniziali;
+        \item $RA$: requisiti aggiunti;
+        \item $RR$: requisiti rimossi;
+        \item $RC$: requisiti modificati.
+    \end{itemize}
+    \item \textbf{Valore minimo accettabile}: 
+    \begin{equation*}
+        RSI \geq 75\%
+    \end{equation*}
+    \item \textbf{Valore ideale}: 
+    \begin{equation*}
+        RSI = 100\%
+    \end{equation*}
+\end{itemize}
