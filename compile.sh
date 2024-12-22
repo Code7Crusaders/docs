@@ -44,25 +44,26 @@ files=(
     # "./src/templateC7C/template-verbali-nuovo/template-verbali.tex"
 
     # "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.2.tex"
-     "./src/2_RTB/documentazione_esterna/piano_di_qualifica_v0.1.tex"
-     "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.tex"
+    #  "./src/2_RTB/documentazione_esterna/piano_di_qualifica_v0.1.tex"
+    #  "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.tex"
     
     # "./src/2_RTB/documentazione_interna/glossario.tex"
-     "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"  
+    #  "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"  
     
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
     # "./src/2_RTB/verbali_esterni/verbale_24-11-14_v1.0.tex"
-     "./src/2_RTB/verbali_esterni/verbale_24-12-12_v1.0.tex"
+    #  "./src/2_RTB/verbali_esterni/verbale_24-12-12_v1.0.tex"
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
 
     # "./src/2_RTB/verbali_interni/verbale_24-11-04_v1.0.tex" 
     # "./src/2_RTB/verbali_interni/verbale_24-11-15_v1.0.tex"
     # "./src/2_RTB/verbali_interni/verbale_24-11-22_v1.0.tex"
     # "./src/2_RTB/verbali_interni/verbale_24-11-29_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_24-12-07_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_24-12-13_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_24-12-07_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_24-12-13_v1.0.tex"
+    "./src/2_RTB/verbali_interni/verbale_24-12-19_v1.0.tex"
 
-     "src/altri_documenti/analisi_LLM_Bloom_Openai_gpt4/analisi_modelli.tex"
+    #  "src/altri_documenti/analisi_LLM_Bloom_Openai_gpt4/analisi_modelli.tex"
 
 )
 

@@ -60,9 +60,9 @@
     \vspace{0.5cm}
     {\Large Software Development Team}\\
     \vspace{2cm}
-    
-    {\large \textbf{Riunione Settimanale 07/12/2024}}\\ 
-    \vspace{5cm}                           
+        
+        {\large \textbf{Riunione Settimanale 19/12/2024}}\\
+    \vspace{5cm}                           % esempio: Riunione Settimanale 04/11/2024
     
     
     \textbf{Membri del Team:}\\
@@ -82,12 +82,12 @@
 \centering
 \textbf{Versioni} \\ % Titolo sopra la tabella
 \vspace{2mm} % Spazio tra il titolo e la tabella
-\begin{tabular}{|c|c|c|c|>{\raggedright\arraybackslash}p{0.3\textwidth}|}
+\begin{tabular}{|c|c|c|c|c|}
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
     \hline
-    1.0 & 08/12/2024 & Filippo Rizzolo & Enrico Cotti Cottini & Stesura verbale \\ 
-    \hline                                  
+    1.0 & 22/12/2024 & Enrico Cotti Cottini &  & Prima stesura del documento \\ 
+    \hline                                  % TODO: inserire data, nomi e descrizione
 \end{tabular}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,26 +105,26 @@
 \newpage
 \section{Registro Presenze}
 \textbf{Piattaforma della riunione:} Piattaforma Discord \\
-\textbf {Ora di Inizio:} 14:00\\
-\textbf {Ora di Fine:} 15:00\\  % TODO: inserire orari ed eventualmente piattaforma   						
+\textbf{Ora di Inizio} 10:30\\
+\textbf{Ora di Fine} 11:30\\  % TODO: inserire orari ed eventualmente piattaforma
 \\
 \begin{tabular}{|c|c|c|}  % TODO: inserire ruoli e presenze
     \hline
     \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
     \hline
-    Enrico Cotti Cottini & Amministratore & Presente \\ 
+    Enrico Cotti Cottini & Verificatore & Presente \\ 
     \hline
-    Gabriele Di Pietro & Verificatore & Presente\\ 
+    Gabriele Di Pietro & Programmatore & Presente \\ 
     \hline
-    Tommaso Diviesti & Programmatore & Presente \\ 
+    Tommaso Diviesti & Responsabile & Presente \\ 
     \hline 
-    Francesco Lapenna & Verificatore & Presente \\ 
+    Francesco Lapenna & Progettista& Presente \\ 
     \hline
-    Matthew Pan & Responsabile & Assente\\ 
+    Matthew Pan & Analista & Assente \\ 
     \hline 
-    Eddy Pinarello & Analista & Presente \\ 
+    Eddy Pinarello & Amministratore & Presente \\ 
     \hline 
-    Filippo Rizzolo & Progettista & Presente \\ 
+    Filippo Rizzolo & Verificatore& Presente \\ 
     \hline 
 \end{tabular}
 % Presenze Rappresentanti Azienda %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -144,41 +144,43 @@
     \end{tabular}
 }{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{10mm}
-\section{Ordine del Giorno}
-\begin{itemize}
-    \item Discussione llm da utilizzare
-    \item Inizio piano di qualifica
-    \item Chiamata con l'azienda
-\end{itemize}
+
 
 
 % Sezione Verbale %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Verbale Retrospettiva}
 
-    \subsection{Discussione LLM da utilizzare}
-    Dopo aver testato vari LLM disponibili, abbiamo deciso di mettere maggior impegno nella conoscenza di uno solo di essi. L'obiettivo è stato quello di capire quale fosse il più efficiente e meno costoso per l'azienda.
+\subsection{Progresso Settimanale}
+\subsubsection{Front-end}
+Questa settimana abbiamo proseguito la ricerca dello strumento più adatto per la realizzazione del front-end, considerando React come possibile scelta. La finalizzazione del front-end è prevista per la prossima settimana.  
+Abbiamo deciso di redigere un documento di analisi del front-end, simile a quello realizzato per il back-end, per presentarlo all'azienda in quanto richiesto dal capitolato.
 
-    \subsection{Inizio piano di qualifica e continuazione vari documenti}
-    Abbiamo deciso di iniziare la produzione del piano di qualifica studiando meglio la struttura del documento in modo da non perdere punti importanti durante la produzione. Avverrà prima uno studio singolare asincrono per le persone coinvolte e successivamente un incontro per unire le varie conoscenze e suddividere le parti del documento da produrre. Per quanto riguarda gli altri documenti, si procederà alla continuazione e conclusione in modo da non avere troppa documentazione da seguire nello stesso momento.
+\subsubsection{Requisiti e Casi d'Uso}
+Abbiamo raccolto i requisiti basandoci sui casi d'uso e contattato l'azienda per comunicare i requisiti identificati. Abbiamo richiesto una loro valutazione per confermare se fossero corretti o se fosse necessario integrare nuovi requisiti.  
+Abbiamo organizzato una chiamata interna per discutere dei casi d'uso in vista del ricevimento con il Professor Cardin. Durante la discussione, sono emerse domande specifiche da sottoporre al professore. Siamo pronti a correggere i casi d'uso sulla base delle sue indicazioni.
 
-    \subsection{Chiamata con l'azienda}
-    Dopo una discussione interna, abbiamo deciso di contattare l'azienda per discutere le nostre idee e decisioni riguardo alla tipologia di LLM da utilizzare. L'idea iniziale da loro fornita è stata esclusa in quanto meno precisa e più costosa in termini di tempo produttivo e di soldi per l'utilizzo. Siamo giunti alla conclusione di utilizzare l'LLM di Chat-GPT in quanto il costo viene calcolato a token e non in termini di tempo, ed è più compatibile con le varie tecnologie scelte.
-    
-    % ...
+\subsubsection{Back-end}
+L'architettura del back-end è stata aggiornata in seguito alla conferma e al feedback positivo dell'azienda. La stessa ci ha fornito le chiavi per utilizzare il modello sulla piattaforma OpenAI con un saldo iniziale di \$25. Questo ci permette di iniziare a lavorare al Proof of Concept (POC).
 
-    \subsection{Conclusioni e Pianificazione} 
-    \textbf{Pianificazione per la prossima settimana:} 
-    \begin{itemize}
-        \item Contattare l'azienda per decidere la tipologia di LLM da utilizzare.
-        \item Contattare il Professor Cardin per analizzare la correttezza dei casi d'uso.
-        \item Continuare a lavorare sulle norme di progetto e sul piano di progetto, aggiungendo ulteriori dettagli.
-        \item Iniziare il piano di qualifica.
-        \item Definire l'architettura di sistema migliore.
-    \end{itemize}
+\subsubsection{Verifica e Correzione Documenti}
+Abbiamo continuato la verifica dei documenti, correggendo errori riscontrati, come alcune formule errate nel Piano di Qualifica. Inoltre, sono proseguiti i lavori sui documenti di Piano di Progetto, Piano di Qualifica e Norme di Progetto.
 
-    La prossima riunione è pianificata per il \textbf{13/12/2024}, con l'obiettivo di analizzare i progressi ottenuti e pianificare i prossimi passi.
+\subsubsection{Problemi di Comunicazione}
+È emerso un problema di comunicazione nella redazione delle Norme di Progetto con un membro specifico del team. Questo problema, che si ripete, è caratterizzato da una scarsa partecipazione a chiamate, attività di pianificazione e incontri interni, sia sul gruppo WhatsApp che in chiamata, e anche con interlocutori esterni.  
+Abbiamo deciso di affrontare la situazione promuovendo un cambiamento di approccio e incentivando un maggiore impegno nella comunicazione e collaborazione. Se il problema si ripresenterà, dovremo prendere decisioni più radicali.
+
+\subsection{Pianificazione per la Prossima Settimana}
+\begin{itemize}
+    \item Completare le attività di routine e verifica dei documenti.
+    \item Iniziare l'analisi sul database da utilizzare.
+    \item Aggiornare le definizioni del glossario con i termini raccolti fino a questo momento.
+    \item Completare le attività in vista della revisione RTB e la consegna del POC.
+\end{itemize}
+
+\subsection{Conclusioni}
+Nonostante le festività natalizie, ci aspettiamo di mantenere un livello di produttività costante, completando le attività pianificate. La prossima riunione è programmata per il \textbf{27/12/2024}, con l'obiettivo di analizzare i progressi e pianificare i prossimi passi.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
