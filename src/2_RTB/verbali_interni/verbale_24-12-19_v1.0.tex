@@ -20,7 +20,7 @@
 \usepackage[hidelinks]{hyperref}
 
 % TODO: setta a 1 se il verbale è esterno, 0 se è interno
-\newcommand{\isEsterno}{0}
+\newcommand{\isEsterno}{1}
 
 % Margini della pagina
 \geometry{a4paper, margin=1in}
@@ -61,8 +61,8 @@
     {\Large Software Development Team}\\
     \vspace{2cm}
     
-    {\large \textbf{Riunione Settimanale 07/12/2024}}\\ 
-    \vspace{5cm}                           
+    {\large \textbf{Titolo del Verbale}}\\ % TODO: inserire titolo del verbale
+    \vspace{5cm}                           % esempio: Riunione Settimanale 04/11/2024
     
     
     \textbf{Membri del Team:}\\
@@ -82,12 +82,12 @@
 \centering
 \textbf{Versioni} \\ % Titolo sopra la tabella
 \vspace{2mm} % Spazio tra il titolo e la tabella
-\begin{tabular}{|c|c|c|c|>{\raggedright\arraybackslash}p{0.3\textwidth}|}
+\begin{tabular}{|c|c|c|c|c|}
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
     \hline
-    1.0 & 08/12/2024 & Filippo Rizzolo & Enrico Cotti Cottini & Stesura verbale \\ 
-    \hline                                  
+    0.1 & DD/MM/YYYY & Nome Autore & Nome Verificatore & Prima stesura del documento \\ 
+    \hline                                  % TODO: inserire data, nomi e descrizione
 \end{tabular}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,26 +105,26 @@
 \newpage
 \section{Registro Presenze}
 \textbf{Piattaforma della riunione:} Piattaforma Discord \\
-\textbf {Ora di Inizio:} 14:00\\
-\textbf {Ora di Fine:} 15:00\\  % TODO: inserire orari ed eventualmente piattaforma   						
+\textbf{Ora di Inizio} hh:mm\\
+\textbf{Ora di Fine} hh:mm\\  % TODO: inserire orari ed eventualmente piattaforma
 \\
 \begin{tabular}{|c|c|c|}  % TODO: inserire ruoli e presenze
     \hline
     \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
     \hline
-    Enrico Cotti Cottini & Amministratore & Presente \\ 
+    Enrico Cotti Cottini & Responsabile & Presente \\ 
     \hline
-    Gabriele Di Pietro & Verificatore & Presente\\ 
+    Gabriele Di Pietro & Redattore & Presente \\ 
     \hline
-    Tommaso Diviesti & Programmatore & Presente \\ 
+    Tommaso Diviesti & Redattore & Presente \\ 
     \hline 
-    Francesco Lapenna & Verificatore & Presente \\ 
+    Francesco Lapenna & Redattore& Presente \\ 
     \hline
-    Matthew Pan & Responsabile & Assente\\ 
+    Matthew Pan & Verificatore & Assente \\ 
     \hline 
-    Eddy Pinarello & Analista & Presente \\ 
+    Eddy Pinarello & Redattore & Presente \\ 
     \hline 
-    Filippo Rizzolo & Progettista & Presente \\ 
+    Filippo Rizzolo & Amministratore& Presente \\ 
     \hline 
 \end{tabular}
 % Presenze Rappresentanti Azienda %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -144,41 +144,30 @@
     \end{tabular}
 }{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{10mm}
-\section{Ordine del Giorno}
-\begin{itemize}
-    \item Discussione llm da utilizzare
-    \item Inizio piano di qualifica
-    \item Chiamata con l'azienda
-\end{itemize}
+
 
 
 % Sezione Verbale %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Verbale Retrospettiva}
+\subsection{}
 
-    \subsection{Discussione LLM da utilizzare}
-    Dopo aver testato vari LLM disponibili, abbiamo deciso di mettere maggior impegno nella conoscenza di uno solo di essi. L'obiettivo è stato quello di capire quale fosse il più efficiente e meno costoso per l'azienda.
+\subsection{}
 
-    \subsection{Inizio piano di qualifica e continuazione vari documenti}
-    Abbiamo deciso di iniziare la produzione del piano di qualifica studiando meglio la struttura del documento in modo da non perdere punti importanti durante la produzione. Avverrà prima uno studio singolare asincrono per le persone coinvolte e successivamente un incontro per unire le varie conoscenze e suddividere le parti del documento da produrre. Per quanto riguarda gli altri documenti, si procederà alla continuazione e conclusione in modo da non avere troppa documentazione da seguire nello stesso momento.
+\subsection{}
 
-    \subsection{Chiamata con l'azienda}
-    Dopo una discussione interna, abbiamo deciso di contattare l'azienda per discutere le nostre idee e decisioni riguardo alla tipologia di LLM da utilizzare. L'idea iniziale da loro fornita è stata esclusa in quanto meno precisa e più costosa in termini di tempo produttivo e di soldi per l'utilizzo. Siamo giunti alla conclusione di utilizzare l'LLM di Chat-GPT in quanto il costo viene calcolato a token e non in termini di tempo, ed è più compatibile con le varie tecnologie scelte.
-    
-    % ...
+\subsection{}
 
-    \subsection{Conclusioni e Pianificazione} 
-    \textbf{Pianificazione per la prossima settimana:} 
-    \begin{itemize}
-        \item Contattare l'azienda per decidere la tipologia di LLM da utilizzare.
-        \item Contattare il Professor Cardin per analizzare la correttezza dei casi d'uso.
-        \item Continuare a lavorare sulle norme di progetto e sul piano di progetto, aggiungendo ulteriori dettagli.
-        \item Iniziare il piano di qualifica.
-        \item Definire l'architettura di sistema migliore.
-    \end{itemize}
+\subsection{}
 
-    La prossima riunione è pianificata per il \textbf{13/12/2024}, con l'obiettivo di analizzare i progressi ottenuti e pianificare i prossimi passi.
+\subsection{Conclusioni e Pianificazione} 
+\textbf{Pianificazione per la prossima settimana:} 
+\begin{itemize}
+    \item 
+    \item 
+\end{itemize}
+
+La prossima riunione è pianificata per il \textbf{27/12/2024}, con l'obiettivo di analizzare i progressi ottenuti e pianificare i prossimi passi.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
