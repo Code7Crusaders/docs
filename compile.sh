@@ -61,9 +61,10 @@ files=(
     # "./src/2_RTB/verbali_interni/verbale_24-11-29_v1.0.tex"
     # "./src/2_RTB/verbali_interni/verbale_24-12-07_v1.0.tex"
     # "./src/2_RTB/verbali_interni/verbale_24-12-13_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_24-12-19_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_24-12-19_v1.0.tex"
 
     #  "src/altri_documenti/analisi_LLM_Bloom_Openai_gpt4/analisi_modelli.tex"
+    src/altri_documenti/analisi_framework_frontend/analisi_frontend.tex
 
 )
 
