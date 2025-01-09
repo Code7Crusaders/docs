@@ -84,7 +84,7 @@
     \hline
     0.3 & 16/12/2024 & Gabriele Di Pietro & Nome Verificatore & Stesura sezione 5 \\
     0.2 & 10/12/2024 & Gabriele Di Pietro & Nome Verificatore & Aggiunte tabelle \\
-    0.1 & 05/12/2024 & Gabriele Di Pietro & Nome Verificatore & Prima stesura del documento \\  
+    0.1 & 05/12/2024 & Gabriele Di Pietro & Enrico Cotti Cottini & Prima stesura del documento \\  
     \hline
 \end{tabular}
 \caption{Versioni del documento}
@@ -108,18 +108,18 @@
 \section{Introduzione}
 \subsection{Obiettivo del Documento}
 Il documento ha lo scopo di definire le strategie di verifica e validazione per assicurare il corretto funzionamento e uno standard di qualità
-dello strumento sviluppato e le attività che lo accompagnano. Sarà sottoposto a revisioni continue, così da poter seguire l'evoluzione del progetto.
+dello strumento sviluppato e delle attività che lo accompagnano. Sarà sottoposto a revisioni continue, così da poter seguire l'evoluzione del progetto.
 
 \subsection{Glossario}
 Il Glossario è uno strumento utilizzato per risolvere eventuali dubbi su termini specifici utilizzati nella redazione del documento. Esso conterrà la definizione dei 
 termini evidenziati e sarà consultabile al seguente \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html}{link}. I termini presenti in tale documento
-saranno evidenziatida una 'G' al pedice.
+saranno evidenziati da una 'G' al pedice.
 
 \subsection{Riferimenti}
 \subsubsection{Normativi}
 \begin{itemize}
     \item \textbf{Regolamento del progetto} \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf}}
-    \item \textbf{{Norme del Progetto}} \\ \texttt{\url{inserire norme di progetto}}
+    \item \textbf{Norme del Progetto} \\ \texttt{\url{inserire norme di progetto}}
 \end{itemize}
 \subsubsection{Informativi}
 \begin{itemize}
@@ -159,7 +159,7 @@ base e/o primari, processi di supporto e processi organizzativi.
         \hline
         1PBM-PV & Planned Value & $PV \geq 0$ & $PV \leq BAC$ \\
         2PBM-ETC & Estimated to Complete & $ETC \geq 0$ & $ETC \leq EAC$ \\
-        3PBM-EAC & Estimated at Completition & $EAC \leq BAC + 10\%$ & $EAC \leq BAC$ \\
+        3PBM-EAC & Estimated at Completion & $EAC \leq BAC + 10\%$ & $EAC \leq BAC$ \\
         4PBM-EV & Earned Value & $EV \geq 0$ & $EV \leq EAC$ \\
         5PBM-AC & Actual Cost & $AC \geq 0$ & $AC \leq EAC$ \\
         6PBM-SV & Scheduled Variance & $SV \geq -10\%$ & $SV \geq 0\%$ \\
@@ -179,25 +179,23 @@ base e/o primari, processi di supporto e processi organizzativi.
 \textbf{(11PBM - 13PBM)}
 
 \begin{table}[H]
-    \centering
-    \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
-    \begin{tabular}{|c|l|c|c|}
-        \hline
-        \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
-        \hline
-        11PBM-PRO & Percentuale Requisiti Obbligatori & $PRO = 100\%$ & $PRO = 100\%$ \\
-        12PBM-PRO & Percentuale Requisiti Desiderabili & $PRD \geq 30\%$ & $PRD = 100\%$ \\
-        13PBM-PRF & Percentuale Requisiti Facoltativi & $PRF \geq 0\%$ & $PRF = 100\%$ \\
-        \hline
-    \end{tabular}
-    \label{tab:analisi_requisiti}
-    \caption{Metriche di qualità per il processo di Analisi dei requisiti}
-    \end{table}
-
+\centering
+\renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+\begin{tabular}{|c|l|c|c|}
+    \hline
+    \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+    \hline
+    11PBM-PRO & Percentuale Requisiti Obbligatori & $PRO = 100\%$ & $PRO = 100\%$ \\
+    12PBM-PRD & Percentuale Requisiti Desiderabili & $PRD \geq 30\%$ & $PRD = 100\%$ \\
+    13PBM-PRF & Percentuale Requisiti Facoltativi & $PRF \geq 0\%$ & $PRF = 100\%$ \\
+    \hline
+\end{tabular}
+\label{tab:analisi_requisiti}
+\caption{Metriche di qualità per il processo di Analisi dei requisiti}
+\end{table}
 
 \paragraph{Progettazione}%Tabella
 \textbf{(14PBM)}
-
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
@@ -211,10 +209,8 @@ base e/o primari, processi di supporto e processi organizzativi.
     \label{tab:progettazione}
     \caption{Metriche di qualità per il processo di Progettazione}
 \end{table}
-
 \paragraph{Implementazione}%Tabella
 \textbf{(15PBM - 18PBM)}
-
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
@@ -224,17 +220,15 @@ base e/o primari, processi di supporto e processi organizzativi.
         \hline
         15PBM-PPM & Parametri per Metodo & $PPM \leq 7$ & $PPM \leq 5$\\
         16PBM-CPC & Campi per Classe & $CPC \leq 8$ & $CPC \leq 5$ \\
-        17PBM-LCPM & Linea Di Commento Per Metodo & $LCPM \geq 50$ & $LCPM \geq 20$ \\
+        17PBM-LCPM & Linee di Commento per Metodo & $LCPM \geq 50$ & $LCPM \geq 20$ \\
         18PBM-CCM & Complessità Ciclomatica Metrica & $CCM \leq 6$ & $CCM \leq 3$ \\
         \hline
     \end{tabular}
     \label{tab:codifica}
     \caption{Metriche di qualità per il processo di Codifica}
 \end{table}
-
 \paragraph{Verifica e Validazione}%Tabella
 \textbf{(8PSM-CC - 12PSM-PTCP)}
-
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
@@ -255,7 +249,6 @@ base e/o primari, processi di supporto e processi organizzativi.
 %%%%%%%%%%%%%%%%%NON SO PERCHÈ SIA BUGGATO E NON LA POSIZIONA NEL PUNTO GIUSTO MEttendo sotto il titolo
 %% SE METTI DEL TESTO DOPO ANALISI DEI REQUISITI SI SISTEMA :(  per quel paragrafo quindi andrebbe aggiunto del testo per ogni paragrafo%%
 % \newpage
-
 \subsection{Processi di Supporto}
 \subsubsection{Documentazione}%Tabella
 \textbf{(1PSM-IG - 2PSM-CO)}
@@ -313,7 +306,7 @@ base e/o primari, processi di supporto e processi organizzativi.
 \end{table}
 % \newpage
 \subsection{Processi organizzativi}
-\subsubsection{pianificazione} %Tabella
+\subsubsection{Pianificazione} %Tabella
 \textbf{(1POM-RSI)}
 \begin{table}[H]
     \centering
@@ -360,11 +353,11 @@ Verranno elencate le varie tipologie di test eseguite, indicando il codice del t
 
 \subsection{Test di Sistema} %tabellare
 I test di sistema sono finalizzati alla verifica del soddisfacimento dei requisiti richiesti ed evidenziati nel documento
-Analisi dei Requisiti. Questi test vengono effetuati sul sistema nel suo complesso, per vericare che il software funzioni correttamente
+Analisi dei Requisiti. Questi test vengono effettuati sul sistema nel suo complesso, per verificare che il software funzioni correttamente
 e che sia in grado di eseguire le operazioni richieste.
 
 \subsection{Test di Accettazione} %tabellare
-I test di Accettazione vengono effetuati per verificare che il Software soddisfi i requisiti richiesti e consentono di ultimare il processo di validazione finale.
+I test di Accettazione vengono effettuati per verificare che il Software soddisfi i requisiti richiesti e consentono di ultimare il processo di validazione finale.
 
 \section{Cruscotto valutazione della qualità}
 
@@ -387,9 +380,9 @@ I test di Accettazione vengono effetuati per verificare che il Software soddisfi
 \section{Iniziative di automiglioramento per la qualità}
 \subsection{Introduzione}
 In questa sezione vengono riportate le iniziative prese per aumentare la qualità del prodotto e dei processi.
-Ogni iniziativa è stata individuate grazie all'esperienza aquisita durante lo svolgimento del progetto e pian piano che abbiamo individuato un problema.
+Ogni iniziativa è stata individuata grazie all'esperienza acquisita durante lo svolgimento del progetto e pian piano che abbiamo individuato un problema.
 Dato che si tratta per tutti noi della prima esperienza con un progetto di questa portata, è stato necessario un grande numero di tentativi per comprendere come organizzarci e svolgere le varie attività.
-Abbiamo capito quali sono i punti di forza e i punti deboli nel nostro lavoro individuando le aree in cui è possibile migliorare. Per ciascuna delle difficoltà riscontrata è indicata:
+Abbiamo capito quali sono i punti di forza e i punti deboli nel nostro lavoro individuando le aree in cui è possibile migliorare. Per ciascuna delle difficoltà riscontrate è indicata:
 \begin{itemize}
     \item La fase del progetto in cui si è verificato il problema;
     \item Descrizione del problema;
@@ -407,14 +400,15 @@ Abbiamo capito quali sono i punti di forza e i punti deboli nel nostro lavoro in
 \begin{itemize}
     \item \textbf{Fase del Progetto:} Intermedia;
     \item \textbf{Descrizione:} In realtà siamo rimasti stupiti che questo problema non si sia presentato fin da subito, ma durante il mese di dicembre ci sono stati problemi sulle sprint interne con molti membri assenti, questo ha portato ad un rallentamento del lavoro anche per la discrepanza di conoscenze che ogni membro ha. Ogni tanto per qualche membro non era chiaro in seguito dove recuperare determinate informazioni o se determinati documenti erano pronti oppure no. Il tutto è degenerato con il fatto che in pochi si autoassegnavano le \textit{issue}.
-    \item \textbf{Contromisura:} Abbiamo deciso di rendere la stesura dei verbali un attività primaria da fare al momento della riunione e di completarla il più velocemente possibile, questo anche per aiutare chi deve presentare il diario di bordo. Inoltre per ogni issue creata abbiamo notificato tutti i membri tramite le varie piattaforme di comunicazione così da poter far capire a tutti il lavoro da svolgere per quella determinata sprint. Inoltre per evitare riunioni con pochi membri abbiamo preso in considerazione di essere più flessibili sull'orario delle riunioni settimanali.
+    \item \textbf{Contromisura:} Abbiamo deciso di rendere la stesura dei verbali un'attività primaria da fare al momento della riunione e di completarla il più velocemente possibile, questo anche per aiutare chi deve presentare il diario di bordo. Inoltre per ogni issue creata abbiamo notificato tutti i membri tramite le varie piattaforme di comunicazione così da poter far capire a tutti il lavoro da svolgere per quella determinata sprint. Inoltre per evitare riunioni con pochi membri abbiamo preso in considerazione di essere più flessibili sull'orario delle riunioni settimanali.
 \end{itemize}
 %% Da aggiungere in caso se ne trovino altre
 \subsection{Considerazioni Finali}
-Fin da subito il nostro gruppo si è posto come obiettivo qullo di dotarsi di un \textit{Way of Working} preciso e ben definito, pianificando ogni singola attività e prevedendo tutte le possibili difficoltà durante lo svolgimento del progetto.
-Questo per cercare di prevenire i problemi e di affrontarli con contromisure efficaci. Molti problemi ci sono stati precedentemente descritti in aula durante lo svolgimento del corso, altri gli abbiamo visti confrontandoci con altri gruppi nelle attività di diario di bordo,
-altri ancora gli abbiamo affrontati durante il nostro lavorare, tuttavia grazie ai consigli e suggerimenti esterni che ci sono stati forniti, siamo riusciti a mettere in atto delle contromisure per risolverli o far si che non accadessero sin dall'inizio.
-Questo ha migliorato notevolmente la qualità del nostro lavoro e ci ha permesso di svolgere le varie attività in modo efficente ed equo. Nonostante ciò siamo consapevoli che ci sono ancora molti aspetti su cui possiamo progredire e che ci sono molte iniziative di automiglioramento che possiamo adottare.
+Fin da subito il nostro gruppo si è posto come obiettivo quello di dotarsi di un \textit{Way of Working} preciso e ben definito, pianificando ogni singola attività e prevedendo tutte le possibili difficoltà durante lo svolgimento del progetto.
+Questo per cercare di prevenire i problemi e di affrontarli con contromisure efficaci. Molti problemi ci sono stati precedentemente descritti in aula durante lo svolgimento del corso, altri li abbiamo visti confrontandoci con altri gruppi nelle attività di diario di bordo,
+altri ancora li abbiamo affrontati durante il nostro lavoro, tuttavia grazie ai consigli e suggerimenti esterni che ci sono stati forniti, siamo riusciti a mettere in atto delle contromisure per risolverli o far sì che non accadessero sin dall'inizio.
+Questo ha migliorato notevolmente la qualità del nostro lavoro e ci ha permesso di svolgere le varie attività in modo efficiente ed equo. Nonostante ciò siamo consapevoli che ci sono ancora molti aspetti su cui possiamo progredire e che ci sono molte iniziative di automiglioramento che possiamo adottare.
 Siamo convinti che se continueremo a lavorare con lo stesso impegno e la stessa determinazione otterremo risultati di qualità superiore.
 
 \end{document}
+
