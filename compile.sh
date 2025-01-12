@@ -38,7 +38,7 @@ files=(
     # "./src/DiariDiBordo/Diario_24-12-02.tex"
     # "./src/DiariDiBordo/Diario_24-12-09.tex"
     # "./src/DiariDiBordo/Diario_24-12-18.tex"
-
+       ./src/DiariDiBordo/Diario_25-01-08.tex
     # "./src/templateC7C/template.tex"
     # "./src/templateC7C/slide.tex"
     # "./src/templateC7C/template-verbali-nuovo/template-verbali.tex"
