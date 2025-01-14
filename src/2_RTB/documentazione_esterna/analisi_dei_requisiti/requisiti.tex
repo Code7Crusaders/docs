@@ -54,7 +54,7 @@ Dove \textbf{Tipo} può essere:
 
 \pagebreak
 \subsection{Requisiti funzionali}
-\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.6\textwidth}|}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\arraybackslash}m{0.6\textwidth}|}
 	\hline
 	\textbf{Codice} & \textbf{Fonte} & \textbf{Descrizione}\\\hline
 	\endfirsthead
@@ -62,7 +62,77 @@ Dove \textbf{Tipo} può essere:
 	\textbf{Codice} & \textbf{Fonte} & \textbf{Descrizione}\\\hline
 	\endhead
 	\hline
-	\textbf{RFO1}            & Capitolato    & Requisito funzionale obbligatorio numero 1
+	\textbf{RFO1}            & Capitolato    & Il sistema riceve in ingresso i dati semantici aziendali da cui apprendere la conoscenza. I documenti accettati in ingresso dal componente dovranno rispettare i formati previsti \\
+	\hline
+	\textbf{RFO2} & Capitolato & I testi recuperati dai documenti verranno suddivisi in blocchi, ovvero pezzi più piccoli di dati che rappresentano una piccola porzione del contesto\\
+	\hline
+	\textbf{RFO3} & Capitolato & Embedding model è il componente che riceverà in ingresso i blocchi di testo e lì trasformerà in rappresentazioni vettoriali\\
+	\hline
+	\textbf{RFO4} & Capitolato & I vettori generati verranno memorizzati all’interno di un database vettoriale e opportunamente indicizzati\\
+	\hline
+	\textbf{RFO5} & Capitolato, Esterno & Da un’interfaccia utente della web app, viene catturata una domanda da parte dell’utente\\
+	\hline
+	\textbf{RFO6} & Capitolato & La domanda viene inoltrata al sistema attraverso delle API REST risiedenti in un Web Server\\
+	\hline
+	\textbf{RFO7} & Capitolato & La query ricevuta viene gestita dall’Embedding Model che trasforma la domanda in rappresentazione vettoriale \\
+	\hline
+	\textbf{RFO8} & Capitolato & La rappresentazione vettoriale viene utilizzata per effettuare una ricerca all’interno del database vettoriale da dove vengono reperiti i vettori più simili\\
+	\hline
+	\textbf{RFO9} & Capitolato & Sia la domanda sia i risultati della ricerca nel database vettoriale, vengono inviati al sistema LLM che costruirà la risposta utilizzando il contesto fornito\\
+	\hline
+	\textbf{RFO10} & Capitolato & Attraverso API REST, il sistema inoltra la riposta al dispositivo dell’utente\\
+	\hline
+	\textbf{RFO11} & Interno & Il sistema deve permettere all'utente registrato di effettuare una conversazione con il bot\\
+	\hline
+	\textbf{RFO12} & Interno & L'utente deve essere in grado di ottenere informazioni riguardo un prodotto o una serie di prodotti attraverso la conversazione con il bot\\
+	\hline
+	\textbf{RFO13} & Interno & L'utente deve essere in grado di salvare una conversazione avviata\\
+	\hline
+	\textbf{RFO14} & Interno & L'utente deve essere in grado di visualizzare le conversazioni precedentemente salvate\\
+	\hline
+	\textbf{RFO15} & Interno & L'utente deve essere in grado di visualizzare e riprendere una intera conversazione singola salvata\\
+	\hline
+	\textbf{RFO16} & Interno & L'utente o L'amministratore devono poter accedere al sistema inserendo Username e Password\\
+	\hline
+	\textbf{RFO17} & Interno & Il sistema deve bloccare utenti non registrati\\
+	\hline
+	\textbf{RFO18} & Interno & Il sistema deve bloccare qualsiasi tentativo di rottura del sistema (SQL Injection...)\\
+	\hline
+	\textbf{RFO19} & Interno, Esterno & L'utente deve essere in grado di dare un feedback sulla qualità della conversazione dopo averla provata\\
+	\hline
+	\textbf{RFO20} & Esterno & L'amministratore deve essere in grado di creare template di domande e risposta\\
+	\hline
+	\textbf{RFO21} & Esterno & L'amministratore deve essere in grado di modificare template di domande e risposta\\
+	\hline
+	\textbf{RFO22} & Interno & L'amministratore deve essere in grado di eliminare un template precedentemente creato\\
+	\hline
+	\textbf{RFF23} & Interno, Esterno & Il sistema deve poter fermare la creazione di un formato template invalido\\
+	\hline
+	\textbf{RFO24} & Interno & L'amministratore deve aver accesso ad una dashboard che gli permetta di monitorare le prestazioni di sistema\\
+	\hline
+	\textbf{RFO25} & Interno & L'amministratore deve poter Visuallizzare i feedback dati dagli utenti\\
+	\hline
+	\textbf{RFO26} & Esterno & L'amministratore deve poter importare dati da un documento esterno\\
+	\hline
+	\textbf{RFO27} & Esterno & Il sistema deve poter fermare l'importazione dati di file non compatibili\\
+	\hline
+	\textbf{RFO28} & Interno & L'utente deve poter eliminare una conversazione precedentemente effettuata\\
+	\hline
+	\textbf{RFD29} & Esterno & L'utente deve poter mandare richieste di assistenza per poter parlare con un operatore umano\\
+	\hline
+	\textbf{RFO30} & Esterno & L'amministratore deve poter visualizzare le richieste di assistenza ricevute da parte dell'utente\\
+	\hline
+	\textbf{RFD31} & Interno & L'amministratore deve poter segnalare ad altri amministratori che una richiesta è stata presa in carico\\
+	\hline
+	\textbf{RFD32} & Esterno, Interno & L'ammistratore deve essere in grado di poter rispondere all'utente tramite contatto via e-mail\\
+	\hline
+	\textbf{RFO33} & Interno & L'amministratore deve essere in grado di visualizzare l'utilizzo generale degli utenti del servizio\\
+	\hline
+	\textbf{RFD34} & Interno & L'amministratore deve essere in grado di visualizzare i costi del sistema\\
+	\hline
+	\textbf{RFF35} & Interno & L'amministratore può gestire i parametri del LLM e il modello da scegliere\\
+	\hline
+	\textbf{RFF36} & Interno & L'utente ha la possibilità di scegliere il modello LLM da usare 
 	\\\hline
 	\caption{Requisiti funzionali}
 \end{longtable}
@@ -85,6 +155,8 @@ Dove \textbf{Tipo} può essere:
 	\hline
 	\textbf{RQO4} & Capitolato, Piano di Qualifica & Documentazione descrittiva del sistema di raccomandazione implementato\\
 	\hline
+	\textbf{RQO5} & Piano di Qualifica & Documentazione riassuntiva delle metriche e dei risultati\\
+	\hline
 	\caption{Requisiti qualitativi}
 \end{longtable}
 
@@ -98,7 +170,15 @@ Dove \textbf{Tipo} può essere:
 	\textbf{Codice} & \textbf{Fonte} & \textbf{Descrizione}\\\hline
 	\endhead
 	\hline
-	\textbf{RVF3}            & Esterno    & Requisito di vincolo facoltativo numero 3
+	\textbf{RV01}            & Analisi dei modelli    & LLM deve essere integrato tramite API\\
+	\hline
+	\textbf{RVO2} & Analisi dei modelli, Analisi del Database & Deve essere implementato almeno 1 database Relazionale\\
+	\hline
+	\textbf{RVO3} & Analisi dei modelli & Deve essere implementato almeno 1 database Vettoriale\\
+	\hline
+	\textbf{RVO4} & Analisi dei modelli & Deve essere implementato un embedding model locale o API\\
+	\hline
+	\textbf{RVO5} & Analisi Frontend & Bisogna implementare una WebApp che permetta di comunicare con il chatbot
 	\\\hline
 	\caption{Requisiti di vincolo}
 \end{longtable}
@@ -120,11 +200,51 @@ Dove \textbf{Tipo} può essere:
 	\textbf{Requisito} & \textbf{Fonte} 
 	\endhead
 	\hline
-	\textbf{RFO1}            & Capitolato    
-	\\\hline
-	\textbf{RQD2}            & Interno
-	\\\hline
-	\textbf{RVF3}            & Esterno
-	\\\hline
+	\textbf{RFO1}            & Capitolato\\\hline
+	\textbf{RFO2}            & Capitolato\\\hline
+	\textbf{RFO3}            & Capitolato\\\hline
+	\textbf{RFO4}            & Capitolato\\\hline
+	\textbf{RFO5}            & Capitolato, Esterno\\\hline
+	\textbf{RFO6}            & Capitolato\\\hline
+	\textbf{RFO7}            & Capitolato\\\hline
+	\textbf{RFO8}            & Capitolato\\\hline
+	\textbf{RFO9}            & Capitolato\\\hline
+	\textbf{RFO10}            & Capitolato\\\hline
+	\textbf{RFO11}            & Interno\\\hline
+	\textbf{RFO12}            & Interno\\\hline
+	\textbf{RFO13}            & Interno\\\hline
+	\textbf{RFO14}            & Interno\\\hline
+	\textbf{RFO15}            & Interno\\\hline
+	\textbf{RFO16}            & Interno\\\hline
+	\textbf{RFO17}            & Interno\\\hline
+	\textbf{RFO18}            & Interno\\\hline
+	\textbf{RFO19}            & Interno, Esterno\\\hline
+	\textbf{RFO20}            & Esterno\\\hline
+	\textbf{RFO21}            & Esterno\\\hline
+	\textbf{RFO22}            & Interno\\\hline
+	\textbf{RFF23}            & Interno, Esterno\\\hline
+	\textbf{RFO24}            & Interno\\\hline
+	\textbf{RFO25}            & Interno\\\hline
+	\textbf{RFO26}            & Esterno\\\hline
+	\textbf{RFO27}            & Esterno\\\hline
+	\textbf{RFO28}            & Interno\\\hline
+	\textbf{RFD29}            & Esterno\\\hline
+	\textbf{RFO30}            & Esterno\\\hline
+	\textbf{RFD31}            & Interno\\\hline
+	\textbf{RFD32}            & Esterno, Interno\\\hline
+	\textbf{RFO33}            & Interno\\\hline
+	\textbf{RFD34}            & Interno\\\hline
+	\textbf{RFF35}            & Interno\\\hline
+	\textbf{RFF36}            & Interno\\\hline
+	\textbf{RQO1}            & Capitolato, Piano di Qualifica\\\hline
+	\textbf{RQO2}            & Capitolato, Piano di Qualifica\\\hline
+	\textbf{RQO3}            & Capitolato, Piano di Qualifica\\\hline
+	\textbf{RQO4}            & Capitolato, Piano di Qualifica\\\hline
+	\textbf{RQO5}            & Piano di Qualifica\\\hline
+	\textbf{RVO1}			 & Analisi dei modelli\\\hline
+	\textbf{RVO2}			 & Analisi dei modelli, Analisi del Database\\\hline
+	\textbf{RVO3}			 & Analisi dei modelli\\\hline
+	\textbf{RVO4}			 & Analisi dei modelli\\\hline
+	\textbf{RVO5}			 & Analisi Frontend\\\hline
 	\caption{Requisito - Fonte}
 \end{longtable}
