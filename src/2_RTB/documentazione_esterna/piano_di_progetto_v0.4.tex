@@ -299,75 +299,100 @@
             \textbf{Pj} = Progettista \\
             \textbf{Pg} = Programmatore \\
             \textbf{Ve} = Verificatore \\
+        
+        
+    \subsection{Analisi dei Rischi}
+    In questa sezione vengono analizzati i principali rischi che potrebbero manifestarsi durante lo svolgimento del progetto, con una valutazione della loro gravità e probabilità di occorrenza. Ad ogni rischio è associato un indice numerico che ne definisce l'intensità e la probabilità, consentendo di determinare la criticità di ciascun rischio.
 
-    \subsection{Analisi dei rischi}
-    In questa sezione vengono elencati i rischi che potrebbero verificarsi durante lo svolgimento del progetto e le relative contromisure. Ad ogni rischio è associato un \textbf{indice di Gravità e Probabilità},
-    in modo da poter valutare la criticità di ciascuno di essi.
-        \subsubsection{Definizione degli indici}
-        I fattori chiave per l’identificazione dei rischi sono:
+    \subsubsection{Definizione degli Indici}
+        Per una corretta valutazione dei rischi, sono stati definiti i seguenti fattori chiave:
         \begin{itemize}
-            \item l’\textbf{indice}, un valore numerico incrementale che identifica univocamente il rischio
-            \item il \textbf{tipo}, che rappresenta l’impatto che un rischio può avere sul progetto, il quale puo essere basso, medio o alto
-            \item la \textbf{gravità}, che descrive l'impatto o le conseguenze del rischio che si verificano qualora si presenti
-            \item la \textbf{probabilità}, che rappresenta la possibilità che un rischio si verifichi
+            \item \textbf{Indice}: un valore numerico progressivo che identifica in modo univoco ogni rischio;
+            \item \textbf{Tipo}: rappresenta la categoria di impatto che il rischio potrebbe avere sul progetto, ed è classificato in Basso, Medio o Alto;
+            \item \textbf{Gravità}: descrive le conseguenze o l'impatto che un rischio avrebbe se si verificasse, con l'eventuale necessità di modificare la pianificazione o l'approccio al progetto;
+            \item \textbf{Probabilità}: indica la possibilità che il rischio si verifichi durante il ciclo di vita del progetto.
         \end{itemize}
-        I valori dell'\textbf{Indice di Gravità} e dell'\textbf{Indice di Probabilità} sono definiti come segue:
+        Gli indici di \textbf{Gravità} e di \textbf{Probabilità} sono definiti con i seguenti valori:
         \begin{table}[h!]
             \centering
             \begin{tabular}{|c|c|p{6cm}|p{6cm}|}
                 \hline
                 \textbf{Indice} & \textbf{Tipo} & \textbf{Gravità} & \textbf{Probabilità} \\
                 \hline
-                \textbf{1} & Basso & Ha un impatto minimo o trascurabile sul progetto, come un lieve rallentamento che non incide sui tempi di consegna & Improbabile che si verifichi, ma esistono fattori che potrebbero contribuire alla sua realizzazione \\
+                \textbf{1} & Basso & L'impatto sul progetto è minimo o trascurabile, ad esempio un lieve rallentamento senza effetti sui tempi di consegna & La possibilità che si verifichi è bassa, ma esistono fattori che potrebbero contribuire alla sua realizzazione \\
                 \hline
-                \textbf{2} & Medio & Se si concretizza, richiede risorse aggiuntive o modifica parzialmente il piano di progetto, causando impatti gestibili ma che comportano sforzi supplementari & C'è una possibilità realistica che l'evento di rischio si verifichi \\
+                \textbf{2} & Medio & L'evento richiede l'uso di risorse aggiuntive o un parziale adattamento del piano, con impatti gestibili ma che richiedono uno sforzo supplementare & Esiste una probabilità media che il rischio si realizzi \\
                 \hline
-                \textbf{3} & Alto & Causa ritardi significativi, aumento dei costi o degrado della qualità che incide sull'esperienza utente, richiedendo interventi importanti per mantenere il progetto nei tempi e nel budget & Esistono molti fattori o segni che indicano che il rischio potrebbe accadere, e il team considera probabile la sua manifestazione \\
+                \textbf{3} & Alto & Il rischio comporta ritardi significativi, aumento dei costi o degrado della qualità, impattando negativamente sull'esperienza utente e sul raggiungimento degli obiettivi del progetto & È altamente probabile che il rischio si verifichi, con segni evidenti che ne indicano la possibilità \\
                 \hline
             \end{tabular}
             \caption{Definizione degli Indici di Gravità e Probabilità}
             \label{tab:definizione_indici}
         \end{table}
-
-        \subsubsection{Rischi}
-        \begin{table}[h]
-            \centering
-            \begin{tabular}{|p{0.5cm}|p{7cm}|p{2cm}|p{2cm}|}
-                \hline
-                \textbf{ID} & \textbf{Rischio} & \textbf{Gravità} & \textbf{Probabilità} \\
-                \hline
-                1 & Difficoltà nell'uso di nuove tecnologie & 2 & 3 \\
-                \hline
-                2 & Codice non completato dal delegato & 2 & 2 \\
-                \hline
-                3 & Riduzione del carico e delle ore di lavoro durante le festività & 1 & 2 \\
-                \hline
-                4 & Scarsa collaborazione da parte di uno o più membri del team & 3 & 1 \\
-                \hline
-                5 & Impegni personali e universitari & 1 & 2 \\
-                \hline
-                6 & Deviazione dai tempi e costi previsti & 3 & 1 \\
-                \hline
-            \end{tabular}
-            \caption{Analisi dei rischi}
-            \label{tab:analisi_rischi}
-        \end{table}
-
-        \subsubsection{Contromisure}
+            
+    \subsubsection{Rischi Identificati}
+    I rischi del progetto sono suddivisi in tre categorie principali, in base alla natura delle problematiche che potrebbero verificarsi:
+    \begin{itemize}
+        \item Rischi di natura tecnologica;
+        \item Rischi legati alla comunicazione;
+        \item Rischi relativi alla pianificazione e gestione del progetto.
+    \end{itemize}
+    Ogni rischio è identificato tramite un codice univoco, strutturato come segue:
+    \[
+    \textbf{R[Categoria][Indice] - [Nome]}
+    \]
+    Dove:
+    \begin{itemize}
+        \item \textbf{Categoria}: rappresenta la tipologia del rischio, che può essere:
         \begin{itemize}
-            \item{Contromisura rischio 1:\\}
-            Il gruppo si impegnerà a studiare in modo approfondite le tecnologie richieste dal capitolato in particolar modo lo studio dei \emph{LLM}. E verranno organizzati incontri di formazione interna in modo tale da poter condividere le conoscenze acquisite per essere tutti sullo stesso livello.
-            \item{Contromisura rischio 2:\\}
-            Il gruppo si impegnerà a chiedere supporto all'azienda e si cercherà di massimizzare le risorse nel team nella soluzione di un problema.
-            \item{Contromisura rischio 3:\\}
-            Il gruppo cercherà di mantenere i ritmi feriali impostando un tempo minimo di lavoro settimanale.
-            \item{Contromisura rischio 4:\\}
-            Il gruppo si impegna nella comprensione e nel chiarire quali siano i ruoli, inoltre una comunicazione costante e trasparente aiuterà sull'affrontare le diverse difficoltà e nel segnalare tempestivamente eventuali problemi
-            \item{Contromisura rischio 5:\\}
-            Progettazione di un calendario condiviso dove ogni componente può segnalare i propri impegni personali con anticipo. Di conseguenza pianificare bene le varie attività evitando sovrapposizioni
-            \item{Contromisura rischio 6:\\}
-            Monitorare il progresso delle attività e svolgere frequenti riunioni per valutare lo stato di avanzamento del progetto.
+            \item \textbf{T}: per i rischi tecnologici;
+            \item \textbf{C}: per i rischi comunicativi;
+            \item \textbf{P}: per i rischi di pianificazione.
         \end{itemize}
+        \item \textbf{Indice}: è un identificativo progressivo univoco all'interno della categoria;
+        \item \textbf{Nome}: è una breve descrizione del rischio.
+    \end{itemize}
+    Di seguito elencati tutti i rischi identificati:
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|p{0.5cm}|p{7cm}|p{2cm}|p{2cm}|}
+            \hline
+            \textbf{ID} & \textbf{Rischio} & \textbf{Gravità} & \textbf{Probabilità} \\
+            \hline
+            RC1 & Scarsa collaborazione da parte di uno o più membri del team & 3 & 1 \\
+            \hline
+            RT1 & Difficoltà nell'uso di nuove tecnologie & 2 & 3 \\
+            \hline
+            RP1 & Codice non completato dal delegato & 2 & 2 \\
+            \hline
+            RP2 & Riduzione del carico e delle ore di lavoro durante le festività & 1 & 2 \\
+            \hline
+            RP3 & Impegni personali e universitari & 1 & 2 \\
+            \hline
+             RP4 & Deviazione dai tempi e costi previsti & 3 & 1 \\
+            \hline
+        \end{tabular}
+        \caption{Tabella dei Rischi Identificati}
+        \label{tab:rischi_identificati}
+    \end{table}
+
+    \subsubsection{Contromisure Proposte}
+    Per ciascun rischio identificato, sono state previste specifiche contromisure che mirano a ridurre o mitigare l'impatto potenziale. Le contromisure sono progettate per affrontare tempestivamente i problemi e mantenere il progetto sui giusti binari.
+        \begin{itemize}
+            \item \textbf{Contromisura per il rischio RC1 (Scarsa collaborazione)}: 
+                Saranno programmati incontri regolari di coordinamento per favorire la comunicazione e la collaborazione all'interno del team. Ogni membro avrà ruoli e responsabilità ben definiti, e verranno incentivati il dialogo aperto e la trasparenza.
+            \item \textbf{Contromisura per il rischio RT1 (Difficoltà nell'uso di nuove tecnologie)}: 
+                Il team si impegnerà a studiare in modo approfondito le tecnologie richieste dal capitolato, in particolare le tecnologie di \emph{LLM}. Verranno organizzati corsi di formazione interna per permettere ai membri di acquisire competenze comuni e supportarsi vicendevolmente.
+            \item \textbf{Contromisura per il rischio RP1 (Codice non completato dal delegato)}: 
+                Il team adotterà un sistema di monitoraggio settimanale per garantire che ogni membro rispetti le scadenze. I task saranno suddivisi in modo equilibrato e monitorati costantemente.
+            \item \textbf{Contromisura per il rischio RP2 (Riduzione delle ore di lavoro durante le festività)}: 
+                Si pianificheranno in anticipo le ferie e i periodi di bassa attività, organizzando sessioni di recupero prima e dopo le festività per non compromettere i tempi di consegna.
+            \item \textbf{Contromisura per il rischio RP3 (Impegni personali e universitari)}: 
+                Ogni membro del team dovrà segnalare in anticipo eventuali impegni personali o universitari. Il team utilizzerà un calendario condiviso per pianificare le attività in modo da evitare sovrapposizioni e garantire la disponibilità necessaria.
+            \item \textbf{Contromisura per il rischio RP4 (Deviazione dai tempi e costi)}: 
+                Il team monitorerà costantemente l'avanzamento del progetto attraverso riunioni settimanali di aggiornamento e controllo del budget. Eventuali scostamenti saranno analizzati per prendere tempestivamente le misure correttive.
+        \end{itemize}
+            
 
     \subsection{Piano di Comunicazione}
     \begin{itemize}
