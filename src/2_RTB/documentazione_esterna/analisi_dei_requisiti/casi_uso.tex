@@ -25,164 +25,172 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \subsubsection{U.C.1 Utilizza chat} %%Esempio
 \begin{itemize}
     \item \textbf{Attori}: Utente
-    \item \textbf{Precondizioni}: Utente che ha effettuato l'accesso nel sistema.
+    \item \textbf{Precondizioni}: Utente che ha acceduto nel sistema vuole ricevere informazioni riguardanti "food/beverage" da acquistare
     \item \textbf{Postcondizioni}: Utente ha effettuato una conversazione.
-    \item \textbf{Scenario principale}: L'utente vuole ricevere informazioni riguardanti "\textit{food/beverage}" da acquistare per fornire la sua attività e per farlo avvia una conversazione con il bot.
+    \item \textbf{Scenario principale}: L'utente accede alla chat dal menu principale e digita una domanda nella casella di testo. Il chatbot elabora la richiesta e fornisce una risposta chiara e pertinente.
     \item \textbf{Generalizzazioni}: U.C.1.1, U.C.1.2, U.C.1.3
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
 \end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/UC1.png}
+    \includegraphics[width=0.7\textwidth]{img/UC1.png}
     \caption{U.C.1 Utilizza Chat}
 \end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{img/SottocasiUC1.png}
-    \caption{Sottocasi di U.C.1}
-\end{figure}
+\newpage
 
 \subsubsection{U.C.1.1 Scrivi Messaggio}
 \begin{itemize}
     \item \textbf{Attori}: Utente
-    \item \textbf{Precondizioni}: Utente che ha effettuato l'accesso nel sistema ed è pronto per effettuare una domanda.
-    \item \textbf{Postcondizioni}: L'utente ha inviato un messaggio al bot.
-    \item \textbf{Scenario principale}: L’utente vuole domandare al bot delle informazioni riguardo un prodotto o una serie di prodotti.
-    \item \textbf{Generalizzazioni}: -
-    \item \textbf{Estensioni}: -
-    \item \textbf{Inclusione}: -
-\end{itemize}
-\subsubsection{U.C.1.2 Visualizza Risposta}
-\begin{itemize}
-    \item \textbf{Attori}: Utente
-    \item \textbf{Precondizioni}: Utente che ha effettuato l'accesso ha inviato una domanda al bot.
-    \item \textbf{Postcondizioni}: Utente riceve una risposta dal bot coerente alla domanda che ha effettuato.
-    \item \textbf{Scenario principale}: L'utente che ha già effettuato la domanda per il bot riceve una risposta coerente sui prodotti.
-    \item \textbf{Generalizzazioni}: -
-    \item \textbf{Estensioni}: -
-    \item \textbf{Inclusione}: -
-\end{itemize}
-\subsubsection{U.C.1.4 Prodotto non trovato}
-\begin{itemize}
-    \item \textbf{Attori}: Utente
-    \item \textbf{Precondizioni}: Utente che sta conversando con il bot.
-    \item \textbf{Postcondizioni}: L'assistente non ha trovato informazioni sul prodotto.
-    \item \textbf{Scenario principale}: L’utente richiede domande o informazioni su prodotti non gestiti da noi.
-    \item \textbf{Generalizzazioni}: -
-    \item \textbf{Estensioni}: -
-    \item \textbf{Inclusione}: U.C.13
-\end{itemize}
-\subsubsection{U.C.13 Invio Richiesta a un Operatore Umano}
-\begin{itemize}
-    \item \textbf{Attori}: Utente
-    \item \textbf{Precondizioni}: L’utente ha ricevuto una risposta non soddisfacente dal sistema basato su LLM.
-    \item \textbf{Postcondizioni}: La richiesta dell’utente è stata inviata agli amministratori ed è visibile nella dashboard.
-    \item \textbf{Scenario principale}: L’utente seleziona l’opzione per richiedere assistenza a un operatore umano, compila un modulo opzionale con eventuali dettagli e invia la richiesta. Il sistema registra la richiesta e la rende disponibile nella dashboard degli amministratori.
+    \item \textbf{Precondizioni}: Utente che ha acceduto nel sistema e vuole domandare al bot delle informazioni riguardo un prodotto o una serie di prodotti
+    \item \textbf{Postcondizioni}: L'utente ha inviato un messaggio al bot per ricevere una risposta.
+    \item \textbf{Scenario principale}: L'utente apre la chat, inserisce la domanda nella casella di testo e invia il messaggio premendo il pulsante "Invia".
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
 \end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{img/UC1-4.png}
-    \caption{U.C.1.4 Prodotto non trovato}
+    \includegraphics[width=\textwidth]{img/UC1.1.png}
+    \caption{U.C.1.1 Scrivi messaggio}
 \end{figure}
-\subsubsection{U.C.1.3 Seleziona Template}
+\newpage
+
+\subsubsection{U.C.1.2 Visualizza Risposta}
 \begin{itemize}
     \item \textbf{Attori}: Utente
-    \item \textbf{Precondizioni}: Utente che ha effettuato l’accesso sta per selezionare una domanda template.
-    \item \textbf{Postcondizioni}: Utente ha ricevuto una risposta template (\textit{senza dover chiamare l’LLM}).
-    \item \textbf{Scenario principale}: L’utente dentro la chat vuole utilizzare una domanda template tra le consigliate.
+    \item \textbf{Precondizioni}: L'utente ha inviato una domanda al bot e attende una risposta.
+    \item \textbf{Postcondizioni}: Utente riceve una risposta dal bot coerente alla domanda che ha effettuato.
+    \item \textbf{Scenario principale}: Dopo aver inviato una domanda, l'utente attende la risposta elaborata dall’LLM che viene visualizzata nella finestra della chat.
+    \item \textbf{Generalizzazioni}: -
+    \item \textbf{Estensioni}: U.C.1.4
+    \item \textbf{Inclusione}: -
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/UC1.2.png}
+    \caption{U.C.1.2 Visualizza Risposta}
+\end{figure}
+\newpage
+
+\subsubsection{U.C.1.4 Prodotto non trovato}
+\begin{itemize}
+    \item \textbf{Attori}: Utente
+    \item \textbf{Precondizioni}: L'utente richiede informazioni su un prodotto non presente nel database del sistema.
+    \item \textbf{Postcondizioni}: L'utente riceve un messaggio di errore. 
+    \item \textbf{Scenario principale}: L'utente invia una domanda su un prodotto specifico, il sistema cerca nel database ma non trova risultati. Un messaggio di errore avvisa l'utente che il prodotto non è disponibile.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
 \end{itemize}
-\subsubsection{U.C.2 Visualizza le conversazioni}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/UC1.4.png}
+    \caption{U.C.1.4 Prodotto non trovato}
+\end{figure}
+\newpage
+
+\subsubsection{U.C.1.3 Seleziona Template}
 \begin{itemize}
     \item \textbf{Attori}: Utente
-    \item \textbf{Precondizioni}: Utente che ha già effettuato l’accesso vuole visualizzare le conversazioni precedentemente salvate.
-    \item \textbf{Postcondizioni}: Utente vede una lista di conversazioni salvate.
-    \item \textbf{Scenario principale}: L’utente registrato che ha già effettuato una conversazione in passato salvandola vuole visualizzarla di nuovo in un secondo momento.
+    \item \textbf{Precondizioni}: L'utente ha effettuato l'accesso ed è nella chat. Vuole selezionare una domanda predefinita tra quelle suggerite dal sistema. 
+    \item \textbf{Postcondizioni}: L'utente riceve una risposta templatizzata senza dover formulare una domanda manuale.(\textit{senza dover chiamare l’LLM}).
+    \item \textbf{Scenario principale}: L'utente visualizza un elenco di domande suggerite, ne seleziona una e il sistema fornisce immediatamente una risposta.
+    \item \textbf{Generalizzazioni}: -
+    \item \textbf{Estensioni}: -
+    \item \textbf{Inclusione}: -
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/U.C.1.3.png}
+    \caption{U.C.1.3 Seleziona Template}
+\end{figure}
+\newpage
+
+\subsubsection{U.C.2 Visualizza lista conversazioni}
+\begin{itemize}
+    \item \textbf{Attori}: Utente
+    \item \textbf{Precondizioni}: L'utente ha effettuato l'accesso e in passato ha salvato almeno una conversazione.
+    \item \textbf{Postcondizioni}: L'utente visualizza l'elenco di conversazioni salvate.
+    \item \textbf{Scenario principale}: L'utente accede alla sezione delle conversazioni e visualizza una lista ordinata delle sue conversazioni passate.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: U.C.2.1
 \end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/UC2.png}
-    \caption{U.C.2 Visualizza le conversazioni}
+    \includegraphics[width=0.7\textwidth]{img/UC.2.png}
+    \caption{U.C.2 Visualizza lista conversazioni}
 \end{figure}
+\newpage
+
 \subsubsection{U.C.2.1 Visualizza conversazione singola}
 \begin{itemize}
     \item \textbf{Attori}: Utente
-    \item \textbf{Precondizioni}: Utente che ha già effettuato l’accesso seleziona una conversazione precedentemente salvata.
-    \item \textbf{Postcondizioni}: Utente vede la conversazione precedentemente effettuata.
-    \item \textbf{Scenario principale}: L’utente registrato che ha già effettuato una conversazione in passato salvandola vuole visualizzarla di nuovo in un secondo momento.
-    \item \textbf{Generalizzazioni}: U.C.2
-    \item \textbf{Estensioni}: -
-    \item \textbf{Inclusione}: -
-\end{itemize}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{img/UC2-1.png}
-    \caption{U.C.2 Visualizza conversazione singola}
-\end{figure}
-\subsubsection{U.C.3 Login}
-\begin{itemize}
-    \item \textbf{Attori}: Utente
-    \item \textbf{Precondizioni}: Utente già registrato.
-    \item \textbf{Postcondizioni}: Utente ha effettuato l'accesso.
-    \item \textbf{Scenario principale}: L'utente già registrato vuole accedere al sistema.
+    \item \textbf{Precondizioni}: L'utente sta visualizzando l'elenco delle conversazioni salvate.
+    \item \textbf{Postcondizioni}: L'utente apre e consulta il contenuto di una conversazione specifica.
+    \item \textbf{Scenario principale}: L'utente seleziona una conversazione dalla lista e il sistema mostra i dettagli di quella conversazione.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
 \end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/UC3.png}
-    \caption{U.C.3 Login}
+    \includegraphics[width=0.8\textwidth]{img/U.C.2.1.png}
+    \caption{U.C.2.1 Visualizza conversazione singola}
 \end{figure}
+\newpage
+
+\subsubsection{U.C.3 Login}
+\begin{itemize}
+    \item \textbf{Attori}: Utente
+    \item \textbf{Precondizioni}:  L'utente è registrato e desidera accedere al sistema.
+    \item \textbf{Postcondizioni}: L'utente accede con successo al sistema e può utilizzare le funzionalità disponibili.
+    \item \textbf{Scenario principale}: L'utente inserisce il proprio username e password nei campi di accesso ed effettua l’accesso. Il sistema verifica le credenziali e consente l'accesso.
+    \item \textbf{Generalizzazioni}: -
+    \item \textbf{Estensioni}: -
+    \item \textbf{Inclusione}: U.C.3.1, U.C.3.2
+\end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/UC3p1.png}
-    \caption{Sottocasi di U.C.3}
+    \includegraphics[width=0.7\textwidth]{img/UC3.png}
+    \caption{U.C.3 Login}
 \end{figure}
+\newpage
+
 \subsubsection{U.C.3.1 Inserisci Username}
 \begin{itemize}
     \item \textbf{Attori}: Utente
-    \item \textbf{Precondizioni}: Utente già registrato.
-    \item \textbf{Postcondizioni}: Utente ha inserito un Username.
-    \item \textbf{Scenario principale}: L'utente già registrato vuole accedere al sistema.
+    \item \textbf{Precondizioni}: L'utente desidera accedere al sistema.
+    \item \textbf{Postcondizioni}: L'username è stato inserito correttamente nel campo corrispondente.
+    \item \textbf{Scenario principale}: L'utente digita il proprio username nel campo di testo dedicato e procede con l'autenticazione.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: U.C.3.4, U.C.3.5
     \item \textbf{Inclusione}: -
 \end{itemize}
-\subsubsection{U.C.3.4 Username errato}
-\begin{itemize}
-    \item \textbf{Attori}: Utente
-    \item \textbf{Precondizioni}: Utente già registrato.
-    \item \textbf{Postcondizioni}: Utente ha inserito un username errato e gli viene impedito di accedere al sistema.
-    \item \textbf{Scenario principale}: L’utente ha provato ad accedere al sistema utilizzando un username errato e viene visualizzato un messaggio di errore generico.
-    \item \textbf{Generalizzazioni}: -
-    \item \textbf{Estensioni}: -
-    \item \textbf{Inclusione}: -
-\end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{img/UC3-4.png}
-    \caption{U.C.3.4 Username errato}
+    \includegraphics[width=0.8\textwidth]{img/U.C.3.1.png}
+    \caption{U.C.3.1 Inserisci Username}
 \end{figure}
+\newpage
 \subsubsection{U.C.3.2 Inserisci Password}
 \begin{itemize}
     \item \textbf{Attori}: Utente
-    \item \textbf{Precondizioni}: Utente già registrato.
-    \item \textbf{Postcondizioni}: Utente ha inserito una Password.
-    \item \textbf{Scenario principale}: L'utente già registrato vuole accedere al sistema.
+    \item \textbf{Precondizioni}: L'utente desidera accedere al sistema.  
+    \item \textbf{Postcondizioni}: La password è stata inserita correttamente nel campo corrispondente.
+    \item \textbf{Scenario principale}: L'utente digita la password nel campo di testo e procede con l'autenticazione.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: U.C.3.3, U.C.3.5
     \item \textbf{Inclusione}: -
 \end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/U.C.3.2.png}
+    \caption{U.C.3.2 Inserisci Password}
+\end{figure}
+\newpage %%%%%%%%SONO ARRIVATO QUI %%%%%%
+
 \subsubsection{U.C.3.3 Password Errata}
 \begin{itemize}
     \item \textbf{Attori}: Utente
@@ -198,6 +206,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \includegraphics[width=0.7\textwidth]{img/UC3-3.png}
     \caption{U.C.3.3 Password errata}
 \end{figure}
+%AGGIUNGERE 3.4
 \subsubsection{U.C.3.5 Caratteri non validi}
 \begin{itemize}
     \item \textbf{Attori}: Utente
