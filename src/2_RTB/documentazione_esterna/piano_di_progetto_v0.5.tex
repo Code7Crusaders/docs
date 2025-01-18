@@ -81,6 +81,7 @@
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
     \hline
+    0.5 & 18/01/2025 & Diviesti Tommaso & Nome Verificatore & Aggiornamento analisi rischi \\
     0.4 & 7/01/2025 & Diviesti Tommaso & Nome Verificatore & Modello, vantaggi e caratteristiche sprint \\
     0.3 & 27/12/2024 & Lapenna Francesco & Nome Verificatore & Inizio compilazione sprint \\
     0.2 & 3/12/2024 & Diviesti Tommaso & Lapenna Francesco & Continuazione e revisione del documento \\
@@ -300,11 +301,121 @@
             \textbf{Pg} = Programmatore \\
             \textbf{Ve} = Verificatore \\
         
+            \subsection{Piano di Comunicazione}
+            \begin{itemize}
+                \item Riunioni settimanali con il team.
+                \item Report di avanzamento per il referente aziendale ogni 2 settimane.
+                \item Feedback continuo attraverso test intermedi.
+            \end{itemize}
         
-    \subsection{Analisi dei Rischi}
+            \subsection{Pianificazione delle Attività}
+                Il gruppo Code7Crusaders
+                si impegna a consegnare il progetto entro il 14/03/2025. La pianificazione prevede
+                19 settimane di lavoro, suddivise come segue:
+                \begin{itemize}
+                    \item \textbf{Sviluppo PoC (\textit{Proof of Concept}): 6 settimane}
+                    \item \textbf{Sviluppo MVP (\textit{Minimum Viable Product}): 13 settimane}
+                \end{itemize}
+        
+                \subsubsection{Fasi principali}  % TODO: rivedere le fasi
+                \begin{enumerate}
+                    \item \textbf{Analisi dei requisiti} (2 settimane):
+                    \begin{itemize}
+                        \item Revisione del capitolato.
+                        \item Identificazione delle tecnologie e dei modelli LLM adatti.
+                    \end{itemize}
+                    \item \textbf{Progettazione} (2 settimane):
+                    \begin{itemize}
+                        \item Progettazione architetturale.
+                        \item Definizione dello schema del database.
+                    \end{itemize}
+                    \item \textbf{Sviluppo Backend} (4 settimane):
+                    \begin{itemize}
+                        \item Configurazione del database.
+                        \item Implementazione delle API REST.
+                    \end{itemize}
+                    \item \textbf{Integrazione LLM} (3 settimane):
+                    \begin{itemize}
+                        \item Pre-processing dei dati e integrazione del modello LLM.
+                    \end{itemize}
+                    \item \textbf{Sviluppo Frontend} (4 settimane):
+                    \begin{itemize}
+                        \item Creazione dell'interfaccia utente mobile.
+                    \end{itemize}
+                    \item \textbf{Test e validazione} (2 settimane):
+                    \begin{itemize}
+                        \item Test funzionali e di usabilità.
+                    \end{itemize}
+                    \item \textbf{Rilascio e documentazione} (2 settimane).
+                \end{enumerate}
+        
+                \subsubsection{Cronoprogramma}
+                % Diagramma di Gantt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                \resizebox{\textwidth}{!}{ % Scales the chart to fit the text width
+                    \begin{ganttchart}[
+                        hgrid, vgrid, % Adds grid lines
+                        x unit=1.1cm, % Adjust the width of each time slot
+                        title/.append style={draw=black, thick, fill=red!20, line width=1pt, draw opacity=1},
+                        bar/.append style={fill=red!50}, % Custom bar styling
+                        milestone/.append style={fill=red!70}, % Milestone style
+                        ]{1}{19} % Timeline from week 1 to week 19
+                        \gantttitle{Project Plan (Weeks)}{19} \\ % Title spanning 19 weeks
+                        \gantttitle{Novembre 2024}{4}
+                        \gantttitle{Dicembre 2024}{5}
+                        \gantttitle{Gennaio 2025}{4}
+                        \gantttitle{Febbraio 2025}{4}
+                        \gantttitle{Marzo 2025}{2}
+                        \\
+                        \gantttitle{4 nov}{1}  % TODO: decidere cosa tenere tra i titoli
+                        \gantttitle{11 nov}{1}
+                        \gantttitle{18 nov}{1}
+                        \gantttitle{25 nov}{1}
+                        \gantttitle{2 dic}{1}
+                        \gantttitle{9 dic}{1}
+                        \gantttitle{16 dic}{1}
+                        \gantttitle{23 dic}{1}
+                        \gantttitle{30 dic}{1}
+                        \gantttitle{6 gen}{1}
+                        \gantttitle{13 gen}{1}
+                        \gantttitle{20 gen}{1}
+                        \gantttitle{27 gen}{1}
+                        \gantttitle{3 feb}{1}
+                        \gantttitle{10 feb}{1}
+                        \gantttitle{17 feb}{1}
+                        \gantttitle{24 feb}{1}
+                        \gantttitle{3 mar}{1}
+                        \gantttitle{10 mar}{1} \\
+                        \gantttitlelist{1,...,19}{1} \\ % Weekly columns
+        
+                        % Define groups and tasks
+                        \ganttgroup{Sviluppo PoC}{1}{6} \\
+                        \ganttmilestone{RTB}{6} \\
+                        \ganttgroup{Sviluppo MVP}{7}{19} \\
+                        \ganttmilestone{PB}{19} \\
+        
+                        \ganttbar{Analisi dei requisiti}{1}{2} \\
+                        \ganttbar{Progettazione}{3}{4} \\
+                        \ganttbar{Sviluppo backend}{5}{8} \\
+                        \ganttbar{Integrazione LLM}{9}{11} \\
+                        \ganttbar{Sviluppo frontend}{12}{15} \\
+                        \ganttbar{Test e validazione}{16}{17} \\
+                        \ganttbar{Rilascio e documentazione}{18}{19} \\
+        
+                        \ganttlink{elem4}{elem5}  % TODO: decidere se tenere o togliere i link
+                        \ganttlink{elem5}{elem6}
+                        \ganttlink{elem6}{elem7}
+                        \ganttlink{elem7}{elem8}
+                        \ganttlink{elem8}{elem9}
+                        \ganttlink{elem9}{elem10}
+        
+                    \end{ganttchart}
+                }
+        
+    \section{Analisi dei Rischi}
+    \subsection{Introduzione}
     In questa sezione vengono analizzati i principali rischi che potrebbero manifestarsi durante lo svolgimento del progetto, con una valutazione della loro gravità e probabilità di occorrenza. Ad ogni rischio è associato un indice numerico che ne definisce l'intensità e la probabilità, consentendo di determinare la criticità di ciascun rischio.
 
-    \subsubsection{Definizione degli Indici}
+    \subsection{Definizione degli Indici}
         Per una corretta valutazione dei rischi, sono stati definiti i seguenti fattori chiave:
         \begin{itemize}
             \item \textbf{Indice}: un valore numerico progressivo che identifica in modo univoco ogni rischio;
@@ -330,12 +441,13 @@
             \label{tab:definizione_indici}
         \end{table}
             
-    \subsubsection{Rischi Identificati}
+    \subsection{Suddivisione dei rischi}
     I rischi del progetto sono suddivisi in tre categorie principali, in base alla natura delle problematiche che potrebbero verificarsi:
     \begin{itemize}
         \item Rischi di natura tecnologica;
         \item Rischi legati alla comunicazione;
-        \item Rischi relativi alla pianificazione e gestione del progetto.
+        \item Rischi relativi all'organizzazione e gestione del progetto.
+        \item Rischi individuali
     \end{itemize}
     Ogni rischio è identificato tramite un codice univoco, strutturato come segue:
     \[
@@ -348,161 +460,204 @@
             \item \textbf{T}: per i rischi tecnologici;
             \item \textbf{C}: per i rischi comunicativi;
             \item \textbf{P}: per i rischi di pianificazione.
+            \item \textbf{I}: per i rischi individuali.
         \end{itemize}
         \item \textbf{Indice}: è un identificativo progressivo univoco all'interno della categoria;
         \item \textbf{Nome}: è una breve descrizione del rischio.
     \end{itemize}
-    Di seguito elencati tutti i rischi identificati:
+
+    \subsection{Rischi Tecnologici}
+
+    \subsubsection{RT1 - Difficoltà	 nell’uso	di nuove tecnologie}
     \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
         \centering
-        \begin{tabular}{|p{0.5cm}|p{7cm}|p{2cm}|p{2cm}|}
+        \begin{tabular}{|p{3cm}|p{11cm}|}
             \hline
-            \textbf{ID} & \textbf{Rischio} & \textbf{Gravità} & \textbf{Probabilità} \\
+            \textbf{Codice} & RT1 \\
             \hline
-            RC1 & Scarsa collaborazione da parte di uno o più membri del team & 3 & 1 \\
+            \textbf{Descrizione} & Rischio legato all’inesperienza o alla poca conoscenza di un componente necessario da integrare all’interno del progetto. Questo potrebbe causare ritardi sia nella fase di progettazione che in quella di sviluppo \\
             \hline
-            RT1 & Difficoltà nell'uso di nuove tecnologie & 2 & 3 \\
+            \textbf{Gravità} & 2 \\
             \hline
-            RP1 & Codice non completato dal delegato & 2 & 2 \\
+            \textbf{Probabilità} & 3 \\
             \hline
-            RP2 & Riduzione del carico e delle ore di lavoro durante le festività & 1 & 2 \\
-            \hline
-            RP3 & Impegni personali e universitari & 1 & 2 \\
-            \hline
-             RP4 & Deviazione dai tempi e costi previsti & 3 & 1 \\
+            \textbf{Contromisure} & Il team si impegnerà a studiare in modo approfondito le tecnologie richieste dal capitolato, in particolare le tecnologie di LLM. Verranno organizzati corsi di formazione interna per permettere ai membri di acquisire competenze comuni e supportarsi vicendevolmente \\
             \hline
         \end{tabular}
-        \caption{Tabella dei Rischi Identificati}
-        \label{tab:rischi_identificati}
+        \caption{Tabella RT1}
     \end{table}
 
-    \subsubsection{Contromisure Proposte}
-    Per ciascun rischio identificato, sono state previste specifiche contromisure che mirano a ridurre o mitigare l'impatto potenziale. Le contromisure sono progettate per affrontare tempestivamente i problemi e mantenere il progetto sui giusti binari.
-        \begin{itemize}
-            \item \textbf{Contromisura per il rischio RC1 (Scarsa collaborazione)}: 
-                Saranno programmati incontri regolari di coordinamento per favorire la comunicazione e la collaborazione all'interno del team. Ogni membro avrà ruoli e responsabilità ben definiti, e verranno incentivati il dialogo aperto e la trasparenza.
-            \item \textbf{Contromisura per il rischio RT1 (Difficoltà nell'uso di nuove tecnologie)}: 
-                Il team si impegnerà a studiare in modo approfondito le tecnologie richieste dal capitolato, in particolare le tecnologie di \emph{LLM}. Verranno organizzati corsi di formazione interna per permettere ai membri di acquisire competenze comuni e supportarsi vicendevolmente.
-            \item \textbf{Contromisura per il rischio RP1 (Codice non completato dal delegato)}: 
-                Il team adotterà un sistema di monitoraggio settimanale per garantire che ogni membro rispetti le scadenze. I task saranno suddivisi in modo equilibrato e monitorati costantemente.
-            \item \textbf{Contromisura per il rischio RP2 (Riduzione delle ore di lavoro durante le festività)}: 
-                Si pianificheranno in anticipo le ferie e i periodi di bassa attività, organizzando sessioni di recupero prima e dopo le festività per non compromettere i tempi di consegna.
-            \item \textbf{Contromisura per il rischio RP3 (Impegni personali e universitari)}: 
-                Ogni membro del team dovrà segnalare in anticipo eventuali impegni personali o universitari. Il team utilizzerà un calendario condiviso per pianificare le attività in modo da evitare sovrapposizioni e garantire la disponibilità necessaria.
-            \item \textbf{Contromisura per il rischio RP4 (Deviazione dai tempi e costi)}: 
-                Il team monitorerà costantemente l'avanzamento del progetto attraverso riunioni settimanali di aggiornamento e controllo del budget. Eventuali scostamenti saranno analizzati per prendere tempestivamente le misure correttive.
-        \end{itemize}
+    \subsubsection{RT2 - Sviluppo di codice poco comprensibile}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RT2 \\
+            \hline
+            \textbf{Descrizione} & Durante il processo di sviluppo, un membro del Team potrebbe scrivere una o più porzioni di codice difficile da comprendere per tutti i membri. In questo caso, si perde del tempo che potrebbe essere utilizzato per svolgere altri compiti \\
+            \hline
+            \textbf{Gravità} & 2 \\
+            \hline
+            \textbf{Probabilità} & 2 \\
+            \hline
+            \textbf{Contromisure} & Effettuare revisioni regolari del codice. Necessaria, inoltre, una comunicazione tra gli sviluppatori in modo che il processo di sviluppo sia facilitato e la struttura sia comprensibile a tutti \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RT2}
+    \end{table}
+
+    
+    \subsection{Rischi comunicativi}
             
+    \subsubsection{RC1 - Disaccordi all’interno del Team}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RC1 \\
+            \hline
+            \textbf{Descrizione} & I componenti del Team possono avere ideologie e opinioni diverse riguardo elementi particolari del progetto \\
+            \hline
+            \textbf{Gravità} & 2 \\
+            \hline
+            \textbf{Probabilità} & 1 \\
+            \hline
+            \textbf{Contromisure} & In caso di disaccordo, si procederà con una discussione interna dove si elencheranno i punti a favore e i contro in modo da arrivare ad una soluzione comune \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RC1}
+    \end{table}
 
-    \subsection{Piano di Comunicazione}
-    \begin{itemize}
-        \item Riunioni settimanali con il team.
-        \item Report di avanzamento per il referente aziendale ogni 2 settimane.
-        \item Feedback continuo attraverso test intermedi.
-    \end{itemize}
+    \subsubsection{RC2 - Problemi di comunicazione all’interno del gruppo}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RC2 \\
+            \hline
+            \textbf{Descrizione} & Situazioni in cui non esistono linee guida chiare per la trasmissione efficace delle informazioni all’interno del team. Questa mancanza di direzione può portare a fraintendimenti, confusione o ritardi \\
+            \hline
+            \textbf{Gravità} & 2 \\
+            \hline
+            \textbf{Probabilità} & 1 \\
+            \hline
+            \textbf{Contromisure} & Oltre ad aver stabilito i canali specifici di comunicazione per i vari confronti, sono fissate delle riunioni settimanali dove vengono discusse tutte le questioni all’ordine del giorno. Inoltre, in caso di necessità, si possono pianificare dei meeting straordinari per parlare di questioni imminenti ed importanti \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RC2}
+    \end{table}
 
-    \subsection{Pianificazione delle Attività}
-        Il gruppo Code7Crusaders
-        si impegna a consegnare il progetto entro il 14/03/2025. La pianificazione prevede
-        19 settimane di lavoro, suddivise come segue:
-        \begin{itemize}
-            \item \textbf{Sviluppo PoC (\textit{Proof of Concept}): 6 settimane}
-            \item \textbf{Sviluppo MVP (\textit{Minimum Viable Product}): 13 settimane}
-        \end{itemize}
+    \subsubsection{RC3 - Mancato confronto con l’azienda Proponente}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RC3 \\
+            \hline
+            \textbf{Descrizione} & Questo rischio identifica una mancanza di comunicazione con l’azienda Proponente che impedisce l’acquisizione di chiarimenti durante lo svolgimento del progetto \\
+            \hline
+            \textbf{Gravità} & 3 \\
+            \hline
+            \textbf{Probabilità} & 1 \\
+            \hline
+            \textbf{Contromisure} & Cercare di mantenere l’azienda Proponente informata sugli sviluppi in modo regolare e chiedere feedback quando necessario \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RC3}
+    \end{table}
 
-        \subsubsection{Fasi principali}  % TODO: rivedere le fasi
-        \begin{enumerate}
-            \item \textbf{Analisi dei requisiti} (2 settimane):
-            \begin{itemize}
-                \item Revisione del capitolato.
-                \item Identificazione delle tecnologie e dei modelli LLM adatti.
-            \end{itemize}
-            \item \textbf{Progettazione} (2 settimane):
-            \begin{itemize}
-                \item Progettazione architetturale.
-                \item Definizione dello schema del database.
-            \end{itemize}
-            \item \textbf{Sviluppo Backend} (4 settimane):
-            \begin{itemize}
-                \item Configurazione del database.
-                \item Implementazione delle API REST.
-            \end{itemize}
-            \item \textbf{Integrazione LLM} (3 settimane):
-            \begin{itemize}
-                \item Pre-processing dei dati e integrazione del modello LLM.
-            \end{itemize}
-            \item \textbf{Sviluppo Frontend} (4 settimane):
-            \begin{itemize}
-                \item Creazione dell'interfaccia utente mobile.
-            \end{itemize}
-            \item \textbf{Test e validazione} (2 settimane):
-            \begin{itemize}
-                \item Test funzionali e di usabilità.
-            \end{itemize}
-            \item \textbf{Rilascio e documentazione} (2 settimane).
-        \end{enumerate}
+    \break
+    \subsection{Rischi organizzattivi}
+    
+    \subsubsection{RO1 - Incomprensioni nella pianificazione delle attività}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RO1 \\
+            \hline
+            \textbf{Descrizione} & Si verifica quando il Team manca di esperienza o competenza nella gestione dei processi di pianificazione, portando a possibili conseguenze come l’allocazione inefficace delle risorse, la scarsa definizione dei requisiti o valutazioni inaccurate dei tempi \\
+            \hline
+            \textbf{Gravità} & 3 \\
+            \hline
+            \textbf{Probabilità} & 2 \\
+            \hline
+            \textbf{Contromisure} & Nel caso in cui uno o più componenti del gruppo abbiano difficoltà nello svolgimento di determinati compiti previsti, anche in caso di scadenze imminenti, verrà effettuata una revisione delle attività per dare priorità a quelle con scadenze in direzione d’arrivo \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RO1}
+    \end{table}
 
-        \subsubsection{Cronoprogramma}
-        % Diagramma di Gantt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        \resizebox{\textwidth}{!}{ % Scales the chart to fit the text width
-            \begin{ganttchart}[
-                hgrid, vgrid, % Adds grid lines
-                x unit=1.1cm, % Adjust the width of each time slot
-                title/.append style={draw=black, thick, fill=red!20, line width=1pt, draw opacity=1},
-                bar/.append style={fill=red!50}, % Custom bar styling
-                milestone/.append style={fill=red!70}, % Milestone style
-                ]{1}{19} % Timeline from week 1 to week 19
-                \gantttitle{Project Plan (Weeks)}{19} \\ % Title spanning 19 weeks
-                \gantttitle{Novembre 2024}{4}
-                \gantttitle{Dicembre 2024}{5}
-                \gantttitle{Gennaio 2025}{4}
-                \gantttitle{Febbraio 2025}{4}
-                \gantttitle{Marzo 2025}{2}
-                \\
-                \gantttitle{4 nov}{1}  % TODO: decidere cosa tenere tra i titoli
-                \gantttitle{11 nov}{1}
-                \gantttitle{18 nov}{1}
-                \gantttitle{25 nov}{1}
-                \gantttitle{2 dic}{1}
-                \gantttitle{9 dic}{1}
-                \gantttitle{16 dic}{1}
-                \gantttitle{23 dic}{1}
-                \gantttitle{30 dic}{1}
-                \gantttitle{6 gen}{1}
-                \gantttitle{13 gen}{1}
-                \gantttitle{20 gen}{1}
-                \gantttitle{27 gen}{1}
-                \gantttitle{3 feb}{1}
-                \gantttitle{10 feb}{1}
-                \gantttitle{17 feb}{1}
-                \gantttitle{24 feb}{1}
-                \gantttitle{3 mar}{1}
-                \gantttitle{10 mar}{1} \\
-                \gantttitlelist{1,...,19}{1} \\ % Weekly columns
+    \subsubsection{RO2 - Deviazione dai tempi e costi previsti}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RO2 \\
+            \hline
+            \textbf{Descrizione} & Questo rischio si riferisce alla possibilità di variazioni significative rispetto alle tempistiche e ai costi pianificati inizialmente per lo sviluppo del progetto \\
+            \hline
+            \textbf{Gravità} & 3 \\
+            \hline
+            \textbf{Probabilità} & 1 \\
+            \hline
+            \textbf{Contromisure} & Il team monitorerà costantemente l’avanzamento del progetto attraverso riunioni settimanali di aggiornamento e controllo del budget. Eventuali scostamenti saranno analizzati per prendere tempestivamente le misure correttive \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RO2}
+    \end{table}
 
-                % Define groups and tasks
-                \ganttgroup{Sviluppo PoC}{1}{6} \\
-                \ganttmilestone{RTB}{6} \\
-                \ganttgroup{Sviluppo MVP}{7}{19} \\
-                \ganttmilestone{PB}{19} \\
+    \break
+    \subsection{Rischi individuali}
 
-                \ganttbar{Analisi dei requisiti}{1}{2} \\
-                \ganttbar{Progettazione}{3}{4} \\
-                \ganttbar{Sviluppo backend}{5}{8} \\
-                \ganttbar{Integrazione LLM}{9}{11} \\
-                \ganttbar{Sviluppo frontend}{12}{15} \\
-                \ganttbar{Test e validazione}{16}{17} \\
-                \ganttbar{Rilascio e documentazione}{18}{19} \\
+    \subsubsection{RI1 - Scarsa collaborazione da parte di uno o più membri del team}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RI1 \\
+            \hline
+            \textbf{Descrizione} & La possibilità che uno o più membri del gruppo non collaborino attivamente allo sviluppo del progetto \\
+            \hline
+            \textbf{Gravità} & 3 \\
+            \hline
+            \textbf{Probabilità} & 1 \\
+            \hline
+            \textbf{Contromisure} & Saranno programmati incontri regolari di coordinamento per favorire la comunicazione e la collaborazione all’interno del team. Ogni membro avrà ruoli e responsabilità ben definiti, e verranno incentivati il dialogo aperto e la trasparenza \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RI1}
+    \end{table}
 
-                \ganttlink{elem4}{elem5}  % TODO: decidere se tenere o togliere i link
-                \ganttlink{elem5}{elem6}
-                \ganttlink{elem6}{elem7}
-                \ganttlink{elem7}{elem8}
-                \ganttlink{elem8}{elem9}
-                \ganttlink{elem9}{elem10}
+    \subsubsection{RI2 - Impegni personali e universitari }
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RI2 \\
+            \hline
+            \textbf{Descrizione} & Questo rischio riguarda la potenziale difficoltà dei membri del team, nel dedicare il tempo richiesto al progetto a causa degli impegni universitari e/o altri impegni personali \\
+            \hline
+            \textbf{Gravità} & 1 \\
+            \hline
+            \textbf{Probabilità} & 2 \\
+            \hline
+            \textbf{Contromisure} & Ogni membro del Team dovrà segnalare in anticipo eventuali impegni personali o universitari. Il team utilizzerà un calendario condiviso per pianificare le attività in modo da evitare sovrapposizioni e garantire la disponibilità necessaria \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RI2}
+    \end{table}
 
-            \end{ganttchart}
-        }
+
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
