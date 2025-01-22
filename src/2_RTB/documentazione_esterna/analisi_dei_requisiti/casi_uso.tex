@@ -491,7 +491,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \end{figure}
 \newpage
 
-\subsubsection{U.C.7.4 Formato template Invalido}
+\subsubsection{U.C.7.4 Controllo Validità Formato}
 \begin{itemize}
     \item \textbf{Attori}: Admin
     \item \textbf{Precondizioni}: L'amministratore sta creando o modificando un template, ma inserisce un formato non valido (ad esempio, una domanda vuota o una risposta eccessivamente lunga ecc...)
@@ -509,7 +509,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{img/U.C.7.4.2.png}
-    \caption{U.C.7.4 Formato template Invalido}
+    \caption{U.C.7.4 Controllo Validità Formato}
 \end{figure}
 \newpage
 
@@ -570,7 +570,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso e ha preparato un file di dati aziendali da importare.
     \item \textbf{Postcondizioni}: Il Database è stato aggiornato con i nuovi dati.
     \item \textbf{Scenario principale}: L'amministratore carica un file di dati, il sistema lo valida e aggiorna il database con le informazioni corrette.
-    \item \textbf{Generalizzazioni}: -
+    \item \textbf{Generalizzazioni}: U.C.9.1, U.C.9.3
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
 \end{itemize}
@@ -598,7 +598,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \end{figure}
 \newpage
 
-\subsubsection{U.C.9.2 Validazione di Dati}
+\subsubsection{U.C.9.2 Validazione Formato}
 \begin{itemize}
     \item \textbf{Attori}: Admin
     \item \textbf{Precondizioni}: L’amministratore vuole caricare un file dati da caricare.
@@ -611,7 +611,24 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{img/U.C.9.2.png}
-    \caption{U.C.9.2 Validazione di Dati}
+    \caption{U.C.9.2 Validazione Formato}
+\end{figure}
+\newpage
+
+\subsubsection{U.C.9.3 Esportazione di Dati}
+\begin{itemize}
+    \item \textbf{Attori}: Admin
+    \item \textbf{Precondizioni}: L’amministratore vuole esportare un file dati.
+    \item \textbf{Postcondizioni}: I dati vengono esportati.
+    \item \textbf{Scenario principale}: L'amministratore seleziona il file dal sistema e avvia il processo di esportazione.
+    \item \textbf{Generalizzazioni}: -
+    \item \textbf{Estensioni}: -
+    \item \textbf{Inclusione}: -
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/U.C.9.3.png}
+    \caption{U.C.9.3 Esportazione di Dati}
 \end{figure}
 \newpage
 
@@ -655,7 +672,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Precondizioni}: L’amministratore ha effettuato l’accesso al sistema e in seguito alla dashboard per la gestione delle richieste di contatto.
     \item \textbf{Postcondizioni}: L’amministratore ha gestito le richieste di contatto degli utenti.
     \item \textbf{Scenario principale}: L’amministratore accede alla dashboard delle richieste di contatto e interagisce con le richieste per effettuare “servizio clienti”. Dopo aver selezionato una richiesta, risponde tramite email e aggiorna lo stato come "gestita".
-    \item \textbf{Generalizzazioni}: U.C.12.1
+    \item \textbf{Generalizzazioni}: U.C.12.1, U.C.12.2
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
 \end{itemize}
@@ -680,6 +697,23 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \centering
     \includegraphics[width=\textwidth]{img/U.C.12.1.png}
     \caption{U.C.12.1 Risposta alla Richiesta dall'amministratore}
+\end{figure}
+\newpage
+
+\subsubsection{U.C.12.2 Cambio stato richiesta}
+\begin{itemize}
+    \item \textbf{Attori}: Admin
+    \item \textbf{Precondizioni}: L’amministratore ha effettuato l’accesso al sistema e in seguito alla dashboard per la gestione delle richieste di contatto. È presente almeno una richiesta inviata da un utente.
+    \item \textbf{Postcondizioni}: La richiesta è stata aggiornata come "gestita" dallo stato di “attesa”.
+    \item \textbf{Scenario principale}: Dopo la risposta L’amministratore può decidere se lasciare la richiesta in stato di attesa o segnarla come “gestita”.
+    \item \textbf{Generalizzazioni}: -
+    \item \textbf{Estensioni}: -
+    \item \textbf{Inclusione}: -
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/U.C.12.2.png}
+    \caption{U.C.12.2 Cambio Stato Richiesta}
 \end{figure}
 \newpage
 
