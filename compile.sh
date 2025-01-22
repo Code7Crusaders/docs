@@ -68,6 +68,8 @@ files=(
      "src/altri_documenti/analisi_LLM_Bloom_Openai_gpt4/analisi_modelli.tex"
     "src/altri_documenti/analisi_framework_frontend/analisi_frontend.tex"
 
+    "./src/RTB/lettera_di_presentazione.tex"
+
 )
 
 current_dir=$(pwd)
