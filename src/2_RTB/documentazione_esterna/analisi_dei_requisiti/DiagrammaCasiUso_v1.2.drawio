@@ -1096,7 +1096,7 @@
         <mxCell id="0hc94U8EkOjm0X5-68us-18" value="U.C.9.2 Validazione Formato" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2440" y="2595" width="192.5" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="0hc94U8EkOjm0X5-68us-19" value="&amp;nbsp;Messaggio&lt;div&gt;&amp;nbsp;Errore:&lt;/div&gt;&lt;div&gt;Formato Invalido&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;" parent="1" vertex="1">
+        <mxCell id="0hc94U8EkOjm0X5-68us-19" value="&lt;div&gt;Formato Invalido&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;" parent="1" vertex="1">
           <mxGeometry x="2632.5" y="2477.5" width="127.5" height="100" as="geometry" />
         </mxCell>
         <mxCell id="0hc94U8EkOjm0X5-68us-20" value="&amp;lt;&amp;lt;extends&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="0hc94U8EkOjm0X5-68us-18" target="0hc94U8EkOjm0X5-68us-17" edge="1">
