@@ -46,8 +46,9 @@ files=(
     # "./src/templateC7C/template-verbali-nuovo/template-verbali.tex"
 
     "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.5.tex"
-     "./src/2_RTB/documentazione_esterna/piano_di_qualifica_v0.3.tex"
-     "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.tex"
+    "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.6.tex"
+    "./src/2_RTB/documentazione_esterna/piano_di_qualifica_v0.3.tex"
+    "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.tex"
     
     "./src/2_RTB/documentazione_interna/glossario.tex"
     "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"  
