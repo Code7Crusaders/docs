@@ -61,7 +61,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{itemize}
     \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L'utente richiede informazioni su un prodotto non presente nel database del sistema.
-    \item \textbf{Postcondizioni}: L'utente riceve un messaggio di errore.
+    \item \textbf{Postcondizioni}: L'utente riceve una risposta da parte del LLM, non è possibile elaborare l'informazione.
     \item \textbf{Scenario principale}: L'utente invia una domanda su un prodotto specifico, il sistema cerca nel database ma non trova risultati. Un messaggio di errore avvisa l'utente che il prodotto 
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
@@ -113,7 +113,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L'utente ha effettuato l'accesso e in passato ha salvato almeno una conversazione.
     \item \textbf{Postcondizioni}: L'utente visualizza l'elenco delle conversazioni salvate.
-    \item \textbf{Scenario principale}: L'utente accede alla sezione delle conversazioni e visualizza una lista ordinata delle sue conversazioni passate.
+    \item \textbf{Scenario principale}: L'utente accede alla sezione delle conversazioni e visualizza una lista ordinata delle sue conversazioni passate.% Correggere
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -198,7 +198,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L'utente ha inserito un username non registrato o con errori di battitura.
     \item \textbf{Postcondizioni}: L'accesso viene negato e il sistema visualizza un messaggio di errore.
-    \item \textbf{Scenario principale}: L'utente digita un username inesistente o con caratteri non validi. Il sistema verifica i dati e notifica l'errore.
+    \item \textbf{Scenario principale}: L'utente digita un username inesistente. Il sistema verifica i dati e notifica l'errore.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -536,7 +536,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{itemize}
     \item \textbf{Attore}: Admin
     \item \textbf{Precondizioni}: L’amministratore vuole caricare un file dati da caricare.
-    \item \textbf{Postcondizioni}: I file vengono respinti.
+    \item \textbf{Postcondizioni}: I file vengono respinti se il formato dati è sbagliato, altrimenti vengono importati.
     \item \textbf{Scenario principale}: Il sistema analizza il file, controlla la coerenza e il formato dei dati, se incoerente respinge e segnala errore.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
@@ -554,7 +554,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Attore}: Admin
     \item \textbf{Precondizioni}: L’amministratore vuole esportare un file dati.
     \item \textbf{Postcondizioni}: I dati vengono esportati.
-    \item \textbf{Scenario principale}: L'amministratore seleziona il file dal sistema e avvia il processo di esportazione.
+    \item \textbf{Scenario principale}: L'amministratore seleziona il file del database e avvia il processo di esportazione.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -568,7 +568,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 
 \subsubsection{U.C.18 Elimina Chat}
 \begin{itemize}
-    \item \textbf{Attore}: Admin
+    \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L'utente ha effettuato l'accesso ed è presente almeno una conversazione salvata.
     \item \textbf{Postcondizioni}: La conversazione selezionata viene eliminata dal sistema.
     \item \textbf{Scenario principale}: L'utente accede all'elenco delle chat salvate, seleziona una conversazione specifica e conferma l'eliminazione.
@@ -580,23 +580,6 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \centering
     \includegraphics[width=0.7\textwidth]{img/UC18.png}
     \caption{U.C.18 Elimina Chat}
-\end{figure}
-\newpage
-
-\subsubsection{U.C.19: Riprendi Conversazione}
-\begin{itemize}
-    \item \textbf{Attore}: Utente
-    \item \textbf{Precondizioni}: L’utente ha effettuato l’accesso al sistema ed effettuato una conversazione
-    \item \textbf{Postcondizioni}: L’utente riprende la conversazione con l’assistente virtuale.
-    \item \textbf{Scenario principale}: L’utente ha per qualche motivo dovuto interrompere la conversazione e la riprende successivamente in un secondo momento.
-    \item \textbf{Generalizzazioni}: -
-    \item \textbf{Estensioni}: -
-    \item \textbf{Inclusione}: -
-\end{itemize}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{img/UC19.png}
-    \caption{U.C.19: Riprendi Conversazione}
 \end{figure}
 \newpage
 
@@ -634,6 +617,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \end{figure}
 \newpage
 
+%% caso 21
 \subsubsection{U.C.22 Invio Richiesta a un Operatore Umano}
 \begin{itemize}
     \item \textbf{Attore}: Utente
