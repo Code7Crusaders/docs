@@ -57,19 +57,19 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
 
             if re.match(pattern_sezioni_principali, riga):
                 in_titolo_sezione = True
-                continue  
+                continue  # Salta il processamento di queste righe
             
             if re.match(pattern_sezioni_sottolivello, riga):
-                in_titolo_sezione = False  
+                in_titolo_sezione = False  # Permetti la modifica
                 
             if in_titolo_sezione:
-                continue  
+                continue  # Non modificare i contenuti delle sezioni principali
             
             href_matches = list(re.finditer(r"\\href\{[^}]+\}\{[^}]+\}", riga))
             url_matches = list(re.finditer(pattern_url, riga))
 
             for parola, link in hashmap.items():
-                pattern = rf"(\\(?:textbf|emph|textit|texttt|textsf|underline){{)?{re.escape(parola)}(\}})?"
+                pattern = rf"(?<=\s){re.escape(parola)}(?=\s)"
 
                 for match in re.finditer(pattern, riga):
                     start, end = match.span()
@@ -79,11 +79,7 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
                         continue
 
                     nuova_riga += riga[ultimo_indice:start]
-
-                    prefisso = match.group(1) or ""
-                    suffisso = match.group(2) or ""
-
-                    nuova_riga += f"\\href{{{link}}}{{{prefisso}{parola}{suffisso}\\textsuperscript{{G}}}}"
+                    nuova_riga += f"\\href{{{link}}}{{{parola}\\textsuperscript{{G}}}}"
                     ultimo_indice = end
 
             nuova_riga += riga[ultimo_indice:]
