@@ -86,8 +86,7 @@ La prima pagina include:
     \item Il titolo del gruppo.
     \item Il nome del documento.
     \item Il logo del gruppo.
-    \item I membri del team
-    \item Le informazioni sul documento, che elencano i redattori, i verificatori, l’amministratore, i destinatari e la versione.
+    \item I membri del team.
 \end{itemize}
 
 \subsubsection*{Registro dei Cambiamenti - Changelog}
@@ -115,14 +114,18 @@ I verbali sono suddivisi in interni (tra i membri del gruppo) ed esterni (con l'
 
 
 \subsubsection{Nome del File}
-I file devono avere nomi coerenti, con la lettera iniziale maiuscola e le restanti lettere minuscole, 
-eccetto i verbali, che sono nominati con la data dell'incontro in formato GG-MM-AAAA.
+I file devono avere nomi coerenti, con la lettera iniziale minuscola, 
+Per quanto riguarda i verbali, sia interni che esterni, il nome del file deve essere "verbale\_YY-MM-DD\_vXX", dove:
+\begin{itemize}
+    \item \textbf{YY-MM-DD}: data dell'incontro.
+    \item \textbf{XX}: numero progressivo del verbale.
+\end{itemize}
 
 \subsubsection{Stile del Testo}
 Lo stile del testo nei documenti ufficiali include:
 \begin{itemize}
     \item \textbf{Grassetto}: per titoli e parole di rilevanza.
-    \item \underline{Sottolineato}: solo per i link e parole del glossario.
+    \item \underline{Sottolineato}: solo per i link.
 \end{itemize}
 
 \subsubsection{Glossario}
@@ -131,12 +134,26 @@ I termini sono registrati in ordine alfabetico.
 
 
 \subsubsection{Tabelle}
-Le tabelle nei documenti ufficiali devono avere un titolo che descriva il contenuto e devono essere centrate orizzontalmente. 
-Le righe della tabella sono alternate in colori per migliorare la leggibilità. 
+Le tabelle nei documenti ufficiali devono avere un titolo che descriva il contenuto e devono essere centrate orizzontalmente nella pagina.
 
 \subsubsection{Immagini}
 Le immagini devono essere centrate orizzontalmente. Anche i diagrammi UML sono trattati come immagini.
 
+\subsubsection{Metriche}
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Metrica} & \textbf{Nome} \\
+        \hline
+        1PSM-IG & Indice di Gulpease \\
+        \hline
+        2PSM-CO & Correttezza Ortografica \\
+        \hline
+    \end{tabular}
+    \caption{Metriche relative al processo di Documentazione.}
+\end{table}
 
 
 
@@ -175,8 +192,6 @@ Dove:
 \subsubsection{Repository}
 Il nostro gruppo ha deciso di utilizzare per la gestione della configurazione il servizio GitHub, 
 basato sul sistema di controllo di versione distribuito Git.
-La repository è pubblica e si può facilmente trovare al seguente link:
-
 
 
 
@@ -210,7 +225,27 @@ Per garantire il rispetto di tutti gli aspetti del processo di gestione della qu
 \end{itemize}
 
 
-
+\subsubsection{Metriche}
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Metrica} & \textbf{Nome} \\
+        \hline
+        3PSM-FU & Facilità di Utilizzo \\
+        \hline
+        4PSM-TA & Tempo di Apprendimento \\
+        \hline
+        5PSM-TR & Tempo di Risposta \\
+        \hline
+        6PSM-TE & Tempo di Elaborazione\\
+        \hline
+        7PSM-QMS & Metriche di Qualità Soddisfatte \\
+        \hline
+    \end{tabular}
+    \caption{Metriche relative al processo di Gestione della Qualità.}
+\end{table}
 
 
 
@@ -270,6 +305,28 @@ La verifica della documentazione si compone delle seguenti attività:
 \end{itemize}
 
 
+\subsubsection{Metriche}
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Metrica} & \textbf{Nome} \\
+        \hline
+        8PSM-CC & Code Coverage \\
+        \hline
+        9PSM-BC & Branch Coverage \\
+        \hline
+        10PSM-SC & Statement Coverage \\
+        \hline
+        11PSM-FD & Failure Density\\
+        \hline
+        12PSM-PTCP & Passed Test Case Percentage \\
+        \hline
+    \end{tabular}
+    \caption{Metriche relative al processo di Verifica.}
+\end{table}
+
 
 
 
@@ -279,7 +336,7 @@ La verifica della documentazione si compone delle seguenti attività:
 %------------VALIDAZIONE--------------------------------
 \subsection{Validazione}
 \subsubsection{Introduzione}
-La convalida del software è un processo di valutazione del prodotto, finalizzato a garantire che il 
+La validazione del software è un processo di valutazione del prodotto, finalizzato a garantire che il 
 software soddisfi i requisiti predefiniti e specificati dal richiedente, nonché le richieste e le aspettative 
 degli utenti finali/proponente. Un processo di validazione ha successo quando è stata effettuata una buona 
 verifica durante tutta la fase di sviluppo.
@@ -289,3 +346,5 @@ L’esito finale positivo della validazione assicura che il prodotto finale sia 
     \item Soddisfare i requisiti specificati nell’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}} per il prodotto finale;
     \item Contribuire a migliorare la qualità e il valore del prodotto software finale.
 \end{itemize}
+
+
