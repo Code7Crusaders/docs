@@ -38,26 +38,38 @@ def crea_hashmap_glossario(percorso_file):
 
 # Funzione che aggiunge stile alle parole (G alta) e modifica il documento, gestisce anche prefissi suffissi (problemi con subsection)
 
+import re
+
 def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
     try:
         with open(percorso_file, "r", encoding="utf-8") as file:
             contenuto = file.readlines()
 
-        pattern_sezioni = r"\\(subsection|subsubsection|subsubsubsection|subsubsubsubsection|section|chapter|paragraph)\{.*?\}"
+        pattern_sezioni_principali = r"\\(section|chapter|part)\{.*?\}"
+        pattern_sezioni_sottolivello = r"\\(subsection|subsubsection|subsubsubsection|subsubsubsubsection|paragraph)\{.*?\}"
         pattern_url = r"\\url\{[^}]+\}"  
 
+        in_titolo_sezione = False
+        
         for i, riga in enumerate(contenuto):
             nuova_riga = ""
             ultimo_indice = 0
 
-            if re.match(pattern_sezioni, riga):
-                continue
-
+            if re.match(pattern_sezioni_principali, riga):
+                in_titolo_sezione = True
+                continue  # Salta il processamento di queste righe
+            
+            if re.match(pattern_sezioni_sottolivello, riga):
+                in_titolo_sezione = False  # Permetti la modifica
+                
+            if in_titolo_sezione:
+                continue  # Non modificare i contenuti delle sezioni principali
+            
             href_matches = list(re.finditer(r"\\href\{[^}]+\}\{[^}]+\}", riga))
             url_matches = list(re.finditer(pattern_url, riga))
 
             for parola, link in hashmap.items():
-                pattern = rf"(\\(?:textbf|emph|textit|texttt|textsf|underline){{)?{re.escape(parola)}(\}})?"
+                pattern = rf"(?<=\s){re.escape(parola)}(?=\s)"
 
                 for match in re.finditer(pattern, riga):
                     start, end = match.span()
@@ -67,11 +79,7 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
                         continue
 
                     nuova_riga += riga[ultimo_indice:start]
-
-                    prefisso = match.group(1) or ""
-                    suffisso = match.group(2) or ""
-
-                    nuova_riga += f"\\href{{{link}}}{{{prefisso}{parola}{suffisso}\\textsuperscript{{G}}}}"
+                    nuova_riga += f"\\href{{{link}}}{{{parola}\\textsuperscript{{G}}}}"
                     ultimo_indice = end
 
             nuova_riga += riga[ultimo_indice:]
@@ -86,10 +94,10 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
         print(f"Errore: Il file {percorso_file} non esiste.")
 # MAIN
 
-percorso_glossario = "../../2_RTB/documentazione_interna/glossario.tex"
+percorso_glossario = "./docs/src/2_RTB/documentazione_interna/glossario.tex" # Inserire il percorso del file del glossario
 hashmap = crea_hashmap_glossario(percorso_glossario)
 print(hashmap)
 if hashmap:
-    percorso_file_modificare = ".path_to_file/file_latex.tex" # Inserire il percorso del file da modificare
+    percorso_file_modificare = "./docs/src/2_RTB/documentazione_esterna/piano_di_qualifica_v0.3.tex" # Inserire il percorso del file da modificare
     aggiungi_stile_hyperlink_latex(percorso_file_modificare, hashmap)
 
