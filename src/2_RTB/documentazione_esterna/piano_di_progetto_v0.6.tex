@@ -56,7 +56,7 @@
     {\Large Software Development Team}\\
     \vspace{2cm}
 
-    {\large \textbf{Piano di Progetto}}\\
+    {\large \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-progetto}{\textbf{Piano di Progetto}\textsuperscript{G}}}\\
     \vspace{5cm}
 
 
@@ -135,10 +135,10 @@
 
     \subsection{Glossario}
     Per avere maggiore chiarezza ed evitare ambiguità per quanto riguarda i termini utilizzati all'interno dei vari documenti,
-    viene adottato un Glossario\textsuperscript{G} che contiene una serie di termini e relativa definizione.
+    viene adottato un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}\textsuperscript{G} che contiene una serie di termini e relativa definizione.
     Grazie ad esso, sarà possibile cliccare su una determinata porzione di testo, evidenziata grazie ad uno stile specifico,
     all'interno di un qualsiasi documento e in questo modo si potrà visualizzare la sua definizione all'interno
-    del Glossario\textsuperscript{G} stesso. Questa soluzione permetterà agli utenti di avere maggiore chiarezza sugli argomenti da noi
+    del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}\textsuperscript{G} stesso. Questa soluzione permetterà agli utenti di avere maggiore chiarezza sugli argomenti da noi
     trattati nei vari file di documentazione.
 
     \subsection{Riferimenti}
@@ -162,7 +162,7 @@
         di informazioni sui prodotti disponibili in catalogo.
         \item Automatizzare le risposte alle domande più frequenti, migliorando
         l'efficienza del servizio clienti.
-        \item Integrare un modello LLM esistente per garantire risposte accurate e
+        \item Integrare un modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} esistente per garantire risposte accurate e
         un'interfaccia user-friendly.
         \item Memoria a lungo termine/Salvataggio chat recenti (lo Specialist
         potrebbe non ricordarsi tutti i dettagli)
@@ -174,24 +174,24 @@
         \subsubsection{Inclusioni}
         \begin{itemize}
             \item Database relazionale per la gestione dei dati sui prodotti.
-            \item Integrazione di un modello LLM tramite API.
+            \item Integrazione di un modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} tramite API.
             \item Interfaccia utente mobile per l'interazione con l'IA.
             \item Funzionalità di configurazione backend per template di domande e risposte.
         \end{itemize}
         \subsubsection{Esclusioni}
         \begin{itemize}
-            \item Creazione di un nuovo modello LLM.
-            \item Supporto a lingue non previste dal modello LLM scelto.
+            \item Creazione di un nuovo modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
+            \item Supporto a lingue non previste dal modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} scelto.
         \end{itemize}
 
     \subsection{Funzionamento}
     \begin{itemize}
         \item Da un’interfaccia utente, viene catturata una domanda da parte dell’utente
-        \item La domanda viene inoltrata al sistema attraverso delle API REST risiedenti in un Web Server
-        \item La query ricevuta viene gestita dall’Embedding Model che trasforma la domanda in rappresentazione vettoriale
+        \item La domanda viene inoltrata al sistema attraverso delle \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}} risiedenti in un Web Server
+        \item La query ricevuta viene gestita dall’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{Embedding\textsuperscript{G}} Model che trasforma la domanda in rappresentazione vettoriale
         \item La rappresentazione vettoriale viene utilizzata per effettuare una ricerca all’interno del database vettoriale da dove vengono reperiti i vettori più simili
-        \item Sia la domanda sia i risultati della ricerca nel database vettoriale, vengono inviati al sistema LLM che costruirà la risposta utilizzando il contesto fornito
-        \item Attraverso API REST, il sistema inoltra la riposta al dispositivo dell’utente
+        \item Sia la domanda sia i risultati della ricerca nel database vettoriale, vengono inviati al sistema \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} che costruirà la risposta utilizzando il contesto fornito
+        \item Attraverso \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}, il sistema inoltra la riposta al dispositivo dell’utente
     \end{itemize}
 
     \subsection{Tecnologie e Strumenti Consigliati}
@@ -200,11 +200,11 @@
     training e poi interagire con il sistema per valutarne le prestazioni sfruttando un caso reale.
     Di seguito vengono suggerite alcune tecnologie utilizzabili per il sistema esposto:
     \begin{itemize}
-        \item \textbf{Database}: MySQL o PostgreSQL.
-        \item \textbf{LLM}: BLOOM o Italia by iGenius, in base alle prestazioni richieste.
-        \item \textbf{Backend}: Node.js con Express.js o .NET.
-        \item \textbf{Frontend}: .NET MAUI per applicazioni mobile multipiattaforma.
-        \item \textbf{API REST}: Per la comunicazione tra LLM e interfaccia utente.
+        \item \textbf{Database}: MySQL o \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#postgresql}{PostgreSQL\textsuperscript{G}}.
+        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\textbf{LLM}\textsuperscript{G}}: BLOOM o Italia by iGenius, in base alle prestazioni richieste.
+        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#backend}{\textbf{Backend}\textsuperscript{G}}: Node.js con Express.js o .NET.
+        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#frontend}{\textbf{Frontend}\textsuperscript{G}}: .NET MAUI per applicazioni mobile multipiattaforma.
+        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{\textbf{API REST}\textsuperscript{G}}: Per la comunicazione tra \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} e interfaccia utente.
         \item \textbf{Controllo Versione}: Git (GitHub per repository pubblico).
     \end{itemize}
 
@@ -222,9 +222,9 @@
             \item \textbf{Responsabile}: coordina il gruppo di lavoro, controlla le attività e gestisce le risorse. Si occupa di garantire che il progetto venga portato a termine nei tempi stabiliti e con le risorse disponibili.
             \item \textbf{Amministratore}: si occupa della gestione delle risorse e delle infrastrutture, incluso il setup degli strumenti di supporto alla produzione del software. Garantisce inoltre l’uso corretto delle procedure per assicurare efficienza e produttività.
             \item \textbf{Analista}: gioca un ruolo fondamentale nella fase iniziale del progetto. È responsabile della definizione dei requisiti e dell’analisi delle funzionalità del software, delineando i casi d'uso. Essendo necessario principalmente all'inizio del progetto, il numero di ore assegnato al ruolo è relativamente ridotto.
-            \item \textbf{Progettista}: definisce l'architettura del software, descrivendo le componenti e le loro interazioni sulla base dei requisiti stabiliti dall'Analista. Questo ruolo ha un numero di ore significativamente elevato perché è essenziale per garantire una struttura solida, soprattutto considerando l’implementazione di modelli \emph{LLM}, che richiedono un'architettura ben progettata e adattata a tali tecnologie.
+            \item \textbf{Progettista}: definisce l'architettura del software, descrivendo le componenti e le loro interazioni sulla base dei requisiti stabiliti dall'Analista. Questo ruolo ha un numero di ore significativamente elevato perché è essenziale per garantire una struttura solida, soprattutto considerando l’implementazione di modelli \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\emph{LLM}\textsuperscript{G}}, che richiedono un'architettura ben progettata e adattata a tali tecnologie.
             \item \textbf{Programmatore}: si occupa di scrivere il codice del software seguendo le specifiche del progettista. Il numero di ore assegnato è alto, dato che rappresenta il cuore della fase di sviluppo. Tuttavia, il ruolo ha leggermente meno ore rispetto al Verificatore, poiché abbiamo scelto di adottare una metodologia incentrata sui test, che richiede un’accurata verifica del software.
-            \item \textbf{Verificatore}: verifica che il software e la documentazione siano conformi alle norme e alle specifiche. Questo ruolo richiede un numero di ore superiore alla media, data la necessità di test approfonditi e continui, in particolare per un progetto basato su \emph{LLM}, dove ogni componente deve essere rigorosamente validato per garantire la precisione e l’affidabilità del sistema.
+            \item \textbf{Verificatore}: verifica che il software e la documentazione siano conformi alle norme e alle specifiche. Questo ruolo richiede un numero di ore superiore alla media, data la necessità di test approfonditi e continui, in particolare per un progetto basato su \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\emph{LLM}\textsuperscript{G}}, dove ogni componente deve essere rigorosamente validato per garantire la precisione e l’affidabilità del sistema.
         \end{itemize}
         \subsubsection{Stakeholder}
         \begin{itemize}
@@ -235,8 +235,8 @@
     \subsection{Budget e Risorse}
         \subsubsection{TODO: }
         \begin{itemize}
-            \item Allocazione hardware: server per database e API, risorse cloud per il modello LLM.
-            \item Licenze software e costi del modello LLM (se applicabile).
+            \item Allocazione hardware: server per database e API, risorse cloud per il modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
+            \item Licenze software e costi del modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} (se applicabile).
         \end{itemize}
         \subsubsection{Distribuzione ore/ruolo}
         Di seguito, si riporta il costo orario in base al ruolo assunto:
@@ -305,7 +305,7 @@
                 si impegna a consegnare il progetto entro il 14/03/2025. La pianificazione prevede
                 19 settimane di lavoro, suddivise come segue:
                 \begin{itemize}
-                    \item \textbf{Sviluppo PoC (\textit{Proof of Concept}): 6 settimane}
+                    \item \textbf{Sviluppo POC (\textit{Proof of Concept}): 6 settimane}
                     \item \textbf{Sviluppo MVP (\textit{Minimum Viable Product}): 13 settimane}
                 \end{itemize}
         
@@ -314,21 +314,21 @@
                     \item \textbf{Analisi dei requisiti} (2 settimane):
                     \begin{itemize}
                         \item Revisione del capitolato.
-                        \item Identificazione delle tecnologie e dei modelli LLM adatti.
+                        \item Identificazione delle tecnologie e dei modelli \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} adatti.
                     \end{itemize}
                     \item \textbf{Progettazione} (2 settimane):
                     \begin{itemize}
                         \item Progettazione architetturale.
                         \item Definizione dello schema del database.
                     \end{itemize}
-                    \item \textbf{Sviluppo Backend} (4 settimane):
+                    \item \textbf {Sviluppo Backend} (4 settimane):
                     \begin{itemize}
                         \item Configurazione del database.
                         \item Implementazione delle API REST.
                     \end{itemize}
                     \item \textbf{Integrazione LLM} (3 settimane):
                     \begin{itemize}
-                        \item Pre-processing dei dati e integrazione del modello LLM.
+                        \item Pre-processing dei dati e integrazione del modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
                     \end{itemize}
                     \item \textbf{Sviluppo Frontend} (4 settimane):
                     \begin{itemize}
@@ -349,7 +349,7 @@
                         x unit=1.1cm, % Adjust the width of each time slot
                         title/.append style={draw=black, thick, fill=red!20, line width=1pt, draw opacity=1},
                         bar/.append style={fill=red!50}, % Custom bar styling
-                        milestone/.append style={fill=red!70}, % Milestone style
+                        milestone/.append style={fill=red!70}, % \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#milestone}{Milestone\textsuperscript{G}} style
                         ]{1}{19} % Timeline from week 1 to week 19
                         \gantttitle{Project Plan (Weeks)}{19} \\ % Title spanning 19 weeks
                         \gantttitle{Novembre 2024}{4}
@@ -474,7 +474,7 @@
             \hline
             \textbf{Probabilità} & 3 \\
             \hline
-            \textbf{Contromisure} & Il team si impegnerà a studiare in modo approfondito le tecnologie richieste dal capitolato, in particolare le tecnologie di LLM. Verranno organizzati corsi di formazione interna per permettere ai membri di acquisire competenze comuni e supportarsi vicendevolmente \\
+            \textbf{Contromisure} & Il team si impegnerà a studiare in modo approfondito le tecnologie richieste dal capitolato, in particolare le tecnologie di \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}. Verranno organizzati corsi di formazione interna per permettere ai membri di acquisire competenze comuni e supportarsi vicendevolmente \\
             \hline
         \end{tabular}
         \caption{Tabella RT1}
@@ -753,7 +753,7 @@
                 
                 \paragraph{Obiettivi dello Sprint}
                     \begin{itemize}
-                        \item Redigere il documento \emph{Norme di Progetto}.
+                        \item Redigere il documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#norme-di-progetto}{\emph{Norme di Progetto}\textsuperscript{G}}.
                         \item Approfondire l'uso delle tecnologie richieste nel capitolato.
                         \item Effettuare una chiamata con l'azienda per definire i requisiti utente e software.
                         \item Studiare e comprendere i documenti legati alla documentazione.
@@ -826,9 +826,9 @@
                 \paragraph{Retrospettiva}
                 \paragraph{Risultati Ottenuti}
                     \begin{itemize}
-                        \item Approvazione della candidatura per \textbf{LLM: Assistente virtuale}.
+                        \item Approvazione della candidatura per \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\textbf{LLM\textsuperscript{G}}: Assistente virtuale}.
                         \item Acquisizione di competenze sull'uso di \emph{ProjectBoard} e \emph{Roadmap} su GitHub.
-                        \item Introduzione del processo di caricamento e compilazione automatizzata di file LaTeX tramite \emph{GitHub Actions}.
+                        \item Introduzione del processo di caricamento e compilazione automatizzata di file LaTeX tramite \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#github-actions}{\emph{GitHub Actions}\textsuperscript{G}}.
                         \item Creazione della prima versione del sito statico per la documentazione.
                         \item Miglioramento dei template LaTeX per agevolare la stesura della documentazione.
                     \end{itemize}
@@ -922,7 +922,7 @@
                     \item Risultati Ottenuti:
                         \begin{itemize}
                             \item Sito del gruppo aggiornato per una migliore fruibilità dei documenti.
-                            \item Glossario e Norme di Progetto avviati.
+                            \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}} e \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#norme-di-progetto}{Norme di Progetto\textsuperscript{G}} avviati.
                             \item Maggiore comprensione del progetto grazie alla condivisione delle risorse.
                         \end{itemize}
                     \item Feedback:
@@ -1047,20 +1047,20 @@
                 \begin{itemize}
                     \item Obiettivi principali:
                     \begin{itemize}
-                        \item Completare la stesura del Piano di Progetto.
-                        \item Rifinire l'Analisi dei Requisiti e contattare l'azienda per feedback sui Casi d'uso.
+                        \item Completare la stesura del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-progetto}{Piano di Progetto\textsuperscript{G}}.
+                        \item Rifinire l'\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}} e contattare l'azienda per feedback sui Casi d'uso.
                         \item Avanzare nello studio del framework Bloom e testare le API di ChatGPT.
                         \end{itemize}
                     \item Task assegnati:
                     \begin{itemize}
-                        \item Continuare la stesura del Piano di Progetto e l'Analisi dei Requisiti.
-                        \item Script Python per il Glossario: debugging e miglioramenti.
+                        \item Continuare la stesura del Piano di Progetto e l'\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-progetto}{Piano di Progetto\textsuperscript{G}} e l'Analisi dei Requisiti.
+                        \item Script Python per il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}: debugging e miglioramenti.
                         \item Pianificare e fissare un incontro con il prof. Cardin.
                         \item Aggiornare il sito GitHub con le ultime informazioni.
                         \end{itemize}
                     \item Punti da monitorare:
                     \begin{itemize}
-                        \item Progressi tecnici dello script Python per il Glossario.
+                        \item Progressi tecnici dello script Python per il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}.
                         \item Risposte dell'azienda su dataset e casi d'uso.
                         \end{itemize}
                 \end{itemize}
@@ -1125,22 +1125,22 @@
                     \begin{itemize}
                         \item Attività completate:
                         \begin{itemize}
-                            \item Documento Norme di Progetto, inclusi processi di supporto e organizzativi.
-                            \item Documento Analisi dei Requisiti, con descrizione del prodotto e casi d'uso.
+                            \item Documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#norme-di-progetto}{Norme di Progetto\textsuperscript{G}}, inclusi processi di supporto e organizzativi.
+                            \item Documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}, con descrizione del prodotto e casi d'uso.
                             \item Bozza dei diagrammi dei casi d'uso con relativa descrizione.
                             \item Definizione delle \textit{user-story} per i casi d'uso individuati.
-                            \item Prima stesura del Piano di Progetto.
-                            \item Script Python per automatizzare il Glossario.
+                            \item Prima stesura del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-progetto}{Piano di Progetto\textsuperscript{G}}.
+                            \item Script Python per automatizzare il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}.
                         \end{itemize}
                         \item Sfide affrontate:
                         \begin{itemize}
-                            \item Problemi tecnici nello script Python per il Glossario.
+                            \item Problemi tecnici nello script Python per il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}.
                             \item Individuazione e validazione dei Casi d'uso senza feedback dall'azienda.
                         \end{itemize}
                         \item Questioni aperte:
                         \begin{itemize}
                             \item Verifica della correttezza dei casi d'uso.
-                            \item Dettagli sulla consegna della Proof of Concept (necessità di un eseguibile?).
+                            \item Dettagli sulla consegna della \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#poc-proof-of-concept}{Proof of Concept\textsuperscript{G}} (necessità di un eseguibile?).
                         \end{itemize}
                     \end{itemize}
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1155,19 +1155,19 @@
                     \begin{itemize}
                         \item Contattare l'azienda per ottenere feedback sui casi d'uso.
                         \item Migliorare il piano di progetto per garantire allineamento con i requisiti aziendali.
-                        \item Testare diversi modelli di linguaggio (LLM) per valutarne l'idoneità.
+                        \item Testare diversi modelli di linguaggio (\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}) per valutarne l'idoneità.
                         \item Avviare la stesura del piano di qualifica per monitorare la qualità del progetto.
                     \end{itemize}
                     \item \textbf{Risorse necessarie:}
                     \begin{itemize}
                         \item Accesso ai dati e ai requisiti forniti dall'azienda.
-                        \item Strumenti per testare e valutare i LLM.
+                        \item Strumenti per testare e valutare i \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
                         \item Linee guida e template per il piano di qualifica.
                     \end{itemize}
                     \item \textbf{Distribuzione dei compiti:}
                     \begin{itemize}
                         \item Comunicazione con l'azienda assegnata a Filippo e Francesco.
-                        \item Test dei LLM affidato a Gabriele e Eddy.
+                        \item Test dei \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} affidato a Gabriele e Eddy.
                         \item Revisione del piano di progetto gestita da Enrico e Tommaso.
                         \item Inizio del piano di qualifica a cura di Matthew.
                     \end{itemize}
@@ -1235,23 +1235,23 @@
                     \begin{itemize}
                         \item Feedback ricevuto dall'azienda e implementato nei casi d'uso.
                         \item Piano di progetto aggiornato con nuove milestone e dettagli.
-                        \item Test completati su vari LLM, con una shortlist di modelli idonei.
+                        \item Test completati su vari \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}, con una shortlist di modelli idonei.
                         \item Prima versione del piano di qualifica completata.
                     \end{itemize}
                     \item \textbf{Sfide incontrate:}
                     \begin{itemize}
                         \item Comunicazione iniziale con l'azienda rallentata da problemi di disponibilità.
-                        \item Difficoltà nel confronto delle performance tra LLM.
+                        \item Difficoltà nel confronto delle performance tra \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
                     \end{itemize}
                     \item \textbf{Feedback ricevuto:}
                     \begin{itemize}
                         \item Apprezzamento per l'attenzione ai dettagli nel piano di progetto.
-                        \item Suggerimento di includere più metriche di valutazione per i LLM.
+                        \item Suggerimento di includere più metriche di valutazione per i \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
                     \end{itemize}
                     \item \textbf{Prossimi passi:}
                     \begin{itemize}
                         \item Continuare la documentazione.
-                        \item Collaborare con l'azienda per scegliere il LLM definitivo.
+                        \item Collaborare con l'azienda per scegliere il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} definitivo.
                         \item Definire l'architettura del sistema basandosi sui requisiti consolidati.
                     \end{itemize}
                 \end{itemize}
@@ -1265,9 +1265,9 @@
                 \begin{itemize}
                     \item Aggiornare e completare la documentazione:
                     \begin{itemize}
-                        \item Piano di Progetto
-                        \item Analisi dei Requisiti
-                        \item Glossario
+                        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-progetto}{Piano di Progetto\textsuperscript{G}}
+                        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}
+                        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}
                     \end{itemize}
                     \item Aggiornare il sito del progetto.
                     \item Scegliere il framework per la creazione dell'interfaccia grafica.
@@ -1336,16 +1336,16 @@
                 \begin{itemize}
                     \item Attività completate:
                     \begin{itemize}
-                        \item Modifiche nel documento Piano di Progetto.
-                        \item Sviluppo delle metriche di monitoraggio del progetto con relativi grafici (Piano di Qualifica).
+                        \item Modifiche nel documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-progetto}{Piano di Progetto\textsuperscript{G}}.
+                        \item Sviluppo delle metriche di monitoraggio del progetto con relativi grafici (\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}).
                         \item Modifica e approvazione dei casi d'uso da parte dell'Azienda.
-                        \item Test in locale di vari modelli LLM per scegliere il più adeguato.
+                        \item Test in locale di vari modelli \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} per scegliere il più adeguato.
                         \item Riunione con l'Azienda e scelta definitiva del modello (gpt-o4-mini di OpenAI).
                     \end{itemize}
                     \item Sfide incontrate:
                     \begin{itemize}
-                        \item Comprendere il funzionamento di LangChain.
-                        \item Analisi per selezionare il miglior modello LLM in termini di qualità-prezzo.
+                        \item Comprendere il funzionamento di \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}}.
+                        \item Analisi per selezionare il miglior modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} in termini di qualità-prezzo.
                     \end{itemize}
                 \end{itemize}
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
