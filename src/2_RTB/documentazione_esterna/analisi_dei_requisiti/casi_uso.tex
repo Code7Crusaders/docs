@@ -112,8 +112,8 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{itemize}
     \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L'utente ha effettuato l'accesso e in passato ha salvato almeno una conversazione.
-    \item \textbf{Postcondizioni}: L'utente visualizza l'elenco delle conversazioni salvate.
-    \item \textbf{Scenario principale}: L'utente accede alla sezione delle conversazioni e visualizza una lista ordinata delle sue conversazioni passate.% Correggere
+    \item \textbf{Postcondizioni}: L'utente visualizza una conversazione salvata.
+    \item \textbf{Scenario principale}: L'utente accede alla sezione delle conversazioni e visualizza una delle sue conversazioni passate.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -614,6 +614,23 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \centering
     \includegraphics[width=0.7\textwidth]{img/UC20.png}
     \caption{U.C.20: Risposta alla Richiesta dall’Amministratore}
+\end{figure}
+\newpage
+
+\subsubsection{U.C.21: Cambio stato Richiesta}
+\begin{itemize}
+    \item \textbf{Attore}: Admin
+    \item \textbf{Precondizioni}: L’amministratore ha effettuato l’accesso al sistema e in seguito alla dashboard per la gestione delle richieste di contatto. È presente almeno una richiesta inviata da un utente.
+    \item \textbf{Postcondizioni}: La richiesta è stata aggiornata come "gestita" dallo stato di “attesa”.
+    \item \textbf{Scenario principale}: Dopo la risposta L’amministratore può decidere se lasciare la richiesta in stato di attesa o segnarla come “gestita”.
+    \item \textbf{Generalizzazioni}: -
+    \item \textbf{Estensioni}: -
+    \item \textbf{Inclusione}: -
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/UC21.png}
+    \caption{U.C.21: Cambio stato Richiesta}
 \end{figure}
 \newpage
 
