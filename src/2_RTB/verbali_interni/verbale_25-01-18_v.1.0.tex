@@ -1,0 +1,185 @@
+%%% INTRO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template sia per verbali interni che esterni
+% Segui i commenti "TODO" per ricordarti cosa modificare
+% In caso di verbali esterni ricordati di settare isEsterno ad 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\usepackage{graphicx}  % serve per inserire immagini
+\usepackage{fancyhdr}  % creazione header-footer
+\usepackage{tabularx}  % serve per creare tabelle con colonne a larghezza variabile
+\usepackage{ifthen}  % serve per mostrare cose diverse in base a condizioni
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+
+% TODO: setta a 1 se il verbale è esterno, 0 se è interno
+\newcommand{\isEsterno}{0}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Sezione del titolo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+        \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.center) {
+            \includegraphics{../../img/background.png}
+        };
+        \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % logo
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+        
+        {\large \textbf{Riunione Settimanale 18/01/2025}}\\
+    \vspace{5cm}                           % esempio: Riunione Settimanale 04/11/2024
+    
+    
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Versioni %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    1.0 & 19/01/2025 & Gabriele Di Pietro &  & Stesura del Documento \\ 
+    \hline                                  % TODO: inserire data, nomi e descrizione
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Registro Presenze %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} Piattaforma Discord \\
+\textbf{Ora di Inizio} 14:30\\
+\textbf{Ora di Fine} 15:30\\  % TODO: inserire orari ed eventualmente piattaforma
+\\
+\begin{tabular}{|c|c|c|}  % TODO: inserire ruoli e presenze
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    Enrico Cotti Cottini & Verificatore & Presente \\ 
+    \hline
+    Gabriele Di Pietro & Analista & Presente \\ 
+    \hline
+    Tommaso Diviesti & Amministratore & Presente \\ 
+    \hline 
+    Francesco Lapenna & Programmatore & Presente \\ 
+    \hline
+    Matthew Pan & Verificatore & Presente \\ 
+    \hline 
+    Eddy Pinarello & Progettista & Presente \\ 
+    \hline 
+    Filippo Rizzolo & Responsabile & Presente \\ 
+    \hline 
+\end{tabular}
+% Presenze Rappresentanti Azienda %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \\
+    \newline
+    \newline
+    \begin{tabular}{|c|c|}  % TODO: eventualmente modificare nomi rappresentanti
+        \hline
+        \textbf{Nome} & \textbf{Ruolo}\\
+        \hline
+        Gianluca Carlesso & Rappresentante Azienda \\
+        \hline
+        Anna Tieppo & Rappresentante Azienda \\
+        \hline
+    \end{tabular}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Sezione Verbale %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Verbale Retrospettiva}
+La riunione ha avuto inizio con una riflessione sulle difficoltà incontrate nel coordinare gli incontri, anche online, dopo un lungo periodo di inattività. L'ultima riunione, infatti, risale a dicembre dello scorso anno. Si è proceduto quindi con una dettagliata retrospettiva delle attività svolte nel periodo trascorso.
+
+\subsection{Aggiornamento sull'Analisi dei Requisiti}
+Il documento relativo all'analisi dei requisiti necessita ancora di alcune rifiniture. In particolare, è necessario completare la trascrizione dei requisiti dal file Excel al documento LaTeX. Inoltre, è prevista l'integrazione dei casi d'uso, dopo le correzioni fornite dal professor Cardin. Si rende necessaria una seconda revisione di questi ultimi, poiché permangono dubbi su alcuni di essi (\textit{Casi d'uso}).
+
+\subsection{Piano di Qualifica}
+Il Piano di Qualifica è in uno stato avanzato per quanto riguarda la sezione delle metriche. Tuttavia, è necessario attendere i dati delle ultime settimane per completare i grafici e inserirli nel cruscotto. Le prossime attività includono l'individuazione dei Test di Sistema, che si basano sul soddisfacimento dei requisiti definiti nell'Analisi dei Requisiti, e dei Test di Accettazione, che verificano lo stato del software (ad esempio, il corretto caricamento della chat).
+
+\subsection{Sito Web e Glossario}
+Il sito web e il glossario necessitano di un aggiornamento urgente, poiché sono rimasti indietro rispetto al progresso generale del progetto. È quindi previsto un intervento di aggiornamento per entrambi nelle prossime settimane.
+
+\subsection{Frontend}
+Lo sviluppo del front-end ha subito un rallentamento. Per evitare ritardi nella fase di consegna della RTB, è previsto un maggiore impegno in questo ambito nelle prossime settimane.
+
+\subsection{DataBase}
+L'azienda ha fornito il dataset su cui verrà eseguito il nostro PoC. Questo permetterà al front-end di basarsi su dati reali per una progettazione più accurata e aderente alle esigenze del progetto.
+
+\subsection{Conclusioni}
+Durante la riunione è stato pianificato il lavoro per le prossime settimane. È stato evidenziato che potrebbe verificarsi un rallentamento delle attività a causa degli impegni legati agli esami di alcuni membri del gruppo. Nonostante ciò, il team si impegnerà al massimo per mantenere il più possibile il ritmo di lavoro ed evitare ulteriori ritardi. Sarà fondamentale una gestione ottimale del tempo e una collaborazione attiva per garantire il rispetto delle scadenze previste.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Sezione Firme %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \begin{table}[b]
+        \begin{tabular}{@{}p{.5in}p{4in}@{}}
+            Data:  & \hrulefill \\
+                   &     		\\
+                   &     		\\
+            Firma: & \hrulefill \\
+        \end{tabular}
+        \end{table}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document} 
