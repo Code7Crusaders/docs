@@ -1,7 +1,6 @@
 import re
 
 # Funzione parsing del gloassario, es. Parola1 ("Parola parola2") prende come chiavi tutte e due Parola1 e "Parola parola2" e mette come valore lo stesso link
-
 def crea_hashmap_glossario(percorso_file):
     hashmap = {}
     base_url = "https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#"
@@ -19,13 +18,15 @@ def crea_hashmap_glossario(percorso_file):
 
             link = f"{base_url}{parola_format.lower()}"
 
-            varianti = [parola]
+            varianti = [parola, parola.lower()]
             if "(" in parola and ")" in parola:
                 senza_parentesi = parola.split("(")[0].strip()
                 varianti.append(senza_parentesi)
+                varianti.append(senza_parentesi.lower())
 
                 acronimo = parola[parola.find("(")+1:parola.find(")")]
                 varianti.append(acronimo)
+                varianti.append(acronimo.lower())
 
             for variante in varianti:
                 if variante not in hashmap:
@@ -57,19 +58,19 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
 
             if re.match(pattern_sezioni_principali, riga):
                 in_titolo_sezione = True
-                continue  # Salta il processamento di queste righe
+                continue  
             
             if re.match(pattern_sezioni_sottolivello, riga):
-                in_titolo_sezione = False  # Permetti la modifica
+                in_titolo_sezione = False  
                 
             if in_titolo_sezione:
-                continue  # Non modificare i contenuti delle sezioni principali
+                continue  
             
             href_matches = list(re.finditer(r"\\href\{[^}]+\}\{[^}]+\}", riga))
             url_matches = list(re.finditer(pattern_url, riga))
 
             for parola, link in hashmap.items():
-                pattern = rf"(?<=\s){re.escape(parola)}(?=\s)"
+                pattern = rf"(\\(?:textbf|emph|textit|texttt|textsf|underline){{)?{re.escape(parola)}(\}})?"
 
                 for match in re.finditer(pattern, riga):
                     start, end = match.span()
@@ -79,7 +80,11 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
                         continue
 
                     nuova_riga += riga[ultimo_indice:start]
-                    nuova_riga += f"\\href{{{link}}}{{{parola}\\textsuperscript{{G}}}}"
+
+                    prefisso = match.group(1) or ""
+                    suffisso = match.group(2) or ""
+
+                    nuova_riga += f"\\href{{{link}}}{{{prefisso}{parola}{suffisso}\\textsuperscript{{G}}}}"
                     ultimo_indice = end
 
             nuova_riga += riga[ultimo_indice:]
@@ -94,10 +99,9 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
         print(f"Errore: Il file {percorso_file} non esiste.")
 # MAIN
 
-percorso_glossario = "./docs/src/2_RTB/documentazione_interna/glossario.tex" # Inserire il percorso del file del glossario
+percorso_glossario = "glossario.tex" # Inserire il percorso del file del glossario
 hashmap = crea_hashmap_glossario(percorso_glossario)
 print(hashmap)
 if hashmap:
-    percorso_file_modificare = "./docs/src/2_RTB/documentazione_esterna/piano_di_qualifica_v0.3.tex" # Inserire il percorso del file da modificare
+    percorso_file_modificare = "casi_uso.tex" # Inserire il percorso del file da modificare
     aggiungi_stile_hyperlink_latex(percorso_file_modificare, hashmap)
-

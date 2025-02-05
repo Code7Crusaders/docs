@@ -24,8 +24,8 @@ I requisiti sono stati identificati a partire dalle seguenti fonti:
 	\item \textbf{Capitolato}: requisiti individuati tramite analisi del capitolato;
 	\item \textbf{Interno}: requisiti individuati durante riunioni interne al gruppo di lavoro;
 	\item \textbf{Esterno}: requisiti individuati durante incontri con il proponente;
-	\item \textbf{Piano di Qualifica}: requisiti necessari per rispettare standard di qualità definiti nel documento Piano di Qualifica;
-	\item \textbf{Norme di Progetto}: requisiti necessari per rispettare le norme di progetto definite nel documento Norme di Progetto;
+	\item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{\textbf{Piano di Qualifica}\textsuperscript{G}}: requisiti necessari per rispettare standard di qualità definiti nel documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}};
+	\item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#norme-di-progetto}{\textbf{Norme di Progetto}\textsuperscript{G}}: requisiti necessari per rispettare le norme di progetto definite nel documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#norme-di-progetto}{Norme di Progetto\textsuperscript{G}}\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#norme-di-progetto}{norme di progetto\textsuperscript{G}} definite nel documento Norme di Progetto;
 \end{itemize}
 
 \subsection{Codifica dei requisiti}
@@ -66,21 +66,21 @@ Dove \textbf{Tipo} può essere:
 	\hline
 	\textbf{RFO2} & Capitolato & I testi recuperati dai documenti verranno suddivisi in blocchi, ovvero pezzi più piccoli di dati che rappresentano una piccola porzione del contesto\\
 	\hline
-	\textbf{RFO3} & Capitolato & Embedding model è il componente che riceverà in ingresso i blocchi di testo e lì trasformerà in rappresentazioni vettoriali\\
+	\textbf{RFO3} & Capitolato & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{Embedding\textsuperscript{G}} model è il componente che riceverà in ingresso i blocchi di testo e lì trasformerà in rappresentazioni vettoriali\\
 	\hline
-	\textbf{RFO4} & Capitolato & I vettori generati verranno memorizzati all’interno di un database vettoriale e opportunamente indicizzati\\
+	\textbf{RFO4} & Capitolato & I vettori generati verranno memorizzati all’interno di un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#database-vettoriale}{database vettoriale\textsuperscript{G}} e opportunamente indicizzati\\
 	\hline
 	\textbf{RFO5} & Capitolato, Esterno & Da un’interfaccia utente della web app, viene catturata una domanda da parte dell’utente\\
 	\hline
-	\textbf{RFO6} & Capitolato & La domanda viene inoltrata al sistema attraverso delle API REST risiedenti in un Web Server\\
+	\textbf{RFO6} & Capitolato & La domanda viene inoltrata al sistema attraverso delle \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}} risiedenti in un Web Server\\
 	\hline
-	\textbf{RFO7} & Capitolato & La query ricevuta viene gestita dall’Embedding Model che trasforma la domanda in rappresentazione vettoriale \\
+	\textbf{RFO7} & Capitolato & La query ricevuta viene gestita dall’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{Embedding\textsuperscript{G}} Model che trasforma la domanda in rappresentazione vettoriale \\
 	\hline
-	\textbf{RFO8} & Capitolato & La rappresentazione vettoriale viene utilizzata per effettuare una ricerca all’interno del database vettoriale da dove vengono reperiti i vettori più simili\\
+	\textbf{RFO8} & Capitolato & La rappresentazione vettoriale viene utilizzata per effettuare una ricerca all’interno del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#database-vettoriale}{database vettoriale\textsuperscript{G}} da dove vengono reperiti i vettori più simili\\
 	\hline
-	\textbf{RFO9} & Capitolato & Sia la domanda sia i risultati della ricerca nel database vettoriale, vengono inviati al sistema LLM che costruirà la risposta utilizzando il contesto fornito\\
+	\textbf{RFO9} & Capitolato & Sia la domanda sia i risultati della ricerca nel \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#database-vettoriale}{database vettoriale\textsuperscript{G}}, vengono inviati al sistema \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} che costruirà la risposta utilizzando il contesto fornito\\
 	\hline
-	\textbf{RFO10} & Capitolato & Attraverso API REST, il sistema inoltra la riposta all'account dell’utente\\
+	\textbf{RFO10} & Capitolato & Attraverso \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}, il sistema inoltra la riposta all'account dell’utente\\
 	\hline
 	\textbf{RFO11} & Interno & Il sistema deve permettere all'utente registrato di effettuare una conversazione con il bot\\
 	\hline
@@ -100,13 +100,13 @@ Dove \textbf{Tipo} può essere:
 	\hline
 	\textbf{RFO19} & Interno, Esterno & L'utente deve essere in grado di dare un feedback sulla qualità della conversazione dopo averla provata\\
 	\hline
-	\textbf{RFO20} & Esterno & L'amministratore deve essere in grado di creare template di domande e risposta\\
+	\textbf{RFO20} & Esterno & L'amministratore deve essere in grado di creare \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} di domande e risposta\\
 	\hline
-	\textbf{RFO21} & Esterno & L'amministratore deve essere in grado di modificare template di domande e risposta\\
+	\textbf{RFO21} & Esterno & L'amministratore deve essere in grado di modificare \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} di domande e risposta\\
 	\hline
-	\textbf{RFO22} & Interno & L'amministratore deve essere in grado di eliminare un template precedentemente creato\\
+	\textbf{RFO22} & Interno & L'amministratore deve essere in grado di eliminare un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} precedentemente creato\\
 	\hline
-	\textbf{RFF23} & Interno, Esterno & Il sistema deve poter fermare la creazione di un formato template invalido\\
+	\textbf{RFF23} & Interno, Esterno & Il sistema deve poter fermare la creazione di un formato \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} invalido\\
 	\hline
 	\textbf{RFO24} & Interno & L'amministratore deve aver accesso ad una dashboard che gli permetta di monitorare le prestazioni di sistema\\
 	\hline
@@ -130,9 +130,9 @@ Dove \textbf{Tipo} può essere:
 	\hline
 	\textbf{RFD34} & Interno & L'amministratore deve essere in grado di visualizzare i costi del sistema\\
 	\hline
-	\textbf{RFF35} & Interno & L'amministratore può gestire i parametri del LLM e il modello da scegliere\\
+	\textbf{RFF35} & Interno & L'amministratore può gestire i parametri del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} e il modello da scegliere\\
 	\hline
-	\textbf{RFF36} & Interno & L'utente ha la possibilità di scegliere il modello LLM da usare 
+	\textbf{RFF36} & Interno & L'utente ha la possibilità di scegliere il modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} da usare 
 	\\\hline
 	\caption{Requisiti funzionali}
 \end{longtable}
@@ -147,15 +147,15 @@ Dove \textbf{Tipo} può essere:
 	\textbf{Codice} & \textbf{Fonte} & \textbf{Descrizione}\\\hline
 	\endhead
 	\hline
-	\textbf{RQO1} & Capitolato, Piano di Qualifica & Progettazione architetturale e tecnologie utilizzate \\
+	\textbf{RQO1} & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}} & Progettazione architetturale e tecnologie utilizzate \\
 	\hline
-	\textbf{RQO2} & Capitolato, Piano di Qualifica & Schema di progettazione della base di dati \\
+	\textbf{RQO2} & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}} & Schema di progettazione della base di dati \\
 	\hline
-	\textbf{RQO3} & Capitolato, Piano di Qualifica & Codice prodotto in formato sorgente reso disponibile tramite repository pubblici \\
+	\textbf{RQO3} & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}} & Codice prodotto in formato sorgente reso disponibile tramite repository pubblici \\
 	\hline
-	\textbf{RQO4} & Capitolato, Piano di Qualifica & Documentazione descrittiva del sistema di raccomandazione implementato\\
+	\textbf{RQO4} & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}} & Documentazione descrittiva del sistema di raccomandazione implementato\\
 	\hline
-	\textbf{RQO5} & Piano di Qualifica & Documentazione riassuntiva delle metriche e dei risultati\\
+	\textbf{RQO5} & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}} & Documentazione riassuntiva delle metriche e dei risultati\\
 	\hline
 	\caption{Requisiti qualitativi}
 \end{longtable}
@@ -170,15 +170,15 @@ Dove \textbf{Tipo} può essere:
 	\textbf{Codice} & \textbf{Fonte} & \textbf{Descrizione}\\\hline
 	\endhead
 	\hline
-	\textbf{RV01} & Analisi dei modelli    & LLM deve essere integrato tramite API\\
+	\textbf{RV01} & Analisi dei modelli    & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} deve essere integrato tramite API\\
 	\hline
 	\textbf{RVO2} & Analisi dei modelli, Analisi del Database & Deve essere implementato almeno 1 database Relazionale\\
 	\hline
 	\textbf{RVO3} & Analisi dei modelli & Deve essere implementato almeno 1 database Vettoriale\\
 	\hline
-	\textbf{RVO4} & Analisi dei modelli & Deve essere implementato un embedding model locale o API\\
+	\textbf{RVO4} & Analisi dei modelli & Deve essere implementato un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{embedding\textsuperscript{G}} model locale o API\\
 	\hline
-	\textbf{RVO5} & Analisi Frontend & Bisogna implementare una WebApp che permetta di comunicare con il chatbot\\
+	\textbf{RVO5} & Analisi \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#frontend}{Frontend\textsuperscript{G}} & Bisogna implementare una WebApp che permetta di comunicare con il chatbot\\
 	\hline
 	\textbf{RVO6} & Interno & L’interfaccia deve essere costruita utilizzando componenti funzionali React.\\
 	\hline
@@ -188,7 +188,7 @@ Dove \textbf{Tipo} può essere:
 	\hline
 	\textbf{RVF9} & Interno & Gli stili devono essere gestiti tramite CSS con className per garantire modularità.\\
 	\hline
-	\textbf{RVF10} & Interno & La comunicazione tra componenti deve essere gestita inviando funzioni come props.\\
+	\textbf{RVF10} & Interno & La comunicazione tra componenti deve essere gestita inviando funzioni come \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#props}{props\textsuperscript{G}}.\\
 	\hline
 	\textbf{RVD11} & Interno & La WebApp deve essere responsiva e adattarsi dinamicamente alle dimensioni della finestra.\\
 	\hline
@@ -200,7 +200,7 @@ Dove \textbf{Tipo} può essere:
 	\hline
 	\textbf{RVO15} & Interno, Esterno & Ogni messaggio lasciato dal bot può essere valutato pertanto è necessario che questo dato venga salvato in modo (positivo/negativo)\\
 	\hline 
-	\textbf{RVO16} & Interno & Un Amministratore Deve poter modificare o aggiungere un template pertanto è necessario garantire la persistenza dell'ultima modifica.\\
+	\textbf{RVO16} & Interno & Un Amministratore Deve poter modificare o aggiungere un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} pertanto è necessario garantire la persistenza dell'ultima modifica.\\
 	\hline
 	\textbf{RVD17} & Interno & Ogni Prodotto può essere mostrato con una propria immagine\\
 	\hline
@@ -254,16 +254,16 @@ Dove \textbf{Tipo} può essere:
 	\textbf{RFD34}            & Interno\\\hline
 	\textbf{RFF35}            & Interno\\\hline
 	\textbf{RFF36}            & Interno\\\hline
-	\textbf{RQO1}            & Capitolato, Piano di Qualifica\\\hline
-	\textbf{RQO2}            & Capitolato, Piano di Qualifica\\\hline
-	\textbf{RQO3}            & Capitolato, Piano di Qualifica\\\hline
-	\textbf{RQO4}            & Capitolato, Piano di Qualifica\\\hline
-	\textbf{RQO5}            & Piano di Qualifica\\\hline
+	\textbf{RQO1}            & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}\\\hline
+	\textbf{RQO2}            & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}\\\hline
+	\textbf{RQO3}            & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}\\\hline
+	\textbf{RQO4}            & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}\\\hline
+	\textbf{RQO5}            & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}\\\hline
 	\textbf{RVO1}			 & Analisi dei modelli\\\hline
 	\textbf{RVO2}			 & Analisi dei modelli, Analisi del Database\\\hline
 	\textbf{RVO3}			 & Analisi dei modelli\\\hline
 	\textbf{RVO4}			 & Analisi dei modelli\\\hline
-	\textbf{RVO5}			 & Analisi Frontend\\\hline
+	\textbf{RVO5}			 & Analisi \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#frontend}{Frontend\textsuperscript{G}}\\\hline
 	\textbf{RVO6}			 & Interno\\\hline
 	\textbf{RVO7}			 & Interno\\\hline
 	\textbf{RVO8}			 & Interno\\\hline
