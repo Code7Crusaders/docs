@@ -7,6 +7,7 @@
 \usepackage{tikz}
 \usepackage[italian]{babel}
 \usepackage[hidelinks]{hyperref}
+\usepackage{array} 
 
 % Margini della pagina
 \geometry{a4paper, margin=1in}
@@ -55,63 +56,70 @@
     \vspace{1cm}
 \end{titlepage}
 
-Ai professori Tullio Vardanega e Riccardo Cardin.
+Ai professori Tullio Vardanega e Riccardo Cardin.\\
 Con il presente documento, il gruppo \textit{Code7Crusaders} desidera annunciare la propria intenzione di sostenere
-la revisione RTB (\textit{Requirements and Tecnology Baseline}) del progetto
+la revisione RTB (\textit{Requirements and Technology Baseline}) del progetto
 \begin{center}
     \textit{LLM: Assistente Virtuale}
 \end{center}
 proposto dall'azienda \textbf{Ergon Informatica}.\\
 La completa documentazione inerente al progetto è visibile attraverso il seguente link:
 \begin{center}
-    \texttt{https://code7crusaders.github.io}
+    \texttt{\url{https://code7crusaders.github.io}}
 \end{center}
 Nello specifico è presente una release \textit{RTB} all'interno della quale sono visibili i documenti sviluppati finora, tra cui:
 \begin{itemize}
     \item \textbf{Documenti Esterni:}
     \begin{itemize}
-        \item \texttt{Analisi dei Requisiti v1.0;}
+        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.html}{\texttt{Analisi dei Requisiti v1.0;}}
         \item \texttt{Piano di Progetto v1.0;}
         \item \texttt{Piano di Qualifica v1.0;}
     \end{itemize}
     \item \textbf{Documenti Interni:}
     \begin{itemize}
-        \item \texttt{Norme di Progetto v1.0;}
-        \item \texttt{Glossario v1.0;}
+        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/norme_di_progetto.html}{\texttt{Norme di Progetto v1.0;}}
+        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html}{\texttt{Glossario v1.0;}}
     \end{itemize}
-    \item \textbf{Verbali Esterni}
-    \item \textbf{Verbali Interni}
+    \item \textbf{Verbali Esterni;}
+    \item \textbf{Verbali Interni;}
 \end{itemize}
 
 Di seguito viene fornito il link al repository GitHub del gruppo contenente il \textbf{Proof of Concept} del progetto:
 \begin{center}
-    \texttt{inserire qui link o + link}
+    \texttt{\url{https://github.com/Code7Crusaders/POC}}
 \end{center}
 Il costo di realizzazione del progetto ... aggiungere roba se è aumentato altrimenti dire che è uguale all'altro\\
 \newpage
 Di seguito vengono riportati i nomi dei componenti del gruppo \textbf{Code7Crusaders}:\\
-\vspace{2cm}
-\begin{tabular}{|c|c|}
-    \hline
-    \textbf{Nome} & \textbf{Matricola} \\
-    \hline
-    Enrico Cotti Cottini &  \\ 
-    \hline
-    Gabriele Di Pietro & 2010000 \\ 
-    \hline
-    Tommaso Diviesti &  \\ 
-    \hline %linea di fine
-    Francesco Lapenna &  \\ 
-    \hline
-    Matthew Pan & \\ 
-    \hline %linea di fine
-    Eddy Pinarello & \\ 
-    \hline %linea di fine
-    Filippo Rizzolo & \\ 
-    \hline %linea di fine
-\end{tabular}
-\\
-\vspace{3cm}
+
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Aumenta l'altezza delle righe
+    \begin{tabular}{| >{\centering\arraybackslash}m{6cm} | >{\centering\arraybackslash}m{4cm} |} % Aumenta la larghezza delle colonne
+        \hline
+        \textbf{Nome} & \textbf{Matricola} \\
+        \hline
+        \textbf{Enrico Cotti Cottini} & 2077993 \\ 
+        \hline
+        \textbf{Gabriele Di Pietro} & 2010000 \\ 
+        \hline
+        \textbf{Tommaso Diviesti} & 2082858 \\ 
+        \hline
+        \textbf{Francesco Lapenna} & 2072134 \\ 
+        \hline
+        \textbf{Matthew Pan} & 2057869 \\ 
+        \hline
+        \textbf{Eddy Pinarello} & 2075535 \\ 
+        \hline
+        \textbf{Filippo Rizzolo} & 2042377 \\ 
+        \hline
+    \end{tabular}
+    %\caption{Elenco dei membri del team Code7Crusaders con relative matricole}
+    \label{tab:membri}
+\end{table}
+
+
 Nell'attesa di un cortese riscontro, porgiamo distinti saluti, \textbf{Code7Crusaders}
 
 \begin{table}[b]
