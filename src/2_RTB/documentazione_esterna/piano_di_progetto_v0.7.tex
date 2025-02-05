@@ -1,0 +1,1571 @@
+%%% Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\usepackage{graphicx}  % serve per inserire immagini
+\usepackage{fancyhdr}  % creazione header-footer
+\usepackage{tabularx}  % serve per creare tabelle con colonne a larghezza variabile
+\usepackage{ifthen}  % serve per mostrare cose diverse in base a condizioni
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{pgfgantt}  % per i diagrammi di Gantt
+\usepackage{eurosym}
+\usepackage{float}
+
+% setta a 1 se il verbale è esterno, 0 se è interno
+\newcommand{\isEsterno}{1}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Sezione del titolo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+        \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.center) {
+            \includegraphics{../../img/background.png}
+        };
+        \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % logo
+    \vspace{1cm}
+
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+
+    {\large \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-progetto}{\textbf{Piano di Progetto}\textsuperscript{G}}}\\
+    \vspace{5cm}
+
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+
+    \vspace{1cm}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Versioni %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    0.6 & 18/01/2025 & Francesco Lapenna & ... & Rimozione sezione 2.5 \\
+    0.5 & 18/01/2025 & Diviesti Tommaso & Lapenna Francesco & Aggiornamento analisi rischi \\
+    0.4 & 7/01/2025 & Diviesti Tommaso & Lapenna Francesco & Modello, vantaggi e caratteristiche sprint \\
+    0.3 & 27/12/2024 & Lapenna Francesco & Nome Verificatore & Inizio compilazione sprint \\
+    0.2 & 3/12/2024 & Diviesti Tommaso & Lapenna Francesco & Continuazione e revisione del documento \\
+    0.1 & 29/11/2024 & Lapenna Francesco & Diviesti Tommaso & Prima stesura del documento \\
+    \hline
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Indice %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\tableofcontents
+\listoftables
+\listoffigures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Sezione Introduzione %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Introduzione}
+
+    \subsection{Scopo del documento}
+    Questo documento ha lo scopo di fornire una guida dettagliata e strutturata su come
+    il progetto verrà eseguito e gestito. In particolare, verrano trattati i seguenti
+    argomenti:
+    \begin{itemize}  % TODO: rivedere
+        \item analisi del capitolato
+        \item analisi delle risorse;
+        \item analisi dei rischi;
+        \item pianificazione;
+        \item stime dei costi;
+        \item modello di sviluppo adottato;
+        \item log degli sprint;
+    \end{itemize}
+
+    \subsection{Scopo del prodotto}
+    Il prodotto consiste in una webapp avanzata che integra una chatbot alimentata da intelligenza artificiale,
+    pensata per fornire informazioni precise e approfondite su una vasta selezione di bevande. L’obiettivo principale è
+    offrire alle aziende uno strumento semplice ed efficace per accedere a dettagli fondamentali riguardo le bevande che
+    desiderano acquistare, assicurando maggiore trasparenza e chiarezza in ogni fase del processo di selezione. Grazie alla
+    nostra soluzione, le aziende possono ottenere risposte immediate su una serie di parametri chiave e informazioni su bibite e relativi produttori/venditori.
+    Tutto ciò permette di ridurre incertezze e ambiguità, riducendo i rischi delle aziende legati alla scelta di prodotti non adatti alle proprie esigenze.
+    Inoltre, le chat recenti vengono salvate e rese facilmente accessibili agli utenti, permettendo loro di rivedere in qualsiasi
+    momento le informazioni precedentemente richieste. Questa funzionalità risulta particolarmente utile per consultare rapidamente
+    risposte a domande frequenti o per confrontare dettagli su diverse bevande, senza dover rifare ogni ricerca, garantendo così
+    un'esperienza più efficiente e personalizzata.
+
+    \subsection{Glossario}
+    Per avere maggiore chiarezza ed evitare ambiguità per quanto riguarda i termini utilizzati all'interno dei vari documenti,
+    viene adottato un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}\textsuperscript{G} che contiene una serie di termini e relativa definizione.
+    Grazie ad esso, sarà possibile cliccare su una determinata porzione di testo, evidenziata grazie ad uno stile specifico,
+    all'interno di un qualsiasi documento e in questo modo si potrà visualizzare la sua definizione all'interno
+    del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}\textsuperscript{G} stesso. Questa soluzione permetterà agli utenti di avere maggiore chiarezza sugli argomenti da noi
+    trattati nei vari file di documentazione.
+
+    \subsection{Riferimenti}
+    % TODO
+
+    \subsection{Preventivo iniziale}
+    Il preventivo iniziale è stato presentato durante la fase di Candidatura ed è pari a \textbf{12805}\euro.
+    \\ Per ulteriori informazioni è possibile visualizzare il documento di analisi dei costi e assunzione impegni al seguente link:
+    \\ \url{https://code7crusaders.github.io/docs/Candidatura/Preventivo_costi.html}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Analisi del Capitolato %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Analisi del Capitolato}
+    \subsection{Obbiettivi del progetto}
+    \begin{itemize}
+        \item Realizzare un Assistente Virtuale che supporti i clienti nella ricerca
+        di informazioni sui prodotti disponibili in catalogo.
+        \item Automatizzare le risposte alle domande più frequenti, migliorando
+        l'efficienza del servizio clienti.
+        \item Integrare un modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} esistente per garantire risposte accurate e
+        un'interfaccia user-friendly.
+        \item Memoria a lungo termine/Salvataggio chat recenti (lo Specialist
+        potrebbe non ricordarsi tutti i dettagli)
+        \item Velocità di risposta e disponibilità 24/7
+    \end{itemize}
+
+    \subsection{Ambito del Progetto}
+
+        \subsubsection{Inclusioni}
+        \begin{itemize}
+            \item Database relazionale per la gestione dei dati sui prodotti.
+            \item Integrazione di un modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} tramite API.
+            \item Interfaccia utente mobile per l'interazione con l'IA.
+            \item Funzionalità di configurazione backend per template di domande e risposte.
+        \end{itemize}
+        \subsubsection{Esclusioni}
+        \begin{itemize}
+            \item Creazione di un nuovo modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
+            \item Supporto a lingue non previste dal modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} scelto.
+        \end{itemize}
+
+    \subsection{Funzionamento}
+    \begin{itemize}
+        \item Da un’interfaccia utente, viene catturata una domanda da parte dell’utente
+        \item La domanda viene inoltrata al sistema attraverso delle \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}} risiedenti in un Web Server
+        \item La query ricevuta viene gestita dall’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{Embedding\textsuperscript{G}} Model che trasforma la domanda in rappresentazione vettoriale
+        \item La rappresentazione vettoriale viene utilizzata per effettuare una ricerca all’interno del database vettoriale da dove vengono reperiti i vettori più simili
+        \item Sia la domanda sia i risultati della ricerca nel database vettoriale, vengono inviati al sistema \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} che costruirà la risposta utilizzando il contesto fornito
+        \item Attraverso \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}, il sistema inoltra la riposta al dispositivo dell’utente
+    \end{itemize}
+
+    \subsection{Tecnologie e Strumenti Consigliati}
+    L’azienda proponente è disponibile a fornire i dati di un caso di studio da utilizzare
+    per lo sviluppo del progetto. I dati potranno essere dati in ingresso al sistema così da eseguire la fase di
+    training e poi interagire con il sistema per valutarne le prestazioni sfruttando un caso reale.
+    Di seguito vengono suggerite alcune tecnologie utilizzabili per il sistema esposto:
+    \begin{itemize}
+        \item \textbf{Database}: MySQL o \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#postgresql}{PostgreSQL\textsuperscript{G}}.
+        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\textbf{LLM}\textsuperscript{G}}: BLOOM o Italia by iGenius, in base alle prestazioni richieste.
+        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#backend}{\textbf{Backend}\textsuperscript{G}}: Node.js con Express.js o .NET.
+        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#frontend}{\textbf{Frontend}\textsuperscript{G}}: .NET MAUI per applicazioni mobile multipiattaforma.
+        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{\textbf{API REST}\textsuperscript{G}}: Per la comunicazione tra \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} e interfaccia utente.
+        \item \textbf{Controllo Versione}: Git (GitHub per repository pubblico).
+    \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Pianificazione %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Pianificazione}
+    \subsection{Struttura del Team}
+        \subsubsection{Ruoli}
+        I ruoli in seguito descritti sono equamente divisi tra i vari componenti del Team. Ogni ruolo possiede diversi incarichi e obbiettivi:
+        \begin{itemize}
+            \item \textbf{Responsabile}: coordina il gruppo di lavoro, controlla le attività e gestisce le risorse. Si occupa di garantire che il progetto venga portato a termine nei tempi stabiliti e con le risorse disponibili.
+            \item \textbf{Amministratore}: si occupa della gestione delle risorse e delle infrastrutture, incluso il setup degli strumenti di supporto alla produzione del software. Garantisce inoltre l’uso corretto delle procedure per assicurare efficienza e produttività.
+            \item \textbf{Analista}: gioca un ruolo fondamentale nella fase iniziale del progetto. È responsabile della definizione dei requisiti e dell’analisi delle funzionalità del software, delineando i casi d'uso. Essendo necessario principalmente all'inizio del progetto, il numero di ore assegnato al ruolo è relativamente ridotto.
+            \item \textbf{Progettista}: definisce l'architettura del software, descrivendo le componenti e le loro interazioni sulla base dei requisiti stabiliti dall'Analista. Questo ruolo ha un numero di ore significativamente elevato perché è essenziale per garantire una struttura solida, soprattutto considerando l’implementazione di modelli \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\emph{LLM}\textsuperscript{G}}, che richiedono un'architettura ben progettata e adattata a tali tecnologie.
+            \item \textbf{Programmatore}: si occupa di scrivere il codice del software seguendo le specifiche del progettista. Il numero di ore assegnato è alto, dato che rappresenta il cuore della fase di sviluppo. Tuttavia, il ruolo ha leggermente meno ore rispetto al Verificatore, poiché abbiamo scelto di adottare una metodologia incentrata sui test, che richiede un’accurata verifica del software.
+            \item \textbf{Verificatore}: verifica che il software e la documentazione siano conformi alle norme e alle specifiche. Questo ruolo richiede un numero di ore superiore alla media, data la necessità di test approfonditi e continui, in particolare per un progetto basato su \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\emph{LLM}\textsuperscript{G}}, dove ogni componente deve essere rigorosamente validato per garantire la precisione e l’affidabilità del sistema.
+        \end{itemize}
+        \subsubsection{Stakeholder}
+        \begin{itemize}
+            \item \textbf{Cliente}: Ergon Informatica Srl.
+            \item \textbf{Referente interno}: Gianluca Carlesso.
+        \end{itemize}
+
+    \subsection{Budget e Risorse}
+        \subsubsection{TODO: }
+        \begin{itemize}
+            \item Allocazione hardware: server per database e API, risorse cloud per il modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
+            \item Licenze software e costi del modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} (se applicabile).
+        \end{itemize}
+        \subsubsection{Distribuzione ore/ruolo}
+        Di seguito, si riporta il costo orario in base al ruolo assunto:
+        \begin{table}[!h]
+            \begin{center}
+                \begin{tabular}{ |c|c|c|c| }
+                    \hline
+                    \textbf{Ruolo}          & \textbf{Costo orario} (\euro) &  \textbf{per ruolo}   & \textbf{Ore per membro} \\
+                    \hline
+                    Responsabile   & 30           &     54       &       8        \\
+                    Amministratore & 20           &     64       &       9        \\
+                    Analista       & 25           &     65       &       9       \\
+                    Progettista    & 25           &     105      &       15       \\
+                    Programmatore  & 15           &     184      &       26       \\
+                    Verificatore   & 15           &     193      &       28       \\
+                    \hline
+                    \textbf{Totale}         &    12805    &     665       &       95       \\
+                    \hline
+                \end{tabular}
+                \caption{Costo orario e totale}
+            \end{center}
+        \end{table}
+
+        \subsubsection{Distribuzione ore/membro}
+        Tutti i componenti del Team Code7Crusaders si impegnano a dedicare un totale di \textbf{95 ore} di lavoro effettivo partizionate
+        settimanalmente in base al ruolo di riferimento, per lo svolgimento del capitolato \textbf{C7} di \textbf{Ergon Informatica}. Inoltre,
+        ciascun membro garantisce la conclusione del progetto entro la data prevista e preventivata nel paragrafo 5 di questo documento.
+        \\
+        Ripartizione delle ore per membro del team:
+        \begin{table}[!h]
+            \begin{center}
+                \begin{tabular}{ |c|c|c|c|c|c|c|c| }
+                    \hline
+                    \textbf{Membro}    & \textbf{Re} & \textbf{Am} & \textbf{An} & \textbf{Pj} & \textbf{Pg} & \textbf{Ve} & \textbf{Totale} \\
+                    \hline
+                    Enrico Cotti Cottini     & 8           & 9           & 9          & 15          & 26          & 28          & 95              \\
+                    Gabriele Di Pietro       & 8           & 9           & 9          & 15          & 26          & 28          & 95              \\
+                    Tommaso Diviesti         & 8           & 9           & 9          & 15          & 26          & 28          & 95              \\
+                    Francesco Lapenna        & 8           & 9           & 9          & 15          & 26          & 28          & 95              \\
+                    Matthew Pan              & 8           & 9           & 9          & 15          & 26          & 28          & 95              \\
+                    Eddy Pinarello           & 8           & 9           & 9          & 15          & 26          & 28          & 95              \\
+                    Filippo Rizzolo          & 8           & 9           & 9          & 15          & 26          & 28          & 95              \\
+                    \hline
+                \end{tabular}
+                \caption{Impegni orari a persona}
+            \end{center}
+        \end{table}
+        \\
+        \textsc{Legenda:} \\
+            \textbf{Re} = Responsabile \\
+            \textbf{Am} = Amministratore \\
+            \textbf{An} = Analista \\
+            \textbf{Pj} = Progettista \\
+            \textbf{Pg} = Programmatore \\
+            \textbf{Ve} = Verificatore \\
+        
+            \subsection{Piano di Comunicazione}
+            \begin{itemize}
+                \item Riunioni settimanali con il team.
+                \item Report di avanzamento per il referente aziendale ogni 2 settimane.
+                \item Feedback continuo attraverso test intermedi.
+            \end{itemize}
+        
+            \subsection{Pianificazione delle Attività}
+                Il gruppo Code7Crusaders
+                si impegna a consegnare il progetto entro il 14/03/2025. La pianificazione prevede
+                19 settimane di lavoro, suddivise come segue:
+                \begin{itemize}
+                    \item \textbf{Sviluppo POC (\textit{Proof of Concept}): 6 settimane}
+                    \item \textbf{Sviluppo MVP (\textit{Minimum Viable Product}): 13 settimane}
+                \end{itemize}
+        
+                \subsubsection{Fasi principali}  % TODO: rivedere le fasi
+                \begin{enumerate}
+                    \item \textbf{Analisi dei requisiti} (2 settimane):
+                    \begin{itemize}
+                        \item Revisione del capitolato.
+                        \item Identificazione delle tecnologie e dei modelli \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} adatti.
+                    \end{itemize}
+                    \item \textbf{Progettazione} (2 settimane):
+                    \begin{itemize}
+                        \item Progettazione architetturale.
+                        \item Definizione dello schema del database.
+                    \end{itemize}
+                    \item \textbf {Sviluppo Backend} (4 settimane):
+                    \begin{itemize}
+                        \item Configurazione del database.
+                        \item Implementazione delle API REST.
+                    \end{itemize}
+                    \item \textbf{Integrazione LLM} (3 settimane):
+                    \begin{itemize}
+                        \item Pre-processing dei dati e integrazione del modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
+                    \end{itemize}
+                    \item \textbf{Sviluppo Frontend} (4 settimane):
+                    \begin{itemize}
+                        \item Creazione dell'interfaccia utente mobile.
+                    \end{itemize}
+                    \item \textbf{Test e validazione} (2 settimane):
+                    \begin{itemize}
+                        \item Test funzionali e di usabilità.
+                    \end{itemize}
+                    \item \textbf{Rilascio e documentazione} (2 settimane).
+                \end{enumerate}
+        
+                \subsubsection{Cronoprogramma}
+                % Diagramma di Gantt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                \resizebox{\textwidth}{!}{ % Scales the chart to fit the text width
+                    \begin{ganttchart}[
+                        hgrid, vgrid, % Adds grid lines
+                        x unit=1.1cm, % Adjust the width of each time slot
+                        title/.append style={draw=black, thick, fill=red!20, line width=1pt, draw opacity=1},
+                        bar/.append style={fill=red!50}, % Custom bar styling
+                        milestone/.append style={fill=red!70}, % \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#milestone}{Milestone\textsuperscript{G}} style
+                        ]{1}{19} % Timeline from week 1 to week 19
+                        \gantttitle{Project Plan (Weeks)}{19} \\ % Title spanning 19 weeks
+                        \gantttitle{Novembre 2024}{4}
+                        \gantttitle{Dicembre 2024}{5}
+                        \gantttitle{Gennaio 2025}{4}
+                        \gantttitle{Febbraio 2025}{4}
+                        \gantttitle{Marzo 2025}{2}
+                        \\
+                        \gantttitle{4 nov}{1}  % TODO: decidere cosa tenere tra i titoli
+                        \gantttitle{11 nov}{1}
+                        \gantttitle{18 nov}{1}
+                        \gantttitle{25 nov}{1}
+                        \gantttitle{2 dic}{1}
+                        \gantttitle{9 dic}{1}
+                        \gantttitle{16 dic}{1}
+                        \gantttitle{23 dic}{1}
+                        \gantttitle{30 dic}{1}
+                        \gantttitle{6 gen}{1}
+                        \gantttitle{13 gen}{1}
+                        \gantttitle{20 gen}{1}
+                        \gantttitle{27 gen}{1}
+                        \gantttitle{3 feb}{1}
+                        \gantttitle{10 feb}{1}
+                        \gantttitle{17 feb}{1}
+                        \gantttitle{24 feb}{1}
+                        \gantttitle{3 mar}{1}
+                        \gantttitle{10 mar}{1} \\
+                        \gantttitlelist{1,...,19}{1} \\ % Weekly columns
+        
+                        % Define groups and tasks
+                        \ganttgroup{Sviluppo PoC}{1}{6} \\
+                        \ganttmilestone{RTB}{6} \\
+                        \ganttgroup{Sviluppo MVP}{7}{19} \\
+                        \ganttmilestone{PB}{19} \\
+        
+                        \ganttbar{Analisi dei requisiti}{1}{2} \\
+                        \ganttbar{Progettazione}{3}{4} \\
+                        \ganttbar{Sviluppo backend}{5}{8} \\
+                        \ganttbar{Integrazione LLM}{9}{11} \\
+                        \ganttbar{Sviluppo frontend}{12}{15} \\
+                        \ganttbar{Test e validazione}{16}{17} \\
+                        \ganttbar{Rilascio e documentazione}{18}{19} \\
+        
+                        \ganttlink{elem4}{elem5}  % TODO: decidere se tenere o togliere i link
+                        \ganttlink{elem5}{elem6}
+                        \ganttlink{elem6}{elem7}
+                        \ganttlink{elem7}{elem8}
+                        \ganttlink{elem8}{elem9}
+                        \ganttlink{elem9}{elem10}
+        
+                    \end{ganttchart}
+                }
+        
+    \section{Analisi dei Rischi}
+    \subsection{Introduzione}
+    In questa sezione vengono analizzati i principali rischi che potrebbero manifestarsi durante lo svolgimento del progetto, con una valutazione della loro gravità e probabilità di occorrenza. Ad ogni rischio è associato un indice numerico che ne definisce l'intensità e la probabilità, consentendo di determinare la criticità di ciascun rischio.
+
+    \subsection{Definizione degli Indici}
+        Per una corretta valutazione dei rischi, sono stati definiti i seguenti fattori chiave:
+        \begin{itemize}
+            \item \textbf{Indice}: un valore numerico progressivo che identifica in modo univoco ogni rischio;
+            \item \textbf{Tipo}: rappresenta la categoria di impatto che il rischio potrebbe avere sul progetto, ed è classificato in Basso, Medio o Alto;
+            \item \textbf{Gravità}: descrive le conseguenze o l'impatto che un rischio avrebbe se si verificasse, con l'eventuale necessità di modificare la pianificazione o l'approccio al progetto;
+            \item \textbf{Probabilità}: indica la possibilità che il rischio si verifichi durante il ciclo di vita del progetto.
+        \end{itemize}
+        Gli indici di \textbf{Gravità} e di \textbf{Probabilità} sono definiti con i seguenti valori:
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{|c|c|p{6cm}|p{6cm}|}
+                \hline
+                \textbf{Indice} & \textbf{Tipo} & \textbf{Gravità} & \textbf{Probabilità} \\
+                \hline
+                \textbf{1} & Basso & L'impatto sul progetto è minimo o trascurabile, ad esempio un lieve rallentamento senza effetti sui tempi di consegna & La possibilità che si verifichi è bassa, ma esistono fattori che potrebbero contribuire alla sua realizzazione \\
+                \hline
+                \textbf{2} & Medio & L'evento richiede l'uso di risorse aggiuntive o un parziale adattamento del piano, con impatti gestibili ma che richiedono uno sforzo supplementare & Esiste una probabilità media che il rischio si realizzi \\
+                \hline
+                \textbf{3} & Alto & Il rischio comporta ritardi significativi, aumento dei costi o degrado della qualità, impattando negativamente sull'esperienza utente e sul raggiungimento degli obiettivi del progetto & È altamente probabile che il rischio si verifichi, con segni evidenti che ne indicano la possibilità \\
+                \hline
+            \end{tabular}
+            \caption{Definizione degli Indici di Gravità e Probabilità}
+            \label{tab:definizione_indici}
+        \end{table}
+            
+    \subsection{Suddivisione dei rischi}
+    I rischi del progetto sono suddivisi in tre categorie principali, in base alla natura delle problematiche che potrebbero verificarsi:
+    \begin{itemize}
+        \item Rischi di natura tecnologica;
+        \item Rischi legati alla comunicazione;
+        \item Rischi relativi all'organizzazione e gestione del progetto.
+        \item Rischi individuali
+    \end{itemize}
+    Ogni rischio è identificato tramite un codice univoco, strutturato come segue:
+    \[
+    \textbf{R[Categoria][Indice] - [Nome]}
+    \]
+    Dove:
+    \begin{itemize}
+        \item \textbf{Categoria}: rappresenta la tipologia del rischio, che può essere:
+        \begin{itemize}
+            \item \textbf{T}: per i rischi tecnologici;
+            \item \textbf{C}: per i rischi comunicativi;
+            \item \textbf{P}: per i rischi di pianificazione.
+            \item \textbf{I}: per i rischi individuali.
+        \end{itemize}
+        \item \textbf{Indice}: è un identificativo progressivo univoco all'interno della categoria;
+        \item \textbf{Nome}: è una breve descrizione del rischio.
+    \end{itemize}
+
+    \subsection{Rischi Tecnologici}
+
+    \subsubsection{RT1 - Difficoltà	 nell’uso	di nuove tecnologie}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RT1 \\
+            \hline
+            \textbf{Descrizione} & Rischio legato all’inesperienza o alla poca conoscenza di un componente necessario da integrare all’interno del progetto. Questo potrebbe causare ritardi sia nella fase di progettazione che in quella di sviluppo \\
+            \hline
+            \textbf{Gravità} & 2 \\
+            \hline
+            \textbf{Probabilità} & 3 \\
+            \hline
+            \textbf{Contromisure} & Il team si impegnerà a studiare in modo approfondito le tecnologie richieste dal capitolato, in particolare le tecnologie di \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}. Verranno organizzati corsi di formazione interna per permettere ai membri di acquisire competenze comuni e supportarsi vicendevolmente \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RT1}
+    \end{table}
+
+    \subsubsection{RT2 - Sviluppo di codice poco comprensibile}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RT2 \\
+            \hline
+            \textbf{Descrizione} & Durante il processo di sviluppo, un membro del Team potrebbe scrivere una o più porzioni di codice difficile da comprendere per tutti i membri. In questo caso, si perde del tempo che potrebbe essere utilizzato per svolgere altri compiti \\
+            \hline
+            \textbf{Gravità} & 2 \\
+            \hline
+            \textbf{Probabilità} & 2 \\
+            \hline
+            \textbf{Contromisure} & Effettuare revisioni regolari del codice. Necessaria, inoltre, una comunicazione tra gli sviluppatori in modo che il processo di sviluppo sia facilitato e la struttura sia comprensibile a tutti \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RT2}
+    \end{table}
+
+    
+    \subsection{Rischi comunicativi}
+            
+    \subsubsection{RC1 - Disaccordi all’interno del Team}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RC1 \\
+            \hline
+            \textbf{Descrizione} & I componenti del Team possono avere ideologie e opinioni diverse riguardo elementi particolari del progetto \\
+            \hline
+            \textbf{Gravità} & 2 \\
+            \hline
+            \textbf{Probabilità} & 1 \\
+            \hline
+            \textbf{Contromisure} & In caso di disaccordo, si procederà con una discussione interna dove si elencheranno i punti a favore e i contro in modo da arrivare ad una soluzione comune \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RC1}
+    \end{table}
+
+    \subsubsection{RC2 - Problemi di comunicazione all’interno del gruppo}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RC2 \\
+            \hline
+            \textbf{Descrizione} & Situazioni in cui non esistono linee guida chiare per la trasmissione efficace delle informazioni all’interno del team. Questa mancanza di direzione può portare a fraintendimenti, confusione o ritardi \\
+            \hline
+            \textbf{Gravità} & 2 \\
+            \hline
+            \textbf{Probabilità} & 1 \\
+            \hline
+            \textbf{Contromisure} & Oltre ad aver stabilito i canali specifici di comunicazione per i vari confronti, sono fissate delle riunioni settimanali dove vengono discusse tutte le questioni all’ordine del giorno. Inoltre, in caso di necessità, si possono pianificare dei meeting straordinari per parlare di questioni imminenti ed importanti \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RC2}
+    \end{table}
+
+    \subsubsection{RC3 - Mancato confronto con l’azienda Proponente}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RC3 \\
+            \hline
+            \textbf{Descrizione} & Questo rischio identifica una mancanza di comunicazione con l’azienda Proponente che impedisce l’acquisizione di chiarimenti durante lo svolgimento del progetto \\
+            \hline
+            \textbf{Gravità} & 3 \\
+            \hline
+            \textbf{Probabilità} & 1 \\
+            \hline
+            \textbf{Contromisure} & Cercare di mantenere l’azienda Proponente informata sugli sviluppi in modo regolare e chiedere feedback quando necessario \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RC3}
+    \end{table}
+
+    \break
+    \subsection{Rischi organizzattivi}
+    
+    \subsubsection{RO1 - Incomprensioni nella pianificazione delle attività}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RO1 \\
+            \hline
+            \textbf{Descrizione} & Si verifica quando il Team manca di esperienza o competenza nella gestione dei processi di pianificazione, portando a possibili conseguenze come l’allocazione inefficace delle risorse, la scarsa definizione dei requisiti o valutazioni inaccurate dei tempi \\
+            \hline
+            \textbf{Gravità} & 3 \\
+            \hline
+            \textbf{Probabilità} & 2 \\
+            \hline
+            \textbf{Contromisure} & Nel caso in cui uno o più componenti del gruppo abbiano difficoltà nello svolgimento di determinati compiti previsti, anche in caso di scadenze imminenti, verrà effettuata una revisione delle attività per dare priorità a quelle con scadenze in direzione d’arrivo \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RO1}
+    \end{table}
+
+    \subsubsection{RO2 - Deviazione dai tempi e costi previsti}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RO2 \\
+            \hline
+            \textbf{Descrizione} & Questo rischio si riferisce alla possibilità di variazioni significative rispetto alle tempistiche e ai costi pianificati inizialmente per lo sviluppo del progetto \\
+            \hline
+            \textbf{Gravità} & 3 \\
+            \hline
+            \textbf{Probabilità} & 1 \\
+            \hline
+            \textbf{Contromisure} & Il team monitorerà costantemente l’avanzamento del progetto attraverso riunioni settimanali di aggiornamento e controllo del budget. Eventuali scostamenti saranno analizzati per prendere tempestivamente le misure correttive \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RO2}
+    \end{table}
+
+    \break
+    \subsection{Rischi individuali}
+
+    \subsubsection{RI1 - Scarsa collaborazione da parte di uno o più membri del team}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RI1 \\
+            \hline
+            \textbf{Descrizione} & La possibilità che uno o più membri del gruppo non collaborino attivamente allo sviluppo del progetto \\
+            \hline
+            \textbf{Gravità} & 3 \\
+            \hline
+            \textbf{Probabilità} & 1 \\
+            \hline
+            \textbf{Contromisure} & Saranno programmati incontri regolari di coordinamento per favorire la comunicazione e la collaborazione all’interno del team. Ogni membro avrà ruoli e responsabilità ben definiti, e verranno incentivati il dialogo aperto e la trasparenza \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RI1}
+    \end{table}
+
+    \subsubsection{RI2 - Impegni personali e universitari }
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{3cm}|p{11cm}|}
+            \hline
+            \textbf{Codice} & RI2 \\
+            \hline
+            \textbf{Descrizione} & Questo rischio riguarda la potenziale difficoltà dei membri del team, nel dedicare il tempo richiesto al progetto a causa degli impegni universitari e/o altri impegni personali \\
+            \hline
+            \textbf{Gravità} & 1 \\
+            \hline
+            \textbf{Probabilità} & 2 \\
+            \hline
+            \textbf{Contromisure} & Ogni membro del Team dovrà segnalare in anticipo eventuali impegni personali o universitari. Il team utilizzerà un calendario condiviso per pianificare le attività in modo da evitare sovrapposizioni e garantire la disponibilità necessaria \\
+            \hline
+        \end{tabular}
+        \caption{Tabella RI2}
+    \end{table}
+
+    \break
+    \subsection{Tabella riassuntiva}
+    \begin{table}[h]
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{|p{1.5cm}|p{10cm}|p{2cm}|p{2cm}|}
+            \hline
+            \textbf{Codice} & \textbf{Rischio} & \textbf{Gravità} & \textbf{Probabilità} \\
+            \hline
+            RT1 & Difficoltà nell’uso di nuove tecnologie & Media & Alta \\
+            \hline
+            RT2 & Sviluppo di codice poco comprensibile & Media & Media \\
+            \hline
+            RC1 & Disaccordi all’interno del Team & Media & Bassa \\
+            \hline
+            RC2 & Problemi di comunicazione all’interno del gruppo & Media & Bassa \\
+            \hline
+            RC3 & Mancato confronto con l’azienda Proponente & Alta & Bassa \\
+            \hline
+            RO1 & Incomprensioni nella pianificazione delle attività & Alta & Media \\
+            \hline
+            RO2 & Deviazione dai tempi e costi previsti & Alta & Bassa \\
+            \hline
+            RI1 & Scarsa collaborazione da parte di uno o più membri del team & Alta & Bassa \\
+            \hline
+            RI2 & Impegni personali e universitari  & Bassa & Media \\
+            \hline
+        \end{tabular}
+        \caption{Tabella riassuntiva rischi individuati}
+    \end{table}
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Documentazione}  % TODO: vedere se tenere
+\begin{itemize}
+    \item \textbf{Da consegnare}:
+    \begin{itemize}
+        \item Schema architetturale.  % TODO: riferimenti ad altri documenti?
+        \item Progettazione del database.
+        \item Manuale per l'utilizzo della piattaforma.
+        \item Codice sorgente e repository Git.
+    \end{itemize}
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Gestione del modello di sviluppo}
+    \subsection{Modello adottato}
+    Dopo aver effettuato una analisi delle esigenze del progetto e una valutazione
+    di gruppo, il Team ha deciso di adottare il modello \textbf{Agile}. E' stato scelto il 
+    modello Agile perché ci consente di lavorare in modo più flessibile e reattivo 
+    alle esigenze in continua evoluzione del progetto e dei clienti. Grazie alla sua 
+    iterazione continua e al focus sulla collaborazione, possiamo migliorare rapidamente 
+    il prodotto, ottenere feedback costante e adattarci prontamente ai cambiamenti. 
+    I periodi di sviluppo sono divisi in \textbf{sprint settimanali} che sono accompagnati da riunioni
+    periodiche tra i vari componenti del Team e, quando necessario, anche con l'Azienda proponente.
+    Questo serve anche per promuove una comunicazione trasparente all'interno del team, 
+    migliorando l'efficienza e la qualità del lavoro.
+    \subsection{Vantaggi del modello}
+    \begin{itemize}
+        \item \textbf{Flessibilità e adattabilità}: permette di adattarsi rapidamente ai cambiamenti. Poiché i progetti sono suddivisi in iterazioni brevi (sprint), è possibile modificare il piano di lavoro in corso d'opera in base ai feedback e alle nuove informazioni.
+        \item \textbf{Rilasci frequenti e valore continuo}: con la consegna di piccole porzioni di prodotto a intervalli regolari si ottengono maggiori feedback e gli errori vengono corretti più velocemente dato che i risultati sono monitorati e valutati frequentemente.
+        \item \textbf{Collaborazione tra il team}: la metodologia Agile promuove il lavoro collaborativo tra membri del team con competenze diverse. Questo aiuta a ottenere soluzioni più complete e ben integrate, che rispondano meglio alle necessità del prodotto.
+        \item \textbf{Migliore gestione dei rischi}: grazie alla continua revisione dei progressi e al rilascio di versioni parziali del prodotto, è possibile identificare e affrontare i problemi in modo tempestivo.
+        \item \textbf{Maggiore qualità del prodotto}: con test continui e revisioni regolari del codice e del prodotto, si migliora la qualità del software o del prodotto finale. Le iterazioni frequenti consentono di correggere rapidamente eventuali errori e migliorare il prodotto in modo incrementale.
+        \item \textbf{Migliore gestione delle risorse e tempi di consegna}: l'approccio iterativo permette di pianificare e gestire le risorse in modo più efficiente. Poiché il lavoro è suddiviso in piccoli blocchi, è più facile stimare tempi e risorse necessari, evitando sovraccarichi di lavoro e garantendo una consegna puntuale.
+        \item \textbf{Incremento della produttivita}: le funzionalità più importanti o urgenti vengono sviluppate prima, concentrando risorse e sforzi sulle attività che generano maggior valore. Ciò ottimizza l'uso del tempo e delle risorse, aumentando la produttività complessiva.
+    \end{itemize}
+    \subsection{Periodi}
+    Ogni periodo è caratterizzato dai seguenti elementi:
+    \begin{itemize}
+        \item Data di inizio, data di fine prevista, data di fine effettiva ed eventuali giorni di ritardo
+        \item Pianificazione delle attivita da svolgere con possibili rischi
+        \item Stima temporale al completamento di tutte le attività previste
+        \item Paragone temporale tra lavoro svolto e preventivato
+        \item Prospetto economico relativo ai ruoli svolti
+        \item Valutazione impatto e mitigazione dei rischi effettivamente occorsi
+        \item Retrospettiva per l'automiglioramento
+    \end{itemize}
+
+    % TODO Sistemare gli sprint con le caratteristiche elencate qui sopra
+
+        \subsection{Requirements and Technology Baseline (RTB)}
+            \subsubsection{Sprint 1}
+                % Sprint Planning
+                \paragraph{Pianificazione}
+                \begin{itemize}
+                    \item inizio: 4 Novembre 2024
+                    \item fine: 10 Novembre 2024
+                \end{itemize}
+                
+                \paragraph{Obiettivi dello Sprint}
+                    \begin{itemize}
+                        \item Redigere il documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#norme-di-progetto}{\emph{Norme di Progetto}\textsuperscript{G}}.
+                        \item Approfondire l'uso delle tecnologie richieste nel capitolato.
+                        \item Effettuare una chiamata con l'azienda per definire i requisiti utente e software.
+                        \item Studiare e comprendere i documenti legati alla documentazione.
+                        \item Migliorare il sito web aggiungendo un glossario interattivo.
+                    \end{itemize}
+
+                \paragraph{Task Prioritari}
+                    \begin{itemize}
+                        \item Automazione del processo di compilazione e deploy dei file LaTeX.
+                        \item Organizzazione degli incontri settimanali per assegnare i compiti.
+                        \item Creazione di workflow per la gestione efficiente del progetto.
+                    \end{itemize}
+
+                % TODO sposta i ruoli in base allo sprint
+                \paragraph{Preventivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                  & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Di Pietro     & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Diviesti      & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Lapenna       & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Pan           & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Pinarello     & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Rizzolo       & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Preventivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO copiala dal preventivo (per ora li facciamo uguali)
+                \paragraph{Consuntivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                  & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Di Pietro     & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Diviesti      & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Lapenna       & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Pan           & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Pinarello     & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Rizzolo       & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Consuntivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO modificare colonna "Ore Rimanenti"
+                \paragraph{Prospetto Economico}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|}
+                    \hline
+                    \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo} & \textbf{Ore rimanenti} \\ \hline
+                    Responsabile    & 3             & €90            & 51                     \\ \hline
+                    Amministratore  & 3,5           & €70            & 60,5                   \\ \hline
+                    Analista        & 3,5           & €87,5          & 61,5                   \\ \hline
+                    Progettista     & 5,5           & €137,5         & 99,5                   \\ \hline
+                    Programmatore   & 10            & €150           & 174                    \\ \hline
+                    Verificatore    & 10            & €150           & 183                    \\ \hline
+                    \textbf{Totale} & \textbf{35,5} & \textbf{685}   & \textbf{629,5}         \\ \hline
+                    \end{tabular}
+                    \caption{Prospetto economico e ore rimanenti}
+                \end{table}
+
+                \paragraph{Retrospettiva}
+                \paragraph{Risultati Ottenuti}
+                    \begin{itemize}
+                        \item Approvazione della candidatura per \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\textbf{LLM\textsuperscript{G}}: Assistente virtuale}.
+                        \item Acquisizione di competenze sull'uso di \emph{ProjectBoard} e \emph{Roadmap} su GitHub.
+                        \item Introduzione del processo di caricamento e compilazione automatizzata di file LaTeX tramite \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#github-actions}{\emph{GitHub Actions}\textsuperscript{G}}.
+                        \item Creazione della prima versione del sito statico per la documentazione.
+                        \item Miglioramento dei template LaTeX per agevolare la stesura della documentazione.
+                    \end{itemize}
+
+                    \paragraph{Difficoltà Riscontrate}
+                    \begin{itemize}
+                        \item Pianificazione degli incontri settimanali.
+                        \item Automazione del workflow per la compilazione dei file LaTeX.
+                        \item Deployment automatizzato dei file sul sito web.
+                    \end{itemize}
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \subsubsection{Sprint 2}
+                \paragraph{Pianificazione}
+                \begin{itemize}
+                    \item inizio: 11 Novembre 2024
+                    \item fine: 17 Novembre 2024
+                \end{itemize}
+                \paragraph{Sprint Planning}
+                    \begin{itemize}
+                        \item Obiettivo Sprint: Aggiornare il sito del gruppo, sviluppare il glossario e le norme di progetto, e condividere risorse utili tra i membri.
+                        \item Attività Pianificate:
+                            \begin{itemize}
+                                \item Aggiornamento del sito con documenti fruibili.
+                                \item Sviluppo del glossario interattivo e delle norme di progetto.
+                                \item Approfondimento delle tecnologie da utilizzare per il progetto.
+                            \end{itemize}
+                        \item Collaborazioni:
+                            \begin{itemize}
+                                \item Incontro Zoom con Ergon per definire il tech stack, i requisiti, e il target del progetto.
+                            \end{itemize}
+                    \end{itemize}
+
+                % TODO sposta i ruoli in base allo sprint
+                \paragraph{Preventivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                  & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Di Pietro     & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Diviesti      & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Lapenna       & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Pan           & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Pinarello     & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Rizzolo       & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Preventivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO copiala dal preventivo (per ora li facciamo uguali)
+                \paragraph{Consuntivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                    & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Di Pietro     & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Diviesti      & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Lapenna       & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Pan           & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Pinarello     & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Rizzolo       & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Consuntivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO modificare colonna "Ore Rimanenti"
+                \paragraph{Prospetto Economico}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|}
+                    \hline
+                    \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo} & \textbf{Ore rimanenti} \\ \hline
+                    Responsabile    & 3             & €90            & 48                     \\ \hline
+                    Amministratore  & 3,5           & €70            & 57                   \\ \hline
+                    Analista        & 3,5           & €87,5          & 58                   \\ \hline
+                    Progettista     & 5,5           & €137,5         & 94                   \\ \hline
+                    Programmatore   & 10            & €150           & 164                    \\ \hline
+                    Verificatore    & 10            & €150           & 173                    \\ \hline
+                    \textbf{Totale} & \textbf{35,5} & \textbf{685}   & \textbf{594}         \\ \hline
+                    \end{tabular}
+                    \caption{Prospetto economico e ore rimanenti}
+                \end{table}
+
+                \paragraph{Retrospettiva}
+                \begin{itemize}
+                    \item Risultati Ottenuti:
+                        \begin{itemize}
+                            \item Sito del gruppo aggiornato per una migliore fruibilità dei documenti.
+                            \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}} e \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#norme-di-progetto}{Norme di Progetto\textsuperscript{G}} avviati.
+                            \item Maggiore comprensione del progetto grazie alla condivisione delle risorse.
+                        \end{itemize}
+                    \item Feedback:
+                        \begin{itemize}
+                            \item Necessità di migliorare il passaggio da LaTeX a Markdown.
+                            \item Richiesta di chiarimenti dall'azienda su alcuni use case.
+                        \end{itemize}
+                    \item Questioni Aperte:
+                        \begin{itemize}
+                            \item Come integrare automazioni e script per migliorare la valutazione del progetto.
+                            \item Verifica del livello di accessibilità richiesto per il glossario.
+                        \end{itemize}
+                \end{itemize}
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \subsubsection{Sprint 3}
+                \paragraph{Pianificazione}
+                \begin{itemize}
+                    \item inizio: 18 Novembre 2024
+                    \item fine: 24 Novembre 2024
+                \end{itemize}
+                \begin{itemize}
+                    \item \textbf{Obiettivi dello sprint}:
+                        \begin{itemize}
+                            \item Migliorare la visualizzazione dei documenti sul sito del gruppo.
+                            \item Completare la stesura delle norme di progetto e dell'analisi dei requisiti.
+                            \item Definire una turnazione stabile dei ruoli.
+                        \end{itemize}
+                    \item \textbf{Attività pianificate}:
+                        \begin{itemize}
+                            \item Proseguire nello sviluppo dei documenti.
+                            \item Continuare l'apprendimento delle tecnologie necessarie per il progetto.
+                            \item Contattare l'azienda per le specifiche hardware.
+                        \end{itemize}
+                    \item \textbf{Rischi e criticità}:
+                        \begin{itemize}
+                            \item Identificare i casi d'uso del progetto.
+                            \item Valutare l'efficienza di una ricerca manuale o automatica per il glossario.
+                        \end{itemize}
+                \end{itemize}
+
+                % TODO sposta i ruoli in base allo sprint
+                \paragraph{Preventivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                    & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Di Pietro     & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Diviesti      & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Lapenna       & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Pan           & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Pinarello     & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Rizzolo       & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Preventivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO copiala dal preventivo (per ora li facciamo uguali)
+                \paragraph{Consuntivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                  & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Di Pietro     & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Diviesti      & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Lapenna       & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Pan           & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Pinarello     & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Rizzolo       & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Consuntivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO modificare colonna "Ore Rimanenti"
+                \paragraph{Prospetto Economico}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|}
+                    \hline
+                    \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo} & \textbf{Ore rimanenti} \\ \hline
+                    Responsabile    & 3             & €90            & 45                     \\ \hline
+                    Amministratore  & 3,5           & €70            & 53,5                   \\ \hline
+                    Analista        & 3,5           & €87,5          & 54,5                   \\ \hline
+                    Progettista     & 5,5           & €137,5         & 88,5                   \\ \hline
+                    Programmatore   & 10            & €150           & 154                    \\ \hline
+                    Verificatore    & 10            & €150           & 163                    \\ \hline
+                    \textbf{Totale} & \textbf{35,5} & \textbf{685}   & \textbf{558,5}         \\ \hline
+                    \end{tabular}
+                    \caption{Prospetto economico e ore rimanenti}
+                \end{table}
+
+                \paragraph{Retrospettiva}
+                \begin{itemize}
+                    \item \textbf{Risultati raggiunti}:
+                        \begin{itemize}
+                            \item Aggiornamento del sito per una migliore visualizzazione dei documenti.
+                            \item Condivisione di risorse utili tra i membri del team.
+                            \item Buon avanzamento nella stesura delle norme di progetto e dell'analisi dei requisiti.
+                            \item Turnazione dei ruoli definita in modo definitivo.
+                        \end{itemize}
+                    \item \textbf{Criticità risolte}:
+                        \begin{itemize}
+                            \item Discussione preliminare sui casi d'uso del progetto.
+                        \end{itemize}
+                    \item \textbf{Punti ancora da affrontare}:
+                        \begin{itemize}
+                            \item Creazione di una bozza di progetto per aiutare nella definizione dei requisiti hardware e software.
+                        \end{itemize}
+                \end{itemize}
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \subsubsection{Sprint 4}
+                \paragraph{Pianificazione}
+                \begin{itemize}
+                    \item inizio: 25 Novembre 2024
+                    \item fine: 1 Dicembre 2024
+                \end{itemize}
+                \begin{itemize}
+                    \item Obiettivi principali:
+                    \begin{itemize}
+                        \item Completare la stesura del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-progetto}{Piano di Progetto\textsuperscript{G}}.
+                        \item Rifinire l'\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}} e contattare l'azienda per feedback sui Casi d'uso.
+                        \item Avanzare nello studio del framework Bloom e testare le API di ChatGPT.
+                        \end{itemize}
+                    \item Task assegnati:
+                    \begin{itemize}
+                        \item Continuare la stesura del Piano di Progetto e l'\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-progetto}{Piano di Progetto\textsuperscript{G}} e l'Analisi dei Requisiti.
+                        \item Script Python per il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}: debugging e miglioramenti.
+                        \item Pianificare e fissare un incontro con il prof. Cardin.
+                        \item Aggiornare il sito GitHub con le ultime informazioni.
+                        \end{itemize}
+                    \item Punti da monitorare:
+                    \begin{itemize}
+                        \item Progressi tecnici dello script Python per il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}.
+                        \item Risposte dell'azienda su dataset e casi d'uso.
+                        \end{itemize}
+                \end{itemize}
+
+                % TODO sposta i ruoli in base allo sprint
+                \paragraph{Preventivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                  & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Di Pietro     & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Diviesti      & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Lapenna       & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Pan           & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Pinarello     & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Rizzolo       & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Preventivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO copiala dal preventivo (per ora li facciamo uguali)
+                \paragraph{Consuntivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Di Pietro     & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Diviesti      & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Lapenna       & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Pan           & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Pinarello     & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Rizzolo       & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Consuntivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO modificare colonna "Ore Rimanenti"
+                \paragraph{Prospetto Economico}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|}
+                    \hline
+                    \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo} & \textbf{Ore rimanenti} \\ \hline
+                    Responsabile    & 3             & €90            & 42                     \\ \hline
+                    Amministratore  & 3,5           & €70            & 50                   \\ \hline
+                    Analista        & 3,5           & €87,5          & 51                   \\ \hline
+                    Progettista     & 5,5           & €137,5         & 83                   \\ \hline
+                    Programmatore   & 10            & €150           & 144                    \\ \hline
+                    Verificatore    & 10            & €150           & 153                    \\ \hline
+                    \textbf{Totale} & \textbf{35,5} & \textbf{685}   & \textbf{523}         \\ \hline
+                    \end{tabular}
+                    \caption{Prospetto economico e ore rimanenti}
+                \end{table}
+
+                \paragraph{Retrospettiva}
+                    \begin{itemize}
+                        \item Attività completate:
+                        \begin{itemize}
+                            \item Documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#norme-di-progetto}{Norme di Progetto\textsuperscript{G}}, inclusi processi di supporto e organizzativi.
+                            \item Documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}, con descrizione del prodotto e casi d'uso.
+                            \item Bozza dei diagrammi dei casi d'uso con relativa descrizione.
+                            \item Definizione delle \textit{user-story} per i casi d'uso individuati.
+                            \item Prima stesura del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-progetto}{Piano di Progetto\textsuperscript{G}}.
+                            \item Script Python per automatizzare il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}.
+                        \end{itemize}
+                        \item Sfide affrontate:
+                        \begin{itemize}
+                            \item Problemi tecnici nello script Python per il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}.
+                            \item Individuazione e validazione dei Casi d'uso senza feedback dall'azienda.
+                        \end{itemize}
+                        \item Questioni aperte:
+                        \begin{itemize}
+                            \item Verifica della correttezza dei casi d'uso.
+                            \item Dettagli sulla consegna della \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#poc-proof-of-concept}{Proof of Concept\textsuperscript{G}} (necessità di un eseguibile?).
+                        \end{itemize}
+                    \end{itemize}
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \subsubsection{Sprint 5}
+                \paragraph{Pianificazione}
+                \begin{itemize}
+                    \item inizio: 2 Dicembre 2024
+                    \item fine: 8 Dicembre 2024
+                \end{itemize}
+                \begin{itemize}
+                    \item \textbf{Obiettivi principali:}
+                    \begin{itemize}
+                        \item Contattare l'azienda per ottenere feedback sui casi d'uso.
+                        \item Migliorare il piano di progetto per garantire allineamento con i requisiti aziendali.
+                        \item Testare diversi modelli di linguaggio (\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}) per valutarne l'idoneità.
+                        \item Avviare la stesura del piano di qualifica per monitorare la qualità del progetto.
+                    \end{itemize}
+                    \item \textbf{Risorse necessarie:}
+                    \begin{itemize}
+                        \item Accesso ai dati e ai requisiti forniti dall'azienda.
+                        \item Strumenti per testare e valutare i \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
+                        \item Linee guida e template per il piano di qualifica.
+                    \end{itemize}
+                    \item \textbf{Distribuzione dei compiti:}
+                    \begin{itemize}
+                        \item Comunicazione con l'azienda assegnata a Filippo e Francesco.
+                        \item Test dei \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} affidato a Gabriele e Eddy.
+                        \item Revisione del piano di progetto gestita da Enrico e Tommaso.
+                        \item Inizio del piano di qualifica a cura di Matthew.
+                    \end{itemize}
+                \end{itemize}
+
+                % TODO sposta i ruoli in base allo sprint
+                \paragraph{Preventivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                  & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Di Pietro     & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Diviesti      & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Lapenna       & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Pan           & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Pinarello     & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Rizzolo       & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Preventivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO copiala dal preventivo (per ora li facciamo uguali)
+                \paragraph{Consuntivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                    & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Di Pietro     & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Diviesti      & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Lapenna       & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Pan           & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Pinarello     & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Rizzolo       & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Consuntivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO modificare colonna "Ore Rimanenti"
+                \paragraph{Prospetto Economico}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|}
+                    \hline
+                    \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo} & \textbf{Ore rimanenti} \\ \hline
+                    Responsabile    & 3             & €90            & 39                     \\ \hline
+                    Amministratore  & 3,5           & €70            & 46,5                   \\ \hline
+                    Analista        & 3,5           & €87,5          & 47,5                   \\ \hline
+                    Progettista     & 5,5           & €137,5         & 77,5                   \\ \hline
+                    Programmatore   & 10            & €150           & 134                    \\ \hline
+                    Verificatore    & 10            & €150           & 143                    \\ \hline
+                    \textbf{Totale} & \textbf{35,5} & \textbf{685}   & \textbf{487,5}         \\ \hline
+                    \end{tabular}
+                    \caption{Prospetto economico e ore rimanenti}
+                \end{table}
+
+                \paragraph{Retrospettiva}
+                \begin{itemize}
+                    \item \textbf{Risultati ottenuti:}
+                    \begin{itemize}
+                        \item Feedback ricevuto dall'azienda e implementato nei casi d'uso.
+                        \item Piano di progetto aggiornato con nuove milestone e dettagli.
+                        \item Test completati su vari \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}, con una shortlist di modelli idonei.
+                        \item Prima versione del piano di qualifica completata.
+                    \end{itemize}
+                    \item \textbf{Sfide incontrate:}
+                    \begin{itemize}
+                        \item Comunicazione iniziale con l'azienda rallentata da problemi di disponibilità.
+                        \item Difficoltà nel confronto delle performance tra \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
+                    \end{itemize}
+                    \item \textbf{Feedback ricevuto:}
+                    \begin{itemize}
+                        \item Apprezzamento per l'attenzione ai dettagli nel piano di progetto.
+                        \item Suggerimento di includere più metriche di valutazione per i \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
+                    \end{itemize}
+                    \item \textbf{Prossimi passi:}
+                    \begin{itemize}
+                        \item Continuare la documentazione.
+                        \item Collaborare con l'azienda per scegliere il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} definitivo.
+                        \item Definire l'architettura del sistema basandosi sui requisiti consolidati.
+                    \end{itemize}
+                \end{itemize}
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \subsubsection{Sprint 6}
+                \paragraph{Pianificazione}
+                \begin{itemize}
+                    \item inizio: 9 Dicembre 2024
+                    \item fine: 15 Dicembre 2024
+                \end{itemize}
+                \begin{itemize}
+                    \item Aggiornare e completare la documentazione:
+                    \begin{itemize}
+                        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-progetto}{Piano di Progetto\textsuperscript{G}}
+                        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}
+                        \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}
+                    \end{itemize}
+                    \item Aggiornare il sito del progetto.
+                    \item Scegliere il framework per la creazione dell'interfaccia grafica.
+                    \item Decidere il database da utilizzare.
+                    \item Contattare il prof. Cardin per fissare un colloquio.
+                    \item Definire i primi test statici e di unità.
+                \end{itemize}
+
+                % TODO sposta i ruoli in base allo sprint
+                \paragraph{Preventivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                  & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Di Pietro     & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Diviesti      & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Lapenna       & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Pan           & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Pinarello     & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Rizzolo       & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Preventivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO copiala dal preventivo (per ora li facciamo uguali)
+                \paragraph{Consuntivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                    & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Di Pietro     & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Diviesti      & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Lapenna       & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Pan           & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Pinarello     & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Rizzolo       & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Consuntivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO modificare colonna "Ore Rimanenti"
+                \paragraph{Prospetto Economico}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|}
+                    \hline
+                    \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo} & \textbf{Ore rimanenti} \\ \hline
+                    Responsabile    & 3             & €90            & 36                     \\ \hline
+                    Amministratore  & 3,5           & €70            & 43                   \\ \hline
+                    Analista        & 3,5           & €87,5          & 44                   \\ \hline
+                    Progettista     & 5,5           & €137,5         & 72                   \\ \hline
+                    Programmatore   & 10            & €150           & 124                    \\ \hline
+                    Verificatore    & 10            & €150           & 133                    \\ \hline
+                    \textbf{Totale} & \textbf{35,5} & \textbf{685}   & \textbf{452,5}         \\ \hline
+                    \end{tabular}
+                    \caption{Prospetto economico e ore rimanenti}
+                \end{table}
+
+                \paragraph{Retrospettiva}
+                \begin{itemize}
+                    \item Attività completate:
+                    \begin{itemize}
+                        \item Modifiche nel documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-progetto}{Piano di Progetto\textsuperscript{G}}.
+                        \item Sviluppo delle metriche di monitoraggio del progetto con relativi grafici (\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}).
+                        \item Modifica e approvazione dei casi d'uso da parte dell'Azienda.
+                        \item Test in locale di vari modelli \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} per scegliere il più adeguato.
+                        \item Riunione con l'Azienda e scelta definitiva del modello (gpt-o4-mini di OpenAI).
+                    \end{itemize}
+                    \item Sfide incontrate:
+                    \begin{itemize}
+                        \item Comprendere il funzionamento di \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}}.
+                        \item Analisi per selezionare il miglior modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} in termini di qualità-prezzo.
+                    \end{itemize}
+                \end{itemize}
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \subsubsection{Sprint 7}
+                \paragraph{Pianificazione}
+                \begin{itemize}
+                    \item inizio: 16 Dicembre 2024
+                    \item fine: 22 Dicembre 2024
+                \end{itemize}
+                % TODO segnare cosa vogliamo fare in questo sprint \\
+                % TODO segnare i rischi attesi???
+
+                % TODO sposta i ruoli in base allo sprint
+                \paragraph{Preventivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                  & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Di Pietro     & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Diviesti      & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Lapenna       & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Pan           & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Pinarello     & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Rizzolo       & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Preventivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO copiala dal preventivo (per ora li facciamo uguali)
+                \paragraph{Consuntivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                    & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Di Pietro     & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Diviesti      & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Lapenna       & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Pan           & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Pinarello     & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Rizzolo       & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Consuntivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO modificare colonna "Ore Rimanenti"
+                \paragraph{Prospetto Economico}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|}
+                    \hline
+                    \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo} & \textbf{Ore rimanenti} \\ \hline
+                    Responsabile    & 3             & €90            & 33                     \\ \hline
+                    Amministratore  & 3,5           & €70            & 39,5                   \\ \hline
+                    Analista        & 3,5           & €87,5          & 40,5                   \\ \hline
+                    Progettista     & 5,5           & €137,5         & 66,5                   \\ \hline
+                    Programmatore   & 10            & €150           & 114                    \\ \hline
+                    Verificatore    & 10            & €150           & 123                    \\ \hline
+                    \textbf{Totale} & \textbf{35,5} & \textbf{685}   & \textbf{417}         \\ \hline
+                    \end{tabular}
+                    \caption{Prospetto economico e ore rimanenti}
+                \end{table}
+
+                \paragraph{Retrospettiva}
+                % TODO Retrospettiva dello sprint \\
+                % TODO segnare i rischi effettivamente occorsi???
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \subsubsection{Sprint 8}
+                \paragraph{Pianificazione}
+                \begin{itemize}
+                    \item inizio: 23 Dicembre 2024
+                    \item fine: 29 Dicembre 2024
+                \end{itemize}
+                % TODO segnare cosa vogliamo fare in questo sprint \\
+                % TODO segnare i rischi attesi???
+
+                % TODO sposta i ruoli in base allo sprint
+                \paragraph{Preventivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                  & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Di Pietro     & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Diviesti      & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Lapenna       & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Pan           & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Pinarello     & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Rizzolo       & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Preventivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO copiala dal preventivo (per ora li facciamo uguali)
+                \paragraph{Consuntivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                    & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Di Pietro     & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Diviesti      & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Lapenna       & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Pan           & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Pinarello     & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Rizzolo       & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Consuntivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO modificare colonna "Ore Rimanenti"
+                \paragraph{Prospetto Economico}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|}
+                    \hline
+                    \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo} & \textbf{Ore rimanenti} \\ \hline
+                    Responsabile    & 3             & €90            & 30                     \\ \hline
+                    Amministratore  & 3,5           & €70            & 36                   \\ \hline
+                    Analista        & 3,5           & €87,5          & 37                   \\ \hline
+                    Progettista     & 5,5           & €137,5         & 61                   \\ \hline
+                    Programmatore   & 10            & €150           & 104                    \\ \hline
+                    Verificatore    & 10            & €150           & 113                    \\ \hline
+                    \textbf{Totale} & \textbf{35,5} & \textbf{685}   & \textbf{381,5}         \\ \hline
+                    \end{tabular}
+                    \caption{Prospetto economico e ore rimanenti}
+                \end{table}
+
+                \paragraph{Retrospettiva}
+                % TODO Retrospettiva dello sprint \\
+                % TODO segnare i rischi effettivamente occorsi???
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \subsubsection{Sprint 9}
+                \paragraph{Pianificazione}
+                \begin{itemize}
+                    \item inizio: 30 Dicembre 2024
+                    \item fine: 5 Gennaio 2024
+                \end{itemize}
+                % TODO segnare cosa vogliamo fare in questo sprint \\
+                % TODO segnare i rischi attesi???
+
+                % TODO sposta i ruoli in base allo sprint
+                \paragraph{Preventivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                  & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Di Pietro     & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Diviesti      & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Lapenna       & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Pan           & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Pinarello     & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Rizzolo       & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Preventivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO copiala dal preventivo (per ora li facciamo uguali)
+                \paragraph{Consuntivo}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                                    & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                    Cotti Cottini & -   & -   & -   & 5,5 & -   & -   & 5,5                \\ \hline
+                    Di Pietro     & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
+                    Diviesti      & -   & -   & 3,5 & -   & -   & -   & 3,5                \\ \hline
+                    Lapenna       & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Pan           & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
+                    Pinarello     & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
+                    Rizzolo       & -   & -   & -   & -   & 10  & -   & 10                 \\ \hline
+                    Totale        & 3   & 3,5 & 3,5 & 5,5 & 10  & 10  &                    \\ \hline
+                    \end{tabular}
+                    \caption{Consuntivo orario per ruolo nello Sprint 1}
+                \end{table}
+
+                % TODO modificare colonna "Ore Rimanenti"
+                \paragraph{Prospetto Economico}\mbox{}\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|}
+                    \hline
+                    \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo} & \textbf{Ore rimanenti} \\ \hline
+                    Responsabile    & 3             & €90            & 27                     \\ \hline
+                    Amministratore  & 3,5           & €70            & 32,5                   \\ \hline
+                    Analista        & 3,5           & €87,5          & 33,5                   \\ \hline
+                    Progettista     & 5,5           & €137,5         & 55,5                   \\ \hline
+                    Programmatore   & 10            & €150           & 94                    \\ \hline
+                    Verificatore    & 10            & €150           & 103                    \\ \hline
+                    \textbf{Totale} & \textbf{35,5} & \textbf{685}   & \textbf{346}         \\ \hline
+                    \end{tabular}
+                    \caption{Prospetto economico e ore rimanenti}
+                \end{table}
+
+                \paragraph{Retrospettiva}
+                % TODO Retrospettiva dello sprint \\
+                % TODO segnare i rischi effettivamente occorsi???
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \subsubsection{Sprint 10}
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \subsubsection{Sprint 11}
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \subsubsection{Sprint 12}
+        \subsection{PB}
+            \subsubsection{Sprint x}
+            \subsubsection{Sprint y}
+            \subsubsection{Sprint ...}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
