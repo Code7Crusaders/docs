@@ -74,7 +74,7 @@ Questo documento si pone l'obiettivo di confrontare i modelli di Huggingface, in
 \section{Caratteristiche dei Modelli}
 
 \subsection{BigScience Workshop (Huggingface)}
-I modelli di BigScience sono il risultato di un'iniziativa collaborativa open source che mira a democratizzare l'accesso alle tecnologie avanzate di NLP. Tra i modelli più noti figurano BLOOM e le sue versioni ottimizzate come BLOOMz.
+I modelli di BigScience sono il risultato di un'iniziativa collaborativa open source che mira a democratizzare l'accesso alle tecnologie avanzate di \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#natural-language-processing-nlp}{NLP\textsuperscript{G}}. Tra i modelli più noti figurano BLOOM e le sue versioni ottimizzate come BLOOMz.
 
 \paragraph*{Caratteristiche principali}
 \begin{itemize}
@@ -99,7 +99,7 @@ I modelli di BigScience sono il risultato di un'iniziativa collaborativa open so
 \end{itemize}
 
 \subsubsection{Prestazioni}
-Benchmark e valutazione dei modelli di BigScience Workshop dimostrano prestazioni notevoli.
+\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#benchmark}{Benchmark\textsuperscript{G}} e valutazione dei modelli di BigScience Workshop dimostrano prestazioni notevoli.
 
 \begin{figure}[H]
     \centering
@@ -146,12 +146,12 @@ Bisogna anche considerare il fatto che la dimensione dei modelli non è l'unico 
 I modelli piccoli come BLOOM-3B o inferiori sono poco efficaci. 
 
 \subsection{OpenAI}
-I modelli di OpenAI includono varianti all'avanguardia come GPT-4 e GPT-4omini, sviluppate per fornire elevate prestazioni in una vasta gamma di applicazioni NLP.
+I modelli di OpenAI includono varianti all'avanguardia come GPT-4 e GPT-4omini, sviluppate per fornire elevate prestazioni in una vasta gamma di applicazioni \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#natural-language-processing-nlp}{NLP\textsuperscript{G}}.
 
 \paragraph*{Caratteristiche principali}
 \begin{itemize}
     \item \textbf{Proprietari}: I modelli sono accessibili esclusivamente tramite API commerciali.
-    \item \textbf{Prestazioni Elevate}: OpenAI è leader nei benchmark NLP, garantendo risultati ottimali per applicazioni generative e analitiche.
+    \item \textbf{Prestazioni Elevate}: OpenAI è leader nei benchmark \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#natural-language-processing-nlp}{NLP\textsuperscript{G}}, garantendo risultati ottimali per applicazioni generative e analitiche.
     \item \textbf{Ottimizzazione per Prodotti Commerciali}: I modelli sono ottimizzati per applicazioni pratiche come chatbot, generazione di codice, automazione aziendale e analisi dei dati.
 \end{itemize}
 
@@ -170,7 +170,7 @@ I modelli di OpenAI includono varianti all'avanguardia come GPT-4 e GPT-4omini, 
 \end{itemize}
 
 \subsubsection{Prestazioni}
-Benchmark e valutazione dei modelli di OpenAI: GPT-4o e GPT-4omini, dimostrano prestazioni superiori rispetto ad altri modelli di riferimento.
+\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#benchmark}{Benchmark\textsuperscript{G}} e valutazione dei modelli di OpenAI: GPT-4o e GPT-4omini, dimostrano prestazioni superiori rispetto ad altri modelli di riferimento.
 
 \begin{figure}[H]
     \centering
@@ -241,7 +241,7 @@ Di seguiti i costi di OpenAI per l'utilizzo delle API per gpt4o e gpt4omini, che
 LangChain è una libreria versatile che consente di combinare modelli linguistici avanzati con strumenti di ricerca, database e altre tecnologie. Entrambe le piattaforme possono essere integrate facilmente tramite LangChain.
 
 \subsection{BigScience Workshop (Huggingface)}
-LangChain supporta l'integrazione con i modelli Huggingface tramite connettori diretti, permettendo un elevato grado di personalizzazione.
+\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}} supporta l'integrazione con i modelli Huggingface tramite connettori diretti, permettendo un elevato grado di personalizzazione.
 
 \paragraph*{Punti di forza}
 \begin{itemize}
@@ -256,7 +256,7 @@ LangChain supporta l'integrazione con i modelli Huggingface tramite connettori d
 \end{itemize}
 
 \subsection{OpenAI}
-LangChain offre un'integrazione nativa con le API di OpenAI, semplificando l'implementazione e l'uso dei modelli.
+\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}} offre un'integrazione nativa con le API di OpenAI, semplificando l'implementazione e l'uso dei modelli.
 
 \paragraph*{Punti di forza}
 \begin{itemize}
@@ -275,11 +275,11 @@ LangChain offre un'integrazione nativa con le API di OpenAI, semplificando l'imp
 Per valutare l'efficacia dell'integrazione di OpenAI GPT-4omini tramite LangChain, abbiamo condotto una serie di test. Abbiamo utilizzato LangSmith per monitorare le prestazioni e raccogliere dati dettagliati sull'elaborazione.
 
 \subsection{Setup del Test}
-Abbiamo configurato un ambiente di test utilizzando LangChain per interfacciarci con le API di OpenAI. Il setup includeva:
+Abbiamo configurato un ambiente di test utilizzando \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}} per interfacciarci con le API di OpenAI. Il setup includeva:
 \begin{itemize}
-    \item Un'istanza di LangChain configurata per utilizzare GPT-4omini.
+    \item Un'istanza di \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}} configurata per utilizzare GPT-4omini.
     \item Monitoraggio delle richieste e delle risposte tramite LangSmith.
-    \item Un istanza RAG (Retrieval-Augmented Generation), realizzata tramite un database vettoriale FAISS e come embedding model BERT(di Huggingface) runnato in locale(2GB VRAM circa compresi dati file esterni vettorializzati) che ci ha permesso di testare llm su contesti ricevuti da file esterni.
+    \item Un istanza RAG (Retrieval-Augmented Generation), realizzata tramite un database vettoriale \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#faiss}{FAISS\textsuperscript{G}} e come embedding model \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#bert-bidirectional-encoder-representations-from-transformers}{BERT\textsuperscript{G}}(di Huggingface) runnato in locale(2GB VRAM circa compresi dati file esterni vettorializzati) che ci ha permesso di testare llm su contesti ricevuti da file esterni.
 \end{itemize}
 
 \subsection{Esecuzione del Test}
@@ -292,9 +292,9 @@ Abbiamo eseguito diversi scenari di test per valutare soprattutto il costo in to
 \end{figure}
 
 \subsection{Conclusioni del Test}
-I test hanno dimostrato che l'integrazione di GPT-4omini tramite LangChain è efficace e offre prestazioni soddisfacenti per le nostre esigenze. Il monitoraggio tramite LangSmith ha fornito dati utili per ottimizzare l'uso del modello e gestire i costi associati all'utilizzo dei token.
+I test hanno dimostrato che l'integrazione di GPT-4omini tramite \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}} è efficace e offre prestazioni soddisfacenti per le nostre esigenze. Il monitoraggio tramite LangSmith ha fornito dati utili per ottimizzare l'uso del modello e gestire i costi associati all'utilizzo dei token.
 
-In conclusione, l'uso di OpenAI GPT-4omini con LangChain rappresenta una soluzione valida per il nostro progetto, garantendo un equilibrio tra prestazioni elevate e costi gestibili.
+In conclusione, l'uso di OpenAI GPT-4omini con \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}} rappresenta una soluzione valida per il nostro progetto, garantendo un equilibrio tra prestazioni elevate e costi gestibili.
 
 \section{Conclusioni}
 La scelta tra Huggingface e OpenAI dipende dalle esigenze specifiche del progetto e dalle risorse disponibili.
