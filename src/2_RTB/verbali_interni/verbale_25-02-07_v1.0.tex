@@ -1,0 +1,183 @@
+%%% INTRO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template sia per verbali interni che esterni
+% Segui i commenti "TODO" per ricordarti cosa modificare
+% In caso di verbali esterni ricordati di settare isEsterno ad 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\usepackage{graphicx}  % serve per inserire immagini
+\usepackage{fancyhdr}  % creazione header-footer
+\usepackage{tabularx}  % serve per creare tabelle con colonne a larghezza variabile
+\usepackage{ifthen}  % serve per mostrare cose diverse in base a condizioni
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+
+% TODO: setta a 1 se il verbale è esterno, 0 se è interno
+\newcommand{\isEsterno}{0}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Sezione del titolo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+        \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.center) {
+            \includegraphics{../../img/background.png}
+        };
+        \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % logo
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+        
+        {\large \textbf{Riunione Settimanale 07/02/2025}}\\
+    \vspace{5cm}                           % esempio: Riunione Settimanale 04/11/2024
+    
+    
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Versioni %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    1.0 & 07/02/2025 & Gabriele Di Pietro &  & Stesura del Documento \\ 
+    \hline                                  % TODO: inserire data, nomi e descrizione
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Registro Presenze %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} Piattaforma Discord \\
+\textbf{Ora di Inizio} 14:30\\
+\textbf{Ora di Fine} 15:30\\  % TODO: inserire orari ed eventualmente piattaforma
+\\
+\begin{tabular}{|c|c|c|}  % TODO: inserire ruoli e presenze
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    Enrico Cotti Cottini & Verificatore & Presente \\ 
+    \hline
+    Gabriele Di Pietro & Programmatore & Presente \\ 
+    \hline
+    Tommaso Diviesti & Responsabile & Presente \\ 
+    \hline 
+    Francesco Lapenna & Progettista & Presente \\ 
+    \hline
+    Matthew Pan & Analista & Presente \\ 
+    \hline 
+    Eddy Pinarello & Amministratore & Presente \\ 
+    \hline 
+    Filippo Rizzolo & Verificatore & Presente \\ 
+    \hline 
+\end{tabular}
+% Presenze Rappresentanti Azienda %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \\
+    \newline
+    \newline
+    \begin{tabular}{|c|c|}  % TODO: eventualmente modificare nomi rappresentanti
+        \hline
+        \textbf{Nome} & \textbf{Ruolo}\\
+        \hline
+        Gianluca Carlesso & Rappresentante Azienda \\
+        \hline
+        Anna Tieppo & Rappresentante Azienda \\
+        \hline
+    \end{tabular}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{3cm}
+\tableofcontents
+
+
+% Sezione Verbale %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Verbale Retrospettiva}
+La riunione inizia in ritardo in attesa che tutti i membri si colleghino. Purtroppo oggi c'è stata la prima revisione da parte del professor Cardin dove abbiamo ottenuto un semaforo rosso, di conseguenza è necessario rivedere il progetto e apportare le modifiche richieste.
+\subsection{Lavoro Arretrato}
+Visto che ora dovremmo essere più liberi dal periodo di esami. E viste le numerose task che avevamo durante la precedente riunione abbiamo discusso di cosa è stato fatto, e di cosa è stato risolto. Tuttavia è stato fatto notare come nella project board ci sia stata per un mese oramai una issue assegnata a 4 persone e di come nessuno ci abbia lavorato.
+\subsection{Analisi delle criticità segnalate dal professor Cardin}
+Il professor Cardin ha segnalato alcune criticità nel progetto, in particolare:
+\begin{itemize}
+    \item La mancata giustificazione delle tecnologie di backend.
+    \item La mancata giustificazione delle tecnologie del database \textit{(in particolar modo quello vettoriale)}.
+    \item La poca argomentazione delle tecnologie del frontend.
+    \item La mancata discussione sul linguaggio di programmazione da utilizzare.
+\end{itemize}
+Per risolvere ciò e chiedere il più velocemente possibile la prossima revisione senza perdere troppo tempo abbiamo deciso di dividerci in gruppi da 1 o 2 persone e far si che ognuno decida e discuta di ogni tecnologia usata, in modo tale da avere un team consapevole di ogni scelta fatta, ed essere in grado di giustificarla.
+\subsection{Assegnazione dei compiti ai vari membri del team}
+Dopo esserci divisi abbiamo preso i compiti non ancora svolti e abbiamo impostato una scadenza abbastanza vicina in modo tale che ogni membro del gruppo sia intenzionato a lavorare in modo da recuperare il tempo perso. Per le task più grandi invece abbiamo deciso di mantenere come scadenza venerdì prossimo.
+
+\subsection{Conclusioni}
+Si è deciso di organizzare una riunione straordinaria fissata per il giorno \textbf{11/02/2025} alle 9:00 per discutere sull'andamento del lavoro e vedere se alcune delle task più vecchie saranno chiuse. Mentre si proseguirà con la consueta riunione settimanale venerdì \textbf{14/02/2025} alle 14:30.
+L'obiettivo di avere 2 riunione e quindi sprint più brevi è quello di avere un controllo maggiore sul lavoro svolto e sulle scadenze da rispettare, ma anche di velocizzare il lavoro ora che siamo in ritardo.
+
+
+% Sezione Firme %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \begin{table}[b]
+        \begin{tabular}{@{}p{.5in}p{4in}@{}}
+            Data:  & \hrulefill \\
+                   &     		\\
+                   &     		\\
+            Firma: & \hrulefill \\
+        \end{tabular}
+        \end{table}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document} 
