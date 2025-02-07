@@ -45,14 +45,11 @@ files=(
     # "./src/templateC7C/slide.tex"
     # "./src/templateC7C/template-verbali-nuovo/template-verbali.tex"
 
-    "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.5.tex"
-    "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.6.tex"
-    "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.7.tex"
-    "./src/2_RTB/documentazione_esterna/piano_di_qualifica_v0.3.tex"
-    "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.tex"
+     "./src/2_RTB/documentazione_esterna/piano_di_progetto_v1.0.tex"
+     "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti_v1.0.tex"
     
-    "./src/2_RTB/documentazione_interna/glossario.tex"
-    "./src/2_RTB/documentazione_interna/norme_di_progetto.tex"  
+    "./src/2_RTB/documentazione_interna/glossario_v1.0.tex"
+    "./src/2_RTB/documentazione_interna/norme_di_progetto_v1.0.tex"  
     
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
     # "./src/2_RTB/verbali_esterni/verbale_24-11-14_v1.0.tex"
@@ -68,7 +65,7 @@ files=(
     # "./src/2_RTB/verbali_interni/verbale_24-12-19_v1.0.tex"
     # "./src/2_RTB/verbali_interni/verbale_25-01-18_v1.0.tex"
     # "./src/2_RTB/verbali_interni/verbale_25-01-24_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_25-02-04_v1.0.tex"
+    #"./src/2_RTB/verbali_interni/verbale_25-02-04_v1.0.tex"
 
     "src/altri_documenti/analisi_LLM_Bloom_Openai_gpt4/analisi_modelli.tex"
     "src/altri_documenti/analisi_framework_frontend/analisi_frontend.tex"
