@@ -44,8 +44,8 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Attore}: Utente
     \item \textbf{Attore Secondario}: OpenAi
     \item \textbf{Precondizioni}:  L'utente ha inviato una domanda al bot e attende una risposta.
-    \item \textbf{Postcondizioni}: Utente riceve una risposta dal bot coerente alla domanda che ha effettuato.
-    \item \textbf{Scenario principale}:  Dopo aver inviato una domanda, l'utente attende la risposta elaborata dall’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\textit{LLM}\textsuperscript{G}} che viene visualizzata nella finestra della chat.
+    \item \textbf{Postcondizioni}: L'utente riceve una risposta dal bot nella finestra della chat, basata sui dati caricati nel database vettoriale, fornendo una risposta coerente.
+    \item \textbf{Scenario principale}: Dopo aver inviato una domanda, l'utente attende la risposta elaborata dall’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\textit{LLM}\textsuperscript{G}}, che utilizza come contesto le informazioni dei dati caricati nel chatbot. La risposta viene visualizzata nella finestra della chat.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: U.C.2.1
     \item \textbf{Inclusione}: -
@@ -112,7 +112,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{itemize}
     \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L'utente ha effettuato l'accesso e in passato ha salvato almeno una conversazione.
-    \item \textbf{Postcondizioni}: L'utente visualizza una conversazione salvata.
+    \item \textbf{Postcondizioni}: L'utente visualizza la conversazione salvata con i messaggi in uscita per il chat bot e in entrata i suoi precedenti messaggi, nella finestra della chat.
     \item \textbf{Scenario principale}: L'utente accede alla sezione delle conversazioni e visualizza una delle sue conversazioni passate.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
@@ -142,7 +142,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \end{figure}
 \newpage
 
-\subsubsection{U.C.6.1 Inserisci Username}
+\subsubsection{U.C.6.1 Inserisci Username}  % mettere ANCHE LA MAILLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
 \begin{itemize}
     \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L'utente desidera accedere al sistema.
@@ -395,7 +395,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L'utente ha completato una conversazione con il bot e vuole esprimere un giudizio sulla qualità delle risposte ricevute.
     \item \textbf{Postcondizioni}: Il feedback viene registrato nel sistema per analisi future.
-    \item \textbf{Scenario principale}: Dopo la conversazione, l'utente valuta il bot scegliendo un'opzione di feedback (positivo o negativo). Il sistema registra il giudizio per migliorare le prestazioni future.
+    \item \textbf{Scenario principale}: Dopo la conversazione, l'utente valuta la coversazione corrente con il bot tramite due pulsanti di feedback (positivo o negativo). Il sistema registra il giudizio in formato booleano per migliorare le prestazioni future.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -484,7 +484,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{itemize}
     \item \textbf{Attore}: Admin
     \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso alla dashboard di monitoraggio.
-    \item \textbf{Postcondizioni}: L'amministratore visualizza le metriche principali del sistema.
+    \item \textbf{Postcondizioni}: L'amministratore visualizza le metriche principali del sistema come la percentuale di feedback positivi su conversazioni giudicate e tempo di risposta medio del chatbot.
     \item \textbf{Scenario principale}: L'amministratore seleziona l'opzione per visualizzare le statistiche generali e consulta i dati per analizzare le prestazioni del sistema.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
@@ -549,11 +549,11 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \end{figure}
 \newpage
 
-\subsubsection{U.C.17 Esportazione di Dati nel Sistema}
+\subsubsection{U.C.17 Esportazione di METRICHE nel Sistema} %da rivedere CON METRICHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 \begin{itemize}
     \item \textbf{Attore}: Admin
     \item \textbf{Precondizioni}: L’amministratore vuole esportare un file dati.
-    \item \textbf{Postcondizioni}: I dati vengono esportati.
+    \item \textbf{Postcondizioni}: I dati vengono esportati   METRICHE.
     \item \textbf{Scenario principale}: L'amministratore seleziona il file del database e avvia il processo di esportazione.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
@@ -588,7 +588,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L’utente ha effettuato l’accesso al sistema ed effettuato una conversazione
     \item \textbf{Postcondizioni}: L’utente riprende la conversazione con l’assistente virtuale.
-    \item \textbf{Scenario principale}: L’utente ha per qualche motivo dovuto interrompere la conversazione e la riprende successivamente in un secondo momento.
+    \item \textbf{Scenario principale}: L’utente ha per qualche motivo dovuto interrompere la conversazione e la riprende successivamente selezionandola dalla lista conversazioni precedenti.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -600,7 +600,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \end{figure}
 \newpage
 
-\subsubsection{U.C.20: Risposta alla Richiesta dall’Amministratore}
+\subsubsection{U.C.20: Risposta alla Richiesta dall’Amministratore} %FORSE DA METTER VISUALIZZA ELENCO AIUTI UMANI
 \begin{itemize}
     \item \textbf{Attore}: Admin
     \item \textbf{Precondizioni}: L’amministratore ha effettuato l’accesso al sistema e in seguito alla dashboard per la gestione delle richieste di contatto. È presente almeno una richiesta inviata da un utente.
@@ -639,7 +639,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{itemize}
     \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L’utente ha ricevuto una risposta non soddisfacente dal sistema basato su \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\textit{LLM}\textsuperscript{G}}.
-    \item \textbf{Postcondizioni}: La richiesta dell’utente è stata inviata agli amministratori ed è visibile nella dashboard.    .
+    \item \textbf{Postcondizioni}: La richiesta dell’utente è stata inviata agli amministratori ed è visibile nella dashboard.
     \item \textbf{Scenario principale}: L’utente seleziona l’opzione per richiedere assistenza a un operatore umano, compila un modulo opzionale con eventuali dettagli e invia la richiesta. Il sistema registra la richiesta e la rende disponibile nella dashboard degli amministratori.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
