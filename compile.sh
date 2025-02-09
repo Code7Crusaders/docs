@@ -56,7 +56,7 @@ files=(
     # "./src/2_RTB/verbali_esterni/verbale_24-11-14_v1.0.tex"
     #  "./src/2_RTB/verbali_esterni/verbale_24-12-12_v1.0.tex"
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
-    "./src/2_RTB/verbali_esterni/verbale_25-01-27_v0.1.tex"
+    # "./src/2_RTB/verbali_esterni/verbale_25-01-27_v0.1.tex"
 
     # "./src/2_RTB/verbali_interni/verbale_24-11-04_v1.0.tex" 
     # "./src/2_RTB/verbali_interni/verbale_24-11-15_v1.0.tex"
@@ -65,7 +65,7 @@ files=(
     # "./src/2_RTB/verbali_interni/verbale_24-12-07_v1.0.tex"
     # "./src/2_RTB/verbali_interni/verbale_24-12-13_v1.0.tex"
     # "./src/2_RTB/verbali_interni/verbale_24-12-19_v1.0.tex"
-    #  "./src/2_RTB/verbali_interni/verbale_25-01-18_v1.0.tex"
+     "./src/2_RTB/verbali_interni/verbale_25-01-18_v1.0.tex"
     #  "./src/2_RTB/verbali_interni/verbale_25-01-24_v1.0.tex"
     #  "./src/2_RTB/verbali_interni/verbale_25-02-04_v1.0.tex"
     #  "./src/2_RTB/verbali_interni/verbale_25-02-07_v1.0.tex"
