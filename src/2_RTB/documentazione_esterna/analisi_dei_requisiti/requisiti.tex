@@ -132,8 +132,13 @@ Dove \textbf{Tipo} può essere:
 	\hline
 	\textbf{RFF35} & Interno & L'amministratore può gestire i parametri del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} e il modello da scegliere\\
 	\hline
-	\textbf{RFF36} & Interno & L'utente ha la possibilità di scegliere il modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} da usare 
-	\\\hline
+	\textbf{RFF36} & Interno & L'utente ha la possibilità di scegliere il modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} da usare \\
+	\textbf{RFO37} & Interno, Esterno & Ogni messaggio lasciato dal bot può essere valutato pertanto è necessario che questo dato venga salvato in modo (positivo/negativo)\\
+	\hline 
+	\textbf{RFO38} & Interno & Un Amministratore Deve poter modificare o aggiungere un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} pertanto è necessario garantire la persistenza dell'ultima modifica.\\
+	\hline
+	\textbf{RFD39} & Interno & Ogni Prodotto può essere mostrato con una propria immagine\\
+	\hline
 	\caption{Requisiti funzionali}
 \end{longtable}
 
@@ -198,12 +203,6 @@ Dove \textbf{Tipo} può essere:
 	\hline
 	\textbf{RVO14} & Interno &  Ogni richiesta deve essere associata ad un \texttt{id\_utente}\\
 	\hline
-	\textbf{RVO15} & Interno, Esterno & Ogni messaggio lasciato dal bot può essere valutato pertanto è necessario che questo dato venga salvato in modo (positivo/negativo)\\
-	\hline 
-	\textbf{RVO16} & Interno & Un Amministratore Deve poter modificare o aggiungere un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} pertanto è necessario garantire la persistenza dell'ultima modifica.\\
-	\hline
-	\textbf{RVD17} & Interno & Ogni Prodotto può essere mostrato con una propria immagine\\
-	\hline
 	\caption{Requisiti di vincolo}
 \end{longtable}
 
@@ -254,6 +253,9 @@ Dove \textbf{Tipo} può essere:
 	\textbf{RFD34}            & Interno\\\hline
 	\textbf{RFF35}            & Interno\\\hline
 	\textbf{RFF36}            & Interno\\\hline
+	\textbf{RFO37}            & Interno, esterno\\\hline
+	\textbf{RFO38}            & Interno\\\hline
+	\textbf{RFD39}            & Interno\\\hline
 	\textbf{RQO1}            & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}\\\hline
 	\textbf{RQO2}            & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}\\\hline
 	\textbf{RQO3}            & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}\\\hline
@@ -273,8 +275,5 @@ Dove \textbf{Tipo} può essere:
 	\textbf{RVO12}			 & Interno\\\hline
 	\textbf{RVO13}			 & Interno\\\hline
 	\textbf{RVO14}			 & Interno\\\hline
-	\textbf{RVO15}			 & Interno, Esterno\\\hline
-	\textbf{RVO16}			 & Interno\\\hline
-	\textbf{RVD17}			 & Interno\\\hline
 	\caption{Requisito - Fonte}
 \end{longtable}
