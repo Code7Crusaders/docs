@@ -66,7 +66,7 @@ files=(
     # "./src/2_RTB/verbali_interni/verbale_24-12-13_v1.0.tex"
     # "./src/2_RTB/verbali_interni/verbale_24-12-19_v1.0.tex"
     #  "./src/2_RTB/verbali_interni/verbale_25-01-18_v1.0.tex"
-     "./src/2_RTB/verbali_interni/verbale_25-01-24_v1.0.tex"
+    #  "./src/2_RTB/verbali_interni/verbale_25-01-24_v1.0.tex"
     #  "./src/2_RTB/verbali_interni/verbale_25-02-04_v1.0.tex"
     #  "./src/2_RTB/verbali_interni/verbale_25-02-07_v1.0.tex"
 
