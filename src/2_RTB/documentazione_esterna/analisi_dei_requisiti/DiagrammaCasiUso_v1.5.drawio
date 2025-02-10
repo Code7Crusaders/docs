@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.9 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.9">
   <diagram id="0WeiMkMH_n1F1Pwc_BeX" name="Pagina-2">
-    <mxGraphModel dx="1434" dy="907" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="877" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -163,7 +163,7 @@
         <mxCell id="18eHauJZXy3OUxjBwogQ-4" value="U.C.6.4 Username Errato" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2310" y="245" width="192.5" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="18eHauJZXy3OUxjBwogQ-5" value="&amp;nbsp;Username o&amp;nbsp;&lt;div&gt;Password errati&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;" parent="1" vertex="1">
+        <mxCell id="18eHauJZXy3OUxjBwogQ-5" value="&amp;nbsp;Username e&amp;nbsp;&lt;div&gt;Password errati&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;" parent="1" vertex="1">
           <mxGeometry x="2502.5" y="127.5" width="127.5" height="100" as="geometry" />
         </mxCell>
         <mxCell id="18eHauJZXy3OUxjBwogQ-6" value="&amp;lt;&amp;lt;extends&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="18eHauJZXy3OUxjBwogQ-4" target="18eHauJZXy3OUxjBwogQ-3" edge="1">
@@ -237,7 +237,7 @@
         <mxCell id="5R9TT6Z3W3TQEjbvy7hD-4" value="U.C.6.3 Password Errata" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2840" y="245" width="192.5" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="5R9TT6Z3W3TQEjbvy7hD-5" value="Username&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;o&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;Password errati&lt;/span&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;" parent="1" vertex="1">
+        <mxCell id="5R9TT6Z3W3TQEjbvy7hD-5" value="Username&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;e&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;Password errati&lt;/span&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;" parent="1" vertex="1">
           <mxGeometry x="3032.5" y="127.5" width="127.5" height="100" as="geometry" />
         </mxCell>
         <mxCell id="5R9TT6Z3W3TQEjbvy7hD-6" value="&amp;lt;&amp;lt;extends&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="5R9TT6Z3W3TQEjbvy7hD-4" target="5R9TT6Z3W3TQEjbvy7hD-3" edge="1">
@@ -274,7 +274,7 @@
         <mxCell id="o2WmFxvKSTL9zEKOumfb-4" value="U.C.6.5 Caratteri non Validi" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2840" y="565" width="192.5" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="o2WmFxvKSTL9zEKOumfb-5" value="&amp;nbsp;Caratteri non&lt;div&gt;&amp;nbsp;Conformi&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;" parent="1" vertex="1">
+        <mxCell id="o2WmFxvKSTL9zEKOumfb-5" value="&amp;nbsp;Caratteri&lt;div&gt;&amp;nbsp;non&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Conformi&lt;/span&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;" parent="1" vertex="1">
           <mxGeometry x="3032.5" y="447.5" width="127.5" height="100" as="geometry" />
         </mxCell>
         <mxCell id="o2WmFxvKSTL9zEKOumfb-6" value="&amp;lt;&amp;lt;extends&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="o2WmFxvKSTL9zEKOumfb-4" target="o2WmFxvKSTL9zEKOumfb-3" edge="1">
@@ -533,7 +533,7 @@
         <mxCell id="4hn2NL57cicOQfGzYyun-4" value="U.C.7.6 Username già presente" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="660" y="2085" width="192.5" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="4hn2NL57cicOQfGzYyun-5" value="&amp;nbsp;Utente già esistente" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;" parent="1" vertex="1">
+        <mxCell id="4hn2NL57cicOQfGzYyun-5" value="&amp;nbsp;Errore nella registrazione" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=center;" parent="1" vertex="1">
           <mxGeometry x="852.5" y="1967.5" width="127.5" height="100" as="geometry" />
         </mxCell>
         <mxCell id="4hn2NL57cicOQfGzYyun-6" value="&amp;lt;&amp;lt;extends&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="4hn2NL57cicOQfGzYyun-4" target="4hn2NL57cicOQfGzYyun-3" edge="1">
@@ -967,7 +967,7 @@
         <mxCell id="x6F41zpj4irTJ3wfu0MC-36" value="LLM Assistente Virtuale" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="205" y="2983" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="x6F41zpj4irTJ3wfu0MC-37" value="&lt;font face=&quot;Arial, sans-serif&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;U.C.17 Esportazione di Dati&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Arial, sans-serif&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;nel Sistema&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="x6F41zpj4irTJ3wfu0MC-37" value="&lt;font face=&quot;Arial, sans-serif&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;U.C.17 Esportazione di Metriche&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Arial, sans-serif&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;nel Sistema&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="180" y="3023" width="190" height="80" as="geometry" />
         </mxCell>
         <mxCell id="x6F41zpj4irTJ3wfu0MC-38" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="x6F41zpj4irTJ3wfu0MC-34" target="x6F41zpj4irTJ3wfu0MC-37" edge="1">
