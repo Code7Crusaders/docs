@@ -55,8 +55,8 @@ files=(
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
     # "./src/2_RTB/verbali_esterni/verbale_24-11-14_v1.0.tex"
     #  "./src/2_RTB/verbali_esterni/verbale_24-12-12_v1.0.tex"
+    #  "./src/2_RTB/verbali_esterni/verbale_25-01-27_v1.0.tex"
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
-     "./src/2_RTB/verbali_esterni/verbale_25-01-27_v1.0.tex"
 
     # "./src/2_RTB/verbali_interni/verbale_24-11-04_v1.0.tex" 
     # "./src/2_RTB/verbali_interni/verbale_24-11-15_v1.0.tex"
