@@ -73,6 +73,7 @@ files=(
     # "src/altri_documenti/analisi_LLM_Bloom_Openai_gpt4/analisi_modelli.tex"
     # "src/altri_documenti/analisi_framework_frontend/analisi_frontend.tex"
     # "src/altri_documenti/presentazione_rtb/presentazione_rtb.tex"
+     "src/altri_documenti/analisi_framework_backend/analisi_backend.tex"
 
     #  "./src/2_RTB/lettera_di_presentazione.tex"
 
