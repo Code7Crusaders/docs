@@ -47,7 +47,7 @@ files=(
 
     # "./src/2_RTB/documentazione_esterna/piano_di_progetto_v1.0.tex"
     # "./src/2_RTB/documentazione_esterna/piano_di_qualifica_v1.0.tex"
-    "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti_v1.0.tex"
+    # "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti_v1.0.tex"
     
     # "./src/2_RTB/documentazione_interna/glossario_v1.0.tex"
     # "./src/2_RTB/documentazione_interna/norme_di_progetto_v1.0.tex"  
@@ -68,7 +68,7 @@ files=(
     # "./src/2_RTB/verbali_interni/verbale_25-01-18_v1.0.tex"
     # "./src/2_RTB/verbali_interni/verbale_25-01-24_v1.0.tex"
     # "./src/2_RTB/verbali_interni/verbale_25-02-04_v1.0.tex"
-    # "./src/2_RTB/verbali_interni/verbale_25-02-07_v1.0.tex"
+     "./src/2_RTB/verbali_interni/verbale_25-02-07_v1.0.tex"
 
     # "src/altri_documenti/analisi_LLM_Bloom_Openai_gpt4/analisi_modelli.tex"
     # "src/altri_documenti/analisi_framework_frontend/analisi_frontend.tex"
