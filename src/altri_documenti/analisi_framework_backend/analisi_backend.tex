@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics[width=1.05\paperwidth]{../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Analisi per la scelta delle tecnologie backend}}\\
+    \vspace{5cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    {\large \textbf{Data:}} 12 Febbraio 2025\\
+    
+    \vspace{1cm}
+\end{titlepage}
+\clearpage
+
+% Indice
+\newpage
+\tableofcontents
+\newpage
+
+% Sezione Introduzione
+\section{Obiettivo}
+Questo documento si pone l'obiettivo di confrontare le diverse tecnologie backend in modo da avere un'idea precisa e prendere una decisione sicura per la scelta di esse e per la loro integrazione all'interno del nostro progetto. Il confronto considera aspetti tecnici, caratteristiche, vantaggi e svantaggi dei vari framework discussi. Le nostre scelte finali sono l'utilizzo di Flask e di Langchain per diverse motivazioni chiarite nei paragrafi sucessivi.
+
+\section{Analisi tecnologie backend scelte}
+
+\subsection{Flask}
+
+\subsection{Langchain}
+
+
+
+
+\section{Possibili alternative da valutare}
+
+\subsection{FastAPI}
+
+\subsection{Django REST Framework}
+
+\subsection{LlamaIndex}
+
+\subsection{Haystack}
+
+
+
+\section{Confronto}
+
+
+\section{Conclusioni}
+
+
+
+\end{document}
