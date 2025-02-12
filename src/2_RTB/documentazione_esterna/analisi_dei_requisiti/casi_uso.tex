@@ -484,8 +484,8 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{itemize}
     \item \textbf{Attore}: Admin
     \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso alla dashboard di monitoraggio.
-    \item \textbf{Postcondizioni}: L'amministratore visualizza le metriche principali del sistema come la percentuale di feedback positivi su conversazioni giudicate e tempo di risposta medio del chatbot.
-    \item \textbf{Scenario principale}: L'amministratore seleziona l'opzione per visualizzare le statistiche generali e consulta i dati per analizzare le prestazioni del sistema.
+    \item \textbf{Postcondizioni}: L'amministratore visualizza le metriche principali di ogni singola run eseguita come id, nome, input, tempo inizio, tempo fine, errore, output, tags, token totali usati, costo totale e feedback.
+    \item \textbf{Scenario principale}: L'amministratore seleziona l'opzione per visualizzare le statistiche generali e consulta le metriche per analizzare le prestazioni del sistema.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -501,8 +501,8 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{itemize}
     \item \textbf{Attore}: Admin
     \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso e ha selezionato la sezione relativa ai feedback degli utenti.
-    \item \textbf{Postcondizioni}: I feedback degli utenti sulle risposte del chatbot sono stati visualizzati e analizzati.
-    \item \textbf{Scenario principale}:  L'amministratore accede alla sezione dei feedback, consulta i giudizi degli utenti e utilizza le informazioni per migliorare il sistema.
+    \item \textbf{Postcondizioni}: I feedback degli utenti sulle risposte del chatbot, espressi in forma positiva o negativa tramite pulsante utente, sono stati visualizzati tramite un'icona e analizzati dall’amministratore.  
+    \item \textbf{Scenario principale}: L'amministratore accede alla sezione dei feedback, consulta i giudizi degli utenti e utilizza le informazioni raccolte per apportare miglioramenti al sistema, ad esempio aggiornando le risposte del chatbot o modificando la gestione delle interazioni.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -553,7 +553,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{itemize}
     \item \textbf{Attore}: Admin
     \item \textbf{Precondizioni}: L’amministratore vuole esportare un file dati.
-    \item \textbf{Postcondizioni}: I dati vengono esportati   METRICHE.
+    \item \textbf{Postcondizioni}: I dati vengono esportati in un file pdf o txt in base alle esigenze all'interno dei quali vengono inserite le metriche di ogni singola run richiesta.
     \item \textbf{Scenario principale}: L'amministratore seleziona il file del database e avvia il processo di esportazione.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
