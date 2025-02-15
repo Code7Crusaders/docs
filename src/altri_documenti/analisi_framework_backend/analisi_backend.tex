@@ -76,6 +76,44 @@ Langchain per diverse motivazioni chiarite nei paragrafi sucessivi.
 \section{Analisi tecnologie backend scelte}
 
 \subsection{Flask}
+Flask è un \textit{microframework} web per Python, il che significa 
+che fornisce gli strumenti di base necessari per sviluppare 
+un'applicazione web, lasciando allo sviluppatore la possibilità di 
+aggiungere altre funzionalità secondo le necessità. È una tecnologia 
+open source e gratuita che fornisce un modo semplice per creare e 
+distribuire applicazioni web dinamiche, offrendo molta libertà e 
+controllo sullo sviluppo dell’applicazione.
+\paragraph*{Vantaggi}
+\begin{itemize}
+    \item \textbf{Semplicità e flessibilità}: si può iniziare con 
+    un’applicazione piccola e espanderla facilmente man mano che cresce
+    \item \textbf{Personalizzazione}: permette di costruire 
+    un’applicazione che si adatti perfettamente alle proprie esigenze 
+    specifiche
+    \item \textbf{Documentazione completa e community attiva}: è molto 
+    facile trovare aiuto quando si ha qualche tipo di problema
+    \item \textbf{Facile integrazione con altre tecnologie}: è 
+    compatibile con una vasta gamma di tecnologie, incluse basi di dati, 
+    sistemi di autenticazione e altri ancora
+    \item \textbf{Sviluppo rapido ed efficiente}: Garantisce di portare 
+    a termine l’applicazione velocemente e in modo efficace
+    \item \textbf{Scalabilità}: è possibile adattare la propria 
+    applicazione a un numero maggiore di utenti e carichi di lavoro 
+    senza dover riscrivere il codice da zero
+    \item \textbf{Tempo di caricamento ridotto}: è leggero ed efficiente 
+    in termini di risorse, il che significa che le pagine web si 
+    caricano rapidamente e senza problemi
+\end{itemize}
+\paragraph*{Svantaggi}
+\begin{itemize}
+    \item \textbf{Maggiore quantità di codice}: Flask richiede più 
+    codice personalizzato rispetto a framework più completi
+    \item \textbf{Manutenzione e aggiornamenti}:  molte funzionalità 
+    devono essere aggiunte tramite estensioni o pacchetti di terze parti
+    \item \textbf{Dipendenza da terze parti}:molte funzionalità 
+    avanzate per costruire applicazioni web complete devono essere 
+    aggiunte tramite librerie esterne
+\end{itemize}
 
 \subsection{Langchain}
 
@@ -85,8 +123,84 @@ Langchain per diverse motivazioni chiarite nei paragrafi sucessivi.
 \section{Possibili alternative da valutare}
 
 \subsection{FastAPI}
+FastAPI è un framework web moderno, ad alte prestazioni, per la 
+costruzione di API RESTful con Python. È progettato per essere facile 
+da usare, veloce da sviluppare, e altamente efficiente, sfruttando 
+le potenzialità delle moderne caratteristiche di Python. Inoltre, 
+possiede la capacità di produrre API estremamente veloci e sicure, 
+con un focus sull'efficienza sia in termini di prestazioni che di 
+sviluppo rapido.
+\paragraph*{Vantaggi}
+\begin{itemize}
+    \item \textbf{Prestazioni elevate}: FastAPI è uno dei framework 
+    più veloci in Python grazie al supporto nativo per la programmazione 
+    asincrona
+    \item \textbf{Supporto per la programmazione asincrona}: permette 
+    di gestire richieste asincrone in modo molto efficiente, riducendo 
+    il tempo di attesa e migliorando la gestione delle risorse durante 
+    le operazioni I/O intensive
+    \item \textbf{Facilità di testing}: facilita il testing delle API 
+    grazie alla sua struttura di testing integrata e alla capacità di 
+    generare automaticamente mock di richieste e risposte
+    \item \textbf{Validazione automatica dei dati}: i dati inviati 
+    tramite le richieste (come JSON) sono automaticamente validati 
+    contro i modelli definiti, riducendo il codice necessario per la 
+    gestione degli errori e migliorando la sicurezza
+\end{itemize}
+\paragraph*{Svantaggi}
+\begin{itemize}
+    \item \textbf{Curva di apprendimento}: FastAPI, pur essendo molto 
+    potente, può avere una curva di apprendimento ripida per chi non è 
+    familiare con Python e con la programmazione asincrona
+    \item \textbf{Documentazione e community}: ha una community più 
+    piccola rispetto ad altri framework più consolidati come Django o 
+    Flask. Questo significa che potrebbe esserci meno documentazione, 
+    risorse online o librerie di terze parti da utilizzare
+    \item \textbf{Meno funzionalità predefinite}: fornisce solo le 
+    funzionalità essenziali per la creazione di API. Funzionalità come 
+    autenticazione, gestione dei permessi, e admin panel devono essere 
+    implementate tramite estensioni o personalizzazioni
+\end{itemize}
 
 \subsection{Django REST Framework}
+Django è un framework di alto livello, open source, costruito su Python 
+che incoraggia uno sviluppo rapido e un design pulito e pragmatico. 
+Si basa sul paradigma MTV, ossia \textit{“Model-Template-View”}. In 
+questo esplicita la sua natura full-stack, in quanto gestiamo in modo 
+olistico le interazioni tra la parte back-end (i modelli) e la parte 
+front-end (i template) tramite viste (view).
+\paragraph*{Vantaggi}
+\begin{itemize}
+    \item \textbf{Serializzazione dei dati}: fornisce un sistema di 
+    serializzazione che consente di convertire facilmente i dati tra 
+    formati (come JSON o XML) e oggetti Python, semplificando la 
+    gestione dei dati tra il client e il server
+    \item \textbf{Autenticazione e permessi avanzati}: include supporto 
+    nativo per vari metodi di autenticazione (come token-based o 
+    sessione) e per la gestione dei permessi
+    \item \textbf{Paginazione}: offre un sistema di paginazione per 
+    gestire grandi quantità di dati nelle risposte API, migliorando 
+    le prestazioni quando ci sono molte risorse
+    \item \textbf{Struttura sicura}:si basa su diversi meccanismi 
+    integrati che aiutano a proteggere le applicazioni API da 
+    vulnerabilità comuni e garantire una gestione sicura dei dati e 
+    degli accessi
+    \item \textbf{Comunità e supporto}: ha una grande comunità di 
+    sviluppatori, documentazione completa e numerosi esempi
+\end{itemize}
+\paragraph*{Svantaggi}
+\begin{itemize}
+    \item \textbf{Overhead}: in alcuni casi, per progetti molto semplici 
+    o con API leggere, questa completezza potrebbe introdurre overhead 
+    non necessario, aumentando la complessità e i tempi di sviluppo
+    \item \textbf{Performance}: Poiché  gestisce molte operazioni, come 
+    la serializzazione, la validazione e la gestione dei permessi, in 
+    alcuni casi può essere meno performante rispetto a soluzioni più 
+    leggere per API molto grandi o ad alte prestazioni
+    \item \textbf{Apprendimento complesso}: apprendimento che coinvolge 
+    concetti avanzati, abilità e conoscenze che richiedono tempo, sforzo 
+    e un certo livello di comprensione approfondita
+\end{itemize}
 
 \subsection{LlamaIndex}
 
