@@ -167,7 +167,7 @@ Dove \textbf{Tipo} può essere:
 
 \pagebreak
 \subsection{Requisiti di vincolo}
-\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.6\textwidth}|}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.60\textwidth}|}
 	\hline
 	\textbf{Codice} & \textbf{Fonte} & \textbf{Descrizione}\\\hline
 	\endfirsthead
@@ -175,36 +175,43 @@ Dove \textbf{Tipo} può essere:
 	\textbf{Codice} & \textbf{Fonte} & \textbf{Descrizione}\\\hline
 	\endhead
 	\hline
-	\textbf{RV01} & Analisi dei modelli    & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} deve essere integrato tramite API\\
+	\textbf{RVO1} & Capitolato & Il chatbot deve rispondere con il contesto dato dai file di allenamento (pdf o file di testo inseriti)\\
 	\hline
-	\textbf{RVO2} & Analisi dei modelli, Analisi del Database & Deve essere implementato almeno 1 database Relazionale\\
+	\textbf{RVO2} & Capitolato & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} deve essere integrato tramite API\\
 	\hline
-	\textbf{RVO3} & Analisi dei modelli & Deve essere implementato almeno 1 database Vettoriale\\
+	\textbf{RVO3} & Interno (Analisi dei modelli) & LLM utilizzato deve essere quello di OpenAI\\
 	\hline
-	\textbf{RVO4} & Analisi dei modelli & Deve essere implementato un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{embedding\textsuperscript{G}} model locale o API\\
+	\textbf{RVO4} & Capitolato & Deve essere usato un database relazionale\\
 	\hline
-	\textbf{RVO5} & Analisi \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#frontend}{Frontend\textsuperscript{G}} & Bisogna implementare una WebApp che permetta di comunicare con il chatbot\\
+	\textbf{RVO5} & Interno (Analisi del Database) & Deve essere gestito il salvataggio delle chat precedenti con tutti i messaggi in esse tramite un database relazionale con PostgreSQL\\
 	\hline
-	\textbf{RVO6} & Interno & L’interfaccia deve essere costruita utilizzando componenti funzionali React.\\
+	\textbf{RVO6} & Capitolato & Deve essere implementato un database vettoriale\\
 	\hline
-	\textbf{RVO7} & Interno & La gestione dello stato locale deve essere implementata tramite useState.\\
+	\textbf{RVO7} & Interno (Analisi dei modelli) & Deve essere implementato un database vettoriale FAISS per poter rendere possibile la ricerca con contesto dall'LLM\\
 	\hline
-	\textbf{RVO8} & Interno & La WebApp deve utilizzare React Router per gestire la navigazione tra le pagine.\\
+	\textbf{RVO8} & Capitolato & Deve essere implementato un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{embedding\textsuperscript{G}} model\\
 	\hline
-	\textbf{RVF9} & Interno & Gli stili devono essere gestiti tramite CSS con className per garantire modularità.\\
+	\textbf{RVO9} & Interno (Analisi dei modelli) & L'embedding model deve essere quello di OpenAI\\
 	\hline
-	\textbf{RVF10} & Interno & La comunicazione tra componenti deve essere gestita inviando funzioni come \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#props}{props\textsuperscript{G}}.\\
+	\textbf{RVO10} & Capitolato & Deve essere implementata una WebApp che permetta di comunicare con il chatbot\\
 	\hline
-	\textbf{RVD11} & Interno & La WebApp deve essere responsiva e adattarsi dinamicamente alle dimensioni della finestra.\\
+	\textbf{RVO11} & Interno (Analisi \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#frontend}{Frontend\textsuperscript{G}}) & L’interfaccia deve essere costruita utilizzando componenti funzionali React.\\
 	\hline
-	\textbf{RVO12} & Interno & Nel Database deve essere presente una tabella Utenti \\
+	\textbf{RVO12} & Interno & Si deve creare un backend che gestisca le chiamate API, il database vettoriale e il database relazionale con Flask.\\
 	\hline
-	\textbf{RVO13} & Interno & Nel Database deve essere presente una tabella Prodotti\\
+	\textbf{RVO13} & Interno & La gestione dello stato locale deve essere implementata tramite useState.\\
 	\hline
-	\textbf{RVO14} & Interno &  Ogni richiesta deve essere associata ad un \texttt{id\_utente}\\
+	\textbf{RVO14} & Interno & La WebApp deve utilizzare React Router per gestire la navigazione tra le pagine.\\
+	\hline
+	\textbf{RVO15} & Interno & Gli stili devono essere gestiti tramite CSS inline o con className per garantire modularità.\\
+	\hline
+	\textbf{RVO16} & Interno & La comunicazione tra componenti deve essere gestita inviando funzioni come \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#props}{props\textsuperscript{G}}.\\
+	\hline
+	\textbf{RVO17} & Interno & La WebApp deve essere responsiva e adattarsi dinamicamente alle dimensioni della finestra.\\
 	\hline
 	\caption{Requisiti di vincolo}
 \end{longtable}
+
 
 \pagebreak
 \subsection{Tracciamento}
