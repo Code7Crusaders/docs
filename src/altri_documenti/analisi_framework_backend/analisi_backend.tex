@@ -210,6 +210,28 @@ front-end (i template) tramite viste (view).
 
 \section{Confronto}
 
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.7}
+    \centering
+    \begin{tabular}{|p{2.55cm}|p{4cm}|p{4cm}|p{4cm}|}
+        \hline
+        \textbf{Aspetto} & \textbf{\large Flask} & \textbf{\large Django} & \textbf{\large FastAPI} \\
+        \hline
+        \textbf{Ambito di applicazione} & Microframework per applicazioni leggere & Framework completo per applicazioni web & Ottimo per API ad alte prestazioni \\
+        \hline
+        \textbf{Sicurezza} & Funzionalità di base, personalizzabile & Sicurezza integrata (autenticazione, CSRF) & Sicurezza per API, richiede librerie esterne \\
+        \hline
+        \textbf{Flessibilità} & Altamente flessibile, poche convenzioni & Struttura rigida con molte convenzioni & Flessibile, ma con focus su API asincrone \\
+        \hline
+        \textbf{Prestazioni} & Molto buone & Prestazioni medio-alte, non ottimizzato per async & Eccellenti, soprattutto per operazioni asincrone \\
+        \hline
+        \textbf{Velocità di apprendimento} & Facile, ma richiede più lavoro per funzionalità avanzate & Curva di apprendimento più ripida & Facile per chi conosce async/await e type hints \\
+        \hline
+        \textbf{Community} & Molto ampia e matura & Grande e attiva & In rapida crescita, ma più piccola \\
+        \hline
+    \end{tabular}
+    \caption{Tabella di confronto tecnico tra Flask, Django e FastAPI}
+\end{table}
 
 \section{Conclusioni}
 \textbf{Flask} è stato scelto per la sua leggerezza e semplicità nel creare 
