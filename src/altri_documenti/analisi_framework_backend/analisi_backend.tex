@@ -288,6 +288,31 @@ Fornisce strumenti per il recupero di documenti, la generazione di risposte e l'
     \caption{Tabella di confronto tecnico tra Flask, Django e FastAPI}
 \end{table}
 
+\section{Confronto tra LangChain e Haystack}
+
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.7}
+    \centering
+    \begin{tabular}{|p{2.55cm}|p{5cm}|p{5cm}|}
+    \hline
+    \textbf{Aspetto} & \textbf{LangChain} & \textbf{Haystack} \\
+    \hline
+    \textbf{Ambito di applicazione} & Framework per costruire chatbot avanzati con memoria contestuale e gestione dei flussi conversazionali & Progettato per la ricerca di informazioni e il recupero documentale \\
+    \hline
+    \textbf{Integrazione con LLM} & Nativo, supporta OpenAI, Hugging Face e altri & Supporta diversi LLM ma con configurazioni più complesse \\
+    \hline
+    \textbf{Memoria contestuale} & Supporto avanzato con gestione della memoria a lungo termine & Limitato alla gestione delle interazioni immediate \\
+    \hline
+    \textbf{Facilità d'uso} & API intuitive e modulari & Richiede più configurazione e tuning \\
+    \hline
+    \textbf{Gestione delle conversazioni} & Strutturato per la creazione di chatbot con azioni e memoria & Più focalizzato sulla ricerca di documenti che sulle conversazioni \\
+    \hline
+    \textbf{Community e supporto} & Grande community e supporto attivo & Community in crescita, meno risorse rispetto a LangChain \\
+    \hline
+    \end{tabular}
+    \caption{Tabella di confronto tra LangChain e Haystack}
+\end{table}
+
 \section{Conclusioni su Flask}
 \textbf{Flask} è stato scelto per la sua leggerezza e semplicità nel creare 
 API RESTful. Essendo un micro-framework, permette di sviluppare 
