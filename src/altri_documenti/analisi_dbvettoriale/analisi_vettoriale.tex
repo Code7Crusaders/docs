@@ -145,4 +145,28 @@ Pinecone è un database vettoriale gestito nel cloud, che offre un'infrastruttur
 \end{itemize}
 \textbf{Risorse:} \href{https://www.pinecone.io/}{Sito ufficiale} \textbar{} \href{https://docs.pinecone.io/}{Documentazione}
 
+\section{Confronto}
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|p{2cm}|p{5cm}|p{5cm}|p{2.5cm}|}
+        \hline
+        \textbf{Database} & \textbf{Pro} & \textbf{Contro} & \textbf{Fonti} \\
+        \hline
+        FAISS  & Prestazioni elevate su grandi dataset, Supporto GPU per accelerazione, Ottimizzazioni avanzate (IVF, PQ, HNSW), Open-source e integrabile in Python, Eseguibile localmente & Nessuna persistenza nativa, Alto uso di memoria, Configurazione complessa & \href{https://nextbrick.com/exploring-open-source-vector-search-engines-faiss-vs-milvus-vs-pinecone-2/}{NextBrick}, \href{https://zilliz.com/blog/annoy-vs-faiss-choosing-the-right-tool-for-vector-search}{Zilliz}, \href{https://zackproser.com/blog/vector-databases-compared}{Zack Proser}, \href{https://faiss.ai/}{FAISS}, \href{https://github.com/facebookresearch/faiss}{GitHub} \\
+        \hline
+        Annoy  & Leggero e facile da usare, Basso consumo di memoria, Possibilità di salvare l’indice su file, Buone prestazioni su dataset medio-piccoli & Meno ottimizzazioni rispetto a FAISS, Più lento su dataset di grandi dimensioni, Supporta solo CPU & \href{https://github.com/spotify/annoy}{GitHub}, \href{https://zilliz.com/blog/annoy-vs-faiss-choosing-the-right-tool-for-vector-search}{Zilliz} \\
+        \hline
+        Milvus & Database scalabile con persistenza nativa, Supporta architettura distribuita, Diversi metodi di indicizzazione, Adatto a dataset di grandi dimensioni & Complesso da configurare, Maggiore overhead di gestione, Latenza iniziale più alta & \href{https://zackproser.com/blog/vector-databases-compared}{Zack Proser}, \href{https://milvus.io/docs/}{Documentazione}, \href{https://github.com/milvus-io/milvus}{GitHub} \\
+        \hline
+        Pinecone & Completamente gestito nel cloud, Facile da integrare tramite API REST, Persistenza automatica & Servizio a pagamento, Meno controllo sulle ottimizzazioni, Dipendenza dal cloud & \href{https://www.pinecone.io/}{Sito ufficiale}, \href{https://docs.pinecone.io/}{Documentazione} \\
+        \hline
+    \end{tabular}
+    \caption{Confronto tra database vettoriali per ricerca di similarità}
+    \label{tab:vector_db_comparison}
+\end{table}
+
+\section{Conclusione e Motivazione della Scelta}
+
+
 \end{document}
