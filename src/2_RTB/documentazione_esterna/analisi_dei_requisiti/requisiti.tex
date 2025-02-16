@@ -133,11 +133,20 @@ Dove \textbf{Tipo} può essere:
 	\textbf{RFF35} & Interno & L'amministratore può gestire i parametri del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} e il modello da scegliere\\
 	\hline
 	\textbf{RFF36} & Interno & L'utente ha la possibilità di scegliere il modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} da usare \\
+	\hline
 	\textbf{RFO37} & Interno, Esterno & Ogni messaggio lasciato dal bot può essere valutato pertanto è necessario che questo dato venga salvato in modo (positivo/negativo)\\
 	\hline 
 	\textbf{RFO38} & Interno & Un Amministratore Deve poter modificare o aggiungere un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} pertanto è necessario garantire la persistenza dell'ultima modifica.\\
 	\hline
 	\textbf{RFD39} & Interno & Ogni Prodotto può essere mostrato con una propria immagine\\
+	\hline
+	\textbf{RFO43} & Interno (Analisi Vettoriale) & I Documenti inseriti da Amministratore, devono essere spezzattati ed embeddati tramite il modello di embedding (Openai embedded large), per essere vettorializzati\\
+	\hline
+	\textbf{RFD44} & Interno (Analisi Backend) & Le metriche delle run del chatbot devono essere esportatabili in txt o pdf\\
+	\hline
+	\textbf{RFD45} & Interno (Analisi Backend) & Le metriche della run devono includere i seguenti valori: ID univoco della run, nome assegnato alla sessione, dati di input elaborati dal modello, timestamp di avvio e completamento dell'esecuzione, eventuali errori incontrati, risultato generato dal modello, numero totale di token utilizzati e stima dei costi basata sul consumo di token.\\
+	\hline
+	\textbf{RFO46} & Interno & Il bot per rispondere ad una domanda deve ricordarsi i messaggi precedenti nella singola conversazione\\
 	\hline
 	\caption{Requisiti funzionali}
 \end{longtable}
@@ -197,7 +206,7 @@ Dove \textbf{Tipo} può essere:
 	\hline
 	\textbf{RVO11} & Interno (Analisi \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#frontend}{Frontend\textsuperscript{G}}) & L’interfaccia deve essere costruita utilizzando componenti funzionali React.\\
 	\hline
-	\textbf{RVO12} & Interno & Si deve creare un backend che gestisca le chiamate API, il database vettoriale e il database relazionale con Flask.\\
+	\textbf{RVO12} & Interno & Si deve creare un backend che gestisca le chiamate HTTP, il database vettoriale e il database relazionale con Flask.\\
 	\hline
 	\textbf{RVO13} & Interno & La gestione dello stato locale deve essere implementata tramite useState.\\
 	\hline
@@ -209,6 +218,11 @@ Dove \textbf{Tipo} può essere:
 	\hline
 	\textbf{RVO17} & Interno & La WebApp deve essere responsiva e adattarsi dinamicamente alle dimensioni della finestra.\\
 	\hline
+	\textbf{RVO18} & Interno (Analisi Vettoriale) & La gestione dei blocchi di testo vettorializzati deve essere gestita tramite Faiss\\
+	\hline
+	\textbf{RVD19} & Interno (Analisi Backend) & Le metriche delle run del chatbot devono essere recuperate tramite Langsmith\\
+	\hline
+	\textbf{RVO20} & Interno (Analisi Backend) & Bisogna usare la libreria LangChain per la interazione con i modelli LLM e Embedding\\
 	\caption{Requisiti di vincolo}
 \end{longtable}
 
@@ -262,7 +276,14 @@ Dove \textbf{Tipo} può essere:
 	\textbf{RFF36}            & Interno\\\hline
 	\textbf{RFO37}            & Interno, esterno\\\hline
 	\textbf{RFO38}            & Interno\\\hline
-	\textbf{RFD39}            & Interno\\\hline
+	\textbf{RFD39}            & Interno\\\hline	% \textbf{RVO17}            &  \\\hline
+	% \textbf{RFD40}            & \\\hline
+	% \textbf{RFD41}            & \\\hline
+	% \textbf{RFD42}            & \\\hline
+	% \textbf{RFD43}            & \\\hline
+	% \textbf{RFD44}            & \\\hline
+	% \textbf{RFD45}            & \\\hline
+	\textbf{RFO46}            & Interno\\\hline
 	\textbf{RQO1}            & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}\\\hline
 	\textbf{RQO2}            & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}\\\hline
 	\textbf{RQO3}            & Capitolato, \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#piano-di-qualifica}{Piano di Qualifica\textsuperscript{G}}\\\hline
@@ -282,5 +303,11 @@ Dove \textbf{Tipo} può essere:
 	\textbf{RVO12}			 & Interno\\\hline
 	\textbf{RVO13}			 & Interno\\\hline
 	\textbf{RVO14}			 & Interno\\\hline
+	% \textbf{RVO15}            &  \\\hline
+	% \textbf{RVO16}            &  \\\hline
+	% \textbf{RVO17}            &  \\\hline
+	\textbf{RVO18}            & Interno (Analisi Vettoriale)\\\hline
+	\textbf{RVD19}            & Interno (Analisi Backend)\\\hline
+	\textbf{RVO20}            & Interno (Analisi Backend)\\\hline
 	\caption{Requisito - Fonte}
 \end{longtable}
