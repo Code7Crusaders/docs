@@ -160,8 +160,6 @@ Consente di ottenere informazioni dettagliate sulle metriche delle run, tra cui:
 
 questo strumento ci sarà utile per realizzare l'esportazione dei dati delle metriche dalla dashboard dedicata dell'amministratore.
 
-
-
 \section{Possibili alternative a Flask}
 
 \subsection{FastAPI}
@@ -244,7 +242,26 @@ front-end (i template) tramite viste (view).
     e un certo livello di comprensione approfondita
 \end{itemize}
 
+\section{Possibili alternative a LangChain}
 
+\subsection{Haystack}
+Haystack è un framework progettato per la ricerca di informazioni e la costruzione di agenti conversazionali avanzati. 
+Fornisce strumenti per il recupero di documenti, la generazione di risposte e l'integrazione con modelli di linguaggio.
+
+\paragraph*{Vantaggi}
+\begin{itemize}
+    \item \textbf{Focalizzato sulla ricerca di informazioni}: offre funzionalità avanzate per il recupero di documenti pertinenti.
+    \item \textbf{Supporto per agenti conversazionali}: include strumenti per creare chatbot con memoria contestuale.
+    \item \textbf{Integrazione con più modelli}: compatibile con LLMs come GPT, BERT e T5 per migliorare le risposte.
+    \item \textbf{Supporto per pipeline personalizzate}: consente di costruire flussi di elaborazione complessi con componenti modulari.
+\end{itemize}
+
+\paragraph*{Svantaggi}
+\begin{itemize}
+    \item \textbf{Maggiore complessità}: richiede più configurazioni rispetto a LangChain per essere utilizzato efficacemente.
+    \item \textbf{Possibili costi elevati}: alcune integrazioni con modelli avanzati possono risultare costose in ambienti di produzione.
+    \item \textbf{Dipendenza da componenti esterni}: necessita di più strumenti per sfruttare appieno le sue capacità.
+\end{itemize}
 
 \section{Confronto alternative a Flask}
 
