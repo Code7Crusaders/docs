@@ -94,6 +94,55 @@ FAISS è una libreria sviluppata da Facebook AI per la ricerca di similarità tr
 \end{itemize}
 \textbf{Risorse:} \href{https://github.com/facebookresearch/faiss}{GitHub} \textbar{} \href{https://faiss.ai/}{Documentazione}
 
+\subsection{Annoy (Approximate Nearest Neighbors Oh Yeah)}
+Annoy è una libreria sviluppata da Spotify per la ricerca approssimata del nearest neighbor. È progettata per essere leggera e facile da usare, rendendola ideale per applicazioni su dispositivi con risorse limitate.
 
+\textbf{Pro:}
+\begin{itemize}
+    \item Leggero e facile da usare: API minimale.
+    \item Basso consumo di memoria: ottimizzato per la RAM.
+    \item Salvataggio dell’indice su file: permette di memorizzare e ricaricare facilmente gli indici.
+\end{itemize}
+\textbf{Contro:}
+\begin{itemize}
+    \item Meno ottimizzazioni rispetto a FAISS.
+    \item Più lento su dataset grandi.
+    \item Solo CPU: non ha accelerazione GPU.
+\end{itemize}
+\textbf{Risorse:} \href{https://github.com/spotify/annoy}{GitHub}
+
+\subsection{Milvus}
+Milvus è un database scalabile progettato specificamente per la ricerca vettoriale. Supporta architetture distribuite ed è adatto a scenari in cui sono richieste elevate prestazioni e persistenza dei dati.
+
+\textbf{Pro:}
+\begin{itemize}
+    \item Database scalabile per milioni di vettori con query distribuite.
+    \item Persistenza nativa: gli indici vengono salvati automaticamente.
+    \item Supporto a diverse tecniche di indicizzazione.
+\end{itemize}
+\textbf{Contro:}
+\begin{itemize}
+    \item Complesso da configurare: richiede un database backend.
+    \item Overhead di gestione: necessita di infrastruttura server e manutenzione.
+    \item Latenza iniziale più alta.
+\end{itemize}
+\textbf{Risorse:} \href{https://github.com/milvus-io/milvus}{GitHub} \textbar{} \href{https://milvus.io/}{Documentazione}
+
+\subsection{Pinecone (Cloud-Managed Vector Database)}
+Pinecone è un database vettoriale gestito nel cloud, che offre un'infrastruttura scalabile e facile da integrare per applicazioni che richiedono ricerca di similarità su larga scala senza dover gestire manualmente server e indici.
+
+\textbf{Pro:}
+\begin{itemize}
+    \item Completamente gestito nel cloud.
+    \item Facile da integrare tramite API REST.
+    \item Persistenza automatica.
+\end{itemize}
+\textbf{Contro:}
+\begin{itemize}
+    \item Servizio a pagamento.
+    \item Meno controllo sulle ottimizzazioni.
+    \item Dipendenza dal cloud.
+\end{itemize}
+\textbf{Risorse:} \href{https://www.pinecone.io/}{Sito ufficiale} \textbar{} \href{https://docs.pinecone.io/}{Documentazione}
 
 \end{document}
