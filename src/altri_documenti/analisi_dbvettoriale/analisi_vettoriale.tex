@@ -61,10 +61,7 @@
 % Indice
 \newpage
 \tableofcontents
-\newpage
 
-% Indice delle tabelle
-\newpage
 \listoftables
 \newpage
 
@@ -172,6 +169,18 @@ Pinecone è un database vettoriale gestito nel cloud, che offre un'infrastruttur
 \end{table}
 
 \section{Conclusione e Motivazione della Scelta}
+
+Dopo un'attenta analisi delle opzioni disponibili, il database vettoriale scelto per il progetto è \textbf{FAISS} (Facebook AI Similarity Search). La scelta è stata motivata dai seguenti fattori principali:
+
+\begin{itemize}
+    \item \textbf{Prestazioni elevate e ottimizzazioni avanzate}: FAISS è altamente ottimizzato per la ricerca di similarità tra vettori di grandi dimensioni, grazie a tecniche come IVF (Inverted File Index), PQ (Product Quantization) e HNSW (Hierarchical Navigable Small World). È in grado di gestire milioni di vettori con tempi di ricerca estremamente ridotti.
+    \item \textbf{Integrazione con Python e LangChain}: La compatibilità con Python e il supporto all'integrazione con LangChain rendono FAISS una scelta ideale per l'implementazione nel nostro progetto. La sua API è ben documentata e ampiamente utilizzata nella comunità di machine learning.
+    \item \textbf{Open-source ed eseguibile localmente}: FAISS è completamente open-source e non richiede una dipendenza dal cloud, garantendo maggiore controllo e flessibilità sull'infrastruttura del progetto. Questo permette di ridurre i costi operativi e aumentare la sicurezza dei dati, evitando la trasmissione a servizi esterni.
+    \item \textbf{Scalabilità ed efficienza}: FAISS supporta l'esecuzione su GPU, sfruttando CUDA per accelerare le operazioni di nearest neighbor search. Questo lo rende particolarmente adatto per applicazioni che richiedono una ricerca ad alta velocità su dataset di grandi dimensioni.
+    \item \textbf{Ampio supporto e adozione}: FAISS è sviluppato da Meta AI ed è ampiamente utilizzato in produzione da aziende tecnologiche di primo livello, garantendo stabilità, aggiornamenti costanti e un'ampia base di conoscenze disponibile online.
+\end{itemize}
+
+Se in futuro dovesse emergere la necessità di una persistenza nativa per gli indici, \textbf{Milvus} potrebbe rappresentare un'opzione valida, grazie alle sue capacità di gestione distribuita e persistenza automatica. Per applicazioni più leggere e meno esigenti in termini di risorse, \textbf{Annoy} potrebbe essere considerato un'alternativa interessante. Infine, se si volesse evitare completamente la gestione dell'infrastruttura, \textbf{Pinecone} rappresenterebbe una soluzione cloud-managed, sebbene con il compromesso dei costi e della dipendenza da un servizio esterno.
 
 
 \end{document}
