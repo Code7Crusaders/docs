@@ -115,8 +115,50 @@ controllo sullo sviluppo dell’applicazione.
     aggiunte tramite librerie esterne
 \end{itemize}
 
-\subsection{Langchain}
+\subsection{LangChain}
+LangChain è una libreria progettata per facilitare l'integrazione di Large Language Models nei sistemi software. 
+Consente di gestire conversazioni, memoria contestuale e connettori a database vettoriali, 
+rendendo l'interazione con i modelli più strutturata e personalizzabile. 
+Grazie a queste funzionalità, LangChain è particolarmente utile per lo sviluppo di chatbot avanzati, 
+sistemi di generazione automatica di testo e applicazioni basate su intelligenza artificiale.
 
+\paragraph*{Vantaggi}
+\begin{itemize}
+    \item \textbf{Facile integrazione con LLMs}: semplifica la connessione con modelli di linguaggio di grandi dimensioni, 
+    permettendo una rapida implementazione di chatbot e assistenti virtuali.
+    \item \textbf{Gestione della memoria contestuale}: consente di mantenere il contesto delle conversazioni, migliorando 
+    l'interattività e la coerenza delle risposte.
+    \item \textbf{Compatibilità con database vettoriali}: supporta l'integrazione con FAISS, Milvus e altre tecnologie per la ricerca semantica efficiente.
+    \item \textbf{Modularità}: offre componenti riutilizzabili che possono essere combinati per costruire flussi di interazione complessi.
+    \item \textbf{Flessibilità}: permette di personalizzare il comportamento dell'applicazione in base alle esigenze specifiche dell'utente.
+    \item \textbf{Community attiva e in crescita}: grazie a una comunità attiva, è possibile trovare risorse, documentazione e supporto per lo sviluppo.
+\end{itemize}
+
+\paragraph*{Svantaggi}
+\begin{itemize}
+    \item \textbf{Dipendenza dagli LLMs}: le prestazioni e l'affidabilità dipendono dalla qualità e dalla disponibilità dei modelli di linguaggio.
+    \item \textbf{Complessità di configurazione}: richiede una certa esperienza per configurare e ottimizzare le pipeline di elaborazione del linguaggio.
+    \item \textbf{Costi di esecuzione}: l'uso di modelli di linguaggio avanzati può comportare costi elevati in termini di risorse 
+    computazionali e API a pagamento.
+    \item \textbf{Integrazione con servizi esterni}: alcune funzionalità necessitano di dipendenze esterne, aumentando la complessità 
+    della manutenzione del progetto.
+\end{itemize}
+\paragraph*{Gestione delle Run con LangSmith}
+LangSmith è un tool che facilita la gestione e l'analisi delle esecuzioni dei chatbot basati su LangChain. 
+Consente di ottenere informazioni dettagliate sulle metriche delle run, tra cui:
+\begin{itemize}
+    \item \textbf{ID}: identificativo univoco della run.
+    \item \textbf{Nome}: nome assegnato alla sessione.
+    \item \textbf{Input}: dati di input elaborati dal modello.
+    \item \textbf{Tempo di inizio}: timestamp di avvio dell'esecuzione.
+    \item \textbf{Tempo di fine}: timestamp di completamento della run.
+    \item \textbf{Errore}: eventuali errori incontrati durante l'esecuzione.
+    \item \textbf{Output}: risultato generato dal modello.
+    \item \textbf{Total Token}: numero totale di token utilizzati nella run.
+    \item \textbf{Costo totale}: stima dei costi basata sul consumo di token.
+\end{itemize}
+
+questo strumento ci sarà utile per realizzare l'esportazione dei dati delle metriche dalla dashboard dedicata dell'amministratore.
 
 
 
@@ -202,14 +244,9 @@ front-end (i template) tramite viste (view).
     e un certo livello di comprensione approfondita
 \end{itemize}
 
-\section{Possibili alternative a Langchain}
-\subsection{LlamaIndex}
-
-\subsection{Haystack}
 
 
-
-\section{Confronto}
+\section{Confronto alternative a Flask}
 
 \begin{table}[H]
     \renewcommand{\arraystretch}{1.7}
@@ -234,7 +271,7 @@ front-end (i template) tramite viste (view).
     \caption{Tabella di confronto tecnico tra Flask, Django e FastAPI}
 \end{table}
 
-\section{Conclusioni}
+\section{Conclusioni su Flask}
 \textbf{Flask} è stato scelto per la sua leggerezza e semplicità nel creare 
 API RESTful. Essendo un micro-framework, permette di sviluppare 
 rapidamente un backend senza imporre dei vincoli rigidi. 
