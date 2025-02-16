@@ -75,4 +75,25 @@ Il documento è strutturato in tre sezioni principali:
     \item \textbf{Conclusione e Motivazione della Scelta}: in cui viene presentata la scelta del database vettoriale più adatto per il progetto in corso.
 \end{itemize}
 
+\section{Introduzione ai database vettoriali}
+
+\subsection{FAISS (Facebook AI Similarity Search)}
+FAISS è una libreria sviluppata da Facebook AI per la ricerca di similarità tra vettori ad alta dimensione. È ottimizzata per operazioni di nearest neighbor search su dataset di grandi dimensioni ed è ampiamente utilizzata in applicazioni di machine learning e intelligenza artificiale.
+
+\textbf{Pro:}
+\begin{itemize}
+    \item Alta velocità: ottimizzato per operazioni di nearest neighbor search su dataset di grandi dimensioni.
+    \item Supporto GPU: usa CUDA per accelerare la ricerca su hardware Nvidia.
+    \item Ottimizzazioni avanzate: supporta tecniche come IVF (Inverted File Index), PQ (Product Quantization), e HNSW (Hierarchical Navigable Small World).
+\end{itemize}
+\textbf{Contro:}
+\begin{itemize}
+    \item Nessuna persistenza nativa: gli indici devono essere salvati e caricati manualmente.
+    \item Uso elevato di memoria: può richiedere molta RAM, specialmente senza compressione.
+    \item Configurazione complessa: necessita di tuning per ottimizzare velocità, accuratezza e memoria.
+\end{itemize}
+\textbf{Risorse:} \href{https://github.com/facebookresearch/faiss}{GitHub} \textbar{} \href{https://faiss.ai/}{Documentazione}
+
+
+
 \end{document}
