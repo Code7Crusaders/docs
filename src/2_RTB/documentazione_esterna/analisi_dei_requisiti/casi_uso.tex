@@ -502,7 +502,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Attore}: Admin
     \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso e ha selezionato la sezione relativa ai feedback degli utenti.
     \item \textbf{Postcondizioni}: I feedback degli utenti sulle risposte del chatbot, espressi in forma positiva o negativa tramite pulsante utente, sono stati visualizzati tramite un'icona e analizzati dall’amministratore.  
-    \item \textbf{Scenario principale}: L'amministratore accede alla sezione dei feedback, consulta i giudizi degli utenti e utilizza le informazioni raccolte per apportare miglioramenti al sistema, ad esempio aggiornando le risposte del chatbot o modificando la gestione delle interazioni.
+    \item \textbf{Scenario principale}: L'amministratore accede alla sezione dei feedback, consulta i giudizi degli utenti e utilizza le informazioni raccolte per apportare miglioramenti al sistema.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -553,7 +553,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{itemize}
     \item \textbf{Attore}: Admin
     \item \textbf{Precondizioni}: L’amministratore vuole esportare un file dati.
-    \item \textbf{Postcondizioni}: I dati vengono esportati in un file pdf o txt in base alle esigenze all'interno dei quali vengono inserite le metriche di ogni singola run richiesta.
+    \item \textbf{Postcondizioni}: I dati vengono esportati in un file json dei quali ci sono le metriche di ogni singola run richiesta.
     \item \textbf{Scenario principale}: L'amministratore seleziona il file del database e avvia il processo di esportazione.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
@@ -603,9 +603,10 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \subsubsection{U.C.20: Risposta alla Richiesta dall’Amministratore} %FORSE DA METTER VISUALIZZA ELENCO AIUTI UMANI
 \begin{itemize}
     \item \textbf{Attore}: Admin
-    \item \textbf{Precondizioni}: L’amministratore dopo aver eseguito l’accesso al sistema procede con l’apertura della dashboard. Al suo interno gli è permesso il controllo delle varie metriche del sistema e dell’eventuale presenza di richieste di contatto da parte di utenti che necessitano assistenza. É presente almeno una richiesta inviata da un utente.
+    \item \textbf{Precondizioni}: L’amministratore dopo aver eseguito l’accesso al sistema procede con l’apertura della dashboard. 
+    Al suo interno gli può gestire le richieste di contatto da parte di utenti che necessitano assistenza. 
     \item \textbf{Postcondizioni}: L’amministratore risponde alle richieste di assistenza tramite mail.
-    \item \textbf{Scenario principale}: L’amministratore dopo avere eseguito l’accesso alla dashboard, seleziona una richiesta da gestire e visualizza che tipologia di assistenza deve fornire. In seguito compone una risposta fornendo la soluzione o richiedendo altre informazioni e la invia tramite il sistema.
+    \item \textbf{Scenario principale}: L’amministratore dopo avere eseguito l’accesso alla dashboard, seleziona una richiesta da gestire e visualizza che tipologia di assistenza deve fornire. 
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -

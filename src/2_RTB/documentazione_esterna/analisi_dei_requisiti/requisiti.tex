@@ -132,7 +132,7 @@ Dove \textbf{Tipo} può essere:
 	\hline
 	\textbf{RFF35} & Interno & L'amministratore può gestire i parametri del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} e il modello da scegliere\\
 	\hline
-	\textbf{RFF36} & Interno & L'utente ha la possibilità di scegliere il modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} da usare \\
+	\textbf{RFF36} & Interno & L'utente ha la possibilità di scegliere il modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} da usare\\
 	\hline
 	\textbf{RFO37} & Interno, Esterno & Ogni messaggio lasciato dal bot può essere valutato pertanto è necessario che questo dato venga salvato in modo (positivo/negativo)\\
 	\hline 
@@ -223,6 +223,7 @@ Dove \textbf{Tipo} può essere:
 	\textbf{RVD19} & Interno (Analisi Backend) & Le metriche delle run del chatbot devono essere recuperate tramite Langsmith\\
 	\hline
 	\textbf{RVO20} & Interno (Analisi Backend) & Bisogna usare la libreria LangChain per la interazione con i modelli LLM e Embedding\\
+	\hline
 	\caption{Requisiti di vincolo}
 \end{longtable}
 
@@ -310,4 +311,85 @@ Dove \textbf{Tipo} può essere:
 	\textbf{RVD19}            & Interno (Analisi Backend)\\\hline
 	\textbf{RVO20}            & Interno (Analisi Backend)\\\hline
 	\caption{Requisito - Fonte}
+\end{longtable}
+
+\subsection{Caso d'uso - Requisito}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.40\textwidth}|>{\centering\arraybackslash}m{0.4\textwidth}|}
+	\hline
+	\textbf{Caso d'uso} & \textbf{Requisito}\\
+	\endfirsthead
+	\hline
+	U.C.1 & RFO5 \\
+	\hline
+	U.C.2 & RFO2, RFO6, RFO7, RFO8, RFO9, RFO10, RFO12 \\
+	\hline
+	U.C.2.1 & RFO8, RFO9 \\
+	\hline
+	U.C.3 & RFO5, RFF36 \\
+	\hline
+	U.C.4 & RFO14\\
+	\hline
+	U.C.5 & RFO14\\
+	\hline
+	U.C.6 & RFO16\\
+	\hline
+	U.C.6.1 & RFO16\\
+	\hline
+	U.C.6.2 & RFO16\\
+	\hline
+	U.C.6.3 & RFO17\\
+	\hline
+	U.C.6.4 & RFO17\\
+	\hline
+	U.C.6.5 & RFO17, RFO18\\
+	\hline
+	U.C.7 & RFO16\\
+	\hline
+	U.C.7.1 & RFO16\\
+	\hline
+	U.C.7.2 & RFO16\\
+	\hline
+	U.C.7.3 & RFO17, RFO18\\
+	\hline
+	U.C.7.4 & RFO17\\
+	\hline
+	U.C.7.5 & RFO17\\
+	\hline
+	U.C.7.6 & RFO17\\
+	\hline
+	U.C.8 & RFO13\\
+	\hline
+	U.C.8.1 & \\
+	\hline
+	U.C.9 & RFO19\\
+	\hline
+	U.C.10 & RFO20, RFF35\\
+	\hline
+	U.C.11 & RFO21, RFF35\\
+	\hline
+	U.C.12 & RFO22, RFF35\\
+	\hline
+	U.C.13 & RFF23\\
+	\hline
+	U.C.14 & RFO24, RFO33, RFD34\\
+	\hline
+	U.C.15 & RFO25\\
+	\hline
+	U.C.16 & RFO1, RFO3, RFO4, RFO26 \\
+	\hline
+	U.C.16.1 & RFO27\\
+	\hline
+	U.C.17 & \\
+	\hline
+	U.C.18 & RFO28\\
+	\hline
+	U.C.19 & RFO15\\
+	\hline
+	U.C.20 & RFO30, RFD32\\
+	\hline
+	U.C.21 & RFD31\\
+	\hline
+	U.C.22 & RFD29\\
+	\hline
+	\caption{Caso d'uso - Requisito}
 \end{longtable}
