@@ -483,9 +483,14 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \subsubsection{U.C.14: Visualizzazione delle metriche generali}
 \begin{itemize}
     \item \textbf{Attore}: Admin
-    \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso alla dashboard di monitoraggio.
-    \item \textbf{Postcondizioni}: L'amministratore visualizza le metriche principali di ogni singola run eseguita come id, nome, input, tempo inizio, tempo fine, errore, output, tags, token totali usati, costo totale e feedback.
-    \item \textbf{Scenario principale}: L'amministratore seleziona l'opzione per visualizzare le statistiche generali e consulta le metriche per analizzare le prestazioni del sistema.
+    \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso alla dashboard di monitoraggio e 
+    ha selezionato i filtri desiderati per la visualizzazione delle metriche.
+    \item \textbf{Postcondizioni}: L'amministratore visualizza le metriche principali delle run selezionate in base ai filtri applicati, 
+    come id, nome, input, tempo inizio, tempo fine, errore, output, tags, token totali usati, costo totale e feedback. Di default, 
+    vengono mostrate solo le prime 10 run.
+    \item \textbf{Scenario principale}: L'amministratore accede alla dashboard di monitoraggio.
+    Seleziona i criteri di filtro per limitare il numero di run visualizzate. 
+    Il sistema carica e visualizza le metriche delle run filtrate, evitando di caricare tutte le run contemporaneamente.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -496,6 +501,8 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \caption{U.C.14: Visualizzazione delle metriche generali}
 \end{figure}
 \newpage
+
+
 
 \subsubsection{U.C.15: Visualizzazione Feedback Utenti}
 \begin{itemize}
@@ -520,7 +527,8 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Attore Secondario}: OpenAi
     \item \textbf{Precondizioni}: L'amministratore ha selezionato un file di dati da importare.
     \item \textbf{Postcondizioni}: I dati vengono caricati per la validazione.
-    \item \textbf{Scenario principale}: L'amministratore seleziona il file dal proprio dispositivo e avvia il processo di importazione. Il sistema prepara i dati per la validazione.
+    \item \textbf{Scenario principale}: L'amministratore seleziona il file dal proprio dispositivo e avvia il processo di importazione. 
+    Il sistema prepara i dati per la validazione.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: U.C.16.1
     \item \textbf{Inclusione}: -
@@ -537,7 +545,8 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Attore}: Admin
     \item \textbf{Precondizioni}: L’amministratore vuole caricare un file dati da caricare.
     \item \textbf{Postcondizioni}: I file vengono respinti se il formato dati è sbagliato, altrimenti vengono importati.
-    \item \textbf{Scenario principale}: Il sistema analizza il file, controlla la coerenza e il formato dei dati, se incoerente respinge e segnala errore.
+    \item \textbf{Scenario principale}: Il sistema analizza il file, controlla la coerenza e il formato dei dati, 
+    se incoerente respinge e segnala errore.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -549,12 +558,16 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \end{figure}
 \newpage
 
-\subsubsection{U.C.17 Esportazione di Metriche nel Sistema} 
+\subsubsection{U.C.17: Esportazione di Metriche nel Sistema}
 \begin{itemize}
     \item \textbf{Attore}: Admin
-    \item \textbf{Precondizioni}: L’amministratore vuole esportare un file dati.
-    \item \textbf{Postcondizioni}: I dati vengono esportati in un file json dei quali ci sono le metriche di ogni singola run richiesta.
-    \item \textbf{Scenario principale}: L'amministratore seleziona il file del database e avvia il processo di esportazione.
+    \item \textbf{Precondizioni}: L’amministratore ha selezionato i filtri desiderati per l'esportazione delle metriche.
+    \item \textbf{Postcondizioni}: I dati vengono esportati in un file JSON contenente le metriche delle run filtrate, 
+    evitando di esportare tutte le run contemporaneamente. Di default, vengono esportate solo le prime 10 run.
+    \item \textbf{Scenario principale}: L'amministratore accede alla dashboard di monitoraggio. 
+    Seleziona i criteri di filtro per limitare il numero di run da esportare. 
+    Il sistema genera un file JSON contenente le metriche delle run filtrate. 
+    L'amministratore scarica il file esportato.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -562,9 +575,11 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{img/UC17.png}
-    \caption{U.C.17 Esportazione di Dati nel Sistema}
+    \caption{U.C.17: Esportazione di Dati nel Sistema}
 \end{figure}
 \newpage
+
+
 
 \subsubsection{U.C.18 Elimina Chat}
 \begin{itemize}
