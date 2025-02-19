@@ -250,9 +250,7 @@ base e/o primari, processi di supporto e processi organizzativi.
     \label{tab:verifica}
     \caption{Metriche di qualità per il processo di Verifica}
 \end{table}
-%%%%%%%%%%%%%%%%%NON SO PERCHÈ SIA BUGGATO E NON LA POSIZIONA NEL PUNTO GIUSTO MEttendo sotto il titolo
-%% SE METTI DEL TESTO DOPO ANALISI DEI REQUISITI SI SISTEMA :(  per quel paragrafo quindi andrebbe aggiunto del testo per ogni paragrafo%%
-% \newpage
+
 \subsection{Processi di Supporto}
 \subsubsection{Documentazione}%Tabella
 \textbf{(1PSM-IG - 2PSM-CO)}
@@ -413,7 +411,7 @@ e che sia in grado di eseguire le operazioni richieste.
     \hline
     \textbf{20T-S} & Verificare che il sistema prevenga attacchi come SQL Injection. & NI \\
     \hline
-    \textbf{21T-S} & Verificare che l’utente possa inviare feedback sulla qualità della conversazione. & NI \\
+    \textbf{21T-S} & Verificare che l’utente possa inviare feedback positivo o negativo sulla qualità della conversazione. & NI \\
     \hline
     \textbf{22T-S} & Verificare che l’amministratore possa creare template di domande e risposte. & NI \\
     \hline
@@ -441,27 +439,23 @@ e che sia in grado di eseguire le operazioni richieste.
     \hline
     \textbf{34T-S} & Verificare che l’amministratore possa visualizzare i costi del sistema. & NI \\
     \hline
-    \textbf{35T-S} & Verificare che l’amministratore possa modificare i parametri del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} e scegliere il modello. & NI \\
+    \textbf{35T-S} & Verificare che lo schema di progettazione della base di dati sia conforme ai requisiti. & NI \\
     \hline
-    \textbf{36T-S} & Verificare che l’utente possa selezionare il modello \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} da utilizzare. & NI \\
+    \textbf{36T-S} & Verificare che il codice prodotto sia disponibile in formato sorgente tramite repository pubblici. & NI \\
     \hline
-    \textbf{37T-S} & Verificare che lo schema di progettazione della base di dati sia conforme ai requisiti. & NI \\
+    \textbf{37T-S} & Verificare che la documentazione descrittiva del sistema di raccomandazione sia completa e accessibile. & NI \\
     \hline
-    \textbf{38T-S} & Verificare che il codice prodotto sia disponibile in formato sorgente tramite repository pubblici. & NI \\
+    \textbf{38T-S} & Verificare che la documentazione riassuntiva delle metriche e dei risultati sia conforme ai requisiti. & NI \\
     \hline
-    \textbf{39T-S} & Verificare che la documentazione descrittiva del sistema di raccomandazione sia completa e accessibile. & NI \\
+    \textbf{39T-S} & Verificare che l’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} sia integrato correttamente tramite API. & NI \\
     \hline
-    \textbf{40T-S} & Verificare che la documentazione riassuntiva delle metriche e dei risultati sia conforme ai requisiti. & NI \\
+    \textbf{40T-S} & Verificare che sia stato implementato almeno un database relazionale e che funzioni correttamente. & NI \\
     \hline
-    \textbf{41T-S} & Verificare che l’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} sia integrato correttamente tramite API. & NI \\
+    \textbf{41T-S} & Verificare che sia stato implementato almeno un database vettoriale e che funzioni correttamente. & NI \\
     \hline
-    \textbf{42T-S} & Verificare che sia stato implementato almeno un database relazionale e che funzioni correttamente. & NI \\
+    \textbf{42T-S} & Verificare che sia stato implementato un embedding model, locale o tramite API. & NI \\
     \hline
-    \textbf{43T-S} & Verificare che sia stato implementato almeno un database vettoriale e che funzioni correttamente. & NI \\
-    \hline
-    \textbf{44T-S} & Verificare che sia stato implementato un embedding model, locale o tramite API. & NI \\
-    \hline
-    \textbf{45T-S} & Verificare che la WebApp consenta di comunicare correttamente con il chatbot. & NI \\
+    \textbf{43T-S} & Verificare che la WebApp consenta di comunicare correttamente con il chatbot. & NI \\
     \hline
 \caption{Test di Sistema}
 \end{longtable}
@@ -527,7 +521,7 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
             \includegraphics[width=0.8\textwidth]{../../img/pdq_charts/chart1-proiezionePVEV.png}
             \caption{Proiezione di PV ed EV}
         \end{figure}
-        Dal grafico si può notare come Planned value ed Earned value quasi si sovrappongano. Questo denota una buona pianificazione ed aderenza da parte del gruppo. Inoltre si nota come convergano abbastanza linearmente al valore Estimate at completion ergo la quantità di lavoro è omogenea tra le settimane.
+        Dal grafico si può notare come Planned Value ed Earned Value quasi si sovrappongano. Questo denota una buona pianificazione ed aderenza da parte del gruppo. Inoltre si nota come convergano in modo abbastanza lineare al valore Estimate at Completion, il che suggerisce una distribuzione omogenea del lavoro nel corso delle settimane.
 
         \subsubsection{5PBM-AC - Actual Cost e 2PBM-ETC - Estimate to Complete}
         \begin{figure}[H]
@@ -535,7 +529,7 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
             \includegraphics[width=0.8\textwidth]{../../img/pdq_charts/chart2-proiezioneACETC.png}
             \caption{Proiezione di AC e ETC}
         \end{figure}
-        Dal grafico si osserva un progressivo aumento dell'Actual cost, inversamente proporzionale al'Estimate to complete, con un Estimate at completion stabile nel tempo. Ciò implica una buona aderenza ai costi preventivati in fase di aggiudicazione.
+        Dal grafico si osserva un progressivo aumento dell'Actual Cost, inversamente proporzionale al'Estimate to Complete, con un Estimate at Completion stabile nel tempo. Ciò implica una buona aderenza ai costi preventivati in fase di aggiudicazione.
 
         \subsubsection{6PBM-SV - Schedule Variance e 7PBM-CV - Cost Variance}
         \begin{figure}[H]
@@ -543,7 +537,7 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
             \includegraphics[width=0.8\textwidth]{../../img/pdq_charts/chart3-proiezioneSVCV.png}
             \caption{Proiezione di SV e CV}
         \end{figure}
-        Il grafico evidenzia come Scheduled variance e Cost variance si sovrappongano quasi sempre, il che dimostra una buona capacità di programmare le attività e completarle per tempo.
+        Il grafico evidenzia come Scheduled Variance e Cost Variance si sovrappongano quasi sempre, il che dimostra una buona capacità di programmare le attività e completarle per tempo.
 
         \subsubsection{3PBM-EAC - Estimated at Completion}
         \begin{figure}[H]
@@ -551,7 +545,7 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
             \includegraphics[width=0.8\textwidth]{../../img/pdq_charts/chart4-proiezioneEAC.png}
             \caption{Proiezione di EAC}
         \end{figure}
-        Dal grafico si può vedere come il valore di Estimate at completion coincida con il costo preventivato, ad eccezione di alcuni momenti critici in cui sfiora la soglia massima ammissibile che ci siamo posti per poi subito rientrare in valori ottimali.
+        Dal grafico si può vedere come il valore di Estimate at Completion coincida con il costo preventivato, ad eccezione di alcuni momenti critici in cui sfiora la soglia massima ammissibile per poi subito rientrare tra i valori ottimali.
 
 
     \subsection{Qualità processo di Documentazione}
@@ -581,7 +575,7 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
             \includegraphics[width=0.8\textwidth]{../../img/pdq_charts/chart7-proiezioneRSI.png}
             \caption{Metriche di qualità soddisfatte}
         \end{figure}
-        L'andamento del Requirements stability index mostra come i requisiti dal momento in cui sono stati analizzati, hanno avuto una variazione abbastanza stabile o comunque nei limiti.
+        L'andamento del Requirements Stability Index mostra come i requisiti, dal momento della loro analisi, abbiano subito variazioni stabili e contenute entro i limiti previsti.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -603,23 +597,21 @@ Per ogni difficoltà riscontrata, sono riportati i seguenti dettagli:
 \subsubsection{Presentazioni del diario di Bordo}
 \begin{itemize}
     \item \textbf{Fase del Progetto:} Iniziale;
-    \item \textbf{Descrizione:} Ogni settimana è richiesta una presentazione che illustri l'operato svolto per quella settimana, in questo arco di tempo è necessario preparare delle slide ed esporle di persona, tuttavia questo per alcuni membri risulta essere difficoltoso a causa di lontananza e lavoro. Nonostante una tabella che riportasse i ruoli settimanali di ciascun membro.
-    \item \textbf{Contromisura:} Abbiamo deciso che i membri che sono responsabili durante il periodo di \textit{vacanze natalizie} in cui non vi sono attività di diario di bordo esporranno al posto sostituiranno il responsabile che non può presentare durante quella settimana, ed eventualmente nel caso di diari di bordo online, esporranno loro per primi.
+    \item \textbf{Descrizione:} Ogni settimana è richiesta una presentazione che illustri le attività svolte durante la settimana. È necessario preparare delle slide ed esporle di persona, ma per alcuni membri questo risulta difficoltoso a causa di impegni lavorativi o distanza. Nonostante una tabella che riportasse i ruoli settimanali di ciascun membro.
+    \item \textbf{Contromisura:} Abbiamo deciso che i membri responsabili durante il periodo delle \textit{vacanze natalizie}, in cui non sono previste attività di diario di bordo, sostituiranno i colleghi che non possono presentare. In caso di diari di bordo online, saranno loro a presentare per primi.
 \end{itemize}
 \subsubsection{Organizzazione delle riunioni}
 \begin{itemize}
     \item \textbf{Fase del Progetto:} Intermedia;
-    \item \textbf{Descrizione:} In realtà siamo rimasti stupiti che questo problema non si sia presentato fin da subito, ma durante il mese di dicembre ci sono stati problemi sulle sprint interne con molti membri assenti, questo ha portato ad un rallentamento del lavoro anche per la discrepanza di conoscenze che ogni membro ha. Ogni tanto per qualche membro non era chiaro in seguito dove recuperare determinate informazioni o se determinati documenti erano pronti oppure no. Il tutto è degenerato con il fatto che in pochi si autoassegnavano le \textit{issue}.
-    \item \textbf{Contromisura:} Abbiamo deciso di rendere la stesura dei verbali un'attività primaria da fare al momento della riunione e di completarla il più velocemente possibile, questo anche per aiutare chi deve presentare il diario di bordo. Inoltre per ogni issue creata abbiamo notificato tutti i membri tramite le varie piattaforme di comunicazione così da poter far capire a tutti il lavoro da svolgere per quella determinata sprint. Inoltre per evitare riunioni con pochi membri abbiamo preso in considerazione di essere più flessibili sull'orario delle riunioni settimanali.
+    \item \textbf{Descrizione:} In realtà siamo rimasti stupiti che questo problema non si sia presentato fin da subito, ma durante il mese di dicembre ci sono stati problemi sulle sprint interne con molti membri assenti, questo ha portato ad un rallentamento del lavoro anche per la discrepanza di conoscenze che ogni membro ha. A volte, alcuni membri non sapevano dove recuperare determinate informazioni o se i documenti fossero pronti. La situazione è peggiorata quando solo pochi membri si autoassegnavano le \textit{issue}.
+    \item \textbf{Contromisura:} Abbiamo deciso di rendere la stesura dei verbali un'attività prioritaria da svolgere durante la riunione, cercando di completarla il più rapidamente possibile. Questo aiuta anche chi deve presentare il diario di bordo. Inoltre, per ogni \textit{issue} creata, abbiamo notificato tutti i membri tramite le piattaforme di comunicazione, in modo che tutti fossero consapevoli del lavoro da svolgere durante la sprint. Inoltre per evitare riunioni con pochi membri abbiamo preso in considerazione di essere più flessibili sull'orario delle riunioni settimanali.
 \end{itemize}
-%% Da aggiungere in caso se ne trovino altre
+
 \newpage
 \subsection{Considerazioni Finali}
 Fin da subito il nostro gruppo si è posto come obiettivo quello di dotarsi di un \textit{Way of Working} preciso e ben definito, pianificando ogni singola attività e prevedendo tutte le possibili difficoltà durante lo svolgimento del progetto.
-Questo per cercare di prevenire i problemi e di affrontarli con contromisure efficaci. Molti problemi ci sono stati precedentemente descritti in aula durante lo svolgimento del corso, altri li abbiamo visti confrontandoci con altri gruppi nelle attività di diario di bordo,
-altri ancora li abbiamo affrontati durante il nostro lavoro, tuttavia grazie ai consigli e suggerimenti esterni che ci sono stati forniti, siamo riusciti a mettere in atto delle contromisure per risolverli o far sì che non accadessero sin dall'inizio.
+Questo per cercare di prevenire i problemi e di affrontarli con contromisure efficaci. Alcuni problemi sono stati descritti in aula durante il corso, altri sono emersi confrontandoci con altri gruppi durante le attività di diario di bordo, mentre altri ancora li abbiamo affrontati direttamente nel nostro lavoro. Grazie ai consigli e ai suggerimenti esterni, siamo riusciti a implementare contromisure per risolverli o prevenirli fin dall'inizio."
 Questo ha migliorato notevolmente la qualità del nostro lavoro e ci ha permesso di svolgere le varie attività in modo efficiente ed equo. Nonostante ciò siamo consapevoli che ci sono ancora molti aspetti su cui possiamo progredire e che ci sono molte iniziative di automiglioramento che possiamo adottare.
-Siamo convinti che se continueremo a lavorare con lo stesso impegno e la stessa determinazione otterremo risultati di qualità superiore.
+Siamo convinti che, continuando a lavorare con lo stesso impegno e determinazione, raggiungeremo risultati di qualità sempre più elevata.
 
 \end{document}
-
