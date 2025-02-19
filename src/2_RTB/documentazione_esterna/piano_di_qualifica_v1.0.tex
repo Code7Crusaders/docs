@@ -84,9 +84,9 @@
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
     \hline
-    1.0 & 10/02/2025 & Gabriele Di Pietro &  & Approvazione documento \\
+    1.0 & 10/02/2025 & Gabriele Di Pietro & Filippo Rizzolo & Approvazione documento \\
     0.5 & 06/02/2025 & Gabriele Di Pietro & Matthew Pan & Stesura sezione 3.2 \\
-    0.4 & 20/01/2025 & Matthew Pan & ... & Stesura sezione 3.1 - Test Sistema \\
+    0.4 & 20/01/2025 & Matthew Pan & Filippo Rizzolo & Stesura sezione 3.1 - Test Sistema \\
     0.3 & 16/12/2024 & Gabriele Di Pietro & Matthew Pan & Stesura sezione 5 \\
     0.2 & 10/12/2024 & Gabriele Di Pietro & Francesco Lapenna & Aggiunte tabelle \\
     0.1 & 05/12/2024 & Gabriele Di Pietro & Enrico Cotti Cottini & Prima stesura del documento \\  
@@ -522,31 +522,66 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
 
     \subsection{Qualità processo di Fornitura}
         \subsubsection{1PBM-PV - Planned Value e 4PBM-EV - Earned Value}
-        % \begin{figure}[H]
-        %     \centering
-        %     \includegraphics[width=0.8\textwidth]{../../img/grafici_pdq/blablabla}
-        %     \caption{Proiezione di PV ed EV}
-        % \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{../../img/pdq_charts/chart1-proiezionePVEV.png}
+            \caption{Proiezione di PV ed EV}
+        \end{figure}
+        Dal grafico si può notare come Planned value ed Earned value quasi si sovrappongano. Questo denota una buona pianificazione ed aderenza da parte del gruppo. Inoltre si nota come convergano abbastanza linearmente al valore Estimate at completion ergo la quantità di lavoro è omogenea tra le settimane.
 
         \subsubsection{5PBM-AC - Actual Cost e 2PBM-ETC - Estimate to Complete}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{../../img/pdq_charts/chart2-proiezioneACETC.png}
+            \caption{Proiezione di AC e ETC}
+        \end{figure}
+        Dal grafico si osserva un progressivo aumento dell'Actual cost, inversamente proporzionale al'Estimate to complete, con un Estimate at completion stabile nel tempo. Ciò implica una buona aderenza ai costi preventivati in fase di aggiudicazione.
+
         \subsubsection{6PBM-SV - Schedule Variance e 7PBM-CV - Cost Variance}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{../../img/pdq_charts/chart3-proiezioneSVCV.png}
+            \caption{Proiezione di SV e CV}
+        \end{figure}
+        Il grafico evidenzia come Scheduled variance e Cost variance si sovrappongano quasi sempre, il che dimostra una buona capacità di programmare le attività e completarle per tempo.
+
         \subsubsection{3PBM-EAC - Estimated at Completion}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{../../img/pdq_charts/chart4-proiezioneEAC.png}
+            \caption{Proiezione di EAC}
+        \end{figure}
+        Dal grafico si può vedere come il valore di Estimate at completion coincida con il costo preventivato, ad eccezione di alcuni momenti critici in cui sfiora la soglia massima ammissibile che ci siamo posti per poi subito rientrare in valori ottimali.
 
 
     \subsection{Qualità processo di Documentazione}
         \subsubsection{1PSM-IG - Indice Gulpease}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{../../img/pdq_charts/chart5-indiceGulpease.png}
+            \caption{Indice di Gulpease per documento}
+        \end{figure}
+        Come si può vedere dal grafico l'indice di Gulpease si mantiene sempre tra il valore ammissibile e l'ottimale. Ciò è indice di una buona qualità della documentazione.
 
 
     \subsection{Qualità del processo di gestione della qualità}
         \subsubsection{7PSM-QMS - Metriche di Qualità Soddisfatte}
-
-
-    \subsection{Qualità del processo di gestione dei Rischi}
-        \subsubsection{13PSM-RMR - Rischi Mitigati}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{../../img/pdq_charts/chart6-metricheSoddisfatte.png}
+            \caption{Metriche di qualità soddisfatte}
+        \end{figure}
+        Come si può notare la quantità di metriche soddisfatte sono appena sotto il range ammissibile. Tuttavia nel calcolo del QMS sono considerate anche metriche legate al codice e a test su di esso. Considerando che il codice non è ancora stato sviluppato è naturale che questo valore sia basso.
 
 
     \subsection{Qualità del processo di pianificazione}
         \subsubsection{1POM-RSI - Requirements Stability Index}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{../../img/pdq_charts/chart7-proiezioneRSI.png}
+            \caption{Metriche di qualità soddisfatte}
+        \end{figure}
+        L'andamento del Requirements stability index mostra come i requisiti dal momento in cui sono stati analizzati, hanno avuto una variazione abbastanza stabile o comunque nei limiti.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
