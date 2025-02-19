@@ -86,9 +86,9 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
 
 # MAIN
 
-percorso_glossario = "C:/Users/pinar/Desktop/Progetto SWE/docs/src/2_RTB/documentazione_interna/glossario.tex" # Inserire il percorso del file glossario.tex
+percorso_glossario = "pathtoglossary" # Inserire il percorso del file glossario.tex
 hashmap = crea_hashmap_glossario(percorso_glossario)
 print(hashmap)
 if hashmap:
-    percorso_file_modificare = "C:/Users/pinar/Desktop/Progetto SWE/docs/src/altri_documenti/analisi_LLM_Bloom_Openai_gpt4/analisi_modelli.tex"  # Inserire il percorso del file da modificare 
+    percorso_file_modificare = "pathtofile"  # Inserire il percorso del file da modificare 
     aggiungi_stile_hyperlink_latex(percorso_file_modificare, hashmap)

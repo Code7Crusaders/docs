@@ -161,13 +161,13 @@ base e/o primari, processi di supporto e processi organizzativi.
         \hline
         \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
         \hline
-        1PBM-PV & Planned Value & $PV \geq 0$ & $PV \leq BAC$ \\
+        1PBM-PV & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#planned-value}{Planned Value\textsuperscript{G}} & $PV \geq 0$ & $PV \leq BAC$ \\
         2PBM-ETC & Estimated to Complete & $ETC \geq 0$ & $ETC \leq EAC$ \\
         3PBM-EAC & Estimated at Completion & $EAC \leq BAC + 10\%$ & $EAC \leq BAC$ \\
-        4PBM-EV & Earned Value & $EV \geq 0$ & $EV \leq EAC$ \\
-        5PBM-AC & Actual Cost & $AC \geq 0$ & $AC \leq EAC$ \\
-        6PBM-SV & Scheduled Variance & $SV \geq -10\%$ & $SV \geq 0\%$ \\
-        7PBM-CV & Cost Variance & $CV \geq -10\%$ & $CV \geq 0\%$ \\
+        4PBM-EV & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#earned-value}{Earned Value\textsuperscript{G}} & $EV \geq 0$ & $EV \leq EAC$ \\
+        5PBM-AC & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#actual-cost}{Actual Cost\textsuperscript{G}} & $AC \geq 0$ & $AC \leq EAC$ \\
+        6PBM-SV & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#scheduled-variance}{Scheduled Variance\textsuperscript{G}} & $SV \geq -10\%$ & $SV \geq 0\%$ \\
+        7PBM-CV & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#cost-variance}{Cost Variance\textsuperscript{G}} & $CV \geq -10\%$ & $CV \geq 0\%$ \\
         8PBM-CPI & Cost Performance Index & $CPI \geq 0.8$ & $CPI \geq 1$ \\
         9PBM-SPI & Scheduled Performance Index & $SPI \geq 0.8$ & $SPI \geq 1$ \\
         10PBM-OTDR & On-Time Delivery Rate & $OTDR \geq 90\%$ & $OTDR \geq 95\%$ \\
@@ -283,7 +283,7 @@ base e/o primari, processi di supporto e processi organizzativi.
         4PSM-TA & Tempo di Apprendimento & $TA \leq 12$ minuti & $TA \leq 8$ minuti \\
         5PSM-TR & Tempo di Risposta & $TR \leq 8$ secondi & $TR \leq 4$ secondi \\
         6PSM-TE & Tempo di Elaborazione & $TE \leq 10$ secondi & $TE \leq 5$ secondi \\
-        7PSM-QMS & Metriche di Qualità Soddisfatte & $QMS \geq 90\%$ & $QMS \geq 90\%$\\
+        7PSM-\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#qms}{QMS\textsuperscript{G}} & Metriche di Qualità Soddisfatte & $\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#qms}{QMS\textsuperscript{G}} \geq 90\%$ & $\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#qms}{QMS\textsuperscript{G}} \geq 90\%$\\
         \hline
     \end{tabular}
     \label{tab:gestione_qualità}
@@ -317,7 +317,7 @@ base e/o primari, processi di supporto e processi organizzativi.
         \hline
         \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
         \hline
-        1POM-RSI & Requirements Stability Index & $RSI \geq 75\%$ & $RSI = 100\%$ \\
+        1POM-RSI & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#requirements-stability-index}{Requirements Stability Index\textsuperscript{G}} & $RSI \geq 75\%$ & $RSI = 100\%$ \\
         \hline
     \end{tabular}
     \label{tab:pianificazione}
@@ -480,15 +480,15 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
     \hline
     \textbf{TA05} & Verificare che l’utente possa inviare domande tramite l’interfaccia della web app.& NI\\
     \hline
-    \textbf{TA06} & Verificare che la domanda venga inoltrata al sistema tramite API REST. & NI\\
+    \textbf{TA06} & Verificare che la domanda venga inoltrata al sistema tramite \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}. & NI\\
     \hline
     \textbf{TA07} & Verificare che la domanda venga trasformata in una rappresentazione vettoriale. & NI\\
     \hline
     \textbf{TA08} & Verificare che il sistema recuperi i vettori più simili dal database vettoriale. & NI\\
     \hline
-    \textbf{TA09} & Verificare che il sistema LLM costruisca una risposta basata sulla domanda e sul contesto. & NI\\
+    \textbf{TA09} & Verificare che il sistema \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} costruisca una risposta basata sulla domanda e sul contesto. & NI\\
     \hline
-    \textbf{TA10} & Verificare che la risposta venga inviata all’utente tramite API REST.& NI\\
+    \textbf{TA10} & Verificare che la risposta venga inviata all’utente tramite \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}.& NI\\
     \hline
     \textbf{TA11} & Verificare che l’utente registrato possa avviare una conversazione con il bot.& NI\\
     \hline
