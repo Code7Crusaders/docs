@@ -46,7 +46,7 @@ files=(
     # "./src/templateC7C/template-verbali-nuovo/template-verbali.tex"
 
     "./src/2_RTB/documentazione_esterna/piano_di_progetto_v1.0.tex"
-    "./src/2_RTB/documentazione_esterna/piano_di_progetto_v0.8.tex"
+    "./src/2_RTB/documentazione_esterna/piano_di_progetto_v1.0.tex"
     "./src/2_RTB/documentazione_esterna/piano_di_qualifica_v1.0.tex"
     "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti_v2.0.tex"
     
