@@ -18,3 +18,5 @@ pdf/**/*.tex
 **.fdb_latexmk
 **.synctex.gz
 **.vscode
+src/scripts/analisi_stato_issues/.env
+src/scripts/analisi_stato_issues/issues.py
