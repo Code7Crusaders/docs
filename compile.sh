@@ -76,6 +76,7 @@ files=(
     "src/altri_documenti/presentazione_rtb/presentazione_rtb.tex"
     "src/altri_documenti/analisi_framework_backend/analisi_backend.tex"
     "src/altri_documenti/analisi_dbvettoriale/analisi_vettoriale.tex"
+    "src/altri_documenti/presentazione_rtb/presentazione_rtb2.tex"
 
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
     # "./src/2_RTB/lettera_di_presentazione.tex"
