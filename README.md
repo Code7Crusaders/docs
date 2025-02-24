@@ -6,9 +6,13 @@
         <em>Ingegneria del Software - 2024/2025</em></p>
     </div>
     <div style="text-align: right;">
-        <img src="./img/logo/7Crusaders_logo.png" alt="Gruppo Code7Crusaders Logo" width="150px" height="150px" />
+        <img src="./src/img/logo/7Crusaders_logo.png" alt="Gruppo Code7Crusaders Logo" width="150px" height="150px" />
     </div>
 </div>
+    
+## Build Status
+
+[![Build LaTeX document latexmk](https://github.com/CcEnrico/docs_swe/actions/workflows/latex_pdf.yml/badge.svg)](https://github.com/CcEnrico/docs_swe/actions/workflows/latex_pdf.yml)
 
 ## Componenti del gruppo:
 

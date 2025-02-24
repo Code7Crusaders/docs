@@ -1,0 +1,161 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Riunione Settimanale 15/11/2024}}\\
+    \vspace{5cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+
+%Versioni
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    1.0 & 20/11/2024 & Filippo Rizzolo & Matthew Pan & Prima stesura del documento \\ 
+    \hline
+\end{tabular}
+\end{table}
+
+% Indice
+\newpage
+\tableofcontents
+
+% Registro Presenze
+\newpage
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} Piattaforma Discord \\
+\textbf{Ora di Inizio:} 14:00\\
+\textbf{Ora di Fine:} 15:00\\
+\\
+\begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    Enrico Cotti Cottini & Verificatore & Assente \\ 
+    \hline
+    Gabriele Di Pietro & Responsabile & Presente\\ 
+    \hline
+    Tommaso Diviesti & Redattore & Presente \\ 
+    \hline 
+    Francesco Lapenna & Redattore & Presente \\ 
+    \hline
+    Matthew Pan & Verificatore & Presente\\ 
+    \hline 
+    Eddy Pinarello & Redattore & Presente \\ 
+    \hline 
+    Filippo Rizzolo & Amministratore & Presente \\ 
+    \hline 
+\end{tabular}
+\vspace{3cm}
+\section{Ordine del giorno}
+\begin{itemize} 
+    \item Discussione sull'incontro con Ergon avvenuto il 14/11/2024 
+    \item Stato di avanzamento del file Norme di Progetto 
+    \item Revisione del Glossario 
+    \item Rendicontazione delle ore e ripartizione dei ruoli 
+    \item Prossimi step 
+\end{itemize}
+
+% Sezione Verbale
+\newpage
+\section{Verbale}
+\subsection{Discussione sull'incontro con Ergon del 14/11/2024} 
+Durante l'incontro con l'azienda, abbiamo concordato sulla necessità di sviluppare due interfacce per la piattaforma: una per l'\textit{admin} e una per l'\textit{utente generico}.
+\begin{itemize}
+    \item La sezione \textit{admin} richiederà la possibilità di aggiornare i dati caricando file PDF.
+    \item La sezione \textit{utente} permetterà di visualizzare le informazioni attraverso un chatbot.
+\end{itemize}
+Sono state inoltre esaminate le tecnologie disponibili, affrontando alcuni dubbi tecnici emersi all'interno del team.
+
+\subsection{Stato di avanzamento del file Norme di Progetto} 
+Abbiamo chiarito alcuni dubbi riguardanti il documento Norme di Progetto, riconoscendone il ruolo centrale per il \textit{way of working} del team.
+
+Si è deciso che il documento sarà completato nel lungo termine, mentre altre sezioni della documentazione, come l'analisi dei requisiti, i diagrammi dei casi d'uso, i design pattern e la selezione dei framework dovranno essere finalizzate il prima possibile.
+
+\subsection{Revisione del Glossario} 
+Per il Glossario, si è deciso di evidenziare nei documenti tecnici i termini chiave, rendendoli riconoscibili e uniformi in tutta la documentazione.
+
+\subsection{Rendicontazione delle ore e ripartizione dei ruoli} 
+Per migliorare l'organizzazione, abbiamo deciso di:
+\begin{itemize}
+    \item Fissare un incontro breve ogni lunedì per l'assegnazione dei ruoli e la gestione delle attività.
+    \item Assegnare i ruoli considerando le disponibilità individuali, evitando di sovraccaricare i membri del team.
+\end{itemize}
+
+\subsection{Prossimi step} 
+Le prossime revisioni previste sono:
+\begin{itemize}
+    \item RTB (\textit{Requirements and Technology Baseline})
+    \item PB (\textit{Product Baseline})
+\end{itemize}
+Per preparare l'RTB sarà necessario completare i seguenti documenti:
+\begin{itemize} 
+    \item Analisi dei requisiti 
+    \item Piano di progetto 
+    \item Piano di qualifica 
+    \item Norme di progetto 
+    \item Glossario 
+    \item Lettera di presentazione 
+    \item PoC (\textbf{Proof of Concept}) 
+\end{itemize}
+Sarà utile pianificare ulteriori incontri con l'azienda per discutere i passaggi successivi e raccogliere feedback.
+
+\section{Conclusioni}
+Si conferma l'appuntamento fisso del venerdì per discutere le difficoltà emerse durante la settimana.
+L'incontro del lunedì rimane dedicato all'assegnazione dei ruoli e dei compiti settimanali.
+
+\end{document}

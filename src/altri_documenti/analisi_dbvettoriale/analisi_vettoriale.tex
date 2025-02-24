@@ -1,0 +1,186 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics[width=1.05\paperwidth]{../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Analisi per la scelta del DB Vettoriale}}\\
+    \vspace{5cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    {\large \textbf{Data:}} 15 Febbraio 2025\\
+    
+    \vspace{1cm}
+\end{titlepage}
+\clearpage
+
+% Indice
+\newpage
+\tableofcontents
+
+\listoftables
+\newpage
+
+% Sezione del documento
+
+\section{Introduzione}
+Il seguente documento ha lo scopo di analizzare i database vettoriali e di fornire una valutazione per la scelta del database vettoriale più adatto per il progetto in corso.\\
+Il documento è strutturato in tre sezioni principali:
+
+\begin{itemize}
+    \item \textbf{Introduzione ai database vettoriali}: in cui vengono introdotti i database vettoriali e le loro caratteristiche principali.
+    \item \textbf{Confronto}: In maniera tabellare vengono confrontati i database vettoriali analizzati.
+    \item \textbf{Conclusione e Motivazione della Scelta}: in cui viene presentata la scelta del database vettoriale più adatto per il progetto in corso.
+\end{itemize}
+
+\section{Introduzione ai database vettoriali}
+
+\subsection{FAISS (Facebook AI Similarity Search)}
+FAISS è una libreria sviluppata da Facebook AI per la ricerca di similarità tra vettori ad alta dimensione. È ottimizzata per operazioni di nearest neighbor search su dataset di grandi dimensioni ed è ampiamente utilizzata in applicazioni di machine learning e intelligenza artificiale.
+
+\textbf{Pro:}
+\begin{itemize}
+    \item Alta velocità: ottimizzato per operazioni di nearest neighbor search su dataset di grandi dimensioni.
+    \item Supporto GPU: usa CUDA per accelerare la ricerca su hardware Nvidia.
+    \item Ottimizzazioni avanzate: supporta tecniche come IVF (Inverted File Index), PQ (Product Quantization), e HNSW (Hierarchical Navigable Small World).
+\end{itemize}
+\textbf{Contro:}
+\begin{itemize}
+    \item Nessuna persistenza nativa: gli indici devono essere salvati e caricati manualmente.
+    \item Uso elevato di memoria: può richiedere molta RAM, specialmente senza compressione.
+    \item Configurazione complessa: necessita di tuning per ottimizzare velocità, accuratezza e memoria.
+\end{itemize}
+\textbf{Risorse:} \href{https://github.com/facebookresearch/faiss}{GitHub} \textbar{} \href{https://faiss.ai/}{Documentazione}
+
+\subsection{Annoy (Approximate Nearest Neighbors Oh Yeah)}
+Annoy è una libreria sviluppata da Spotify per la ricerca approssimata del nearest neighbor. È progettata per essere leggera e facile da usare, rendendola ideale per applicazioni su dispositivi con risorse limitate.
+
+\textbf{Pro:}
+\begin{itemize}
+    \item Leggero e facile da usare: API minimale.
+    \item Basso consumo di memoria: ottimizzato per la RAM.
+    \item Salvataggio dell’indice su file: permette di memorizzare e ricaricare facilmente gli indici.
+\end{itemize}
+\textbf{Contro:}
+\begin{itemize}
+    \item Meno ottimizzazioni rispetto a FAISS.
+    \item Più lento su dataset grandi.
+    \item Solo CPU: non ha accelerazione GPU.
+\end{itemize}
+\textbf{Risorse:} \href{https://github.com/spotify/annoy}{GitHub}
+
+\subsection{Milvus}
+Milvus è un database scalabile progettato specificamente per la ricerca vettoriale. Supporta architetture distribuite ed è adatto a scenari in cui sono richieste elevate prestazioni e persistenza dei dati.
+
+\textbf{Pro:}
+\begin{itemize}
+    \item Database scalabile per milioni di vettori con query distribuite.
+    \item Persistenza nativa: gli indici vengono salvati automaticamente.
+    \item Supporto a diverse tecniche di indicizzazione.
+\end{itemize}
+\textbf{Contro:}
+\begin{itemize}
+    \item Complesso da configurare: richiede un database backend.
+    \item Overhead di gestione: necessita di infrastruttura server e manutenzione.
+    \item Latenza iniziale più alta.
+\end{itemize}
+\textbf{Risorse:} \href{https://github.com/milvus-io/milvus}{GitHub} \textbar{} \href{https://milvus.io/}{Documentazione}
+
+\subsection{Pinecone (Cloud-Managed Vector Database)}
+Pinecone è un database vettoriale gestito nel cloud, che offre un'infrastruttura scalabile e facile da integrare per applicazioni che richiedono ricerca di similarità su larga scala senza dover gestire manualmente server e indici.
+
+\textbf{Pro:}
+\begin{itemize}
+    \item Completamente gestito nel cloud.
+    \item Facile da integrare tramite API REST.
+    \item Persistenza automatica.
+\end{itemize}
+\textbf{Contro:}
+\begin{itemize}
+    \item Servizio a pagamento.
+    \item Meno controllo sulle ottimizzazioni.
+    \item Dipendenza dal cloud.
+\end{itemize}
+\textbf{Risorse:} \href{https://www.pinecone.io/}{Sito ufficiale} \textbar{} \href{https://docs.pinecone.io/}{Documentazione}
+
+\section{Confronto}
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|p{2cm}|p{5cm}|p{5cm}|p{2.5cm}|}
+        \hline
+        \textbf{Database} & \textbf{Pro} & \textbf{Contro} & \textbf{Fonti} \\
+        \hline
+        FAISS  & Prestazioni elevate su grandi dataset, Supporto GPU per accelerazione, Ottimizzazioni avanzate (IVF, PQ, HNSW), Open-source e integrabile in Python, Eseguibile localmente & Nessuna persistenza nativa, Alto uso di memoria, Configurazione complessa & \href{https://nextbrick.com/exploring-open-source-vector-search-engines-faiss-vs-milvus-vs-pinecone-2/}{NextBrick}, \href{https://zilliz.com/blog/annoy-vs-faiss-choosing-the-right-tool-for-vector-search}{Zilliz}, \href{https://zackproser.com/blog/vector-databases-compared}{Zack Proser}, \href{https://faiss.ai/}{FAISS}, \href{https://github.com/facebookresearch/faiss}{GitHub} \\
+        \hline
+        Annoy  & Leggero e facile da usare, Basso consumo di memoria, Possibilità di salvare l’indice su file, Buone prestazioni su dataset medio-piccoli & Meno ottimizzazioni rispetto a FAISS, Più lento su dataset di grandi dimensioni, Supporta solo CPU & \href{https://github.com/spotify/annoy}{GitHub}, \href{https://zilliz.com/blog/annoy-vs-faiss-choosing-the-right-tool-for-vector-search}{Zilliz} \\
+        \hline
+        Milvus & Database scalabile con persistenza nativa, Supporta architettura distribuita, Diversi metodi di indicizzazione, Adatto a dataset di grandi dimensioni & Complesso da configurare, Maggiore overhead di gestione, Latenza iniziale più alta & \href{https://zackproser.com/blog/vector-databases-compared}{Zack Proser}, \href{https://milvus.io/docs/}{Documentazione}, \href{https://github.com/milvus-io/milvus}{GitHub} \\
+        \hline
+        Pinecone & Completamente gestito nel cloud, Facile da integrare tramite API REST, Persistenza automatica & Servizio a pagamento, Meno controllo sulle ottimizzazioni, Dipendenza dal cloud & \href{https://www.pinecone.io/}{Sito ufficiale}, \href{https://docs.pinecone.io/}{Documentazione} \\
+        \hline
+    \end{tabular}
+    \caption{Confronto tra database vettoriali per ricerca di similarità}
+    \label{tab:vector_db_comparison}
+\end{table}
+
+\section{Conclusione e Motivazione della Scelta}
+
+Dopo un'attenta analisi delle opzioni disponibili, il database vettoriale scelto per il progetto è \textbf{FAISS} (Facebook AI Similarity Search). La scelta è stata motivata dai seguenti fattori principali:
+
+\begin{itemize}
+    \item \textbf{Prestazioni elevate e ottimizzazioni avanzate}: FAISS è altamente ottimizzato per la ricerca di similarità tra vettori di grandi dimensioni, grazie a tecniche come IVF (Inverted File Index), PQ (Product Quantization) e HNSW (Hierarchical Navigable Small World). È in grado di gestire milioni di vettori con tempi di ricerca estremamente ridotti.
+    \item \textbf{Integrazione con Python e LangChain}: La compatibilità con Python e il supporto all'integrazione con LangChain rendono FAISS una scelta ideale per l'implementazione nel nostro progetto. La sua API è ben documentata e ampiamente utilizzata nella comunità di machine learning.
+    \item \textbf{Open-source ed eseguibile localmente}: FAISS è completamente open-source e non richiede una dipendenza dal cloud, garantendo maggiore controllo e flessibilità sull'infrastruttura del progetto. Questo permette di ridurre i costi operativi e aumentare la sicurezza dei dati, evitando la trasmissione a servizi esterni.
+    \item \textbf{Scalabilità ed efficienza}: FAISS supporta l'esecuzione su GPU, sfruttando CUDA per accelerare le operazioni di nearest neighbor search. Questo lo rende particolarmente adatto per applicazioni che richiedono una ricerca ad alta velocità su dataset di grandi dimensioni.
+    \item \textbf{Ampio supporto e adozione}: FAISS è sviluppato da Meta AI ed è ampiamente utilizzato in produzione da aziende tecnologiche di primo livello, garantendo stabilità, aggiornamenti costanti e un'ampia base di conoscenze disponibile online.
+\end{itemize}
+
+Se in futuro dovesse emergere la necessità di una persistenza nativa per gli indici, \textbf{Milvus} potrebbe rappresentare un'opzione valida, grazie alle sue capacità di gestione distribuita e persistenza automatica. Per applicazioni più leggere e meno esigenti in termini di risorse, \textbf{Annoy} potrebbe essere considerato un'alternativa interessante. Infine, se si volesse evitare completamente la gestione dell'infrastruttura, \textbf{Pinecone} rappresenterebbe una soluzione cloud-managed, sebbene con il compromesso dei costi e della dipendenza da un servizio esterno.
+
+
+\end{document}

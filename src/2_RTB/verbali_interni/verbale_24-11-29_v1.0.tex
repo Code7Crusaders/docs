@@ -1,0 +1,221 @@
+%%% INTRO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template sia per verbali interni che esterni
+% Segui i commenti "TODO" per ricordarti cosa modificare
+% In caso di verbali esterni ricordati di settare isEsterno ad 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\usepackage{graphicx}  % serve per inserire immagini
+\usepackage{fancyhdr}  % creazione header-footer
+\usepackage{tabularx}  % serve per creare tabelle con colonne a larghezza variabile
+\usepackage{ifthen}  % serve per mostrare cose diverse in base a condizioni
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+
+% TODO: setta a 1 se il verbale è esterno, 0 se è interno
+\newcommand{\isEsterno}{0}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Sezione del titolo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+        \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.center) {
+            \includegraphics{../../img/background.png}
+        };
+        \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % logo
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Riunione Settimanale 29/11/2024}}\\ 
+    \vspace{5cm}                           
+    
+    
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Versioni %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|>{\raggedright\arraybackslash}p{0.3\textwidth}|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    1.0 & 29/11/2024 & Enrico Cotti Cottini & Gabriele Di Pietro & Stesura verbale \\ 
+    \hline                                  
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Indice %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Registro Presenze %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} Piattaforma Discord \\
+\textbf{Ora Inizio:} 14:00\\
+\textbf{Ora FIne:} 15:00\\  % TODO: inserire orari ed eventualmente piattaforma   						
+\\
+\begin{tabular}{|c|c|c|}  % TODO: inserire ruoli e presenze
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    Enrico Cotti Cottini & Verificatore & Presente \\ 
+    \hline
+    Gabriele Di Pietro & Analista & Presente\\ 
+    \hline
+    Tommaso Diviesti & Amministratore & Presente \\ 
+    \hline 
+    Francesco Lapenna & Programmatore & Presente \\ 
+    \hline
+    Matthew Pan & Verificatore & Presente\\ 
+    \hline 
+    Eddy Pinarello & Progettista & Presente \\ 
+    \hline 
+    Filippo Rizzolo & Responsabile & Assente \\ 
+    \hline 
+\end{tabular}
+% Presenze Rappresentanti Azienda %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \\
+    \newline
+    \newline
+    \begin{tabular}{|c|c|}  % TODO: eventualmente modificare nomi rappresentanti
+        \hline
+        \textbf{Nome} & \textbf{Ruolo}\\
+        \hline
+        Gianluca Carlesso & Rappresentante Azienda \\
+        \hline
+        Anna Tieppo & Rappresentante Azienda \\
+        \hline
+    \end{tabular}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{10mm}
+\section{Ordine del Giorno}
+\begin{itemize}
+    \item Automatizzare Glossario
+    \item Diagramma Casi D'uso
+    \item Aggiornamento Norme di Progetto
+    \item Aggiornamento Piano di Progetto
+    \item Prima Bozza di Architettura del Software e Tecnologie da utilizzare
+\end{itemize}
+
+
+% Sezione Verbale %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Verbale Retrospettiva}
+    % TODO: per ogni punto discusso / attività svolta
+    % inserire una sottosezione, sintesi ed eventuali decisioni
+
+    \subsection{Automatizzazione link Glossario pdf}
+    \textbf{Sintesi:} Avevamo la necessità di trovare un modo immediato per fornire le definizioni delle parole del glossario presenti in qualsiasi documento. Abbiamo risolto tramite la creazione di uno script in Python che sostituisce ogni occorrenza di una parola del glossario con un link che punta alla sua definizione presente sul glossario del sito dei Code7Crusaders (\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html}{\textbf{Glossario}}). \\
+    \textbf{Difficoltà:} Abbiamo riscontrato qualche problema nell'utilizzo di questo metodo come ad esempio alcune eccezzioni non gestite. \\
+    \textbf{Decisioni:} Tutto sommato il sistema funziona bene e ci permette di risparmiare tempo e fatica, in futuro pianifichiamo di migliorare la gestione delle eccezzioni, ma per ora possiamo considerare il problema risolto. 
+
+    \subsection{Diagramma dei Casi D'Uso e user stories}
+    \textbf{Sintesi:} Dopo alcune discussioni con l'azienda e tramite analisi del capitolato, abbiamo individuato i casi d'uso e le user stories principali su cui basarci per costruire il diagramma dei casi d'uso. \\
+    \textbf{Decisioni:} Abbiamo deciso di utilizzare il software \textbf{draw.io} per la creazione del diagramma dei casi d'uso e user stories abbiamo condiviso tutto il materiale sul nostro Google Drive interno.
+
+    \subsection{Norme di Progetto}
+    \textbf{Sintesi:} Abbiamo ampliato le norme di progetto con nuove regole riguardanti la stesura dei documenti, incluse le regole e codifiche per la redazione dei casi d'uso all'interno dell'analisi dei requisiti. \\
+    \textbf{Decisioni:} Ci siamo accordati per decidere alcune norme riguardanti la stesura dei documenti come codifiche analisi e altro.
+    
+    \subsection{Piano di Progetto}
+    \textbf{Sintesi:} Abbiamo iniziato ad analizzare i requisiti necessari per la redazione del piano di progetto che svilupperemo più corposamente nelle prossime settimane. \\
+    \textbf{Decisioni:} Nessuna decisione particolare presa.
+
+    \subsection{Prima Bozza di Architettura del Software e Tecnologie da utilizzare}
+    \textbf{Sintesi:} Durante l'analisi dei requisiti, abbiamo iniziato a delineare una prima bozza dell'architettura del software e delle tecnologie che utilizzeremo. Questo ha reso necessario un approfondimento su alcune tecnologie candidate. \\
+    \textbf{Decisioni:} Vista la necessità di approfondire alcune tecnologie, abbiamo deciso di dedicare del tempo allo studio e alla sperimentazione di queste ultime. In particolare, abbiamo realizzato un prototipo di un sistema di interrogazione basato su BLOOM eseguito in locale. Da questa esperienza, abbiamo concluso che la realizzazione con questo tipo di modello è fattibile, ma richiede ulteriori approfondimenti su modelli accessibili tramite API esterne (ad esempio GPT di OpenAI), a causa degli elevati requisiti hardware richiesti per eseguire BLOOM.
+    
+    % ...
+
+    \subsection*{Conclusioni e Pianificazione} 
+    \textbf{Conclusioni:} Durante la riunione, abbiamo raggiunto diversi obiettivi, tra cui la creazione di uno script per automatizzare i link del glossario, l'elaborazione di user stories e casi d'uso principali, e la definizione di una prima bozza dell'architettura del software. Inoltre, abbiamo ampliato le norme di progetto e iniziato a strutturare il piano di progetto. Nonostante alcune difficoltà tecniche, come la gestione delle eccezioni nello script Python, il lavoro complessivo è stato positivo e ha posto le basi per sviluppi futuri.
+
+    \textbf{Pianificazione per la prossima settimana:} 
+    \begin{itemize}
+        \item Migliorare la gestione delle eccezioni nello script Python per i link del glossario.
+        \item Contattare l'azienda per verificare se i casi d'uso individuati soddisfano le loro esigenze.
+        \item Contattare il Professor Cardin per analizzare la correttezza dei casi d'uso e.
+        \item Completare (eventualmente correggere) il diagramma dei casi d'uso e consolidare le user stories, una volta approvati, ricavare i requisiti dai casi d'uso.
+        \item Continuare a lavorare sulle norme di progetto e sul piano di progetto, aggiungendo ulteriori dettagli.
+        \item Analizzare il caso OpenAI per valutare se è più adatto rispetto ad altre soluzioni, considerando i requisiti specifici del nostro progetto.
+    \end{itemize}
+
+    La prossima riunione è pianificata per il \textbf{06 12 2024}, con l'obiettivo di analizzare i progressi ottenuti e pianificare i prossimi passi.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Sezione Firme %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \begin{table}[b]
+        \begin{tabular}{@{}p{.5in}p{4in}@{}}
+            Data:  & \hrulefill \\
+                   &     		\\
+                   &     		\\
+            Firma: & \hrulefill \\
+        \end{tabular}
+        \end{table}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document} 

@@ -1,0 +1,157 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{eurosym}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{array} 
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../img/background.png}
+    };
+    \end{tikzpicture}
+    }  
+  
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Lettera di Presentazione}}\\
+    \vspace{5cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+
+Ai professori Tullio Vardanega e Riccardo Cardin.\\
+Con il presente documento, il gruppo \textit{Code7Crusaders} desidera annunciare la propria intenzione di sostenere
+la revisione RTB (\textit{Requirements and Technology Baseline}) del progetto
+\begin{center}
+    \textit{LLM: Assistente Virtuale}
+\end{center}
+proposto dall'azienda \textbf{Ergon Informatica}.\\
+La completa documentazione inerente al progetto è visibile attraverso il seguente link:
+\begin{center}
+    \texttt{\url{https://code7crusaders.github.io}}
+\end{center}
+Nello specifico è presente una release \textit{RTB} all'interno della quale sono visibili i documenti sviluppati finora, tra cui:
+\begin{itemize}
+     \item \textbf{Documenti Esterni:}
+        \begin{itemize}
+            \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.html}{\texttt{Analisi dei Requisiti v2.0;}}
+            \item \texttt{Piano di Progetto v1.0;}
+            \item \texttt{Piano di Qualifica v1.0;}
+        \end{itemize}
+        \item \textbf{Documenti Interni:}
+        \begin{itemize}
+            \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/norme_di_progetto.html}{\texttt{Norme di Progetto v1.0;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html}{\texttt{Glossario v1.0;}}
+        \end{itemize}
+        \item \textbf{Verbali Esterni:}
+        \begin{itemize}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_esterni/verbale_24-11-14_v1.0.html}{\texttt{Verbale 24-11-14;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_esterni/verbale_24-12-12_v1.0.html}{\texttt{Verbale 24-12-12;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_esterni/verbale_25-01-27_v1.0.html}{\texttt{Verbale 25-01-27;}}
+        \end{itemize}
+        \item \textbf{Verbali Interni:}
+        \begin{itemize}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_interni/verbale_24-11-04_v1.0.html}{\texttt{Verbale 24-11-04;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_interni/verbale_24-11-15_v1.0.html}{\texttt{Verbale 24-11-15;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_interni/verbale_24-11-22_v1.0.html}{\texttt{Verbale 24-11-22;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_interni/verbale_24-11-29_v1.0.html}{\texttt{Verbale 24-11-29;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_interni/verbale_24-12-07_v1.0.html}{\texttt{Verbale 24-12-07;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_interni/verbale_24-12-13_v1.0.html}{\texttt{Verbale 24-12-13;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_interni/verbale_24-12-19_v1.0.html}{\texttt{Verbale 24-12-19;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_interni/verbale_25-01-18_v1.0.html}{\texttt{Verbale 25-01-18;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_interni/verbale_25-01-24_v1.0.html}{\texttt{Verbale 25-01-24;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_interni/verbale_25-02-04_v1.0.html}{\texttt{Verbale 25-02-04;}}
+            \item \href{https://code7crusaders.github.io/docs/RTB/verbali_interni/verbale_25-02-07_v1.0.html}{\texttt{Verbale 25-02-07;}}
+        \end{itemize}
+\end{itemize}
+
+Di seguito viene fornito il link al repository GitHub del gruppo contenente il \textbf{Proof of Concept} del progetto:
+\begin{center}
+    \texttt{\url{https://github.com/Code7Crusaders/POC}}
+\end{center}
+
+Il costo di realizzazione del progetto è aumentato a \textbf{13.507\euro}. Questo incremento è stato causato da un ritardo dovuto ad alcune correzioni necessarie sulla documentazione per la revisione \textbf{RTB} a semaforo. Il costo è stato calcolato stimando uno sprint aggiuntivo rispetto alla data preventivata (\textbf{14 marzo 2025}) nella lettera di presentazione della candidatura iniziale. Di conseguenza, la data stimata della consegna \textbf{PB} è il \textbf{21 marzo 2025}.
+
+Pertanto, il costo complessivo è stato ottenuto sommando alla cifra iniziale di \textbf{12.805\euro} il costo medio di uno sprint, pari a \textbf{702\euro}.
+Di seguito vengono riportati i nomi dei componenti del gruppo \\
+\textbf{Code7Crusaders}:\\
+
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Aumenta l'altezza delle righe
+    \begin{tabular}{| >{\centering\arraybackslash}m{6cm} | >{\centering\arraybackslash}m{4cm} |} % Aumenta la larghezza delle colonne
+        \hline
+        \textbf{Nome} & \textbf{Matricola} \\
+        \hline
+        \textbf{Enrico Cotti Cottini} & 2077993 \\ 
+        \hline
+        \textbf{Gabriele Di Pietro} & 2010000 \\ 
+        \hline
+        \textbf{Tommaso Diviesti} & 2082858 \\ 
+        \hline
+        \textbf{Francesco Lapenna} & 2072134 \\ 
+        \hline
+        \textbf{Matthew Pan} & 2057869 \\ 
+        \hline
+        \textbf{Eddy Pinarello} & 2075535 \\ 
+        \hline
+        \textbf{Filippo Rizzolo} & 2042377 \\ 
+        \hline
+    \end{tabular}
+    %\caption{Elenco dei membri del team Code7Crusaders con relative matricole}
+    \label{tab:membri}
+\end{table}
+
+
+Nell'attesa di un cortese riscontro, porgiamo distinti saluti, \textbf{Code7Crusaders}
+
+\begin{table}[b]
+	\begin{tabular}{@{}p{2in}p{3in}@{}}
+			   &     		\\
+			   &     		\\
+		\textbf{Firma Responsabile:} & \hrulefill \\
+	\end{tabular}
+\end{table}
+
+
+\end{document} 
+
+

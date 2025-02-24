@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Riunione Settimanale 04/11/2024}}\\
+    \vspace{5cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+
+%Versioni
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    1.0 & 5/11/2025 & Gabriele Di Pietro & Eddy Pinarello & Prima stesura del documento \\ 
+    \hline
+\end{tabular}
+\end{table}
+
+% Indice
+\newpage
+\tableofcontents
+
+% Registro Presenze
+\newpage
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} Piattaforma Discord \\
+\textbf{Ora di Inizio:} 21:00\\
+\textbf{Ora di Fine:} 22:00\\
+\\
+\begin{tabular}{|c|c|c|} %NON MI RICORDO CHI MANCASSE Mi pare Francesco
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    Enrico Cotti Cottini &  & Presente \\ 
+    \hline
+    Gabriele Di Pietro & Redattore & Presente\\ 
+    \hline
+    Tommaso Diviesti &  & Presente \\ 
+    \hline 
+    Francesco Lapenna & & Assente \\ 
+    \hline
+    Matthew Pan &  & Presente\\ 
+    \hline 
+    Eddy Pinarello & Verificatore & Presente \\ 
+    \hline 
+    Filippo Rizzolo & Amministratore & Presente \\ 
+    \hline 
+\end{tabular}
+\vspace{3cm}
+\section{Ordine del giorno}
+\begin{itemize}
+    \item Approvazione della candidatura
+    \item Aggiornamento compiti e gestione delle issues
+    \item Modifiche al template LaTeX
+    \item GitHub Actions
+    \item Prossimi Step
+\end{itemize}
+% Sezione Verbale
+\newpage
+\section{Verbale}
+\subsection{Approvazione della candidatura}
+Prendiamo atto dell'approvazione della candidatura presentata per il progetto \textbf{LLM: Assistente virtuale} da parte del professor Vardanega.
+Nella valutazione viene evidenziato come abbiamo sottostimato l'impegno dato all'analisi dei requisiti e per aver chiarito poco la rotazione dei ruoli di ogni membro del team, inoltre esaminiamo bene le critiche per migliorare la documentazione in futuro.
+Discutiamo assieme su tali osservazioni e ci riserviamo di rivalutare tale pianificazione per il prossimo periodo.
+Siamo soddisfatti nel complesso del risultato raggiunto e ci impegneremo a migliorare la documentazione futura.
+Provvediamo nei prossimi giorni a comunicare via \textit{email} all'azienda \textbf{Ergon} l'approvazione della candidatura.
+
+\subsection{Aggiornamento compiti e gestione delle issues}
+Durante questa riunione, abbiamo anche riorganizzato i compiti individuali e migliorato il nostro modo di lavorare introducendo l'utilizzo della roadmap di GitHub. Questo strumento ci consente di condividere con il team le tempistiche, le priorità e la quantità di issue da svolgere, monitorando al contempo le scadenze in maniera più efficiente.
+Inoltre provvederemo alla stesura di un documento \textit{Norme di progetto} dove definiremo le modalità di lavoro e le regole da seguire.
+
+\subsection{Modifiche al template di Latex}
+Abbiamo reso più efficiente il nostro processo di scrittura della documentazione in LaTeX templatizzando il metodo utilizzato. In particolare, abbiamo creato un template standard che semplifica la creazione di qualsiasi documento. All'interno del template sono state introdotte variabili posizionate in punti strategici, permettendo di adattare rapidamente i contenuti senza dover riscrivere tutto da zero. Questo approccio consente di mantenere coerenza e velocità nella produzione della documentazione, riducendo al minimo gli sforzi manuali e aumentando la produttività del team.
+Inoltre ogni documento verrà ora redatto e verificato da persone diverse. 
+
+\subsection{Github Actions}
+Siamo inoltre riusciti a introdurre un potente strumento di GitHub che sfrutta le GitHub Actions per automatizzare il processo di caricamento e compilazione dei file LaTeX. In pratica, ogni volta che viene caricato un nuovo documento nel repository, il sistema esegue automaticamente una compilazione del codice LaTeX, generando il PDF aggiornato senza necessità di intervento manuale.
+
+\subsection{Prossimi Step}
+Le prossime revisioni saranno la \textbf{RTB} (\textit{Requirements and Technology Baseline}) e la \textbf{PB} (\textit{Product Baseline}).
+Esaminiamo bene la documentazione necessaria per la prossima revisione \emph{RTB}:
+\begin{itemize}
+    \item \textit{analisi dei requisiti}
+    \item \textit{piano di progetto}
+    \item \textit{Piano di qualifica}
+    \item \textit{norme di progetto}
+    \item \textit{Glossario}
+    \item \textit{Lettera di presentazione}
+    \item \emph{PoC} \textbf{Proof of Concept}
+\end{itemize}
+Per quanto riguarda il Glossario, riteniamo utile trovare un modo per evidenziare ogni termine in tutti i documenti in cui compare, in modo che al lettore sia chiaro e non ambiguo.
+Riteniamo inoltre opportunuo fissare una chiamata con l'azienda per discutere come affrontare le prossime fasi del progetto.
+
+\section{Conclusioni}
+Abbiamo fissato sul nostro Google Calendar condiviso le riunioni settimanali e gli eventuali impegni di gruppo. Abbiamo deciso di incontrarci possibilmente almeno una volta a settimana il venerdì per discutere dei vari avanzamenti ed di eventuali problemi o criticità. Mentre il Lunedì possiamo discutere di cosa bisogna fare e usare la riunione per assegnarci i diversi compiti da fare mettendoli sulla \textit{Project Board} di GitHub.
+
+\end{document}

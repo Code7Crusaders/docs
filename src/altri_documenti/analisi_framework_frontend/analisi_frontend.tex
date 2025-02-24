@@ -1,0 +1,187 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics[width=1.05\paperwidth]{../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Analisi e confronto tra MAUI, React e Angular}}\\
+    \vspace{5cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    {\large \textbf{Data:}} \today\\
+    
+    \vspace{1cm}
+\end{titlepage}
+\clearpage
+
+% Indice
+\newpage
+\tableofcontents
+\newpage
+
+% Sezione Introduzione
+\section{Obiettivo}
+Questo documento si pone l'obiettivo di confrontare tre framework di sviluppo per applicazioni front-end: MAUI (Multi-platform App UI), React e Angular. Il confronto considera aspetti tecnici, caratteristiche, vantaggi, svantaggi e casi d'uso. La scelta finale ricade su React, motivata da una valutazione completa delle necessit\`a del nostro progetto e delle risorse disponibili.
+
+\section{Caratteristiche dei Framework}
+
+\subsection{MAUI (Multi-platform App UI)}
+MAUI \`e un framework sviluppato da Microsoft che consente la creazione di applicazioni multipiattaforma utilizzando un unico codice base scritto in C\#.
+
+\paragraph*{Caratteristiche principali}
+\begin{itemize}
+    \item \textbf{Linguaggio}: Utilizza C\# e .NET, strumenti consolidati per lo sviluppo.
+    \item \textbf{Multipiattaforma}: Permette di creare applicazioni per Android, iOS, macOS e Windows.
+    \item \textbf{Integrazione con Visual Studio}: Sviluppo semplificato grazie agli strumenti nativi di Microsoft.
+\end{itemize}
+
+\paragraph*{Vantaggi}
+\begin{itemize}
+    \item \textbf{Codice Condiviso}: Riduzione dei tempi di sviluppo grazie all'utilizzo di un unico codice base.
+    \item \textbf{Ecosistema Microsoft}: Forte integrazione con i servizi Microsoft.
+    \item \textbf{Prestazioni native}: Applicazioni con performance elevate su tutte le piattaforme.
+\end{itemize}
+
+\paragraph*{Svantaggi}
+\begin{itemize}
+    \item \textbf{Curva di apprendimento}: Richiede una conoscenza approfondita di .NET e C\#.
+    \item \textbf{Comunit\`a Limitata}: Rispetto a React e Angular, MAUI ha una comunit\`a di sviluppatori pi\`u piccola.
+    \item \textbf{Supporto non uniforme}: Le funzionalit\`a possono variare tra piattaforme.
+\end{itemize}
+
+\subsection{React}
+React \`e una libreria JavaScript sviluppata da Facebook per creare interfacce utente dinamiche e reattive.
+
+\paragraph*{Caratteristiche principali}
+\begin{itemize}
+    \item \textbf{Componenti}: Architettura basata su componenti riutilizzabili.
+    \item \textbf{Virtual DOM}: Aggiornamenti efficienti del DOM grazie al sistema virtuale.
+    \item \textbf{Ecosistema Vastissimo}: Ampia disponibilit\`a di librerie e strumenti.
+\end{itemize}
+
+\paragraph*{Vantaggi}
+\begin{itemize}
+    \item \textbf{Flessibilit\`a}: Pu\`o essere utilizzato con diversi stack tecnologici.
+    \item \textbf{Comunit\`a Attiva}: Documentazione eccellente e supporto continuo da parte della comunit\`a.
+    \item \textbf{Performance}: Aggiornamenti rapidi grazie al Virtual DOM.
+\end{itemize}
+
+\paragraph*{Svantaggi}
+\begin{itemize}
+    \item \textbf{Curva di apprendimento iniziale}: Richiede una comprensione profonda di JSX e del ciclo di vita dei componenti.
+    \item \textbf{Gestione dello stato}: Necessita di librerie aggiuntive come Redux o Context API per progetti complessi.
+\end{itemize}
+
+\subsection{Angular}
+Angular \`e un framework full-stack sviluppato da Google, ideale per applicazioni complesse e scalabili.
+
+\paragraph*{Caratteristiche principali}
+\begin{itemize}
+    \item \textbf{Full-Stack}: Offre un set completo di strumenti per lo sviluppo front-end.
+    \item \textbf{Two-Way Data Binding}: Sincronizzazione automatica tra modello e vista.
+    \item \textbf{TypeScript}: Sviluppo strutturato e mantenibile grazie a TypeScript.
+\end{itemize}
+
+\paragraph*{Vantaggi}
+\begin{itemize}
+    \item \textbf{Robustezza}: Ideale per applicazioni di grandi dimensioni.
+    \item \textbf{Struttura}: Offre un'architettura ben definita e coerente.
+    \item \textbf{Integrazione}: Supporto nativo per funzionalit\`a avanzate come routing e gestione dello stato.
+\end{itemize}
+
+\paragraph*{Svantaggi}
+\begin{itemize}
+    \item \textbf{Complessit\`a}: Curva di apprendimento ripida.
+    \item \textbf{Pesantezza}: Applicazioni iniziali pi\`u lente rispetto a quelle sviluppate con React.
+    \item \textbf{Minor Flessibilit\`a}: Meno adatto a piccoli progetti o applicazioni non standard.
+\end{itemize}
+
+\section{Confronto}
+Il seguente confronto \`e basato su diversi fattori chiave:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Caratteristica} & \textbf{MAUI} & \textbf{React} & \textbf{Angular} \\
+        \hline
+        Facilità di apprendimento & Media & Alta & Bassa \\
+        \hline
+        Performance & Alta (Nativo) & Alta (Virtual DOM) & Media \\
+        \hline
+        Ecosistema & Limitato & Vastissimo & Robusto ma meno flessibile \\
+        \hline
+        Scalabilità & Media & Alta & Alta \\
+        \hline
+        Comunità & Limitata & Ampia & Media \\
+        \hline
+        Flessibilità & Bassa & Alta & Media \\
+        \hline
+    \end{tabular}
+    \caption{Confronto tra MAUI, React e Angular}
+    \label{tab:confronto_framework}
+\end{table}
+
+\section{Conclusioni}
+Dopo un'attenta analisi, la scelta finale ricade su \textbf{React}, grazie ai seguenti motivi:
+
+\begin{itemize}
+    \item \textbf{Facilit\`a di apprendimento e flessibilit\`a}: Ideale per un team con competenze variegate e per progetti di diverse dimensioni.
+    \item \textbf{Ecosistema vasto}: Disponibilit\`a di numerosi strumenti e librerie per semplificare.
+\end{itemize}
+
+\begin{table}[b]
+    \begin{tabular}{@{}p{.5in}p{4in}@{}}
+        Data:  & \hrulefill \\
+               &     		\\
+               &     		\\
+        Firma: & \hrulefill \\
+    \end{tabular}
+    \end{table}
+
+
+\end{document}

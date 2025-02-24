@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Documentazione Progetto}}\\
+    \vspace{5cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+
+% Indice
+\newpage
+\tableofcontents
+\newpage
+
+% Sezione Introduzione
+\section{Domande per le Aziende}\label{sec:domande-aziende}
+\subsection{Domande Generali}\label{subsec:domande-generali}
+\begin{itemize}
+    \item Quali sono gli elementi di complessità maggiore, quindi le parti più difficili da implementare nel progetto?
+    \item Quale strumento che usa l’azienda per eventuali colloqui e chiarimenti specifici, o se ci si può incontrare dal vivo?
+    \item Quali framework possiamo usare per gestire il progetto? 
+    \item Che strumenti o guide sono consigliate per i Testing?
+\end{itemize}
+
+\subsection{Domande per Vimar C2}\label{subsec:domande-vimar}
+\begin{itemize}
+    \item Quale LLM sono più adatte allo scopo tra quelle proposte?
+    \item Come funziona il cloud e se è possibile avere più chiarimenti o consulenze?
+    \item Che frame usare per costruire il server?
+    \item Che framework usare per il sito web, quello più consigliato o se è possibile cambiarlo.
+    \item Se possiamo usare Python per lo sviluppo degli API, altrimenti quali sono le alternative che utilizzabili?
+    \item Cosa intendono nei requisiti obbligatori per “Infrastrutture as Code”?
+\end{itemize}
+
+\subsection{Domande per Ergon C7}\label{subsec:domande-ergon}
+\begin{itemize}
+    \item È possibile \textbf{NON} utilizzare .NET MAUI?
+    \item Quali possono essere le domande più frequenti? Avete qualche esempio o database?
+    \item Come diamo conoscenza all'AI?
+    \item Come misurare l'attendibilità?
+    \item Chiarimenti sulla parte 5. quindi sul vector data storage.
+    \item Embedded model? Cosa sono e come funzionano?
+    \item posgres si può usare come db relazionale?
+    \item che db vettoriale usare?
+    \item che modello llm utilizzare possiamo possiamo usare modelli open source come Bloom ecc consigliato o possiamo usare anche llm propietari tipo openai? In caso ci dicono uno specifico che api usare per l'interrogazione del modello?
+    \item  dati su cui si effettua il training del modello forniti dall'azienda devono essere inseriti in un database relazionale? oppure si potranno raccogliere i dati in formati tipo xml o JSON?
+    \item per la comunicazione tra db e llm possiamo trasformare i dati raccolti in formati tipo JSON per fare interrogazioni a llm?
+\end{itemize}
+
+\subsection{Domande per Azzurro Digitale C9}\label{subsec:domande-azzurro}
+\begin{itemize}
+    \item Ci sono linee guida per le applicazioni di API di terze parti, Come possiamo costruire l'interfaccia delle piattaforme?
+    \item Ci sono alternative tra LangChain e OpenAI?
+    \item Come possiamo raccogliere i dati da tutte le varie piattaforme che dobbiamo usare “Telegram, GitHub..”?
+    \item Abbiamo alternative ad Angular? 
+    \item Che datebase dobbiamo usare?  postgesql usare come database
+\end{itemize}
+
+\subsection{Domande per SanMarco C5}\label{subsec:domande-sanmarco}
+\begin{itemize}
+    \item Esiste qualche dataset da utilizzare per il progetto?
+\end{itemize}
+
+\end{document}
+
