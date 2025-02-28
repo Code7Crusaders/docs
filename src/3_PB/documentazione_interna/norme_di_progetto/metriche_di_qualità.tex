@@ -1,0 +1,854 @@
+\section{Metriche di qualità}
+La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto che rispecchi lo stato dell'arte.
+Per raggiungere tale obiettivo è necessario sfruttare delle pratiche rigorose che consentano lo svolgimento di ogni attività in maniera ottimale.
+Valutando nel miglior modo possibile la qualità del prodotto e l'efficacia dei processi, sono state definite delle metriche riportate di seguito.
+Lo scopo di questa sezione è quello di identificarne i parametri che le metriche devono rispettare per essere considerate accettabili o ottime. Esse sono state suddivise utilizzando lo standard \emph{ISO/IEC 12207:1995},
+il quale separa i processi di ciclo di vita del Software in tre categorie:
+\begin{enumerate}
+    \item Processi di base e/o primari;
+    \item Processi di supporto;
+    \item Processi organizzativi;
+\end{enumerate}
+
+\subsection{Processi di base e/o primari}
+\subsubsection{Fornitura}
+Nella fase di \emph{Fornitura} si definiscono le procedure e le risorse necessarie per la consegna del prodotto.
+Definiamo quindi le seguenti metriche:
+
+
+\paragraph*{1PBM-PV Planed Value}
+\begin{itemize}
+    \item \textbf{Definizione:} il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#planned-value}{Planned Value\textsuperscript{G}} (Valore Pianificato) rappresenta il valore del lavoro programmato per essere completato fino a un determinato momento. Si tratta del budget preventivato per lo sprint in corso.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $PV = BAC \times LP$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $BAC$: Budget At Completion
+    \item $LP$: Percentuale Lavoro Pianificato
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $PV \geq 0$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $PV \leq BAC$
+\end{center}
+
+\paragraph*{2PBM-ETC Estimated to complete}
+\begin{itemize}
+    \item \textbf{Definizione:} l’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#estimate-to-complete}{Estimate to Complete\textsuperscript{G}} (o Stima al Completamento) rappresenta una previsione del costo necessario per completare le attività rimanenti del progetto basata sulle performance attuali.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $ETC = BAC - EV$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $BAC$: Budget At Completion
+    \item $EV$: \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#earned-value}{Earned Value\textsuperscript{G}}
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $ETC \geq 0$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $ETC \leq EAC$
+\end{center}
+
+\paragraph*{3PBM-EAC Estimate at Completition}
+\begin{itemize}
+    \item \textbf{Definizione:} l’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#estimate-at-completion}{Estimate at Completion\textsuperscript{G}} (o Stima da Completare) rappresenta una previsione aggiornata del costo totale del progetto basata sulle performance attuali, calcolata in base ai costi effettivamente sostenuti e ai costi stimati per completare il lavoro rimanente.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $EAC = AC + (BAC - EV)$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $BAC$: Budget At Completion
+    \item $EV$: \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#earned-value}{Earned Value\textsuperscript{G}}
+    \item $AC$: \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#actual-cost}{Actual Cost\textsuperscript{G}}
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $EAC \leq BAC + 10\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $EAC \leq BAC$
+\end{center}
+
+\paragraph*{4PBM-EV Earned Value}
+\begin{itemize}
+    \item \textbf{Definizione:} l’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#earned-value}{Earned Value\textsuperscript{G}} (Valore Guadagnato) rappresenta il valore del lavoro effettivamente completato fino al periodo in analisi.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $EV = AC \times LC$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $LC$: Percentuale di lavoro completato
+    \item $AC$: \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#actual-cost}{Actual Cost\textsuperscript{G}}
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $EV \geq 0$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $EV \leq EAC$
+\end{center}
+
+\paragraph*{5PBM-AC}
+\begin{itemize}
+    \item \textbf{Definizione:} l’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#actual-cost}{Actual Cost\textsuperscript{G}} (Costo Effettivo) rappresenta il costo effettivamente sostenuto per completare il lavoro fino al periodo in analisi.
+    \item \textbf{Come si calcola:} Si ottiene sommando tutti i costi effettivi sostenuti fino a quella data.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $AC \geq 0$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $AC \leq EAC$
+\end{center}
+
+\paragraph*{6PBM-SV Scheduled Variance}
+\begin{itemize}
+    \item \textbf{Definizione:} la Schedule Variance (o Variazione di Programma) rappresenta la differenza tra il valore del lavoro effettivamente completato e il valore del lavoro pianificato, calcolata in percentuale.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $SV = (EV-PV)/EV$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $EV$: \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#earned-value}{Earned Value\textsuperscript{G}}
+    \item $PV$: \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#planned-value}{Planned Value\textsuperscript{G}}
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $SV \geq -10\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $SV \geq 0\%$
+\end{center}
+
+\paragraph*{7PBM-CV Cost Variance}
+\begin{itemize}
+    \item \textbf{Definizione:} la \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#cost-variance}{Cost Variance\textsuperscript{G}} (o Variazione dei Costi) rappresenta la differenza tra il valore del lavoro effettivamente completato e il costo effettivamente sostenuto per completarlo, calcolata in percentuale
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $CV = (EV - AC)/EV$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $EV$: \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#earned-value}{Earned Value\textsuperscript{G}}
+    \item $AC$: \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#actual-cost}{Actual Cost\textsuperscript{G}}
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $CV \geq -10\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $CV \geq 0\%$
+\end{center}
+
+\paragraph*{8PBM-CPI Cost Performance Index}
+\begin{itemize}
+    \item \textbf{Definizione:} il Cost Performance Index rappresenta il rapporto tra il valore del lavoro effettivamente completato e i costi sostenuti per completarlo.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $CPI = EV/AC$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $EV$: \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#earned-value}{Earned Value\textsuperscript{G}}
+    \item $AC$: \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#actual-cost}{Actual Cost\textsuperscript{G}}
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $CPI \geq 0.8$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $CPI \geq 1$
+\end{center}
+
+\paragraph*{9PBM-SPI Scheduled Performance Index}
+\begin{itemize}
+    \item \textbf{Definizione:} lo Schedule Performance Index rappresenta l’efficienza con cui il progetto sta rispettando il programma.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $SPI = EV/PV$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $EV$: \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#earned-value}{Earned Value\textsuperscript{G}}
+    \item $PV$: \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#planned-value}{Planned Value\textsuperscript{G}}
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $SPI \geq 0.8$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $SPI \geq 1$
+\end{center}
+
+\paragraph*{10PBM-OTDR On-Time Delivery Rate}
+\begin{itemize}
+    \item \textbf{Definizione:} l’On-Time Delivery Rate (o Tasso di Consegna nei Tempi) rappresenta la percentuale di attività completate entro la data di scadenza.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $OTDR = AP/AT$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $AP$: Attività completate entro la data di scadenza
+    \item $AT$: Attività Totali
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $OTDR \geq 90\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $OTDR \geq 95\%$
+\end{center}
+
+\subsubsection{Sviluppo}
+Nella fase di \emph{sviluppo} si realizza il prodotto software, seguendo le specifiche definite in fase di progettazione.
+\paragraph*{6.1.2.1 Analisi dei Requisiti}
+Questa fase consiste nell'esaminare le richieste del proponente e nel definire i requisiti che il prodotto dovrà soddisfare. Definiamo quindi le seguenti metriche:
+
+\paragraph*{11PBM-PRO Percentuale Requisiti Obbligatori}
+\begin{itemize}
+    \item \textbf{Definizione:} rappresenta la percentuale di requisiti obbligatori soddisfatti secondo quanto definito nel documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $PRO = ROS/ROT$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $ROS$: Requisiti Obbligatori Soddisfatti
+    \item $ROT$: Requisiti Obbligatori Totali
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $PRO = 100\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $PRO = 100\%$
+\end{center}
+
+\paragraph*{12PBM-PRD Percentuale Requisiti Desiderabili}
+\begin{itemize}
+    \item \textbf{Definizione:} rappresenta la percentuale di requisiti desiderabili soddisfatti secondo quanto definito nel documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $PRD = RDS/RDT$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $RDS$: Requisiti Desiderabili Soddisfatti
+    \item $RDT$: Requisiti Desiderabili Totali
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $PRD \geq 30\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $PRD = 100\%$
+\end{center}
+
+\paragraph*{13PBM-PRF Percentuale Requisiti Facoltativi}
+\begin{itemize}
+    \item \textbf{Definizione:} rappresenta la percentuale di requisiti facoltativi soddisfatti secondo quanto definito nel documento \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#analisi-dei-requisiti}{Analisi dei Requisiti\textsuperscript{G}}.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $PRF = RFS/RFT$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $RFS$: Requisiti Facoltativi Soddisfatti
+    \item $RFT$: Requisiti Facoltativi Totali
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $PRF \geq 0\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $PRF = 100\%$
+\end{center}
+
+\paragraph*{6.1.2.2 Progettazione}
+Questa fase consiste nel definire l'architettura  del prodotto software, in modo da soddisfare i requisiti in fase di analisi. Definiamo quindi le seguenti metriche:
+
+\paragraph*{14PBM-PG Profondità delle gerarchie}
+\begin{itemize}
+    \item \textbf{Definizione:} la profondità delle gerarchie rappresenta il numero massimo di livelli di annidamento delle classi.
+    \item \textbf{Come si calcola:} Si conta il numero massimo di livelli di annidamento delle classi
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $PG \leq 7$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $PG \leq 5$
+\end{center}
+
+\paragraph*{6.1.2.3 Codifica}
+Queste metriche aiutano a valutare la qualità del codice, la complessità e la manutenibilità
+
+\paragraph*{15PBM-PPM Parametri Per Metodo}
+\begin{itemize}
+    \item \textbf{Definizione:} numero medio di parametri passati ai metodi. Un numero elevato di parametri può indicare che un metodo è troppo complesso o che potrebbe essere suddiviso in metodi più piccoli.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $PPM = P/M$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $P$: Numero totale di parametri
+    \item $M$: Numero totale di metodi
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $PPM \leq 7$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $PPM \leq 5$
+\end{center}
+
+\paragraph*{16PBM-CPC Campi per classe}
+\begin{itemize}
+    \item \textbf{Definizione:} numero medio di campi (variabili di istanza) per classe. Un numero elevato di campi dati può indicare che una classe sta facendo troppo e che potrebbe essere suddivisa in classi più piccole.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $CPC = CD/CL$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $CD$: Numero totale di campi dati
+    \item $CL$: Numero totale di classi
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $CPC \leq 8$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $CPC \leq 5$
+\end{center}
+
+\paragraph*{17PBM-LCPC Linea di commento per Metodo}
+\begin{itemize}
+    \item \textbf{Definizione:} numero medio di linee di codice per metodo. Metodi troppo lunghi possono essere difficili da leggere, capire e mantenere.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $LCPM = LC/M$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $LC$: Numero totale di linee di codice
+    \item $M$: Numero totale di metodi
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $LCPM \geq 50$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $LCPM \geq 20$
+\end{center}
+
+\paragraph*{18PBM-CCM Complessità Ciclomatica Metrica}
+\begin{itemize}
+    \item \textbf{Definizione:} la Complessità CicloMatica rappresenta la complessità di un programma sulla base del numero di percorsi lineari indipendenti attraverso il codice sorgente. Un valore elevato indica un codice più complesso e  Potenzialmente più difficile da mantenere.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $CCM = E - N + 2P$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $E$: Numero di archi del grafo
+    \item $N$: Numero di nodi del grafo
+    \item $P$: Numero di componenti connesse
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $CCM \leq 6$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $CCM \leq 3$
+\end{center}
+
+\subsection{Processi di Supporto}
+I \emph{processi di supporto} si affiancano ai processi primari per garantire il corretto svolgimento delle attività.
+\subsubsection{Documentazione}
+La \emph{Documentazione} è un aspetto fondamentale per la comprensione del prodotto e per la sua manutenibilità. A livello pratico consiste nella redazione di manuali e documenti tecnici
+che descrivano il funzionamento del prodotto e le scelte progettuali adottate. Per valutare la qualità di tale processo, sono state definite le seguenti metriche:
+
+\paragraph*{1PSM-IG Indice di Gulpease}
+\begin{itemize}
+    \item \textbf{Definizione:} l’Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Misura la lunghezza delle parole e delle frasi rispetto al numero di lettere.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+   $IG = 89 + (300 \times F - 10 \times L)/P$ 
+\end{center}
+dove:
+\begin{itemize}[label=$\rightarrow$]
+    \item $F$: Numero totale di frasi nel documento;
+    \item $N$: Numero totale di lettere nel documento;
+    \item $P$: Numero totale di parole nel documento;
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $IG \geq 50$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $IG \geq 75$
+\end{center}
+
+\paragraph*{2PSM-CO Correttezza Ortografica}
+\begin{itemize}
+    \item \textbf{Definizione:} la correttezza ortografica indica la presenza di errori ortografici nei documenti.
+    \item \textbf{Come si calcola:} si contano gli errori ortografici presenti nei documenti
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $CO = 0 errori$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $CO = 0 errori$
+\end{center}
+
+\subsubsection{Gestione della Qualità}
+La \emph{gestione della qualità} è un processo che si occupa di definire una metodologia per garantire la qualità del prodotto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
+
+\paragraph*{3PSM-FU Facilità di Utilizzo}
+\begin{itemize}
+    \item \textbf{Definizione:} rappresenta il livello di usabilità del prodotto software mediante il numero di errori riscontrati durante l’utilizzo del prodotto da parte di un utente generico.
+    \item \textbf{Come si calcola:} si contano gli errori riscontrati durante l’utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $FU \leq 3 errori$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $FU \leq 0 errori$
+\end{center}
+
+\paragraph*{4PSM-TA Tempo di Apprendimento}
+\begin{itemize}
+    \item \textbf{Definizione:} indica il tempo massimo richiesto da parte di un utente generico per apprendere l’utilizzo del prodotto.
+    \item \textbf{Come si calcola:} si misura il tempo necessario per apprendere l’utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $TA \leq 12 minuti$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $TA \leq 8 min$
+\end{center}
+
+\paragraph*{5PSM-TR Tempo di Risposta}
+\begin{itemize}
+    \item \textbf{Definizione:} indica il tempo massimo di risposta del sistema sotto carico rilevato.
+    \item \textbf{Come si calcola:} si misura il tempo massimo necessario per ottenere una risposta dal sistema.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $TR \leq 8 secondi$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $TR \leq 4secondi$
+\end{center}
+
+\paragraph*{6PSM-TE Tempo di Elaborazione}
+\begin{itemize}
+    \item \textbf{Definizione:}indica il tempo massimo di elaborazione di un dato grezzo fino alla sua presentazione rilevato
+    \item \textbf{Come si calcola:}si misura il tempo massimo di elaborazione di un dato grezzo dal momento della sua comparsa nel sistema fino alla sua presentazione all’utente.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $TE \leq 10 secondi$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $TE \leq 5secondi$
+\end{center}
+
+\paragraph*{7PSM-QMS Metriche di Qualità Soddisfatte}
+\begin{itemize}
+    \item \textbf{Definizione:}indica il numero di metriche implementate e soddisfatte, tra quelle definite.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#qms}{QMS\textsuperscript{G}} = MS/MT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $MS$: Metriche soddisfatte;
+     \item $MT$: Metriche Totali;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#qms}{QMS\textsuperscript{G}} \geq 90\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#qms}{QMS\textsuperscript{G}} \geq 90\%$
+\end{center}
+
+\subsubsection{Verifica}
+La \emph{verifica} è un processo che si occupa di controllare che il prodotto soddisfi i requisiti
+stabiliti e sia pienamente funzionante. Per valutare la qualità di tale processo, sono state
+definite le seguenti metriche.
+
+\paragraph*{8PSM-CC Code Coverage}
+\begin{itemize}
+    \item \textbf{Definizione:} la Code Coverage indica quale percentuale del codice sorgente è stata eseguita durante i test. Serve per capire quanto del codice è stato verificato dai test automatizzati.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $CC = LE/LT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $LE$: Linee di codice eseguite;
+     \item $LT$: Linee di codice totali;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $CC \geq 80\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $CC \geq 100\%$
+\end{center}
+
+\paragraph*{9PSM-BC Branch Coverage}
+\begin{itemize}
+    \item \textbf{Definizione:} la Branch Coverage indica quale percentuale dei rami decisionali (percorsi derivanti da istruzioni condizionali come if, for, while) del codice è stata eseguita durante i test.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $BC = BE/BT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $BE$: Rami eseguiti;
+     \item $BT$: Rami totali;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $BC \geq 80\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $BC \geq 100\%$
+\end{center}
+
+\paragraph*{10PSM-SC Statement Coverage}
+\begin{itemize}
+    \item \textbf{Definizione:} la Statement Coverage indica quale percentuale di istruzioni del codice è stata eseguita durante i test.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $SC = IE/IT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $IE$: istruzioni eseguite;
+     \item $IT$: istruzioni totali;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $SC \geq 80\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $SC \geq 100\%$
+\end{center}
+
+\paragraph*{11PSM-FD Failure Density}
+\begin{itemize}
+    \item \textbf{Definizione:} la Failure Density indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo rispetto alla dimensione del software stesso.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $FD = DF/LT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $DF$: Difetti Trovati;
+     \item $LT$: linee di codice totali;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $FD \leq 15\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $FD = 0\%$
+\end{center}
+
+\paragraph*{12PSM-PTCP Passed Test Case Percentage}
+\begin{itemize}
+    \item \textbf{Definizione:} la Passed Test Case Percentage indica la percentuale di test che sono stati eseguiti con successo su una base di test.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $PTCP = TS/TT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $TS$: Test superati;
+     \item $TT$: Test totali;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $PTCP \geq 90\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $PTCP \geq 100\%$
+\end{center}
+
+\subsubsection{Risoluzione dei problemi}
+La \emph{risoluzione dei problemi} è un processo che mira a identificare, analizzare e risolvere le
+varie problematiche che possono emergere durante lo sviluppo. La gestione dei rischi,
+in particolare, si occupa di identificare, analizzare e gestire i rischi che possono insorgere
+durante lo svolgimento del progetto. Per valutare la qualità di tale processo, sono state
+definite le seguenti metriche.
+
+\paragraph*{13PSM-RMR Risk Mitigation Rate}
+\begin{itemize}
+    \item \textbf{Definizione:} la Risk Mitigation Rate indica la percentuale di rischi identificati che sono stati mitigati con successo.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $RMR = RM/RT$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $RM$: Rischi mitigati;
+     \item $RT$: Rischi totali identificati;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $RMR \geq 80\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $RMR \geq 100\%$
+\end{center}
+
+\paragraph*{14PSM-NCR Rischi Non Calcolati}
+\begin{itemize}
+    \item \textbf{Definizione:} indica il numero di rischi occorsi che non sono stati preventivati durante l’analisi dei rischi.
+    \item \textbf{Come si calcola:}  si contano i rischi occorsi e non preventivati.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $NCR \leq 3$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $NCR = 3$
+\end{center}
+
+\subsection{Processi organizzativi}
+I \emph{Processi organizzativi} sono processi che si occupano di definire le linee guida e le procedure da seguire per garantire un'efficace gestione e coordinazione del progetto.
+
+\subsubsection{Pianificazione}
+La \emph{Pianificazione} è un processo che si occupa di definire le attività da svolgere e le risorse temporali e umane necessarie per il loro svolgimento. Per valutare la qualità di tale processo sono state definite le seguenti metriche:
+
+\paragraph*{1POM-RSI Requirements Stability Index}
+\begin{itemize}
+    \item \textbf{Definizione:} il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#requirements-stability-index}{Requirements Stability Index\textsuperscript{G}} ($RSI$) indica la percentuale di requisiti che sono rimasti invariati rispetto al totale dei requisiti inizialmente definiti. Si tratta di una metrica utilizzata per misurare quanto i requisiti di un progetto rimangono stabili durante il ciclo di vita del progetto stesso, è particolarmente utile per comprendere l’impatto delle modifiche ai requisiti sul progetto.
+    \item \textbf{Come si calcola:}
+\end{itemize}
+\begin{center}
+    $RSI = \frac{(RI-(RA + RR + RC))}{RI}$ 
+ \end{center}
+ dove:
+ \begin{itemize}[label=$\rightarrow$]
+     \item $RI$: Requisiti iniziali;
+     \item $RA$: Requisiti aggiunti;
+     \item $RR$: Requisiti rimossi;
+     \item $RC$: Requisiti cambiati;
+ \end{itemize}
+\begin{itemize}
+    \item \textbf{Valore ammissibile:}
+\end{itemize}
+\begin{center}
+    $RSI \geq 75\%$
+\end{center}
+\begin{itemize}
+    \item \textbf{Valore ottimo:}
+\end{itemize}
+\begin{center}
+    $RSI = 100\%$
+\end{center}

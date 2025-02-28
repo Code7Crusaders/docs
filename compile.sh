@@ -7,14 +7,30 @@ files=(
     # "./src/DiariDiBordo/Diario_18-11-2024.tex"
     # "./src/DiariDiBordo/Diario_28-10-2024.tex"
     # "./src/DiariDiBordo/Diario_12-11-2024.tex"
+    # "./src/DiariDiBordo/Diario_24-11-18.tex"
+    # "./src/DiariDiBordo/Diario_24-10-28.tex"
+    # "./src/DiariDiBordo/Diario_24-11-12.tex"
+    # "./src/DiariDiBordo/Diario_24-11-25.tex"
+    # "./src/DiariDiBordo/Diario_24-12-02.tex"
+    # "./src/DiariDiBordo/Diario_24-12-09.tex"
+    # "./src/DiariDiBordo/Diario_24-12-18.tex"
+    # "./src/DiariDiBordo/Diario_25-01-08.tex"
+    # "./src/DiariDiBordo/Diario_25-01-13.tex"
 
     # Template
     # "./src/templateC7C/template.tex"
     # "./src/templateC7C/slide.tex"
     # "./src/templateC7C/template-verbali-nuovo/template-verbali.tex"
 
-    # Candidatura
+    # Altri documenti
+    # "src/altri_documenti/analisi_LLM_Bloom_Openai_gpt4/analisi_modelli.tex"
+    # "src/altri_documenti/analisi_framework_frontend/analisi_frontend.tex"
+    # "src/altri_documenti/presentazione_rtb/presentazione_rtb.tex"
+    # "src/altri_documenti/analisi_framework_backend/analisi_backend.tex"
+    # "src/altri_documenti/analisi_dbvettoriale/analisi_vettoriale.tex"
+    # "src/altri_documenti/presentazione_rtb/presentazione_rtb2.tex"
 
+    # Candidatura
     # "./src/1_Candidatura/DomandeProponenti/Domande_Proponenti.tex"
     
     # "./src/1_Candidatura/Lettera_di_Presentazione.tex"
@@ -31,27 +47,14 @@ files=(
     # "./src/1_Candidatura/verbali_interni/verbale_24-10-15_v1.0.tex"
     # "./src/1_Candidatura/verbali_interni/verbale_24-10-25_v1.0.tex"
 
-    # "./src/DiariDiBordo/Diario_24-11-18.tex"
-    # "./src/DiariDiBordo/Diario_24-10-28.tex"
-    # "./src/DiariDiBordo/Diario_24-11-12.tex"
-    # "./src/DiariDiBordo/Diario_24-11-25.tex"
-    # "./src/DiariDiBordo/Diario_24-12-02.tex"
-    # "./src/DiariDiBordo/Diario_24-12-09.tex"
-    # "./src/DiariDiBordo/Diario_24-12-18.tex"
-    # "./src/DiariDiBordo/Diario_25-01-08.tex"
-    # "./src/DiariDiBordo/Diario_25-01-13.tex"
+    # RTB
+    # "./src/2_RTB/documentazione_esterna/piano_di_progetto_v1.0.tex"
+    # "./src/2_RTB/documentazione_esterna/piano_di_progetto_v1.0.tex"
+    # "./src/2_RTB/documentazione_esterna/piano_di_qualifica_v1.0.tex"
+    # "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti_v2.0.tex"
     
-    # "./src/templateC7C/template.tex"
-    # "./src/templateC7C/slide.tex"
-    # "./src/templateC7C/template-verbali-nuovo/template-verbali.tex"
-
-    "./src/2_RTB/documentazione_esterna/piano_di_progetto_v1.0.tex"
-    "./src/2_RTB/documentazione_esterna/piano_di_progetto_v1.0.tex"
-    "./src/2_RTB/documentazione_esterna/piano_di_qualifica_v1.0.tex"
-    "./src/2_RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti_v2.0.tex"
-    
-    "./src/2_RTB/documentazione_interna/glossario_v1.0.tex"
-    "./src/2_RTB/documentazione_interna/norme_di_progetto_v1.0.tex"  
+    # "./src/2_RTB/documentazione_interna/glossario_v1.0.tex"
+    # "./src/2_RTB/documentazione_interna/norme_di_progetto_v1.0.tex"  
     
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
     # "./src/2_RTB/verbali_esterni/verbale_24-11-14_v1.0.tex"
@@ -59,29 +62,39 @@ files=(
     #  "./src/2_RTB/verbali_esterni/verbale_25-01-27_v1.0.tex"
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
 
-    "./src/2_RTB/verbali_interni/verbale_24-11-04_v1.0.tex" 
-    "./src/2_RTB/verbali_interni/verbale_24-11-15_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_24-11-22_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_24-11-29_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_24-12-07_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_24-12-13_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_24-12-19_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_25-01-18_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_25-01-24_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_25-02-04_v1.0.tex"
-    "./src/2_RTB/verbali_interni/verbale_25-02-07_v1.0.tex"
-
-    "src/altri_documenti/analisi_LLM_Bloom_Openai_gpt4/analisi_modelli.tex"
-    "src/altri_documenti/analisi_framework_frontend/analisi_frontend.tex"
-    "src/altri_documenti/presentazione_rtb/presentazione_rtb.tex"
-    "src/altri_documenti/analisi_framework_backend/analisi_backend.tex"
-    "src/altri_documenti/analisi_dbvettoriale/analisi_vettoriale.tex"
-    "src/altri_documenti/presentazione_rtb/presentazione_rtb2.tex"
+    # "./src/2_RTB/verbali_interni/verbale_24-11-04_v1.0.tex" 
+    # "./src/2_RTB/verbali_interni/verbale_24-11-15_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_24-11-22_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_24-11-29_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_24-12-07_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_24-12-13_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_24-12-19_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_25-01-18_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_25-01-24_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_25-02-04_v1.0.tex"
+    # "./src/2_RTB/verbali_interni/verbale_25-02-07_v1.0.tex"
 
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
     # "./src/2_RTB/lettera_di_presentazione.tex"
     # ----- NON TOCCARE CHE MANCA FIRMA CON QUESTA COMPILAZIONE -----
 
+
+    # PB
+
+    "./src/3_PB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti_v2.0.tex"
+    "./src/3_PB/documentazione_esterna/piano_di_progetto/piano_di_progetto_v1.0.tex"
+    "./src/3_PB/documentazione_esterna/piano_di_qualifica/piano_di_qualifica_v1.0.tex"
+    # "./src/3_PB/documentazione_esterna/manuale_utente/..."
+    # "./src/3_PB/documentazione_esterna/specifica_tecnica/..."
+
+    "./src/3_PB/documentazione_interna/glossario/glossario_v1.0.tex"
+    "./src/3_PB/documentazione_interna/norme_di_progetto/norme_di_progetto_v1.0.tex"
+
+    # "./src/3_PB/verbali_esterni/..."
+
+    # "./src/3_PB/verbali_interni/..."
+
+    # "./src/3_PB/lettera_di_presentazione/..."
 )
 
 current_dir=$(pwd)

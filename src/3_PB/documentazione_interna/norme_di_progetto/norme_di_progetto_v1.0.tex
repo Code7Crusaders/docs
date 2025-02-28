@@ -1,0 +1,119 @@
+\documentclass{article}
+
+\input{variables}
+\input{packages}
+\input{subX6_section}
+
+\usepackage{enumitem}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+% Sezione del titolo
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics[scale=1.001]{../../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    \large \textbf{Norme Di Progetto}
+    \vspace{3.9cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+
+
+
+\newpage
+%------------------------Versioni
+\begin{center}
+    \textbf{Versioni}
+    \\
+    \vspace{0.3cm}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Ver} & \textbf{Data} & \textbf{Redattore} & \textbf{Verificatore} & \textbf{descrizione}\\
+        \hline
+        1.0 & 10/02/2025 & Matthew Pan & Francesco Lapenna & Correzioni e approvazione documento \\ 
+        0.9 & 18/12/2024 & Gabriele Di Pietro & Tommaso Diviesti & Stesura parte 6 \\ 
+        0.8 & 17/12/2024 & Matthew Pan &   Gabriele Di Pietro & Fine stesura sezione 3\\
+        0.7 & 15/12/2024 & Eddy Pinarello & Tommaso Diviesti & Fine stesura sezione 4\\
+        0.6 & 10/12/2024 & Matthew Pan & Francesco Lapenna & Ultimata sezione 3\\
+        0.5 & 05/12/2024 & Eddy Pinarello & Matthew Pan       & Prima stesura sezione 4\\
+        0.4 & 25/11/2024 & Eddy Pinarello & Mattehw Pan       & Stesura sezione 3\\
+        0.3 & 21/11/2024 & Matthew Pan &    Eddy Pinarello    & Completamento sezione 2\\
+        0.2 & 18/11/2024 & Matthew Pan &    Eddy Pinarello    & Stesura sezione 2\\
+        0.1 & 12/11/2024 & Matthew Pan & Enrico Cotti Cottini & Prima stesura delle sezioni 1 e 2\\
+        \hline
+    \end{tabular}
+\end{center}
+%----------------
+
+
+\newpage
+%------------------------Indice
+\tableofcontents
+\listoftables
+\listoffigures
+
+ 
+\newpage
+%------------------------Introduzione
+\input{introduzione.tex}
+
+\newpage
+%------------------------Proecssi Primari
+\input{processi_primari.tex}
+
+\newpage
+%------------------------Proecssi di Supporto
+\input{processi_di_supporto.tex}
+
+\newpage
+%------------------------Proecssi organizzativi
+\input{processi_organizzativi.tex}
+
+%------------------------Standard per la qualità
+\input{standard_per_la_qualità.tex}
+
+\newpage
+%------------------------Metriche di qualità
+\input{metriche_di_qualità.tex}
+
+\end{document}
