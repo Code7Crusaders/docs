@@ -62,90 +62,116 @@ Dove \textbf{Tipo} può essere:
 	\textbf{Codice} & \textbf{Fonte} & \textbf{Descrizione}\\\hline
 	\endhead
 	\hline
-	\textbf{RFO1} & Capitolato & Il sistema riceve in ingresso i dati semantici aziendali da cui apprendere la conoscenza. I documenti accettati in ingresso dal componente dovranno rispettare i formati previsti (\texttt{.pdf, .txt}) \\
+	\textbf{RFO1} & Capitolato, Interno & L'amministratore inserisce dalla pagina di gestione i dati semantici aziendali da cui apprendere la conoscenza da file in formato .pdf. \\
 	\hline
-	\textbf{RFO2} & Capitolato & I testi recuperati dai documenti verranno suddivisi in blocchi, ovvero pezzi più piccoli di dati che rappresentano una piccola porzione del contesto\\
+	\textbf{RFO2} & Capitolato, Interno & L'amministratore inserisce dalla pagina di gestione i dati semantici aziendali da cui apprendere la conoscenza da file in formato .txt. \\
 	\hline
-	\textbf{RFO3} & Capitolato & \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{Embedding\textsuperscript{G}} model è il componente che riceverà in ingresso i blocchi di testo e lì trasformerà in rappresentazioni vettoriali\\
+	\textbf{RFO3} & Capitolato & I testi recuperati dai documenti verranno suddivisi in blocchi, ovvero pezzi più piccoli di dati che rappresentano una piccola porzione del contesto. \\
 	\hline
-	\textbf{RFO4} & Capitolato & I vettori generati verranno memorizzati all’interno di un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#database-vettoriale}{database vettoriale\textsuperscript{G}} e opportunamente indicizzati\\
+	\textbf{RFO4} & Capitolato & I vettori generati verranno memorizzati all’interno di un database vettoriale e opportunamente indicizzati. \\
 	\hline
-	\textbf{RFO5} & Capitolato, Esterno & Da un’interfaccia utente della web app, viene catturata una domanda da parte dell’utente\\
+	\textbf{RFO5} & Capitolato, Esterno & Da un’interfaccia utente della web app, viene catturata una domanda da parte dell’utente. \\
 	\hline
-	\textbf{RFO6} & Capitolato & La domanda viene inoltrata al sistema attraverso delle \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}} risiedenti in un Web Server\\
+	\textbf{RFO6} & Capitolato & La domanda viene inoltrata al sistema attraverso delle API REST risiedenti in un Web Server. \\
 	\hline
-	\textbf{RFO7} & Capitolato & La query ricevuta viene gestita dall’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{Embedding\textsuperscript{G}} Model che trasforma la domanda in rappresentazione vettoriale \\
+	\textbf{RFO7} & Capitolato & La rappresentazione vettoriale viene utilizzata per effettuare una ricerca all’interno del database vettoriale da dove vengono reperiti i vettori più simili. \\
 	\hline
-	\textbf{RFO8} & Capitolato & La rappresentazione vettoriale viene utilizzata per effettuare una ricerca all’interno del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#database-vettoriale}{database vettoriale\textsuperscript{G}} da dove vengono reperiti i vettori più simili\\
+	\textbf{RFO8} & Capitolato & La domanda viene inviata al sistema LLM tramite API. \\
 	\hline
-	\textbf{RFO9} & Capitolato & Sia la domanda sia i risultati della ricerca nel \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#database-vettoriale}{database vettoriale\textsuperscript{G}}, vengono inviati al sistema \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} che costruirà la risposta utilizzando il contesto fornito\\
+	\textbf{RFO9} & Capitolato & Viene attesa la risposta dall'LLM tramite API. \\
 	\hline
-	\textbf{RFO10} & Capitolato & Attraverso \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}, il sistema inoltra la riposta all'account dell’utente\\
+	\textbf{RFO10} & Capitolato & Attraverso API REST, il sistema inoltra la risposta all'account dell’utente. \\
 	\hline
-	\textbf{RFO11} & Interno & Il sistema deve permettere all'utente registrato di effettuare una conversazione con il bot\\
+	\textbf{RFO11} & Interno & L'utente deve essere in grado di ottenere informazioni riguardo un prodotto attraverso la conversazione con il bot. \\
 	\hline
-	\textbf{RFO12} & Interno & L'utente deve essere in grado di ottenere informazioni riguardo un prodotto o una serie di prodotti attraverso la conversazione con il bot\\
+	\textbf{RFO12} & Interno & L'utente deve essere in grado di ottenere informazioni riguardo una serie di prodotti attraverso la conversazione con il bot. \\
 	\hline
-	\textbf{RFO13} & Interno & L'utente deve essere in grado di salvare una conversazione avviata\\
+	\textbf{RFO13} & Interno & La conversazione tra utente e bot deve essere salvata. \\
 	\hline
-	\textbf{RFO14} & Interno & L'utente deve essere in grado di visualizzare le conversazioni precedentemente salvate\\
+	\textbf{RFO14} & Interno & L'utente deve essere in grado di visualizzare una delle conversazioni precedentemente salvate. \\
 	\hline
-	\textbf{RFO15} & Interno & L'utente deve essere in grado di visualizzare e riprendere una intera conversazione singola salvata\\
+	\textbf{RFO15} & Interno & L'utente deve essere in grado di riprendere una delle conversazioni precedentemente salvata. \\
 	\hline
-	\textbf{RFO16} & Interno & L'utente o L'amministratore devono poter accedere al sistema inserendo Username e Password\\
+	\textbf{RFO16} & Interno & L'utente o l'amministratore devono poter accedere al sistema inserendo Username e Password. \\
 	\hline
-	\textbf{RFO17} & Interno & Il sistema deve bloccare utenti non registrati\\
+	\textbf{RFO17} & Interno & L'utente si registra inserendo Username e Password. \\
 	\hline
-	\textbf{RFO18} & Interno & Il sistema deve bloccare qualsiasi tentativo di rottura del sistema (SQL Injection...)\\
+	\textbf{RFO18} & Interno & Gli input del form di registrazione devono essere sanificati per prevenire attacchi SQL Injection. \\
 	\hline
-	\textbf{RFO19} & Interno, Esterno & L'utente deve essere in grado di dare un feedback sulla qualità della conversazione dopo averla provata\\
+	\textbf{RFO19} & Interno & Gli input del form di accesso devono essere sanificati per prevenire attacchi SQL Injection. \\
 	\hline
-	\textbf{RFO20} & Esterno & L'amministratore deve essere in grado di creare \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} di domande e risposta\\
+	\textbf{RFO20} & Interno, Esterno & L'utente deve essere in grado di dare un feedback (thumbsup/thumbsdown) sulla qualità della conversazione dopo averla provata. \\
 	\hline
-	\textbf{RFO21} & Esterno & L'amministratore deve essere in grado di modificare \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} di domande e risposta\\
+	\textbf{RFO21} & Esterno & L’accesso alla dashboard dei "template di domanda e risposta" è consentito solo agli utenti con ruolo di amministratore. \\
 	\hline
-	\textbf{RFO22} & Interno & L'amministratore deve essere in grado di eliminare un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} precedentemente creato\\
+	\textbf{RFO22} & Esterno & Dopo l’accesso da parte dell'amministratore, la pagina di gestione mostra la dashboard dei "template di domanda e risposta". \\
 	\hline
-	\textbf{RFF23} & Interno, Esterno & Il sistema deve poter fermare la creazione di un formato \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} invalido\\
+	\textbf{RFO23} & Esterno & Un "template di domanda e risposta" è formato da una domanda (possibilmente una domanda posta frequentemente che l'amministratore decide di inserire per risparmiare una chiamata al modello) associata ad una corrispondente risposta. \\
 	\hline
-	\textbf{RFO24} & Interno & L'amministratore deve aver accesso ad una dashboard che gli permetta di monitorare le prestazioni di sistema\\
+	\textbf{RFO24} & Esterno & L'amministratore deve essere in grado di creare un template, che è formato da una domanda associata ad una corrispondente risposta. \\
 	\hline
-	\textbf{RFO25} & Interno & L'amministratore deve poter Visuallizzare i feedback dati dagli utenti\\
+	\textbf{RFO25} & Esterno & L'amministratore deve essere in grado di modificare uno dei template esistenti. \\
 	\hline
-	\textbf{RFO26} & Esterno & L'amministratore deve poter importare dati da un documento esterno\\
+	\textbf{RFO26} & Interno & L'amministratore deve essere in grado di eliminare un template esistente. \\
 	\hline
-	\textbf{RFO27} & Esterno & Il sistema deve poter fermare l'importazione dati di file non compatibili\\
+	\textbf{RFO27} & Interno, Esterno & Il sistema deve poter fermare la creazione di un template invalido, ovvero quando il template non rispetta il formato Json. \\
 	\hline
-	\textbf{RFO28} & Interno & L'utente deve poter eliminare una conversazione precedentemente effettuata\\
+	\textbf{RFO28} & Interno & L'amministratore deve poter accedere alla dashboard di monitoraggio delle metriche. \\
 	\hline
-	\textbf{RFD29} & Esterno & L'utente deve poter mandare richieste di assistenza per poter parlare con un operatore umano\\
+	\textbf{RFO29} & Interno & L’accesso alla dashboard delle metriche delle run è consentito solo agli utenti con ruolo di amministratore. \\
 	\hline
-	\textbf{RFO30} & Esterno & L'amministratore deve poter visualizzare le richieste di assistenza ricevute da parte dell'utente\\
+	\textbf{RFO30} & Interno & Dopo l’accesso da parte dell'amministratore, la pagina di gestione mostra la dashboard delle metriche delle run. \\
 	\hline
-	\textbf{RFD31} & Interno & L'amministratore deve poter segnalare ad altri amministratori che una richiesta è stata presa in carico\\
+	\textbf{RFD31} & Interno & L’amministratore deve poter selezionare criteri di filtro per visualizzare solo le run di interesse. \\
 	\hline
-	\textbf{RFD32} & Esterno, Interno & L'ammistratore deve essere in grado di poter rispondere all'utente tramite contatto via e-mail\\
+	\textbf{RFD32} & Interno & Il sistema deve permettere la selezione di filtri come ID, nome, input, data di inizio e fine, errore, output, tag, numero di token, costo. \\
 	\hline
-	\textbf{RFO33} & Interno & L'amministratore deve essere in grado di visualizzare l'utilizzo generale degli utenti del servizio\\
+	\textbf{RFF33} & Interno & Una volta selezionati i filtri, il sistema deve aggiornare la visualizzazione senza ricaricare l'intera pagina. \\
 	\hline
-	\textbf{RFD34} & Interno & L'amministratore deve essere in grado di visualizzare i costi del sistema\\
+	\textbf{RFO34} & Interno & Se nessun filtro è selezionato, il sistema mostra le prime dieci run per impostazione predefinita. \\
 	\hline
-	\textbf{RFO35} & Interno, Esterno & Ogni messaggio lasciato dal bot può essere valutato pertanto è necessario che questo dato venga salvato in modo (positivo/negativo)\\
-	\hline 
-	\textbf{RFO36} & Interno & Un Amministratore deve poter modificare o aggiungere un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} pertanto è necessario garantire la persistenza dell'ultima modifica.\\
+	\textbf{RFD35} & Interno & Dopo aver applicato i filtri, l’amministratore deve poter visualizzare le metriche principali delle run selezionate. \\
 	\hline
-	\textbf{RFD37} & Interno & Ogni Prodotto può essere mostrato con una propria immagine\\
+	\textbf{RFD36} & Interno & Il sistema deve mostrare le metriche principali delle run filtrate (ID, nome, input, data di inizio e fine, errore, output, tag, token totali, costo totale). \\
 	\hline
-	\textbf{RFO38} & Interno (Analisi Vettoriale) & I Documenti inseriti da Amministratore, devono essere spezzattati ed embeddati tramite il modello di embedding (Openai embedded large), per essere vettorializzati\\
+	\textbf{RFF37} & Interno & La visualizzazione deve essere chiara e strutturata, con possibilità di ordinare le colonne. \\
 	\hline
-	\textbf{RFD39} & Interno (Analisi Backend) & Le metriche delle run del chatbot devono essere esportatabili in JSON\\
+	\textbf{RFO38} & Interno & L'amministratore deve poter visualizzare i feedback dati dagli utenti. \\
 	\hline
-	\textbf{RFD40} & Interno (Analisi Backend) & Le metriche della run devono includere i seguenti valori: ID univoco della run, nome assegnato alla sessione, dati di input elaborati dal modello, timestamp di avvio e completamento dell'esecuzione, eventuali errori incontrati, risultato generato dal modello, numero totale di token utilizzati e stima dei costi basata sul consumo di token.\\
+	\textbf{RFO39} & Esterno & Il sistema deve poter rifiutare l'importazione dati di file non compatibili, ovvero file non nel formato pdf o txt. \\
 	\hline
-	\textbf{RFO41} & Interno & Il bot per rispondere ad una domanda deve ricordarsi i messaggi precedenti nella singola conversazione\\
+	\textbf{RFO40} & Interno & L'utente deve poter eliminare una conversazione precedentemente effettuata. \\
 	\hline
-    \textbf{RFD42} & Interno & Il sistema deve notificare l'utente quando la memoria per le chat salvate è piena e non è possibile salvare ulteriori conversazioni\\
-    \hline
+	\textbf{RFO41} & Esterno & L'utente deve poter mandare richieste di assistenza per poter parlare con un operatore umano. \\
+	\hline
+	\textbf{RFO42} & Interno & L’accesso alla dashboard delle richieste di assistenza è consentito solo agli utenti con ruolo di amministratore. \\
+	\hline
+	\textbf{RFO43} & Interno & Dopo l’accesso da parte dell'amministratore, la pagina di gestione mostra la dashboard delle richieste di assistenza. \\
+	\hline
+	\textbf{RFO44} & Esterno & L'amministratore deve poter visualizzare le richieste di assistenza ricevute da parte dell'utente. \\
+	\hline
+	\textbf{RFO45} & Interno & L'amministratore deve poter segnalare ad altri amministratori che una richiesta è stata presa in carico. \\
+	\hline
+	\textbf{RFD46} & Esterno, Interno & L'amministratore deve essere in grado di poter rispondere all'utente tramite contatto via e-mail. \\
+	\hline
+	\textbf{RFD47} & Interno & Le metriche delle run del chatbot devono essere esportabili in JSON. \\
+	\hline
+	\textbf{RFD48} & Interno & Le metriche della run devono includere ID univoco della run, nome assegnato alla sessione, dati di input elaborati dal modello, timestamp di avvio e completamento dell'esecuzione, eventuali errori incontrati, risultato generato dal modello, numero totale di token utilizzati e stima dei costi basata sul consumo di token. \\
+	\hline
+	\textbf{RFO49} & Interno & Il bot per rispondere a una domanda deve ricordarsi i messaggi precedenti nella singola conversazione. \\
+	\hline
+	\textbf{RFD50} & Interno & Il sistema deve notificare l'utente quando la memoria per le chat salvate è piena e non è possibile salvare ulteriori conversazioni. \\
+	\hline
+	\textbf{RFO51} & Interno & L'utente seleziona una delle domande tra quelle predefinite. \\
+	\hline
+	\textbf{RFO52} & Interno & L'utente deve essere in grado di visualizzare una lista delle conversazioni precedentemente salvate. \\
+	\hline
+	\textbf{RFO53} & Interno & La lunghezza massima dell'username è di 256 caratteri. \\
+	\hline
+	\textbf{RFO54} & Interno & La lunghezza massima della password è di 256 caratteri. \\
+	\hline
+	\textbf{RFO55} & Interno & Il Sistema rifiuta la registrazione di un nuovo account con username già presente. \\
+	\hline
 	\caption{Requisiti funzionali}
 \end{longtable}
 
