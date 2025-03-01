@@ -1,0 +1,91 @@
+\documentclass{article}
+
+\input{packages}
+\usepackage{graphicx}
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+
+\begin{titlepage} 
+
+    \AddToHookNext{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {
+    \includegraphics{../../../img/background.png}
+    };
+    \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../../img/logo/7Crusaders_logo.png} % Aggiungi il logo qui
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    \large \textbf{Specifica Tecnica}
+    \vspace{3.9cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+
+
+
+\newpage
+%------------------------Versioni
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \setlength{\tabcolsep}{5pt}
+    \begin{tabular}{|c|c|c|c|m{0.35\textwidth}|}
+        \hline
+        \textbf{Ver} & \textbf{Data} & \textbf{Redattore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+        \hline
+        0.1 & 1/03/2025 & Eddy Pinarello &  & Prima stesura del documento \\
+        \hline
+    \end{tabular}
+\end{table}
+
+%----------------
+
+\newpage
+\tableofcontents
+\listoftables
+\listoffigures
+
+\newpage
+
+\input{introduzione}
+
+\newpage
+
+\input{lista_tecnologie}
+
+\newpage
+
+\input{architettura}
+
+\newpage
+
+\input{requisiti}
+
+\end{document}
