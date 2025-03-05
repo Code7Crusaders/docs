@@ -90,7 +90,7 @@ files=(
     # "./src/3_PB/documentazione_interna/glossario/glossario_v1.0.tex"
     # "./src/3_PB/documentazione_interna/norme_di_progetto/norme_di_progetto_v1.0.tex"
 
-    "./src/3_PB/verbali_esterni/verbale_25-03-04_v0.1.tex"
+    "./src/3_PB/verbali_esterni/verbale_25-03-04_v1.0.tex"
 
     "./src/3_PB/verbali_interni/verbale_25-02-28_v1.0.tex"
 
