@@ -62,7 +62,7 @@
     {\Large Software Development Team}\\
     \vspace{2cm}
     
-    {\large \textbf{Titolo del Verbale}}\\ % TODO: inserire titolo del verbale
+    {\large \textbf{Incontro del 04/03/2025 con Ergon}}\\ % TODO: inserire titolo del verbale
     \vspace{5cm}                           % esempio: Riunione Settimanale 04/11/2024
     
     
@@ -87,7 +87,7 @@
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
     \hline
-    0.1 & DD/MM/YYYY & Nome Autore & Nome Verificatore & Prima stesura del documento \\ 
+    0.1 & 05/03/2025 & Lapenna Francesco & Nome Verificatore & Prima stesura del documento \\ 
     \hline                                  % TODO: inserire data, nomi e descrizione
 \end{tabular}
 \end{table}
@@ -105,9 +105,9 @@
 % Registro Presenze %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Registro Presenze}
-\textbf{Piattaforma della riunione:} Piattaforma Discord \\
-\textbf{Ora di Inizio} hh:mm\\
-\textbf{Ora di Fine} hh:mm\\  % TODO: inserire orari ed eventualmente piattaforma
+\textbf{Piattaforma della riunione:} Piattaforma Zoom \\
+\textbf{Ora di Inizio} 09:30\\
+\textbf{Ora di Fine} 10:00\\  % TODO: inserire orari ed eventualmente piattaforma
 \\
 \begin{tabular}{|c|c|c|}  % TODO: inserire ruoli e presenze
     \hline
@@ -140,8 +140,6 @@
         \hline
         Gianluca Carlesso & Rappresentante Azienda \\
         \hline
-        Anna Tieppo & Rappresentante Azienda \\
-        \hline
     \end{tabular}
 }{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -154,18 +152,59 @@
     % TODO: per ogni punto discusso / attività svolta
     % inserire una sottosezione, sintesi ed eventuali decisioni
 
-    \subsection{Attività 1}
-    \textbf{Sintesi:} Sintesi attività 1. \\
-    \textbf{Decisioni:} Decisioni attività 1.
+    \subsection{Negoziazione Requisiti}
+    \textbf{Sintesi:} A causa di un ritardo nel progetto, come indicato nella correzione 
+    del colloquio RTB, sono stati negoziati alcuni requisiti con l'azienda. \\
+    In particolare i requisiti riguardanti il monitoraggio delle metriche da parte 
+    dell'amministratore, i quali sono stati ritenuti non essenziali.
+    \textbf{Decisioni:} I seguenti requisiti funzionali diventano facoltativi:
 
-    \subsection{Attività 2}
-    \textbf{Sintesi:} Sintesi attività 2. \\
-    \textbf{Decisioni:} Decisioni attività 2.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\arraybackslash}m{0.6\textwidth}|}
+    	\hline
+    	\textbf{Codice} & \textbf{Fonte} & \textbf{Descrizione}\\\hline
+    	\endfirsthead
+    	\hline
+    	\textbf{Codice} & \textbf{Fonte} & \textbf{Descrizione}\\\hline
+    	\endhead
+    	\hline
+    	\textbf{RFO28} & Interno 			& L'amministratore deve poter accedere alla dashboard di monitoraggio delle metriche. \\
+    	\hline
+    	\textbf{RFO29} & Interno 			& L’accesso alla dashboard delle metriche delle run è consentito solo agli utenti con ruolo di amministratore. \\
+    	\hline
+    	\textbf{RFO30} & Interno 			& Dopo l’accesso da parte dell'amministratore, la pagina di gestione mostra la dashboard delle metriche delle run. \\
+    	\hline
+    	\textbf{RFD31} & Interno 			& L’amministratore deve poter selezionare criteri di filtro per visualizzare solo le run di interesse. \\
+    	\hline
+    	\textbf{RFD32} & Interno 			& Il sistema deve permettere la selezione di filtri come ID, nome, input, data di inizio e fine, errore, output, tag, numero di token, costo. \\
+    	\hline
+    	\textbf{RFF33} & Interno 			& Una volta selezionati i filtri, il sistema deve aggiornare la visualizzazione senza ricaricare l'intera pagina. \\
+    	\hline
+    	\textbf{RFO34} & Interno 			& Se nessun filtro è selezionato, il sistema mostra le prime dieci run per impostazione predefinita. \\
+    	\hline
+    	\textbf{RFD35} & Interno 			& Dopo aver applicato i filtri, l’amministratore deve poter visualizzare le metriche principali delle run selezionate. \\
+    	\hline
+    	\textbf{RFD36} & Interno 			& Il sistema deve mostrare le metriche principali delle run filtrate (ID, nome, input, data di inizio e fine, errore, output, tag, token totali, costo totale). \\
+    	\hline
+    	\textbf{RFF37} & Interno 			& La visualizzazione deve essere chiara e strutturata, con possibilità di ordinare le colonne. \\
+    	\hline
+    	\textbf{RFD47} & Interno 			& Le metriche delle run del chatbot devono essere esportabili in JSON. \\
+    	\hline
+    	\textbf{RFD48} & Interno 			& Le metriche della run devono includere ID univoco della run, nome assegnato alla sessione, dati di input elaborati dal modello, timestamp di avvio e completamento dell'esecuzione, eventuali errori incontrati, risultato generato dal modello, numero totale di token utilizzati e stima dei costi basata sul consumo di token. \\
+    	\hline
+    	\caption{Requisiti funzionali}
+    \end{longtable}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+    % \subsection{Attività 2}
+    % \textbf{Sintesi:} Sintesi attività 2. \\
+    % \textbf{Decisioni:} Decisioni attività 2.
 
     % ...
 
-    \subsection*{Conclusioni}  % TODO: inserire conclusioni della riunione
-    Prossima riunione pianificata per il \textbf{D° Month YYYY}.
+    % \subsection*{Conclusioni}  % TODO: inserire conclusioni della riunione
+    % Prossima riunione pianificata per il \textbf{D° Month YYYY}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
