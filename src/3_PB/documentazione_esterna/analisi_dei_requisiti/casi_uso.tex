@@ -176,41 +176,25 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \end{figure}
 \newpage
 
-\subsubsection{U.C.6.3 Password Errata}
+\subsubsection{U.C.6.3 Visualizza Errore Credenziali Errate}
 \begin{itemize}
     \item \textbf{Attore}: Utente
-    \item \textbf{Precondizioni}: L'utente ha inserito una password non corrispondente a quella registrata.
-    \item \textbf{Postcondizioni}: L'accesso viene negato e il sistema visualizza un messaggio di errore.
-    \item \textbf{Scenario principale}: L'utente inserisce una password sbagliata. Il sistema verifica le credenziali, rileva l'errore e mostra un messaggio che informa l'utente dell'errore.
+    \item \textbf{Precondizioni}: L'utente ha inserito una password o un username errato.
+    \item \textbf{Postcondizioni}: L'accesso viene negato e all'utente viene notificato un messaggio di errore.
+    \item \textbf{Scenario principale}: L'utente inserisce una password o un username errato. Il sistema verifica le credenziali, rileva l'errore e mostra un messaggio che informa l'utente dell'errore.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
 \end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{img/UC6.3.png}
-    \caption{U.C.6.3 Password Errata}
+    \includegraphics[width=0.8\textwidth]{img/NUOVO6.3.png}
+    \caption{U.C.6.3 Visualizza Errore Credenziali Errate}
 \end{figure}
+
 \newpage
 
-\subsubsection{U.C.6.4 Username Errato}
-\begin{itemize}
-    \item \textbf{Attore}: Utente
-    \item \textbf{Precondizioni}: L'utente ha inserito un username non registrato o con errori di battitura.
-    \item \textbf{Postcondizioni}: L'accesso viene negato e il sistema visualizza un messaggio di errore.
-    \item \textbf{Scenario principale}: L'utente digita un username inesistente. Il sistema verifica i dati e notifica l'errore.
-    \item \textbf{Generalizzazioni}: -
-    \item \textbf{Estensioni}: -
-    \item \textbf{Inclusione}: -
-\end{itemize}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{img/UC6.4.png}
-    \caption{U.C.6.4 Username Errato}
-\end{figure}
-\newpage
-
-\subsubsection{U.C.6.5 Caratteri non Validi}
+\subsubsection{U.C.6.4 Caratteri non Validi}
 \begin{itemize}
     \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L'utente inserisce dati che contengono caratteri non ammessi.
@@ -222,12 +206,12 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{img/UC6.5.1.png}
+    \includegraphics[width=0.6\textwidth]{img/NUOVO6.4.1.png}
     %\caption{U.C.6.5 Caratteri non Validi}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{img/UC6.5.2.png}
+    \includegraphics[width=0.6\textwidth]{img/NUOVO6.4.2.png}
     \caption{U.C.6.5 Caratteri non Validi}
 \end{figure}
 \newpage
@@ -339,20 +323,20 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \end{figure}
 \newpage
 
-\subsubsection{U.C.7.6 Username già presente}
+\subsubsection{U.C.7.6 Visualizza Errore durante la Registrazione}
 \begin{itemize}
     \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L'utente inserisce un username già esistente nel sistema.
-    \item \textbf{Postcondizioni}: La registrazione viene interrotta e il sistema suggerisce di scegliere un altro username.  
-    \item \textbf{Scenario principale}: L'utente tenta di registrarsi con uno username già utilizzato e il sistema blocca l'operazione con un messaggio informativo. 
+    \item \textbf{Postcondizioni}: La registrazione viene interrotta e l'utente viene notificato dell'errore.  
+    \item \textbf{Scenario principale}: L'utente tenta di registrarsi con uno username già utilizzato e il sistema blocca l'operazione con un messaggio informativo che lo avvisa dell'errore avvenuto. 
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
 \end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{img/UC7.6.png}
-    \caption{U.C.7.6 Username già presente}
+    \includegraphics[width=0.8\textwidth]{img/NUOVO7.6.png}
+    \caption{U.C.7.6 Visualizza Errore durante la Registrazione}
 \end{figure}
 \newpage
 
@@ -678,8 +662,8 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
 \end{itemize}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.7\textwidth]{img/UC23.png}
-%     \caption{U.C.23: Visualizza Template di domanda e risposta}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/UC23.png}
+    \caption{U.C.23: Visualizza Template di domanda e risposta}
+\end{figure}
