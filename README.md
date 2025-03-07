@@ -1,3 +1,4 @@
+<div align="center">
 <div style="">
 <div style="display: grid; grid-template-columns: 1fr auto; align-items: center;">
     <div>
@@ -29,3 +30,4 @@
 ## Contatti:
 
 Email: [code7crusaders@gmail.com](mailto:code7crusaders@gmail.com)<div style="text-align: right">
+</div>
