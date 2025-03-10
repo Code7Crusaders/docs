@@ -488,6 +488,11 @@ La qualità dell'architettura è un aspetto fondamentale per garantire il succes
 \end{itemize}
 
 
+
+
+
+
+
 \subsubsection{Diagrammi UML}
 L'utilizzo dei diagrammi UML (Unified Modeling Language) nella progettazione del sistema software offre numerosi vantaggi. Di seguito sono elencati i principali aspetti positivi:
 \begin{itemize}
@@ -500,6 +505,105 @@ L'utilizzo dei diagrammi UML (Unified Modeling Language) nella progettazione del
     \item \textbf{Supporto ai principi di progettazione}: UML è un valido strumento per applicare e comunicare principi di progettazione consolidati, come l'incapsulamento, l'ereditarietà e il polimorfismo, che contribuiscono alla creazione di un'architettura software robusta e modulare.
     \item \textbf{Documentazione tecnica}: i diagrammi UML possono essere utilizzati per generare una documentazione tecnica dettagliata del sistema software. Questa documentazione rappresenta una guida completa sia per gli sviluppatori che per gli utenti finali e gli stakeholder coinvolti.
 \end{itemize}
+
+\subsubsubsection{Diagrammi delle Classi}
+Un tipo di diagramma UML molto diffuso nella progettazione software è il \textbf{diagramma delle classi}, che rappresenta la struttura statica di un sistema evidenziando classi, attributi, metodi e le connessioni tra di esse.
+
+Le classi vengono raffigurate tramite rettangoli suddivisi in tre sezioni:
+
+\begin{enumerate}
+    \item \textbf{Nome della classe}: indica il nome della classe.
+    \item \textbf{Attributi}: elenco delle proprietà della classe con il rispettivo tipo di dato, seguendo il formato: 
+    \begin{quote}
+        \textit{visibilità nome: tipo [molteplicità] = valore predefinito}
+    \end{quote}
+    Dove:
+    \begin{itemize}
+        \item \textbf{Visibilità}: livello di accesso agli attributi, con le seguenti convenzioni:
+        \begin{itemize}
+            \item "+" = pubblico
+            \item "-" = privato
+            \item "\#" = protetto
+            \item "~" = package
+        \end{itemize}
+        \item \textbf{Nome}: identificativo dell'attributo, chiaro e rappresentativo. Se l'attributo è una costante, il nome deve essere scritto in maiuscolo (es. \texttt{PIGRECO: double}).
+        \item \textbf{Molteplicità}: usata per sequenze di elementi come array o liste, indica la quantità di elementi presenti. Se sconosciuta, si utilizza \texttt{*} (es. \texttt{tipoAttributo[*]}).
+        \item \textbf{Valore predefinito}: valore assegnato di default all'attributo.
+    \end{itemize}
+    \item \textbf{Metodi}: definiscono il comportamento della classe, seguendo il formato:
+    \begin{quote}
+        \textit{visibilità nome(parametri): tipo di ritorno}
+    \end{quote}
+    Dove:
+    \begin{itemize}
+        \item \textbf{Visibilità}: stesso criterio degli attributi.
+        \item \textbf{Nome}: rappresentativo e chiaro, segue la notazione \texttt{nomeMetodo(parametri): tipoRitorno}.
+        \item \textbf{Parametri}: elenco di parametri separati da virgola, con il formato \texttt{nomeParametro: tipo}.
+        \item \textbf{Tipo di ritorno}: specifica il valore restituito dal metodo.
+    \end{itemize}
+\end{enumerate}
+
+\subsubsubsubsection{Convenzioni sui metodi}
+
+\begin{itemize}
+    \item I metodi getter, setter e i costruttori sono generalmente omessi.
+    \item I metodi statici sono sottolineati.
+    \item I metodi astratti sono scritti in corsivo.
+    \item Se una classe non possiede attributi o metodi, le relative sezioni nel diagramma vengono omesse.
+\end{itemize}
+
+\subsubsubsubsection{Relazioni tra le classi}
+
+Le relazioni tra classi sono fondamentali per descrivere le interazioni e le dipendenze tra le diverse componenti del sistema, fornendo una visione chiara della sua architettura. Le principali relazioni sono:
+
+\begin{itemize}
+    \item \textbf{Dipendenza}: mostra che una classe utilizza un'altra senza legami permanenti tra le loro istanze. Si indica con una linea tratteggiata con una freccia verso la classe dipendente.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{../../../img/dipendenza_classi.png}
+        \caption{Esempio di dipendenza}
+        \label{fig:dipendeza_classi}
+    \end{figure}
+    \item \textbf{Associazione}: lega due classi, indicando che un'istanza di una è correlata a un'istanza dell'altra. È rappresentata da una linea continua tra le classi con eventuali etichette che indicano nome, molteplicità e ruoli.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{../../../img/associazione_classi.png}
+        \caption{Esempio di associazione}
+        \label{fig:associazione_classi}
+    \end{figure}
+    \item \textbf{Aggregazione}: rappresenta una relazione "tutto-parte", dove una classe è composta da una o più istanze di un'altra, ma queste possono esistere indipendentemente. Si rappresenta con una linea e un rombo vuoto sulla parte aggregata.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{../../../img/aggregazione_classi.png}
+        \caption{Esempio di aggregazione}
+        \label{fig:aggregazione_classi}
+    \end{figure}
+    \item \textbf{Composizione}: simile all'aggregazione, ma più forte, indicando che le parti non possono esistere senza l'elemento principale. Rappresentata con una linea e un rombo pieno sulla parte composta.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{../../../img/composizione_classi.png}
+        \caption{Esempio di composizione}
+        \label{fig:composizione_classi}
+    \end{figure}
+    \item \textbf{Ereditarietà (Generalizzazione)}: descrive una relazione gerarchica tra una superclasse e una o più sottoclassi, che ne ereditano gli attributi e metodi. È raffigurata con una linea e una freccia vuota che punta dalla sottoclasse alla superclasse.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{../../../img/ereditarieta_classi.png}
+        \caption{Esempio di generalizzazione}
+        \label{fig:generalizzazione_classi}
+    \end{figure}
+    \item \textbf{Realizzazione}: rappresenta l'implementazione di un'interfaccia da parte di una classe concreta. È indicata con una linea tratteggiata con una freccia vuota dalla classe implementatrice all'interfaccia.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{../../../img/realizzazione_classi.png}
+        \caption{Esempio di realizzazione}
+        \label{fig:realizzazione_classi}
+    \end{figure}
+\end{itemize}
+
+
+
+
 
 
 \subsubsection{Desing Pattern}
