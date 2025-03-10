@@ -1,0 +1,112 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{babel}
+\usepackage[dvipsnames]{xcolor}
+
+
+\setbeamertemplate{navigation symbols}{}
+
+% Custom header for all slides
+\setbeamertemplate{headline}{
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{section in head/foot}%
+      \hspace*{2ex}Code7Crusaders - Software Development Team
+    \end{beamercolorbox}%
+    }    
+}
+ 
+% Background image for the title slide
+\setbeamertemplate{background}{
+  \includegraphics[width=\paperwidth,height=\paperheight]{../img/background.png}
+}
+
+\definecolor{ForestGreen}{RGB}{34,139,34}
+
+% Title customization for contrast
+\setbeamercolor{frametitle}{fg=black} % White text, blue background
+\setbeamerfont{frametitle}{series=\bfseries}   % Bold title
+
+% Custom block colors
+\setbeamercolor{block body}{bg=gray!20}  % Gray background for block content
+\setbeamercolor{block title}{bg=gray,fg=white} % Darker gray for block title
+
+\setbeamercolor{block body alerted}{bg=gray!20} % Gray background for alert block content
+\setbeamercolor{block title alerted}{bg=red, fg=white} % Red title for alert block
+
+\setbeamercolor{block body example}{bg=gray!20} % Gray background for example block content
+\setbeamercolor{block title example}{bg=ForestGreen, fg=white} % Green title for example block
+
+\begin{document}
+
+% Title page slide
+\begin{frame}[plain] % Plain to avoid header on title slide
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../img/logo/7Crusaders_logo.png} % Add your logo here
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+    
+    {\large \textbf{Documentazione Progetto}}\\
+    \vspace{3cm}
+
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{1cm}
+    
+    {\large \textbf{Data:}} \today\\
+    
+    \vspace{1cm}
+\end{frame}
+
+%%% Content slides
+% Slide 1: What the team has done
+\begin{frame}
+    \begin{block}{Attività Completate}
+        \begin{itemize}
+            \item Contattata l'azienda per un incontro finalizzato alla negoziazione di alcuni requisiti funzionali riguardanti le metriche da implementare.
+            \item Effettuata una revisione e correzione finale dei casi d'uso e dei requisiti dopo l'incontro con l'azienda e il professor Cardin.
+            \item Studiati e compresi i nuovi documenti della PB e identificati gli avanzamenti necessari per le prossime settimane.
+            \item Suddivisione del team in due gruppi: uno dedicato alle correzioni segnalate nella valutazione del colloquio RTB e alle operazioni di routine, l'altro impegnato nelle prime sezioni del documento di specifica tecnica, con focus sulle scelte dei pattern architetturali e sull'implementazione dei diagrammi UML delle classi.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+% Slide 2: What the team plans to do
+\begin{frame}
+    \begin{block}{Attività Pianificate}
+        \begin{itemize}
+            \item Completare i diagrammi delle classi prima degli incontri pianificati, lasciando margine per eventuali discussioni sulle scelte architetturali con l'azienda (deployment).
+            \item Tenere un incontro con l'azienda per discutere la scelta del pattern architetturale di deployment.
+            \item Organizzare un incontro con il professor Cardin (successivo a quello con l'azienda) per chiarire alcuni dubbi sui pattern utilizzati e ottenere un feedback sulle scelte, in particolare sui diagrammi delle classi.
+            \item Dopo i due incontri e le eventuali correzioni, consolidare una visione chiara che permetta di procedere con lo sviluppo effettivo del prodotto finale.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+% Slide 3: Difficulties encountered
+\begin{frame}
+    \begin{alertblock}{Sfide Recenti}
+        \begin{itemize}
+            \item Abbiamo ricevuto diverse definizioni su alcuni pattern architetturali, il che ha generato incertezze nella scelta della soluzione migliore.
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+% Slide 4: Special Questions
+\begin{frame}
+    \begin{exampleblock}{Domande}
+        \begin{itemize}
+            \item Nel caso in cui arrivassimo alla data di consegna MVP con il codice non completo, dovremo comunque proseguire con lo sviluppo sforando la data preventivata, oppure dovremo interrompere lo sviluppo e consegnare il prodotto così com'è?
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\end{document}
