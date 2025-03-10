@@ -84,6 +84,7 @@
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
     \hline
+    1.1 & 10/02/2025 & Francesco Lapenna & ??? & Correzione errori RTB \\
     1.0 & 10/02/2025 & Gabriele Di Pietro & Filippo Rizzolo & Approvazione documento \\
     0.5 & 06/02/2025 & Gabriele Di Pietro & Matthew Pan & Stesura sezione 3.2 \\
     0.4 & 20/01/2025 & Matthew Pan & Filippo Rizzolo & Stesura sezione 3.1 - Test Sistema \\
@@ -521,7 +522,9 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
             \includegraphics[width=0.8\textwidth]{../../../img/pdq_charts/chart1-proiezionePVEV.png}
             \caption{Proiezione di PV ed EV}
         \end{figure}
-        Dal grafico si può notare come Planned Value ed Earned Value quasi si sovrappongano. Questo denota una buona pianificazione ed aderenza da parte del gruppo. Inoltre si nota come convergano in modo abbastanza lineare al valore Estimate at Completion, il che suggerisce una distribuzione omogenea del lavoro nel corso delle settimane.
+        Il grafico mostra l'andamento di Planned Value (PV) ed Earned Value (EV) nel tempo, evidenziando una forte sovrapposizione tra le due curve. Questo implica che il team di progetto ha seguito fedelmente il piano iniziale, eseguendo le attività previste nei tempi stabiliti.
+        La convergenza quasi lineare di PV ed EV verso il Estimate at Completion (EAC) indica una distribuzione omogenea del lavoro lungo tutto l'orizzonte temporale del progetto. Ciò suggerisce che il progetto non ha subito ritardi significativi né ha registrato accelerazioni improvvise, ma ha mantenuto un ritmo costante di avanzamento.
+        L'aderenza tra PV ed EV è un segnale positivo in termini di gestione del progetto, poiché significa che le attività sono state completate secondo le stime iniziali, senza deviazioni rilevanti. Questo può derivare da una pianificazione accurata, un'efficace allocazione delle risorse e una buona esecuzione da parte del team.
 
         \subsubsection{5PBM-AC - Actual Cost e 2PBM-ETC - Estimate to Complete}
         \begin{figure}[H]
@@ -529,7 +532,13 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
             \includegraphics[width=0.8\textwidth]{../../../img/pdq_charts/chart2-proiezioneACETC.png}
             \caption{Proiezione di AC e ETC}
         \end{figure}
-        Dal grafico si osserva un progressivo aumento dell'Actual Cost, inversamente proporzionale al'Estimate to Complete, con un Estimate at Completion stabile nel tempo. Ciò implica una buona aderenza ai costi preventivati in fase di aggiudicazione.
+        Il grafico mostra l’andamento di tre metriche fondamentali nella gestione dei costi di progetto:
+        \begin{itemize}
+            \item Actual Cost (AC): il costo effettivamente sostenuto fino a un determinato momento. Questo valore cresce progressivamente nel tempo, indicando il consumo di risorse economiche man mano che il progetto avanza.  
+            \item Estimate to Complete (ETC): la stima dei costi necessari per completare il progetto. Si osserva un andamento decrescente, segno che, con l’avanzare delle attività, il budget residuo necessario si riduce.  
+            \item Estimate at Completion (EAC): la stima del costo totale previsto al completamento del progetto. La stabilità di questa metrica nel tempo suggerisce che non si stanno verificando scostamenti significativi rispetto al budget iniziale.  
+        \end{itemize}
+        La stabilità dell’Estimate at Completion è un segnale positivo, poiché indica che le previsioni di spesa fatte in fase di pianificazione si stanno rivelando accurate e che il progetto non sta subendo variazioni di costo significative. In altre parole, i costi effettivi e quelli stimati rimangono allineati, suggerendo una gestione finanziaria efficace e senza imprevisti di rilievo.
 
         \subsubsection{6PBM-SV - Schedule Variance e 7PBM-CV - Cost Variance}
         \begin{figure}[H]
@@ -537,7 +546,9 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
             \includegraphics[width=0.8\textwidth]{../../../img/pdq_charts/chart3-proiezioneSVCV.png}
             \caption{Proiezione di SV e CV}
         \end{figure}
-        Il grafico evidenzia come Scheduled Variance e Cost Variance si sovrappongano quasi sempre, il che dimostra una buona capacità di programmare le attività e completarle per tempo.
+        Il grafico mette in evidenza l’andamento di Scheduled Variance (SV) e Cost Variance (CV) nel tempo, mostrando come questi due indicatori siano quasi sempre sovrapposti. Questo significa che il progetto è gestito con un buon livello di efficienza, sia in termini di pianificazione che di controllo dei costi.
+        L’andamento simile di SV e CV indica che le attività vengono completate nei tempi previsti senza significative deviazioni dal budget. Questo riflette un bilanciamento efficace tra l’esecuzione dei lavori e il controllo delle spese.
+        Nel complesso, il grafico evidenzia un buon equilibrio tra tempistiche e risorse, dimostrando un efficace processo di gestione del progetto.
 
         \subsubsection{3PBM-EAC - Estimated at Completion}
         \begin{figure}[H]
@@ -545,7 +556,9 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
             \includegraphics[width=0.8\textwidth]{../../../img/pdq_charts/chart4-proiezioneEAC.png}
             \caption{Proiezione di EAC}
         \end{figure}
-        Dal grafico si può vedere come il valore di Estimate at Completion coincida con il costo preventivato, ad eccezione di alcuni momenti critici in cui sfiora la soglia massima ammissibile per poi subito rientrare tra i valori ottimali.
+        Il grafico rappresenta l'andamento dell'Estimate at Completion (EAC) rispetto al costo preventivato durante il corso del progetto. Si osserva che, nella maggior parte del tempo, l'EAC rimane allineato con il budget iniziale, indicando un controllo efficace dei costi e una gestione finanziaria coerente con le previsioni.\\
+        Tuttavia, emergono alcuni momenti critici in cui l'EAC si avvicina alla soglia massima ammissibile, segnalando possibili situazioni di rischio, come ritardi, variazioni nei costi delle risorse o inefficienze operative. Nonostante queste fluttuazioni, il valore dell'EAC rientra rapidamente nei parametri ottimali, suggerendo l'adozione di misure correttive tempestive che hanno permesso di riportare il progetto in linea con il budget.\\
+        Questo comportamento evidenzia una gestione attenta della valutazione dei costi a finire, con interventi mirati a contenere gli scostamenti e garantire che il progetto si mantenga all'interno delle soglie di sostenibilità economica.
 
 
     \subsection{Qualità processo di Documentazione}
@@ -555,7 +568,10 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
             \includegraphics[width=0.8\textwidth]{../../../img/pdq_charts/chart5-indiceGulpease.png}
             \caption{Indice di Gulpease per documento}
         \end{figure}
-        Come si può vedere dal grafico l'indice di Gulpease si mantiene sempre tra il valore ammissibile e l'ottimale. Ciò è indice di una buona qualità della documentazione.
+        L'indice di Gulpease è una metrica utilizzata per valutare la leggibilità di un testo in lingua italiana.
+        L’indice varia tra 0 e 100, dove valori più alti indicano una maggiore leggibilità.
+        Dal grafico emerge che l’indice di Gulpease della documentazione analizzata si mantiene costantemente in un intervallo compreso tra il valore ammissibile e quello ottimale.
+        Ciò implica che la documentazione è chiara e ben strutturata e permette una fruizione veloce e immediata, riducendo il tempo di comprensione del contenuto.
 
 
     \subsection{Qualità del processo di gestione della qualità}
@@ -565,7 +581,9 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
             \includegraphics[width=0.8\textwidth]{../../../img/pdq_charts/chart6-metricheSoddisfatte.png}
             \caption{Metriche di qualità soddisfatte}
         \end{figure}
-        Come si può notare la quantità di metriche soddisfatte sono appena sotto il range ammissibile. Tuttavia nel calcolo del QMS sono considerate anche metriche legate al codice e a test su di esso. Considerando che il codice non è ancora stato sviluppato è naturale che questo valore sia basso.
+        Come evidenziato dal grafico, la quantità di metriche soddisfatte si colloca appena al di sotto del range ammissibile. Questo indica che, sebbene il progetto sia vicino a raggiungere gli standard richiesti, non ha ancora soddisfatto pienamente i criteri stabiliti.
+        Tuttavia, è importante considerare che il calcolo delle Metriche di Qualità Soddisfatte include anche metriche relative alla qualità del codice e ai test effettuati su di esso. Poiché il codice non è ancora stato sviluppato in questa fase del progetto, è naturale che il valore complessivo del QMS risulti inferiore.
+        Di conseguenza, il risultato attuale non rappresenta necessariamente una criticità, ma piuttosto una condizione prevista, destinata a migliorare man mano che lo sviluppo del codice procede e vengono introdotti i relativi test.
 
 
     \subsection{Qualità del processo di pianificazione}
@@ -575,7 +593,9 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
             \includegraphics[width=0.8\textwidth]{../../../img/pdq_charts/chart7-proiezioneRSI.png}
             \caption{Metriche di qualità soddisfatte}
         \end{figure}
-        L'andamento del Requirements Stability Index mostra come i requisiti, dal momento della loro analisi, abbiano subito variazioni stabili e contenute entro i limiti previsti.
+        Il Requirements Stability Index (RSI) è un indicatore che misura la stabilità dei requisiti di un progetto nel tempo. Un RSI elevato indica che i requisiti sono rimasti sostanzialmente invariati, mentre un valore basso suggerisce modifiche frequenti e potenzialmente destabilizzanti per lo sviluppo.
+        L’andamento del grafico mostra che, a partire dalla fase di analisi, i requisiti hanno subito variazioni limitate e coerenti con le previsioni iniziali. Questo suggerisce un processo di gestione dei requisiti ben controllato, con revisioni e aggiornamenti minimi che non hanno compromesso la stabilità complessiva del progetto.
+        L’oscillazione contenuta dell’indice evidenzia un buon livello di maturità nella definizione dei requisiti, riducendo il rischio di impatti negativi su tempi, costi e qualità del prodotto finale.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
