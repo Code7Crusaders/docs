@@ -94,6 +94,7 @@ files=(
     "./src/3_PB/verbali_esterni/verbale_25-03-04_v1.0.tex"
 
     "./src/3_PB/verbali_interni/verbale_25-02-28_v1.0.tex"
+    "./src/3_PB/verbali_interni/verbale_25-03-07_v1.0.tex"
 
     # "./src/3_PB/lettera_di_presentazione/..."
 )
