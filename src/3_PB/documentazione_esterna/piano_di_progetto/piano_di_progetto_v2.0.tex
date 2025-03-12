@@ -13,6 +13,10 @@
 \usepackage{pgfgantt}  % per i diagrammi di Gantt
 \usepackage{eurosym}
 \usepackage{float}
+\usepackage{pgf-pie}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{pgfplotstable}
 
 % setta a 1 se il verbale è esterno, 0 se è interno
 \newcommand{\isEsterno}{1}
@@ -81,6 +85,7 @@
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
     \hline
+    1.1 & 10/03/2025 & Diviesti Tommaso &  & Inizio correzioni segnalate post RTB \\
     1.0 & 19/02/2025 & Diviesti Tommaso & Francesco Lapenna & Approvazione documento \\
     0.8 & 17/02/2025 & Francesco Lapenna & Enrico Cotti Cottini & Compilazione sprint \\
     0.7 & 5/02/2025 & Francesco Lapenna & Eddy Pinarello & Metriche rilevamento rischi \\
@@ -1178,7 +1183,7 @@
                                   & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
                     Cotti Cottini & -   & 3,5 & -   & -   & -   & -   & 3,5                \\ \hline
                     Di Pietro     & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
-                    Diviesti      & -   & -   & -   & -   & 8  & -   & 10                 \\ \hline
+                    Diviesti      & -   & -   & -   & -   & 8  & -   & 8                 \\ \hline
                     Lapenna       & -   & -   & -   & -   & -   & 5   & 5                  \\ \hline
                     Pan           & 3   & -   & -   & -   & -   & -   & 3                  \\ \hline
                     Pinarello     & -   & -   & 2,5 & -   & -   & -   & 2,5                \\ \hline
@@ -2213,6 +2218,90 @@
                     \item Espandere la documentazione relativa alla gestione del database, includendo dettagli sulle prestazioni e la scalabilità.
                     \item Continuare l'analisi delle librerie per flussi conversazionali avanzati, esplorando alternative a LangChain.
                 \end{itemize}
+
+
+                \subsubsection{Retrospettiva di Periodo (RTB)}
+
+                Allo stato attuale (fine dello Sprint 15) sono ancora disponibili 
+                \textbf{111,5 ore} per il completamento del progetto. Fino a questo punto, 
+                sono state contabilizzate un totale di \textbf{541,5 ore} lavorative, 
+                suddivise tra i diversi ruoli del team. Il consuntivo economico 
+                registrato fino ad ora ammonta a \textbf{10.530 euro}. I costi e i tempi 
+                sostenuti finora risultano in linea con le previsioni iniziali, 
+                senza alcun significativo scostamento rispetto a quanto pianificato. 
+                Questo indica che il progetto sta procedendo secondo le tempistiche 
+                e i budget stabiliti, con una gestione efficace delle risorse e un 
+                buon allineamento con gli obiettivi prefissati. In sintesi, i dati 
+                attuali confermano che il progetto è sotto controllo e sta 
+                rispettando le aspettative sia dal punto di vista economico che 
+                temporale.
+
+
+                \definecolor{re}{HTML}{6666f6}  
+                \definecolor{am}{HTML}{77d2f3}  
+                \definecolor{an}{HTML}{fdf399}  
+                \definecolor{pj}{HTML}{f4b572}  
+                \definecolor{pg}{HTML}{ed6f6b}  
+                \definecolor{ve}{HTML}{74a0f8} 
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{8.3/Responsabile, 9.7/Amministratore, 10.2/Analista, 16.9/Progettista, 22.2/Programmatore, 32.7/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Lavoro in percentuale dei ruoli nel periodo RTB}
+                \end{figure}
+
+                \vspace{1cm}
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \begin{axis}[
+                            width=1.1*\textwidth,
+                            height=8cm,
+                            ybar,
+                            bar width=20pt,
+                            ymajorgrids=true,
+                            symbolic x coords={p1, p2, p3, p4, p5, p6},
+                            scaled y ticks=false,
+                            enlarge x limits=0.3,
+                            ymin=0,
+                            enlarge y limits=0.1,
+                            legend cell align=left,
+                            legend style={
+                                inner sep=8pt, 
+                                at={(0.5,1.35)},
+                                anchor=north,
+                                column sep=8pt,
+                                row sep=5pt,
+                                legend columns=3,
+                                font=\large,
+                            },
+                            xticklabel=\empty,
+                            ylabel={Euro (\euro)}
+                        ] 
+                        % Responsabile (1350) 
+                        \addplot[fill=re] coordinates {(p1,1350) (p2,0) (p3,0) (p4,0) (p5,0) (p6,0)};  
+                        % Amministratore (1050) 
+                        \addplot[fill=am] coordinates {(p1,0) (p2,1050) (p3,0) (p4,0) (p5,0) (p6,0)};  
+                        % Analista (1388) 
+                        \addplot[fill=an] coordinates {(p1,0) (p2,0) (p3,1388) (p4,0) (p5,0) (p6,0)};  
+                        % Progettista (2288) 
+                        \addplot[fill=pj] coordinates {(p1,0) (p2,0) (p3,0) (p4,2288) (p5,0) (p6,0)};  
+                        % Programmatore (1800)
+                        \addplot[fill=pg] coordinates {(p1,0) (p2,0) (p3,0) (p4,0) (p5,1800) (p6,0)};  
+                        % Verificatore (2655)
+                        \addplot[fill=ve] coordinates {(p1,0) (p2,0) (p3,0) (p4,0) (p5,0) (p6,2655)};  
+                
+                        \legend{Responsabile, Amministratore, Analista, Progettista, Programmatore, Verificatore}
+                        \end{axis}
+                    \end{tikzpicture}
+                    \caption{Consuntivo economico per ruolo nel periodo RTB}
+                \end{figure}
+
+
+
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         \subsection{PB}
             \subsubsection{Sprint x}

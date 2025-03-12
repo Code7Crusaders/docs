@@ -145,7 +145,9 @@ saranno evidenziati da una 'G' al pedice.
     \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{\textbf{Glossario}\textsuperscript{G}} \\ \texttt{\url{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html}}
 \end{itemize}
 \newpage
-\section{Metriche di qualità}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Qualità di processo}
 La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto che
 rispecchi lo stato dell’arte. Per raggiungere tale obiettivo è necessario sfruttare delle
 pratiche rigorose che consentano lo svolgimento di ogni attività in maniera ottimale.
@@ -180,25 +182,26 @@ base e/o primari, processi di supporto e processi organizzativi.
 % \newpage
 
 \subsubsection{Sviluppo} %Non inserire nulla
-\paragraph{Analisi dei requisiti}%Tabella
-\textbf{(11PBM - 13PBM)}
+% \paragraph{Analisi dei requisiti}%Tabella
+% \textbf{(11PBM - 13PBM)}
 
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
-\begin{tabular}{|c|l|c|c|}
-    \hline
-    \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
-    \hline
-    11PBM-PRO & Percentuale Requisiti Obbligatori & $PRO = 100\%$ & $PRO = 100\%$ \\
-    12PBM-PRD & Percentuale Requisiti Desiderabili & $PRD \geq 30\%$ & $PRD = 100\%$ \\
-    13PBM-PRF & Percentuale Requisiti Facoltativi & $PRF \geq 0\%$ & $PRF = 100\%$ \\
-    \hline
-\end{tabular}
-\label{tab:analisi_requisiti}
-\caption{Metriche di qualità per il processo di Analisi dei requisiti}
-\end{table}
-\newpage
+% % TODO: togliere (è stata messa in qualità di prodotto > Funzionalità)
+% \begin{table}[H]
+% \centering
+% \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+% \begin{tabular}{|c|l|c|c|}
+%     \hline
+%     \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+%     \hline
+%     11PBM-PRO & Percentuale Requisiti Obbligatori & $PRO = 100\%$ & $PRO = 100\%$ \\
+%     12PBM-PRD & Percentuale Requisiti Desiderabili & $PRD \geq 30\%$ & $PRD = 100\%$ \\
+%     13PBM-PRF & Percentuale Requisiti Facoltativi & $PRF \geq 0\%$ & $PRF = 100\%$ \\
+%     \hline
+% \end{tabular}
+% \label{tab:analisi_requisiti}
+% \caption{Metriche di qualità per il processo di Analisi dei requisiti}
+% \end{table}
+% \newpage
 \paragraph{Progettazione}%Tabella
 \textbf{(14PBM)}
 \begin{table}[H]
@@ -214,8 +217,10 @@ base e/o primari, processi di supporto e processi organizzativi.
     \label{tab:progettazione}
     \caption{Metriche di qualità per il processo di Progettazione}
 \end{table}
+\newpage
 \paragraph{Implementazione}%Tabella
 \textbf{(15PBM - 18PBM)}
+% TODO: togliere 18PBM (è stata messa in Qualità di prodotto > Manutenibilità)
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
@@ -226,12 +231,14 @@ base e/o primari, processi di supporto e processi organizzativi.
         15PBM-PPM & Parametri per Metodo & $PPM \leq 7$ & $PPM \leq 5$\\
         16PBM-CPC & Campi per Classe & $CPC \leq 8$ & $CPC \leq 5$ \\
         17PBM-LCPM & Linee di Commento per Metodo & $LCPM \geq 50$ & $LCPM \geq 20$ \\
-        18PBM-CCM & Complessità Ciclomatica Metrica & $CCM \leq 6$ & $CCM \leq 3$ \\
+        % 18PBM-CCM & Complessità Ciclomatica Metrica & $CCM \leq 6$ & $CCM \leq 3$ \\
         \hline
     \end{tabular}
     \label{tab:codifica}
     \caption{Metriche di qualità per il processo di Codifica}
 \end{table}
+
+% TODO: togliere 9, 10 e 11PSM (sono stati messi in Qualità di prodotto > Affidabilità)
 \paragraph{Verifica e Validazione}%Tabella
 \textbf{(8PSM-CC - 12PSM-PTCP)}
 \begin{table}[H]
@@ -242,9 +249,9 @@ base e/o primari, processi di supporto e processi organizzativi.
         \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
         \hline
         8PSM-CC & Code Coverage & $CC \geq 80\%$ & $CC = 100\%$ \\
-        9PSM-BC & Branch Coverage & $BC \geq 80\%$ & $BC = 100\%$ \\
-        10PSM-SC & Statement Coverage & $SC \geq 80\%$ & $SC = 100\%$ \\
-        11PSM-FD & Failure Density & $FD \leq 15\%$ & $FD = 0\%$ \\
+        % 9PSM-BC & Branch Coverage & $BC \geq 80\%$ & $BC = 100\%$ \\
+        % 10PSM-SC & Statement Coverage & $SC \geq 80\%$ & $SC = 100\%$ \\
+        % 11PSM-FD & Failure Density & $FD \leq 15\%$ & $FD = 0\%$ \\
         12PSM-PTCP & Passed Test Case Percentage & $PTCP \geq 90\%$ & $PTCP \geq 100\%$ \\
         \hline
     \end{tabular}
@@ -273,6 +280,7 @@ base e/o primari, processi di supporto e processi organizzativi.
 \newpage
 \subsubsection{Gestione della qualità}%Tabella
 \textbf{(3PSM-FU - 7PSM-QMS)}
+% TODO: togliere 3, 4, 5 e 6PSM (sono stati messi in Qualità di prodotto > Usabilità)
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
@@ -280,10 +288,10 @@ base e/o primari, processi di supporto e processi organizzativi.
         \hline
         \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
         \hline
-        3PSM-FU & Facilità di Utilizzo & $FU \geq 3$ errori & $FU \geq 0$ errori \\
-        4PSM-TA & Tempo di Apprendimento & $TA \leq 12$ minuti & $TA \leq 8$ minuti \\
-        5PSM-TR & Tempo di Risposta & $TR \leq 8$ secondi & $TR \leq 4$ secondi \\
-        6PSM-TE & Tempo di Elaborazione & $TE \leq 10$ secondi & $TE \leq 5$ secondi \\
+        % 3PSM-FU & Facilità di Utilizzo & $FU \geq 3$ errori & $FU \geq 0$ errori \\
+        % 4PSM-TA & Tempo di Apprendimento & $TA \leq 12$ minuti & $TA \leq 8$ minuti \\
+        % 5PSM-TR & Tempo di Risposta & $TR \leq 8$ secondi & $TR \leq 4$ secondi \\
+        % 6PSM-TE & Tempo di Elaborazione & $TE \leq 10$ secondi & $TE \leq 5$ secondi \\
         7PSM-\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#qms}{QMS\textsuperscript{G}} & Metriche di Qualità Soddisfatte & $\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#qms}{QMS\textsuperscript{G}} \geq 90\%$ & $\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#qms}{QMS\textsuperscript{G}} \geq 90\%$\\
         \hline
     \end{tabular}
@@ -325,6 +333,94 @@ base e/o primari, processi di supporto e processi organizzativi.
     \caption{Metriche di qualità per il processo di Pianificazione}
 \end{table}
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Qualità di prodotto}
+La sezione Qualità di Prodotto del Piano di Qualifica definisce i criteri e le metriche adottate per garantire che il software sviluppato soddisfi i requisiti di qualità previsti. Questa sezione descrive gli attributi fondamentali del prodotto, come affidabilità, manutenibilità, usabilità e prestazioni, e le strategie adottate per monitorarne e migliorarne la qualità durante il ciclo di sviluppo. L'obiettivo è assicurare che il software sia conforme agli standard richiesti e risponda efficacemente alle esigenze degli utenti finali.
+    
+    \subsection{Funzionalità}
+    \begin{table}[H]
+        \centering
+        \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+        \begin{tabular}{|c|l|c|c|}
+            \hline
+            \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+            \hline
+            11PBM-PRO & Percentuale Requisiti Obbligatori & $PRO = 100\%$ & $PRO = 100\%$ \\
+            12PBM-PRD & Percentuale Requisiti Desiderabili & $PRD \geq 30\%$ & $PRD = 100\%$ \\
+            13PBM-PRF & Percentuale Requisiti Facoltativi & $PRF \geq 0\%$ & $PRF = 100\%$ \\
+            \hline
+        \end{tabular}
+        \label{tab:analisi_requisiti}
+        \caption{Metriche di qualità di funzionalità del prodotto}
+    \end{table}
+
+    \subsection{Affidabilità}
+    \begin{table}[H]
+        \centering
+        \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+        \begin{tabular}{|c|l|c|c|}
+            \hline
+            \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+            \hline
+            9PSM-BC & Branch Coverage & $BC \geq 80\%$ & $BC = 100\%$ \\
+            10PSM-SC & Statement Coverage & $SC \geq 80\%$ & $SC = 100\%$ \\
+            11PSM-FD & Failure Density & $FD \leq 15\%$ & $FD = 0\%$ \\
+            \hline
+        \end{tabular}
+        \label{tab:verifica}
+        \caption{Metriche di qualità di affidabilità del prodotto}
+    \end{table}
+
+    \subsection{Usabilità}
+    \begin{table}[H]
+        \centering
+        \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+        \begin{tabular}{|c|l|c|c|}
+            \hline
+            \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+            \hline
+            3PSM-FU & Facilità di Utilizzo & $FU \geq 3$ errori & $FU \geq 0$ errori \\
+            4PSM-TA & Tempo di Apprendimento & $TA \leq 12$ minuti & $TA \leq 8$ minuti \\
+            6PSM-TE & Tempo di Elaborazione & $TE \leq 10$ secondi & $TE \leq 5$ secondi \\
+            \hline
+        \end{tabular}
+        \label{tab:gestione_qualità}
+        \caption{Metriche di qualità di usabilità del prodotto}
+    \end{table}
+
+    \subsection{Efficienza}
+    \begin{table}[H]
+        \centering
+        \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+        \begin{tabular}{|c|l|c|c|}
+            \hline
+            \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+            \hline
+            5PSM-TR & Tempo di Risposta & $TR \leq 8$ secondi & $TR \leq 4$ secondi \\
+            \hline
+        \end{tabular}
+        \label{tab:gestione_qualità}
+        \caption{Metriche di qualità di efficienza del prodotto}
+    \end{table}
+
+    \subsection{Manutenibilità}
+    \begin{table}[H]
+        \centering
+        \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio tra le righe
+        \begin{tabular}{|c|l|c|c|}
+            \hline
+            \textbf{Codice} & \textbf{Nome} & \textbf{Ammissibile} & \textbf{Ottimale} \\
+            \hline
+            18PBM-CCM & Complessità Ciclomatica Metrica & $CCM \leq 6$ & $CCM \leq 3$ \\
+            \hline
+        \end{tabular}
+        \label{tab:codifica}
+        \caption{Metriche di qualità di manutenibilità del prodotto}
+    \end{table}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Metodologie e Testing}
 In questa sezione si illustrano le metodologie di \textit{Testing} adottate per garantire il rispetto dei vincoli individuati
 nella sezione \textit{Requisiti} del documento Analisi dei Requisiti. I test sono suddivisi in cinque categorie:

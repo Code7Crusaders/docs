@@ -1,0 +1,186 @@
+%%% INTRO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template sia per verbali interni che esterni
+% Segui i commenti "TODO" per ricordarti cosa modificare
+% In caso di verbali esterni ricordati di settare isEsterno ad 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\usepackage{graphicx}  % serve per inserire immagini
+\usepackage{fancyhdr}  % creazione header-footer
+\usepackage{tabularx}  % serve per creare tabelle con colonne a larghezza variabile
+\usepackage{ifthen}  % serve per mostrare cose diverse in base a condizioni
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+
+% TODO: setta a 1 se il verbale è esterno, 0 se è interno
+\newcommand{\isEsterno}{0}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Sezione del titolo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+        \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.center) {
+            \includegraphics{../../img/background.png}
+        };
+        \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % logo
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+        
+        {\large \textbf{Riunione Settimanale 07/03/2025}}\\
+    \vspace{5cm}                           % esempio: Riunione Settimanale 04/11/2024
+    
+    
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Versioni %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    1.0 & 11/03/2025 & Gabriele Di Pietro & Filippo Rizzolo & Stesura del Documento \\ 
+    \hline                                  % TODO: inserire data, nomi e descrizione
+\end{tabular}
+\end{table}
+\vspace{3cm}
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Registro Presenze %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} Piattaforma Discord \\
+\textbf{Ora di Inizio} 15:00\\
+\textbf{Ora di Fine} 16:00\\  % TODO: inserire orari ed eventualmente piattaforma
+\\
+\begin{tabular}{|c|c|c|}  % TODO: inserire ruoli e presenze
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    Enrico Cotti Cottini & Verificatore & Presente \\ 
+    \hline
+    Gabriele Di Pietro & Analista & Presente \\ 
+    \hline
+    Tommaso Diviesti & Amministratore & Presente \\ 
+    \hline 
+    Francesco Lapenna & Programmatore & Presente \\ 
+    \hline
+    Matthew Pan & Verificatore & Assente \\ 
+    \hline 
+    Eddy Pinarello & Progettista & Presente \\ 
+    \hline 
+    Filippo Rizzolo & Responsabile & Presente \\ 
+    \hline 
+\end{tabular}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Sviluppo del diagramma delle classi;
+	\item Incontri con l'Azienda in sede;
+	\item Comprensione della valutazione RTB;
+	\item Ripresa dell'attività del diario di bordo.
+	\item Decisioni prese e conclusioni.
+\end{itemize}
+
+% Presenze Rappresentanti Azienda %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \\
+    \newline
+    \newline
+    \begin{tabular}{|c|c|}  % TODO: eventualmente modificare nomi rappresentanti
+        \hline
+        \textbf{Nome} & \textbf{Ruolo}\\
+        \hline
+        Gianluca Carlesso & Rappresentante Azienda \\
+        \hline
+        Anna Tieppo & Rappresentante Azienda \\
+        \hline
+    \end{tabular}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+
+% Sezione Verbale %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Verbale Retrospettiva}
+\subsection{Sviluppo del diagramma delle classi}
+Il team si è portato avanti nell'analizzare i nuovi documenti richiesti per questa fase finale del progetto, in particolare il documento di specifica tecnica dove vengono definiti i diagrammi delle classi. Pertanto abbiamo
+iniziato a pensare alle architetture da utilizzare per il prodotto. L'idea iniziale era l'utilizzo di un'architettura monolitica vista la semplicità e il poco tempo a disposizione, tuttavia l'azienda ci ha inviato
+un messaggio dove proponevano di usare quella a microservizi. Al momento non abbiamo ancora deciso, pertanto organizzeremo un colloquio con l'azienda e separatamente con il professor Cardin per trovare la soluzione migliore.
+\subsection{Incontri con l'Azienda in sede}
+Il giorno \textbf{4/03/2025} abbiamo avuto un colloquio online con l'azienda Ergon, durante il quale abbiamo rinegoziato alcuni requisiti. Nel corso dell'incontro, ci è stato proposto di concordare una data per un incontro presso la loro sede. Ripensando al colloquio precedente per la RTB, in cui ci era stato chiesto se avessimo visitato la loro sede, abbiamo deciso di accettare la proposta e ci stiamo organizzando per trovare una data adatta per incontrarci tutti.
+\subsection{Comprensione della valutazione RTB}
+Abbiamo iniziato a correggere gli errori fatti per la documentazione della RTB, in particolare abbiamo corretto il documento di analisi dei requisiti. Tuttavia alcune correzioni non sono molto chiare e quindi abbiamo deciso di dividerci in gruppi per lavorare su dei documenti e capire meglio cosa ci fosse stato chiesto.
+\subsection{Ripresa dell'attività del diario di bordo}
+Lunedì \textbf{10/03/2025} ricomincerà l'attività settimanale del diario di bordo online alle ore 12:00. Questo significa che fino alla consegna dovremmo organizzarci nel fare le slide per la presentazione e dividerci in turni per chi presenta.
+\subsection{Decisioni prese e conclusioni}
+È molto importante fissare al più presto possibile i prossimi incontri con l'azienda e con il professor Cardin per chiarire i dubbi e le correzioni da fare. 
+% Sezione Firme %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \begin{table}[b]
+        \begin{tabular}{@{}p{.5in}p{4in}@{}}
+            Data:  & \hrulefill \\
+                   &     		\\
+                   &     		\\
+            Firma: & \hrulefill \\
+        \end{tabular}
+        \end{table}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document} 

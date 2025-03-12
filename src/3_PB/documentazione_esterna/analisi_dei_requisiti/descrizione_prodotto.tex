@@ -19,7 +19,7 @@ I componenti del prodotto sono:
     \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#database-relazionale}{\textbf{Database Relazionale}\textsuperscript{G}}:  
     Questo componente memorizza i dati strutturati dell’azienda, come descrizioni di prodotti, ingredienti, specifiche tecniche e altro. È il punto di partenza per acquisire informazioni utili che saranno processate e utilizzate dal sistema. Supporta query SQL per consentire l'accesso rapido e organizzato ai dati.
     
-    \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{\textbf{Embedding\textsuperscript{G}} Model}:  
+    \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{\textbf{Embedding\textsuperscript{G}} } \textbf{Model}:  
     L’Embedding Model è un modello pre-addestrato in grado di trasformare il testo in rappresentazioni numeriche preservando il significato semantico. Viene utilizzato sia per i dati aziendali durante l’addestramento che per le domande poste dagli utenti. Gli embedding risultanti permettono confronti efficienti nel \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#database-vettoriale}{database vettoriale\textsuperscript{G}}.
     
     \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#database-vettoriale}{\textbf{Database Vettoriale}\textsuperscript{G}}:  
@@ -39,12 +39,15 @@ Dopo un'attenta analisi comparativa tra i modelli di Huggingface (BLOOM e varian
     \item \textbf{Prestazioni}: GPT-4omini offre risultati superiori rispetto ai modelli open-source in termini di accuratezza e capacità di generazione del linguaggio, come evidenziato dai \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#benchmark}{benchmark\textsuperscript{G}} \textbf{analisi modelli}.
     \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#scalabilità}{\textbf{Scalabilità}\textsuperscript{G}}: Le API di OpenAI garantiscono un'infrastruttura cloud scalabile, eliminando i costi e la complessità legati alla gestione locale di modelli di grandi dimensioni.
     \item \textbf{Costi ottimizzati}: Il costo basato sui \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#token}{token\textsuperscript{G}} elaborati permette un utilizzo flessibile e sostenibile, adattandosi alle esigenze di carico variabile del sistema.
-\end{itemize}
+    \end{itemize}
+    Per ulteriori informazioni di confronto tra i vari Modelli visitare il seguente link:
+    \href{https://code7crusaders.github.io/docs/altri_documenti/analisi_modelli_firmato.html}{\textit{\underline{Analisi Modelli LLM}}}
+
 
 \subsubsection{Pipeline di Implementazione}
 L'implementazione sfrutta un'architettura RAG (Retrieval-Augmented Generation), integrando i seguenti componenti:
 \begin{enumerate}
-    \item Generazione degli Embedding: Le informazioni aziendali (es. cataloghi di prodotti) vengono preprocessate e trasformate in vettori numerici tramite \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#bert-bidirectional-encoder-representations-from-transformers}{BERT\textsuperscript{G}}\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{Embedding\textsuperscript{G}}: Le informazioni aziendali (es. cataloghi di prodotti) vengono preprocessate e trasformate in vettori numerici tramite BERT di Huggingface.
+    \item Generazione degli Embedding: Le informazioni aziendali (es. cataloghi di prodotti) vengono preprocessate e trasformate in vettori numerici tramite \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#bert-bidirectional-encoder-representations-from-transformers}{BERT\textsuperscript{G}} \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{Embedding\textsuperscript{G}}: Le informazioni aziendali (es. cataloghi di prodotti) vengono preprocessate e trasformate in vettori numerici tramite BERT di Huggingface.
     \item Archiviazione degli \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#embedding}{Embedding\textsuperscript{G}}: I vettori generati vengono memorizzati e indicizzati utilizzando \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#faiss}{FAISS\textsuperscript{G}}, che consente un recupero efficiente dei dati rilevanti.
     \item Integrazione con LLM: Le domande degli utenti, trasformate in embedding, vengono confrontate con il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#database-vettoriale}{database vettoriale\textsuperscript{G}}. Il contesto recuperato viene passato a GPT-4omini per generare risposte accurate e personalizzate.
     \item Web App e \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}: La comunicazione tra frontend (React) e backend avviene tramite \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}, garantendo tempi di risposta rapidi.
