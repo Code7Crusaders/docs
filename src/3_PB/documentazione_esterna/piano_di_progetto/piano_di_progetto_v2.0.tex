@@ -81,19 +81,32 @@
 \centering
 \textbf{Versioni} \\ % Titolo sopra la tabella
 \vspace{2mm} % Spazio tra il titolo e la tabella
-\begin{tabular}{|c|c|c|c|c|}
+\renewcommand{\arraystretch}{1.7}
+    
+\begin{tabular}{|c|c|c|c|m{0.35\textwidth}|}
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
     \hline
-    1.1 & 10/03/2025 & Diviesti Tommaso &  & Inizio correzioni segnalate post RTB \\
+    1.2 & 13/03/2025 & Diviesti Tommaso &  & Completamento analisi dei rischi: attualizzazione di riscontro rispetto alla loro occorrenza effettiva per i vari Sprint \\
+    \hline
+    1.1 & 10/03/2025 & Diviesti Tommaso &  & Inizio correzioni segnalate post RTB: sezione "Retrospettiva di periodo (RTB)" \\
+    \hline
     1.0 & 19/02/2025 & Diviesti Tommaso & Francesco Lapenna & Approvazione documento \\
+    \hline
     0.8 & 17/02/2025 & Francesco Lapenna & Enrico Cotti Cottini & Compilazione sprint \\
+    \hline
     0.7 & 5/02/2025 & Francesco Lapenna & Eddy Pinarello & Metriche rilevamento rischi \\
+    \hline
     0.6 & 18/01/2025 & Francesco Lapenna & Eddy Pinarello & Rimozione sezione 2.5 \\
+    \hline
     0.5 & 18/01/2025 & Diviesti Tommaso & Lapenna Francesco & Aggiornamento analisi rischi \\
+    \hline
     0.4 & 7/01/2025 & Diviesti Tommaso & Lapenna Francesco & Modello, vantaggi e caratteristiche sprint \\
+    \hline
     0.3 & 27/12/2024 & Lapenna Francesco & Matthew Pan & Inizio compilazione sprint \\
+    \hline
     0.2 & 3/12/2024 & Diviesti Tommaso & Lapenna Francesco & Continuazione e revisione del documento \\
+    \hline
     0.1 & 29/11/2024 & Lapenna Francesco & Diviesti Tommaso & Prima stesura del documento \\
     \hline
 \end{tabular}
@@ -768,6 +781,14 @@
                         \item Creazione di workflow per la gestione efficiente del progetto.
                     \end{itemize}
 
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RT1 - Difficoltà nell’uso di nuove tecnologie
+                    \item RO1 - Incomprensioni nella pianificazione delle attività
+                    \item RI2 - Impegni personali e universitari
+                \end{itemize}
+
                 % TODO sposta i ruoli in base allo sprint
                 \paragraph{Preventivo}\mbox{}\\
                 \begin{table}[H]
@@ -824,6 +845,11 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                RT1 - Difficoltà nell’uso di nuove tecnologie \\
+                L’impatto del rischio occorso è stato minimo, visto anche la corretta attuazione della relativa misura di mitigazione preventivata, ovvero attraverso lo studio delle nuove tecnologie in modo da avere una preparazione adeguata durante lo svolgimento delle \textit{issue} previste nello sprint. \\
+                \underline{Possibili migliorie:} Nessuna
+
                 \paragraph{Retrospettiva}
                 \paragraph{Risultati Ottenuti}
                     \begin{itemize}
@@ -860,6 +886,14 @@
                             \begin{itemize}
                                 \item Incontro Zoom con Ergon per definire il tech stack, i requisiti, e il target del progetto.
                             \end{itemize}
+                    \end{itemize}
+
+                    \paragraph{Rischi attesi}\mbox{}\\
+                    I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                    \begin{itemize}
+                        \item RT1 - Difficoltà nell’uso di nuove tecnologie
+                        \item RI1 - Scarsa collaborazione da parte di uno o più membri del team
+                        \item RI2 - Impegni personali e universitari
                     \end{itemize}
 
                 % TODO sposta i ruoli in base allo sprint
@@ -918,6 +952,10 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                Nessuno
+
                 \paragraph{Retrospettiva}
                 \begin{itemize}
                     \item Risultati Ottenuti:
@@ -962,6 +1000,13 @@
                             \item Identificare i casi d'uso del progetto.
                             \item Valutare l'efficienza di una ricerca manuale o automatica per il glossario.
                         \end{itemize}
+                \end{itemize}
+
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RC3 - Mancato confronto con l’azienda Proponente
+                    \item RO1 - Incomprensioni nella pianificazione delle attività
                 \end{itemize}
 
                 % TODO sposta i ruoli in base allo sprint
@@ -1020,6 +1065,12 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                RO1 - Incomprensioni nella pianificazione delle attività \\
+                Vista la quantità di documentazione da aggiornare costantemente e lo svolgimento in parallelo di altre attività volte a portare avanti il progetto, il Team ha bisogno di un metodo definitivo per organizzare i lavori all’interno degli sprint. \\
+                \underline{Possibili migliorie:} uno degli obbiettivi stabiliti in questo sprint, ovvero la creazione di una tabella che definisca la turnazione dei ruoli all’interno del Team
+
                 \paragraph{Retrospettiva}
                 \begin{itemize}
                     \item \textbf{Risultati raggiunti}:
@@ -1064,6 +1115,15 @@
                         \item Progressi tecnici dello script Python per il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{Glossario\textsuperscript{G}}.
                         \item Risposte dell'azienda su dataset e casi d'uso.
                         \end{itemize}
+                \end{itemize}
+
+
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RT1 - Difficoltà nell’uso di nuove tecnologie
+                    \item RT2 - Sviluppo di codice poco comprensibile
+                    \item RO2 - Deviazione dai tempi e costi previsti
                 \end{itemize}
 
                 % TODO sposta i ruoli in base allo sprint
@@ -1122,6 +1182,12 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                RT1 - Difficoltà nell’uso di nuove tecnologie \\
+                Il principale rischio occorso in questo sprint riguarda le tecnologie, in particolare uno script Python necessario per il Glossario. Nonostante ciò, grazie ad uno studio specifico nell’ambito del problema rilevato, anche questo rischio è stato superato senza ripercussioni gravi nelle risorse e tempistiche previste. \\
+                \underline{Possibili migliorie:} Nessuna
+
                 \paragraph{Retrospettiva}
                     \begin{itemize}
                         \item Attività completate:
@@ -1172,6 +1238,14 @@
                         \item Revisione del piano di progetto gestita da Enrico e Tommaso.
                         \item Inizio del piano di qualifica a cura di Matthew.
                     \end{itemize}
+                \end{itemize}
+
+
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RT1 - Difficoltà nell’uso di nuove tecnologie
+                    \item RI2 - Impegni personali e universitari
                 \end{itemize}
 
                 % TODO sposta i ruoli in base allo sprint
@@ -1230,6 +1304,12 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                RI2 - Impegni personali e universitari \\
+                A causa di alcuni problemi di disponibilità all’interno del Team, la riunione prevista con l’azienda Proponente per la discussione di alcune tematiche interne ha subito dei rallentamenti e un breve posticipo causando un breve periodo di riduzione del lavoro. \\
+                \underline{Possibili migliorie:} Se non è possibile avere una segnalazione anticipata sulla disponibilità dei membri del Team, è buona norma recuperare nel breve termine il tempo perso che sarebbe stato da dedicare allo svolgimento dei compiti prefissati prima dell’inizio dello sprint.
+
                 \paragraph{Retrospettiva}
                 \begin{itemize}
                     \item \textbf{Risultati ottenuti:}
@@ -1275,6 +1355,14 @@
                     \item Decidere il database da utilizzare.
                     \item Contattare il prof. Cardin per fissare un colloquio.
                     \item Definire i primi test statici e di unità.
+                \end{itemize}
+
+
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RT1 - Difficoltà nell’uso di nuove tecnologie
+                    \item RT2 - Sviluppo di codice poco comprensibile
                 \end{itemize}
 
                 % TODO sposta i ruoli in base allo sprint
@@ -1333,6 +1421,12 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                RT1 - Difficoltà nell’uso di nuove tecnologie \\
+                Vista la necessità in questo sprint di determinare alcune scelte tecnologiche riguardanti il database da utilizzare e il framework da usare per la creazione dell’interfaccia grafica è stato molto importante lo studio di alcune possibili alternative per lo svolgimento di questi compiti selezionando ciò che abbiamo ritenuto fondamentale per le necessità richieste dal nostro prodotto. \\
+                \underline{Possibili migliorie:} Nessuna
+
                 \paragraph{Retrospettiva}
                 \begin{itemize}
                     \item Attività completate:
@@ -1363,6 +1457,14 @@
                     \item Definizione dei processi di base e delle metriche per i processi primari di fornitura;
                     \item Stesura e versionamento del verbale del 19/12/2024;
                     \item Integrazione di documenti firmati dall'azienda.
+                \end{itemize}
+
+
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RO1 - Incomprensioni nella pianificazione delle attività
+                    \item RO2 - Deviazione dai tempi e costi previsti
                 \end{itemize}
 
                 % TODO sposta i ruoli in base allo sprint
@@ -1421,6 +1523,12 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                RO2 - Deviazione dai tempi e costi previsti \\
+                Questo rischio si è verificato a causa di alcuni problemi e piccoli errori in alcuni documenti che trattano argomenti tra cui le metriche di qualità. Per via di ciò, il Team ha dovuto impiegare tempo extra per la correzione e la revisione di questi documenti in modo da avere una documentazione al passo con lo standard qualitativo previsto. \\
+                \underline{Possibili migliorie:} Cercare di evitare errori ed effettuare una revisione nel breve termine dei documenti che hanno subito modifiche importanti
+
                 \paragraph{Retrospettiva}
                 Durante lo sprint, il team è riuscito a completare gli obiettivi prefissati:
                 \begin{itemize}
@@ -1465,6 +1573,15 @@
                     \item Correzione di errori nel documento di analisi frontend.
                     \item Creazione del template base per lo sprint.
                     \item Redazione della versione 0.3 del piano di progetto.
+                \end{itemize}
+
+
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RT1 - Difficoltà nell’uso di nuove tecnologie
+                    \item RO2 - Deviazione dai tempi e costi previsti
+                    \item RI2 - Impegni personali e universitari
                 \end{itemize}
 
                 % TODO sposta i ruoli in base allo sprint
@@ -1523,6 +1640,10 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                Nessuno
+
                 \paragraph{Retrospettiva}
                 Durante lo sprint sono stati completati i seguenti task:
                 \begin{itemize}
@@ -1560,6 +1681,15 @@
                     \item Aggiornamenti minori e revisione documenti
                     \item Compilazione della documentazione \textbf{Sprint 1}
                     \item Automazione della compilazione PDF tramite GitHub Actions
+                \end{itemize}
+
+
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RT1 - Difficoltà nell’uso di nuove tecnologie
+                    \item RC2 - Problemi di comunicazione all’interno del gruppo
+                    \item RC3 - Mancato confronto con l’azienda Proponente
                 \end{itemize}
 
                 % TODO sposta i ruoli in base allo sprint
@@ -1618,6 +1748,12 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                RT1 - Difficoltà nell’uso di nuove tecnologie \\
+                L’impatto del rischio occorso è stato minimo, visto anche la corretta attuazione della relativa misura di mitigazione preventivata, ovvero attraverso lo studio delle nuove tecnologie in modo da avere una preparazione adeguata durante lo svolgimento delle \textit{issue} previste nello sprint. \\
+                \underline{Possibili migliorie:} Nessuna
+
                 \paragraph{Retrospettiva}
                 Lo sprint ha portato alla realizzazione dei seguenti risultati:
                 \begin{itemize}
@@ -1647,6 +1783,15 @@
                     \item Correzione di errori grammaticali e miglioramenti nella qualità della documentazione.
                     \item Automazione della compilazione PDF e gestione script di compilazione.
                     \item Aggiornamento dei diari di lavoro.
+                \end{itemize}
+
+
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RC2 - Problemi di comunicazione all’interno del gruppo
+                    \item RC3 - Mancato confronto con l’azienda Proponente
+                    \item RI1 - Scarsa collaborazione da parte di uno o più membri del team
                 \end{itemize}
 
                 \paragraph{Preventivo}\mbox{}\\
@@ -1704,6 +1849,10 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                Nessuno
+
                 \paragraph{Retrospettiva}
                 Durante lo sprint, il team ha completato con successo le seguenti attività:
                 \begin{itemize}
@@ -1749,6 +1898,14 @@
                     \item Verifica e aggiornamento dell'Analisi dei Requisiti;
                     \item Implementazione della sezione di Test di Sistema v1;
                     \item Generazione automatica dei PDF aggiornati della documentazione.
+                \end{itemize}
+
+
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RO1 - Incomprensioni nella pianificazione delle attività
+                    \item RI2 - Impegni personali e universitari
                 \end{itemize}
 
                 \paragraph{Preventivo}\mbox{}\\
@@ -1806,6 +1963,12 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                RO1 - Incomprensioni nella pianificazione delle attività \\
+                Viste le tempistiche necessarie per verificare documentazione sviluppata in sprint precedenti, e visto anche lo stato di avanzamento di progetto bisognerebbe avere le idee più chiare e dei traguardi realistici e ben definiti alla fine di ogni sprint. \\
+                \underline{Possibili migliorie:} all’inizio di ogni sprint vengono definiti in maniera chiara degli obbiettivi da portare a termine in modo da effettuare dei compiti superflui negli sprint successivi
+
                 \paragraph{Retrospettiva}
                 Durante lo sprint sono stati completati i seguenti task:
                 \begin{itemize}
@@ -1860,6 +2023,14 @@
                     \end{itemize}
                     \item Creazione della lettera di presentazione (lettera\_di\_presentazione.tex).
                     \item Miglioramento del sistema di compilazione automatica dei documenti (compile.sh).
+                \end{itemize}
+
+
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RC2 - Problemi di comunicazione all’interno del gruppo
+                    \item RI2 - Impegni personali e universitari
                 \end{itemize}
 
                 \paragraph{Preventivo}\mbox{}\\
@@ -1917,6 +2088,10 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                Nessuno
+
                 \paragraph{Retrospettiva}
                 Risultati Raggiunti:
                 Al termine dello sprint, il team ha completato con successo i seguenti elementi:
@@ -1950,6 +2125,15 @@
                     \item Verifica e aggiornamento dell'Analisi dei Requisiti.
                     \item Revisione dell'analisi del frontend.
                     \item Verifica e aggiornamento degli ADR (Architecture Decision Records).
+                \end{itemize}
+
+
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RT1 - Difficoltà nell’uso di nuove tecnologie
+                    \item RC2 - Problemi di comunicazione all’interno del gruppo
+                    \item RI2 - Impegni personali e universitari
                 \end{itemize}
 
                 \paragraph{Preventivo}\mbox{}\\
@@ -2007,6 +2191,12 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                RC2 - Problemi di comunicazione all’interno del gruppo \\
+                Il problema principale causato da questo rischio riguarda \textit{commit} ridondanti e sovrapposizioni nelle modifiche che si possono verificare nei documenti. \\
+                \underline{Possibili migliorie:} Oltre ad aver stabilito i canali specifici di comunicazione e alle riunioni svolte settimanalmente, è importante definire nello specifico le responsabilità dei membri del Team e ottimizzare il workflow di aggiornamento dei vari documenti
+
                 \paragraph{Retrospettiva}
                 Durante lo sprint, il team ha completato con successo le seguenti attività:
                 \begin{itemize}
@@ -2053,6 +2243,15 @@
                     \end{itemize}
                     \item Correzioni grafiche e tecniche per migliorare la qualità dei documenti generati (fix di grafica e generazione PDF).
                     \item Merge delle modifiche nel branch di sviluppo.
+                \end{itemize}
+
+
+                \paragraph{Rischi attesi}\mbox{}\\
+                I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                \begin{itemize}
+                    \item RC3 - Mancato confronto con l’azienda Proponente
+                    \item RO2 - Deviazione dai tempi e costi previsti
+                    \item RO1 - Incomprensioni nella pianificazione delle attività
                 \end{itemize}
 
                 \paragraph{Preventivo}\mbox{}\\
@@ -2110,6 +2309,10 @@
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
 
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                Nessuno
+
                 \paragraph{Retrospettiva}
                 Al termine dello sprint, il team ha raggiunto i seguenti risultati:
                 \begin{itemize}
@@ -2144,6 +2347,15 @@
                     \begin{itemize}
                         \item Motivare le tecnologie usate nel PoC.
                     \end{itemize}                
+
+
+                    \paragraph{Rischi attesi}\mbox{}\\
+                    I componenti del Team ritengono che per questo Sprint siano possibili i seguenti rischi:
+                    \begin{itemize}
+                        \item RT1 - Difficoltà nell’uso di nuove tecnologie
+                        \item RI2 - Impegni personali e universitari
+                    \end{itemize}
+
 
                 \paragraph{Preventivo}\mbox{}\\
                 \begin{table}[H]
@@ -2199,6 +2411,13 @@
                     \end{tabular}
                     \caption{Prospetto economico e ore rimanenti}
                 \end{table}
+
+
+                \paragraph{Rischi effettivamente occorsi}\mbox{}\\
+                RT1 - Difficoltà nell’uso di nuove tecnologie \\
+                Nonostante lo studio precedente e la stesura di varie documentazioni a riguardo, è stato utilizzato del tempo per comprendere al meglio delle scelte tecnologiche e approfondire diverse questioni che le riguardano, come per esempio l’integrazione di un database vettoriale. \\
+                Come già supposto durante l’analisi dei rischi, dato che si tratta di tecnologie che non conosciamo alla perfezione, è normale e buona norma impiegare del tempo per capire bene il loro funzionamento. \\
+                \underline{Possibili migliorie:} Nessuna
 
                 \paragraph{Retrospettiva}
                 Durante lo sprint sono stati completati con successo i seguenti obiettivi:
