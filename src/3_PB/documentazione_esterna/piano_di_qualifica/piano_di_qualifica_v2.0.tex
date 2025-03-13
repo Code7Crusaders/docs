@@ -84,7 +84,7 @@
     \hline
     \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
     \hline
-    1.1 & 10/02/2025 & Francesco Lapenna & ??? & Correzione errori RTB \\
+    1.1 & 10/02/2025 & Francesco Lapenna & Gabriele Di Pietro & Correzione errori RTB, riscritta sezione 6 \\
     1.0 & 10/02/2025 & Gabriele Di Pietro & Filippo Rizzolo & Approvazione documento \\
     0.5 & 06/02/2025 & Gabriele Di Pietro & Matthew Pan & Stesura sezione 3.2 \\
     0.4 & 20/01/2025 & Matthew Pan & Filippo Rizzolo & Stesura sezione 3.1 - Test Sistema \\
@@ -140,9 +140,9 @@ saranno evidenziati da una 'G' al pedice.
         \item Analisi Dinamica \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T11.pdf}}
     \end{itemize}
     \item \textbf{Capitolato d'appalto C7} \\ \texttt{\url{https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C7.pdf}}
-    \item \textbf{Verbali esterni ed interni} \\ \texttt{\url{https://code7crusaders.github.io/docs/RTB/index.html}}
-    \item \textbf{Analisi dei requisiti} \\ \texttt{\url{https://code7crusaders.github.io/docs/RTB/documentazione_esterna/analisi_dei_requisiti/analisi_dei_requisiti.html}}
-    \item \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#glossario}{\textbf{Glossario}\textsuperscript{G}} \\ \texttt{\url{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html}}
+    \item \textbf{Verbali esterni ed interni} \\ \texttt{\url{https://code7crusaders.github.io/docs/RTB/index.html}} \\ \texttt{\url{https://code7crusaders.github.io/docs/PB/index.html}}
+    \item \textbf{Analisi dei requisiti V2.0} \\ \texttt{\url{https://code7crusaders.github.io/docs/PB/documentazione_esterna/analisi_dei_requisiti.html}}
+    \item \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#glossario}{\textbf{Glossario V2.0}\textsuperscript{G}} \\ \texttt{\url{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html}}
 \end{itemize}
 \newpage
 
@@ -698,36 +698,72 @@ I test di Accettazione vengono effettuati per verificare che il Software soddisf
 \newpage
 \section{Iniziative di automiglioramento per la qualità}
 \subsection{Introduzione}
-In questa sezione vengono descritte le azioni intraprese per migliorare la qualità del prodotto e dei processi. 
+In questa sezione vengono descritte le azioni intraprese per migliorare la qualità del progetto \textit{Software}. 
 Ogni iniziativa è stata identificata attraverso l’esperienza accumulata durante lo sviluppo del progetto, mano a mano che emergono problematiche specifiche. 
 Essendo questa la nostra prima esperienza con un progetto di tale complessità, è stato necessario affrontare numerosi tentativi per capire come organizzarci e gestire le diverse attività in modo efficace. 
 Durante il percorso, siamo riusciti a riconoscere i punti di forza e le aree di miglioramento nel nostro lavoro, individuando così gli aspetti su cui focalizzarci per ottimizzare il processo. 
-Per ogni difficoltà riscontrata, sono riportati i seguenti dettagli:
-\begin{itemize}
-    \item La fase del progetto in cui si è verificato il problema;
-    \item Descrizione del problema;
-    \item Contromisura adottata per risolvere il problema evidenziato;
-\end{itemize}
-
-\subsection{Problemi Rilevati ed iniziative adottate}
-\subsubsection{Presentazioni del diario di Bordo}
-\begin{itemize}
-    \item \textbf{Fase del Progetto:} Iniziale;
-    \item \textbf{Descrizione:} Ogni settimana è richiesta una presentazione che illustri le attività svolte durante la settimana. È necessario preparare delle slide ed esporle di persona, ma per alcuni membri questo risulta difficoltoso a causa di impegni lavorativi o distanza. Nonostante una tabella che riportasse i ruoli settimanali di ciascun membro.
-    \item \textbf{Contromisura:} Abbiamo deciso che i membri responsabili durante il periodo delle \textit{vacanze natalizie}, in cui non sono previste attività di diario di bordo, sostituiranno i colleghi che non possono presentare. In caso di diari di bordo online, saranno loro a presentare per primi.
-\end{itemize}
-\subsubsection{Organizzazione delle riunioni}
-\begin{itemize}
-    \item \textbf{Fase del Progetto:} Intermedia;
-    \item \textbf{Descrizione:} In realtà siamo rimasti stupiti che questo problema non si sia presentato fin da subito, ma durante il mese di dicembre ci sono stati problemi sulle sprint interne con molti membri assenti, questo ha portato ad un rallentamento del lavoro anche per la discrepanza di conoscenze che ogni membro ha. A volte, alcuni membri non sapevano dove recuperare determinate informazioni o se i documenti fossero pronti. La situazione è peggiorata quando solo pochi membri si autoassegnavano le \textit{issue}.
-    \item \textbf{Contromisura:} Abbiamo deciso di rendere la stesura dei verbali un'attività prioritaria da svolgere durante la riunione, cercando di completarla il più rapidamente possibile. Questo aiuta anche chi deve presentare il diario di bordo. Inoltre, per ogni \textit{issue} creata, abbiamo notificato tutti i membri tramite le piattaforme di comunicazione, in modo che tutti fossero consapevoli del lavoro da svolgere durante la sprint. Inoltre per evitare riunioni con pochi membri abbiamo preso in considerazione di essere più flessibili sull'orario delle riunioni settimanali.
-\end{itemize}
-
+\subsection{Valutazione sull'organizzazione}
+\begin{center}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.45\textwidth}|>{\centering\arraybackslash}p{0.45\textwidth}|}
+    \hline
+    \textbf{Descrizione problema} & \textbf{Contromisura} \\
+    \hline
+    Mancanza di tracciabilità delle attività rende difficile l'avanzamento produttivo e la pianificazione del lavoro & Implementazione di una Project Board su GitHub per migliorare la gestione e il monitoraggio delle attività \\
+    \hline
+    Attività che non venivano concluse per il tempo previsto rallentando il lavoro & Introduzione di una data di scadenza per ogni attività e creazione di tag specifici per categorizzare i problemi \\ 
+    \hline
+    Difficoltà nel comunicare la rendicondazione delle ore durante ogni sprint & Utilizzata la roadmap di \textit{GitHub} per la costruzione dei diagrammi di Gantt, in modo tale da iniziare a prevedere il tempo per ogni singola attività e avere uno schema di riferimento \\
+    \hline
+    Difficoltà nel comunicare e organizzare le riunioni o eventi & Utilizzo di un calendario condiviso tramite l'uso di \textit{Google Calendar} per pianificare le riunioni e le attività da svolgere \\
+    \hline
+    Diversi software di scrittura per stendere i documenti & Standardizzazione dell'uso di \LaTeX{} per la stesura dei documenti, e creazione di template per specifici documenti come i Verbali. Tutto al fine di migliorare la coerenza, la manutenibilità e la leggibilità della documentazione all'interno del progetto. \\
+    \hline
+    \caption{Contromisure adottate per migliorare l'organizzazione}
+\end{longtable}
+\end{center}
 \newpage
+\subsection{Valutazione sui Ruoli}
+\begin{center}
+    \begin{longtable}{|>{\centering\arraybackslash}p{0.30\textwidth}|>{\centering\arraybackslash}p{0.30\textwidth}|>{\centering\arraybackslash}p{0.30\textwidth}|}
+        \hline
+        \textbf{Ruolo} & \textbf{Descrizione problema} & \textbf{Contromisura} \\
+        \hline
+        Verificatore & Modificare o aggiornare documenti senza prima averlo Il verificatore è tenuto a compilare ad ogni modifica la sottoposto a verifica non è conforme ai buoni standard progettuali & Il verificatore è tenuto a compilare ad ogni modifica la sottoposto a verifica non è conforme ai buoni standard progettuali tabella relativa per ciascun documento\\
+        \hline %%%AGGIUNGERE ALTRE RIGHE SE NECESSARIO
+        \caption{Contromisure adottate per miglirare la gestione dei ruoli}
+    \end{longtable}
+\end{center}
+\newpage
+\subsection{Valutazione sugli Strumenti}
+\begin{center}
+    \begin{longtable}{|>{\centering\arraybackslash}p{0.30\textwidth}|>{\centering\arraybackslash}p{0.30\textwidth}|>{\centering\arraybackslash}p{0.30\textwidth}|}
+        \hline
+        \textbf{Strumento} & \textbf{Descrizione problema} & \textbf{Contromisura} \\
+        \hline
+        Glossario & Difficoltà nel riconoscere se una parola in un documento è stata definita nel glossario & Creazione di uno script Python che verifica la presenza di ogni parola definita nel glossario nei documenti.\\
+        \hline
+        Sito Web & Visitare il repository per leggere la documentazione risulta scomodo e macchinoso & Creazione di un sito web di facile accesso dove è possibile scaricare i pdf per la documentazione, fornendo la possibilità di visulizzare i documenti più piccoli direttamente sulle pagine. \\
+        \hline
+        LaTeX & Difficoltà nell'uso di questo linguaggio, soprattutto per i membri che non lo conoscevano & Ogni membro ha intrapreso un percorso di apprendimento per colmare le proprie lacune \\
+        \hline %%%AGGIUNGERE ALTRE RIGHE SE NECESSARIO
+        \caption{Contromisure adottate per miglirare il rapporto con gli strumenti}
+    \end{longtable}
+\end{center}
+
+%\subsection{Problemi Rilevati ed iniziative adottate}
+%\subsubsection{Presentazioni del diario di Bordo}
+%\begin{itemize}
+%    \item \textbf{Fase del Progetto:} Iniziale;
+%    \item \textbf{Descrizione:} Ogni settimana è richiesta una presentazione che illustri le attività svolte durante la settimana. È necessario preparare delle slide ed esporle di persona, ma per alcuni membri questo risulta difficoltoso a causa di impegni lavorativi o distanza. Nonostante una tabella che riportasse i ruoli settimanali di ciascun membro.
+%    \item \textbf{Contromisura:} Abbiamo deciso che i membri responsabili durante il periodo delle \textit{vacanze natalizie}, in cui non sono previste attività di diario di bordo, sostituiranno i colleghi che non possono presentare. In caso di diari di bordo online, saranno loro a presentare per primi.
+%\end{itemize}
+%\subsubsection{Organizzazione delle riunioni}
+%\begin{itemize}
+%    \item \textbf{Fase del Progetto:} Intermedia;
+%    \item \textbf{Descrizione:} In realtà siamo rimasti stupiti che questo problema non si sia presentato fin da subito, ma durante il mese di dicembre ci sono stati problemi sulle sprint interne con molti membri assenti, questo ha portato ad un rallentamento del lavoro anche per la discrepanza di conoscenze che ogni membro ha. A volte, alcuni membri non sapevano dove recuperare determinate informazioni o se i documenti fossero pronti. La situazione è peggiorata quando solo pochi membri si autoassegnavano le \textit{issue}.
+%    \item \textbf{Contromisura:} Abbiamo deciso di rendere la stesura dei verbali un'attività prioritaria da svolgere durante la riunione, cercando di completarla il più rapidamente possibile. Questo aiuta anche chi deve presentare il diario di bordo. Inoltre, per ogni \textit{issue} creata, abbiamo notificato tutti i membri tramite le piattaforme di comunicazione, in modo che tutti fossero consapevoli del lavoro da svolgere durante la sprint. Inoltre per evitare riunioni con pochi membri abbiamo preso in considerazione di essere più flessibili sull'orario delle riunioni settimanali.
+%\end{itemize}
 \subsection{Considerazioni Finali}
-Fin da subito il nostro gruppo si è posto come obiettivo quello di dotarsi di un \textit{Way of Working} preciso e ben definito, pianificando ogni singola attività e prevedendo tutte le possibili difficoltà durante lo svolgimento del progetto.
-Questo per cercare di prevenire i problemi e di affrontarli con contromisure efficaci. Alcuni problemi sono stati descritti in aula durante il corso, altri sono emersi confrontandoci con altri gruppi durante le attività di diario di bordo, mentre altri ancora li abbiamo affrontati direttamente nel nostro lavoro. Grazie ai consigli e ai suggerimenti esterni, siamo riusciti a implementare contromisure per risolverli o prevenirli fin dall'inizio."
-Questo ha migliorato notevolmente la qualità del nostro lavoro e ci ha permesso di svolgere le varie attività in modo efficiente ed equo. Nonostante ciò siamo consapevoli che ci sono ancora molti aspetti su cui possiamo progredire e che ci sono molte iniziative di automiglioramento che possiamo adottare.
-Siamo convinti che, continuando a lavorare con lo stesso impegno e determinazione, raggiungeremo risultati di qualità sempre più elevata.
+Il processo di automiglioramento è un’attività continua e fondamentale per garantire la qualità del progetto. Le contromisure adottate hanno permesso di risolvere o ridurre i problemi individuati, migliorando l’efficienza e l’efficacia del lavoro svolto. Il gruppo si impegna a mantenere un approccio proattivo e collaborativo per individuare e risolvere tempestivamente eventuali criticità. Continueremo a monitorare e valutare le nostre pratiche, implementando ulteriori miglioramenti ove necessario, per assicurare il successo del progetto e la soddisfazione degli stakeholder.
 
 \end{document}
