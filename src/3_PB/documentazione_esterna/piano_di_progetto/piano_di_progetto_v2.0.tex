@@ -18,6 +18,16 @@
 \usepackage{tikz}
 \usepackage{pgfplotstable}
 
+% definizione dei colori per i grafici
+\definecolor{CO}{HTML}{93b7be}  
+\definecolor{DIP}{HTML}{90be6d}  
+\definecolor{DIV}{HTML}{6BAED6}  
+\definecolor{LA}{HTML}{ffd373}  
+\definecolor{PA}{HTML}{a874d2}  
+\definecolor{PI}{HTML}{FF8F00}  
+\definecolor{RI}{HTML}{a98467}  
+\definecolor{extra}{HTML}{E53946}
+
 % setta a 1 se il verbale è esterno, 0 se è interno
 \newcommand{\isEsterno}{1}
 
@@ -808,6 +818,16 @@
                     \caption{Preventivo orario per ruolo nello Sprint 1}
                 \end{table}
 
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{11/Responsabile, 13/Amministratore, 13/Analista, 20/Progettista, 43/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 1}
+                \end{figure}
+
+
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
                 \begin{table}[H]
@@ -914,6 +934,16 @@
                     \end{tabular}
                     \caption{Preventivo orario per ruolo nello Sprint 2}
                 \end{table}
+
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{11/Responsabile, 13/Amministratore, 13/Analista, 20/Progettista, 43/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 2}
+                \end{figure}
+
 
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
@@ -1027,6 +1057,16 @@
                     \end{tabular}
                     \caption{Preventivo orario per ruolo nello Sprint 3}
                 \end{table}
+
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{9/Responsabile, 10/Amministratore, 10/Analista, 16/Progettista, 21/Programmatore, 30/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 3}
+                \end{figure}
+
 
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
@@ -1144,6 +1184,16 @@
                     \end{tabular}
                     \caption{Preventivo orario per ruolo nello Sprint 4}
                 \end{table}
+
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{8/Responsabile, 10/Amministratore, 10/Analista, 15/Progettista, 23/Programmatore, 28/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 4}
+                \end{figure}
+
 
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
@@ -1267,6 +1317,16 @@
                     \caption{Preventivo orario per ruolo nello Sprint 5}
                 \end{table}
 
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{9/Responsabile, 10/Amministratore, 7/Analista, 16/Progettista, 23/Programmatore, 29/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 5}
+                \end{figure}
+
+
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
                 \begin{table}[H]
@@ -1384,6 +1444,16 @@
                     \caption{Preventivo orario per ruolo nello Sprint 6}
                 \end{table}
 
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{8/Responsabile, 10/Amministratore, 10/Analista, 15/Progettista, 27/Programmatore, 27/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 6}
+                \end{figure}
+
+
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
                 \begin{table}[H]
@@ -1485,6 +1555,16 @@
                     \end{tabular}
                     \caption{Preventivo orario per ruolo nello Sprint 7}
                 \end{table}
+
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{8/Responsabile, 10/Amministratore, 10/Analista, 15/Progettista, 28/Programmatore, 28/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 7}
+                \end{figure}
+
 
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
@@ -1602,7 +1682,17 @@
                     \end{tabular}
                     \caption{Preventivo orario per ruolo nello Sprint 8}
                 \end{table}
+                
 
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{9/Responsabile, 10/Amministratore, 10/Analista, 16/Progettista, 23/Programmatore, 29/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 8}
+                \end{figure}
+
+            
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
                 \begin{table}[H]
@@ -1711,6 +1801,16 @@
                     \caption{Preventivo orario per ruolo nello Sprint 9}
                 \end{table}
 
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{8/Responsabile, 10/Amministratore, 10/Analista, 15/Progettista, 28/Programmatore, 28/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 9}
+                \end{figure}
+
+
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
                 \begin{table}[H]
@@ -1811,6 +1911,16 @@
                     \end{tabular}
                     \caption{Preventivo orario per ruolo nello Sprint 10}
                 \end{table}
+
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{8/Responsabile, 10/Amministratore, 10/Analista, 15/Progettista, 28/Programmatore, 28/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 10}
+                \end{figure}
+
 
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
@@ -1925,6 +2035,16 @@
                     \end{tabular}
                     \caption{Preventivo orario per ruolo nello Sprint 11}
                 \end{table}
+
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{8/Responsabile, 10/Amministratore, 10/Analista, 15/Progettista, 28/Programmatore, 28/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 11}
+                \end{figure}
+
 
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
@@ -2051,6 +2171,16 @@
                     \caption{Preventivo orario per ruolo nello Sprint 12}
                 \end{table}
 
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{8/Responsabile, 10/Amministratore, 10/Analista, 15/Progettista, 28/Programmatore, 28/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 12}
+                \end{figure}
+
+
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
                 \begin{table}[H]
@@ -2153,6 +2283,16 @@
                     \end{tabular}
                     \caption{Preventivo orario per ruolo nello Sprint 13}
                 \end{table}
+
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{9/Responsabile, 10/Amministratore, 10/Analista, 16/Progettista, 23/Programmatore, 29/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 13}
+                \end{figure}
+
 
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
@@ -2272,6 +2412,16 @@
                     \caption{Preventivo orario per ruolo nello Sprint 14}
                 \end{table}
 
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{8/Responsabile, 10/Amministratore, 10/Analista, 16/Progettista, 28/Programmatore, 28/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 14}
+                \end{figure}
+
+
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
                 \begin{table}[H]
@@ -2374,6 +2524,16 @@
                     \end{tabular}
                     \caption{Preventivo orario per ruolo nello Sprint 15}
                 \end{table}
+
+
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        \pie[polar]{6/Responsabile, 11/Amministratore, 11/Analista, 17/Progettista, 25/Programmatore, 31/Verificatore}
+                    \end{tikzpicture}
+                    \caption{Ripartizione in percentuale dei ruoli nello Sprint 15}
+                \end{figure}
+
 
                 % TODO copiala dal preventivo (per ora li facciamo uguali)
                 \paragraph{Consuntivo}\mbox{}\\
