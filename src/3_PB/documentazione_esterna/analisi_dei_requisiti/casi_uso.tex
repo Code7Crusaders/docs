@@ -45,7 +45,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
     \item \textbf{Attore Secondario}: OpenAi
     \item \textbf{Precondizioni}:  L'utente ha inviato una domanda al bot e attende una risposta.
     \item \textbf{Postcondizioni}: L'utente riceve una risposta dal bot nella finestra della chat, basata sui dati caricati nel database vettoriale, fornendo una risposta coerente.
-    \item \textbf{Scenario principale}: Dopo aver inviato una domanda, l'utente attende la risposta elaborata dall’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\textit{LLM}\textsuperscript{G}}, che utilizza come contesto le informazioni dei dati caricati nel chatbot. La risposta viene visualizzata nella finestra della chat.
+    \item \textbf{Scenario principale}: Dopo aver inviato una domanda, l'utente attende la risposta elaborata dall’\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#llm-large-language-model}{\textit{LLM}\textsuperscript{G}}, che utilizza come contesto le informazioni dei dati caricati nel chatbot. La risposta viene visualizzata nella finestra della chat.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: U.C.2.1
     \item \textbf{Inclusione}: -
@@ -61,7 +61,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \begin{itemize}
     \item \textbf{Attore}: Utente
     \item \textbf{Precondizioni}: L'utente richiede informazioni su un prodotto non presente nel database del sistema.
-    \item \textbf{Postcondizioni}: L'utente riceve una risposta da parte del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}, non è possibile elaborare l'informazione.
+    \item \textbf{Postcondizioni}: L'utente riceve una risposta da parte del \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}, non è possibile elaborare l'informazione.
     \item \textbf{Scenario principale}: L'utente invia una domanda su un prodotto specifico, il sistema cerca nel database ma non trova risultati. Un messaggio di errore avvisa l'utente che il prodotto non è presente nel sistema.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
@@ -77,8 +77,8 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \subsubsection{U.C.3 Seleziona Template}
 \begin{itemize}
     \item \textbf{Attore}: Utente
-    \item \textbf{Precondizioni}: L'utente ha effettuato l'accesso ed è nella chat. Vuole selezionare una domanda predefinita tra quelle suggerite dal sistema chiamati \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{\textit{Template}\textsuperscript{G}}. 
-    \item \textbf{Postcondizioni}: L'utente riceve una risposta templatizzata senza dover formulare una domanda manuale (senza dover chiamare l’\href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\textit{LLM}\textsuperscript{G}}).
+    \item \textbf{Precondizioni}: L'utente ha effettuato l'accesso ed è nella chat. Vuole selezionare una domanda predefinita tra quelle suggerite dal sistema chiamati \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{\textit{Template}\textsuperscript{G}}. 
+    \item \textbf{Postcondizioni}: L'utente riceve una risposta templatizzata senza dover formulare una domanda manuale (senza dover chiamare l’\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#llm-large-language-model}{\textit{LLM}\textsuperscript{G}}).
     \item \textbf{Scenario principale}: L'utente visualizza un elenco di domande suggerite, ne seleziona una e il sistema fornisce immediatamente una risposta.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
@@ -394,9 +394,9 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \subsubsection{U.C.10: Creazione di un nuovo template}
 \begin{itemize}
     \item \textbf{Attore}: Admin
-    \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso al sistema di gestione e ha selezionato l'opzione per creare un nuovo \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}.
-    \item \textbf{Postcondizioni}: Un nuovo \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} con una domanda predefinita e una risposta associata è stato salvato nel sistema.
-    \item \textbf{Scenario principale}: L'amministratore accede alla funzione di creazione di un nuovo \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}. In questa sezione, inserisce una domanda predefinita e una risposta predefinita. Dopo aver verificato che i dati inseriti siano corretti, l'amministratore salva il nuovo \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, che diventa immediatamente disponibile per essere utilizzato dagli utenti nella chat.
+    \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso al sistema di gestione e ha selezionato l'opzione per creare un nuovo \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}.
+    \item \textbf{Postcondizioni}: Un nuovo \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} con una domanda predefinita e una risposta associata è stato salvato nel sistema.
+    \item \textbf{Scenario principale}: L'amministratore accede alla funzione di creazione di un nuovo \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}. In questa sezione, inserisce una domanda predefinita e una risposta predefinita. Dopo aver verificato che i dati inseriti siano corretti, l'amministratore salva il nuovo \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, che diventa immediatamente disponibile per essere utilizzato dagli utenti nella chat.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: U.C.13
     \item \textbf{Inclusione}: -
@@ -411,9 +411,9 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \subsubsection{U.C.11: Modifica di un template esistente}
 \begin{itemize}
     \item \textbf{Attore}: Admin
-    \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso e ha selezionato un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} esistente dalla lista.
-    \item \textbf{Postcondizioni}: Il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} selezionato viene aggiornato con i nuovi dati forniti.
-    \item \textbf{Scenario principale}: L'amministratore visualizza l'elenco dei \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} disponibili e seleziona quello che desidera modificare. Accede quindi ai dettagli del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, dove può modificare sia la domanda predefinita che la risposta associata. Dopo aver apportato le modifiche necessarie, l'amministratore salva i cambiamenti, aggiornando così il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} nel sistema. Le modifiche apportate sono immediatamente visibili agli utenti quando utilizzano la funzione di selezione delle domande predefinite. 
+    \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso e ha selezionato un \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} esistente dalla lista.
+    \item \textbf{Postcondizioni}: Il \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} selezionato viene aggiornato con i nuovi dati forniti.
+    \item \textbf{Scenario principale}: L'amministratore visualizza l'elenco dei \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} disponibili e seleziona quello che desidera modificare. Accede quindi ai dettagli del \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, dove può modificare sia la domanda predefinita che la risposta associata. Dopo aver apportato le modifiche necessarie, l'amministratore salva i cambiamenti, aggiornando così il \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} nel sistema. Le modifiche apportate sono immediatamente visibili agli utenti quando utilizzano la funzione di selezione delle domande predefinite. 
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: U.C.13
     \item \textbf{Inclusione}: -
@@ -428,9 +428,9 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \subsubsection{U.C.12: Elimina un template esistente}
 \begin{itemize}
     \item \textbf{Attore}: Admin
-    \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso e ha selezionato un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} esistente dalla lista. 
-    \item \textbf{Postcondizioni}: Il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} viene eliminato dal sistema e non è più disponibile per gli utenti.
-    \item \textbf{Scenario principale}: L'amministratore, dalla lista dei \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, individua quello che intende eliminare. Dopo aver selezionato il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, conferma l'operazione tramite un'apposita finestra di dialogo. Il sistema procede quindi a rimuovere il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, aggiornando l'elenco dei \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} disponibili. Da quel momento, la domanda predefinita associata non sarà più accessibile agli utenti.
+    \item \textbf{Precondizioni}: L'amministratore ha effettuato l'accesso e ha selezionato un \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} esistente dalla lista. 
+    \item \textbf{Postcondizioni}: Il \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} viene eliminato dal sistema e non è più disponibile per gli utenti.
+    \item \textbf{Scenario principale}: L'amministratore, dalla lista dei \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, individua quello che intende eliminare. Dopo aver selezionato il \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, conferma l'operazione tramite un'apposita finestra di dialogo. Il sistema procede quindi a rimuovere il \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, aggiornando l'elenco dei \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} disponibili. Da quel momento, la domanda predefinita associata non sarà più accessibile agli utenti.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -445,9 +445,9 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \subsubsection{U.C.13 Controllo Validità Formato}
 \begin{itemize}
     \item \textbf{Attore}: Admin
-    \item \textbf{Precondizioni}: L'amministratore sta creando o modificando un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, ma inserisce un formato non valido (ad esempio, una domanda vuota o una risposta eccessivamente lunga ecc..)
-    \item \textbf{Postcondizioni}: Il sistema non consente di salvare il \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} e informa l'amministratore dell'errore.
-    \item \textbf{Scenario principale}: Durante la creazione o modifica di un \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, l'amministratore inserisce dati non conformi, come una domanda lasciata vuota o una risposta con caratteri non consentiti. Il sistema esegue un controllo sui dati inseriti e rileva l'errore, bloccando il salvataggio del \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}. Viene visualizzato un messaggio di errore chiaro che spiega il problema e invita l'amministratore a correggere i dati prima di procedere con il salvataggio.
+    \item \textbf{Precondizioni}: L'amministratore sta creando o modificando un \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, ma inserisce un formato non valido (ad esempio, una domanda vuota o una risposta eccessivamente lunga ecc..)
+    \item \textbf{Postcondizioni}: Il sistema non consente di salvare il \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}} e informa l'amministratore dell'errore.
+    \item \textbf{Scenario principale}: Durante la creazione o modifica di un \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}, l'amministratore inserisce dati non conformi, come una domanda lasciata vuota o una risposta con caratteri non consentiti. Il sistema esegue un controllo sui dati inseriti e rileva l'errore, bloccando il salvataggio del \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{template\textsuperscript{G}}. Viene visualizzato un messaggio di errore chiaro che spiega il problema e invita l'amministratore a correggere i dati prima di procedere con il salvataggio.
     \item \textbf{Generalizzazioni}: -
     \item \textbf{Estensioni}: -
     \item \textbf{Inclusione}: -
@@ -638,7 +638,7 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 \subsubsection{U.C.22 Invio Richiesta a un Operatore Umano}
 \begin{itemize}
     \item \textbf{Attore}: Utente
-    \item \textbf{Precondizioni}: L’utente ha ricevuto una risposta non soddisfacente dal sistema basato su \href{https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#llm-large-language-model}{\textit{LLM}\textsuperscript{G}}.
+    \item \textbf{Precondizioni}: L’utente ha ricevuto una risposta non soddisfacente dal sistema basato su \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#llm-large-language-model}{\textit{LLM}\textsuperscript{G}}.
     \item \textbf{Postcondizioni}: La richiesta dell’utente è stata inviata agli amministratori ed è visibile nella dashboard.
     \item \textbf{Scenario principale}: L’utente seleziona l’opzione per richiedere assistenza a un operatore umano, compila un modulo opzionale con eventuali dettagli e invia la richiesta. Il sistema registra la richiesta e la rende disponibile nella dashboard degli amministratori.
     \item \textbf{Generalizzazioni}: -
