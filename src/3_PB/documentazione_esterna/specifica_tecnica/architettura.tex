@@ -104,8 +104,200 @@ L’architettura esagonale garantisce modularità e sostenibilità del sistema n
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \subsection{Moduli}
+\subsubsection{Architettura Esagonale}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./img/ArchitetturaEsagonaleStarUML.png}
+    \caption{Diagramma delle classi - Architettura Esagonale}
+    \label{fig:architettura_esagonale}
+\end{figure}
+
+
+
+
+\subsubsection{Chat Controller}
+\paragraph{1. Data Transfer Objects (DTO)}
+\begin{itemize}
+    \item \textbf{AnswerDTO \& QuestionDTO:}
+    \begin{itemize}
+        \item Questi oggetti sono usati per trasferire i dati tra le varie componenti (ad esempio, tra il controller e il caso d’uso).
+        \item AnswerDTO incapsula la risposta generata.
+        \item QuestionDTO contiene informazioni relative all’utente (identificato da un intero) e alla domanda posta.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{2. Modelli ed Entità}
+\begin{itemize}
+    \item \textbf{Modelli (Models):}
+    \begin{itemize}
+        \item Rappresentano le strutture dati a livello di dominio, per esempio:
+        \begin{itemize}
+            \item \textit{QuestionModel}: Tiene traccia dell’ID utente e del testo della domanda.
+            \item \textit{AnswerModel}: Incapsula la risposta generata.
+            \item \textit{ContextModel}: Utilizzato per rappresentare il contesto (ad esempio, contenuti estratti da documenti) che verrà usato per generare una risposta.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Entità:}
+    \begin{itemize}
+        \item Gli oggetti di tipo entità, come DocumentContextEntity, QueryEntity e AnswerEntity, rappresentano versioni “di basso livello” degli stessi concetti, ma con logiche e metodi per accedere ai dati (ad esempio, \texttt{get\_content()} o \texttt{get\_query()}).
+        \item Queste entità sono utili per trasformare i dati dai modelli alle strutture usate nelle operazioni di business.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{3. Repositories e Interazione con il Vector Store}
+\begin{itemize}
+    \item \textbf{FaissRepository:}
+    \begin{itemize}
+        \item Questo componente interagisce direttamente con un vector store basato su FAISS.
+        \item \texttt{similarity\_search(query)}: Riceve una QueryEntity, esegue una ricerca di similarità sul vector store (limitata ad un certo numero di risultati, ad esempio 4) e trasforma i documenti trovati in oggetti DocumentContextEntity.
+        \item \texttt{load\_chunks(chunks)}: Consente di caricare “chunk” di testo (rappresentati come FileChunkEntity) nel vector store. Per ciascun chunk viene creato un oggetto Document con metadati, successivamente il vector store viene salvato in maniera persistente.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{4. Integrazione con LangChain}
+\begin{itemize}
+    \item \textbf{LangChainRepository:}
+    \begin{itemize}
+        \item Utilizza le funzionalità di LangChain per la generazione di risposte e per la suddivisione dei file.
+        \item \texttt{generate\_answer(query, contexts, prompt\_template)}:
+        \begin{enumerate}
+            \item Prepara una lista di documenti (tramite Document di LangChain) a partire dai contesti ricevuti.
+            \item Recupera la “memoria” utente per mantenere la storia delle conversazioni, la quali vengono trimmate se troppo lunghe per non superare un limite di token.
+            \item Costruisce dinamicamente un prompt (usando ChatPromptTemplate) che include istruzioni di sistema, la storia della conversazione, la domanda attuale e il contesto.
+            \item Invoca una catena (chain) per ottenere la risposta dall’LLM.
+            \item Salva l’interazione nella memoria utente e restituisce la risposta incapsulata in un AnswerEntity.
+        \end{enumerate}
+        \item \texttt{split\_file(file)}: Suddivide il contenuto di un file in “chunk” di dimensioni definite (ad es. 2500 caratteri) utilizzando lo RecursiveCharacterTextSplitter. Se il contenuto è in bytes, viene decodificato in stringa. Il risultato è una lista di oggetti FileChunkEntity.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{5. Adattatori (Adapters)}
+\begin{itemize}
+    \item \textbf{FaissAdapter:}
+    \begin{itemize}
+        \item Implementa l’interfaccia SimilaritySearchPort e AddChunksPort.
+        \item Il metodo \texttt{similarity\_search()} trasforma un QuestionModel in una QueryEntity.
+        \item Converte i risultati del repository in istanze di ContextModel.
+    \end{itemize}
+    \item \textbf{LangChainAdapter:}
+    \begin{itemize}
+        \item Implementa le interfacce GenerateAnswerPort e SplitFilePort.
+        \item \texttt{generate\_answer()} converte il QuestionModel e la lista di ContextModel in entità adatte alla generazione della risposta.
+        \item \texttt{split\_file()} trasforma un FileModel in un FileEntity e poi converte i chunk ottenuti in oggetti FileChunkModel.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{6. Interfacce (Ports)}
+\begin{itemize}
+    \item Definiscono i contratti per le funzionalità principali:
+    \begin{itemize}
+        \item \textbf{SimilaritySearchPort:} Definisce il metodo per eseguire la ricerca di similarità dati un QuestionModel.
+        \item \textbf{GenerateAnswerPort:} Definisce il metodo per generare una risposta basata su domanda, contesto e prompt template.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{7. Servizi}
+\begin{itemize}
+    \item \textbf{SimilaritySearchService:} Gestisce la ricerca di similarità per un QuestionModel.
+    \item \textbf{GenerateAnswerService:} Invoca la generazione della risposta e gestisce la propagazione degli errori.
+\end{itemize}
+
+\paragraph{8. Use Case e ChatService}
+\begin{itemize}
+    \item \textbf{ChatUseCase (interfaccia astratta) e ChatService (implementazione):}
+    \begin{itemize}
+        \item \texttt{get\_answer(question\_model)} coordina il processo di recupero del contesto e generazione della risposta.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{9. Controller}
+\begin{itemize}
+    \item \textbf{ChatController:}
+    \begin{itemize}
+        \item Funziona da interfaccia verso l’esterno (ad esempio, per una API REST).
+        \item \texttt{get\_answer(user\_input)}:
+        \begin{enumerate}
+            \item Converte il QuestionDTO in un QuestionModel.
+            \item Chiama il caso d’uso ChatUseCase per ottenere la risposta.
+            \item Converte il risultato (AnswerModel) in un AnswerDTO da restituire al chiamante.
+        \end{enumerate}
+    \end{itemize}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./img/ChatController.png}
+    \caption{Diagramma delle classi - Chat Controller}
+    \label{fig:chat_controller}
+\end{figure}
+
+
+
+\subsubsection{Add File Controller}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./img/AddFileController.png}
+    \caption{Diagramma delle classi - Add File Controller}
+    \label{fig:add_file_controller}
+\end{figure}
+
+
+
+\subsubsection{Conversation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./img/Conversation.png}
+    \caption{Diagramma delle classi - Conversation}
+    \label{fig:conversation}
+\end{figure}
+
+
+\subsubsection{Message}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./img/Message.png}
+    \caption{Diagramma delle classi - Message}
+    \label{fig:message}
+\end{figure}
+
+\subsubsection{User}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./img/User.png}
+    \caption{Diagramma delle classi - User}
+    \label{fig:user}
+\end{figure}
+
+
+\subsubsection{Support Message}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./img/SupportMessage.png}
+    \caption{Diagramma delle classi - Support Message}
+    \label{fig:support_message}
+\end{figure}
+
+
+
+\subsubsection{Template}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./img/Template.png}
+    \caption{Diagramma delle classi - Template}
+    \label{fig:template}
+\end{figure}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tecnologie}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
