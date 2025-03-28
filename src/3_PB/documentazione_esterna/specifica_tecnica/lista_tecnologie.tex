@@ -1,8 +1,46 @@
 \section{Tecnologie}
 Questa sezione ha lo scopo di offrire una panoramica delle tecnologie adottate per la realizzazione del sistema software. Vengono analizzati in dettaglio le piattaforme, gli strumenti, i linguaggi di programmazione, i framework e altre risorse tecnologiche utilizzate nel corso dello sviluppo.
-\subsection{Docker}
+
+
+\subsection{Docker} 
 È una piattaforma di containerizzazione leggera che facilita lo sviluppo, il testing e il rilascio delle applicazioni, fornendo un ambiente isolato e riproducibile. 
-Viene utilizzato per creare ambienti di sviluppo uniformi, migliorare la scalabilità delle applicazioni e semplificare la gestione delle risorse.
+Viene utilizzato per creare ambienti di sviluppo uniformi, migliorare la scalabilità delle applicazioni e semplificare la gestione delle risorse. 
+
+\paragraph{Vantaggi:} 
+\begin{itemize} 
+    \item \textbf{Portabilità}: I container Docker possono essere eseguiti su qualsiasi piattaforma che supporti Docker, garantendo coerenza tra ambienti di sviluppo, test e produzione. 
+    \item \textbf{Isolamento delle dipendenze}: Ogni container include tutte le dipendenze necessarie, evitando conflitti tra ambienti. 
+    \item \textbf{Scalabilità facilitata}: Permette di scalare i servizi in modo efficiente tramite orchestratori come Kubernetes. 
+    \item \textbf{Riduzione dei tempi di deploy}: I container vengono avviati rapidamente, accelerando il rilascio delle applicazioni. 
+    \item \textbf{Maggiore efficienza delle risorse}: I container condividono il kernel del sistema operativo, riducendo l'overhead rispetto alle macchine virtuali. 
+\end{itemize} 
+
+
+\subsubsection{OpenAI API}
+L'API di OpenAI fornisce accesso a modelli di intelligenza artificiale avanzati, tra cui modelli di embedding. Un embedding model è un tipo di modello di machine learning che trasforma dati di input, come parole o frasi, in vettori di numeri in uno spazio continuo a bassa dimensione. Questi vettori catturano le caratteristiche semantiche dei dati di input, permettendo di misurare la similarità tra diversi input in modo efficiente.
+
+\paragraph{Vantaggi:}
+L'utilizzo di embedding models offre numerosi vantaggi, tra cui:
+\begin{itemize}
+    \item \textbf{Efficienza}: I vettori di embedding permettono di rappresentare dati complessi in modo compatto e computazionalmente efficiente.
+    \item \textbf{Versatilità}: Possono essere utilizzati in una vasta gamma di applicazioni, tra cui il processamento del linguaggio naturale (NLP), la raccomandazione di contenuti e la classificazione dei dati.
+\end{itemize}
+
+\paragraph{Casi d'uso:}
+Gli embedding models sono utilizzati in vari casi d'uso, tra cui:
+\begin{itemize}
+    \item \textbf{Ricerca di documenti}: Migliorano la ricerca di documenti trovando risultati più rilevanti basati sulla similarità semantica.
+    \item \textbf{Raccomandazione di contenuti}: Personalizzano le raccomandazioni di contenuti in base alle preferenze dell'utente.
+    \item \textbf{Classificazione del testo}: Aiutano nella classificazione automatica di testi in categorie predefinite.
+\end{itemize}
+
+
+
+\paragraph{Impiego del progetto:}
+Nel progetto, l'API di OpenAI viene utilizzata per convertire il testo in token e generando embedding che rappresentano le caratteristiche semantiche del testo in uno spazio vettoriale.
+
+
+
 \subsection{Linguaggi di programmazione e formato dati}
 \begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.40\textwidth}|>{\centering\arraybackslash}m{0.30\textwidth}|}
 	\hline
@@ -16,6 +54,7 @@ Viene utilizzato per creare ambienti di sviluppo uniformi, migliorare la scalabi
     \caption{Linguaggi e formati utilizzati} 
 
 \end{longtable}
+
 
 \subsection{Librerie}   % per python rivedere requirments.txt e per JS rivedere package.json
 \begin{longtable}{|>{\centering\arraybackslash}m{0.35\textwidth}|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.45\textwidth}|}
@@ -43,25 +82,5 @@ Viene utilizzato per creare ambienti di sviluppo uniformi, migliorare la scalabi
 \end{longtable}
 
 
-\subsection{Servizi}
-\subsubsection{OpenAI API}
-L'API di OpenAI fornisce accesso a modelli di intelligenza artificiale avanzati, tra cui modelli di embedding. Un embedding model è un tipo di modello di machine learning che trasforma dati di input, come parole o frasi, in vettori di numeri in uno spazio continuo a bassa dimensione. Questi vettori catturano le caratteristiche semantiche dei dati di input, permettendo di misurare la similarità tra diversi input in modo efficiente.
 
-\paragraph{Vantaggi:}
-L'utilizzo di embedding models offre numerosi vantaggi, tra cui:
-\begin{itemize}
-    \item \textbf{Efficienza}: I vettori di embedding permettono di rappresentare dati complessi in modo compatto e computazionalmente efficiente.
-    \item \textbf{Versatilità}: Possono essere utilizzati in una vasta gamma di applicazioni, tra cui il processamento del linguaggio naturale (NLP), la raccomandazione di contenuti e la classificazione dei dati.
-\end{itemize}
-
-\paragraph{Casi d'uso:}
-Gli embedding models sono utilizzati in vari casi d'uso, tra cui:
-\begin{itemize}
-    \item \textbf{Ricerca di documenti}: Migliorano la ricerca di documenti trovando risultati più rilevanti basati sulla similarità semantica.
-    \item \textbf{Raccomandazione di contenuti}: Personalizzano le raccomandazioni di contenuti in base alle preferenze dell'utente.
-    \item \textbf{Classificazione del testo}: Aiutano nella classificazione automatica di testi in categorie predefinite.
-\end{itemize}
-
-\paragraph{Impiego del progetto:}
-Nel progetto, l'API di OpenAI viene utilizzata per convertire il testo in token e generando embedding che rappresentano le caratteristiche semantiche del testo in uno spazio vettoriale.
 
