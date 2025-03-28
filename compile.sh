@@ -88,7 +88,7 @@ files=(
       #  "./src/3_PB/documentazione_esterna/piano_di_progetto/piano_di_progetto_v2.0.tex"
       #  "./src/3_PB/documentazione_esterna/piano_di_qualifica/piano_di_qualifica_v2.0.tex"
       #  "./src/3_PB/documentazione_esterna/manuale_utente/manuale_utente_v1.0.tex"
-      # "./src/3_PB/documentazione_esterna/specifica_tecnica/specifica_tecnica_v1.0.tex"
+       "./src/3_PB/documentazione_esterna/specifica_tecnica/specifica_tecnica_v1.0.tex"
 
       #  "./src/3_PB/documentazione_interna/glossario/glossario_v2.0.tex"
        "./src/3_PB/documentazione_interna/norme_di_progetto/norme_di_progetto_v2.0.tex"
