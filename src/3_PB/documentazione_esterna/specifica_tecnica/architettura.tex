@@ -1096,13 +1096,80 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
     
     
     \subsubsection{Database}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./img/DB_ER.png}
-    \caption{Diagramma ER del Database}
-    \label{fig:db_er}
-\end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./img/DB_ER.png}
+        \caption{Diagramma ER del Database}
+        \label{fig:db_er}
+    \end{figure}
 
+    Il database è stato progettato per gestire una piattaforma che offre funzionalità di gestione utenti, conversazioni, messaggi, supporto e template. 
+    L'obiettivo principale del database è garantire un'archiviazione efficiente e sicura dei dati relativi agli utenti e alle loro interazioni, oltre a supportare funzionalità di supporto tecnico e gestione di risposte preimpostate.
+    La piattaforma è pensata per essere utilizzata da utenti comuni e amministratori, con la possibilità di distinguere tra messaggi generati manualmente e automaticamente (da bot). 
+    Ogni conversazione può contenere uno o più messaggi, i quali possono essere valutati tramite un sistema di rating. 
+    Inoltre, il database prevede una gestione centralizzata delle richieste di supporto e la possibilità di utilizzare template predefiniti per automatizzare risposte comuni.
+    La struttura del database è stata pensata per garantire integrità e consistenza dei dati attraverso l'uso di vincoli di chiave esterna e l'eliminazione a cascata, in modo da mantenere la pulizia del database ed evitare riferimenti orfani. 
+    Di seguito sono descritte nel dettaglio le principali tabelle e la loro struttura.
+
+
+    \paragraph{Tabella Users} \mbox{} \\
+    Questa tabella contiene le informazioni sugli utenti della piattaforma. I campi principali sono:
+    \begin{itemize}
+        \item \textbf{id}: Identificatore univoco dell'utente (generato automaticamente).
+        \item \textbf{username}: Nome utente (unico).
+        \item \textbf{password\_hash}: Hash della password (per la sicurezza).
+        \item \textbf{email}: Indirizzo email (unico).
+        \item \textbf{phone}: Numero di telefono (opzionale).
+        \item \textbf{first\_name} e \textbf{last\_name}: Nome e cognome dell'utente.
+        \item \textbf{is\_admin}: Flag per indicare se l'utente ha privilegi di amministrazione (valore predefinito: FALSE).
+    \end{itemize}
+    
+    \paragraph{Tabella Conversations} \mbox{} \\
+    Memorizza le conversazioni create dagli utenti. I campi principali sono:
+    \begin{itemize}
+        \item \textbf{id}: Identificatore univoco della conversazione.
+        \item \textbf{title}: Titolo della conversazione.
+        \item \textbf{user\_id}: Riferimento all’utente che ha creato la conversazione.
+        \item Relazione con la tabella \textbf{Users}, con eliminazione a cascata.
+    \end{itemize}
+    
+    \paragraph{Tabella Messages} \mbox{} \\
+    Contiene i messaggi all’interno delle conversazioni. I campi principali sono:
+    \begin{itemize}
+        \item \textbf{id}: Identificatore univoco del messaggio.
+        \item \textbf{text}: Contenuto del messaggio.
+        \item \textbf{created\_at}: Data e ora di creazione (timestamp con fuso orario).
+        \item \textbf{conversation\_id}: Riferimento alla conversazione a cui appartiene.
+        \item \textbf{rating}: Valutazione del messaggio (booleano).
+        \item \textbf{is\_bot}: Flag per indicare se il messaggio è generato da un bot (valore predefinito: FALSE).
+        \item Relazione con la tabella \textbf{Conversations}, con eliminazione a cascata.
+    \end{itemize}
+    
+    \paragraph{Tabella Support} \mbox{} \\
+    Gestisce le richieste di supporto inviate dagli utenti. I campi principali sono:
+    \begin{itemize}
+        \item \textbf{id}: Identificatore univoco della richiesta.
+        \item \textbf{user\_id}: Riferimento all’utente che ha inviato la richiesta.
+        \item \textbf{description}: Descrizione del problema o della richiesta.
+        \item \textbf{status}: Stato della richiesta (risolta o meno).
+        \item \textbf{subject}: Oggetto della richiesta.
+        \item \textbf{created\_at}: Data e ora della creazione della richiesta.
+        \item Relazione con la tabella \textbf{Users}, con eliminazione a cascata.
+    \end{itemize}
+    
+    \paragraph{Tabella Templates} \mbox{} \\
+    Memorizza i template di domande e risposte create dagli utenti (ad esempio, bot o risposte preimpostate). I campi principali sono:
+    \begin{itemize}
+        \item \textbf{id}: Identificatore univoco del template.
+        \item \textbf{question} e \textbf{answer}: Testo della domanda e della risposta associata.
+        \item \textbf{author}: Riferimento all’utente che ha creato il template.
+        \item \textbf{last\_modified}: Timestamp dell’ultima modifica.
+        \item Relazione con la tabella \textbf{Users}, con eliminazione a cascata.
+    \end{itemize}
+    
+    \paragraph{Eliminazione delle Tabelle} \mbox{} \\
+    Sono presenti anche delle query per eliminare tutte le tabelle e i relativi dati in modo sicuro e completo usando il comando \texttt{DROP TABLE IF EXISTS ... CASCADE}.
+    
 
 
 
