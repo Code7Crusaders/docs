@@ -15,8 +15,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Architettura del sistema}
+\subsection{Scelta dell'Architettura del Sistema}
 La progettazione dell’architettura del sistema ha richiesto un’approfondita analisi delle due principali opzioni architetturali disponibili: \textbf{monolitica} e \textbf{a microservizi}. La scelta dell’architettura è stata guidata da una serie di fattori, tra cui la natura dell’applicazione, il volume di traffico previsto, i costi di sviluppo e manutenzione e la necessità di scalabilità. In questa sezione verranno analizzati nel dettaglio i pro e i contro di entrambe le soluzioni, per poi motivare la decisione finale.
+
 \subsubsection{Architettura monolitica}
 Un’architettura monolitica si basa su un’unica codebase che incorpora tutti i componenti dell’applicazione, tra cui l’interfaccia utente, la logica di business e il livello di accesso ai dati. Questo approccio, tradizionalmente adottato nello sviluppo software, è particolarmente indicato per applicazioni di piccola e media complessità, in cui i costi di separazione dei componenti in unità indipendenti non sono giustificati.
 \paragraph{Vantaggi}  
@@ -50,20 +51,8 @@ L’architettura a microservizi suddivide il sistema in componenti indipendenti,
     \item \textbf{Costi di sviluppo più elevati}: La frammentazione del sistema richiede maggiore sforzo di progettazione e testing.
 \end{itemize}
 
-\subsubsection{Scelta del monolite esagonale}
-Dopo un’analisi approfondita, il team di sviluppo ha deciso di adottare un’\textbf{architettura monolitica esagonale}. Questa scelta è stata motivata dai seguenti fattori:
-\begin{enumerate}
-    \item \textbf{Basso carico di utenti}: L’applicazione è destinata a un contesto B2B con un numero limitato di utenti concorrenti.
-    \item \textbf{Semplicità di gestione}: La manutenzione di un monolite è più diretta rispetto a un sistema distribuito.
-    \item \textbf{Riduzione dei costi operativi}: L’assenza di strumenti di orchestrazione riduce significativamente i costi di infrastruttura.
-    \item \textbf{Velocità di sviluppo}: Un’unica codebase consente iterazioni rapide senza dipendenze tra servizi separati.
-    \item \textbf{Evoluzione graduale verso microservizi}: Adottando un’architettura \textbf{esagonale}, il sistema può essere trasformato gradualmente in microservizi senza riscrivere tutto.
-\end{enumerate}
-
-\subsection{Architettura esagonale}
+\subsubsection{Architettura esagonale}
 L’\textbf{architettura esagonale}, nota anche come \textit{Ports and Adapters}, è un pattern architetturale l'obiettivo di rendere il software più flessibile, testabile e indipendente dalle tecnologie esterne. Questo approccio enfatizza la separazione tra la logica di business e le interfacce di comunicazione con il mondo esterno.
-
-\subsubsection{Principi fondamentali}
 L'architettura esagonale si basa su tre concetti chiave:
 \begin{itemize}
     \item \textbf{Isolamento della logica di business}: Il core dell'applicazione è indipendente dai dettagli implementativi esterni.
@@ -96,6 +85,16 @@ Adottare un'architettura esagonale comporta diversi benefici:
 
 \subsubsection{Conclusione}
 L’architettura esagonale garantisce modularità e sostenibilità del sistema nel lungo termine, permettendo di scalare senza impattare la stabilità complessiva dell’applicazione.
+
+\subsubsection{Scelta dell'architettura}
+Dopo un’analisi approfondita, il team di sviluppo ha deciso di adottare un’\textbf{architettura monolitica esagonale}. Questa scelta è stata motivata dai seguenti fattori:
+\begin{enumerate}
+    \item \textbf{Basso carico di utenti}: L’applicazione è destinata a un contesto B2B con un numero limitato di utenti concorrenti.
+    \item \textbf{Semplicità di gestione}: La manutenzione di un monolite è più diretta rispetto a un sistema distribuito.
+    \item \textbf{Riduzione dei costi operativi}: L’assenza di strumenti di orchestrazione riduce significativamente i costi di infrastruttura.
+    \item \textbf{Velocità di sviluppo}: Un’unica codebase consente iterazioni rapide senza dipendenze tra servizi separati.
+    \item \textbf{Evoluzione graduale verso microservizi}: Adottando un’architettura \textbf{esagonale}, il sistema può essere trasformato gradualmente in microservizi senza riscrivere tutto.
+\end{enumerate}
 
 \subsection{Architettura Esagonale in dettaglio}
 \begin{figure}[H]
@@ -1093,7 +1092,6 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
         \item \textbf{Esecuzione della query sul database:} Il repository stabilisce la connessione, esegue la query SQL, e restituisce il risultato (convertito in TemplateEntity).
         \item \textbf{Ritorno del risultato:} L’adapter converte l’entity in TemplateModel, il servizio lo passa al controller, che a sua volta lo trasforma in TemplateDTO per inviarlo come risposta al client.
     \end{enumerate}
-    
     
     \subsubsection{Database}
     \begin{figure}[H]
