@@ -91,15 +91,15 @@ files=(
       # "./src/3_PB/documentazione_esterna/specifica_tecnica/specifica_tecnica_v1.0.tex"
 
       #  "./src/3_PB/documentazione_interna/glossario/glossario_v2.0.tex"
-      #  "./src/3_PB/documentazione_interna/norme_di_progetto/norme_di_progetto_v2.0.tex"
+       "./src/3_PB/documentazione_interna/norme_di_progetto/norme_di_progetto_v2.0.tex"
 
     # "./src/3_PB/verbali_esterni/verbale_25-03-04_v1.0.tex"
-     "./src/3_PB/verbali_esterni/verbale_25-03-13_v1.0.tex"
+    #  "./src/3_PB/verbali_esterni/verbale_25-03-13_v1.0.tex"
 
     # "./src/3_PB/verbali_interni/verbale_25-02-28_v1.0.tex"
     # "./src/3_PB/verbali_interni/verbale_25-03-07_v1.0.tex"
     # "./src/3_PB/verbali_interni/verbale_25-03-14_v1.0.tex"
-    "./src/3_PB/verbali_interni/verbale_25-03-21_v1.0.tex"
+    # "./src/3_PB/verbali_interni/verbale_25-03-21_v1.0.tex"
 
     # "./src/3_PB/lettera_di_presentazione/..."
 )
