@@ -19,6 +19,7 @@ files=(
     # "./src/DiariDiBordo/Diario_25-03-10.tex"
     # "./src/DiariDiBordo/Diario_25-03-17.tex"
     # "./src/DiariDiBordo/Diario_25-03-25.tex"
+     "./src/DiariDiBordo/Diario_25-03-31.tex"
 
     # Template
     # "./src/templateC7C/template.tex"
