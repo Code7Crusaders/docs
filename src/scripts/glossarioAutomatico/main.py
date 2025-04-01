@@ -2,7 +2,7 @@ import re
 
 def crea_hashmap_glossario(percorso_file):
     hashmap = {}
-    base_url = "https://code7crusaders.github.io/docs/RTB/documentazione_interna/glossario.html#"
+    base_url = "https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#"
     pattern_subsection = r"\\subsection\{(.+?)\}"
 
     try:

@@ -37,15 +37,15 @@ Dove \textbf{Tipo} può essere:
     \hline
     \textbf{RFO5} & Da un’interfaccia utente della web app, viene catturata una domanda da parte dell’utente. & Soddisfatto \\
     \hline
-    \textbf{RFO6} & La domanda viene inoltrata al sistema attraverso delle API REST risiedenti in un Web Server. & Soddisfatto \\
+    \textbf{RFO6} & La domanda viene inoltrata al sistema attraverso delle \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}} risiedenti in un Web Server. & Soddisfatto \\
     \hline
     \textbf{RFO7} & La rappresentazione vettoriale viene utilizzata per effettuare una ricerca all’interno del database vettoriale da dove vengono reperiti i vettori più simili. & Soddisfatto \\
     \hline
-    \textbf{RFO8} & La domanda viene inviata al sistema LLM tramite API. & Soddisfatto \\
+    \textbf{RFO8} & La domanda viene inviata al sistema \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} tramite API. & Soddisfatto \\
     \hline
-    \textbf{RFO9} & Viene attesa la risposta dall'LLM tramite API. & Soddisfatto \\
+    \textbf{RFO9} & Viene attesa la risposta dall'\href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} tramite API. & Soddisfatto \\
     \hline
-    \textbf{RFO10} & Attraverso API REST, il sistema inoltra la risposta all'account dell’utente. & Soddisfatto \\
+    \textbf{RFO10} & Attraverso \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}, il sistema inoltra la risposta all'account dell’utente. & Soddisfatto \\
     \hline
     \textbf{RFO11} & L'utente deve essere in grado di ottenere informazioni riguardo un prodotto attraverso la conversazione con il bot. & Soddisfatto \\
     \hline
@@ -153,17 +153,17 @@ Dove \textbf{Tipo} può essere:
     \hline
     \textbf{RVO1} & Il chatbot deve rispondere con il contesto dato dai file di allenamento (pdf o file di testo inseriti) & Soddisfatto \\
     \hline
-    \textbf{RVO2} & LLM deve essere integrato tramite API & Soddisfatto \\
+    \textbf{RVO2} & \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} deve essere integrato tramite API & Soddisfatto \\
     \hline
-    \textbf{RVO3} & LLM utilizzato deve essere quello di OpenAI & Soddisfatto \\
+    \textbf{RVO3} & \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} utilizzato deve essere quello di OpenAI & Soddisfatto \\
     \hline
     \textbf{RVO4} & Deve essere usato un database relazionale & Soddisfatto \\
     \hline
-    \textbf{RVO5} & Deve essere gestito il salvataggio delle chat precedenti con tutti i messaggi in esse tramite un database relazionale con PostgreSQL & Soddisfatto \\
+    \textbf{RVO5} & Deve essere gestito il salvataggio delle chat precedenti con tutti i messaggi in esse tramite un database relazionale con \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#postgresql}{PostgreSQL\textsuperscript{G}} & Soddisfatto \\
     \hline
     \textbf{RVO6} & Deve essere implementato un database vettoriale & Soddisfatto \\
     \hline
-    \textbf{RVO7} & Deve essere implementato un database vettoriale FAISS per poter rendere possibile la ricerca con contesto dall'LLM & Soddisfatto \\
+    \textbf{RVO7} & Deve essere implementato un database vettoriale \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#faiss}{FAISS\textsuperscript{G}} per poter rendere possibile la ricerca con contesto dall'\href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} & Soddisfatto \\
     \hline
     \textbf{RVO8} & Deve essere implementato un embedding model & Soddisfatto \\
     \hline
@@ -189,7 +189,7 @@ Dove \textbf{Tipo} può essere:
     \hline
     \textbf{RVD19} & Le metriche delle run del chatbot devono essere recuperate tramite Langsmith & Soddisfatto \\
     \hline
-    \textbf{RVO20} & Bisogna usare la libreria LangChain per la interazione con i modelli LLM e Embedding & Soddisfatto \\
+    \textbf{RVO20} & Bisogna usare la libreria \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}} per la interazione con i modelli \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}} e \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#embedding}{Embedding\textsuperscript{G}} & Soddisfatto \\
     \hline
 \caption{Tabella Requisiti di vincolo soddisfatti}
 \end{longtable}
