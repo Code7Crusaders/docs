@@ -93,7 +93,8 @@ files=(
         "./src/3_PB/documentazione_esterna/manuale_utente/manuale_utente_v1.0.tex"
         # "./src/3_PB/documentazione_esterna/manuale_utente/introduzione.tex"
         # "./src/3_PB/documentazione_esterna/manuale_utente/requisiti.tex"
-        "./src/3_PB/documentazione_esterna/manuale_utente/supporto.tex"
+        # "./src/3_PB/documentazione_esterna/manuale_utente/supporto.tex"
+        "./src/3_PB/documentazione_esterna/manuale_utente/istruzioni.tex"
 
         # "./src/3_PB/documentazione_interna/glossario/glossario_v2.0.tex"
         # "./src/3_PB/documentazione_interna/norme_di_progetto/norme_di_progetto_v2.0.tex"
