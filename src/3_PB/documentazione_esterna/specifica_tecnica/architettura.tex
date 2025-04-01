@@ -156,7 +156,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
 
 \paragraph{Controller (usa DTO)}
 \mbox{}\\
-\textbf{Funzione:} Il controller è il punto di ingresso per le richieste esterne (tipicamente interfacce web, \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}, interfacce utente) e si occupa di tradurle nel linguaggio comprensibile dal dominio. \\
+\textbf{Funzione:} Il controller è il punto di ingresso per le richieste esterne (tipicamente interfacce web, \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}, interfacce utente) e si occupa di tradurle nel linguaggio comprensibile dal dominio. \\
 \mbox{}\\
 \textbf{Dettagli:}
 \begin{itemize}
@@ -226,23 +226,23 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
     \begin{itemize}
         \item \textbf{FaissRepository:}
         \begin{itemize}
-            \item Questo componente interagisce direttamente con un vector store basato su \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#faiss}{FAISS\textsuperscript{G}}.
+            \item Questo componente interagisce direttamente con un vector store basato su \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#faiss}{FAISS\textsuperscript{G}}.
             \item \texttt{similarity\_search(query)}: Riceve una QueryEntity, esegue una ricerca di similarità sul vector store (limitata ad un certo numero di risultati, ad esempio 4) e trasforma i documenti trovati in oggetti DocumentContextEntity.
             \item \texttt{load\_chunks(chunks)}: Consente di caricare “chunk” di testo (rappresentati come FileChunkEntity) nel vector store. Per ciascun chunk viene creato un oggetto Document con metadati, successivamente il vector store viene salvato in maniera persistente.
         \end{itemize}
     \end{itemize}
 
-    \paragraph{4. Integrazione con \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#langchain}{LangChain}\textsuperscript{G}}
+    \paragraph{4. Integrazione con LangChain}
     \begin{itemize}
         \item \textbf{LangChainRepository:}
         \begin{itemize}
-            \item Utilizza le funzionalità di \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}} per la generazione di risposte e per la suddivisione dei file.
+            \item Utilizza le funzionalità di \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}} per la generazione di risposte e per la suddivisione dei file.
             \item \texttt{generate\_answer(query, contexts, prompt\_template)}:
             \begin{enumerate}
-                \item Prepara una lista di documenti (tramite Document di \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}}) a partire dai contesti ricevuti.
+                \item Prepara una lista di documenti (tramite Document di \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#langchain}{LangChain\textsuperscript{G}}) a partire dai contesti ricevuti.
                 \item Recupera la “memoria” utente per mantenere la storia delle conversazioni, la quali vengono trimmate se troppo lunghe per non superare un limite di token.
                 \item Costruisce dinamicamente un prompt (usando ChatPromptTemplate) che include istruzioni di sistema, la storia della conversazione, la domanda attuale e il contesto.
-                \item Invoca una catena (chain) per ottenere la risposta dall’\href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
+                \item Invoca una catena (chain) per ottenere la risposta dall’\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#llm-large-language-model}{LLM\textsuperscript{G}}.
                 \item Salva l’interazione nella memoria utente e restituisce la risposta incapsulata in un AnswerEntity.
             \end{enumerate}
             \item \texttt{split\_file(file)}: Suddivide il contenuto di un file in “chunk” di dimensioni definite (ad es. 2500 caratteri) utilizzando lo RecursiveCharacterTextSplitter. Se il contenuto è in bytes, viene decodificato in stringa. Il risultato è una lista di oggetti FileChunkEntity.
@@ -292,7 +292,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
     \begin{itemize}
         \item \textbf{ChatController:}
         \begin{itemize}
-            \item Funziona da interfaccia verso l’esterno (ad esempio, per una \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}).
+            \item Funziona da interfaccia verso l’esterno (ad esempio, per una \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}).
             \item \texttt{get\_answer(user\_input)}:
             \begin{enumerate}
                 \item Converte il QuestionDTO in un QuestionModel.
@@ -442,7 +442,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
     \begin{itemize}
         \item \textbf{AddChunksPort:}
         \begin{itemize}
-            \item \textbf{Scopo:} Definisce il contratto per il caricamento dei chunk in un repository (es. \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#faiss}{FAISS\textsuperscript{G}}).
+            \item \textbf{Scopo:} Definisce il contratto per il caricamento dei chunk in un repository (es. \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#faiss}{FAISS\textsuperscript{G}}).
             \item \textbf{Metodo astratto:} load\_chunks(chunks: list[FileChunkModel]).
         \end{itemize}
         \item \textbf{SplitFilePort:}
@@ -464,13 +464,13 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
                     \item Metodo similarity\_search(question\_model: QuestionModel):
                     \item Verifica che la domanda non sia vuota.
                     \item Crea un’entità query (QueryEntity).
-                    \item Richiama il metodo similarity\_search del repository \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#faiss}{FAISS\textsuperscript{G}}.
+                    \item Richiama il metodo similarity\_search del repository \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#faiss}{FAISS\textsuperscript{G}}.
                     \item Trasforma i risultati in oggetti ContextModel.
                 \end{itemize}
                 \item Load Chunks:
                 \begin{itemize}
                     \item Metodo load\_chunks(chunks: list[FileChunkModel]):
-                    \item Converte i modelli in entità (FileChunkEntity) e li passa al repository \href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#faiss}{FAISS\textsuperscript{G}}.
+                    \item Converte i modelli in entità (FileChunkEntity) e li passa al repository \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#faiss}{FAISS\textsuperscript{G}}.
                     \item Salva lo stato aggiornato del vector store.
                 \end{itemize}
             \end{itemize}
@@ -962,7 +962,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
         \end{itemize}
     \end{itemize}
 
-    \paragraph{6. Repository per \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#postgresql}{PostgreSQL}\textsuperscript{G}}
+    \paragraph{6. Repository per PostgreSQL}
     \begin{itemize}
         \item \textbf{MessagePostgresRepository:}
         \begin{itemize}
@@ -978,12 +978,11 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
         \end{itemize}
     \end{itemize}
 
-    \subsubsection{\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{Template}\textsuperscript{G}}
-
+    \subsubsection{Template}
     \begin{figure}[H]
         \centering
         \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./img/png/Model7!Template_7.png}
-        \caption{Diagramma delle classi - \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#template}{Template}\textsuperscript{G}}
+        \caption{Diagramma delle classi - Template}
         \label{fig:template}
     \end{figure}
 
@@ -1084,7 +1083,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
     
     \paragraph{Riassunto del Flusso dei Dati}
     \begin{enumerate}
-        \item \textbf{Ricezione della richiesta:} Un client (ad esempio, un’\href{https://code7crusaders.github.io/docs/\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#pb-product-baseline}{PB\textsuperscript{G}}/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}) invoca uno dei controller, passando un TemplateDTO (per operazioni individuali) o richiedendo una lista di template.
+        \item \textbf{Ricezione della richiesta:} Un client (ad esempio, un’\href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#api-rest-representational-state-transfer}{API REST\textsuperscript{G}}) invoca uno dei controller, passando un TemplateDTO (per operazioni individuali) o richiedendo una lista di template.
         \item \textbf{Conversione e invocazione del Use Case:} Il controller converte il DTO in un TemplateModel e chiama il relativo use case (implementato nei servizi).
         \item \textbf{Interazione con il livello di persistenza:} Il servizio, tramite il port, utilizza l’adapter (TemplatePostgresAdapter) per convertire il TemplateModel in TemplateEntity e invoca il metodo corrispondente del repository.
         \item \textbf{Esecuzione della query sul database:} Il repository stabilisce la connessione, esegue la query SQL, e restituisce il risultato (convertito in TemplateEntity).
