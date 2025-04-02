@@ -430,7 +430,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
             \item \textbf{Ruolo:} Incapsula la logica per la divisione di un file in frammenti.
             \item \textbf{Metodo:}
             \begin{itemize}
-                \item split\_file(file: FileModel) -> list[FileChunkModel]:
+                \item split\_file(file: FileModel) → list[FileChunkModel]:
                 \begin{itemize}
                     \item Delegato al port SplitFilePort.
                 \end{itemize}
@@ -448,7 +448,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
         \item \textbf{SplitFilePort:}
         \begin{itemize}
             \item \textbf{Scopo:} Definisce il contratto per la divisione di un file in frammenti.
-            \item \textbf{Metodo astratto:} split\_file(file: FileModel) -> list[FileChunkModel].
+            \item \textbf{Metodo astratto:} split\_file(file: FileModel) → list[FileChunkModel].
         \end{itemize}
     \end{itemize}
 
