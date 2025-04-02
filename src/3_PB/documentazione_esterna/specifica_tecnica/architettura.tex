@@ -510,7 +510,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
 
     \paragraph{3. Controller}
     \begin{itemize}
-        \item I controller sono responsabili della gestione delle richieste e della delega dell'elaborazione ai use case. In questo codice, sono presenti tre controller:
+        \item I controller sono responsabili della gestione delle richieste e della delega dell'elaborazione ai use case. In questo codice, sono presenti quattro controller:
         \begin{itemize}
             \item \textbf{GetConversationController:}
             \begin{itemize}
@@ -528,6 +528,12 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
                 \item Converte il DTO in un model e invoca il use case \texttt{save\_conversation\_title} per salvare il titolo nel database.
                 \item Restituisce l'ID della conversazione salvata.
             \end{itemize}
+            \item \textbf{DeleteConversationController:}
+            \begin{itemize}
+                \item Riceve un ConversationDTO contenente il titolo e altri dati.
+                \item Converte il DTO in un model e invoca il use case \texttt{delete\_conversation} per eliminare la conversazione.
+                \item Restituisce True se l'operazione va a buon fine, False altrimenti.
+            \end{itemize}
         \end{itemize}
     \end{itemize}
 
@@ -538,6 +544,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
             \item \textbf{GetConversationUseCase:} Definisce il metodo astratto \texttt{get\_conversation}, che restituisce un altro ConversationModel (recuperato dal database).
             \item \textbf{GetConversationsUseCase:} Definisce il metodo astratto \texttt{get\_conversations} per ottenere una lista di conversazioni.
             \item \textbf{SaveConversationTitleUseCase:} Definisce il metodo astratto \texttt{save\_conversation\_title} per salvare il titolo di una conversazione e restituire l'ID aggiornato.
+            \item \textbf{DeleteConversationUseCase:} Definisce il metodo astratto \texttt{delete\_conversation} per eliminare una conversazione.
         \end{itemize}
     \end{itemize}
 
@@ -548,6 +555,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
             \item \textbf{GetConversationService:} Implementa \texttt{get\_conversation} invocando il metodo \texttt{get\_conversation} del relativo port.
             \item \textbf{GetConversationsService:} Implementa \texttt{get\_conversations} invocando il metodo \texttt{get\_conversations} del port.
             \item \textbf{SaveConversationTitleService:} Implementa \texttt{save\_conversation\_title} invocando il metodo \texttt{save\_conversation\_title} del relativo port.
+            \item \textbf{DeleteConversationService:} Implementa \texttt{delete\_conversation} invocando il metodo \texttt{delete\_conversation} del relativo port.
         \end{itemize}
     \end{itemize}
 
@@ -558,6 +566,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
             \item \textbf{GetConversationPort:} Specifica il metodo \texttt{get\_conversation} per recuperare una conversazione.
             \item \textbf{GetConversationsPort:} Specifica il metodo \texttt{get\_conversations} per recuperare tutte le conversazioni relative a un utente.
             \item \textbf{SaveConversationTitlePort:} Specifica il metodo \texttt{save\_conversation\_title} per salvare il titolo di una conversazione.
+            \item \textbf{DeleteConversationPort:} Specifica il metodo \texttt{delete\_conversation} per eliminare una conversazione.
         \end{itemize}
     \end{itemize}
 
@@ -566,7 +575,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
         \item \textbf{Adapter: ConversationPostgresAdapter:}
         \begin{itemize}
             \item Questa classe implementa i port (\texttt{GetConversationPort}, \texttt{GetConversationsPort}, \\ 
-            \texttt{SaveConversationTitlePort}) e funge da intermediario tra il livello service e il repository.
+            \texttt{SaveConversationTitlePort}, \texttt{DeleteConversationPort}) e funge da intermediario tra il livello service e il repository.
         \end{itemize}
         \item \textbf{Repository: ConversationPostgresRepository:}
         \begin{itemize}
@@ -650,6 +659,17 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
             \end{enumerate}
             \item Error Handling: Gestisce le eccezioni.
         \end{itemize}
+        \item \textbf{UpdateMessageRatingController:}
+        \begin{itemize}
+            \item Funzione: Aggiorna il rating di un messaggio.
+            \item Processo:
+            \begin{enumerate}
+                \item Converte il \texttt{MessageDTO} in un \texttt{MessageModel}.
+                \item Chiama il metodo \texttt{update\_message\_rating} del use case.
+                \item Restituisce True se l'operazione va a buon fine, False altrimenti.
+            \end{enumerate}
+            \item Error Handling: Gestisce le eccezioni.
+        \end{itemize}
     \end{itemize}
 
     \paragraph{3. Use Case (Interfacce astratte e Implementazioni di servizio)}
@@ -666,11 +686,15 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
         \begin{itemize}
             \item Definisce il metodo \texttt{save\_message} per salvare un messaggio e restituire l'ID.
         \end{itemize}
+        \item \textbf{UpdateMessageRatingUseCase:}
+        \begin{itemize}
+            \item Definisce il metodo \texttt{update\_message\_rating} per aggiornare il rating di un messaggio.
+        \end{itemize}
     \end{itemize}
 
     \paragraph{4. Porte (Interfaces) e Adapter}
     \begin{itemize}
-        \item \textbf{GetMessagePort, GetMessagesByConversationPort, SaveMessagePort:}
+        \item \textbf{GetMessagePort, GetMessagesByConversationPort, SaveMessagePort, UpdateMessageRatingPort:}
         \begin{itemize}
             \item Ogni interfaccia espone il metodo necessario per eseguire l’operazione di recupero o salvataggio.
             \item Queste interfacce sono implementate da un adattatore concreto.
@@ -682,6 +706,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
                 \item \texttt{get\_message}: Converte un \texttt{MessageModel} in \texttt{MessageEntity} e richiama il metodo \texttt{get\_message} del repository.
                 \item \texttt{get\_messages\_by\_conversation}: Converte l’input in una \texttt{MessageEntity} e invoca il repository per ottenere la lista di messaggi.
                 \item \texttt{save\_message}: Converte il \texttt{MessageModel} in un \texttt{MessageEntity}, invoca il repository per il salvataggio e restituisce l’ID.
+                \item \texttt{update\_message\_rating}: Converte il \texttt{MessageModel} in un \texttt{MessageEntity}, invoca il repository per il salvataggio e restituisce un booleano.
             \end{enumerate}
         \end{itemize}
     \end{itemize}
@@ -695,6 +720,7 @@ Di seguito viene descritta in dettaglio la funzione e l'interazione delle classi
             \item \texttt{get\_message}: Esegue una query per recuperare un messaggio in base all’ID.
             \item \texttt{get\_messages\_by\_conversation}: Esegue una query per ottenere tutti i messaggi di una conversazione.
             \item \texttt{save\_message}: Inserisce un messaggio nel database e restituisce l'ID.
+            \item \texttt{update\_message\_rating}: Aggiorna il rating di un messaggio nel database e restituisce un booleano.
             \item \texttt{delete\_message}: (opzionale) Cancella un messaggio dato l'ID.
         \end{itemize}
     \end{itemize}
