@@ -2716,6 +2716,71 @@
                 \item RC2: Problemi di comunicazione all’interno del gruppo
                 \item RO2: Deviazione dai tempi e costi previsti
             \end{itemize}
+
+            \paragraph{Preventivo}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                              & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                Cotti Cottini & -   & -   & -   & 2,5 & -   & -   & 2,5                \\ \hline
+                Di Pietro     & 1   & -   & -   & -   & -   & -   & 1                  \\ \hline
+                Diviesti      & -   & -   & 2   & -   & -   & -   & 2                  \\ \hline
+                Lapenna       & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Pan           & -   & 2   & -   & -   & -   & -   & 2                  \\ \hline
+                Pinarello     & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Rizzolo       & -   & -   & -   & -   & 6,5 & -   & 6,5                \\ \hline
+                Totale        & 1   & 2   & 2   & 2,5 & 6,5 & 6   &                    \\ \hline
+                \end{tabular}
+                \caption{Preventivo orario per ruolo nello Sprint 16}
+            \end{table}
+
+
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    \pie[polar]{5/Responsabile, 10/Amministratore, 10/Analista, 12/Progettista, 33/Programmatore, 30/Verificatore}
+                \end{tikzpicture}
+                \caption{Ripartizione in percentuale dei ruoli nello Sprint 16}
+            \end{figure}
+
+
+            % TODO copiala dal preventivo (per ora li facciamo uguali)
+            \paragraph{Consuntivo}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                              & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                Cotti Cottini & -   & -   & -   & 2,5 & -   & -   & 2,5                \\ \hline
+                Di Pietro     & 1   & -   & -   & -   & -   & -   & 1                  \\ \hline
+                Diviesti      & -   & -   & 2   & -   & -   & -   & 2                  \\ \hline
+                Lapenna       & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Pan           & -   & 2   & -   & -   & -   & -   & 2                  \\ \hline
+                Pinarello     & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Rizzolo       & -   & -   & -   & -   & 6,5 & -   & 6,5                \\ \hline
+                Totale        & 1   & 2   & 2   & 2,5 & 6,5 & 6   &                    \\ \hline
+                \end{tabular}
+                \caption{Consuntivo orario per ruolo nello Sprint 16}
+            \end{table}
+
+            % TODO modificare colonna "Ore Rimanenti"
+            \paragraph{Prospetto Economico}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|}
+                \hline
+                \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo}      & \textbf{Ore rimanenti}   \\ \hline
+                Responsabile    & 1             & €30                 & 8                        \\ \hline
+                Amministratore  & 2             & €40                 & 9,5                      \\ \hline
+                Analista        & 2             & €50                 & 8,5                      \\ \hline
+                Progettista     & 2,5           & €62,5               & 14                       \\ \hline
+                Programmatore   & 6,5           & €97,5               & 31,5                     \\ \hline
+                Verificatore    & 6             & €90                 & 20                       \\ \hline
+                \textbf{Totale} & \textbf{20}   & \textbf{\euro370}   & \textbf{91,5}            \\ \hline
+                \end{tabular}
+                \caption{Prospetto economico e ore rimanenti}
+            \end{table}
             
             \paragraph{Rischi effettivamente occorsi}
             Durante lo sprint, sono stati riscontrati i seguenti rischi:
