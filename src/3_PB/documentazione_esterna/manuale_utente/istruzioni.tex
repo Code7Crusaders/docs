@@ -167,13 +167,13 @@ Per aggiungere un template basterà cliccare sul pulsante aggiungi template (fig
 Per visualizzare l'intero template e non solo il nome è possibile cliccare sul bottone mostrato in fig~\ref{fig:Template} pt.3 che aprirà una tendina dove verrà visualizzata l'intera domanda e l'intera risposta. Verranno inoltre mostrati il pulsanti di "modifica template" (fig~\ref{fig:Template} pt.4) ed "elimina template" (fig~\ref{fig:Template} pt.5). Se questi ultimi dovessero essere cliccati appariranno i pop-up mostrati in figura~\ref{fig:pop-up modifica ed elimina}.
 \begin{figure}[h!]
     \centering
-    \begin{subfigure}{0.2\textwidth}
+    \begin{subfigure}{0.5\textwidth}
         \centering
         \includegraphics[width=0.7\textwidth]{./img/ModificaTemplate.png}
         \caption{ModificaTemplate}
     \end{subfigure}
     \hspace{0.05\textwidth}
-    \begin{subfigure}{0.2\textwidth}
+    \begin{subfigure}{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{./img/EliminaTemplate.png}
         \caption{Elimina Template}
@@ -182,3 +182,70 @@ Per visualizzare l'intero template e non solo il nome è possibile cliccare sul 
     \label{fig:pop-up modifica ed elimina}
 \end{figure}
 
+\subsubsection{Assistenza Clienti}
+Cliccando dal menù laterale sulla voce "Assistenza clienti" (fig~\ref{fig:Assistenza1} pt.1) è possibile visualizzare tutte le richieste di assistenza che i vari utenti hanno inviato (fai riferimento alla sottosezione \textit{Pagina di Richiesta di Supporto} a pagina~\pageref{fig:Pagina di Assistenza}).
+Per ogni richiesta verranno visualizzate:
+\begin{itemize}
+    \item Lo stato della richiesta (fig~\ref{fig:Assistenza1} pt.2)
+    \begin{itemize}
+        \item \textbf{Rosso:} non gestita;
+        \item \textbf{Verde:} gestita;
+    \end{itemize}
+    \item email
+    \item data di invio da parte dell'utente %NOTA PER IL VERIFICATORE, forse qui vanno aggiunti dei punti nell'immagine come ho fatto io per le altre figure
+    \item oggetto della richiesta %Invito cortesemente a farlo basta modificare l'immagine, io ho usato gli strumenti presenti in antemprima su macOS quindi si può fare.
+    \item contenuto della richiesta %Perfavore Sto scrivendo il documento alle 2 di notte quindi verificatore lavora
+    \item pulsante di presa carico (fig~\ref{fig:Assistenza1} pt.3)
+\end{itemize}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{./img/Assistenza1.png}
+    \caption{Gestione Assistenza}
+    \label{fig:Assistenza1}
+\end{figure}
+Se la richiesta viene presa in carico cliccando il pulsante (fig~\ref{fig:Assistenza1} pt.3) il colore dello stato passerà da \textbf{Rosso} a \textbf{Verde}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./img/Assistenza2.png}
+    \caption{Colore Stato}
+\end{figure}
+
+\subsubsection{Gestione Documenti}
+Cliccando infine sulla pagina di gestione documenti ci troveremo davanti alla schermata mostrata in figura~\ref{fig:gestione1}, che permetterà di inserire file per addestrare il nostro assistente virtuale a rispondere a determinate domande.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./img/PaginaGestioneDocumenti1.png}
+    \caption{Pagina Gestione Documenti}
+    \label{fig:gestione1}
+\end{figure}
+
+Procediamo quindi ad illustrare come caricare i dati. Cominciamo quindi cliccando sul bottone "upload files" come indicato dalla freccia in figura~\ref{fig:gestione2}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./img/PaginaGestioneDocumenti2.png}
+    \caption{Upload Documenti}
+    \label{fig:gestione2}
+\end{figure}
+Questo aprirà una finestra di selezione file, il sistema accetta file di tipo \texttt{.pdf} o \texttt{.txt} .
+ 
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./img/PaginaGestioneDocumenti3.png}
+    \end{subfigure}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./img/GestioneDocumenti4.png}
+    \end{subfigure}
+    \caption{Inserimento file}
+    \label{fig:gestione3}
+\end{figure}
+Cliccando sul bottone aggiungi documento (fig~\ref{fig:gestione4} pt.1) l'admin verrà notificato dell'avvenuta riuscita (fig~\ref{fig:gestione4} pt.2) dell'operazione o del suo fallimento.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./img/GestioneDocumenti5.png}
+    \caption{Upload Documenti con successo}
+    \label{fig:gestione4}
+\end{figure}
