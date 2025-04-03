@@ -2826,6 +2826,71 @@
                 \item RT1: Difficoltà nell’uso di nuove tecnologie (gestione di diagrammi UML e aggiornamenti del database)
                 \item RO1: Incomprensioni nella pianificazione delle attività
             \end{itemize}
+
+            \paragraph{Preventivo}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                              & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                Cotti Cottini & -   & -   & 1,5 & -   & -   & -   & 1,5                \\ \hline
+                Di Pietro     & -   & -   & -   & 2,5 & -   & -   & 2,5                \\ \hline
+                Diviesti      & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Lapenna       & -   & 1,5 & -   & -   & -   & -   & 1,5                \\ \hline
+                Pan           & -   & -   & -   & -   & 6   & -   & 6                  \\ \hline
+                Pinarello     & 1   & -   & -   & -   & -   & -   & 1                  \\ \hline
+                Rizzolo       & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Totale        & 1   & 1,5 & 1,5 & 2,5 & 6   & 6   &                    \\ \hline
+                \end{tabular}
+                \caption{Preventivo orario per ruolo nello Sprint 17}
+            \end{table}
+
+
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    \pie[polar]{5/Responsabile, 8/Amministratore, 8/Analista, 14/Progettista, 33/Programmatore, 32/Verificatore}
+                \end{tikzpicture}
+                \caption{Ripartizione in percentuale dei ruoli nello Sprint 17}
+            \end{figure}
+
+
+            % TODO copiala dal preventivo (per ora li facciamo uguali)
+            \paragraph{Consuntivo}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                              & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                Cotti Cottini & -   & -   & 1,5 & -   & -   & -   & 1,5                \\ \hline
+                Di Pietro     & -   & -   & -   & 2,5 & -   & -   & 2,5                \\ \hline
+                Diviesti      & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Lapenna       & -   & 1,5 & -   & -   & -   & -   & 1,5                \\ \hline
+                Pan           & -   & -   & -   & -   & 6   & -   & 6                  \\ \hline
+                Pinarello     & 1   & -   & -   & -   & -   & -   & 1                  \\ \hline
+                Rizzolo       & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Totale        & 1   & 1,5 & 1,5 & 2,5 & 6   & 6   &                    \\ \hline
+                \end{tabular}
+                \caption{Consuntivo orario per ruolo nello Sprint 17}
+            \end{table}
+
+            % TODO modificare colonna "Ore Rimanenti"
+            \paragraph{Prospetto Economico}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|}
+                \hline
+                \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo}      & \textbf{Ore rimanenti}   \\ \hline
+                Responsabile    & 1             & €30                 & 7                        \\ \hline
+                Amministratore  & 1,5           & €30                 & 8                        \\ \hline
+                Analista        & 1,5           & €37,5               & 7                        \\ \hline
+                Progettista     & 2,5           & €62,5               & 11,5                     \\ \hline
+                Programmatore   & 6             & €90                 & 25,5                     \\ \hline
+                Verificatore    & 6             & €90                 & 14                       \\ \hline
+                \textbf{Totale} & \textbf{20}   & \textbf{\euro340}   & \textbf{73}              \\ \hline
+                \end{tabular}
+                \caption{Prospetto economico e ore rimanenti}
+            \end{table}
             
             \paragraph{Rischi effettivamente occorsi}
             \begin{itemize}
@@ -2877,6 +2942,71 @@
                 \item RT2: Sviluppo di codice poco comprensibile, soprattutto nelle parti più complesse come il repository LangChain.
                 \item RO1: Incomprensioni nella pianificazione delle attività, con possibili ritardi nell’integrazione delle varie componenti.
             \end{itemize}
+
+            \paragraph{Preventivo}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                              & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                Cotti Cottini & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Di Pietro     & -   & -   & 2   & -   & -   & -   & 2                  \\ \hline
+                Diviesti      & -   & 2   & -   & -   & -   & -   & 2                  \\ \hline
+                Lapenna       & -   & -   & -   & -   & 6   & -   & 6                  \\ \hline
+                Pan           & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Pinarello     & -   & -   & -   & 3   & -   & -   & 3                  \\ \hline
+                Rizzolo       & 1,5 & -   & -   & -   & -   & -   & 1,5                \\ \hline
+                Totale        & 1,5 & 2   & 2   & 3   & 6   & 6   &                    \\ \hline
+                \end{tabular}
+                \caption{Preventivo orario per ruolo nello Sprint 18}
+            \end{table}
+
+
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    \pie[polar]{7/Responsabile, 10/Amministratore, 10/Analista, 14/Progettista, 29/Programmatore, 30/Verificatore}
+                \end{tikzpicture}
+                \caption{Ripartizione in percentuale dei ruoli nello Sprint 18}
+            \end{figure}
+
+
+            % TODO copiala dal preventivo (per ora li facciamo uguali)
+            \paragraph{Consuntivo}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                              & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                Cotti Cottini & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Di Pietro     & -   & -   & 2   & -   & -   & -   & 2                  \\ \hline
+                Diviesti      & -   & 2   & -   & -   & -   & -   & 2                  \\ \hline
+                Lapenna       & -   & -   & -   & -   & 6   & -   & 6                  \\ \hline
+                Pan           & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Pinarello     & -   & -   & -   & 3   & -   & -   & 3                  \\ \hline
+                Rizzolo       & 1,5 & -   & -   & -   & -   & -   & 1,5                \\ \hline
+                Totale        & 1,5 & 2   & 2   & 3   & 6   & 6   &                    \\ \hline
+                \end{tabular}
+                \caption{Consuntivo orario per ruolo nello Sprint 18}
+            \end{table}
+
+            % TODO modificare colonna "Ore Rimanenti"
+            \paragraph{Prospetto Economico}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|}
+                \hline
+                \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo}      & \textbf{Ore rimanenti}   \\ \hline
+                Responsabile    & 1,5           & €45                 & 5,5                      \\ \hline
+                Amministratore  & 2             & €40                 & 6                        \\ \hline
+                Analista        & 2             & €50                 & 5                        \\ \hline
+                Progettista     & 3             & €75                 & 8,5                      \\ \hline
+                Programmatore   & 6             & €90                 & 19,5                     \\ \hline
+                Verificatore    & 6             & €90                 & 8                        \\ \hline
+                \textbf{Totale} & \textbf{20,5} & \textbf{\euro340}   & \textbf{52,5}            \\ \hline
+                \end{tabular}
+                \caption{Prospetto economico e ore rimanenti}
+            \end{table}
             
             \paragraph{Rischi effettivamente occorsi}
             \begin{itemize}
@@ -2930,6 +3060,71 @@
                 \item RC2: Problemi di comunicazione all’interno del gruppo, dovuti alla necessità di coordinare le modifiche tra frontend e backend.
                 \item RO1: Incomprensioni nella pianificazione delle attività, con possibili ritardi nella gestione dei test e nella verifica della documentazione.
             \end{itemize}
+
+            \paragraph{Preventivo}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                              & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                Cotti Cottini & -   & 1,5 & -   & -   & -   & -   & 1,5                \\ \hline
+                Di Pietro     & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Diviesti      & -   & -   & -   & -   & 6,5 & -   & 6,5                \\ \hline
+                Lapenna       & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Pan           & 2   & -   & -   & -   & -   & -   & 2                  \\ \hline
+                Pinarello     & -   & -   & 1,5 & -   & -   & -   & 1,5                \\ \hline
+                Rizzolo       & -   & -   & -   & 3   & -   & -   & 3                  \\ \hline
+                Totale        & 2   & 1,5 & 1,5 & 3   & 6,5 & 6   &                    \\ \hline
+                \end{tabular}
+                \caption{Preventivo orario per ruolo nello Sprint 19}
+            \end{table}
+
+
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    \pie[polar]{10/Responsabile, 7/Amministratore, 7/Analista, 15/Progettista, 32/Programmatore, 29/Verificatore}
+                \end{tikzpicture}
+                \caption{Ripartizione in percentuale dei ruoli nello Sprint 19}
+            \end{figure}
+
+
+            % TODO copiala dal preventivo (per ora li facciamo uguali)
+            \paragraph{Consuntivo}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                              & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                Cotti Cottini & -   & 1,5 & -   & -   & -   & -   & 1,5                \\ \hline
+                Di Pietro     & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Diviesti      & -   & -   & -   & -   & 6,5 & -   & 6,5                \\ \hline
+                Lapenna       & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Pan           & 2   & -   & -   & -   & -   & -   & 2                  \\ \hline
+                Pinarello     & -   & -   & 1,5 & -   & -   & -   & 1,5                \\ \hline
+                Rizzolo       & -   & -   & -   & 3   & -   & -   & 3                  \\ \hline
+                Totale        & 2   & 1,5 & 1,5 & 3   & 6,5 & 6   &                    \\ \hline
+                \end{tabular}
+                \caption{Consuntivo orario per ruolo nello Sprint 19}
+            \end{table}
+
+            % TODO modificare colonna "Ore Rimanenti"
+            \paragraph{Prospetto Economico}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|}
+                \hline
+                \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo}      & \textbf{Ore rimanenti}   \\ \hline
+                Responsabile    & 2             & €60                 & 3,5                      \\ \hline
+                Amministratore  & 1,5           & €30                 & 4,5                        \\ \hline
+                Analista        & 1,5           & €37,5               & 3,5                      \\ \hline
+                Progettista     & 3             & €75                 & 5,5                      \\ \hline
+                Programmatore   & 6,5           & €97,5               & 13                       \\ \hline
+                Verificatore    & 6             & €90                 & 12                        \\ \hline
+                \textbf{Totale} & \textbf{20,5} & \textbf{\euro390}   & \textbf{42}            \\ \hline
+                \end{tabular}
+                \caption{Prospetto economico e ore rimanenti}
+            \end{table}
             
             \paragraph{Rischi effettivamente occorsi}
             \begin{itemize}
@@ -2983,6 +3178,71 @@
                 \item RT2: Sviluppo di codice poco comprensibile a causa delle numerose modifiche e refactoring.
                 \item RC2: Problemi di comunicazione all’interno del gruppo durante l'integrazione delle nuove funzionalità.
             \end{itemize}
+
+            \paragraph{Preventivo}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                              & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                Cotti Cottini & -   & -   & -   & 2,5 & -   & -   & 2,5                \\ \hline
+                Di Pietro     & -   & 2   & -   & -   & -   & -   & 2                  \\ \hline
+                Diviesti      & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Lapenna       & -   & -   & -   & -   & 6,5 & -   & 6,5                \\ \hline
+                Pan           & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Pinarello     & 2   & -   & -   & -   & -   & -   & 2                  \\ \hline
+                Rizzolo       & -   & -   & 2   & -   & -   & -   & 2                  \\ \hline
+                Totale        & 2   & 2   & 2   & 2,5 & 6,5 & 6   &                    \\ \hline
+                \end{tabular}
+                \caption{Preventivo orario per ruolo nello Sprint 20}
+            \end{table}
+
+
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    \pie[polar]{9/Responsabile, 10/Amministratore, 9/Analista, 12/Progettista, 31/Programmatore, 29/Verificatore}
+                \end{tikzpicture}
+                \caption{Ripartizione in percentuale dei ruoli nello Sprint 20}
+            \end{figure}
+
+
+            % TODO copiala dal preventivo (per ora li facciamo uguali)
+            \paragraph{Consuntivo}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                                & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                Cotti Cottini & -   & -   & -   & 2,5 & -   & -   & 2,5                \\ \hline
+                Di Pietro     & -   & 2   & -   & -   & -   & -   & 2                  \\ \hline
+                Diviesti      & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Lapenna       & -   & -   & -   & -   & 6,5 & -   & 6,5                \\ \hline
+                Pan           & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Pinarello     & 2   & -   & -   & -   & -   & -   & 2                  \\ \hline
+                Rizzolo       & -   & -   & 2   & -   & -   & -   & 2                  \\ \hline
+                Totale        & 2   & 2   & 2   & 2,5 & 6,5 & 6   &                    \\ \hline
+                \end{tabular}
+                \caption{Consuntivo orario per ruolo nello Sprint 20}
+            \end{table}
+
+            % TODO modificare colonna "Ore Rimanenti"
+            \paragraph{Prospetto Economico}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|}
+                \hline
+                \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo}      & \textbf{Ore rimanenti} \\ \hline
+                Responsabile    & 2             & €60                 & 1,5                    \\ \hline
+                Amministratore  & 2             & €40                 & 2,5                    \\ \hline
+                Analista        & 2             & €50                 & 1,5                    \\ \hline
+                Progettista     & 2,5           & €62,5               & 3                      \\ \hline
+                Programmatore   & 6,5           & €97,5               & 6,5                    \\ \hline
+                Verificatore    & 6             & €90                 & 6                      \\ \hline
+                \textbf{Totale} & \textbf{21}   & \textbf{\euro400}   & \textbf{21}            \\ \hline
+                \end{tabular}
+                \caption{Prospetto economico e ore rimanenti}
+            \end{table}
             
             \paragraph{Rischi effettivamente occorsi}
             \begin{itemize}
@@ -3026,7 +3286,72 @@
             \begin{itemize}  
                 \item RT1 Difficoltà nell’uso di nuove tecnologie  
                 \item RO1 Incomprensioni nella pianificazione delle attività  
-            \end{itemize}  
+            \end{itemize}
+
+            \paragraph{Preventivo}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                              & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                Cotti Cottini & -   & -   & 1,5 & -   & -   & -   & 1,5                \\ \hline
+                Di Pietro     & -   & -   & -   & 3   & -   & -   & 3                  \\ \hline
+                Diviesti      & -   & 2,5 & -   & -   & -   & -   & 2,5                \\ \hline
+                Lapenna       & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Pan           & -   & -   & -   & -   & 6,5 & -   & 6,5                \\ \hline
+                Pinarello     & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Rizzolo       & 1,5 & -   & -   & -   & -   & -   & 1,5                \\ \hline
+                Totale        & 1,5 & 2,5 & 1,5 & 3   & 6,5 & 6   &                    \\ \hline
+                \end{tabular}
+                \caption{Preventivo orario per ruolo nello Sprint 21}
+            \end{table}
+
+
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    \pie[polar]{7/Responsabile, 12/Amministratore, 7/Analista, 14/Progettista, 31/Programmatore, 29/Verificatore}
+                \end{tikzpicture}
+                \caption{Ripartizione in percentuale dei ruoli nello Sprint 21}
+            \end{figure}
+
+
+            % TODO copiala dal preventivo (per ora li facciamo uguali)
+            \paragraph{Consuntivo}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                              & Re  & Am  & An  & Pj  & Pg  & Ve  & Totale per persona \\ \hline
+                Cotti Cottini & -   & -   & 1,5 & -   & -   & -   & 1,5                \\ \hline
+                Di Pietro     & -   & -   & -   & 3   & -   & -   & 3                  \\ \hline
+                Diviesti      & -   & 2,5 & -   & -   & -   & -   & 2,5                \\ \hline
+                Lapenna       & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Pan           & -   & -   & -   & -   & 6,5 & -   & 6,5                \\ \hline
+                Pinarello     & -   & -   & -   & -   & -   & 3   & 3                  \\ \hline
+                Rizzolo       & 1,5 & -   & -   & -   & -   & -   & 1,5                \\ \hline
+                Totale        & 1,5 & 2,5 & 1,5 & 3   & 6,5 & 6   &                    \\ \hline
+                \end{tabular}
+                \caption{Consuntivo orario per ruolo nello Sprint 21}
+            \end{table}
+
+            % TODO modificare colonna "Ore Rimanenti"
+            \paragraph{Prospetto Economico}\mbox{}\\
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|}
+                \hline
+                \textbf{Ruolo}  & \textbf{Ore}  & \textbf{Costo}      & \textbf{Ore rimanenti} \\ \hline
+                Responsabile    & 1,5           & €45                 & 0                      \\ \hline
+                Amministratore  & 2,5           & €50                 & 0                      \\ \hline
+                Analista        & 1,5           & €37,5               & 0                      \\ \hline
+                Progettista     & 3             & €75                 & 0                      \\ \hline
+                Programmatore   & 6,5           & €97,5               & 0                      \\ \hline
+                Verificatore    & 6             & €90                 & 0                      \\ \hline
+                \textbf{Totale} & \textbf{21}   & \textbf{\euro395}   & \textbf{0}            \\ \hline
+                \end{tabular}
+                \caption{Prospetto economico e ore rimanenti}
+            \end{table}
             
             \paragraph{Rischi effettivamente occorsi}  
             \begin{itemize}  
