@@ -145,7 +145,7 @@
 %     \caption{Logout}
 % \end{figure}
 
-% \subsection{Pagine riservate all'admin}
+% \subsection{Pagine }
 % In questa sezione mostriamo le pagine riservate all'admin.
 
 % \subsubsection{Visualizza Metriche}
@@ -299,36 +299,23 @@ Dalla schermata iniziale è possibile accedere alle conversazioni salvate tramit
     \captionof{figure}{Menù laterale}
 \end{center}
 
+Facendo riferimento alle figure~\ref{fig:schermata-chat} - ~\ref{fig:Elaborazione} - ~\ref{fig:Visualizzazione Risposta}:
+\begin{itemize}
+    \item (1) Bottone per selezionare domande templetizzate (figura~\ref{fig:domanda-templetizzata}).
+    \item (2) Casella di testo per scrivere il messaggio.
+    \item (3) Nome della conversazione.
+    \item (4) Bottone per eliminare la chat, mostra un pop-up di conferma (figura~\ref{fig:elimina-chat}).
+    \item (5) Pulsante invio, attivo solo se la casella contiene testo. Si può usare anche il tasto "invio" della tastiera.
+    \item (6) Messaggio inviato dall'utente, visualizzato sulla destra con testo, data e ora di invio. 
+    \item (7) Stato di elaborazione della risposta da parte dell’assistente virtuale Giorgione, visibile sulla sinistra.
+    \item (8) Risposta elaborata dal bot, visualizzata nella schermata della chat. 
+    \item (9) Possibilità per l’utente di fornire un feedback positivo o negativo sulla risposta ricevuta (figura~\ref{fig:likedislike}).
+\end{itemize}
+
 \begin{center}
     \includegraphics[width=\textwidth]{./img/SchermataChat1.png}
     \captionof{figure}{Schermata della chat}
     \label{fig:schermata-chat}
-\end{center}
-
-Facendo riferimento alla figura~\ref{fig:schermata-chat}:
-
-\begin{itemize}
-    \item (1) Bottone per selezionare domande templetizzate.
-    \item (2) Casella di testo per scrivere il messaggio.
-    \item (3) Nome della conversazione.
-    \item (4) Bottone per eliminare la chat, mostra un pop-up di conferma.
-    \item (5) Pulsante invio, attivo solo se la casella contiene testo. Si può usare anche il tasto "invio" della tastiera.
-\end{itemize}
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[anchor=east,inner sep=0] (img1) at (0,0) {\includegraphics[width=0.4\textwidth]{img/SelettoreTemplate1.png}};
-        \node[anchor=west,inner sep=0] (img2) at (2,0) {\includegraphics[width=0.4\textwidth]{img/SelettoreTemplate2.png}};
-        \draw[->, thick] (img1.east) -- (img2.west);
-    \end{tikzpicture}
-    \captionof{figure}{Selezione domanda templetizzata}
-    \label{fig:domanda templetizzata}
-\end{center}
-
-\begin{center}
-    \includegraphics[width=0.5\textwidth]{./img/eliminaChat.png}
-    \captionof{figure}{Conferma eliminazione chat}
-    \label{fig:elimina-chat}
 \end{center}
 
 \begin{center}
@@ -344,6 +331,22 @@ Facendo riferimento alla figura~\ref{fig:schermata-chat}:
 \end{center}
 
 \begin{center}
+    \begin{tikzpicture}
+        \node[anchor=east,inner sep=0] (img1) at (0,0) {\includegraphics[width=0.4\textwidth]{img/SelettoreTemplate1.png}};
+        \node[anchor=west,inner sep=0] (img2) at (2,0) {\includegraphics[width=0.4\textwidth]{img/SelettoreTemplate2.png}};
+        \draw[->, thick] (img1.east) -- (img2.west);
+    \end{tikzpicture}
+    \captionof{figure}{Selezione domanda templetizzata}
+    \label{fig:domanda-templetizzata}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{./img/eliminaChat.png}
+    \captionof{figure}{Conferma eliminazione chat}
+    \label{fig:elimina-chat}
+\end{center}
+
+\begin{center}
     \includegraphics[width=0.2\textwidth]{./img/like.png}
     \hspace{0.05\textwidth}
     \includegraphics[width=0.2\textwidth]{./img/dislike.png}
@@ -352,7 +355,7 @@ Facendo riferimento alla figura~\ref{fig:schermata-chat}:
 \end{center}
 
 \subsubsection{Pagina di Richiesta di Supporto}
-Dal menù laterale si accede alla pagina "Richiesta Supporto". L’utente può inviare una segnalazione inserendo oggetto, descrizione e inviando tramite l’apposito bottone.
+Dal menù laterale si accede alla pagina "Richiesta Supporto" (1). L’utente può inviare una segnalazione inserendo oggetto (2), descrizione (3) e inviando tramite l’apposito bottone (4).
 \begin{center}
     \includegraphics[width=\textwidth]{./img/RichiestaAssistenza1.png}
     \captionof{figure}{Pagina di Assistenza}
@@ -373,10 +376,10 @@ Cliccando sull’icona utente in alto a destra è possibile effettuare il logout
 \end{center}
 
 \newpage
-\subsection{Pagine riservate all'admin}
+\subsection{Pagine Admin}
 
 \subsubsection{Visualizza Metriche}
-La dashboard delle metriche mostra like, dislike e numero totale di messaggi gestiti.
+La dashboard delle metriche mostra like, dislike, numero totale di messaggi gestiti e la media dei rating sui messaggi.
 \begin{center}
     \includegraphics[width=\textwidth]{./img/visualizzaMetriche.png}
     \captionof{figure}{Dashboard Metriche}
@@ -384,12 +387,20 @@ La dashboard delle metriche mostra like, dislike e numero totale di messaggi ges
 \end{center}
 
 \subsubsection{Gestione Template}
-Dalla voce "Gestione Template" si accede all’elenco dei template creati. È possibile aggiungerne, modificarli o eliminarli.
+Dalla voce "Gestione Template" (1) si accede all’elenco dei template creati.
 \begin{center}
     \includegraphics[width=\textwidth]{./img/GestioneTemplate.png}
     \captionof{figure}{Gestione Template}
     \label{fig:Template}
 \end{center}
+
+Qui è possibile:
+\begin{itemize}
+    \item (2) Aggiungere un nuovo template (~\ref{fig:addTemplate}).
+    \item (3) Espandere il template per visualizzarne il contenuto.
+    \item (4) Modificare il template (~\ref{fig:pop-up modifica ed elimina}).
+    \item (5) Eliminare il template (~\ref{fig:pop-up modifica ed elimina}).
+\end{itemize}
 
 \begin{center}
     \includegraphics[width=0.4\textwidth]{./img/AggiungiTemplate.png}
@@ -406,25 +417,39 @@ Dalla voce "Gestione Template" si accede all’elenco dei template creati. È po
 \end{center}
 
 \subsubsection{Assistenza Clienti}
-In questa sezione l’admin può visualizzare tutte le richieste degli utenti, verificarne lo stato e prenderle in carico.
+Dalla voce "Assistenza clienti" (1) si accede alla pagina di gestione delle richieste di assistenza inviate dagli utenti. Qui l'admin può visualizzare lo stato delle richieste (2) e prenderle in carico (3).
 \begin{center}
     \includegraphics[width=\textwidth]{./img/Assistenza1.png}
     \captionof{figure}{Gestione Assistenza}
     \label{fig:Assistenza1}
 \end{center}
 
+Per ogni singola richiesta viene visualizzato:
+\begin{itemize}
+    \item Lo stato della richiesta:
+    \begin{itemize}
+        \item \textbf{Rosso:} non gestita;
+        \item \textbf{Verde:} gestita;
+    \end{itemize}
+    \item email
+    \item data di invio da parte dell'utente
+    \item oggetto della richiesta
+    \item contenuto della richiesta
+\end{itemize}
 \begin{center}
     \includegraphics[width=0.5\textwidth]{./img/Assistenza2.png}
-    \captionof{figure}{Cambio colore stato richiesta}
+    \captionof{figure}{Informazioni richiesta}
 \end{center}
 
 \subsubsection{Gestione Documenti}
-L'admin può caricare documenti \texttt{.pdf} e \texttt{.txt} per addestrare l’assistente.
+L'admin può caricare documenti in formato \texttt{.pdf} e \texttt{.txt} per arricchire la conoscenza dell'assistente.
 \begin{center}
     \includegraphics[width=0.8\textwidth]{./img/PaginaGestioneDocumenti1.png}
     \captionof{figure}{Pagina Gestione Documenti}
     \label{fig:gestione1}
 \end{center}
+
+Cliccando sul bottone "Upload files" (figura~\ref{fig:gestione2}), si aprirà una finestra per selezionare i file dal dispositivo (figura~\ref{fig:gestione3}). Una volta completata l'operazione, l'admin riceverà una notifica sull'esito del caricamento (figura~\ref{fig:gestione4}).
 
 \begin{center}
     \includegraphics[width=0.6\textwidth]{./img/PaginaGestioneDocumenti2.png}
