@@ -23,7 +23,7 @@ Un’architettura monolitica si basa su un’unica codebase che incorpora tutti 
 \paragraph{Vantaggi}  
 \begin{itemize}
     \item \textbf{Semplicità di sviluppo e gestione}: Un’unica codebase permette di mantenere una visione centralizzata del sistema, semplificando lo sviluppo, il testing e il debugging.
-    \item \textbf{Minori costi di infrastruttura}: Non è necessario investire in strumenti di orchestrazione, load balancing o gestione della comunicazione tra microservizi.
+    \item \textbf{Minori costi di infrastruttura}: Non è necessario investire in strumenti di orchestrazione, o gestione della comunicazione tra microservizi.
     \item \textbf{Deployment più semplice}: L’intero sistema viene distribuito come un’unica unità, evitando problemi di coordinamento.
     \item \textbf{Prestazioni migliori per bassi volumi di traffico}: L’assenza di chiamate di rete tra microservizi riduce la latenza.
 \end{itemize}
@@ -38,7 +38,7 @@ Un’architettura monolitica si basa su un’unica codebase che incorpora tutti 
 L’architettura a microservizi suddivide il sistema in componenti indipendenti, ognuno responsabile di una funzionalità specifica. Ogni microservizio comunica con gli altri attraverso API, permettendo un alto grado di indipendenza e flessibilità nello sviluppo.
 \paragraph{Vantaggi}  
 \begin{itemize}
-    \item \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#scalabilità}{\textbf{Scalabilità\textsuperscript{G}} orizzontale}: Ogni microservizio può essere scalato indipendentemente.
+    \item \href{https://code7crusaders.github.io/docs/PB/documentazione_interna/glossario.html#scalabilità}{\textbf{Scalabilità\textsuperscript{G} orizzontale} }: Ogni microservizio può essere scalato indipendentemente.
     \item \textbf{Flessibilità nello sviluppo}: Permette l’adozione di tecnologie diverse per ciascun servizio.
     \item \textbf{Maggiore resilienza}: Un errore in un microservizio non compromette l’intero sistema.
     \item \textbf{Facilità di manutenzione}: È possibile distribuire aggiornamenti senza dover ripubblicare l’intera applicazione.
@@ -84,7 +84,7 @@ Adottare un'architettura esagonale comporta diversi benefici:
 L’architettura esagonale garantisce modularità e sostenibilità del sistema nel lungo termine, permettendo di scalare senza impattare la stabilità complessiva dell’applicazione.
 
 \subsubsection{Scelta dell'architettura}
-Dopo un’analisi approfondita, il team di sviluppo ha deciso di adottare un’\textbf{architettura esagonale}. Questa scelta è stata motivata dai seguenti fattori:
+Dopo un’analisi approfondita, il team di sviluppo ha deciso di adottare un’\textbf{architettura esagonale monolitica}. Questa scelta è stata motivata dai seguenti fattori:
 \begin{enumerate}
     \item \textbf{Basso carico di utenti}: L’applicazione è destinata a un contesto B2B con un numero limitato di utenti concorrenti.
     \item \textbf{Semplicità di gestione}: La manutenzione di un monolite è più diretta rispetto a un sistema distribuito.
