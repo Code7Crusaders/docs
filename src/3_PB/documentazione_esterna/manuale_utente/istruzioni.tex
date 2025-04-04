@@ -1,260 +1,447 @@
+% \section{Istruzioni all'uso}
+% \subsection{Pagine User}
+% In questa Sezione mostriamo le pagine riservate all'utente.
+% \subsubsection{Landing page}
+% All'avvio del prodotto verrà visualizzata la landing page, che presenta il logo dell'assistente virtuale e un messaggio di benvenuto. In questa fase, l'utente può scegliere di accedere al sistema.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{./img/landingPage.png}
+%     \caption{Schermata della landing page}
+% \end{figure}
+
+% \subsubsection{Pagina di Accesso}
+% Cliccando sul bottone blu si passerà direttamente alla pagina di accesso, dove l'utente dovrà inserire le proprie credenziali (\textit{username} e \textit{password}) per autenticarsi.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{./img/paginaAccesso.png}
+%     \caption{Schermata della pagina di accesso}
+% \end{figure}
+
+% \subsubsection{Pagina di Registrazione}
+% Nel caso in cui non si possieda un account, è possibile registrarsi dalla pagina di registrazione cliccando sul link presente nella pagina di autenticazione.
+% Qui l'utente dovrà inserire i campi obbligatori \{ \textit{username; password; email; nome; cognome} \} e volendo opzionalmente può inserire il numero di telefono.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{./img/paginaRegistrazione.png}
+%     \caption{Schermata della pagina di registrazione}
+% \end{figure}
+
+% \subsubsection{Schermata iniziale}
+% Una volta effettuato l'accesso verremo accolti da questa Schermata iniziale composta da 3 elementi, una navbar superiore, una navbar laterale e il contenuto della pagina. Da qui è possibile iniziare una conversazione mettendo il titolo della conversazione e schiacciando il bottone: "inizia la conversazione".
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{./img/paginaIniziale.png}
+%     \caption{Schermata della pagina di registrazione}
+% \end{figure}
+
+% \subsubsection{Schermata di conversazione}
+% Una volta creata la conversazione dalla schermata iniziale l'utente può andare nel menù laterale (\textit{nel caso esso sia chiuso si può aprire tramite menù ad hamburger}) e selezionare la voce: "\textit{Conversazioni salvate}" che aprirà un menù a tendina dove l'utente potrà selezionare la conversazione desiderata.
+% \begin{figure}[h!]
+%     \centering
+%     \begin{subfigure}{0.3\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{./img/laterale1.png}
+%     \end{subfigure}
+%     \hspace{0.05\textwidth}
+%     \begin{subfigure}{0.3\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{./img/laterale2.png}
+%     \end{subfigure}
+%     \caption{Menù laterale}
+% \end{figure}
+% L'utente si trovera quindi di fronte a una schermata composta da diversi elementi:
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=\textwidth]{./img/SchermataChat1.png}
+%     \caption{Schermata della chat}
+%     \label{fig:schermata-chat}
+% \end{figure}
+% \newpage
+% Facendo riferimento alla figura~\ref{fig:schermata-chat} infatti l'utente troverà un bottone per selezionare una domanda templetizzata (\textit{qui segnato con il numero 1}), cliccato il bottone sarà presente selezionare la domanda e inviarla all'assistente virtuale come mostrato in figura~\ref{fig:domanda templetizzata}.
+% \begin{figure}[htbp]
+%     \centering
+%     \begin{tikzpicture}
+%         % Inserisci le immagini
+%         \node[anchor=east,inner sep=0] (img1) at (0,0) {\includegraphics[width=0.4\textwidth]{img/SelettoreTemplate1.png}};
+%         \node[anchor=west,inner sep=0] (img2) at (2,0) {\includegraphics[width=0.4\textwidth]{img/SelettoreTemplate2.png}};
+        
+%         % Disegna una freccia
+%         % Disegna una freccia dritta orizzontale
+%         \draw[->, thick] (img1.east) -- (img2.west);
+%         \end{tikzpicture}
+%         \caption{Seleziona domanda templetizzata}
+%         \label{fig:domanda templetizzata}
+% \end{figure}
+% \\
+% Il punto numero 2 indica invece la casella di testo dove l'utente potrà scrivere il proprio messaggio da inviare al bot.
+% Il punto numero 3 indica il nome della conversazione precedentemente scelto nella schermata iniziale. Il punto numero 4 indica un bottone che permette di eliminare la chat premendolo apparirà un pop-up che chiede cortesemente all'utente se è sicuro di voler eliminare la conversazione figura~\ref{fig:elimina-chat}:
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.5\textwidth]{./img/eliminaChat.png}
+%     \caption{Elimina chat}
+%     \label{fig:elimina-chat}
+% \end{figure}
+% \\
+% Il punto numero 5 in figura~\ref{fig:schermata-chat} è il pulsante invio che permette di mandare un messaggio al nostro assistente virtuale. Bisogna dire tuttavia che è possibile inviare un messaggio solo se del testo è presente nella casella di testo (\textit{punto 2 in figura~\ref{fig:schermata-chat}}) e che non è necessario cliccare sul pulsante in quanto è possibile premere direttamente invio sulla tastiera.
+% \\
+% Inviato un messaggio questo apparirà nella parte destra della schermata come avviene nelle più famose chat di messaggistica (fare riferimento a figura~\ref{fig:Elaborazione} punto 6), e verrà mostrato il messaggio e la data e l'ora dell'invio.
+% Nella parte sinistra l'utente potrà osservare il nostro Assistente virtuale Giorgione elaborare il messaggio per soddisfare la richiesta dell'utente (punto 7 figura~\ref{fig:Elaborazione}).
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=\textwidth]{./img/SchermataChat2.png}
+%     \caption{Elaborazione del messaggio}
+%     \label{fig:Elaborazione}
+% \end{figure}
+% \\
+% Una volta mandato il messaggio esso sarà visualizzabile come mostrato in figura~\ref{fig:Visualizzazione Risposta} punto 8, e l'utente potrà decidere opzionalmente se è soddisfatto della risposta data dal bot di fornire una valutazione booleana indicata da un pollice in su e pollice in giù (\textit{figura~\ref{fig:Visualizzazione Risposta} punto 9}):
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=\textwidth]{./img/SchermataChat3.png}
+%     \caption{Visualizzazione Risposta}
+%     \label{fig:Visualizzazione Risposta}
+% \end{figure}
+% L'utente è notificato dalla scelta dall'illuminazione di uno dei 2 bottoni come mostrato in figura~\ref{fig:likedislike}
+% \begin{figure}[h!]
+%     \centering
+%     \begin{subfigure}{0.2\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{./img/like.png}
+%         \caption{Caso in cui l'utente scelga like}
+%     \end{subfigure}
+%     \hspace{0.05\textwidth}
+%     \begin{subfigure}{0.2\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{./img/dislike.png}
+%         \caption{Caso in cui l'utente scelga dislike}
+%     \end{subfigure}
+%     \caption{Feedback Risposta}
+%     \label{fig:likedislike}
+% \end{figure}
+
+% \newpage
+
+% \subsubsection{Pagina di Richiesta di Supporto}
+% Selezionando dal menù laterale la voce "Richiesta Supporto" (fig~\ref{fig:Pagina di Assistenza} pt.1). L'utente si troverà davanti ad una pagina dove potrà inviare un messaggio all'admin in caso di problemi.
+% Una richiesta dovrà essere composta da un Oggetto inseribile nella casella di testo (fig~\ref{fig:Pagina di Assistenza} pt.2), una descrizione (fig~\ref{fig:Pagina di Assistenza} pt.3).\\
+% Una volta compilati l'utente può inviare il messaggio cliccando sul bottone invia indicato in fig~\ref{fig:Pagina di Assistenza} pt.4, e successivamente verrà notificato dell'invio riuscito o non riuscito come mostrato in fig~\ref{fig:InvioRiuscito} (\textit{Ci riserviamo di mostrare solo l'invio riuscito}).
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=\textwidth]{./img/RichiestaAssistenza1.png}
+%     \caption{Pagina di Assistenza}
+%     \label{fig:Pagina di Assistenza}
+% \end{figure}
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{./img/RichiestaAssistenza2.png}
+%     \caption{Invio Richiesta Assistenza Riuscita}
+%     \label{fig:InvioRiuscito}
+% \end{figure}
+
+% \subsubsection{Logout}
+% Cliccando in alto a destra su qualsiasi schermata sarà possibile cliccare sull'icona utente e premere sul pulsante di sign out per tornare alla schermata di login.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.3\textwidth]{./img/logout.png}
+%     \caption{Logout}
+% \end{figure}
+
+% \subsection{Pagine riservate all'admin}
+% In questa sezione mostriamo le pagine riservate all'admin.
+
+% \subsubsection{Visualizza Metriche}
+% L'admin cliccando dal menù laterale su Visualizza Metriche vedrà una Dashboard dove visualizzerà con valori numerici i like e i dislike delle conversazioni e il numero di messaggi totali gestiti dal Database.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=\textwidth]{./img/visualizzaMetriche.png}
+%     \caption{Dashboard Metriche}
+%     \label{fig:Metriche}
+% \end{figure}
+
+% \subsubsection{Gestione Template}
+% Selezionado dal menù laterale (fig~\ref{fig:Template} pt.1) accediamo alla pagina di gestione dei template. Qui è possibile visualizzare i template precedentemente inseriti dall'admin, aggiungerne di nuovi, modificarli ed eliminarli.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=\textwidth]{./img/GestioneTemplate.png}
+%     \caption{Gestione Template}
+%     \label{fig:Template}
+% \end{figure}
+% Per aggiungere un template basterà cliccare sul pulsante aggiungi template (fig~\ref{fig:Template} pt.2) che aprirà il pop-up mostrato in fig~\ref{fig:addTemplate} dove sarà possibile inserire la domanda e la risposta.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.4\textwidth]{./img/AggiungiTemplate.png}
+%     \caption{Aggiungi Template}
+%     \label{fig:addTemplate}
+% \end{figure}
+% Per visualizzare l'intero template e non solo il nome è possibile cliccare sul bottone mostrato in fig~\ref{fig:Template} pt.3 che aprirà una tendina dove verrà visualizzata l'intera domanda e l'intera risposta. Verranno inoltre mostrati il pulsanti di "modifica template" (fig~\ref{fig:Template} pt.4) ed "elimina template" (fig~\ref{fig:Template} pt.5). Se questi ultimi dovessero essere cliccati appariranno i pop-up mostrati in figura~\ref{fig:pop-up modifica ed elimina}.
+% \begin{figure}[h!]
+%     \centering
+%     \begin{subfigure}{0.5\textwidth}
+%         \centering
+%         \includegraphics[width=0.7\textwidth]{./img/ModificaTemplate.png}
+%         \caption{ModificaTemplate}
+%     \end{subfigure}
+%     \hspace{0.05\textwidth}
+%     \begin{subfigure}{0.5\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{./img/EliminaTemplate.png}
+%         \caption{Elimina Template}
+%     \end{subfigure}
+%     \caption{Modifica Template ed Elimina Template}
+%     \label{fig:pop-up modifica ed elimina}
+% \end{figure}
+
+% \subsubsection{Assistenza Clienti}
+% Cliccando dal menù laterale sulla voce "Assistenza clienti" (fig~\ref{fig:Assistenza1} pt.1) è possibile visualizzare tutte le richieste di assistenza che i vari utenti hanno inviato (fai riferimento alla sottosezione \textit{Pagina di Richiesta di Supporto} a pagina~\pageref{fig:Pagina di Assistenza}).
+% Per ogni richiesta verranno visualizzate:
+% \begin{itemize}
+%     \item Lo stato della richiesta (fig~\ref{fig:Assistenza1} pt.2)
+%     \begin{itemize}
+%         \item \textbf{Rosso:} non gestita;
+%         \item \textbf{Verde:} gestita;
+%     \end{itemize}
+%     \item email
+%     \item data di invio da parte dell'utente %NOTA PER IL VERIFICATORE, forse qui vanno aggiunti dei punti nell'immagine come ho fatto io per le altre figure
+%     \item oggetto della richiesta %Invito cortesemente a farlo basta modificare l'immagine, io ho usato gli strumenti presenti in antemprima su macOS quindi si può fare.
+%     \item contenuto della richiesta %Perfavore Sto scrivendo il documento alle 2 di notte quindi verificatore lavora
+%     \item pulsante di presa carico (fig~\ref{fig:Assistenza1} pt.3)
+% \end{itemize}
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=\textwidth]{./img/Assistenza1.png}
+%     \caption{Gestione Assistenza}
+%     \label{fig:Assistenza1}
+% \end{figure}
+% Se la richiesta viene presa in carico cliccando il pulsante (fig~\ref{fig:Assistenza1} pt.3) il colore dello stato passerà da \textbf{Rosso} a \textbf{Verde}.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.5\textwidth]{./img/Assistenza2.png}
+%     \caption{Colore Stato}
+% \end{figure}
+
+% \subsubsection{Gestione Documenti}
+% Cliccando infine sulla pagina di gestione documenti ci troveremo davanti alla schermata mostrata in figura~\ref{fig:gestione1}, che permetterà di inserire file per addestrare il nostro assistente virtuale a rispondere a determinate domande.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{./img/PaginaGestioneDocumenti1.png}
+%     \caption{Pagina Gestione Documenti}
+%     \label{fig:gestione1}
+% \end{figure}
+
+% Procediamo quindi ad illustrare come caricare i dati. Cominciamo quindi cliccando sul bottone "upload files" come indicato dalla freccia in figura~\ref{fig:gestione2}
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.6\textwidth]{./img/PaginaGestioneDocumenti2.png}
+%     \caption{Upload Documenti}
+%     \label{fig:gestione2}
+% \end{figure}
+% Questo aprirà una finestra di selezione file, il sistema accetta file di tipo \texttt{.pdf} o \texttt{.txt} .
+ 
+% \begin{figure}[h!]
+%     \centering
+%     \begin{subfigure}{0.4\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{./img/PaginaGestioneDocumenti3.png}
+%     \end{subfigure}
+%     \hspace{0.05\textwidth}
+%     \begin{subfigure}{0.4\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{./img/GestioneDocumenti4.png}
+%     \end{subfigure}
+%     \caption{Inserimento file}
+%     \label{fig:gestione3}
+% \end{figure}
+% Cliccando sul bottone aggiungi documento (fig~\ref{fig:gestione4} pt.1) l'admin verrà notificato dell'avvenuta riuscita (fig~\ref{fig:gestione4} pt.2) dell'operazione o del suo fallimento.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{./img/GestioneDocumenti5.png}
+%     \caption{Upload Documenti con successo}
+%     \label{fig:gestione4}
+% \end{figure}
+
 \section{Istruzioni all'uso}
+
 \subsection{Pagine User}
-In questa Sezione mostriamo le pagine riservate all'utente.
+
 \subsubsection{Landing page}
 All'avvio del prodotto verrà visualizzata la landing page, che presenta il logo dell'assistente virtuale e un messaggio di benvenuto. In questa fase, l'utente può scegliere di accedere al sistema.
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./img/landingPage.png}
-    \caption{Schermata della landing page}
-\end{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{./img/landingPage.png}
+    \captionof{figure}{Schermata della landing page}
+\end{center}
 
 \subsubsection{Pagina di Accesso}
-Cliccando sul bottone blu si passerà direttamente alla pagina di accesso, dove l'utente dovrà inserire le proprie credenziali (\textit{username} e \textit{password}) per autenticarsi.
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./img/paginaAccesso.png}
-    \caption{Schermata della pagina di accesso}
-\end{figure}
+Cliccando sul bottone blu si passerà alla pagina di accesso, dove l'utente dovrà inserire le proprie credenziali (\textit{username} e \textit{password}) per autenticarsi.
+\begin{center}
+    \includegraphics[width=\textwidth]{./img/paginaAccesso.png}
+    \captionof{figure}{Schermata della pagina di accesso}
+\end{center}
 
 \subsubsection{Pagina di Registrazione}
-Nel caso in cui non si possieda un account, è possibile registrarsi dalla pagina di registrazione cliccando sul link presente nella pagina di autenticazione.
-Qui l'utente dovrà inserire i campi obbligatori \{ \textit{username; password; email; nome; cognome} \} e volendo opzionalmente può inserire il numero di telefono.
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./img/paginaRegistrazione.png}
-    \caption{Schermata della pagina di registrazione}
-\end{figure}
+Nel caso in cui non si possieda un account, è possibile registrarsi dalla pagina di registrazione cliccando sul link presente nella pagina di autenticazione. L'utente dovrà inserire i campi obbligatori \{\textit{username; password; email; nome; cognome}\} e, facoltativamente, il numero di telefono.
+\begin{center}
+    \includegraphics[width=\textwidth]{./img/paginaRegistrazione.png}
+    \captionof{figure}{Schermata della pagina di registrazione}
+\end{center}
 
 \subsubsection{Schermata iniziale}
-Una volta effettuato l'accesso verremo accolti da questa Schermata iniziale composta da 3 elementi, una navbar superiore, una navbar laterale e il contenuto della pagina. Da qui è possibile iniziare una conversazione mettendo il titolo della conversazione e schiacciando il bottone: "inizia la conversazione".
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./img/paginaIniziale.png}
-    \caption{Schermata della pagina di registrazione}
-\end{figure}
+Una volta effettuato l'accesso, l'utente viene accolto da una schermata composta da una navbar superiore, una laterale e il contenuto principale. È possibile iniziare una conversazione inserendo il titolo e cliccando su "Inizia la conversazione".
+\begin{center}
+    \includegraphics[width=\textwidth]{./img/paginaIniziale.png}
+    \captionof{figure}{Schermata iniziale}
+\end{center}
 
 \subsubsection{Schermata di conversazione}
-Una volta creata la conversazione dalla schermata iniziale l'utente può andare nel menù laterale (\textit{nel caso esso sia chiuso si può aprire tramite menù ad hamburger}) e selezionare la voce: "\textit{Conversazioni salvate}" che aprirà un menù a tendina dove l'utente potrà selezionare la conversazione desiderata.
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{./img/laterale1.png}
-    \end{subfigure}
+Dalla schermata iniziale è possibile accedere alle conversazioni salvate tramite il menù laterale (aperto tramite menù hamburger, se chiuso).
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{./img/laterale1.png}
     \hspace{0.05\textwidth}
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{./img/laterale2.png}
-    \end{subfigure}
-    \caption{Menù laterale}
-\end{figure}
-L'utente si trovera quindi di fronte a una schermata composta da diversi elementi:
-\begin{figure}[h!]
-    \centering
+    \includegraphics[width=0.3\textwidth]{./img/laterale2.png}
+    \captionof{figure}{Menù laterale}
+\end{center}
+
+\begin{center}
     \includegraphics[width=\textwidth]{./img/SchermataChat1.png}
-    \caption{Schermata della chat}
+    \captionof{figure}{Schermata della chat}
     \label{fig:schermata-chat}
-\end{figure}
-\newpage
-Facendo riferimento alla figura~\ref{fig:schermata-chat} infatti l'utente troverà un bottone per selezionare una domanda templetizzata (\textit{qui segnato con il numero 1}), cliccato il bottone sarà presente selezionare la domanda e inviarla all'assistente virtuale come mostrato in figura~\ref{fig:domanda templetizzata}.
-\begin{figure}[htbp]
-    \centering
+\end{center}
+
+Facendo riferimento alla figura~\ref{fig:schermata-chat}:
+
+\begin{itemize}
+    \item (1) Bottone per selezionare domande templetizzate.
+    \item (2) Casella di testo per scrivere il messaggio.
+    \item (3) Nome della conversazione.
+    \item (4) Bottone per eliminare la chat, mostra un pop-up di conferma.
+    \item (5) Pulsante invio, attivo solo se la casella contiene testo. Si può usare anche il tasto "invio" della tastiera.
+\end{itemize}
+
+\begin{center}
     \begin{tikzpicture}
-        % Inserisci le immagini
         \node[anchor=east,inner sep=0] (img1) at (0,0) {\includegraphics[width=0.4\textwidth]{img/SelettoreTemplate1.png}};
         \node[anchor=west,inner sep=0] (img2) at (2,0) {\includegraphics[width=0.4\textwidth]{img/SelettoreTemplate2.png}};
-        
-        % Disegna una freccia
-        % Disegna una freccia dritta orizzontale
         \draw[->, thick] (img1.east) -- (img2.west);
-        \end{tikzpicture}
-        \caption{Seleziona domanda templetizzata}
-        \label{fig:domanda templetizzata}
-\end{figure}
-\\
-Il punto numero 2 indica invece la casella di testo dove l'utente potrà scrivere il proprio messaggio da inviare al bot.
-Il punto numero 3 indica il nome della conversazione precedentemente scelto nella schermata iniziale. Il punto numero 4 indica un bottone che permette di eliminare la chat premendolo apparirà un pop-up che chiede cortesemente all'utente se è sicuro di voler eliminare la conversazione figura~\ref{fig:elimina-chat}:
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\textwidth]{./img/eliminaChat.png}
-    \caption{Elimina chat}
-    \label{fig:elimina-chat}
-\end{figure}
-\\
-Il punto numero 5 in figura~\ref{fig:schermata-chat} è il pulsante invio che permette di mandare un messaggio al nostro assistente virtuale. Bisogna dire tuttavia che è possibile inviare un messaggio solo se del testo è presente nella casella di testo (\textit{punto 2 in figura~\ref{fig:schermata-chat}}) e che non è necessario cliccare sul pulsante in quanto è possibile premere direttamente invio sulla tastiera.
-\\
-Inviato un messaggio questo apparirà nella parte destra della schermata come avviene nelle più famose chat di messaggistica (fare riferimento a figura~\ref{fig:Elaborazione} punto 6), e verrà mostrato il messaggio e la data e l'ora dell'invio.
-Nella parte sinistra l'utente potrà osservare il nostro Assistente virtuale Giorgione elaborare il messaggio per soddisfare la richiesta dell'utente (punto 7 figura~\ref{fig:Elaborazione}).
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=\textwidth]{./img/SchermataChat2.png}
-    \caption{Elaborazione del messaggio}
-    \label{fig:Elaborazione}
-\end{figure}
-\\
-Una volta mandato il messaggio esso sarà visualizzabile come mostrato in figura~\ref{fig:Visualizzazione Risposta} punto 8, e l'utente potrà decidere opzionalmente se è soddisfatto della risposta data dal bot di fornire una valutazione booleana indicata da un pollice in su e pollice in giù (\textit{figura~\ref{fig:Visualizzazione Risposta} punto 9}):
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=\textwidth]{./img/SchermataChat3.png}
-    \caption{Visualizzazione Risposta}
-    \label{fig:Visualizzazione Risposta}
-\end{figure}
-L'utente è notificato dalla scelta dall'illuminazione di uno dei 2 bottoni come mostrato in figura~\ref{fig:likedislike}
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}{0.2\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{./img/like.png}
-        \caption{Caso in cui l'utente scelga like}
-    \end{subfigure}
-    \hspace{0.05\textwidth}
-    \begin{subfigure}{0.2\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{./img/dislike.png}
-        \caption{Caso in cui l'utente scelga dislike}
-    \end{subfigure}
-    \caption{Feedback Risposta}
-    \label{fig:likedislike}
-\end{figure}
+    \end{tikzpicture}
+    \captionof{figure}{Selezione domanda templetizzata}
+    \label{fig:domanda templetizzata}
+\end{center}
 
-\newpage
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{./img/eliminaChat.png}
+    \captionof{figure}{Conferma eliminazione chat}
+    \label{fig:elimina-chat}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=\textwidth]{./img/SchermataChat2.png}
+    \captionof{figure}{Elaborazione del messaggio}
+    \label{fig:Elaborazione}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=\textwidth]{./img/SchermataChat3.png}
+    \captionof{figure}{Visualizzazione risposta e feedback}
+    \label{fig:Visualizzazione Risposta}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=0.2\textwidth]{./img/like.png}
+    \hspace{0.05\textwidth}
+    \includegraphics[width=0.2\textwidth]{./img/dislike.png}
+    \captionof{figure}{Feedback utente: like o dislike}
+    \label{fig:likedislike}
+\end{center}
 
 \subsubsection{Pagina di Richiesta di Supporto}
-Selezionando dal menù laterale la voce "Richiesta Supporto" (fig~\ref{fig:Pagina di Assistenza} pt.1). L'utente si troverà davanti ad una pagina dove potrà inviare un messaggio all'admin in caso di problemi.
-Una richiesta dovrà essere composta da un Oggetto inseribile nella casella di testo (fig~\ref{fig:Pagina di Assistenza} pt.2), una descrizione (fig~\ref{fig:Pagina di Assistenza} pt.3).\\
-Una volta compilati l'utente può inviare il messaggio cliccando sul bottone invia indicato in fig~\ref{fig:Pagina di Assistenza} pt.4, e successivamente verrà notificato dell'invio riuscito o non riuscito come mostrato in fig~\ref{fig:InvioRiuscito} (\textit{Ci riserviamo di mostrare solo l'invio riuscito}).
-\begin{figure}[h!]
-    \centering
+Dal menù laterale si accede alla pagina "Richiesta Supporto". L’utente può inviare una segnalazione inserendo oggetto, descrizione e inviando tramite l’apposito bottone.
+\begin{center}
     \includegraphics[width=\textwidth]{./img/RichiestaAssistenza1.png}
-    \caption{Pagina di Assistenza}
+    \captionof{figure}{Pagina di Assistenza}
     \label{fig:Pagina di Assistenza}
-\end{figure}
-\begin{figure}[h!]
-    \centering
+\end{center}
+
+\begin{center}
     \includegraphics[width=0.8\textwidth]{./img/RichiestaAssistenza2.png}
-    \caption{Invio Richiesta Assistenza Riuscita}
+    \captionof{figure}{Invio Richiesta Assistenza Riuscita}
     \label{fig:InvioRiuscito}
-\end{figure}
+\end{center}
 
 \subsubsection{Logout}
-Cliccando in alto a destra su qualsiasi schermata sarà possibile cliccare sull'icona utente e premere sul pulsante di sign out per tornare alla schermata di login.
-\begin{figure}[h!]
-    \centering
+Cliccando sull’icona utente in alto a destra è possibile effettuare il logout e tornare alla pagina di login.
+\begin{center}
     \includegraphics[width=0.3\textwidth]{./img/logout.png}
-    \caption{Logout}
-\end{figure}
+    \captionof{figure}{Logout}
+\end{center}
 
+\newpage
 \subsection{Pagine riservate all'admin}
-In questa sezione mostriamo le pagine riservate all'admin.
 
 \subsubsection{Visualizza Metriche}
-L'admin cliccando dal menù laterale su Visualizza Metriche vedrà una Dashboard dove visualizzerà con valori numerici i like e i dislike delle conversazioni e il numero di messaggi totali gestiti dal Database.
-\begin{figure}[h!]
-    \centering
+La dashboard delle metriche mostra like, dislike e numero totale di messaggi gestiti.
+\begin{center}
     \includegraphics[width=\textwidth]{./img/visualizzaMetriche.png}
-    \caption{Dashboard Metriche}
+    \captionof{figure}{Dashboard Metriche}
     \label{fig:Metriche}
-\end{figure}
+\end{center}
 
 \subsubsection{Gestione Template}
-Selezionado dal menù laterale (fig~\ref{fig:Template} pt.1) accediamo alla pagina di gestione dei template. Qui è possibile visualizzare i template precedentemente inseriti dall'admin, aggiungerne di nuovi, modificarli ed eliminarli.
-\begin{figure}[h!]
-    \centering
+Dalla voce "Gestione Template" si accede all’elenco dei template creati. È possibile aggiungerne, modificarli o eliminarli.
+\begin{center}
     \includegraphics[width=\textwidth]{./img/GestioneTemplate.png}
-    \caption{Gestione Template}
+    \captionof{figure}{Gestione Template}
     \label{fig:Template}
-\end{figure}
-Per aggiungere un template basterà cliccare sul pulsante aggiungi template (fig~\ref{fig:Template} pt.2) che aprirà il pop-up mostrato in fig~\ref{fig:addTemplate} dove sarà possibile inserire la domanda e la risposta.
-\begin{figure}[h!]
-    \centering
+\end{center}
+
+\begin{center}
     \includegraphics[width=0.4\textwidth]{./img/AggiungiTemplate.png}
-    \caption{Aggiungi Template}
+    \captionof{figure}{Aggiunta nuovo template}
     \label{fig:addTemplate}
-\end{figure}
-Per visualizzare l'intero template e non solo il nome è possibile cliccare sul bottone mostrato in fig~\ref{fig:Template} pt.3 che aprirà una tendina dove verrà visualizzata l'intera domanda e l'intera risposta. Verranno inoltre mostrati il pulsanti di "modifica template" (fig~\ref{fig:Template} pt.4) ed "elimina template" (fig~\ref{fig:Template} pt.5). Se questi ultimi dovessero essere cliccati appariranno i pop-up mostrati in figura~\ref{fig:pop-up modifica ed elimina}.
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}{0.5\textwidth}
-        \centering
-        \includegraphics[width=0.7\textwidth]{./img/ModificaTemplate.png}
-        \caption{ModificaTemplate}
-    \end{subfigure}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{./img/ModificaTemplate.png}
     \hspace{0.05\textwidth}
-    \begin{subfigure}{0.5\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{./img/EliminaTemplate.png}
-        \caption{Elimina Template}
-    \end{subfigure}
-    \caption{Modifica Template ed Elimina Template}
+    \includegraphics[width=\textwidth]{./img/EliminaTemplate.png}
+    \captionof{figure}{Modifica ed Eliminazione template}
     \label{fig:pop-up modifica ed elimina}
-\end{figure}
+\end{center}
 
 \subsubsection{Assistenza Clienti}
-Cliccando dal menù laterale sulla voce "Assistenza clienti" (fig~\ref{fig:Assistenza1} pt.1) è possibile visualizzare tutte le richieste di assistenza che i vari utenti hanno inviato (fai riferimento alla sottosezione \textit{Pagina di Richiesta di Supporto} a pagina~\pageref{fig:Pagina di Assistenza}).
-Per ogni richiesta verranno visualizzate:
-\begin{itemize}
-    \item Lo stato della richiesta (fig~\ref{fig:Assistenza1} pt.2)
-    \begin{itemize}
-        \item \textbf{Rosso:} non gestita;
-        \item \textbf{Verde:} gestita;
-    \end{itemize}
-    \item email
-    \item data di invio da parte dell'utente %NOTA PER IL VERIFICATORE, forse qui vanno aggiunti dei punti nell'immagine come ho fatto io per le altre figure
-    \item oggetto della richiesta %Invito cortesemente a farlo basta modificare l'immagine, io ho usato gli strumenti presenti in antemprima su macOS quindi si può fare.
-    \item contenuto della richiesta %Perfavore Sto scrivendo il documento alle 2 di notte quindi verificatore lavora
-    \item pulsante di presa carico (fig~\ref{fig:Assistenza1} pt.3)
-\end{itemize}
-\begin{figure}[h!]
-    \centering
+In questa sezione l’admin può visualizzare tutte le richieste degli utenti, verificarne lo stato e prenderle in carico.
+\begin{center}
     \includegraphics[width=\textwidth]{./img/Assistenza1.png}
-    \caption{Gestione Assistenza}
+    \captionof{figure}{Gestione Assistenza}
     \label{fig:Assistenza1}
-\end{figure}
-Se la richiesta viene presa in carico cliccando il pulsante (fig~\ref{fig:Assistenza1} pt.3) il colore dello stato passerà da \textbf{Rosso} a \textbf{Verde}.
-\begin{figure}[h!]
-    \centering
+\end{center}
+
+\begin{center}
     \includegraphics[width=0.5\textwidth]{./img/Assistenza2.png}
-    \caption{Colore Stato}
-\end{figure}
+    \captionof{figure}{Cambio colore stato richiesta}
+\end{center}
 
 \subsubsection{Gestione Documenti}
-Cliccando infine sulla pagina di gestione documenti ci troveremo davanti alla schermata mostrata in figura~\ref{fig:gestione1}, che permetterà di inserire file per addestrare il nostro assistente virtuale a rispondere a determinate domande.
-\begin{figure}[h!]
-    \centering
+L'admin può caricare documenti \texttt{.pdf} e \texttt{.txt} per addestrare l’assistente.
+\begin{center}
     \includegraphics[width=0.8\textwidth]{./img/PaginaGestioneDocumenti1.png}
-    \caption{Pagina Gestione Documenti}
+    \captionof{figure}{Pagina Gestione Documenti}
     \label{fig:gestione1}
-\end{figure}
+\end{center}
 
-Procediamo quindi ad illustrare come caricare i dati. Cominciamo quindi cliccando sul bottone "upload files" come indicato dalla freccia in figura~\ref{fig:gestione2}
-\begin{figure}[h!]
-    \centering
+\begin{center}
     \includegraphics[width=0.6\textwidth]{./img/PaginaGestioneDocumenti2.png}
-    \caption{Upload Documenti}
+    \captionof{figure}{Upload Documenti}
     \label{fig:gestione2}
-\end{figure}
-Questo aprirà una finestra di selezione file, il sistema accetta file di tipo \texttt{.pdf} o \texttt{.txt} .
- 
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{./img/PaginaGestioneDocumenti3.png}
-    \end{subfigure}
-    \hspace{0.05\textwidth}
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{./img/GestioneDocumenti4.png}
-    \end{subfigure}
-    \caption{Inserimento file}
-    \label{fig:gestione3}
-\end{figure}
-Cliccando sul bottone aggiungi documento (fig~\ref{fig:gestione4} pt.1) l'admin verrà notificato dell'avvenuta riuscita (fig~\ref{fig:gestione4} pt.2) dell'operazione o del suo fallimento.
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./img/GestioneDocumenti5.png}
-    \caption{Upload Documenti con successo}
-    \label{fig:gestione4}
-\end{figure}
+\end{center}
 
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{./img/PaginaGestioneDocumenti3.png}
+    \hspace{0.05\textwidth}
+    \includegraphics[width=0.4\textwidth]{./img/GestioneDocumenti4.png}
+    \captionof{figure}{Inserimento file}
+    \label{fig:gestione3}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{./img/GestioneDocumenti5.png}
+    \captionof{figure}{Conferma upload documenti}
+    \label{fig:gestione4}
+\end{center}
