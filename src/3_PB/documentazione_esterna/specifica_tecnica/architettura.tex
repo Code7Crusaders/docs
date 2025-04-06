@@ -87,11 +87,13 @@ L’architettura esagonale garantisce modularità e sostenibilità del sistema n
 Dopo un’analisi approfondita, il team di sviluppo ha deciso di adottare un’\textbf{architettura esagonale monolitica}. Questa scelta è stata motivata dai seguenti fattori:
 \begin{enumerate}
     \item \textbf{Basso carico di utenti}: L’applicazione è destinata a un contesto B2B con un numero limitato di utenti concorrenti.
+    \item \textbf{Disponibilità non critica 24/7}: Poiché l'applicazione è utilizzata in un contesto aziendale con orari di apertura definiti, non è necessario che il sistema sia sempre online. Questo consente di effettuare manutenzioni anche sull'intero sistema durante i periodi di inattività, senza impatti sull'operatività.
     \item \textbf{Semplicità di gestione}: La manutenzione di un monolite è più diretta rispetto a un sistema distribuito.
     \item \textbf{Riduzione dei costi operativi}: L’assenza di strumenti di orchestrazione riduce significativamente i costi di infrastruttura.
     \item \textbf{Velocità di sviluppo}: Un’unica codebase consente iterazioni rapide senza dipendenze tra servizi separati.
     \item \textbf{Evoluzione graduale verso microservizi}: Adottando un’architettura \textbf{esagonale}, il sistema può essere trasformato gradualmente in microservizi senza riscrivere tutto.
 \end{enumerate}
+
 
 
 \subsection{Architettura di Sistema}
