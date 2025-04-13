@@ -109,7 +109,7 @@ files=(
     # "./src/3_PB/verbali_interni/verbale_25-03-14_v1.0.tex"
     # "./src/3_PB/verbali_interni/verbale_25-03-21_v1.0.tex"
 
-    # "./src/3_PB/lettera_di_presentazione/..."
+     "./src/3_PB/lettera_di_presentazione.tex"
 )
 
 current_dir=$(pwd)
