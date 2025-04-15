@@ -1,0 +1,181 @@
+%%% INTRO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template sia per verbali interni che esterni
+% Segui i commenti "TODO" per ricordarti cosa modificare
+% In caso di verbali esterni ricordati di settare isEsterno ad 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\usepackage{graphicx}  % serve per inserire immagini
+\usepackage{fancyhdr}  % creazione header-footer
+\usepackage{tabularx}  % serve per creare tabelle con colonne a larghezza variabile
+\usepackage{ifthen}  % serve per mostrare cose diverse in base a condizioni
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+
+% TODO: setta a 1 se il verbale è esterno, 0 se è interno
+\newcommand{\isEsterno}{0}
+
+% Margini della pagina
+\geometry{a4paper, margin=1in}
+
+% Intestazione personalizzata
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Code7Crusaders - Software Development Team}
+\fancyhead[R]{\thepage}
+
+% Spaziatura delle righe
+\setstretch{1.2}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%% Sezione del titolo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+    \AddToHookNext{shipout/background}{
+        \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.center) {
+            \includegraphics{../../img/background.png}
+        };
+        \end{tikzpicture}
+    }
+
+    \centering
+    \vspace*{2cm}
+    
+    \includegraphics[width=0.3\textwidth]{../../img/logo/7Crusaders_logo.png} % logo
+    \vspace{1cm}
+    
+    {\Huge \textbf{Code7Crusaders}}\\
+    \vspace{0.5cm}
+    {\Large Software Development Team}\\
+    \vspace{2cm}
+        
+        {\large \textbf{Riunione Settimanale 04/04/2025}}\\
+    \vspace{5cm}                           % esempio: Riunione Settimanale 04/11/2024
+    
+    
+    \textbf{Membri del Team:}\\
+    Enrico Cotti Cottini, Gabriele Di Pietro, Tommaso Diviesti \\
+    Francesco Lapenna, Matthew Pan, Eddy Pinarello, Filippo Rizzolo \\
+    \vspace{0.5cm}
+    
+    \vspace{1cm}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Versioni %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{table}[h!]
+\centering
+\textbf{Versioni} \\ % Titolo sopra la tabella
+\vspace{2mm} % Spazio tra il titolo e la tabella
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ver.} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Descrizione} \\
+    \hline
+    1.0 & 07/04/2025 & Filippo Rizzolo &  & Stesura del Documento \\ 
+    \hline                                  % TODO: inserire data, nomi e descrizione
+\end{tabular}
+\end{table}
+\vspace{3cm}
+\newpage
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Registro Presenze %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Registro Presenze}
+\textbf{Piattaforma della riunione:} Piattaforma Discord \\
+\textbf{Ora di Inizio} 15:00\\
+\textbf{Ora di Fine} 16:00\\  % TODO: inserire orari ed eventualmente piattaforma
+\\
+\begin{tabular}{|c|c|c|}  % TODO: inserire ruoli e presenze
+    \hline
+    \textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza}\\
+    \hline
+    Enrico Cotti Cottini & Verificatore & Presente \\ 
+    \hline
+    Gabriele Di Pietro & Analista & Presente \\ 
+    \hline
+    Tommaso Diviesti & Amministratore & Presente \\ 
+    \hline 
+    Francesco Lapenna & Programmatore & Presente \\ 
+    \hline
+    Matthew Pan & Verificatore & Presente \\ 
+    \hline 
+    Eddy Pinarello & Progettista & Presente \\ 
+    \hline 
+    Filippo Rizzolo & Responsabile & Presente \\ 
+    \hline 
+\end{tabular}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Avanzamento stato del progetto;
+	\item Decisioni prese e conclusioni.
+\end{itemize}
+
+% Presenze Rappresentanti Azienda %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \\
+    \newline
+    \newline
+    \begin{tabular}{|c|c|}  % TODO: eventualmente modificare nomi rappresentanti
+        \hline
+        \textbf{Nome} & \textbf{Ruolo}\\
+        \hline
+        Gianluca Carlesso & Rappresentante Azienda \\
+        \hline
+        Anna Tieppo & Rappresentante Azienda \\
+        \hline
+    \end{tabular}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+
+% Sezione Verbale %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Verbale Retrospettiva}
+\subsection{Avanzamento dello stato del progetto}  
+Durante la riunione, sono state discusse le attività svolte dai vari membri del team nel corso dell’ultima settimana. In particolare, è stata completata la stesura del manuale utente, che rappresenta un documento fondamentale per l'utilizzo corretto e consapevole del sistema. Inoltre, è stata inviata una richiesta di colloquio al professor Cardin al fine di illustrargli lo stato di avanzamento del progetto e ricevere eventuali feedback o indicazioni per i prossimi passi.
+Dal punto di vista tecnico, le fasi di sviluppo possono considerarsi concluse: è stata ultimata la parte frontend dell’applicativo e completata l'integrazione con il backend, che era già stato terminato nelle settimane precedenti. L’interfacciamento tra le due componenti risulta stabile e funzionale, confermando l’efficacia dell’architettura adottata.
+
+\subsection{Decisioni prese e conclusioni}
+Per la prossima settimana, il team ha concordato di effettuare alcune piccole ma significative migliorie al manuale utente, con l'obiettivo di renderlo più accessibile, chiaro e facilmente consultabile. Questo intervento permetterà di facilitare l’utilizzo del sistema anche da parte di utenti meno esperti.
+Inoltre, si procederà a fissare e svolgere il colloquio con il professor Cardin, così da presentare formalmente i risultati ottenuti fino a questo punto e raccogliere eventuali osservazioni utili per la fase conclusiva del progetto. 
+
+
+% Sezione Firme %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non toccare, modifica invece la variabile isEsterno
+\ifthenelse{\equal{\isEsterno}{1}}{
+    \begin{table}[b]
+        \begin{tabular}{@{}p{.5in}p{4in}@{}}
+            Data:  & \hrulefill \\
+                   &     		\\
+                   &     		\\
+            Firma: & \hrulefill \\
+        \end{tabular}
+        \end{table}
+}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document} 
