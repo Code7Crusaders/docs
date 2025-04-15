@@ -40,21 +40,25 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
         with open(percorso_file, "r", encoding="utf-8") as file:
             contenuto = file.readlines()
 
-        pattern_sezioni_principali = re.compile(r"\\(section|chapter|part)\{.*?\}")
-        pattern_sezioni_sottolivello = re.compile(r"\\(subsection|subsubsection|paragraph)\{.*?\}")
+        # Pattern per identificare contesti da escludere
+        pattern_titoli = re.compile(r"\\(section|subsection|subsubsection|chapter|part|paragraph)\{.*?\}")
+        pattern_tabella = re.compile(r"\\begin\{tabular\}.*?\\end\{tabular\}", re.DOTALL)
         pattern_href = re.compile(r"\\href\{[^}]+\}\{[^}]+\}")
         pattern_url = re.compile(r"\\url\{[^}]+\}")
 
-        in_titolo_sezione = False
+        in_tabella = False  # Flag per tracciare se siamo dentro una tabella
 
         for i, riga in enumerate(contenuto):
-            if pattern_sezioni_principali.match(riga):
-                in_titolo_sezione = True
-                continue  
-            if pattern_sezioni_sottolivello.match(riga):
-                in_titolo_sezione = False  
-            if in_titolo_sezione:
-                continue  
+            # Controlla se siamo dentro una tabella
+            if riga.strip().startswith(r"\begin{tabular}"):
+                in_tabella = True
+            elif riga.strip().startswith(r"\end{tabular}"):
+                in_tabella = False
+                continue
+
+            # Salta le righe che contengono titoli o che sono dentro una tabella
+            if pattern_titoli.match(riga) or in_tabella:
+                continue
 
             href_matches = list(pattern_href.finditer(riga))
             url_matches = list(pattern_url.finditer(riga))
@@ -86,9 +90,9 @@ def aggiungi_stile_hyperlink_latex(percorso_file, hashmap):
 
 # MAIN
 
-percorso_glossario = "pathtoglossary" # Inserire il percorso del file glossario.tex
+percorso_glossario = "/home/enrico/Scrivania/ProgettoSWE/code7/docs/src/3_PB/documentazione_interna/glossario/glossario_v2.0.tex" # Inserire il percorso del file glossario.tex
 hashmap = crea_hashmap_glossario(percorso_glossario)
 print(hashmap)
 if hashmap:
-    percorso_file_modificare = "pathtofile"  # Inserire il percorso del file da modificare 
+    percorso_file_modificare = "/home/enrico/Scrivania/ProgettoSWE/code7/docs/src/3_PB/documentazione_interna/norme_di_progetto/processi_primari.tex"  # Inserire il percorso del file da modificare 
     aggiungi_stile_hyperlink_latex(percorso_file_modificare, hashmap)

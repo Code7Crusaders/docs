@@ -99,7 +99,7 @@ files=(
         # "./src/3_PB/documentazione_esterna/manuale_utente/istruzioni.tex"
 
         #  "./src/3_PB/documentazione_interna/glossario/glossario_v2.0.tex"
-        #  "./src/3_PB/documentazione_interna/norme_di_progetto/norme_di_progetto_v2.0.tex"
+         "./src/3_PB/documentazione_interna/norme_di_progetto/norme_di_progetto_v2.0.tex"
 
     # "./src/3_PB/verbali_esterni/verbale_25-03-04_v1.0.tex"
     #  "./src/3_PB/verbali_esterni/verbale_25-03-13_v1.0.tex"
