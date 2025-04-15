@@ -21,7 +21,7 @@ files=(
     # "./src/DiariDiBordo/Diario_25-03-25.tex"
     # "./src/DiariDiBordo/Diario_25-03-31.tex"
     #"./src/DiariDiBordo/Diario_25-04-07.tex"
-     "./src/DiariDiBordo/Diario_25-04-15.tex"
+    #  "./src/DiariDiBordo/Diario_25-04-15.tex"
 
     # Template
     # "./src/templateC7C/template.tex"
@@ -109,8 +109,9 @@ files=(
     # "./src/3_PB/verbali_interni/verbale_25-03-07_v1.0.tex"
     # "./src/3_PB/verbali_interni/verbale_25-03-14_v1.0.tex"
     # "./src/3_PB/verbali_interni/verbale_25-03-21_v1.0.tex"
+    "./src/3_PB/verbali_interni/verbale_04-04-21_v1.0.tex"
 
-     "./src/3_PB/lettera_di_presentazione.tex"
+    #  "./src/3_PB/lettera_di_presentazione.tex"
 )
 
 current_dir=$(pwd)
